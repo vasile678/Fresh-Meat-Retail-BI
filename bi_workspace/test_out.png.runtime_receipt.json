@@ -1,0 +1,12 @@
+{
+  "runtime": "FRESH_MEAT_BI_RUNTIME_v2.9-asset-resolution",
+  "status": "PASS",
+  "mode": "promo",
+  "executed_at_utc": "2026-10-28T21:40:42.083063+00:00",
+  "dataset_sha256": "33c3d3e48e1fb74dfeba6e87a411317102e5d15e796eaea6bb550258c0d5e264",
+  "renderer_sha256": "3f99b788bd766add379a2451c46cd73ed91419293d626430ce146c24f3f8378e",
+  "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
+  "output_sha256": "7c40d35e38f553e8cae427daebf78c545392d476299e456b5220c59a35aade2a",
+  "renderer_receipt_sha256": "77ce5fa74f377eeee8b03e0317381254604e6600fcbd604e849d9dde1bae98f6",
+  "release_status": "NOT_GRANTED_BY_RUNTIME"
+}

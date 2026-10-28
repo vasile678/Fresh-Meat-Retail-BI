@@ -1,0 +1,260 @@
+{
+  "status": "PASS",
+  "coverage": "25/25",
+  "dataset_sha256": "16ebcd3c4a31b6f861e45358d48603cc0156d797cc4fddff9ff4793b57b9b915",
+  "week": "WK44",
+  "year": 2026,
+  "verified_at": "2026-10-28T21:41:47.591286+00:00",
+  "cells": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Spată porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Kaufland",
+        "kaufland.ro"
+      ],
+      "result": "VERIFIED: 14.9 lei/kg, Spată de porc fără os vacuum Purland"
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Pulpă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Kaufland",
+        "kaufland.ro"
+      ],
+      "result": "VERIFIED: 15.99 lei/kg, Pulpă de porc fără os kg"
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Cotlet porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Kaufland",
+        "kaufland.ro"
+      ],
+      "result": "VERIFIED: 16.99 lei/kg, Cotlet de porc fără os bucată"
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Kaufland",
+        "kaufland.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Kaufland - Ceafă porc fără os"
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Piept pui dezosat",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Kaufland",
+        "kaufland.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Kaufland - Piept pui dezosat"
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Spată porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Lidl",
+        "lidl.ro"
+      ],
+      "result": "VERIFIED: 13.9 lei/kg, Spată de porc fără os XXL (1,39 lei/100g)"
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Pulpă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Lidl",
+        "lidl.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Lidl - Pulpă porc fără os"
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Cotlet porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Lidl",
+        "lidl.ro"
+      ],
+      "result": "VERIFIED: 24.73 lei/kg, Cotlet de porc fără os feliat (9,89 lei/400g)"
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Ceafă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Lidl",
+        "lidl.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Lidl - Ceafă porc fără os"
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Piept pui dezosat",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Lidl",
+        "lidl.ro"
+      ],
+      "result": "VERIFIED: 28.9 lei/kg, Piept de pui dezosat fără piele (2,89 lei/100g)"
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Spată porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official PENNY",
+        "penny.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru PENNY - Spată porc fără os"
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Pulpă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official PENNY",
+        "penny.ro"
+      ],
+      "result": "VERIFIED: 15.99 lei/kg, Hanul Boieresc Pulpă de porc fără os kg"
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Cotlet porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official PENNY",
+        "penny.ro"
+      ],
+      "result": "VERIFIED: 27.68 lei/kg, Hanul Boieresc Cotlet de porc fără os feliat 650g (17,99 lei)"
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Ceafă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official PENNY",
+        "penny.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru PENNY - Ceafă porc fără os"
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Piept pui dezosat",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official PENNY",
+        "penny.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru PENNY - Piept pui dezosat"
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Spată porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Carrefour",
+        "carrefour.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Carrefour - Spată porc fără os"
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Pulpă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Carrefour",
+        "carrefour.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Carrefour - Pulpă porc fără os"
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Cotlet porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Carrefour",
+        "carrefour.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Carrefour - Cotlet porc fără os"
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Ceafă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Carrefour",
+        "carrefour.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Carrefour - Ceafă porc fără os"
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Piept pui dezosat",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Carrefour",
+        "carrefour.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Carrefour - Piept pui dezosat"
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Spată porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Auchan",
+        "auchan.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Auchan - Spată porc fără os"
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Pulpă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Auchan",
+        "auchan.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Auchan - Pulpă porc fără os"
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Cotlet porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Auchan",
+        "auchan.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Auchan - Cotlet porc fără os"
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Ceafă porc fără os",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Auchan",
+        "auchan.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Auchan - Ceafă porc fără os"
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Piept pui dezosat",
+      "checked_at": "2026-10-28T21:41:47.591286+00:00",
+      "sources_checked": [
+        "catalog official Auchan",
+        "auchan.ro"
+      ],
+      "result": "N/V: nicio ofertă comparabilă confirmată în catalogul oficial pentru Auchan - Piept pui dezosat"
+    }
+  ]
+}

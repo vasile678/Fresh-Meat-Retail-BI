@@ -1,0 +1,77 @@
+{
+  "config_version": "2.6.1-lumi-compact",
+  "workflow": "EU Pork Market Weekly",
+  "status": "ACTIVE_LOCKED",
+  "golden_reference": {
+    "file": "EU_PORK_MARKET_GOLDEN_REFERENCE.png",
+    "week": "WK38/2026",
+    "sha256": "ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264",
+    "rule": "Permanent visual reference. Do not redesign or creatively reconstruct."
+  },
+  "renderer": {
+    "file": "EU_PORK_MARKET_RENDERER.py",
+    "sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
+    "mode": "DETERMINISTIC_MASTER_OVERLAY",
+    "external_mask_map_required": false,
+    "generative_image": "FORBIDDEN"
+  },
+  "market_order": [
+    "Germany VEZG",
+    "ISN / Internet Pig Auction",
+    "Spain Mercolleida",
+    "Italy CUN 156–200 kg",
+    "Netherlands Vion",
+    "Denmark Danish Crown",
+    "France MPB",
+    "Poland (ZMI) Class E"
+  ],
+  "benchmark_rules": {
+    "Netherlands": "Vion",
+    "Italy": "CUN 156–200 kg",
+    "Poland": "Class E",
+    "source_priority": "Primary/official source preferred; secondary source only when necessary and clearly identified.",
+    "unit_integrity": "Never mix live-weight and carcass-weight quotations.",
+    "unresolved_conflict": "N/V"
+  },
+  "status_model": {
+    "VERIFIED": "Numeric benchmark verified from an acceptable current source.",
+    "NQ": "Official benchmark/publication exists but no numeric quotation was formulated (e.g. NON FORMULATO).",
+    "N/V": "Numeric benchmark not verified/available."
+  },
+  "weekly_dynamic_fields": [
+    "week",
+    "period",
+    "updated",
+    "price",
+    "unit",
+    "wow",
+    "trend",
+    "source_date",
+    "status",
+    "market_signal",
+    "market_signal_body",
+    "takeaways",
+    "implications"
+  ],
+  "locked_visual_rules": {
+    "layout": "Golden Reference WK38 v3",
+    "market_order": "fixed",
+    "lower_panels": [
+      "MARKET SIGNAL",
+      "KEY TAKEAWAYS",
+      "IMPLICATIONS FOR BUYERS"
+    ],
+    "wrapping": "mandatory inside each panel; no overlap",
+    "weekly_layout_changes": false
+  },
+  "definition_of_done": [
+    "Verify current source data.",
+    "Build and lock weekly dataset.",
+    "Render only with EU_PORK_MARKET_RENDERER.py using the locked Golden Reference.",
+    "Check status/unit/source consistency.",
+    "Perform visual QA: no overlap, clipping or panel overflow.",
+    "PASS only after deterministic render and visual QA succeed."
+  ],
+  "execution_integrity": "Never claim VERIFIED, PASS, executed, updated or created without tool/source evidence.",
+  "obsolete_files": "Older contract, hotfix, mask-map, dataset-template, manifest and intermediate WK38 images are not required in active LUMI Knowledge after these 3 canonical files are installed."
+}

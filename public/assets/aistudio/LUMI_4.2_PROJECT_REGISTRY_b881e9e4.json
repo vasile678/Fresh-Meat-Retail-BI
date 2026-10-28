@@ -1,0 +1,36 @@
+{
+  "schema_version": "4.2.0",
+  "snapshot_status": "INITIAL_INCOMPLETE",
+  "projects": [
+    {
+      "id": "LUMI-GPT",
+      "name": "LUMI 4.2 Custom GPT",
+      "status": "configuration_candidate",
+      "source": [
+        "LUMI_4.1_HYBRID_PRODUCTION_MASTER.md",
+        "LUMI_CORE_4.1_SLIM.md"
+      ],
+      "next": "install, test connector continuity and benchmark"
+    },
+    {
+      "id": "FRESH-MEAT-BI",
+      "name": "Fresh Meat BI",
+      "status": "baseline_files_present_e2e_unverified",
+      "source": [
+        "CONFIG_MANIFEST.json",
+        "LUMI_FRESH_MEAT_RETAIL_BI_v2.6_PRODUCTION.md"
+      ],
+      "next": "run Promo Weekly and EU Pork Market full evidence-backed regression"
+    },
+    {
+      "id": "LONGEVITY",
+      "name": "Longevity governed protocol",
+      "status": "historical_protocol_migrated_not_medically_revalidated",
+      "source": [
+        "PROTOCOL_LONGEVITY_3.2_GOVERNED.md"
+      ],
+      "next": "check current context before recommendations"
+    }
+  ],
+  "other_projects": "Not exhaustively enumerated; inspect preserved archive and authorized Google Drive."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Fresh Meat Retail BI - Top 5 Competitori",
+  "description": "Monitorizare săptămânală de prețuri și analize promoții la carne proaspătă pentru retaileri de top din România.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

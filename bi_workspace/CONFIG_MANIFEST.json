@@ -1,0 +1,111 @@
+{
+  "manifest_version": "4.1-production-2026-09-20-asset-resolution-v1.4",
+  "status": "PRODUCTION_CANDIDATE_REQUIRES_E2E_REGRESSION",
+  "governance": {
+    "active_master": "LUMI_4.1_HYBRID_PRODUCTION_MASTER.md",
+    "identity_layer": "LUMI_CORE_4.1_SLIM.md",
+    "fresh_meat_domain": "LUMI_FRESH_MEAT_RETAIL_BI_v2.6_PRODUCTION.md",
+    "runtime": "fresh_meat_bi_runtime_v2.py",
+    "release_authority": "FRESH_MEAT_BI_GATE_v1.py",
+    "release_authority_version": "1.5-hardening-wired",
+    "fail_mode": "CLOSED",
+    "change_policy": "version bump + manifest compatibility test + full regression required",
+    "runtime_version": "2.9-asset-resolution",
+    "runtime_sha256": "f0e8562ddebd55ccfefb5fcc077f7069fdae26ee05d3a1c4b05336692f4419ce"
+  },
+  "promo": {
+    "master": "PROMO_MASTER_v2_LOCKED.png",
+    "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
+    "master_lock": "PROMO_MASTER_v2_LOCK.json",
+    "contract": "PROMO_WEEKLY_CONTRACT.json",
+    "canonical_lock": "PROMO_WEEKLY_CANONICAL_LOCK.json",
+    "renderer": "promo_image_renderer_v2.py",
+    "renderer_version": "2.1",
+    "renderer_sha256": "3f99b788bd766add379a2451c46cd73ed91419293d626430ce146c24f3f8378e",
+    "render_mode": "DETERMINISTIC_ONLY",
+    "generative_fallback": false,
+    "contract_version": "2.6.2-hardening",
+    "contract_sha256": "0b2378c501528c2447d18d699a943baf50fc251c54c02e60f0d0f3a4e7daf9bf",
+    "authoritative_lock_registry": {
+      "mode": "MANIFEST_CANONICAL",
+      "canonical_lock": "PROMO_WEEKLY_CANONICAL_LOCK.json",
+      "caller_supplied_competing_paths_authoritative": false
+    },
+    "release_inputs": {
+      "research_receipt": "required; --research; status PASS; coverage 25/25; dataset_sha256-bound",
+      "reconciliation_receipt": "required; --reconciliation; status PASS; dataset_sha256-bound",
+      "render_receipt": "required; --render",
+      "canonical_lock": "resolved from authoritative_lock_registry"
+    },
+    "master_resolution": {
+      "mode": "LOCAL_OR_MATERIALIZED",
+      "env_root": "LUMI_ASSET_ROOT",
+      "required_runtime_name": "PROMO_MASTER_v2_LOCKED.png",
+      "fail_code": "ASSET_RESOLUTION_FAIL"
+    }
+  },
+  "eu_pork_market": {
+    "config": "EU_PORK_MARKET_CONFIG.json",
+    "golden_reference": "EU_PORK_MARKET_GOLDEN_REFERENCE.png",
+    "golden_reference_sha256": "ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264",
+    "renderer": "EU_PORK_MARKET_RENDERER.py",
+    "renderer_version": "1.1-layout-hardening",
+    "renderer_sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
+    "render_mode": "DETERMINISTIC_ONLY",
+    "status_semantics": [
+      "VERIFIED",
+      "NQ",
+      "N/V"
+    ],
+    "generative_fallback": false
+  },
+  "release_gate": {
+    "file": "FRESH_MEAT_BI_GATE_v1.py",
+    "version": "1.5-hardening-wired",
+    "sha256": "31ccace9ac07e64dc778819a5b304c323c471ce0f0b62047bca71daa8e898183",
+    "final_pass_token": "RELEASE_PASS"
+  },
+  "regression_baseline": {
+    "promo": [
+      "WK38/2026",
+      "WK39/2026"
+    ],
+    "eu_pork": [
+      "WK38/2026"
+    ],
+    "status": "STALE_REQUIRES_E2E_RERUN_AFTER_RUNTIME_2_8"
+  },
+  "maintenance_patch": {
+    "id": "LUMI-4.1-MP1",
+    "date": "2026-09-19",
+    "scope": [
+      "manifest-driven aggregate runtime",
+      "EU golden_reference schema alignment",
+      "USER-REPORTED promo semantic alignment",
+      "manifest/runtime compatibility validation"
+    ],
+    "architecture_change": false
+  },
+  "hardening_patch": {
+    "id": "LUMI-4.1-ASSET-RESOLUTION-1",
+    "date": "2026-09-20",
+    "architecture_change": false,
+    "integration_fix": "runtime asset resolution contract; local/materialized path + SHA verification; fail closed"
+  },
+  "compatibility": {
+    "runtime": "2.9-asset-resolution",
+    "release_gate": "1.5-hardening-wired",
+    "promo_release_requires": [
+      "renderer_receipt",
+      "research_receipt",
+      "reconciliation_receipt",
+      "manifest_canonical_lock"
+    ],
+    "eu_release_requires": [
+      "renderer_receipt",
+      "source_receipt",
+      "visual_receipt"
+    ],
+    "fail_mode": "CLOSED"
+  }
+}
