@@ -175,6 +175,34 @@ def test_wk44_release_pass():
         if p.exists():
             p.unlink()
 
+def test_dashboard_export_integrity():
+    print("[TEST 6/6] Testing React dashboard JSON export integrity...")
+    export_script = BASE / "export_dashboard_data.py"
+    assert export_script.exists(), "export_dashboard_data.py missing"
+
+    # Run exporter
+    cp = subprocess.run([sys.executable, str(export_script)], cwd=str(BASE), capture_output=True, text=True)
+    assert cp.returncode == 0, f"Export script failed: {cp.stderr}"
+
+    export_file = BASE.parent / "public" / "data" / "bi_dashboard_export.json"
+    assert export_file.exists(), "bi_dashboard_export.json missing"
+    data = json.loads(export_file.read_text(encoding="utf-8"))
+
+    assert data.get("release_status") == "RELEASE_PASS", f"Expected RELEASE_PASS, got {data.get('release_status')}"
+    assert len(data.get("cells", [])) == 25, "Expected 25 cells in export"
+    assert data.get("coverage_checked") == "25/25"
+
+    png_file = BASE.parent / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
+    assert png_file.exists()
+    assert data["hashes"]["output_sha256"] == sha256_file(png_file)
+
+    lock_file = BASE / "PROMO_WEEKLY_CANONICAL_LOCK_WK44.json"
+    if lock_file.exists():
+        assert data["hashes"]["dataset_sha256"] == sha256_file(lock_file)
+
+    assert data.get("release_gate", {}).get("release_status") == "RELEASE_PASS"
+    print("  ✓ Dashboard JSON export cryptographic integrity and Release Gate binding: PASS\n")
+
 def main():
     print("==================================================")
     print("     FRESH MEAT RETAIL BI — ENGINE TEST SUITE     ")
@@ -185,6 +213,7 @@ def main():
         test_gate_fail_closed()
         test_static_pixel_preservation()
         test_wk44_release_pass()
+        test_dashboard_export_integrity()
         print("==================================================")
         print("     ALL ENGINE TESTS PASSED (100% SUCCESS)       ")
         print("==================================================")

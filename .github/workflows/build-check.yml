@@ -30,10 +30,11 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Verify build output
+      - name: Verify build output & dashboard export
         run: |
           test -d dist
-          echo "Fresh Meat BI build successful"
+          test -f dist/data/bi_dashboard_export.json
+          echo "Fresh Meat BI build and export bundle verified successfully"
 
   verify-bi-engine:
     name: Verify Fresh Meat BI Python Engine
