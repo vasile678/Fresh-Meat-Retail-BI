@@ -1,0 +1,109 @@
+name: EU Pork Market Weekly - Scheduled Thursday Pipeline
+
+on:
+  schedule:
+    # Rulează la 06:00 UTC și 07:00 UTC în fiecare joi.
+    # Pasul de verificare a orei locale asigură execuția exact la 09:00 Europe/Bucharest
+    # indiferent de trecerea la ora de vară (UTC+3, când 06:00 UTC = 09:00 RO) sau iarnă (UTC+2, când 07:00 UTC = 09:00 RO).
+    - cron: '0 6,7 * * 4'
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Săptămâna ISO de procesat (ex: WK44, WK45)"
+        required: true
+        default: "WK44"
+      year:
+        description: "Anul calendaristic"
+        required: true
+        default: "2026"
+      dataset_path:
+        description: "Calea către datasetul autoritativ EU Pork Market"
+        required: true
+        default: "fresh_meat_bi/EU_PORK_MARKET_DATASET_WK44.json"
+      source_path:
+        description: "Calea către chitanța SOURCE_VERIFICATION"
+        required: false
+        default: "fresh_meat_bi/EU_SOURCE_RECEIPT_WK44.json"
+      visual_path:
+        description: "Calea către chitanța VISUAL_QA"
+        required: false
+        default: "fresh_meat_bi/EU_VISUAL_RECEIPT_WK44.json"
+      publish:
+        description: "Publică atomic rezultatele în dashboard (doar la RELEASE_PASS)"
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  eu-pork-weekly:
+    name: Execute EU Pork Market Weekly Controlled Pipeline
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Check Europe/Bucharest Local Time (09:00)
+        if: github.event_name == 'schedule'
+        id: time_check
+        run: |
+          LOCAL_HOUR=$(python3 -c "import datetime, zoneinfo; print(datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Bucharest')).hour)")
+          echo "Local hour in Europe/Bucharest is: $LOCAL_HOUR"
+          if [ "$LOCAL_HOUR" -ne 9 ]; then
+            echo "SHOULD_RUN=false" >> $GITHUB_ENV
+            echo "Not 09:00 in Europe/Bucharest (current hour is $LOCAL_HOUR). Skipping this hourly trigger."
+          else
+            echo "SHOULD_RUN=true" >> $GITHUB_ENV
+            echo "09:00 Europe/Bucharest confirmed. Proceeding with weekly pipeline execution."
+          fi
+
+      - name: Setup Python
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'fresh_meat_bi/requirements.txt'
+
+      - name: Install system fonts
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-dejavu-core
+
+      - name: Install Python dependencies
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: pip install -r fresh_meat_bi/requirements.txt
+
+      - name: Run EU Pork Module Verification Tests
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: |
+          python3 fresh_meat_bi/test_eu_pork_module.py
+
+      - name: Execute Full Weekly Pipeline with Release Gate & Staging
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: |
+          WEEK="${{ inputs.week || 'WK44' }}"
+          YEAR="${{ inputs.year || '2026' }}"
+          DATASET="${{ inputs.dataset_path || 'fresh_meat_bi/EU_PORK_MARKET_DATASET_WK44.json' }}"
+          SOURCE="${{ inputs.source_path || 'fresh_meat_bi/EU_SOURCE_RECEIPT_WK44.json' }}"
+          VISUAL="${{ inputs.visual_path || 'fresh_meat_bi/EU_VISUAL_RECEIPT_WK44.json' }}"
+          
+          python3 fresh_meat_bi/weekly_pipeline.py \
+            --week "$WEEK" \
+            --year "$YEAR" \
+            --domain EU_PORK_MARKET \
+            --dataset "$DATASET" \
+            --source "$SOURCE" \
+            --visual "$VISUAL" \
+            --publish
+
+      - name: Verify Published Assets & Release Gate Status
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: |
+          test -f public/data/eu_pork_market_export.json
+          python3 -c "import json; d=json.load(open('public/data/eu_pork_market_export.json')); assert d['release_status'] == 'RELEASE_PASS'"
+          echo "Verified: public/data/eu_pork_market_export.json exists with RELEASE_PASS"

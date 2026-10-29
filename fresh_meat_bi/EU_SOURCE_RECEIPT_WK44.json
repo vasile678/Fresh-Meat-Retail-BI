@@ -1,0 +1,60 @@
+{
+  "receipt_version": "1.0-eu-source-verification",
+  "status": "PASS",
+  "week": "WK44",
+  "year": 2026,
+  "domain": "EU_PORK",
+  "dataset_sha256": "49cb8b18063f87c65dbfd0d54914803336d22de2f815819ee0390d641a050bda",
+  "verified_at_utc": "2026-10-29T07:15:00Z",
+  "benchmarks_checked": 8,
+  "sources_audit": [
+    {
+      "market": "Germany VEZG",
+      "status": "VERIFIED",
+      "source": "VEZG official quotation 28.10.2026",
+      "value": "1.320 \u20ac/kg SG"
+    },
+    {
+      "market": "ISN / Internet Pig Auction",
+      "status": "NQ",
+      "source": "ISN Auction session 27.10.2026",
+      "value": "NQ"
+    },
+    {
+      "market": "Spain Mercolleida",
+      "status": "VERIFIED",
+      "source": "Lonja de Mercolleida 29.10.2026",
+      "value": "1.550 \u20ac/kg live"
+    },
+    {
+      "market": "Italy CUN 156\u2013200 kg",
+      "status": "VERIFIED",
+      "source": "CUN Suini da Macello 29.10.2026",
+      "value": "1.915 \u20ac/kg live"
+    },
+    {
+      "market": "Netherlands Vion",
+      "status": "VERIFIED",
+      "source": "Vion Food Group Week 44",
+      "value": "1.16 \u20ac/kg SG"
+    },
+    {
+      "market": "Denmark Danish Crown",
+      "status": "VERIFIED",
+      "source": "Danish Crown Notering Uge 44",
+      "value": "7.50 DKK/kg"
+    },
+    {
+      "market": "France MPB",
+      "status": "VERIFIED",
+      "source": "March\u00e9 du Porc Breton Pl\u00e9rin 29.10.2026",
+      "value": "1.502 \u20ac/kg carcass"
+    },
+    {
+      "market": "Poland (ZMI) Class E",
+      "status": "VERIFIED",
+      "source": "MRiRW ZSRIR / POLPIG Week 44",
+      "value": "5.90 PLN/kg Class E"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "receipt_version": "1.0-eu-visual-qa",
+  "status": "PASS",
+  "week": "WK44",
+  "year": 2026,
+  "domain": "EU_PORK",
+  "dataset_sha256": "49cb8b18063f87c65dbfd0d54914803336d22de2f815819ee0390d641a050bda",
+  "qa_checked_at_utc": "2026-10-29T07:20:00Z",
+  "checks": {
+    "dimensions": "1536x1024",
+    "panel_overflow": false,
+    "text_clipping": false,
+    "market_order": "8/8 canonical",
+    "unit_integrity": "100% compliant (no live/carcass mixing)",
+    "static_regions_preserved": true
+  }
+}

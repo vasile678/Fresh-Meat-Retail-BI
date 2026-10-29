@@ -245,13 +245,55 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
             release_receipt_path.write_text(json.dumps(gate_res, indent=2), encoding="utf-8")
             print(f"        Poarta Release Gate a acordat statutul: RELEASE_PASS")
 
+        elif domain == "EU_PORK_MARKET":
+            renderer = BASE / manifest["eu_pork_market"]["renderer"]
+            master_img = BASE / manifest["eu_pork_market"]["golden_reference"]
+            output_png = staging_dir / f"EU_PORK_MARKET_{week}_{year}.png"
+            render_receipt = staging_dir / f"EU_PORK_MARKET_{week}_{year}.png.receipt.json"
+            
+            cp_rend = subprocess.run([sys.executable, str(renderer), str(master_img), str(dataset_path), str(output_png), str(render_receipt)],
+                                     cwd=str(BASE), capture_output=True, text=True)
+            if cp_rend.returncode != 0 or not output_png.exists():
+                errors.append(f"RENDERER_EXECUTION_FAILED: {cp_rend.stderr or cp_rend.stdout}")
+                return {"status": "FAIL_CLOSED", "errors": errors}
+                
+            gate = BASE / manifest["release_gate"]["file"]
+            cmd_gate = [
+                sys.executable, str(gate), "EU_PORK", str(dataset_path),
+                "--render", str(render_receipt),
+                "--source", str(source_path),
+                "--visual", str(visual_path),
+                "--manifest", str(manifest_path)
+            ]
+            cp_gate = subprocess.run(cmd_gate, cwd=str(BASE), capture_output=True, text=True)
+            try:
+                gate_res = json.loads(cp_gate.stdout)
+            except Exception:
+                errors.append(f"GATE_MALFORMED_OUTPUT: {cp_gate.stdout} {cp_gate.stderr}")
+                return {"status": "FAIL_CLOSED", "errors": errors}
+                
+            if cp_gate.returncode != 0 or gate_res.get("release_status") != "RELEASE_PASS":
+                errors.append(f"RELEASE_GATE_DENIED: {gate_res.get('errors')}")
+                return {"status": "FAIL_CLOSED", "errors": errors}
+                
+            release_receipt_path = staging_dir / f"output_eu_pork_{week}_{year}.png.release_receipt.json"
+            release_receipt_path.write_text(json.dumps(gate_res, indent=2), encoding="utf-8")
+            print(f"        Poarta Release Gate a acordat statutul: RELEASE_PASS (EU_PORK)")
+
         # Step 7: Staging Dashboard Export
         print(f"\n[PAS 6] Pregătire export JSON în staging...")
         if str(BASE) not in sys.path:
             sys.path.insert(0, str(BASE))
-        from export_dashboard_data import export_data
-        staging_export = staging_dir / "bi_dashboard_export.json"
-        export_ok = export_data(dataset_path, output_png, release_receipt_path, staging_export)
+            
+        if domain == "PROMO":
+            from export_dashboard_data import export_data
+            staging_export = staging_dir / "bi_dashboard_export.json"
+            export_ok = export_data(dataset_path, output_png, release_receipt_path, staging_export)
+        else:
+            from export_eu_pork_data import export_eu_pork_data
+            staging_export = staging_dir / "eu_pork_market_export.json"
+            export_ok = export_eu_pork_data(dataset_path, staging_export, release_receipt_path, output_png)
+
         if not export_ok or not staging_export.exists():
             errors.append("DASHBOARD_EXPORT_GENERATION_FAILED")
             return {"status": "FAIL_CLOSED", "errors": errors}
@@ -275,7 +317,7 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
                 "dataset_sha256": dataset_sha
             }
 
-        print(f"\n[PAS 7] Publicare în depozit imuabil și activare atomică prin pointer unic...")
+        print(f"\n[PAS 7] Publicare în depozit imuabil și activare atomică...")
         pub_root = target_public_dir or (ROOT / "public")
         pub_data_dir = pub_root / "data"
         pub_data_dir.mkdir(parents=True, exist_ok=True)
@@ -285,68 +327,88 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
         immutable_dir = pub_root / "releases" / str(year) / f"{week}_{short_sha}"
         immutable_dir.mkdir(parents=True, exist_ok=True)
 
-        rel_png_name = f"TOP5_PREȚURI_COMPETITORI_{week}_{year}.png"
-        rel_png_path = immutable_dir / rel_png_name
-        rel_export_path = immutable_dir / "bi_dashboard_export.json"
-        rel_receipt_path = immutable_dir / "release_receipt.json"
-        rel_manifest_path = immutable_dir / "manifest_receipt.json"
-
-        # 1. Populate immutable release directory
-        shutil.copy2(output_png, rel_png_path)
-        shutil.copy2(staging_export, rel_export_path)
-        shutil.copy2(release_receipt_path, rel_receipt_path)
-        shutil.copy2(render_receipt, rel_manifest_path)
-
-        # 2. Strict Pre-Activation Integrity Verification inside immutable directory
         expected_output_sha = sha256_file(output_png)
-        expected_export_sha = sha256_file(staging_export)
-        expected_receipt_sha = sha256_file(release_receipt_path)
 
-        if sha256_file(rel_png_path) != expected_output_sha:
-            errors.append("IMMUTABLE_RELEASE_PNG_HASH_MISMATCH")
-        if sha256_file(rel_export_path) != expected_export_sha:
-            errors.append("IMMUTABLE_RELEASE_EXPORT_HASH_MISMATCH")
-        if sha256_file(rel_receipt_path) != expected_receipt_sha:
-            errors.append("IMMUTABLE_RELEASE_RECEIPT_HASH_MISMATCH")
+        if domain == "PROMO":
+            rel_png_name = f"TOP5_PREȚURI_COMPETITORI_{week}_{year}.png"
+            rel_png_path = immutable_dir / rel_png_name
+            rel_export_path = immutable_dir / "bi_dashboard_export.json"
+            rel_receipt_path = immutable_dir / "release_receipt.json"
+            rel_manifest_path = immutable_dir / "manifest_receipt.json"
 
-        if errors:
-            print(f"[EROARE CRITICĂ PRE-ACTIVARE]: {errors}. Se anulează activarea release-ului.")
-            shutil.rmtree(immutable_dir, ignore_errors=True)
-            return {"status": "FAIL_CLOSED", "errors": errors}
+            # 1. Populate immutable release directory
+            shutil.copy2(output_png, rel_png_path)
+            shutil.copy2(staging_export, rel_export_path)
+            shutil.copy2(release_receipt_path, rel_receipt_path)
+            shutil.copy2(render_receipt, rel_manifest_path)
 
-        print(f"        Depozit imuabil sigilat și verificat: {immutable_dir.relative_to(pub_root)}")
+            # 2. Strict Pre-Activation Integrity Verification inside immutable directory
+            expected_export_sha = sha256_file(staging_export)
+            expected_receipt_sha = sha256_file(release_receipt_path)
 
-        # 3. Prepare Single Atomic Pointer (active_release.json)
-        now_utc = datetime.datetime.now(datetime.timezone.utc).isoformat()
-        pointer_data = {
-            "release_id": release_id,
-            "week": week,
-            "year": year,
-            "published_at_utc": now_utc,
-            "export_path": f"/releases/{year}/{week}_{short_sha}/bi_dashboard_export.json",
-            "image_path": f"/releases/{year}/{week}_{short_sha}/{rel_png_name}",
-            "release_receipt_path": f"/releases/{year}/{week}_{short_sha}/release_receipt.json",
-            "dataset_sha256": dataset_sha,
-            "output_sha256": expected_output_sha,
-            "release_receipt_sha256": expected_receipt_sha,
-            "release_status": "RELEASE_PASS"
-        }
+            if sha256_file(rel_png_path) != expected_output_sha:
+                errors.append("IMMUTABLE_RELEASE_PNG_HASH_MISMATCH")
+            if sha256_file(rel_export_path) != expected_export_sha:
+                errors.append("IMMUTABLE_RELEASE_EXPORT_HASH_MISMATCH")
+            if sha256_file(rel_receipt_path) != expected_receipt_sha:
+                errors.append("IMMUTABLE_RELEASE_RECEIPT_HASH_MISMATCH")
 
-        # 4. Atomic Pointer Update via single os.replace()
-        active_pointer_file = pub_data_dir / "active_release.json"
-        tmp_pointer_file = pub_data_dir / f".tmp_active_release_{os.getpid()}.json"
+            if errors:
+                print(f"[EROARE CRITICĂ PRE-ACTIVARE]: {errors}. Se anulează activarea release-ului.")
+                shutil.rmtree(immutable_dir, ignore_errors=True)
+                return {"status": "FAIL_CLOSED", "errors": errors}
 
-        tmp_pointer_file.write_text(json.dumps(pointer_data, ensure_ascii=False, indent=2), encoding="utf-8")
-        os.replace(tmp_pointer_file, active_pointer_file)
+            print(f"        Depozit imuabil sigilat și verificat: {immutable_dir.relative_to(pub_root)}")
 
-        # 5. Maintain legacy fallback files in sync
-        shutil.copy2(rel_export_path, pub_data_dir / "bi_dashboard_export.json")
-        shutil.copy2(rel_png_path, pub_root / rel_png_name)
-        if week == "WK44":
-            shutil.copy2(rel_png_path, pub_root / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png")
+            # 3. Prepare Single Atomic Pointer (active_release.json)
+            now_utc = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            pointer_data = {
+                "release_id": release_id,
+                "week": week,
+                "year": year,
+                "published_at_utc": now_utc,
+                "export_path": f"/releases/{year}/{week}_{short_sha}/bi_dashboard_export.json",
+                "image_path": f"/releases/{year}/{week}_{short_sha}/{rel_png_name}",
+                "release_receipt_path": f"/releases/{year}/{week}_{short_sha}/release_receipt.json",
+                "dataset_sha256": dataset_sha,
+                "output_sha256": expected_output_sha,
+                "release_receipt_sha256": expected_receipt_sha,
+                "release_status": "RELEASE_PASS"
+            }
 
-        print(f"        Pointer unic activat atomic: {active_pointer_file}")
-        print(f"        Release activ: {release_id} (RELEASE_PASS)")
+            # 4. Atomic Pointer Update via single os.replace()
+            active_pointer_file = pub_data_dir / "active_release.json"
+            tmp_pointer_file = pub_data_dir / f".tmp_active_release_{os.getpid()}.json"
+
+            tmp_pointer_file.write_text(json.dumps(pointer_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            os.replace(tmp_pointer_file, active_pointer_file)
+
+            # 5. Maintain legacy fallback files in sync
+            shutil.copy2(rel_export_path, pub_data_dir / "bi_dashboard_export.json")
+            shutil.copy2(rel_png_path, pub_root / rel_png_name)
+            if week == "WK44":
+                shutil.copy2(rel_png_path, pub_root / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png")
+
+            print(f"        Pointer unic activat atomic: {active_pointer_file}")
+            print(f"        Release activ Promo: {release_id} (RELEASE_PASS)")
+        else:
+            # EU_PORK_MARKET publication
+            rel_png_name = f"EU_PORK_MARKET_{week}_{year}.png"
+            rel_png_path = immutable_dir / rel_png_name
+            rel_export_path = immutable_dir / "eu_pork_market_export.json"
+            rel_receipt_path = immutable_dir / "release_receipt.json"
+
+            shutil.copy2(output_png, rel_png_path)
+            shutil.copy2(staging_export, rel_export_path)
+            shutil.copy2(release_receipt_path, rel_receipt_path)
+
+            # Copy to active live public locations
+            shutil.copy2(staging_export, pub_data_dir / "eu_pork_market_export.json")
+            shutil.copy2(output_png, pub_root / rel_png_name)
+
+            print(f"        Raport EU Pork Market activat: {pub_data_dir / 'eu_pork_market_export.json'}")
+            print(f"        Imagine publicată: {pub_root / rel_png_name}")
+
         print(f"\n=======================================================")
         print(f" [SUCCES] WEEKLY PIPELINE FINALIZAT: RELEASE_PASS (PUBLICAT)")
         print(f"=======================================================\n")
