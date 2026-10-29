@@ -12,7 +12,9 @@ import {
   Copy,
   AlertTriangle,
   RefreshCw,
-  FileCode
+  FileCode,
+  Loader2,
+  Share2
 } from 'lucide-react';
 
 interface CellData {
@@ -93,6 +95,116 @@ export default function App() {
   const [selectedCell, setSelectedCell] = useState<CellData | null>(null);
   const [zoomImage, setZoomImage] = useState<boolean>(false);
   const [copiedHash, setCopiedHash] = useState<string | null>(null);
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
+  const [downloadToast, setDownloadToast] = useState<{ message: string; type: 'info' | 'success' | 'error' } | null>(null);
+
+  const isIOSDevice = (): boolean => {
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
+    const ua = navigator.userAgent || '';
+    const isTouchMac = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    return /iPad|iPhone|iPod/.test(ua) || isTouchMac;
+  };
+
+  const triggerBlobDownload = (blob: Blob, filename: string) => {
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = filename;
+    link.rel = 'noopener noreferrer';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => {
+      if (document.body.contains(link)) {
+        document.body.removeChild(link);
+      }
+      URL.revokeObjectURL(blobUrl);
+    }, 1500);
+  };
+
+  const handleDownloadImage = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!data) return;
+
+    const targetUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
+    const filename = `TOP5_PREȚURI_COMPETITORI_${data.week || 'WK44'}_${data.year || '2026'}.png`;
+
+    setIsDownloading(true);
+    try {
+      const res = await fetch(targetUrl);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const blob = await res.blob();
+
+      const isIOS = isIOSDevice();
+      const file = new File([blob], filename, { type: 'image/png' });
+
+      // iOS Web Share API pathway (Safari iOS 14+) - keeps user inside the app
+      if (isIOS && typeof navigator.share === 'function' && navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({
+            files: [file],
+            title: filename,
+            text: `Fresh Meat Retail BI — Raport Executiv ${data.week} ${data.year}`
+          });
+          setDownloadToast({ message: 'Imagine partajată / salvată cu succes!', type: 'success' });
+        } catch (shareErr: any) {
+          // If the user cancelled the share sheet, AbortError is thrown — this is normal and safe
+          if (shareErr?.name !== 'AbortError') {
+            console.warn('Eroare la partajare iOS:', shareErr);
+            // Non-navigating fallback: trigger blob download
+            triggerBlobDownload(blob, filename);
+          }
+        }
+      } else if (isIOS) {
+        // Fallback for iOS environments without file sharing:
+        // NEVER navigate window to raw PNG. Open zoom modal with instruction to long-press and save to Photos.
+        setZoomImage(true);
+        setDownloadToast({ 
+          message: 'Pe iOS, mențineți apăsată imaginea mărită și selectați „Salvați în Poze”.', 
+          type: 'info' 
+        });
+      } else {
+        // Windows, Android, macOS Desktop, Linux: programmatic blob download
+        triggerBlobDownload(blob, filename);
+        setDownloadToast({ message: 'Descărcare inițiată cu succes.', type: 'info' });
+      }
+    } catch (err) {
+      console.error('Eroare descărcare imagine:', err);
+      setDownloadToast({ 
+        message: 'Nu s-a putut descărca automat. Puteți salva imaginea prin click dreapta sau atingere lungă.', 
+        type: 'error' 
+      });
+    } finally {
+      setIsDownloading(false);
+      setTimeout(() => {
+        setDownloadToast(null);
+      }, 4500);
+    }
+  };
+
+  const handleDownloadJson = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (!data) return;
+    const exportPath = activeRelease?.export_path ? getAssetUrl(activeRelease.export_path) : getAssetUrl('/data/bi_dashboard_export.json');
+    const filename = `bi_export_${data.week}_${data.year}.json`;
+    try {
+      const res = await fetch(exportPath);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const blob = await res.blob();
+      triggerBlobDownload(blob, filename);
+      setDownloadToast({ message: 'Export JSON descărcat.', type: 'info' });
+    } catch (err) {
+      console.error('Eroare descărcare JSON:', err);
+    } finally {
+      setTimeout(() => setDownloadToast(null), 3000);
+    }
+  };
 
   const loadDashboardData = async () => {
     setLoading(true);
@@ -262,21 +374,28 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a 
-              href={activeRelease?.export_path ? getAssetUrl(activeRelease.export_path) : getAssetUrl('/data/bi_dashboard_export.json')}
-              download={`bi_export_${data.week}_${data.year}.json`}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition"
+            <button 
+              type="button"
+              onClick={handleDownloadJson}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition cursor-pointer"
               title="Descarcă exportul JSON validat"
             >
               <FileCode className="w-3.5 h-3.5 text-emerald-400" /> Export JSON
-            </a>
-            <a 
-              href={pngUrl}
-              download={`TOP5_PREȚURI_COMPETITORI_${data.week}_${data.year}.png`}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md transition"
+            </button>
+            <button 
+              type="button"
+              onClick={handleDownloadImage}
+              disabled={isDownloading}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
+              title="Descarcă sau salvează imaginea PNG fără părăsirea aplicației"
             >
-              <Download className="w-3.5 h-3.5" /> Descarcă PNG 4:3
-            </a>
+              {isDownloading ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Download className="w-3.5 h-3.5" />
+              )}
+              <span>{isDownloading ? 'Se procesează...' : 'Descarcă PNG 4:3'}</span>
+            </button>
             <div className="text-right hidden sm:block">
               <span className="text-[11px] text-slate-400 block">Perioadă analizată</span>
               <span className="text-xs font-medium text-slate-200">{data.calendar_period}</span>
@@ -391,13 +510,20 @@ export default function App() {
                   >
                     <Maximize2 className="w-3.5 h-3.5" /> Mărește
                   </button>
-                  <a 
-                    href={pngUrl}
-                    download={`TOP5_PREȚURI_COMPETITORI_${data.week}_${data.year}.png`}
-                    className="px-3 py-1.5 rounded bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold text-white inline-flex items-center gap-1.5 transition shadow"
+                  <button 
+                    type="button"
+                    onClick={handleDownloadImage}
+                    disabled={isDownloading}
+                    className="px-3 py-1.5 rounded bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-xs font-semibold text-white inline-flex items-center gap-1.5 transition shadow cursor-pointer"
+                    title="Salvează imaginea PNG"
                   >
-                    <Download className="w-3.5 h-3.5" /> Salvează imaginea
-                  </a>
+                    {isDownloading ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <Download className="w-3.5 h-3.5" />
+                    )}
+                    <span>{isDownloading ? 'Se procesează...' : 'Salvează imaginea'}</span>
+                  </button>
                 </div>
               </div>
 
@@ -751,19 +877,47 @@ export default function App() {
               alt={`TOP 5 ARTICOLE – PREȚURI COMPETITORI | ${data.week} ${data.year}`} 
               className="max-h-[85vh] w-auto object-contain rounded-lg shadow-2xl border border-slate-700" 
             />
-            <div className="mt-2 text-xs text-slate-400 flex items-center gap-4">
+            <div className="mt-2 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
               <span>Raport de aspect 4:3</span>
               <span>Rezoluție: 1448 × 1086 px</span>
-              <a 
-                href={pngUrl} 
-                download={`TOP5_PREȚURI_COMPETITORI_${data.week}_${data.year}.png`}
-                className="text-emerald-400 hover:underline font-semibold"
-                onClick={e => e.stopPropagation()}
+              <button 
+                type="button"
+                onClick={handleDownloadImage}
+                disabled={isDownloading}
+                className="text-emerald-400 hover:text-emerald-300 hover:underline font-semibold flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
               >
-                Descarcă fișierul PNG original
-              </a>
+                {isDownloading ? (
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                ) : (
+                  <Download className="w-3.5 h-3.5" />
+                )}
+                <span>{isDownloading ? 'Se procesează...' : 'Descarcă / Salvează imaginea'}</span>
+              </button>
+              <span className="text-[11px] text-slate-500 hidden sm:inline">(Pe iPhone: «Salvează imaginea» sau menține apăsat)</span>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Download Notification Toast */}
+      {downloadToast && (
+        <div 
+          className="fixed bottom-6 right-6 z-50 max-w-sm bg-slate-900/95 backdrop-blur border border-slate-700 text-slate-100 px-4 py-3 rounded-lg shadow-2xl flex items-center gap-3 transition-all"
+          role="status"
+          aria-live="polite"
+        >
+          {downloadToast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />}
+          {downloadToast.type === 'info' && <Info className="w-4 h-4 text-sky-400 shrink-0" />}
+          {downloadToast.type === 'error' && <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />}
+          <p className="text-xs leading-relaxed flex-1">{downloadToast.message}</p>
+          <button 
+            type="button"
+            onClick={() => setDownloadToast(null)} 
+            className="text-slate-400 hover:text-white text-xs p-1 cursor-pointer"
+            aria-label="Închide notificarea"
+          >
+            ✕
+          </button>
         </div>
       )}
 
