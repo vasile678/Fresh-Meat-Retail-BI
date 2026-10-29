@@ -228,40 +228,41 @@ export default function EuPorkMarketModule({
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
       {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40 pt-[max(0.25rem,env(safe-area-inset-top))]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
             <button
               type="button"
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer shrink-0"
               title="Revenire la ecranul principal"
             >
               <ArrowLeft className="w-4 h-4 text-emerald-400" />
-              <span>Înapoi la dashboard</span>
+              <span className="hidden xs:inline sm:inline">Înapoi la dashboard</span>
+              <span className="inline xs:hidden sm:hidden">Înapoi</span>
             </button>
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold text-white tracking-tight">EU PORK MARKET</h1>
-                <span className="px-2 py-0.5 text-xs rounded-full bg-amber-500/20 text-amber-400 font-semibold border border-amber-500/30 flex items-center gap-1">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">EU PORK MARKET</h1>
+                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-amber-500/20 text-amber-400 font-semibold border border-amber-500/30 flex items-center gap-1 shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5" /> {data.status_badge || 'ACTIVE_LOCKED'}
                 </span>
-                <span className="px-2 py-0.5 text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30">
+                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 shrink-0">
                   {data.release_status}
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
-                8 COTAȚII EUROPENE DE REFERINȚĂ | MASTER OVERLAY DETERMINIST (CONFIG_MANIFEST)
+              <p className="text-[11px] sm:text-xs text-slate-400 truncate">
+                8 COTAȚII EUROPENE DE REFERINȚĂ | CONFIG_MANIFEST
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <button
               type="button"
               onClick={downloadJsonExport}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium border border-slate-700 transition cursor-pointer"
               title="Descarcă datele în format JSON"
             >
               <FileCode className="w-3.5 h-3.5 text-sky-400" />
@@ -271,7 +272,7 @@ export default function EuPorkMarketModule({
               type="button"
               onClick={() => onDownloadImage(imageUrl, filename)}
               disabled={isDownloading}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-md bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
               title="Descarcă sau salvează imaginea raportului 4:3"
             >
               {isDownloading ? (
@@ -279,52 +280,52 @@ export default function EuPorkMarketModule({
               ) : (
                 <Download className="w-3.5 h-3.5" />
               )}
-              <span>{isDownloading ? 'Se procesează...' : 'Salvează imaginea 4:3'}</span>
+              <span>{isDownloading ? 'Se procesează...' : 'Salvează PNG'}</span>
             </button>
           </div>
         </div>
 
-        {/* Tab switcher */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex gap-2 border-t border-slate-800/60 pt-1 overflow-x-auto">
+        {/* Tab switcher: scrollabil orizontal pe mobil */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-1.5 sm:gap-2 border-t border-slate-800/60 pt-1 overflow-x-auto no-scrollbar touch-scroll whitespace-nowrap">
           <button
             onClick={() => setSelectedTab('visual')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'visual'
                 ? 'border-amber-500 text-amber-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Eye className="w-3.5 h-3.5" /> Raport Vizual & Executiv
+            <Eye className="w-3.5 h-3.5" /> Raport Vizual
           </button>
           <button
             onClick={() => setSelectedTab('benchmarks')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'benchmarks'
                 ? 'border-amber-500 text-amber-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Scale className="w-3.5 h-3.5" /> Cotații Oficiale ({data.rows?.length || 8} Piețe UE)
+            <Scale className="w-3.5 h-3.5" /> Cotații Oficiale (8 Piețe)
           </button>
           <button
             onClick={() => setSelectedTab('takeaways')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'takeaways'
                 ? 'border-amber-500 text-amber-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <TrendingUp className="w-3.5 h-3.5" /> Semnale de Piață & Implicații
+            <TrendingUp className="w-3.5 h-3.5" /> Semnale de Piață
           </button>
           <button
             onClick={() => setSelectedTab('governance')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'governance'
                 ? 'border-amber-500 text-amber-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <FileCheck2 className="w-3.5 h-3.5" /> Guvernanță & Programare Joi
+            <FileCheck2 className="w-3.5 h-3.5" /> Guvernanță & Programare
           </button>
         </div>
       </header>
@@ -508,8 +509,11 @@ export default function EuPorkMarketModule({
               </span>
             </div>
 
-            <div className="overflow-x-auto rounded-lg border border-slate-800">
-              <table className="w-full text-left text-xs text-slate-300">
+            <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800">
+              <div className="sm:hidden px-3 py-1.5 bg-slate-800/40 border-b border-slate-800 text-[11px] text-slate-400 text-center flex items-center justify-center gap-1">
+                <span>← Glisați orizontal pentru toate cele 8 piețe UE →</span>
+              </div>
+              <table className="w-full text-left text-xs text-slate-300 min-w-[680px]">
                 <thead className="bg-slate-800/80 text-slate-200 uppercase font-semibold text-[11px] border-b border-slate-700">
                   <tr>
                     <th className="py-3 px-3">#</th>

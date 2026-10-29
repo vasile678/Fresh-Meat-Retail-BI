@@ -147,58 +147,59 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
       {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40 pt-[max(0.25rem,env(safe-area-inset-top))]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
             <button
               type="button"
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer shrink-0"
               title="Revenire la meniul principal"
             >
               <ArrowLeft className="w-4 h-4 text-emerald-400" />
-              <span>Înapoi la dashboard</span>
+              <span className="hidden xs:inline sm:inline">Înapoi la dashboard</span>
+              <span className="inline xs:hidden sm:hidden">Înapoi</span>
             </button>
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold text-white tracking-tight">RETAIL MEDIA MONITOR</h1>
-                <span className="px-2 py-0.5 text-xs rounded-full bg-sky-500/20 text-sky-400 font-semibold border border-sky-500/30 flex items-center gap-1">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">RETAIL MEDIA MONITOR</h1>
+                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-sky-500/20 text-sky-400 font-semibold border border-sky-500/30 flex items-center gap-1 shrink-0">
                   <CheckCircle2 className="w-3.5 h-3.5" /> MONITORING_ACTIVE
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
-                MONITORIZARE CATALOG PROMOȚIONAL, APLICAȚII RETAIL & PRESĂ DE SPECIALITATE
+              <p className="text-[11px] sm:text-xs text-slate-400 truncate">
+                CATALOAGE PROMOȚIONALE 7 RETAILERI & PRESĂ
               </p>
             </div>
           </div>
         </div>
 
-        {/* Tab switcher */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex gap-2 border-t border-slate-800/60 pt-1">
+        {/* Tab switcher: scrollabil orizontal fără bară de scroll pe mobil */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-1.5 sm:gap-2 border-t border-slate-800/60 pt-1 overflow-x-auto no-scrollbar touch-scroll whitespace-nowrap">
           <button
             onClick={() => setSelectedTab('catalogs')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'catalogs'
                 ? 'border-sky-500 text-sky-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Store className="w-3.5 h-3.5" /> Cataloage & Aplicații Retaileri
+            <Store className="w-3.5 h-3.5" /> Cataloage & Aplicații (7 Retaileri)
           </button>
           <button
             onClick={() => setSelectedTab('press')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'press'
                 ? 'border-sky-500 text-sky-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Newspaper className="w-3.5 h-3.5" /> Presă Specializată & Canale Media
+            <Newspaper className="w-3.5 h-3.5" /> Presă Specializată
           </button>
           <button
             onClick={() => setSelectedTab('methodology')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'methodology'
                 ? 'border-sky-500 text-sky-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'

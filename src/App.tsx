@@ -525,51 +525,53 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
       {/* Top Corporate Nav */}
-      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+      <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40 pt-[max(0.25rem,env(safe-area-inset-top))]">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
             <button
               type="button"
               onClick={() => navigateToModule('home')}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer shrink-0"
               title="Revenire la ecranul principal"
             >
               <ArrowLeft className="w-4 h-4 text-emerald-400" />
-              <span>Înapoi la dashboard</span>
+              <span className="hidden xs:inline sm:inline">Înapoi la dashboard</span>
+              <span className="inline xs:hidden sm:hidden">Înapoi</span>
             </button>
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
             <img 
               src={getAssetUrl('/icon-192.png')} 
               alt="Fresh Meat Retail BI Logo" 
-              className="w-10 h-10 rounded-lg object-contain shadow-lg shadow-emerald-900/40 bg-slate-900 border border-slate-700/60"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg object-contain shadow-lg shadow-emerald-900/40 bg-slate-900 border border-slate-700/60 shrink-0"
             />
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold text-white tracking-tight">Promo Weekly</h1>
-                <span className="px-2 py-0.5 text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 flex items-center gap-1">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">Promo Weekly</h1>
+                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 flex items-center gap-1 shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5" /> {data.release_status}
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
-                TOP 5 ARTICOLE – PREȚURI COMPETITORI | {data.week} {data.year} (±3 ZILE)
+              <p className="text-[11px] sm:text-xs text-slate-400 truncate">
+                TOP 5 ARTICOLE – PREȚURI COMPETITORI | {data.week} {data.year}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 shrink-0">
             <button 
               type="button"
               onClick={handleDownloadJson}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition cursor-pointer"
               title="Descarcă exportul JSON validat"
             >
-              <FileCode className="w-3.5 h-3.5 text-emerald-400" /> Export JSON
+              <FileCode className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="hidden sm:inline">Export</span> JSON
             </button>
             <button 
               type="button"
               onClick={handleDownloadImage}
               disabled={isDownloading}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
               title="Descarcă sau salvează imaginea PNG fără părăsirea aplicației"
             >
               {isDownloading ? (
@@ -577,30 +579,30 @@ export default function App() {
               ) : (
                 <Download className="w-3.5 h-3.5" />
               )}
-              <span>{isDownloading ? 'Se procesează...' : 'Descarcă PNG 4:3'}</span>
+              <span>{isDownloading ? 'Se procesează...' : 'Descarcă PNG'}</span>
             </button>
-            <div className="text-right hidden sm:block">
+            <div className="text-right hidden lg:block">
               <span className="text-[11px] text-slate-400 block">Perioadă analizată</span>
               <span className="text-xs font-medium text-slate-200">{data.calendar_period}</span>
             </div>
           </div>
         </div>
 
-        {/* Tab switcher */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex gap-2 border-t border-slate-800/60 pt-1">
+        {/* Tab switcher: scrollabil orizontal fără bară de scroll pe mobil */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-1.5 sm:gap-2 border-t border-slate-800/60 pt-1 overflow-x-auto no-scrollbar touch-scroll whitespace-nowrap">
           <button 
             onClick={() => setSelectedTab('image')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'image' 
                 ? 'border-emerald-500 text-emerald-400 bg-slate-800/40' 
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Eye className="w-3.5 h-3.5" /> Imagine PNG 4:3 & Export Executiv
+            <Eye className="w-3.5 h-3.5" /> Imagine PNG & Export
           </button>
           <button 
             onClick={() => setSelectedTab('matrix')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'matrix' 
                 ? 'border-emerald-500 text-emerald-400 bg-slate-800/40' 
                 : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -610,23 +612,23 @@ export default function App() {
           </button>
           <button 
             onClick={() => setSelectedTab('receipts')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'receipts' 
                 ? 'border-emerald-500 text-emerald-400 bg-slate-800/40' 
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <ShieldCheck className="w-3.5 h-3.5" /> Chitanțe SHA-256 & Audit Gate
+            <ShieldCheck className="w-3.5 h-3.5" /> Chitanțe & Audit Gate
           </button>
           <button 
             onClick={() => setSelectedTab('insights')}
-            className={`px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-2 ${
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'insights' 
                 ? 'border-emerald-500 text-emerald-400 bg-slate-800/40' 
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <TrendingDown className="w-3.5 h-3.5" /> Concluzii & Analiză Comercială
+            <TrendingDown className="w-3.5 h-3.5" /> Concluzii Comerciale
           </button>
         </div>
       </header>
@@ -796,8 +798,11 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs border-collapse">
+              <div className="overflow-x-auto touch-scroll">
+                <div className="sm:hidden px-4 py-1.5 bg-slate-800/40 border-b border-slate-800 text-[11px] text-slate-400 text-center flex items-center justify-center gap-1">
+                  <span>← Glisați orizontal pentru toți cei 5 retaileri →</span>
+                </div>
+                <table className="w-full text-left text-xs border-collapse min-w-[620px]">
                   <thead>
                     <tr className="bg-slate-800/80 text-slate-300 border-b border-slate-700 font-semibold">
                       <th className="py-3 px-4 w-44">ARTICOL</th>
