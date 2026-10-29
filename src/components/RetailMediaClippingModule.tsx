@@ -8,22 +8,36 @@ import {
   CheckCircle2, 
   Calendar, 
   Tag, 
-  Layers,
-  Search
+  Layers
 } from 'lucide-react';
 
 interface RetailMediaClippingModuleProps {
   onBack: () => void;
 }
 
+interface RetailerCatalogInfo {
+  name: string;
+  catalogUrl: string;
+  channel: string;
+  frequency: string;
+  validity: string;
+  app: string;
+  privateBrand: string;
+  monitoredCuts: string[];
+  mechanics: string[];
+}
+
 export default function RetailMediaClippingModule({ onBack }: RetailMediaClippingModuleProps) {
   const [selectedTab, setSelectedTab] = useState<'catalogs' | 'press' | 'methodology'>('catalogs');
 
-  const retailers = [
+  // Exact 7 retaileri monitorizați cu legături directe către cataloagele oficiale
+  const retailers: RetailerCatalogInfo[] = [
     {
       name: 'Kaufland',
+      catalogUrl: 'https://www.kaufland.ro/cataloage-cu-reduceri.html',
       channel: 'Revista Săptămânală & Kaufland Card',
       frequency: 'Miercuri – Marți (Ciclul promoțional principal)',
+      validity: 'Miercuri – Marți',
       app: 'Kaufland Card (Cupoane personalizate & reduceri exclusive)',
       privateBrand: 'K-Purland (Carne 100% din România)',
       monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
@@ -31,17 +45,21 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     },
     {
       name: 'Lidl',
+      catalogUrl: 'https://www.lidl.ro/l/ro/cataloage/',
       channel: 'Catalogul Săptămânal & Lidl Plus',
       frequency: 'Luni – Duminică (Actualizări Luni și Joi)',
+      validity: 'Luni – Duminică',
       app: 'Lidl Plus (Cupoane activate în aplicație)',
       privateBrand: 'Cămara Noastră & Pikok',
       monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
       mechanics: ['Cupon Lidl Plus (-20% / -25%)', 'Promoție XXL / Gramaj sporit', 'Super Weekend Lidl']
     },
     {
-      name: 'PENNY',
+      name: 'Penny',
+      catalogUrl: 'https://www.penny.ro/vezi-pliantele-saptamanii',
       channel: 'Pliantul Săptămânal & PENNY Card',
       frequency: 'Miercuri – Marți',
+      validity: 'Miercuri – Marți',
       app: 'PENNY Card (Preț redus cu scanare card la casă)',
       privateBrand: 'Hanul Boieresc (Carne cu origine românească)',
       monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
@@ -49,8 +67,10 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     },
     {
       name: 'Carrefour',
+      catalogUrl: 'https://carrefour.ro/corporate/cataloage',
       channel: 'Catalog Hipermarket / Market & ActForFood',
       frequency: 'Joi – Miercuri',
+      validity: 'Joi – Miercuri',
       app: 'ActForFood / Aplicația Carrefour',
       privateBrand: 'Filiera Calității Carrefour & Drag de România',
       monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
@@ -58,12 +78,36 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     },
     {
       name: 'Auchan',
+      catalogUrl: 'https://www.auchan.ro/cataloage',
       channel: 'Catalogul Promoțional & MyClub Auchan',
       frequency: 'Miercuri – Marți',
+      validity: 'Miercuri – Marți',
       app: 'MyClub Auchan (Bani înapoi pe cardul de fidelitate)',
       privateBrand: 'Filiera Auchan & Pouce',
       monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
       mechanics: ['Cashback pe card MyClub', 'Preț redus direct la casă', 'Promoții tematice de sezon']
+    },
+    {
+      name: 'Profi',
+      catalogUrl: 'https://www.profi.ro/reviste-ro/',
+      channel: 'Revista Promoțională & Profi App',
+      frequency: 'Miercuri – Marți (Ediții Standard / Loco / City)',
+      validity: 'Miercuri – Marți',
+      app: 'Aplicația Profi (Cuponiada & reduceri digitale)',
+      privateBrand: 'Proxi & Ferma din Deal',
+      monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
+      mechanics: ['Preț special cu aplicația Profi', 'Oferte de weekend', 'Reducere pachet']
+    },
+    {
+      name: 'Mega Image',
+      catalogUrl: 'https://revista.mega-image.ro/',
+      channel: 'Revista Săptămânală & Card Connect',
+      frequency: 'Joi – Miercuri',
+      validity: 'Joi – Miercuri',
+      app: 'Aplicația Mega Image & Card Connect',
+      privateBrand: 'Gusturi Românești & Mega Apetit',
+      monitoredCuts: ['Spată porc f.o.', 'Pulpă porc f.o.', 'Cotlet porc f.o.', 'Ceafă porc f.o.', 'Piept pui dezosat'],
+      mechanics: ['Preț Card Connect', 'Promoție de weekend', 'Reduceri la pachete proaspete']
     }
   ];
 
@@ -174,25 +218,48 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
             <div className="bg-slate-900 rounded-xl p-6 border border-slate-800 shadow-xl">
               <div className="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2 mb-6">
                 <div>
-                  <h2 className="text-base font-semibold text-white">Monitorizare Promoțională Top 5 Retaileri</h2>
+                  <h2 className="text-base font-semibold text-white">Monitorizare Promoțională 7 Retaileri</h2>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Urmărirea cataloagelor tipărite, edițiilor digitale și campaniilor exclusive din aplicațiile mobile.
+                    Acces direct la cataloagele săptămânale oficiale, edițiile digitale și campaniile exclusive din aplicațiile mobile.
                   </p>
                 </div>
-                <span className="text-xs text-slate-400">5 retaileri monitorizați săptămânal</span>
+                <span className="text-xs text-slate-400 font-medium">7 retaileri monitorizați săptămânal</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {retailers.map(r => (
-                  <div key={r.name} className="bg-slate-950 rounded-xl p-5 border border-slate-800 flex flex-col justify-between hover:border-sky-500/40 transition">
+                  <div key={r.name} className="bg-slate-950 rounded-xl p-5 border border-slate-800 flex flex-col justify-between hover:border-sky-500/50 transition-all duration-200 shadow-lg group">
                     <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-base font-bold text-white">{r.name}</h3>
-                        <span className="px-2 py-0.5 text-[11px] rounded bg-sky-500/10 text-sky-400 font-semibold border border-sky-500/20">
-                          {r.channel}
-                        </span>
+                      {/* Retailer Header & Channel Badge (Clickable link to catalog) */}
+                      <div className="flex items-start justify-between gap-2 mb-3">
+                        <div>
+                          <h3 className="text-base font-bold text-white tracking-tight">{r.name}</h3>
+                          {r.validity && (
+                            <span className="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5">
+                              <Calendar className="w-3 h-3 text-sky-400 shrink-0" />
+                              <span>Ciclu: <strong className="text-slate-300 font-medium">{r.validity}</strong></span>
+                            </span>
+                          )}
+                        </div>
+                        {r.catalogUrl ? (
+                          <a
+                            href={r.catalogUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-2.5 py-1 text-[11px] rounded bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 hover:text-white font-semibold border border-sky-500/30 hover:border-sky-500/50 inline-flex items-center gap-1 transition shadow-sm cursor-pointer"
+                            title={`Deschide ${r.channel} într-o filă nouă`}
+                          >
+                            <span className="truncate max-w-[140px]">{r.channel}</span>
+                            <ExternalLink className="w-3 h-3 shrink-0" />
+                          </a>
+                        ) : (
+                          <span className="px-2 py-0.5 text-[11px] rounded bg-slate-800 text-slate-400 border border-slate-700">
+                            Catalog indisponibil
+                          </span>
+                        )}
                       </div>
                       
+                      {/* Retailer Details */}
                       <div className="space-y-2 text-xs text-slate-300">
                         <div>
                           <span className="text-slate-500 block text-[11px]">Periodicitate catalog:</span>
@@ -208,11 +275,12 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                         </div>
                       </div>
 
+                      {/* Monitored Promotional Mechanics */}
                       <div className="mt-4 pt-3 border-t border-slate-800/80">
                         <span className="text-slate-500 block text-[11px] mb-1.5 font-semibold">Mecanisme promoționale urmărite:</span>
                         <div className="flex flex-wrap gap-1.5">
                           {r.mechanics.map((m, idx) => (
-                            <span key={idx} className="px-2 py-0.5 text-[11px] rounded bg-slate-800 text-slate-300 border border-slate-700">
+                            <span key={idx} className="px-2 py-0.5 text-[11px] rounded bg-slate-800/80 text-slate-300 border border-slate-700">
                               {m}
                             </span>
                           ))}
@@ -220,9 +288,27 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                       </div>
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 flex items-center justify-between">
-                      <span>Articole KVI: 5 monitorizate</span>
-                      <span className="text-emerald-400 font-semibold">ACTIV</span>
+                    {/* Bottom Action: KVI Counter & Deschide catalogul ↗ button */}
+                    <div className="mt-5 pt-3.5 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                      <div className="text-[11px] text-slate-400">
+                        <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> 5 KVI active
+                        </span>
+                      </div>
+                      {r.catalogUrl ? (
+                        <a
+                          href={r.catalogUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold shadow-md transition-all hover:shadow-sky-950/40 cursor-pointer group/btn"
+                          title={`Deschide cel mai recent catalog promoțional ${r.name}`}
+                        >
+                          <span>Deschide catalogul</span>
+                          <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                        </a>
+                      ) : (
+                        <span className="text-xs text-slate-500 italic">Catalog indisponibil</span>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -287,7 +373,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                   <span>1. Fereastra de Monitorizare</span>
                 </div>
                 <p className="leading-relaxed text-slate-400">
-                  Ciclul de monitorizare este sincronizat cu săptămâna ISO (Luni – Duminică). Cataloagele sunt auditate în ziua lansării promoționale (miercuri pentru Kaufland/PENNY, luni/joi pentru Lidl, joi pentru Carrefour).
+                  Ciclul de monitorizare este sincronizat cu săptămâna ISO (Luni – Duminică). Cataloagele sunt auditate în ziua lansării promoționale (miercuri pentru Kaufland/PENNY/Profi, luni/joi pentru Lidl, joi pentru Carrefour/Mega Image).
                 </p>
               </div>
 
