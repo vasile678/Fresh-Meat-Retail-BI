@@ -169,7 +169,7 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
             </div>
           </button>
 
-          {/* Card 2: 🐷 EU PORK MARKET WEEKLY */}
+          {/* Card 2: 🐷 EU PORK MARKET */}
           <button
             type="button"
             onClick={() => onSelectModule('eu-pork')}
@@ -180,7 +180,7 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
                 <PorkTrendIcon className="w-20 h-20" />
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-amber-400 transition-colors">
-                EU PORK MARKET WEEKLY
+                EU PORK MARKET
               </h2>
             </div>
             
@@ -190,7 +190,7 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
             </div>
           </button>
 
-          {/* Card 3: 📰 RETAIL MEDIA CLIPPING WEEKLY */}
+          {/* Card 3: 📰 RETAIL MEDIA MONITOR */}
           <button
             type="button"
             onClick={() => onSelectModule('clipping')}
@@ -201,7 +201,7 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
                 <ClippingSearchIcon className="w-20 h-20" />
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-sky-400 transition-colors">
-                RETAIL MEDIA CLIPPING WEEKLY
+                RETAIL MEDIA MONITOR
               </h2>
             </div>
             

@@ -243,7 +243,7 @@ export default function EuPorkMarketModule({
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold text-white tracking-tight">EU Pork Market Weekly</h1>
+                <h1 className="text-lg font-bold text-white tracking-tight">EU PORK MARKET</h1>
                 <span className="px-2 py-0.5 text-xs rounded-full bg-amber-500/20 text-amber-400 font-semibold border border-amber-500/30 flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" /> {data.status_badge || 'ACTIVE_LOCKED'}
                 </span>
@@ -737,7 +737,7 @@ export default function EuPorkMarketModule({
       {/* Footer */}
       <footer className="border-t border-slate-800/80 bg-slate-950 py-4 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-          <span>Fresh Meat Retail BI — Modul EU Pork Market Weekly</span>
+          <span>Fresh Meat Retail BI — Modul EU PORK MARKET</span>
           <span>Guvernat prin <code>CONFIG_MANIFEST.json</code> | LUMI 4.2 Production</span>
         </div>
       </footer>

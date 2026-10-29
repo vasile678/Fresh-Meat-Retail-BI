@@ -118,7 +118,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold text-white tracking-tight">Retail Media Clipping Weekly</h1>
+                <h1 className="text-lg font-bold text-white tracking-tight">RETAIL MEDIA MONITOR</h1>
                 <span className="px-2 py-0.5 text-xs rounded-full bg-sky-500/20 text-sky-400 font-semibold border border-sky-500/30 flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> MONITORING_ACTIVE
                 </span>
@@ -319,7 +319,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
       {/* Footer */}
       <footer className="border-t border-slate-800/80 bg-slate-950 py-4 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-          <span>Fresh Meat Retail BI — Modul Retail Media Clipping Weekly</span>
+          <span>Fresh Meat Retail BI — Modul RETAIL MEDIA MONITOR</span>
           <span>Pilon de Inteligență Competitivă Promoțională</span>
         </div>
       </footer>
