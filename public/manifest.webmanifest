@@ -1,0 +1,21 @@
+{
+  "name": "Fresh Meat Retail BI",
+  "short_name": "Fresh Meat BI",
+  "start_url": "/Fresh-Meat-Retail-BI/",
+  "scope": "/Fresh-Meat-Retail-BI/",
+  "display": "standalone",
+  "background_color": "#111820",
+  "theme_color": "#111820",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
