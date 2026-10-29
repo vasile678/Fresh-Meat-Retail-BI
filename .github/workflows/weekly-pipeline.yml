@@ -1,0 +1,106 @@
+name: Fresh Meat BI - Weekly Controlled Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Săptămâna de procesat (ex: WK45)"
+        required: true
+        default: "WK44"
+      year:
+        description: "Anul calendaristic"
+        required: true
+        default: "2026"
+      domain:
+        description: "Domeniul de analiză"
+        required: true
+        type: choice
+        options:
+          - PROMO
+          - EU_PORK_MARKET
+        default: PROMO
+      dataset_path:
+        description: "Calea către fișierul DATASET / LOCK"
+        required: true
+        default: "fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_WK44.json"
+      research_path:
+        description: "Calea către chitanța RESEARCH (pentru Promo)"
+        required: false
+        default: "fresh_meat_bi/RESEARCH_RECEIPT_WK44.json"
+      reconciliation_path:
+        description: "Calea către chitanța RECONCILIATION (pentru Promo)"
+        required: false
+        default: "fresh_meat_bi/RECONCILIATION_RECEIPT_WK44.json"
+      source_path:
+        description: "Calea către chitanța SOURCE (pentru EU Pork Market)"
+        required: false
+        default: ""
+      visual_path:
+        description: "Calea către chitanța VISUAL (pentru EU Pork Market)"
+        required: false
+        default: ""
+      publish:
+        description: "Publică atomic rezultatele în dashboard (doar la RELEASE_PASS)"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  weekly-pipeline:
+    name: Execute Weekly Controlled Pipeline
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'fresh_meat_bi/requirements.txt'
+
+      - name: Install system fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-dejavu-core
+
+      - name: Install Python dependencies
+        run: pip install -r fresh_meat_bi/requirements.txt
+
+      - name: Run Weekly Pipeline Control Suite (Etapa 4 Test Cases)
+        run: |
+          python3 fresh_meat_bi/test_weekly_pipeline.py
+
+      - name: Execute Weekly Controlled Pipeline
+        run: |
+          ARGS="--week ${{ inputs.week }} --year ${{ inputs.year }} --domain ${{ inputs.domain }} --dataset ${{ inputs.dataset_path }}"
+          
+          if [ -n "${{ inputs.research_path }}" ]; then
+            ARGS="$ARGS --research ${{ inputs.research_path }}"
+          fi
+          if [ -n "${{ inputs.reconciliation_path }}" ]; then
+            ARGS="$ARGS --reconciliation ${{ inputs.reconciliation_path }}"
+          fi
+          if [ -n "${{ inputs.source_path }}" ]; then
+            ARGS="$ARGS --source ${{ inputs.source_path }}"
+          fi
+          if [ -n "${{ inputs.visual_path }}" ]; then
+            ARGS="$ARGS --visual ${{ inputs.visual_path }}"
+          fi
+          if [ "${{ inputs.publish }}" = "true" ]; then
+            ARGS="$ARGS --publish"
+          fi
+
+          echo "Running pipeline: python3 fresh_meat_bi/weekly_pipeline.py $ARGS"
+          python3 fresh_meat_bi/weekly_pipeline.py $ARGS
+
+      - name: Verify Published Dashboard Export
+        if: ${{ inputs.publish }}
+        run: |
+          test -f public/data/bi_dashboard_export.json
+          echo "Verified atomic publication of bi_dashboard_export.json"

@@ -1,0 +1,13 @@
+{
+  "release_id": "2026/WK44_16ebcd3c",
+  "week": "WK44",
+  "year": 2026,
+  "published_at_utc": "2026-10-29T05:49:51.716194+00:00",
+  "export_path": "/releases/2026/WK44_16ebcd3c/bi_dashboard_export.json",
+  "image_path": "/releases/2026/WK44_16ebcd3c/TOP5_PREȚURI_COMPETITORI_WK44_2026.png",
+  "release_receipt_path": "/releases/2026/WK44_16ebcd3c/release_receipt.json",
+  "dataset_sha256": "16ebcd3c4a31b6f861e45358d48603cc0156d797cc4fddff9ff4793b57b9b915",
+  "output_sha256": "59b63464598939e65c6798d14065568a63e5ffde806e90d2f6fe323f64901ae9",
+  "release_receipt_sha256": "379c8ae3c9d62c3bd5e2cb51a80c08e588b8eecaa5d90be1a3f9ef848b5f5ee5",
+  "release_status": "RELEASE_PASS"
+}

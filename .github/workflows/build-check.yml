@@ -62,3 +62,4 @@ jobs:
       - name: Run Fresh Meat BI Engine Regression & Gate Tests
         run: |
           python3 fresh_meat_bi/test_engine.py
+          python3 fresh_meat_bi/test_weekly_pipeline.py
