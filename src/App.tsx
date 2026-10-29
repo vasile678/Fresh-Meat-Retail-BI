@@ -76,6 +76,14 @@ interface DashboardExport {
   };
 }
 
+const getAssetUrl = (path: string): string => {
+  if (!path) return path;
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return `${base}${cleanPath}`;
+};
+
 export default function App() {
   const [data, setData] = useState<DashboardExport | null>(null);
   const [activeRelease, setActiveRelease] = useState<ActiveRelease | null>(null);
@@ -91,17 +99,17 @@ export default function App() {
     setFetchError(null);
     try {
       // 1. Fetch the active atomic pointer with cache-busting
-      const pointerRes = await fetch('/data/active_release.json?t=' + Date.now());
+      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()));
       let pointer: ActiveRelease | null = null;
-      let exportUrl = '/data/bi_dashboard_export.json?v=' + Date.now();
-      let imageUrl = '/TOP5_PREȚURI_COMPETITORI_WK44_2026.png';
+      let exportUrl = getAssetUrl('/data/bi_dashboard_export.json?v=' + Date.now());
+      let imageUrl = getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
 
       if (pointerRes.ok) {
         pointer = await pointerRes.json();
         if (pointer && pointer.release_status === 'RELEASE_PASS') {
           setActiveRelease(pointer);
-          exportUrl = pointer.export_path;
-          imageUrl = pointer.image_path;
+          exportUrl = getAssetUrl(pointer.export_path);
+          imageUrl = getAssetUrl(pointer.image_path);
         } else if (pointer && pointer.release_status === 'FAIL_CLOSED') {
           throw new Error('Pointerul activ indică FAIL_CLOSED (lansare blocată de poartă)');
         }
@@ -225,7 +233,7 @@ export default function App() {
   // 3. Normal RELEASE_PASS State: Displaying authentic verified data
   const retailers = data.retailers || ['Kaufland', 'Lidl', 'PENNY', 'Carrefour', 'Auchan'];
   const kvi = data.kvi || ['Spată porc fără os', 'Pulpă porc fără os', 'Cotlet porc fără os', 'Ceafă porc fără os', 'Piept pui dezosat'];
-  const pngUrl = data.image_url || '/TOP5_PREȚURI_COMPETITORI_WK44_2026.png';
+  const pngUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
@@ -251,7 +259,7 @@ export default function App() {
 
           <div className="flex items-center gap-3">
             <a 
-              href="/data/bi_dashboard_export.json"
+              href={activeRelease?.export_path ? getAssetUrl(activeRelease.export_path) : getAssetUrl('/data/bi_dashboard_export.json')}
               download={`bi_export_${data.week}_${data.year}.json`}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition"
               title="Descarcă exportul JSON validat"

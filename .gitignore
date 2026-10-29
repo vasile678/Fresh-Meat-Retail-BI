@@ -10,3 +10,5 @@ __pycache__/
 *.pyc
 tmp_*
 .tmp_*
+bun.lock
+fresh_meat_bi/*prototype*

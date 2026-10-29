@@ -1,4 +1,4 @@
-name: Fresh Meat BI - Build & Engine Check
+name: Fresh Meat BI - Build, Check & Deploy
 
 on:
   push:
@@ -9,6 +9,12 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-frontend:
@@ -34,7 +40,14 @@ jobs:
         run: |
           test -d dist
           test -f dist/data/bi_dashboard_export.json
+          test -f dist/data/active_release.json
           echo "Fresh Meat BI build and export bundle verified successfully"
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   verify-bi-engine:
     name: Verify Fresh Meat BI Python Engine
@@ -63,3 +76,17 @@ jobs:
         run: |
           python3 fresh_meat_bi/test_engine.py
           python3 fresh_meat_bi/test_weekly_pipeline.py
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: [build-frontend, verify-bi-engine]
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
