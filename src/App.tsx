@@ -7,15 +7,21 @@ import {
   FileCheck2, 
   TrendingDown, 
   AlertCircle, 
-  Info,
-  Maximize2,
-  Copy,
-  AlertTriangle,
-  RefreshCw,
-  FileCode,
-  Loader2,
-  Share2
+  Info, 
+  Maximize2, 
+  Copy, 
+  AlertTriangle, 
+  RefreshCw, 
+  FileCode, 
+  Loader2, 
+  Share2, 
+  ArrowLeft 
 } from 'lucide-react';
+import Homepage from './components/Homepage';
+import EuPorkMarketModule from './components/EuPorkMarketModule';
+import RetailMediaClippingModule from './components/RetailMediaClippingModule';
+import { getAssetUrl } from './utils';
+export { getAssetUrl };
 
 interface CellData {
   retailer: string;
@@ -78,15 +84,8 @@ interface DashboardExport {
   };
 }
 
-const getAssetUrl = (path: string): string => {
-  if (!path) return path;
-  if (path.startsWith('http://') || path.startsWith('https://')) return path;
-  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `${base}${cleanPath}`;
-};
-
 export default function App() {
+  const [activeModule, setActiveModule] = useState<'home' | 'promo' | 'eu-pork' | 'clipping'>('home');
   const [data, setData] = useState<DashboardExport | null>(null);
   const [activeRelease, setActiveRelease] = useState<ActiveRelease | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -94,9 +93,43 @@ export default function App() {
   const [selectedTab, setSelectedTab] = useState<'image' | 'matrix' | 'receipts' | 'insights'>('image');
   const [selectedCell, setSelectedCell] = useState<CellData | null>(null);
   const [zoomImage, setZoomImage] = useState<boolean>(false);
+  const [zoomedImage, setZoomedImage] = useState<{ url: string; title: string } | null>(null);
   const [copiedHash, setCopiedHash] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [downloadToast, setDownloadToast] = useState<{ message: string; type: 'info' | 'success' | 'error' } | null>(null);
+
+  // Sync active module with URL hash (#promo, #eu-pork, #clipping, or empty for home)
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = (window.location.hash || '').replace('#', '');
+      if (hash === 'promo' || hash === 'eu-pork' || hash === 'clipping') {
+        setActiveModule(hash as any);
+      } else if (!hash || hash === 'home') {
+        setActiveModule('home');
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
+  // Keyboard navigation: ESC closes any open zoom modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setZoomImage(false);
+        setZoomedImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const navigateToModule = (mod: 'home' | 'promo' | 'eu-pork' | 'clipping') => {
+    setActiveModule(mod);
+    window.location.hash = mod === 'home' ? '' : mod;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const isIOSDevice = (): boolean => {
     if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
@@ -122,16 +155,11 @@ export default function App() {
     }, 1500);
   };
 
-  const handleDownloadImage = async (e?: React.MouseEvent) => {
+  const handleDownloadCustomImage = async (targetUrl: string, filename: string, e?: React.MouseEvent) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
-    if (!data) return;
-
-    const targetUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
-    const filename = `TOP5_PREȚURI_COMPETITORI_${data.week || 'WK44'}_${data.year || '2026'}.png`;
-
     setIsDownloading(true);
     try {
       const res = await fetch(targetUrl);
@@ -147,27 +175,22 @@ export default function App() {
           await navigator.share({
             files: [file],
             title: filename,
-            text: `Fresh Meat Retail BI — Raport Executiv ${data.week} ${data.year}`
+            text: `Fresh Meat Retail BI — ${filename}`
           });
           setDownloadToast({ message: 'Imagine partajată / salvată cu succes!', type: 'success' });
         } catch (shareErr: any) {
-          // If the user cancelled the share sheet, AbortError is thrown — this is normal and safe
           if (shareErr?.name !== 'AbortError') {
             console.warn('Eroare la partajare iOS:', shareErr);
-            // Non-navigating fallback: trigger blob download
             triggerBlobDownload(blob, filename);
           }
         }
       } else if (isIOS) {
-        // Fallback for iOS environments without file sharing:
-        // NEVER navigate window to raw PNG. Open zoom modal with instruction to long-press and save to Photos.
-        setZoomImage(true);
+        setZoomedImage({ url: targetUrl, title: filename });
         setDownloadToast({ 
           message: 'Pe iOS, mențineți apăsată imaginea mărită și selectați „Salvați în Poze”.', 
           type: 'info' 
         });
       } else {
-        // Windows, Android, macOS Desktop, Linux: programmatic blob download
         triggerBlobDownload(blob, filename);
         setDownloadToast({ message: 'Descărcare inițiată cu succes.', type: 'info' });
       }
@@ -183,6 +206,13 @@ export default function App() {
         setDownloadToast(null);
       }, 4500);
     }
+  };
+
+  const handleDownloadImage = async (e?: React.MouseEvent) => {
+    if (!data) return;
+    const targetUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
+    const filename = `TOP5_PREȚURI_COMPETITORI_${data.week || 'WK44'}_${data.year || '2026'}.png`;
+    handleDownloadCustomImage(targetUrl, filename, e);
   };
 
   const handleDownloadJson = async (e?: React.MouseEvent) => {
@@ -269,20 +299,154 @@ export default function App() {
     return data.cells.find(c => c.retailer === retailer && c.kvi === item);
   };
 
-  // 1. Loading State
+  // 1. Homepage Route: Exactly 3 Cards
+  if (activeModule === 'home') {
+    return (
+      <>
+        <Homepage onSelectModule={navigateToModule} />
+        {downloadToast && (
+          <div 
+            className="fixed bottom-6 right-6 z-50 max-w-sm bg-slate-900/95 backdrop-blur border border-slate-700 text-slate-100 px-4 py-3 rounded-lg shadow-2xl flex items-center gap-3 transition-all"
+            role="status"
+            aria-live="polite"
+          >
+            {downloadToast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />}
+            {downloadToast.type === 'info' && <Info className="w-4 h-4 text-sky-400 shrink-0" />}
+            {downloadToast.type === 'error' && <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />}
+            <p className="text-xs leading-relaxed flex-1">{downloadToast.message}</p>
+            <button 
+              type="button"
+              onClick={() => setDownloadToast(null)} 
+              className="text-slate-400 hover:text-white text-xs p-1 cursor-pointer"
+              aria-label="Închide notificarea"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+      </>
+    );
+  }
+
+  // 2. EU Pork Market Weekly Module Route
+  if (activeModule === 'eu-pork') {
+    return (
+      <>
+        <EuPorkMarketModule
+          onBack={() => navigateToModule('home')}
+          onDownloadImage={handleDownloadCustomImage}
+          onZoomImage={(url, title) => setZoomedImage({ url, title })}
+          isDownloading={isDownloading}
+        />
+        {zoomedImage && (
+          <div 
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setZoomedImage(null)}
+          >
+            <div className="relative max-w-5xl max-h-[90vh] flex flex-col items-center">
+              <button 
+                onClick={() => setZoomedImage(null)}
+                className="absolute -top-10 right-0 text-white hover:text-amber-400 text-sm font-semibold flex items-center gap-1 cursor-pointer"
+              >
+                Închide [ESC]
+              </button>
+              <img 
+                src={zoomedImage.url} 
+                alt={zoomedImage.title} 
+                className="max-h-[85vh] w-auto object-contain rounded-lg shadow-2xl border border-slate-700" 
+              />
+              <div className="mt-2 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
+                <span>Raport de aspect 4:3</span>
+                <span>Rezoluție: 1536 × 1024 px</span>
+                <button 
+                  type="button"
+                  onClick={(e) => handleDownloadCustomImage(zoomedImage.url, 'EU_PORK_MARKET_GOLDEN_REFERENCE_WK38.png', e)}
+                  disabled={isDownloading}
+                  className="text-amber-400 hover:text-amber-300 hover:underline font-semibold flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
+                >
+                  {isDownloading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
+                  <span>{isDownloading ? 'Se procesează...' : 'Descarcă / Salvează imaginea'}</span>
+                </button>
+                <span className="text-[11px] text-slate-500 hidden sm:inline">(Pe iPhone: «Salvează imaginea» sau menține apăsat)</span>
+              </div>
+            </div>
+          </div>
+        )}
+        {downloadToast && (
+          <div 
+            className="fixed bottom-6 right-6 z-50 max-w-sm bg-slate-900/95 backdrop-blur border border-slate-700 text-slate-100 px-4 py-3 rounded-lg shadow-2xl flex items-center gap-3 transition-all"
+            role="status"
+            aria-live="polite"
+          >
+            {downloadToast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />}
+            {downloadToast.type === 'info' && <Info className="w-4 h-4 text-sky-400 shrink-0" />}
+            {downloadToast.type === 'error' && <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />}
+            <p className="text-xs leading-relaxed flex-1">{downloadToast.message}</p>
+            <button 
+              type="button"
+              onClick={() => setDownloadToast(null)} 
+              className="text-slate-400 hover:text-white text-xs p-1 cursor-pointer"
+              aria-label="Închide notificarea"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+      </>
+    );
+  }
+
+  // 3. Retail Media Clipping Weekly Module Route
+  if (activeModule === 'clipping') {
+    return (
+      <>
+        <RetailMediaClippingModule onBack={() => navigateToModule('home')} />
+        {downloadToast && (
+          <div 
+            className="fixed bottom-6 right-6 z-50 max-w-sm bg-slate-900/95 backdrop-blur border border-slate-700 text-slate-100 px-4 py-3 rounded-lg shadow-2xl flex items-center gap-3 transition-all"
+            role="status"
+            aria-live="polite"
+          >
+            {downloadToast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />}
+            {downloadToast.type === 'info' && <Info className="w-4 h-4 text-sky-400 shrink-0" />}
+            {downloadToast.type === 'error' && <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />}
+            <p className="text-xs leading-relaxed flex-1">{downloadToast.message}</p>
+            <button 
+              type="button"
+              onClick={() => setDownloadToast(null)} 
+              className="text-slate-400 hover:text-white text-xs p-1 cursor-pointer"
+              aria-label="Închide notificarea"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+      </>
+    );
+  }
+
+  // 4. Promo Weekly Module Route: Loading State
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center font-sans p-4">
+      <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center font-sans p-4 relative">
+        <button
+          type="button"
+          onClick={() => navigateToModule('home')}
+          className="absolute top-6 left-6 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4 text-emerald-400" />
+          <span>Înapoi la dashboard</span>
+        </button>
         <div className="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center animate-spin mb-4">
           <RefreshCw className="w-6 h-6 text-emerald-400" />
         </div>
-        <h2 className="text-base font-bold text-white tracking-tight">Fresh Meat Retail BI</h2>
+        <h2 className="text-base font-bold text-white tracking-tight">Fresh Meat Retail BI — Promo Weekly</h2>
         <p className="text-xs text-slate-400 mt-1">Se verifică chitanțele criptografice și exportul motorului Python...</p>
       </div>
     );
   }
 
-  // 2. FAIL_CLOSED State (Error or missing verified data)
+  // 5. Promo Weekly: FAIL_CLOSED State (Error or missing verified data)
   const isPass = data && data.release_status === 'RELEASE_PASS' && data.release_gate?.release_status === 'RELEASE_PASS';
 
   if (!isPass || fetchError) {
@@ -291,6 +455,15 @@ export default function App() {
         <header className="border-b border-red-900/50 bg-red-950/20 backdrop-blur sticky top-0 z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => navigateToModule('home')}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              >
+                <ArrowLeft className="w-4 h-4 text-red-400" />
+                <span>Înapoi la dashboard</span>
+              </button>
+              <div className="h-6 w-px bg-slate-800 hidden sm:block" />
               <img 
                 src={getAssetUrl('/icon-192.png')} 
                 alt="Fresh Meat Retail BI Logo" 
@@ -298,7 +471,7 @@ export default function App() {
               />
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-lg font-bold text-white tracking-tight">Fresh Meat Retail BI</h1>
+                  <h1 className="text-lg font-bold text-white tracking-tight">Promo Weekly</h1>
                   <span className="px-2 py-0.5 text-xs rounded-full bg-red-500/20 text-red-400 font-semibold border border-red-500/30 flex items-center gap-1">
                     <AlertTriangle className="w-3.5 h-3.5" /> FAIL_CLOSED
                   </span>
@@ -344,7 +517,7 @@ export default function App() {
     );
   }
 
-  // 3. Normal RELEASE_PASS State: Displaying authentic verified data
+  // 6. Normal RELEASE_PASS State: Displaying authentic verified Promo data
   const retailers = data.retailers || ['Kaufland', 'Lidl', 'PENNY', 'Carrefour', 'Auchan'];
   const kvi = data.kvi || ['Spată porc fără os', 'Pulpă porc fără os', 'Cotlet porc fără os', 'Ceafă porc fără os', 'Piept pui dezosat'];
   const pngUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
@@ -355,6 +528,16 @@ export default function App() {
       <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => navigateToModule('home')}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              title="Revenire la ecranul principal"
+            >
+              <ArrowLeft className="w-4 h-4 text-emerald-400" />
+              <span>Înapoi la dashboard</span>
+            </button>
+            <div className="h-6 w-px bg-slate-800 hidden sm:block" />
             <img 
               src={getAssetUrl('/icon-192.png')} 
               alt="Fresh Meat Retail BI Logo" 
@@ -362,7 +545,7 @@ export default function App() {
             />
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold text-white tracking-tight">Fresh Meat Retail BI</h1>
+                <h1 className="text-lg font-bold text-white tracking-tight">Promo Weekly</h1>
                 <span className="px-2 py-0.5 text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" /> {data.release_status}
                 </span>
