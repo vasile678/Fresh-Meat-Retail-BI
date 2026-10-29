@@ -6,8 +6,8 @@ interface HomepageProps {
   onSelectModule: (module: 'promo' | 'eu-pork' | 'clipping') => void;
 }
 
-// 1. Pictogramă: coș de cumpărături cu etichetă de preț (PROMO WEEKLY)
-function PromoCartTagIcon({ className = "w-20 h-20" }: { className?: string }) {
+// 1. Pictogramă: coș de cumpărături cu etichetă de preț (PROMO WEEKLY) - verde-turcoaz
+function PromoCartTagIcon({ className = "w-16 h-16" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Soft rounded background container */}
@@ -45,8 +45,8 @@ function PromoCartTagIcon({ className = "w-20 h-20" }: { className?: string }) {
   );
 }
 
-// 2. Pictogramă: siluetă de porc cu grafic de evoluție (EU PORK MARKET WEEKLY)
-function PorkTrendIcon({ className = "w-20 h-20" }: { className?: string }) {
+// 2. Pictogramă: siluetă de porc cu grafic de evoluție (EU PORK MARKET) - galben-auriu
+function PorkTrendIcon({ className = "w-16 h-16" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Soft rounded background container */}
@@ -84,8 +84,8 @@ function PorkTrendIcon({ className = "w-20 h-20" }: { className?: string }) {
   );
 }
 
-// 3. Pictogramă: ziar digital cu lupă (RETAIL MEDIA CLIPPING WEEKLY)
-function ClippingSearchIcon({ className = "w-20 h-20" }: { className?: string }) {
+// 3. Pictogramă: document de presă și lupă (RETAIL MEDIA MONITOR) - albastru-cyan
+function ClippingSearchIcon({ className = "w-16 h-16" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Soft rounded background container */}
@@ -129,83 +129,83 @@ function ClippingSearchIcon({ className = "w-20 h-20" }: { className?: string })
 
 export default function Homepage({ onSelectModule }: HomepageProps) {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between font-sans">
-      {/* Top Header: strict minimal — Logo and Title only */}
-      <header className="pt-10 pb-6 sm:pt-16 sm:pb-8">
+    <div className="min-h-screen bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-emerald-500/30">
+      {/* Top Header: Logo și Titlu centrate */}
+      <header className="pt-8 pb-3 sm:pt-10 sm:pb-4 md:pt-12 md:pb-5">
         <div className="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center text-center">
           <img 
             src={getAssetUrl('/icon-192.png')} 
             alt="Fresh Meat Retail BI Logo" 
-            className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-contain shadow-2xl shadow-emerald-950/50 bg-slate-900 border border-slate-800 mb-4"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-contain shadow-2xl shadow-black/60 bg-[#0E1726] border border-slate-800/80 mb-3.5"
           />
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-white tracking-tight">
             Fresh Meat Retail BI
           </h1>
         </div>
       </header>
 
-      {/* Main Content Area: Exactly 3 Large Clickable Cards */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-12 flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full">
+      {/* Main Content Area: Trei carduri compacte centrate (300-320px lățime, ~290px înălțime, spațiu 32-36px) */}
+      <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-4 sm:py-6 md:py-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-8 lg:gap-[34px] w-full max-w-6xl">
           
-          {/* Card 1: 🛒 PROMO WEEKLY */}
+          {/* CARD 1 — PROMO WEEKLY */}
           <button
             type="button"
             onClick={() => onSelectModule('promo')}
-            className="group relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/60 hover:bg-slate-900 text-left transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-950/40 hover:-translate-y-1.5 active:translate-y-0 active:scale-[0.99] cursor-pointer"
+            className="group relative flex flex-col justify-between w-full max-w-[320px] md:w-[310px] lg:w-[315px] h-[290px] p-6 sm:p-7 rounded-2xl bg-[#0E1726] border border-slate-800/80 hover:border-emerald-500/60 hover:bg-[#121E31] transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-950/30 hover:-translate-y-1.5 active:translate-y-0 active:scale-[0.99] cursor-pointer"
           >
-            <div>
-              <div className="text-emerald-400 group-hover:text-emerald-300 transition-colors mb-6">
-                <PromoCartTagIcon className="w-20 h-20" />
+            <div className="flex-1 flex flex-col items-center justify-center text-center pt-2">
+              <div className="text-emerald-400 group-hover:text-emerald-300 transition-colors mb-4 flex items-center justify-center">
+                <PromoCartTagIcon className="w-16 h-16" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors">
+              <h2 className="text-lg font-bold text-white tracking-wide group-hover:text-emerald-400 transition-colors text-center">
                 PROMO WEEKLY
               </h2>
             </div>
             
-            <div className="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-emerald-400 transition-colors">
+            <div className="w-full pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-emerald-400 transition-colors">
               <span>Deschide modulul</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
             </div>
           </button>
 
-          {/* Card 2: 🐷 EU PORK MARKET */}
+          {/* CARD 2 — EU PORK MARKET */}
           <button
             type="button"
             onClick={() => onSelectModule('eu-pork')}
-            className="group relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/60 hover:bg-slate-900 text-left transition-all duration-300 hover:shadow-2xl hover:shadow-amber-950/40 hover:-translate-y-1.5 active:translate-y-0 active:scale-[0.99] cursor-pointer"
+            className="group relative flex flex-col justify-between w-full max-w-[320px] md:w-[310px] lg:w-[315px] h-[290px] p-6 sm:p-7 rounded-2xl bg-[#0E1726] border border-slate-800/80 hover:border-amber-500/60 hover:bg-[#121E31] transition-all duration-300 hover:shadow-2xl hover:shadow-amber-950/30 hover:-translate-y-1.5 active:translate-y-0 active:scale-[0.99] cursor-pointer"
           >
-            <div>
-              <div className="text-amber-400 group-hover:text-amber-300 transition-colors mb-6">
-                <PorkTrendIcon className="w-20 h-20" />
+            <div className="flex-1 flex flex-col items-center justify-center text-center pt-2">
+              <div className="text-amber-400 group-hover:text-amber-300 transition-colors mb-4 flex items-center justify-center">
+                <PorkTrendIcon className="w-16 h-16" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-amber-400 transition-colors">
+              <h2 className="text-lg font-bold text-white tracking-wide group-hover:text-amber-400 transition-colors text-center">
                 EU PORK MARKET
               </h2>
             </div>
             
-            <div className="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-amber-400 transition-colors">
+            <div className="w-full pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-amber-400 transition-colors">
               <span>Deschide modulul</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
             </div>
           </button>
 
-          {/* Card 3: 📰 RETAIL MEDIA MONITOR */}
+          {/* CARD 3 — RETAIL MEDIA MONITOR */}
           <button
             type="button"
             onClick={() => onSelectModule('clipping')}
-            className="group relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/60 hover:bg-slate-900 text-left transition-all duration-300 hover:shadow-2xl hover:shadow-sky-950/40 hover:-translate-y-1.5 active:translate-y-0 active:scale-[0.99] cursor-pointer"
+            className="group relative flex flex-col justify-between w-full max-w-[320px] md:w-[310px] lg:w-[315px] h-[290px] p-6 sm:p-7 rounded-2xl bg-[#0E1726] border border-slate-800/80 hover:border-sky-500/60 hover:bg-[#121E31] transition-all duration-300 hover:shadow-2xl hover:shadow-sky-950/30 hover:-translate-y-1.5 active:translate-y-0 active:scale-[0.99] cursor-pointer"
           >
-            <div>
-              <div className="text-sky-400 group-hover:text-sky-300 transition-colors mb-6">
-                <ClippingSearchIcon className="w-20 h-20" />
+            <div className="flex-1 flex flex-col items-center justify-center text-center pt-2">
+              <div className="text-sky-400 group-hover:text-sky-300 transition-colors mb-4 flex items-center justify-center">
+                <ClippingSearchIcon className="w-16 h-16" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-sky-400 transition-colors">
+              <h2 className="text-lg font-bold text-white tracking-wide group-hover:text-sky-400 transition-colors text-center">
                 RETAIL MEDIA MONITOR
               </h2>
             </div>
             
-            <div className="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-sky-400 transition-colors">
+            <div className="w-full pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-sky-400 transition-colors">
               <span>Deschide modulul</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
             </div>
@@ -214,9 +214,13 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
         </div>
       </main>
 
-      {/* Minimal Footer */}
-      <footer className="py-6 text-center text-xs text-slate-500">
-        Fresh Meat Retail BI
+      {/* Footer obligatoriu: MEAT MARKET INTELLIGENCE by Vasile Huma */}
+      <footer className="w-full border-t border-slate-800/80 py-5 sm:py-6">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-sm sm:text-base font-medium text-slate-400 tracking-wide">
+            MEAT MARKET INTELLIGENCE by Vasile Huma
+          </p>
+        </div>
       </footer>
     </div>
   );
