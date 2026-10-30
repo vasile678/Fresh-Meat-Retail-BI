@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { getAssetUrl } from '../utils';
 import { ArrowRight } from 'lucide-react';
 
@@ -142,6 +142,10 @@ function ClippingSearchIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { class
 }
 
 export default function Homepage({ onSelectModule }: HomepageProps) {
+  useEffect(() => {
+    document.title = 'Fresh Meat Retail BI | Market Intelligence & Insights';
+  }, []);
+
   return (
     <div className="min-h-[100dvh] h-full bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-pink-500/30 pt-0 pb-[max(0.5rem,env(safe-area-inset-bottom))] pl-[max(0.5rem,env(safe-area-inset-left))] pr-[max(0.5rem,env(safe-area-inset-right))] overflow-y-auto">
       {/* Top Header: Logo și Titlu coborâte cu încă ~56px (~1,5 cm) față de poziția anterioară, perfect centrate */}
@@ -252,11 +256,11 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
         </div>
       </main>
 
-      {/* Footer obligatoriu: MEAT MARKET INSIGHTS by Vasile Huma */}
+      {/* Footer obligatoriu: Designed by Vasile Huma */}
       <footer className="w-full border-t border-slate-800/80 py-2.5 sm:py-3 md:py-5 shrink-0">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            MEAT MARKET INSIGHTS by Vasile Huma
+            Designed by Vasile Huma
           </p>
         </div>
       </footer>

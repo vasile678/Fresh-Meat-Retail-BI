@@ -183,6 +183,11 @@ export default function EuPorkMarketModule({
     }
   }, []);
 
+  // Guarantee Windows title bar in module
+  useEffect(() => {
+    document.title = 'Fresh Meat Retail BI | Market Intelligence & Insights';
+  }, []);
+
   // Fetch dynamic export from /data/eu_pork_market_export.json
   useEffect(() => {
     let isMounted = true;
@@ -681,7 +686,7 @@ export default function EuPorkMarketModule({
       <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            MEAT MARKET INSIGHTS by Vasile Huma
+            Designed by Vasile Huma
           </p>
         </div>
       </footer>
