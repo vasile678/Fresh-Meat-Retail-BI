@@ -3,7 +3,7 @@ import {
   ArrowLeft, 
   Newspaper, 
   Store, 
-  FileText, 
+  TrendingUp, 
   ExternalLink, 
   CheckCircle2, 
   Calendar, 
@@ -28,7 +28,7 @@ interface RetailerCatalogInfo {
 }
 
 export default function RetailMediaClippingModule({ onBack }: RetailMediaClippingModuleProps) {
-  const [selectedTab, setSelectedTab] = useState<'catalogs' | 'press' | 'methodology'>('catalogs');
+  const [selectedTab, setSelectedTab] = useState<'catalogs' | 'press' | 'intelligence'>('catalogs');
 
   // Exact 7 retaileri monitorizați cu legături directe către cataloagele oficiale
   const retailers: RetailerCatalogInfo[] = [
@@ -198,14 +198,14 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
             <Newspaper className="w-3.5 h-3.5" /> Presă Specializată
           </button>
           <button
-            onClick={() => setSelectedTab('methodology')}
+            onClick={() => setSelectedTab('intelligence')}
             className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
-              selectedTab === 'methodology'
+              selectedTab === 'intelligence'
                 ? 'border-sky-500 text-sky-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <FileText className="w-3.5 h-3.5" /> Protocol & Metodologie
+            <TrendingUp className="w-3.5 h-3.5" /> Competitive Intelligence & Recomandări
           </button>
         </div>
       </header>
@@ -357,44 +357,44 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
           </div>
         )}
 
-        {/* Tab 3: Methodology */}
-        {selectedTab === 'methodology' && (
+        {/* Tab 3: Competitive Intelligence & Recomandări Comerciale */}
+        {selectedTab === 'intelligence' && (
           <div className="bg-slate-900 rounded-xl p-6 border border-slate-800 shadow-xl space-y-6">
             <div>
-              <h2 className="text-base font-semibold text-white">Protocolul de Monitorizare Retail Media</h2>
+              <h2 className="text-base font-semibold text-white">Competitive Intelligence & Dinamică Promoțională</h2>
               <p className="text-xs text-slate-400 mt-1">
-                Instrucțiuni metodologice stabilite pentru colectarea, verificarea și arhivarea dovezilor promoționale.
+                Sinteză strategică privind strategiile promoționale pe carne proaspătă, mecanismele de atragere a traficului și oportunitățile comerciale.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
-              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800">
+              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
                 <div className="flex items-center gap-2 mb-2 text-sky-400 font-bold">
-                  <Calendar className="w-4 h-4" />
-                  <span>1. Fereastra de Monitorizare</span>
-                </div>
-                <p className="leading-relaxed text-slate-400">
-                  Ciclul de monitorizare este sincronizat cu săptămâna ISO (Luni – Duminică). Cataloagele sunt auditate în ziua lansării promoționale (miercuri pentru Kaufland/PENNY/Profi, luni/joi pentru Lidl, joi pentru Carrefour/Mega Image).
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800">
-                <div className="flex items-center gap-2 mb-2 text-emerald-400 font-bold">
                   <Tag className="w-4 h-4" />
-                  <span>2. Criterii Like-for-Like</span>
+                  <span>1. Presiune de Preț pe Piesele Cheie</span>
                 </div>
                 <p className="leading-relaxed text-slate-400">
-                  Pentru fiecare promoție se înregistrează specia, tăietura, starea osului (fără os), condiția de procesare (nemarinat/fără aditivi), unitatea de vânzare (per kg) și condițiile promoționale (preț standard vs preț card).
+                  Segmentul de bază (spată și pulpă de porc f.o.) este folosit ca principal instrument de atragere a traficului în magazine. Discounterii (Kaufland, Lidl, PENNY) mențin prețuri agresive (13,90 – 15,99 lei/kg), forțând un nivel minim de marjă la nivelul întregii piețe.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800">
-                <div className="flex items-center gap-2 mb-2 text-amber-400 font-bold">
+              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+                <div className="flex items-center gap-2 mb-2 text-emerald-400 font-bold">
                   <Layers className="w-4 h-4" />
-                  <span>3. Integritatea Dovezilor</span>
+                  <span>2. Condiționare Digitală (Card / App)</span>
                 </div>
                 <p className="leading-relaxed text-slate-400">
-                  Toate prețurile și promoțiile sunt susținute de capturi digitale sau extrase PDF originale din cataloage. Ofertele nesusținute sau incerte sunt catalogate N/V pentru a garanta integritatea absolută a raportului.
+                  Peste 60% dintre prețurile cele mai mici din piață sunt condiționate de activarea aplicațiilor de loialitate (Lidl Plus, Kaufland Card, PENNY Card). Această strategie permite retailerilor să afișeze reduceri spectaculoase (-20% la -33%) protejând marja pe clienții ocazionali.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+                <div className="flex items-center gap-2 mb-2 text-amber-400 font-bold">
+                  <Calendar className="w-4 h-4" />
+                  <span>3. Recomandări pentru Achiziții</span>
+                </div>
+                <p className="leading-relaxed text-slate-400">
+                  Urmărirea ferestrelor de lansare promoțională (miercuri și joi) permite anticiparea volumelor solicitate furnizorilor locali și arbitrajul eficient cu cotațiile carcasei europene din piețele de referință (Germania, Spania, Olanda).
                 </p>
               </div>
             </div>
@@ -404,10 +404,11 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-4 text-center text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-          <span>Fresh Meat Retail BI — Modul RETAIL MEDIA MONITOR</span>
-          <span>Pilon de Inteligență Competitivă Promoțională</span>
+      <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
+            MEAT MARKET INSIGHTS by Vasile Huma
+          </p>
         </div>
       </footer>
     </div>

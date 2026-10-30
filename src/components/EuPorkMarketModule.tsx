@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { getAssetUrl } from '../utils';
+import { PinkPorkIcon } from './Homepage';
 import { 
   ArrowLeft, 
   Download, 
@@ -7,7 +8,6 @@ import {
   TrendingUp, 
   ShieldCheck, 
   Eye, 
-  FileCheck2, 
   Scale, 
   AlertCircle,
   Loader2,
@@ -123,7 +123,7 @@ export default function EuPorkMarketModule({
   onZoomImage,
   isDownloading
 }: EuPorkMarketModuleProps) {
-  const [selectedTab, setSelectedTab] = useState<'visual' | 'benchmarks' | 'takeaways' | 'governance'>('visual');
+  const [selectedTab, setSelectedTab] = useState<'visual' | 'benchmarks' | 'takeaways'>('visual');
   const [data, setData] = useState<EuPorkExportData>(BASELINE_FALLBACK);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -242,10 +242,13 @@ export default function EuPorkMarketModule({
               <span className="inline xs:hidden sm:hidden">Înapoi</span>
             </button>
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
+            <div className="p-1 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
+              <PinkPorkIcon className="w-8 h-8 sm:w-9 sm:h-9" />
+            </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">EU PORK MARKET</h1>
-                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-amber-500/20 text-amber-400 font-semibold border border-amber-500/30 flex items-center gap-1 shrink-0">
+                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-pink-500/20 text-pink-400 font-semibold border border-pink-500/30 flex items-center gap-1 shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5" /> {data.status_badge || 'ACTIVE_LOCKED'}
                 </span>
                 <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 shrink-0">
@@ -253,7 +256,7 @@ export default function EuPorkMarketModule({
                 </span>
               </div>
               <p className="text-[11px] sm:text-xs text-slate-400 truncate">
-                8 COTAȚII EUROPENE DE REFERINȚĂ | CONFIG_MANIFEST
+                8 COTAȚII EUROPENE DE REFERINȚĂ | MONITORIZARE SĂPTĂMÂNALĂ
               </p>
             </div>
           </div>
@@ -272,7 +275,7 @@ export default function EuPorkMarketModule({
               type="button"
               onClick={() => onDownloadImage(imageUrl, filename)}
               disabled={isDownloading}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-md bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-md bg-pink-600 hover:bg-pink-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
               title="Descarcă sau salvează imaginea raportului 4:3"
             >
               {isDownloading ? (
@@ -285,47 +288,37 @@ export default function EuPorkMarketModule({
           </div>
         </div>
 
-        {/* Tab switcher: scrollabil orizontal pe mobil */}
+        {/* Tab switcher: scrollabil orizontal pe mobil (Exact 3 secțiuni) */}
         <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-1.5 sm:gap-2 border-t border-slate-800/60 pt-1 overflow-x-auto no-scrollbar touch-scroll whitespace-nowrap">
           <button
             onClick={() => setSelectedTab('visual')}
             className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'visual'
-                ? 'border-amber-500 text-amber-400 bg-slate-800/40'
+                ? 'border-pink-500 text-pink-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Eye className="w-3.5 h-3.5" /> Raport Vizual
+            <Eye className="w-3.5 h-3.5" /> Raport Săptămânal
           </button>
           <button
             onClick={() => setSelectedTab('benchmarks')}
             className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'benchmarks'
-                ? 'border-amber-500 text-amber-400 bg-slate-800/40'
+                ? 'border-pink-500 text-pink-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Scale className="w-3.5 h-3.5" /> Cotații Oficiale (8 Piețe)
+            <Scale className="w-3.5 h-3.5" /> Cotații Europene
           </button>
           <button
             onClick={() => setSelectedTab('takeaways')}
             className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
               selectedTab === 'takeaways'
-                ? 'border-amber-500 text-amber-400 bg-slate-800/40'
+                ? 'border-pink-500 text-pink-400 bg-slate-800/40'
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <TrendingUp className="w-3.5 h-3.5" /> Semnale de Piață
-          </button>
-          <button
-            onClick={() => setSelectedTab('governance')}
-            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
-              selectedTab === 'governance'
-                ? 'border-amber-500 text-amber-400 bg-slate-800/40'
-                : 'border-transparent text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            <FileCheck2 className="w-3.5 h-3.5" /> Guvernanță & Programare
+            <TrendingUp className="w-3.5 h-3.5" /> Analiză & Implicații Comerciale
           </button>
         </div>
       </header>
@@ -402,8 +395,8 @@ export default function EuPorkMarketModule({
                 <p className="text-sm font-bold text-white">
                   {data.updated}
                 </p>
-                <p className="text-[11px] text-slate-400 font-mono">
-                  SHA: {data.hashes?.master_sha256?.substring(0, 10)}...
+                <p className="text-[11px] text-emerald-400 font-medium">
+                  Validat conform protocolului oficial
                 </p>
               </div>
             </div>
@@ -443,11 +436,11 @@ export default function EuPorkMarketModule({
             <div className="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-4">
               <div>
                 <h2 className="text-base font-semibold text-white flex items-center gap-2">
-                  EU Pork Market Weekly — Golden Reference & Master Overlay
+                  EU Pork Market Weekly — Raport Vizual Săptămânal
                   <span className="text-xs font-normal text-slate-400">| Rezoluție 1536 × 1024 px</span>
                 </h2>
                 <p className="text-xs text-slate-400 mt-0.5">
-                  Randat prin <code>EU_PORK_MARKET_RENDERER.py</code> conform <code>EU_PORK_MARKET_CONFIG.json</code>. Generative fallback: FORBIDDEN.
+                  Cotații oficiale carcasă de porc Clasa E din cele 8 piețe de referință ale Uniunii Europene.
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -682,67 +675,14 @@ export default function EuPorkMarketModule({
           </div>
         )}
 
-        {/* Tab 4: Governance & Thursday Automation */}
-        {selectedTab === 'governance' && (
-          <div className="bg-slate-900 rounded-xl p-6 border border-slate-800 shadow-xl space-y-6">
-            <div>
-              <h2 className="text-base font-semibold text-white">Guvernanță Tehnică & Automatizare Joi</h2>
-              <p className="text-xs text-slate-400 mt-1">
-                Conform constituției de guvernanță Fresh Meat Retail BI v2.6 și <code>CONFIG_MANIFEST.json</code>.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-300">
-              <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-2">
-                <span className="font-semibold text-white block mb-1 flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" /> Configurație Activă & Hash-uri
-                </span>
-                <p className="text-slate-400">Fișier Config: <code>fresh_meat_bi/EU_PORK_MARKET_CONFIG.json</code></p>
-                <p className="text-slate-400">Versiune Config: <code>2.6.1-lumi-compact</code></p>
-                <p className="text-slate-400">Renderer: <code>EU_PORK_MARKET_RENDERER.py</code> (v1.1-layout-hardening)</p>
-                <p className="text-slate-400">Golden Reference SHA-256: <code className="text-amber-400">ac785f514eed0ae6...</code></p>
-                <p className="text-slate-400">Renderer SHA-256: <code className="text-sky-400">2bb1d9f3ebc0ea92...</code></p>
-                <p className="text-slate-400">Model Randare: <code>DETERMINISTIC_MASTER_OVERLAY</code></p>
-                <p className="text-slate-400">Generative Fallback: <strong className="text-red-400">FORBIDDEN</strong></p>
-              </div>
-
-              <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-2">
-                <span className="font-semibold text-white block mb-1 flex items-center gap-1.5">
-                  <Calendar className="w-4 h-4 text-sky-400" /> Programare Automată Săptămânală (Joi)
-                </span>
-                <p className="text-slate-400">Mecanism: <code>GitHub Actions (.github/workflows/eu-pork-market-weekly.yml)</code></p>
-                <p className="text-slate-400">Zi de execuție: <strong>În fiecare JOI</strong></p>
-                <p className="text-slate-400">Fus orar autoritativ: <code>Europe/Bucharest</code> (UTC+2 / UTC+3)</p>
-                <p className="text-slate-400">Programare cron configurată: <code>0 14 * * 4</code> (14:00 UTC = 16:00 EET / 17:00 EEST)</p>
-                <div className="mt-2 p-2 rounded bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[11px]">
-                  <strong>Notă Transparentă:</strong> Manifestul activ nu specifică o oră exactă de publicare. S-a configurat ora de bază 14:00 UTC (16:00/17:00 RO) prin GitHub Actions, solicitându-se confirmarea orei preferate.
-                </div>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300 space-y-2">
-              <span className="font-semibold text-white block">Regula Criteriilor de Lansare (Release Gate)</span>
-              <p className="text-slate-400">
-                Poarta <code>FRESH_MEAT_BI_GATE_v1.py</code> validează simultan:
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-slate-400 pl-1">
-                <li><code>market_matrix</code>: Exact cele 8 piețe în ordinea canonică fixată.</li>
-                <li><code>statuses</code>: Exclusiv statuturile admise (<code>VERIFIED</code>, <code>NQ</code>, <code>N/V</code>).</li>
-                <li><code>row_integrity</code>: Fără amestec între carcasă și greutate vie; unități și surse complete pentru VERIFIED.</li>
-                <li><code>render_receipt</code>: Generat determinist pe Golden Master cu hash-uri verificate.</li>
-                <li><code>source_receipt</code> & <code>visual_receipt</code>: Dovezi independente de verificare și QA vizual.</li>
-              </ul>
-            </div>
-          </div>
-        )}
-
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-4 text-center text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-          <span>Fresh Meat Retail BI — Modul EU PORK MARKET</span>
-          <span>Guvernat prin <code>CONFIG_MANIFEST.json</code> | LUMI 4.2 Production</span>
+      <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
+            MEAT MARKET INSIGHTS by Vasile Huma
+          </p>
         </div>
       </footer>
     </div>

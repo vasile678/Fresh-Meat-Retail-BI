@@ -90,7 +90,7 @@ export default function App() {
   const [activeRelease, setActiveRelease] = useState<ActiveRelease | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
-  const [selectedTab, setSelectedTab] = useState<'image' | 'matrix' | 'receipts' | 'insights'>('image');
+  const [selectedTab, setSelectedTab] = useState<'image' | 'matrix' | 'insights'>('image');
   const [selectedCell, setSelectedCell] = useState<CellData | null>(null);
   const [zoomImage, setZoomImage] = useState<boolean>(false);
   const [zoomedImage, setZoomedImage] = useState<{ url: string; title: string } | null>(null);
@@ -588,7 +588,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Tab switcher: scrollabil orizontal fără bară de scroll pe mobil */}
+        {/* Tab switcher: scrollabil orizontal fără bară de scroll pe mobil (Exact 3 secțiuni executive) */}
         <div className="max-w-7xl mx-auto px-3 sm:px-6 flex gap-1.5 sm:gap-2 border-t border-slate-800/60 pt-1 overflow-x-auto no-scrollbar touch-scroll whitespace-nowrap">
           <button 
             onClick={() => setSelectedTab('image')}
@@ -598,7 +598,7 @@ export default function App() {
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Eye className="w-3.5 h-3.5" /> Imagine PNG & Export
+            <Eye className="w-3.5 h-3.5" /> Raport Executiv
           </button>
           <button 
             onClick={() => setSelectedTab('matrix')}
@@ -608,17 +608,7 @@ export default function App() {
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <FileCheck2 className="w-3.5 h-3.5" /> Matrice 5×5 Interactivă
-          </button>
-          <button 
-            onClick={() => setSelectedTab('receipts')}
-            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
-              selectedTab === 'receipts' 
-                ? 'border-emerald-500 text-emerald-400 bg-slate-800/40' 
-                : 'border-transparent text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            <ShieldCheck className="w-3.5 h-3.5" /> Chitanțe & Audit Gate
+            <FileCheck2 className="w-3.5 h-3.5" /> Comparație Prețuri
           </button>
           <button 
             onClick={() => setSelectedTab('insights')}
@@ -641,7 +631,7 @@ export default function App() {
             <span className="text-xs text-slate-400 font-medium">Acoperire Matrice 5×5</span>
             <div className="text-xl font-bold text-white mt-0.5 flex items-center justify-between">
               {data.summary?.cell_count || 25} / 25
-              <span className="text-xs px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Audit 100%</span>
+              <span className="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">100% Validat</span>
             </div>
             <span className="text-[11px] text-slate-500 mt-1 block">5 retaileri × 5 articole KVI</span>
           </div>
@@ -918,88 +908,7 @@ export default function App() {
           </div>
         )}
 
-        {/* Tab 3: Receipts & Cryptographic Gate */}
-        {selectedTab === 'receipts' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-slate-400">Chitanță Dataset</span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">SHA-256</span>
-                </div>
-                <div className="space-y-1.5 text-xs">
-                  <div className="text-slate-300 font-mono text-[11px] truncate">
-                    {data.hashes?.dataset_sha256}
-                  </div>
-                  <div className="text-slate-400">Săptămână: <strong>{data.week} {data.year}</strong></div>
-                  <div className="text-slate-400">Acoperire: <strong>{data.coverage_checked || '25/25'}</strong></div>
-                </div>
-                <button 
-                  onClick={() => copyToClipboard(data.hashes?.dataset_sha256 || '', 'data')}
-                  className="mt-3 w-full py-1.5 bg-slate-800 hover:bg-slate-700 rounded text-[11px] text-slate-300 flex items-center justify-center gap-1 transition"
-                >
-                  <Copy className="w-3 h-3" /> {copiedHash === 'data' ? 'Copiat!' : 'Copiază SHA-256'}
-                </button>
-              </div>
-
-              <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-slate-400">Chitanță Release Gate</span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">
-                    {data.release_gate?.release_status}
-                  </span>
-                </div>
-                <div className="space-y-1.5 text-xs">
-                  <div className="text-slate-300 font-mono text-[11px] truncate">
-                    {data.hashes?.release_receipt_sha256}
-                  </div>
-                  <div className="text-slate-300">Regulă: <strong>Strict Like-For-Like</strong></div>
-                  <div className="text-slate-400">Erori raportate: <strong>{data.release_gate?.errors?.length || 0}</strong></div>
-                </div>
-                <button 
-                  onClick={() => copyToClipboard(data.hashes?.release_receipt_sha256 || '', 'receipt')}
-                  className="mt-3 w-full py-1.5 bg-slate-800 hover:bg-slate-700 rounded text-[11px] text-slate-300 flex items-center justify-center gap-1 transition"
-                >
-                  <Copy className="w-3 h-3" /> {copiedHash === 'receipt' ? 'Copiat!' : 'Copiază Hash Chitanță'}
-                </button>
-              </div>
-
-              <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-slate-400">Imagine Output PNG</span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">1448×1086</span>
-                </div>
-                <div className="space-y-1.5 text-xs">
-                  <div className="text-slate-300 font-mono text-[11px] truncate">
-                    {data.hashes?.output_sha256}
-                  </div>
-                  <div className="text-slate-300">Golden Static Pixels: <strong>100% match</strong></div>
-                  <div className="text-slate-400">Aspect ratio: <strong>4:3 (1.333)</strong></div>
-                </div>
-                <button 
-                  onClick={() => copyToClipboard(data.hashes?.output_sha256 || '', 'out')}
-                  className="mt-3 w-full py-1.5 bg-slate-800 hover:bg-slate-700 rounded text-[11px] text-slate-300 flex items-center justify-center gap-1 transition"
-                >
-                  <Copy className="w-3 h-3" /> {copiedHash === 'out' ? 'Copiat!' : 'Copiază Hash PNG'}
-                </button>
-              </div>
-            </div>
-
-            {/* JSON Schema & Governance Block */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
-              <h4 className="text-sm font-semibold text-white mb-2">Chitanță Autentică Release Gate (JSON)</h4>
-              <p className="text-xs text-slate-400 mb-3">
-                Fragment consumat direct din exportul validat al motorului Python:
-              </p>
-
-              <pre className="bg-slate-950 p-4 rounded-lg text-emerald-400 font-mono text-[11px] overflow-x-auto border border-slate-800 leading-relaxed">
-{JSON.stringify(data.release_gate, null, 2)}
-              </pre>
-            </div>
-          </div>
-        )}
-
-        {/* Tab 4: Insights */}
+        {/* Tab 3: Concluzii Comerciale */}
         {selectedTab === 'insights' && (
           <div className="space-y-6">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
@@ -1110,10 +1019,11 @@ export default function App() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-4 text-center text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-          <span>Fresh Meat Retail BI — Date consumate dinamic din exportul motorului Python</span>
-          <span>Configurație activă: <code>CONFIG_MANIFEST.json</code> | LUMI 4.2 Production</span>
+      <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
+            MEAT MARKET INSIGHTS by Vasile Huma
+          </p>
         </div>
       </footer>
     </div>

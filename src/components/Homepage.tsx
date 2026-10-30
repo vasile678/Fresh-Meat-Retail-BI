@@ -45,41 +45,55 @@ function PromoCartTagIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { classNa
   );
 }
 
-// 2. Pictogramă: siluetă de porc cu grafic de evoluție (EU PORK MARKET) - galben-auriu
-function PorkTrendIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { className?: string }) {
+// 2. Pictogramă: siluetă de porc modernă și elegantă (EU PORK MARKET) - roz premium
+export function PinkPorkIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       {/* Soft rounded background container */}
       <rect x="2" y="2" width="60" height="60" rx="16" fill="currentColor" fillOpacity="0.08" />
       
-      {/* Evolution graph grid & ascending trendline */}
-      <path d="M10 46h44" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity="0.3" />
-      <path 
-        d="M10 38l12-14 10 7 14-16 10 5" 
-        stroke="currentColor" 
-        strokeWidth="2.75" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-      />
-      <circle cx="22" cy="24" r="2.75" fill="currentColor" />
-      <circle cx="32" cy="31" r="2.75" fill="currentColor" />
-      <circle cx="46" cy="15" r="3.25" fill="currentColor" />
-      
-      {/* Pig silhouette */}
-      <path 
-        d="M16 39c-2.5-1.5-3.5-4-3.5-6.5 0-4 3.5-7 8-7h7c4.5-3 10-3.5 15.5-2 4.5 1 8 4 9.5 8 2 1 3.5 2.5 3.5 5 0 2.5-1.5 4.5-4 5v5h-4v-3.5h-9v3.5h-4.5v-3.5h-4l-3 2.5h-3.5l1-2.5c-3-1-5.5-3-7.5-6z" 
-        fill="currentColor" 
-        fillOpacity="0.25" 
-        stroke="currentColor" 
-        strokeWidth="2.4" 
-        strokeLinejoin="round" 
-      />
-      {/* Pig ear */}
-      <path d="M42 25l3.5-4.5-4.5 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Pig eye */}
-      <circle cx="47" cy="31" r="1.25" fill="currentColor" />
-      {/* Tail curl */}
-      <path d="M14 29c-2-1.5-3.5-3-2.5-5 1-1.5 3-.5 2.5 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      {/* Pig Silhouette Group */}
+      <g transform="translate(6, 12)">
+        {/* Curled Pig Tail */}
+        <path 
+          d="M6 21c-2.8-1-4.2-3.8-3.5-6.5.7-2.6 3.4-3.5 5.5-2 1.8 1.3 2 3.2 1 4.5" 
+          stroke="currentColor" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+        />
+        
+        {/* Main Pig Body & Legs */}
+        <path 
+          d="M8 20c0-6 5-11 12-12h14c5 0 9 2.5 12 6.5l3.5 1.5c2 .8 3.5 2.5 3.5 4.8 0 2.2-1.2 4-3 4.8v.4c0 3-1.8 5.5-4.5 6.5-.5 1-1.5 2-2.5 2.5v4.5c0 1.1-.9 2-2 2h-3c-1.1 0-2-.9-2-2v-3.5h-8v3.5c0 1.1-.9 2-2 2h-3c-1.1 0-2-.9-2-2V41c-5-1.5-8.5-5.5-8.5-10.5v-10.5z" 
+          fill="currentColor" 
+          fillOpacity="0.22" 
+          stroke="currentColor" 
+          strokeWidth="2.5" 
+          strokeLinejoin="round" 
+        />
+        
+        {/* Snout Details */}
+        <rect x="42" y="16.5" width="8" height="6" rx="3" fill="currentColor" fillOpacity="0.45" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="44.5" cy="19.5" r="0.9" fill="currentColor" />
+        <circle cx="47.5" cy="19.5" r="0.9" fill="currentColor" />
+        
+        {/* Pig Eye */}
+        <circle cx="37" cy="15.5" r="1.4" fill="currentColor" />
+        
+        {/* Pig Ear */}
+        <path 
+          d="M32 8l4.5-4c1.2-1 3 .2 2.5 1.8L37 10" 
+          fill="currentColor" 
+          fillOpacity="0.5" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinejoin="round" 
+        />
+
+        {/* Trotter foot separations */}
+        <line x1="16.5" y1="47.5" x2="16.5" y2="49.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <line x1="29.5" y1="47.5" x2="29.5" y2="49.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </g>
     </svg>
   );
 }
@@ -129,7 +143,7 @@ function ClippingSearchIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { class
 
 export default function Homepage({ onSelectModule }: HomepageProps) {
   return (
-    <div className="min-h-[100dvh] h-full bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-emerald-500/30 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.5rem,env(safe-area-inset-bottom))] pl-[max(0.5rem,env(safe-area-inset-left))] pr-[max(0.5rem,env(safe-area-inset-right))] overflow-y-auto">
+    <div className="min-h-[100dvh] h-full bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-pink-500/30 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.5rem,env(safe-area-inset-bottom))] pl-[max(0.5rem,env(safe-area-inset-left))] pr-[max(0.5rem,env(safe-area-inset-right))] overflow-y-auto">
       {/* Top Header: Logo și Titlu centrate (compact pe mobil, spațios pe desktop) */}
       <header className="pt-2 pb-2 sm:pt-4 sm:pb-3 md:pt-8 md:pb-5 shrink-0">
         <div className="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center text-center">
@@ -179,29 +193,29 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
             </div>
           </button>
 
-          {/* CARD 2 — EU PORK MARKET */}
+          {/* CARD 2 — EU PORK MARKET (Pink Pig Icon) */}
           <button
             type="button"
             onClick={() => onSelectModule('eu-pork')}
-            className="group relative flex flex-row md:flex-col items-center justify-between w-[92%] sm:w-[90%] md:w-[310px] lg:w-[315px] max-w-md md:max-w-[320px] h-[112px] sm:h-[120px] md:h-[290px] px-4 py-3 sm:px-5 sm:py-4 md:p-6 lg:p-7 rounded-2xl bg-[#0E1726] border border-slate-800/80 hover:border-amber-500/60 hover:bg-[#121E31] transition-all duration-300 hover:shadow-2xl hover:shadow-amber-950/30 hover:-translate-y-1 active:translate-y-0 active:scale-[0.99] cursor-pointer shrink-0"
+            className="group relative flex flex-row md:flex-col items-center justify-between w-[92%] sm:w-[90%] md:w-[310px] lg:w-[315px] max-w-md md:max-w-[320px] h-[112px] sm:h-[120px] md:h-[290px] px-4 py-3 sm:px-5 sm:py-4 md:p-6 lg:p-7 rounded-2xl bg-[#0E1726] border border-slate-800/80 hover:border-pink-500/60 hover:bg-[#121E31] transition-all duration-300 hover:shadow-2xl hover:shadow-pink-950/30 hover:-translate-y-1 active:translate-y-0 active:scale-[0.99] cursor-pointer shrink-0"
           >
-            <div className="flex items-center justify-center shrink-0 text-amber-400 group-hover:text-amber-300 transition-colors md:mb-4">
-              <PorkTrendIcon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" />
+            <div className="flex items-center justify-center shrink-0 text-pink-400 group-hover:text-pink-300 transition-colors md:mb-4">
+              <PinkPorkIcon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" />
             </div>
 
             <div className="flex-1 text-center px-3 md:px-0">
-              <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-amber-400 transition-colors">
+              <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-pink-400 transition-colors">
                 EU PORK MARKET
               </h2>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}
-            <div className="flex md:hidden items-center justify-center shrink-0 pl-1 text-slate-400 group-hover:text-amber-400 transition-colors">
+            <div className="flex md:hidden items-center justify-center shrink-0 pl-1 text-slate-400 group-hover:text-pink-400 transition-colors">
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
             </div>
 
             {/* Desktop-only separator & text "Deschide modulul" */}
-            <div className="hidden md:flex w-full pt-4 border-t border-slate-800/80 items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-amber-400 transition-colors">
+            <div className="hidden md:flex w-full pt-4 border-t border-slate-800/80 items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-pink-400 transition-colors">
               <span>Deschide modulul</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
             </div>
@@ -238,11 +252,11 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
         </div>
       </main>
 
-      {/* Footer obligatoriu: MEAT MARKET INTELLIGENCE by Vasile Huma */}
+      {/* Footer obligatoriu: MEAT MARKET INSIGHTS by Vasile Huma */}
       <footer className="w-full border-t border-slate-800/80 py-2.5 sm:py-3 md:py-5 shrink-0">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            MEAT MARKET INTELLIGENCE by Vasile Huma
+            MEAT MARKET INSIGHTS by Vasile Huma
           </p>
         </div>
       </footer>
