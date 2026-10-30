@@ -144,8 +144,8 @@ function ClippingSearchIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { class
 export default function Homepage({ onSelectModule }: HomepageProps) {
   return (
     <div className="min-h-[100dvh] h-full bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-pink-500/30 pt-0 pb-[max(0.5rem,env(safe-area-inset-bottom))] pl-[max(0.5rem,env(safe-area-inset-left))] pr-[max(0.5rem,env(safe-area-inset-right))] overflow-y-auto">
-      {/* Top Header: Logo și Titlu coborâte adaptiv cu ~34px sub iOS safe area, centrate orizontal */}
-      <header className="pt-[calc(env(safe-area-inset-top,0px)+34px)] sm:pt-[calc(env(safe-area-inset-top,0px)+28px)] md:pt-8 pb-1 sm:pb-2 md:pb-5 shrink-0">
+      {/* Top Header: Logo și Titlu coborâte cu încă ~56px (~1,5 cm) față de poziția anterioară, perfect centrate */}
+      <header className="pt-[calc(env(safe-area-inset-top,0px)+90px)] sm:pt-[calc(env(safe-area-inset-top,0px)+80px)] md:pt-8 pb-0 md:pb-5 -mb-14 sm:-mb-10 md:mb-0 shrink-0">
         <div className="w-full max-w-6xl mx-auto px-4 flex flex-col items-center justify-center text-center">
           <img 
             src={getAssetUrl('/icon-192.png')} 
