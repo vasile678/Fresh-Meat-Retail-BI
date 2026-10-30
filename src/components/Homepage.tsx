@@ -143,16 +143,16 @@ function ClippingSearchIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { class
 
 export default function Homepage({ onSelectModule }: HomepageProps) {
   return (
-    <div className="min-h-[100dvh] h-full bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-pink-500/30 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.5rem,env(safe-area-inset-bottom))] pl-[max(0.5rem,env(safe-area-inset-left))] pr-[max(0.5rem,env(safe-area-inset-right))] overflow-y-auto">
-      {/* Top Header: Logo și Titlu centrate (compact pe mobil, spațios pe desktop) */}
-      <header className="pt-2 pb-2 sm:pt-4 sm:pb-3 md:pt-8 md:pb-5 shrink-0">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center text-center">
+    <div className="min-h-[100dvh] h-full bg-[#080E1A] text-slate-100 flex flex-col justify-between font-sans selection:bg-pink-500/30 pt-0 pb-[max(0.5rem,env(safe-area-inset-bottom))] pl-[max(0.5rem,env(safe-area-inset-left))] pr-[max(0.5rem,env(safe-area-inset-right))] overflow-y-auto">
+      {/* Top Header: Logo și Titlu coborâte adaptiv cu ~34px sub iOS safe area, centrate orizontal */}
+      <header className="pt-[calc(env(safe-area-inset-top,0px)+34px)] sm:pt-[calc(env(safe-area-inset-top,0px)+28px)] md:pt-8 pb-1 sm:pb-2 md:pb-5 shrink-0">
+        <div className="w-full max-w-6xl mx-auto px-4 flex flex-col items-center justify-center text-center">
           <img 
             src={getAssetUrl('/icon-192.png')} 
             alt="Fresh Meat Retail BI Logo" 
-            className="w-16 h-16 sm:w-[72px] sm:h-[72px] md:w-16 md:h-16 rounded-2xl object-contain shadow-2xl shadow-black/60 bg-[#0E1726] border border-slate-800/80 mb-2 sm:mb-2.5 md:mb-3.5"
+            className="w-16 h-16 sm:w-[72px] sm:h-[72px] md:w-16 md:h-16 rounded-2xl object-contain shadow-2xl shadow-black/60 bg-[#0E1726] border border-slate-800/80 mb-2 sm:mb-2.5 md:mb-3.5 mx-auto"
           />
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight text-center">
             Fresh Meat Retail BI
           </h1>
         </div>
@@ -162,7 +162,7 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
           - Mobil: 3 carduri compacte orizontale (110-120px înălțime, icon stânga, titlu centru, săgeată dreapta)
           - Desktop (md+): 3 carduri verticale (310x290px), aliniate orizontal, cu divider și „Deschide modulul”
       */}
-      <main className="flex-1 flex items-center justify-center px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-6 my-auto">
+      <main className="flex-1 flex items-center justify-center px-2 sm:px-4 md:px-6 py-1 sm:py-2 md:py-6 my-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-3.5 md:gap-8 lg:gap-[34px] w-full max-w-6xl">
           
           {/* CARD 1 — PROMO WEEKLY */}
