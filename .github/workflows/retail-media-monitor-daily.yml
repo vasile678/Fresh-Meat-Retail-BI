@@ -1,0 +1,64 @@
+name: Retail Media Monitor - Daily Competitive Intelligence
+
+on:
+  schedule:
+    # Rulează la 06:00 UTC și 07:00 UTC în fiecare zi (inclusiv sâmbătă și duminică).
+    # Pasul de verificare a orei locale asigură execuția exact la 09:00 Europe/Bucharest
+    # gestionând automat tranziția oră de vară (UTC+3, 06:00 UTC) / iarnă (UTC+2, 07:00 UTC).
+    - cron: '0 6,7 * * *'
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "Execută forțat actualizarea indiferent de oră"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  daily-retail-media-monitor:
+    name: Execute Daily Retail Media Competitive Intelligence Pipeline
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check Europe/Bucharest Local Time (09:00)
+        if: github.event_name == 'schedule'
+        id: time_check
+        run: |
+          LOCAL_HOUR=$(python3 -c "import datetime, zoneinfo; print(datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Bucharest')).hour)")
+          echo "Local hour in Europe/Bucharest is: $LOCAL_HOUR"
+          if [ "$LOCAL_HOUR" -ne 9 ]; then
+            echo "SHOULD_RUN=false" >> $GITHUB_ENV
+            echo "Not 09:00 Europe/Bucharest (current hour: $LOCAL_HOUR). Skipping this trigger."
+          else
+            echo "SHOULD_RUN=true" >> $GITHUB_ENV
+            echo "09:00 Europe/Bucharest confirmed. Proceeding with daily pipeline execution."
+          fi
+
+      - name: Execute Daily Retail Media Monitor Pipeline
+        if: github.event_name == 'workflow_dispatch' || env.SHOULD_RUN == 'true'
+        run: |
+          python3 fresh_meat_bi/daily_retail_media_monitor.py
+
+      - name: Commit and Push Updated Export
+        if: github.event_name == 'workflow_dispatch' || env.SHOULD_RUN == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/retail_media_export.json
+          if git diff --staged --quiet; then
+            echo "No changes in retail media export for today. Already up to date."
+          else
+            git commit -m "chore(retail-media): Daily 09:00 Europe/Bucharest competitive intelligence update [skip ci]"
+            git push origin main
+          fi
