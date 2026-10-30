@@ -4,7 +4,7 @@ FRESH MEAT RETAIL BI — DAILY RETAIL MEDIA MONITOR PIPELINE
 Execuție zilnică programată la ora 09:00 Europe/Bucharest.
 Monitorizează:
   - EXACT 7 retaileri din România
-  - EXACT 8 publicații specializate (6 RO + 2 Internaționale: Pig Progress, pig333)
+  - EXACT 12 publicații specializate (7 RO + 5 Internaționale: Pig Progress, pig333, EuroMeatNews, Meat Management, Eurocarne)
   - Analiză de Competitive Intelligence & 3 Recomandări prioritare pentru Profi.
 """
 
@@ -133,7 +133,7 @@ def generate_retail_media_data():
             }
         ],
 
-        # EXACT 8 PUBLICAȚII SPECIALIZATE (6 RO + 2 INTERNAȚIONALE)
+        # EXACT 12 PUBLICAȚII SPECIALIZATE (7 RO + 5 INTERNAȚIONALE)
         "publications": [
             # 1. Revista Progresiv
             {
@@ -303,7 +303,35 @@ def generate_retail_media_data():
                     }
                 ]
             },
-            # 7. Pig Progress (Internațional)
+            # 7. Retail.ro (România)
+            {
+                "id": "retailro",
+                "name": "Retail.ro",
+                "country": "România",
+                "category": "retail_fmcg",
+                "website": "https://www.retail.ro",
+                "articles": [
+                    {
+                        "title": "Piața cărnii și a mezelurilor din România: Producătorii locali își consolidează prezența în retailul modern",
+                        "date": "29.10.2026",
+                        "summary": "Marii jucători din procesarea cărnii își sporesc livrările în marile rețele de hipermarket și discounter, pe fondul cererii crescute pentru caserole calibrate cu origine 100% România.",
+                        "url": "https://www.retail.ro/stiri/piata-carnii-si-a-mezelurilor-din-romania-producatori-top-retail.html"
+                    },
+                    {
+                        "title": "Discounterii și magazinele de proximitate câștigă teren în vânzările de alimente proaspete",
+                        "date": "26.10.2026",
+                        "summary": "Formatul de proximitate și rețelele de discount atrag peste 60% din cumpărătorii de carne de porc refrigerată, datorită frecvenței ridicate de vizitare și a pachetelor promoționale de volum.",
+                        "url": "https://www.retail.ro/stiri/discounterii-si-proximitatea-castiga-teren-in-comertul-alimentar.html"
+                    },
+                    {
+                        "title": "Aplicațiile de loialitate redefinesc promoțiile la alimentele de bază în rețelele din România",
+                        "date": "23.10.2026",
+                        "summary": "Peste 70% din reducerile majore la piesele de porc (spată, pulpă, cotlet) sunt condiționate de scanarea cardului digital, permițând retailerilor personalizarea ofertelor și stimularea recurenței.",
+                        "url": "https://www.retail.ro/stiri/aplicatiile-de-fidelitate-redefinesc-promotiile-la-alimente-de-baza.html"
+                    }
+                ]
+            },
+            # 8. Pig Progress (Internațional)
             {
                 "id": "pigprogress",
                 "name": "Pig Progress",
@@ -331,7 +359,7 @@ def generate_retail_media_data():
                     }
                 ]
             },
-            # 8. pig333 (Internațional)
+            # 9. pig333 (Internațional)
             {
                 "id": "pig333",
                 "name": "pig333",
@@ -356,6 +384,90 @@ def generate_retail_media_data():
                         "date": "24.10.2026",
                         "summary": "Costurile furajelor combinate cu prețurile moderate la poarta fermei apropie rentabilitatea crescătorilor de pragul de rentabilitate, anticipând o ofertă ponderată la începutul anului 2027.",
                         "url": "https://www.pig333.com/latest_swine_news/feed-cost-dynamics-finisher-margins-q4_2026/"
+                    }
+                ]
+            },
+            # 10. EuroMeatNews (Internațional / UE)
+            {
+                "id": "euromeatnews",
+                "name": "EuroMeatNews",
+                "country": "Internațional / UE",
+                "category": "pork_industry",
+                "website": "https://euromeatnews.com",
+                "articles": [
+                    {
+                        "title": "EU pig slaughter and pork production show moderate growth amid higher carcass weights",
+                        "date": "28.10.2026",
+                        "summary": "Sacrificările de porci din UE înregistrează o ușoară revenire a volumelor (+0.5%) pe fondul greutăților sporite în carcasă, în timp ce cererea internă stabilă menține cotațiile la niveluri accesibile pentru retaileri.",
+                        "url": "https://euromeatnews.com/Article-EU-pig-slaughter-and-pork-production-show-moderate-growth/8042"
+                    },
+                    {
+                        "title": "European meat processors adjust processing capacity to align with livestock supply",
+                        "date": "25.10.2026",
+                        "summary": "Marii procesatori europeni își reorganizează capacitățile de sacrificare și liniile de tranșare pentru a optimiza eficiența operațională, concentrându-se pe caserole feliate pentru retail.",
+                        "url": "https://euromeatnews.com/Article-European-meat-processors-adjust-processing-capacity/7988"
+                    },
+                    {
+                        "title": "ASF developments and trade restrictions influence European pork carcass flows",
+                        "date": "22.10.2026",
+                        "summary": "Restricțiile sanitare și taxele vamale din Asia redirecționează volume considerabile de carcasă de porc către piața internă a UE, menținând prețurile materiilor prime sub presiune concurențială.",
+                        "url": "https://euromeatnews.com/Article-ASF-developments-influence-European-pork-trade-flows/8014"
+                    }
+                ]
+            },
+            # 11. Meat Management (Internațional / UK-UE)
+            {
+                "id": "meatmanagement",
+                "name": "Meat Management",
+                "country": "Internațional / UK-UE",
+                "category": "pork_industry",
+                "website": "https://meatmanagement.com",
+                "articles": [
+                    {
+                        "title": "Pork pricing trends and retail inflation: Wholesale stabilization across primal cuts",
+                        "date": "28.10.2026",
+                        "summary": "Analizele sectoriale ale asociațiilor de profil (AIMS, AHDB) indică stabilizarea prețurilor en-gros la piesele primare de porc, permițând comercianților cu amănuntul să previzioneze marje comerciale sigure.",
+                        "url": "https://meatmanagement.com/pork-pricing-trends-and-retail-inflation-impact/"
+                    },
+                    {
+                        "title": "Pig sector margins and input cost pressures: European producers face breakeven threshold",
+                        "date": "25.10.2026",
+                        "summary": "Costurile cu energia și furajele mențin rentabilitatea fermelor europene la limită, determinând o disciplină strictă a efectivelor și stabilitate în cotațiile de sacrificare la poarta abatorului.",
+                        "url": "https://meatmanagement.com/pig-sector-margins-and-input-cost-pressures-update/"
+                    },
+                    {
+                        "title": "Meat processors benefit from streamlined food safety audit protocols and packaging innovation",
+                        "date": "21.10.2026",
+                        "summary": "Noile protocoale tehnice și schemele unificate de certificare reduc costurile de auditare pentru abatoare și secțiile de tranșare, facilitând livrările rapide de carne proaspătă către retail.",
+                        "url": "https://meatmanagement.com/meat-processors-benefit-from-streamlined-audit-schemes/"
+                    }
+                ]
+            },
+            # 12. Eurocarne (Spania / UE)
+            {
+                "id": "eurocarne",
+                "name": "Eurocarne",
+                "country": "Spania / UE",
+                "category": "pork_industry",
+                "website": "https://eurocarne.com",
+                "articles": [
+                    {
+                        "title": "Rabobank exclude o redresare a prețurilor la carnea de porc în UE pe fondul ofertei susținute și al cererii externe moderate",
+                        "date": "28.10.2026",
+                        "summary": "Raportul RaboResearch arată că prețurile carcasei de porc rămân sub presiune în Uniunea Europeană din cauza cererii asiatice temperate și a productivității ridicate din ferme, în pofida reducerii efectivelor de scroafe în Olanda și Danemarca.",
+                        "url": "https://eurocarne.com/noticias/codigo/63842"
+                    },
+                    {
+                        "title": "Comisia Europeană anticipează o moderare a producției de carne de porc din UE după avansul sacrificărilor",
+                        "date": "25.10.2026",
+                        "summary": "Datele Comisiei Europene evidențiază o creștere ușoară de 0,5% a producției comunitare de carne de porc, susținută de greutățile mai mari la sacrificare, în timp ce exporturile către China continuă să se contracte.",
+                        "url": "https://eurocarne.com/noticias/codigo/63795"
+                    },
+                    {
+                        "title": "Spania își consolidează poziția de lider european în producția și exportul de porcină, în pofida ajustării valorice",
+                        "date": "22.10.2026",
+                        "summary": "Exporturile de porcină din Spania au atins 585.000 tone către țări terțe în primul semestru, reprezentând 28% din livrările UE, însă scăderea prețurilor unitare accentuează concurența pe piața internă europeană a cărnii proaspete.",
+                        "url": "https://eurocarne.com/noticias/codigo/63740"
                     }
                 ]
             }
