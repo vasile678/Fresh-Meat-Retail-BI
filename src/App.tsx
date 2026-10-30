@@ -362,9 +362,7 @@ export default function App() {
                 alt={zoomedImage.title} 
                 className="max-h-[85vh] w-auto object-contain rounded-lg shadow-2xl border border-slate-700" 
               />
-              <div className="mt-2 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
-                <span>Raport de aspect 4:3</span>
-                <span>Rezoluție: 1536 × 1024 px</span>
+              <div className="mt-3 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
                 <button 
                   type="button"
                   onClick={(e) => handleDownloadCustomImage(zoomedImage.url, 'EU_PORK_MARKET_GOLDEN_REFERENCE_WK38.png', e)}

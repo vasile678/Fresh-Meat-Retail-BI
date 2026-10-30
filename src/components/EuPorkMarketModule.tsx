@@ -267,30 +267,10 @@ export default function EuPorkMarketModule({
             </div>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={downloadJsonExport}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium border border-slate-700 transition cursor-pointer"
-              title="Descarcă datele în format JSON"
-            >
-              <FileCode className="w-3.5 h-3.5 text-sky-400" />
-              <span className="hidden sm:inline">Export</span> JSON
-            </button>
-            <button
-              type="button"
-              onClick={() => onDownloadImage(imageUrl, filename)}
-              disabled={isDownloading}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-md bg-pink-600 hover:bg-pink-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
-              title="Descarcă sau salvează imaginea raportului 4:3"
-            >
-              {isDownloading ? (
-                <Loader2 className="w-3.5 h-3.5 animate-spin" />
-              ) : (
-                <Download className="w-3.5 h-3.5" />
-              )}
-              <span>{isDownloading ? 'Se procesează...' : 'Salvează PNG'}</span>
-            </button>
+          {/* Perioadă analizată în antet */}
+          <div className="text-right shrink-0">
+            <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
+            <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.period}</span>
           </div>
         </div>
 
@@ -332,161 +312,50 @@ export default function EuPorkMarketModule({
       {/* Main Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
 
-        {/* Temporal & Fail-Closed Status Banner */}
-        <section className="bg-slate-900 border border-slate-800 rounded-xl p-4 sm:p-5 shadow-lg space-y-3">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pb-3 border-b border-slate-800/80">
-            {/* 1. Săptămâna curentă calendaristică (România) */}
-            <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-slate-800 text-sky-400">
-                <Calendar className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
-                  Calendar Curent (România)
-                </span>
-                <p className="text-sm font-bold text-white">
-                  {currentBucharestInfo.weekStr} {currentBucharestInfo.isoYear}
-                </p>
-                <p className="text-[11px] text-slate-400">
-                  {currentBucharestInfo.formattedPeriod} ({currentBucharestInfo.bucharestDateStr})
-                </p>
-              </div>
-            </div>
-
-            {/* 2. Săptămâna de raportare afișată */}
-            <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                <Lock className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-[11px] font-semibold text-amber-400 uppercase tracking-wider block">
-                  Săptămână Raport Validat
-                </span>
-                <p className="text-sm font-bold text-white">
-                  {data.week} {data.year}
-                </p>
-                <p className="text-[11px] text-slate-400">
-                  {data.period}
-                </p>
-              </div>
-            </div>
-
-            {/* 3. Data publicării */}
-            <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-slate-800 text-emerald-400">
-                <Clock className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
-                  Data Publicării Autoritative
-                </span>
-                <p className="text-sm font-bold text-white">
-                  {data.updated}
-                </p>
-                <p className="text-[11px] text-slate-400">
-                  Publicat la 10:00 UTC (13:00 RO)
-                </p>
-              </div>
-            </div>
-
-            {/* 4. Data ultimei actualizări validate */}
-            <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-slate-800 text-purple-400">
-                <ShieldCheck className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
-                  Ultima Actualizare Validată
-                </span>
-                <p className="text-sm font-bold text-white">
-                  {data.updated}
-                </p>
-                <p className="text-[11px] text-emerald-400 font-medium">
-                  Validat conform protocolului oficial
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Status Indicator: Current Week Validated vs. Fail-Closed Retention */}
-          {data.week === currentBucharestInfo.weekStr && data.release_status === 'RELEASE_PASS' ? (
-            <div className="flex items-center justify-between flex-wrap gap-2 pt-1 text-xs text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-3">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
-                <span>
-                  <strong>RAPORT LA ZI ({data.week}/{data.year}):</strong> Cotațiile oficiale pentru săptămâna curentă ({data.period}) au fost colectate din sursele autorizate, validate determinist prin Release Gate și publicate cu succes.
-                </span>
-              </div>
-              <span className="text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/30">
-                STATUS: RELEASE_PASS
-              </span>
-            </div>
-          ) : (
-            <div className="flex items-center justify-between flex-wrap gap-2 pt-1 text-xs text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
-              <div className="flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 shrink-0 text-amber-400" />
-                <span>
-                  <strong>PRINCIPIU FAIL-CLOSED ACTIV:</strong> {data.fail_closed_notice}
-                </span>
-              </div>
-              <span className="text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono border border-amber-500/30">
-                FAIL_MODE: CLOSED
-              </span>
-            </div>
-          )}
-        </section>
-
-        {/* Tab 1: Visual Report & Executive View */}
+        {/* Tab 1: Visual Report & Executive View — Începe direct sub meniul de navigare */}
         {selectedTab === 'visual' && (
-          <div className="bg-slate-900 rounded-xl p-4 sm:p-6 border border-slate-800 shadow-xl space-y-4">
-            <div className="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-4">
-              <div>
-                <h2 className="text-base font-semibold text-white flex items-center gap-2">
-                  EU Pork Market Weekly — Raport Vizual Săptămânal
-                  <span className="text-xs font-normal text-slate-400">| Rezoluție 1536 × 1024 px</span>
-                </h2>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Cotații oficiale carcasă de porc Clasa E din cele 8 piețe de referință ale Uniunii Europene.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
+          <div className="bg-slate-900 rounded-xl p-3 sm:p-5 border border-slate-800 shadow-xl space-y-3">
+            {/* Titlul dinamic RAPORT SĂPTĂMÂNA XX & Comenzile vizuale Mărește | Salvează imaginea */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
+              <h2 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight uppercase text-left">
+                RAPORT SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '44'}
+              </h2>
+              <div className="flex items-center gap-2 shrink-0">
                 <button
                   type="button"
-                  onClick={() => onZoomImage(imageUrl, `EU Pork Market Weekly — ${data.week} ${data.year}`)}
-                  className="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 inline-flex items-center gap-1.5 transition cursor-pointer"
+                  onClick={() => onZoomImage(imageUrl, `RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '44'} — EU PORK MARKET`)}
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 shadow-sm transition cursor-pointer"
+                  title="Mărește imaginea în ecran complet"
                 >
-                  <Maximize2 className="w-3.5 h-3.5 text-sky-400" /> Mărește
+                  <Maximize2 className="w-3.5 h-3.5 text-slate-300" />
+                  <span>Mărește</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => onDownloadImage(imageUrl, filename)}
                   disabled={isDownloading}
-                  className="px-3 py-1.5 rounded bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-xs font-semibold text-white inline-flex items-center gap-1.5 transition shadow cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md shadow-emerald-950/40 border border-emerald-500/50 transition cursor-pointer"
+                  title="Salvează imaginea raportului (PNG oficial validat)"
                 >
-                  {isDownloading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
-                  <span>{isDownloading ? 'Se procesează...' : 'Salvează imaginea 4:3'}</span>
+                  {isDownloading ? (
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  ) : (
+                    <Download className="w-3.5 h-3.5" />
+                  )}
+                  <span>{isDownloading ? 'Se procesează...' : 'Salvează imaginea'}</span>
                 </button>
               </div>
             </div>
 
-            <div className="relative bg-slate-950 rounded-lg p-2 border border-slate-800/80 overflow-hidden flex justify-center items-center">
+            {/* Rendered Image Display — centrată, raport original 4:3 */}
+            <div className="relative bg-slate-950 rounded-lg p-1.5 sm:p-2.5 border border-slate-800/80 overflow-hidden flex justify-center items-center">
               <img
                 src={imageUrl}
-                alt={`EU Pork Market Weekly Golden Reference ${data.week}`}
-                className="max-h-[640px] w-auto object-contain rounded shadow-2xl cursor-pointer transition hover:opacity-95"
-                onClick={() => onZoomImage(imageUrl, `EU Pork Market Weekly — ${data.week} ${data.year}`)}
+                alt={`EU Pork Market Weekly — RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '44'}`}
+                className="w-full max-w-5xl h-auto max-h-[78vh] object-contain rounded shadow-2xl cursor-pointer transition hover:opacity-95"
+                onClick={() => onZoomImage(imageUrl, `RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '44'} — EU PORK MARKET`)}
+                title="Click pentru a mări imaginea"
               />
-            </div>
-
-            <div className="pt-2 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
-              <div className="flex items-center gap-4">
-                <span>Raport de aspect: <strong>4:3 (Master 1536×1024)</strong></span>
-                <span>SHA-256 Master: <code className="text-amber-400">{data.hashes?.master_sha256?.substring(0, 16)}...</code></span>
-                <span>SHA-256 Renderer: <code className="text-sky-400">{data.hashes?.renderer_sha256?.substring(0, 16)}...</code></span>
-              </div>
-              <div className="text-slate-500">
-                Validat conform <code>CONFIG_MANIFEST.json</code> (Etapa 5)
-              </div>
             </div>
           </div>
         )}
