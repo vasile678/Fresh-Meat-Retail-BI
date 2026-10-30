@@ -19,6 +19,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { getAssetUrl } from '../utils';
+import Footer from './Footer';
 
 interface RetailMediaClippingModuleProps {
   onBack: () => void;
@@ -1186,21 +1187,16 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
             </div>
 
             {/* Modal Footer */}
-            <div className="p-3 border-t border-slate-800 bg-slate-950 text-center text-[11px] text-slate-500">
-              Designed by Vasile Huma
+            <div className="p-3 border-t border-slate-800 bg-slate-950 text-center">
+              <p className="text-[11px] font-semibold text-slate-200 tracking-wider uppercase">KNOW MORE. MOVE FIRST.</p>
+              <p className="text-[10px] text-slate-400 font-normal mt-0.5">by Vasile Huma</p>
             </div>
           </div>
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            Designed by Vasile Huma
-          </p>
-        </div>
-      </footer>
+      {/* Universal Shared Footer */}
+      <Footer />
     </div>
   );
 }

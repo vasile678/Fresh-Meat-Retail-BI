@@ -20,6 +20,7 @@ import {
 import Homepage from './components/Homepage';
 import EuPorkMarketModule from './components/EuPorkMarketModule';
 import RetailMediaClippingModule from './components/RetailMediaClippingModule';
+import Footer from './components/Footer';
 import { getAssetUrl } from './utils';
 export { getAssetUrl };
 
@@ -563,22 +564,26 @@ export default function App() {
             </div>
           </div>
 
+          {/* Comenzi principale de export și descărcare: aliniate în dreapta sus */}
           <div className="flex items-center gap-2 shrink-0">
+            {/* 1. Export JSON — gri închis */}
             <button 
               type="button"
               onClick={handleDownloadJson}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition cursor-pointer"
+              className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 shadow-sm transition cursor-pointer"
               title="Descarcă exportul JSON validat"
             >
               <FileCode className="w-3.5 h-3.5 text-emerald-400" />
               <span className="hidden sm:inline">Export</span> JSON
             </button>
+
+            {/* 2. Descarcă PNG — verde */}
             <button 
               type="button"
               onClick={handleDownloadImage}
               disabled={isDownloading}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md transition cursor-pointer"
-              title="Descarcă sau salvează imaginea PNG fără părăsirea aplicației"
+              className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md shadow-emerald-950/40 border border-emerald-500/50 transition cursor-pointer"
+              title="Descarcă raportul original PNG"
             >
               {isDownloading ? (
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -587,8 +592,9 @@ export default function App() {
               )}
               <span>{isDownloading ? 'Se procesează...' : 'Descarcă PNG'}</span>
             </button>
-            <div className="text-right hidden lg:block">
-              <span className="text-[11px] text-slate-400 block">Perioadă analizată</span>
+
+            <div className="text-right hidden lg:block pl-2 border-l border-slate-800 ml-1">
+              <span className="text-[10px] text-slate-400 block leading-tight">Perioadă analizată</span>
               <span className="text-xs font-medium text-slate-200">{data.calendar_period}</span>
             </div>
           </div>
@@ -673,30 +679,28 @@ export default function App() {
         {/* Tab 1: Image & Executive View */}
         {selectedTab === 'image' && (
           <div className="space-y-6">
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
-                <div>
-                  <h2 className="text-base font-semibold text-white flex items-center gap-2">
-                    Imagine PNG 4:3 Generată Determinist (Model WK Promo)
-                    <span className="text-xs font-normal text-slate-400">| Rezoluție 1448 × 1086 px</span>
-                  </h2>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    Generată prin motorul Python conform CONFIG_MANIFEST. Static pixels match: 100%.
-                  </p>
-                </div>
+            <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 sm:p-4 shadow-xl space-y-3">
+              {/* Bara de acțiuni asociată raportului vizual: Mărește & Salvează imaginea */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-2.5 border-b border-slate-800/80">
+                <span className="text-xs font-semibold text-slate-300">
+                  Raport Executiv Săptămânal — Format 4:3
+                </span>
                 <div className="flex items-center gap-2">
                   <button 
+                    type="button"
                     onClick={() => setZoomImage(true)}
-                    className="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 inline-flex items-center gap-1.5 transition"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 shadow-sm transition cursor-pointer"
+                    title="Mărește imaginea în ecran complet"
                   >
-                    <Maximize2 className="w-3.5 h-3.5" /> Mărește
+                    <Maximize2 className="w-3.5 h-3.5 text-slate-300" />
+                    <span>Mărește</span>
                   </button>
                   <button 
                     type="button"
                     onClick={handleDownloadImage}
                     disabled={isDownloading}
-                    className="px-3 py-1.5 rounded bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-xs font-semibold text-white inline-flex items-center gap-1.5 transition shadow cursor-pointer"
-                    title="Salvează imaginea PNG"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white text-xs font-semibold shadow-md shadow-emerald-950/40 border border-emerald-500/50 transition cursor-pointer"
+                    title="Salvează imaginea raportului (suport Web Share API pe iOS)"
                   >
                     {isDownloading ? (
                       <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -708,26 +712,15 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Rendered Image Display */}
-              <div className="relative group bg-slate-950 rounded-lg p-2 border border-slate-800/80 overflow-hidden flex justify-center items-center">
+              {/* Rendered Image Display — centrată, raport original 4:3 */}
+              <div className="relative group bg-slate-950 rounded-lg p-1.5 sm:p-2.5 border border-slate-800/80 overflow-hidden flex justify-center items-center">
                 <img 
                   src={pngUrl} 
                   alt={`TOP 5 ARTICOLE – PREȚURI COMPETITORI | ${data.week} ${data.year}`} 
-                  className="max-h-[640px] w-auto object-contain rounded shadow-2xl cursor-pointer transition hover:opacity-95"
+                  className="w-full max-w-5xl h-auto max-h-[78vh] object-contain rounded shadow-2xl cursor-pointer transition hover:opacity-95"
                   onClick={() => setZoomImage(true)}
+                  title="Click pentru a mări imaginea"
                 />
-              </div>
-
-              {/* Integrity metadata footer */}
-              <div className="mt-4 pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
-                <div className="flex items-center gap-4">
-                  <span>Aspect ratio: <strong>4:3 (1.333)</strong></span>
-                  <span>Master SHA-256: <code className="text-slate-300">{data.hashes?.master_sha256?.substring(0, 12)}...</code></span>
-                  <span>Output SHA-256: <code className="text-emerald-400">{data.hashes?.output_sha256?.substring(0, 12)}...</code></span>
-                </div>
-                <div className="text-slate-500">
-                  Validat de FRESH_MEAT_BI_GATE v1.5
-                </div>
               </div>
             </div>
 
@@ -980,9 +973,7 @@ export default function App() {
               alt={`TOP 5 ARTICOLE – PREȚURI COMPETITORI | ${data.week} ${data.year}`} 
               className="max-h-[85vh] w-auto object-contain rounded-lg shadow-2xl border border-slate-700" 
             />
-            <div className="mt-2 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
-              <span>Raport de aspect 4:3</span>
-              <span>Rezoluție: 1448 × 1086 px</span>
+            <div className="mt-3 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
               <button 
                 type="button"
                 onClick={handleDownloadImage}
@@ -1024,14 +1015,8 @@ export default function App() {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            Designed by Vasile Huma
-          </p>
-        </div>
-      </footer>
+      {/* Universal Footer */}
+      <Footer />
     </div>
   );
 }

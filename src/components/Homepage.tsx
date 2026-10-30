@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { getAssetUrl } from '../utils';
 import { ArrowRight } from 'lucide-react';
+import Footer from './Footer';
 
 interface HomepageProps {
   onSelectModule: (module: 'promo' | 'eu-pork' | 'clipping') => void;
@@ -256,14 +257,8 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
         </div>
       </main>
 
-      {/* Footer obligatoriu: Designed by Vasile Huma */}
-      <footer className="w-full border-t border-slate-800/80 py-2.5 sm:py-3 md:py-5 shrink-0">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            Designed by Vasile Huma
-          </p>
-        </div>
-      </footer>
+      {/* Universal Shared Footer */}
+      <Footer className="border-t border-slate-800/80 py-2.5 sm:py-3 md:py-4" />
     </div>
   );
 }

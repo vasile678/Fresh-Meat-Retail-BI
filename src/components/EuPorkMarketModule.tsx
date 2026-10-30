@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { getAssetUrl } from '../utils';
 import { PinkPorkIcon } from './Homepage';
+import Footer from './Footer';
 import { 
   ArrowLeft, 
   Download, 
@@ -682,14 +683,8 @@ export default function EuPorkMarketModule({
 
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-3.5 sm:py-4 text-center text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-slate-400 tracking-wide">
-            Designed by Vasile Huma
-          </p>
-        </div>
-      </footer>
+      {/* Universal Shared Footer */}
+      <Footer />
     </div>
   );
 }
