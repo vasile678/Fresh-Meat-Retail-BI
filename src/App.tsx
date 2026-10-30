@@ -605,46 +605,7 @@ export default function App() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full">
-        {/* KPI Summary strip from authenticated data */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-slate-900 border border-slate-800 p-3.5 rounded-lg">
-            <span className="text-xs text-slate-400 font-medium">Acoperire Matrice 5×5</span>
-            <div className="text-xl font-bold text-white mt-0.5 flex items-center justify-between">
-              {data.summary?.cell_count || 25} / 25
-              <span className="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">100% Validat</span>
-            </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">5 retaileri × 5 articole KVI</span>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 p-3.5 rounded-lg">
-            <span className="text-xs text-slate-400 font-medium">Prețuri VERIFIED</span>
-            <div className="text-xl font-bold text-emerald-400 mt-0.5 flex items-center justify-between">
-              {data.summary?.verified_count || 0} Oferte
-              <span className="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Active</span>
-            </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">Surse externe capturate</span>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 p-3.5 rounded-lg">
-            <span className="text-xs text-slate-400 font-medium">Prețuri N/V (Neverificate)</span>
-            <div className="text-xl font-bold text-amber-400 mt-0.5 flex items-center justify-between">
-              {data.summary?.nv_count || 0} Celule
-              <span className="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Fără promo</span>
-            </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">Fără asumpții demonstrative</span>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 p-3.5 rounded-lg">
-            <span className="text-xs text-slate-400 font-medium">Autoritate Lansare</span>
-            <div className="text-xl font-bold text-emerald-400 mt-0.5 flex items-center justify-between">
-              {data.release_status}
-              <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-            </div>
-            <span className="text-[11px] text-slate-500 mt-1 block">Chitanță Release Gate autentică</span>
-          </div>
-        </div>
-
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6">
         {/* Tab 1: Image & Executive View */}
         {selectedTab === 'image' && (
           <div className="space-y-6">
@@ -693,45 +654,35 @@ export default function App() {
               </div>
             </div>
 
-            {/* Quick Observations Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4">
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4" /> Cele mai bune prețuri per rând
+            {/* Secțiune Comercială: Cele mai bune prețuri per rând */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-xl p-4 sm:p-5 shadow-lg">
+                <div className="text-xs sm:text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3 flex items-center justify-between pb-2.5 border-b border-slate-800">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Cele mai bune prețuri per rând
+                  </span>
+                  <span className="text-[11px] font-normal text-slate-400 normal-case">
+                    Top oferte active KVI
+                  </span>
                 </div>
-                <ul className="text-xs space-y-2 text-slate-300">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-xs text-slate-300">
                   {kvi.map(item => {
                     const best = data.summary?.best_prices?.[item];
                     return (
-                      <li key={item} className="flex justify-between border-b border-slate-800/60 pb-1.5">
-                        <span>{item}:</span>
+                      <div key={item} className="flex items-center justify-between py-2 px-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                        <span className="text-slate-300 font-medium">{item}:</span>
                         {best ? (
-                          <strong className="text-emerald-400">{best.toFixed(2).replace('.', ',')} lei/kg</strong>
+                          <span className="font-extrabold text-emerald-400 text-sm">
+                            {best.toFixed(2).replace('.', ',')} <span className="text-[10px] font-medium text-slate-400">lei/kg</span>
+                          </span>
                         ) : (
-                          <strong className="text-slate-400">N/V (Fără ofertă)</strong>
+                          <span className="text-slate-400 font-semibold text-xs">N/V (Fără ofertă)</span>
                         )}
-                      </li>
+                      </div>
                     );
                   })}
-                </ul>
-              </div>
-
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4">
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                  <AlertCircle className="w-4 h-4" /> Politică Like-For-Like
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Nu au fost incluse ca echivalente sortimentele marinate sau bucățile cu os. Prețurile afișate pe platformele online fără reducere de catalog național rămân <strong>N/V</strong> conform regulii de publicare.
-                </p>
-              </div>
-
-              <div className="bg-slate-900 border border-slate-800 rounded-lg p-4">
-                <div className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                  <Info className="w-4 h-4" /> Integritate Criptografică
-                </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Datele afișate provin exclusiv din chitanțele generate de motorul Python în directorul canonic <code>fresh_meat_bi/</code>, garantând independența deplină față de valori demonstrative hardcodate.
-                </p>
               </div>
             </div>
           </div>
@@ -741,17 +692,18 @@ export default function App() {
         {selectedTab === 'matrix' && (
           <div className="space-y-6">
             <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
-              <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+              <div className="p-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h3 className="text-sm font-semibold text-white">Matricea Oficială de Prețuri 5×5 (Normalizată lei/kg)</h3>
-                  <p className="text-xs text-slate-400">Date consumate dinamic din exportul autentic Python ({data.week} {data.year}).</p>
+                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight uppercase">
+                    COMPARAȚIE PREȚURI — SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '44'}
+                  </h3>
                 </div>
-                <div className="flex items-center gap-3 text-xs">
-                  <span className="flex items-center gap-1.5 text-emerald-400">
-                    <span className="w-3 h-3 rounded bg-emerald-500/20 border border-emerald-500 inline-block"></span> VERIFIED
+                <div className="flex flex-wrap items-center gap-3 text-xs">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400"></span> Ofertă Verificată
                   </span>
-                  <span className="flex items-center gap-1.5 text-slate-400">
-                    <span className="w-3 h-3 rounded bg-slate-800 border border-slate-700 inline-block"></span> N/V (Neverificat)
+                  <span className="flex items-center gap-1.5 text-slate-400 font-medium bg-slate-950/80 px-2.5 py-1 rounded-md border border-slate-800">
+                    <span className="font-bold text-slate-300">N/V</span> = ofertă comparabilă neverificată
                   </span>
                 </div>
               </div>
