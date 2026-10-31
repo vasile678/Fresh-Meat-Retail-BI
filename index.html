@@ -8,20 +8,46 @@
     <meta property="og:title" content="Fresh Meat Retail BI | Market Intelligence & Insights" />
     <meta property="og:description" content="Monitorizare săptămânală de prețuri și analize promoții la carne proaspătă pentru retaileri de top din România." />
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="%BASE_URL%favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
+    <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
     <meta name="theme-color" content="#111820" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Fresh Meat Retail BI | Market Intelligence & Insights" />
     <meta name="application-name" content="Fresh Meat Retail BI | Market Intelligence & Insights" />
+    <script>
+      // Global error listener to prevent blank screen if any bundle or script fails to load
+      window.addEventListener('error', function(e) {
+        var root = document.getElementById('root');
+        if (root && (!root.children.length || root.querySelector('.initial-loader'))) {
+          root.innerHTML = '<div style="min-height:100vh;background:#080E1A;color:#f1f5f9;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,-apple-system,sans-serif;padding:24px;text-align:center;">' +
+            '<div style="max-width:440px;background:#0E1726;border:1px solid #334155;border-radius:16px;padding:32px 24px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">' +
+            '<div style="width:48px;height:48px;margin:0 auto 16px;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#f87171;font-size:24px;font-weight:bold;">!</div>' +
+            '<h2 style="font-size:18px;font-weight:bold;margin:0 0 8px;color:#ffffff;">Fresh Meat Retail BI</h2>' +
+            '<p style="font-size:13px;color:#94a3b8;line-height:1.5;margin:0 0 20px;">A apărut o problemă la încărcarea resurselor aplicației. Vă rugăm să reîmprospătați pagina pentru a prelua ultima versiune.</p>' +
+            '<button onclick="window.location.reload(true)" style="background:#10b981;color:#ffffff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;margin-right:8px;">Reîncarcă aplicația</button>' +
+            '<button onclick="if(\'caches\' in window){caches.keys().then(function(names){names.forEach(function(n){caches.delete(n);});window.location.reload(true);});}else{window.location.reload(true);}" style="background:#1e293b;color:#cbd5e1;border:1px solid #475569;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:500;cursor:pointer;">Curăță cache</button>' +
+            '</div>' +
+            '</div>';
+        }
+      });
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="initial-loader" style="min-height:100vh;background:#080E1A;color:#f1f5f9;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,-apple-system,sans-serif;padding:24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:12px;background:#0E1726;border:1px solid #334155;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <div style="width:24px;height:24px;border:3px solid rgba(16,185,129,0.2);border-top-color:#10b981;border-radius:50%;animation:spin 1s linear infinite;"></div>
+        </div>
+        <h1 style="font-size:18px;font-weight:700;margin:0 0 6px;color:#ffffff;letter-spacing:-0.025em;">Fresh Meat Retail BI</h1>
+        <p style="font-size:12px;color:#94a3b8;margin:0;">Se încarcă datele de piață...</p>
+        <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

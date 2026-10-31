@@ -3,10 +3,13 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
-  const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+export default defineConfig(({ command }) => {
+  // In development (dev server), use '/' so preview in AI Studio loads directly at root.
+  // In production build (vite build), default to '/Fresh-Meat-Retail-BI/' for GitHub Pages deployment.
+  const isBuild = command === 'build';
+  const base = process.env.VITE_BASE_PATH || (isBuild ? '/Fresh-Meat-Retail-BI/' : '/');
   return {
-    base: isGitHubPages ? '/Fresh-Meat-Retail-BI/' : '/',
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

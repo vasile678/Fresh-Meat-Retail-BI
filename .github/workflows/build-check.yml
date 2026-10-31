@@ -35,6 +35,9 @@ jobs:
 
       - name: Build application
         run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          VITE_BASE_PATH: '/Fresh-Meat-Retail-BI/'
 
       - name: Verify build output & dashboard export
         run: |
