@@ -604,6 +604,7 @@ def generate_retail_media_data():
                     "insight": "Discounterii (Lidl, Kaufland, Penny) mențin o presiune promoțională agresivă pe piesele KVI (spată la 13,90 lei/kg, pulpă la paritate de 15,99 lei/kg), condiționând peste 65% din reduceri de scanarea cardului digital din aplicație.",
                     "business_implication": "Se consolidează un prag psihologic strict pentru consumator, obligând retailerii să își apere cota de piață fără a declanșa un război al prețurilor ce ar eroda marja brută a categoriei.",
                     "tactical_opportunity": "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+                    "recommended_action": "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
                     "source_and_date": "Cataloage promoționale oficiale, aplicații mobile de fidelitate & PROMO WEEKLY | 28–30.10.2026"
                 },
                 {
@@ -613,6 +614,7 @@ def generate_retail_media_data():
                     "insight": "Peste 70% din volumele de carne de porc vândute în retailul modern provin din mărcile proprii cu origine 100% România ambalate MAP, cumpărătorii prioritizând trasabilitatea garantată și prospețimea vizibilă.",
                     "business_implication": "Mărcile proprii locale securizează loialitatea și reduc sensibilitatea la preț, în timp ce tehnologia MAP cu absorbant transparent reduce pierderile operaționale (shrinkage) cu până la 18%.",
                     "tactical_opportunity": "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
+                    "recommended_action": "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
                     "source_and_date": "Revista Progresiv, Modern Buyer & Retail.ro | 26–29.10.2026"
                 },
                 {
@@ -622,6 +624,7 @@ def generate_retail_media_data():
                     "insight": "Cotațiile europene la carcasă (VEZG Germania la 1,320 €/kg, Spania Mercolleida la 1,550 €/kg) și analizele Rabobank / EuroMeatNews indică o stabilitate a ofertei pe piața internă a UE pe fondul exporturilor asiatice temperate.",
                     "business_implication": "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
                     "tactical_opportunity": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
+                    "recommended_action": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
                     "source_and_date": "EU PORK MARKET, Eurocarne, RaboResearch & Pig Progress | 28–30.10.2026"
                 }
             ]
@@ -636,6 +639,13 @@ def generate_retail_media_data():
     print(f"  Publications: {len(data['publications'])}")
     total_articles = sum(len(p['articles']) for p in data['publications'])
     print(f"  Total Verified Articles: {total_articles}")
+
+    try:
+        from update_market_intelligence_manifest import generate_manifest
+        generate_manifest()
+    except Exception as e:
+        print(f"Notice: manifest generator skipped or exception: {e}")
+
     return data
 
 if __name__ == "__main__":

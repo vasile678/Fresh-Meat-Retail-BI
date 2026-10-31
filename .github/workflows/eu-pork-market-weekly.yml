@@ -101,9 +101,15 @@ jobs:
             --visual "$VISUAL" \
             --publish
 
+      - name: Update Unified Market Intelligence Manifest
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: |
+          python3 fresh_meat_bi/update_market_intelligence_manifest.py
+
       - name: Verify Published Assets & Release Gate Status
         if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
         run: |
           test -f public/data/eu_pork_market_export.json
+          test -f public/data/market_intelligence_manifest.json
           python3 -c "import json; d=json.load(open('public/data/eu_pork_market_export.json')); assert d['release_status'] == 'RELEASE_PASS'"
           echo "Verified: public/data/eu_pork_market_export.json exists with RELEASE_PASS"

@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { getAssetUrl } from '../utils';
 import Footer from './Footer';
+import { useMarketIntelligence } from '../hooks/useMarketIntelligence';
 
 interface RetailMediaClippingModuleProps {
   onBack: () => void;
@@ -84,6 +85,7 @@ interface StrategicCategoryInsight {
   insight: string;
   business_implication: string;
   tactical_opportunity: string;
+  recommended_action?: string;
   source_and_date: string;
 }
 
@@ -651,6 +653,7 @@ const BASELINE_DATA: RetailMediaData = {
         insight: "Discounterii (Lidl, Kaufland, Penny) mențin o presiune promoțională agresivă pe piesele KVI (spată la 13,90 lei/kg, pulpă la paritate de 15,99 lei/kg), condiționând peste 65% din reduceri de scanarea cardului digital din aplicație.",
         business_implication: "Se consolidează un prag psihologic strict pentru consumator, obligând retailerii să își apere cota de piață fără a declanșa un război al prețurilor ce ar eroda marja brută a categoriei.",
         tactical_opportunity: "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+        recommended_action: "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
         source_and_date: "Cataloage promoționale oficiale, aplicații mobile de fidelitate & PROMO WEEKLY | 28–30.10.2026"
       },
       {
@@ -660,6 +663,7 @@ const BASELINE_DATA: RetailMediaData = {
         insight: "Peste 70% din volumele de carne de porc vândute în retailul modern provin din mărcile proprii cu origine 100% România ambalate MAP, cumpărătorii prioritizând trasabilitatea garantată și prospețimea vizibilă.",
         business_implication: "Mărcile proprii locale securizează loialitatea și reduc sensibilitatea la preț, în timp ce tehnologia MAP cu absorbant transparent reduce pierderile operaționale (shrinkage) cu până la 18%.",
         tactical_opportunity: "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
+        recommended_action: "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
         source_and_date: "Revista Progresiv, Modern Buyer & Retail.ro | 26–29.10.2026"
       },
       {
@@ -669,6 +673,7 @@ const BASELINE_DATA: RetailMediaData = {
         insight: "Cotațiile europene la carcasă (VEZG Germania la 1,320 €/kg, Spania Mercolleida la 1,550 €/kg) și analizele Rabobank / EuroMeatNews indică o stabilitate a ofertei pe piața internă a UE pe fondul exporturilor asiatice temperate.",
         business_implication: "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
         tactical_opportunity: "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
+        recommended_action: "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
         source_and_date: "EU PORK MARKET, Eurocarne, RaboResearch & Pig Progress | 28–30.10.2026"
       }
     ]
@@ -679,6 +684,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
   const [selectedTab, setSelectedTab] = useState<'catalogs' | 'press' | 'intelligence'>('catalogs');
   const [data, setData] = useState<RetailMediaData>(BASELINE_DATA);
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
+  const { manifest, formatUpdatedDisplay } = useMarketIntelligence();
 
   useEffect(() => {
     document.title = 'Fresh Meat Retail BI | Market Intelligence & Insights';
@@ -741,9 +747,12 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
-            <div className="hidden lg:flex flex-col text-right pr-2 border-r border-slate-800 text-[11px] text-slate-400">
-              <span className="text-slate-500 font-medium">Ultima actualizare validată</span>
-              <span className="font-semibold text-slate-200">{data.updated}</span>
+            <div className="flex flex-col text-right pr-2 sm:border-r border-slate-800 text-[11px] text-slate-400">
+              <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
+              <span className="text-xs font-semibold text-slate-200">{data.period_analyzed?.split(' ')[0] || '24.10–31.10.2026'}</span>
+              <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-0.5 font-medium tracking-tight">
+                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || data.updated || '31.10.2026 · 09:00')}
+              </span>
             </div>
             <button
               type="button"
@@ -1172,9 +1181,14 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                     </p>
                   </div>
                 </div>
-                <span className="self-start sm:self-center px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-xs uppercase tracking-wider border border-emerald-500/30">
-                  CATEGORY INTELLIGENCE
-                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-[11px] text-slate-400 font-medium">
+                    {formatUpdatedDisplay(manifest.modules?.strategic_category_insights?.last_verified_update || '31.10.2026 · 09:00')}
+                  </span>
+                  <span className="self-start sm:self-center px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-xs uppercase tracking-wider border border-emerald-500/30">
+                    CATEGORY INTELLIGENCE
+                  </span>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -1213,13 +1227,13 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                         </p>
                       </div>
 
-                      {/* 3. TACTICAL OPPORTUNITY */}
+                      {/* 3. RECOMMENDED ACTION */}
                       <div className="bg-slate-900/90 p-3 rounded-lg border border-slate-800/70 space-y-1">
                         <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1">
-                          <span>3. TACTICAL OPPORTUNITY</span>
+                          <span>3. RECOMMENDED ACTION</span>
                         </div>
                         <p className="text-xs text-slate-300 leading-relaxed">
-                          {item.tactical_opportunity}
+                          {item.recommended_action || item.tactical_opportunity}
                         </p>
                       </div>
                     </div>

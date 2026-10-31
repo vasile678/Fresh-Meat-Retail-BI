@@ -1,6 +1,10 @@
 name: Fresh Meat BI - Weekly Controlled Pipeline
 
 on:
+  schedule:
+    # Rulează la 06:00 UTC și 07:00 UTC în fiecare luni pentru Promo Weekly.
+    # Verificarea orei locale asigură execuția exact la 09:00 Europe/Bucharest.
+    - cron: '0 6,7 * * 1'
   workflow_dispatch:
     inputs:
       week:
@@ -43,7 +47,7 @@ on:
         description: "Publică atomic rezultatele în dashboard (doar la RELEASE_PASS)"
         required: true
         type: boolean
-        default: false
+        default: true
 
 permissions:
   contents: write
@@ -57,7 +61,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
+      - name: Check Europe/Bucharest Local Time (09:00 on Monday)
+        if: github.event_name == 'schedule'
+        id: time_check
+        run: |
+          LOCAL_HOUR=$(python3 -c "import datetime, zoneinfo; print(datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Bucharest')).hour)")
+          echo "Local hour in Europe/Bucharest is: $LOCAL_HOUR"
+          if [ "$LOCAL_HOUR" -ne 9 ]; then
+            echo "SHOULD_RUN=false" >> $GITHUB_ENV
+            echo "Not 09:00 in Europe/Bucharest (current hour is $LOCAL_HOUR). Skipping this hourly trigger."
+          else
+            echo "SHOULD_RUN=true" >> $GITHUB_ENV
+            echo "09:00 Europe/Bucharest confirmed. Proceeding with Monday weekly pipeline execution."
+          fi
+
       - name: Setup Python
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: '3.11'
@@ -65,20 +84,28 @@ jobs:
           cache-dependency-path: 'fresh_meat_bi/requirements.txt'
 
       - name: Install system fonts
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends fonts-dejavu-core
 
       - name: Install Python dependencies
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
         run: pip install -r fresh_meat_bi/requirements.txt
 
       - name: Run Weekly Pipeline Control Suite (Etapa 4 Test Cases)
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
         run: |
           python3 fresh_meat_bi/test_weekly_pipeline.py
 
       - name: Execute Weekly Controlled Pipeline
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
         run: |
-          ARGS="--week ${{ inputs.week }} --year ${{ inputs.year }} --domain ${{ inputs.domain }} --dataset ${{ inputs.dataset_path }}"
+          WEEK="${{ inputs.week || 'WK44' }}"
+          YEAR="${{ inputs.year || '2026' }}"
+          DOMAIN="${{ inputs.domain || 'PROMO' }}"
+          DATASET="${{ inputs.dataset_path || 'fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_WK44.json' }}"
+          ARGS="--week $WEEK --year $YEAR --domain $DOMAIN --dataset $DATASET"
           
           if [ -n "${{ inputs.research_path }}" ]; then
             ARGS="$ARGS --research ${{ inputs.research_path }}"
@@ -92,15 +119,21 @@ jobs:
           if [ -n "${{ inputs.visual_path }}" ]; then
             ARGS="$ARGS --visual ${{ inputs.visual_path }}"
           fi
-          if [ "${{ inputs.publish }}" = "true" ]; then
+          if [ "${{ inputs.publish || 'true' }}" = "true" ]; then
             ARGS="$ARGS --publish"
           fi
 
           echo "Running pipeline: python3 fresh_meat_bi/weekly_pipeline.py $ARGS"
           python3 fresh_meat_bi/weekly_pipeline.py $ARGS
 
+      - name: Update Unified Market Intelligence Manifest
+        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        run: |
+          python3 fresh_meat_bi/update_market_intelligence_manifest.py
+
       - name: Verify Published Dashboard Export
-        if: ${{ inputs.publish }}
+        if: (github.event_name != 'schedule' || env.SHOULD_RUN == 'true') && (inputs.publish == true || github.event_name == 'schedule')
         run: |
           test -f public/data/bi_dashboard_export.json
-          echo "Verified atomic publication of bi_dashboard_export.json"
+          test -f public/data/market_intelligence_manifest.json
+          echo "Verified atomic publication of bi_dashboard_export.json and manifest"

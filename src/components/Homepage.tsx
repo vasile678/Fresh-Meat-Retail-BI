@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { getAssetUrl } from '../utils';
 import { ArrowRight } from 'lucide-react';
 import Footer from './Footer';
+import { useMarketIntelligence } from '../hooks/useMarketIntelligence';
 
 interface HomepageProps {
   onSelectModule: (module: 'promo' | 'eu-pork' | 'clipping') => void;
@@ -143,6 +144,8 @@ function ClippingSearchIcon({ className = "w-12 h-12 md:w-16 md:h-16" }: { class
 }
 
 export default function Homepage({ onSelectModule }: HomepageProps) {
+  const { manifest, formatUpdatedDisplay } = useMarketIntelligence();
+
   useEffect(() => {
     document.title = 'Fresh Meat Retail BI | Market Intelligence & Insights';
   }, []);
@@ -184,6 +187,9 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
               <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-emerald-400 transition-colors">
                 PROMO WEEKLY
               </h2>
+              <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
+                {formatUpdatedDisplay(manifest.modules?.promo_weekly?.last_verified_update || '29.10.2026 · 09:00')}
+              </span>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}
@@ -216,6 +222,9 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
               <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-pink-400 transition-colors">
                 EU PORK MARKET
               </h2>
+              <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
+                {formatUpdatedDisplay(manifest.modules?.eu_pork_market?.last_verified_update || '29.10.2026 · 09:00')}
+              </span>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}
@@ -244,6 +253,9 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
               <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-sky-400 transition-colors">
                 RETAIL MEDIA MONITOR
               </h2>
+              <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
+                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || '31.10.2026 · 09:00')}
+              </span>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}

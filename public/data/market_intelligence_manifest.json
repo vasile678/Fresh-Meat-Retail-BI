@@ -1,0 +1,70 @@
+{
+  "schema_version": "2.0-market-intelligence-manifest",
+  "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
+  "generated_at_utc": "2026-11-01T00:15:19.680091+02:00",
+  "execution_timezone": "Europe/Bucharest",
+  "modules": {
+    "promo_weekly": {
+      "module_id": "promo_weekly",
+      "title": "Promo Weekly",
+      "schedule": "Luni, 09:00 Europe/Bucharest",
+      "last_verified_update": "29.10.2026 · 09:00",
+      "updated_date": "29.10.2026",
+      "updated_time": "09:00",
+      "week": "WK44",
+      "year": 2026,
+      "period": "26 OCT – 01 NOI 2026",
+      "status": "RELEASE_PASS",
+      "data_file": "/data/bi_dashboard_export.json",
+      "active_release_file": "/data/active_release.json",
+      "dataset_sha256": "778dbd5de50754ddf5178a3331b9663d6a751c9e7b24c951ecaad8c966a81931",
+      "verified_cells_count": 25,
+      "verified_retailers_count": 5
+    },
+    "eu_pork_market": {
+      "module_id": "eu_pork_market",
+      "title": "EU Pork Market",
+      "schedule": "Joi, 09:00 Europe/Bucharest (cu integrare progresivă)",
+      "last_verified_update": "29.10.2026 · 09:00",
+      "updated_date": "29.10.2026",
+      "updated_time": "09:00",
+      "week": "WK38",
+      "year": 2026,
+      "period": "14–20 September 2026",
+      "status": "RELEASE_PASS",
+      "data_file": "/data/eu_pork_market_export.json",
+      "dataset_sha256": "ad176f2671a4b9768a921c89c31d7963c4e2f8fc10074d2f6145c1eb58653ed8",
+      "verified_benchmarks_count": 8
+    },
+    "retail_media_monitor": {
+      "module_id": "retail_media_monitor",
+      "title": "Retail Media Monitor (Presă Specializată)",
+      "schedule": "Zilnic, 09:00 Europe/Bucharest",
+      "last_verified_update": "01.11.2026 · 09:00",
+      "updated_date": "01.11.2026",
+      "updated_time": "09:00",
+      "period": "25.10.2026 – 01.11.2026 (Ultimele 7 zile)",
+      "status": "ACTIVE_MONITORED",
+      "data_file": "/data/retail_media_export.json",
+      "dataset_sha256": "c54b4f408281c9743a5dd3eece773d8968dbba3c26cfef7322f31ae846962a9e",
+      "verified_publications_count": 12,
+      "verified_articles_count": 36
+    },
+    "strategic_category_insights": {
+      "module_id": "strategic_category_insights",
+      "title": "Strategic Category Insights",
+      "schedule": "Zilnic, după sincronizarea surselor relevante de piață",
+      "last_verified_update": "01.11.2026 · 09:00",
+      "updated_date": "01.11.2026",
+      "updated_time": "09:00",
+      "status": "SYNCHRONIZED",
+      "sources": [
+        "PROMO_WEEKLY (Prețuri & Mecanici KVI)",
+        "EU_PORK_MARKET (Cotații Europene de Referință)",
+        "PRESĂ_SPECIALIZATĂ (12 Publicații Sectoriale Monitorizate)"
+      ],
+      "framework": "INSIGHT → BUSINESS IMPLICATION → RECOMMENDED ACTION",
+      "insights_count": 3
+    }
+  }
+}

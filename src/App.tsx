@@ -22,6 +22,7 @@ import EuPorkMarketModule from './components/EuPorkMarketModule';
 import RetailMediaClippingModule from './components/RetailMediaClippingModule';
 import Footer from './components/Footer';
 import { getAssetUrl } from './utils';
+import { useMarketIntelligence } from './hooks/useMarketIntelligence';
 export { getAssetUrl };
 
 interface CellData {
@@ -98,6 +99,8 @@ export default function App() {
   const [copiedHash, setCopiedHash] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [downloadToast, setDownloadToast] = useState<{ message: string; type: 'info' | 'success' | 'error' } | null>(null);
+
+  const { manifest, formatUpdatedDisplay } = useMarketIntelligence();
 
   // Enforce Windows / Browser title across all navigation and modules
   const APP_TITLE = 'Fresh Meat Retail BI | Market Intelligence & Insights';
@@ -562,10 +565,13 @@ export default function App() {
             </div>
           </div>
 
-          {/* Perioadă analizată în antet (comenzile redundante din antet au fost eliminate) */}
+          {/* Perioadă analizată și Updated în antet */}
           <div className="text-right shrink-0">
             <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
             <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.calendar_period}</span>
+            <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-0.5 font-medium tracking-tight">
+              {formatUpdatedDisplay(manifest.modules?.promo_weekly?.last_verified_update || '29.10.2026 · 09:00')}
+            </span>
           </div>
         </div>
 
