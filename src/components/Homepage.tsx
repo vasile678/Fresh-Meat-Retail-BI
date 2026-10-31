@@ -198,14 +198,18 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
             </div>
           </button>
 
-          {/* CARD 2 — EU PORK MARKET (Pink Pig Icon) */}
+          {/* CARD 2 — EU PORK MARKET (Official Logo) */}
           <button
             type="button"
             onClick={() => onSelectModule('eu-pork')}
             className="group relative flex flex-row md:flex-col items-center justify-between w-[92%] sm:w-[90%] md:w-[310px] lg:w-[315px] max-w-md md:max-w-[320px] h-[112px] sm:h-[120px] md:h-[290px] px-4 py-3 sm:px-5 sm:py-4 md:p-6 lg:p-7 rounded-2xl bg-[#0E1726] border border-slate-800/80 hover:border-pink-500/60 hover:bg-[#121E31] transition-all duration-300 hover:shadow-2xl hover:shadow-pink-950/30 hover:-translate-y-1 active:translate-y-0 active:scale-[0.99] cursor-pointer shrink-0"
           >
-            <div className="flex items-center justify-center shrink-0 text-pink-400 group-hover:text-pink-300 transition-colors md:mb-4">
-              <PinkPorkIcon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" />
+            <div className="flex items-center justify-center shrink-0 md:mb-4">
+              <img 
+                src={getAssetUrl('/eu_pork_market_logo.png')} 
+                alt="EU Pork Market Logo" 
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain rounded-xl drop-shadow-[0_4px_12px_rgba(236,72,153,0.25)] group-hover:scale-105 transition-transform duration-300" 
+              />
             </div>
 
             <div className="flex-1 text-center px-3 md:px-0">

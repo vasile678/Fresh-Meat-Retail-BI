@@ -77,11 +77,14 @@ interface ViralAlert {
   detail: string;
 }
 
-interface ProfiRecommendation {
-  priority: number;
+interface StrategicCategoryInsight {
+  id: string;
   title: string;
   domain: string;
-  action: string;
+  insight: string;
+  business_implication: string;
+  tactical_opportunity: string;
+  source_and_date: string;
 }
 
 interface CompetitiveIntelligenceData {
@@ -89,7 +92,7 @@ interface CompetitiveIntelligenceData {
   top_signals: TopSignal[];
   retailer_dashboard: RetailerDashboardRow[];
   viral_alerts: ViralAlert[];
-  profi_recommendations: ProfiRecommendation[];
+  strategic_insights: StrategicCategoryInsight[];
 }
 
 interface RetailMediaData {
@@ -640,24 +643,33 @@ const BASELINE_DATA: RetailMediaData = {
         detail: "Produsele KVI aflate pe prima pagină de catalog se epuizează rapid după ora 17:00 în magazinele mici de proximitate."
       }
     ],
-    profi_recommendations: [
+    strategic_insights: [
       {
-        priority: 1,
-        title: "Arbitraj comercial și contractare avantajoasă pe spată și pulpă de porc",
-        domain: "Achiziții & Procurement",
-        action: "Valorificarea stabilității cotațiilor carcasei europene (Germania/Olanda) pentru negocierea unor prețuri de achiziție competitive cu procesatorii locali, securizând volume suficiente pentru KVI la preț sub 16,50 lei/kg."
+        id: "price-positioning",
+        title: "PRICE & COMPETITIVE POSITIONING",
+        domain: "Arhitectură de Preț & Promoții",
+        insight: "Discounterii (Lidl, Kaufland, Penny) mențin o presiune promoțională agresivă pe piesele KVI (spată la 13,90 lei/kg, pulpă la paritate de 15,99 lei/kg), condiționând peste 65% din reduceri de scanarea cardului digital din aplicație.",
+        business_implication: "Se consolidează un prag psihologic strict pentru consumator, obligând retailerii să își apere cota de piață fără a declanșa un război al prețurilor ce ar eroda marja brută a categoriei.",
+        tactical_opportunity: "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+        source_and_date: "Cataloage promoționale oficiale, aplicații mobile de fidelitate & PROMO WEEKLY | 28–30.10.2026"
       },
       {
-        priority: 2,
-        title: "Campanie dedicată 'Weekendul Cărnii Proaspete' în Aplicația Profi",
-        domain: "Politica Promoțională & Digital",
-        action: "Răspuns direct la cuponarea Lidl Plus și Kaufland Card prin activarea unui cupon exclusiv în Aplicația Profi (-20% la caserola de pulpă/spată vineri-duminică), stimulând descărcarea aplicației și traficul în magazinele de proximitate."
+        id: "category-growth",
+        title: "CATEGORY GROWTH & SHOPPER INSIGHTS",
+        domain: "Sortimentație & Comportament Shopper",
+        insight: "Peste 70% din volumele de carne de porc vândute în retailul modern provin din mărcile proprii cu origine 100% România ambalate MAP, cumpărătorii prioritizând trasabilitatea garantată și prospețimea vizibilă.",
+        business_implication: "Mărcile proprii locale securizează loialitatea și reduc sensibilitatea la preț, în timp ce tehnologia MAP cu absorbant transparent reduce pierderile operaționale (shrinkage) cu până la 18%.",
+        tactical_opportunity: "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
+        source_and_date: "Revista Progresiv, Modern Buyer & Retail.ro | 26–29.10.2026"
       },
       {
-        priority: 3,
-        title: "Optimizarea sortimentului 'Ferma din Deal' pe gramaj fix și etichetare 100% România",
-        domain: "Sortimentație & Marcă Proprie",
-        action: "Evidențierea la raft a originii 100% autohtone și calibrarea caserolelor la 600g–800g (dimensiune ideală pentru coșul de cartier), garantând disponibilitate permanentă la orele de vârf de după-amiază."
+        id: "market-signals",
+        title: "MARKET OPPORTUNITIES & EARLY SIGNALS",
+        domain: "Aprovizionare & Piață Europeană",
+        insight: "Cotațiile europene la carcasă (VEZG Germania la 1,320 €/kg, Spania Mercolleida la 1,550 €/kg) și analizele Rabobank / EuroMeatNews indică o stabilitate a ofertei pe piața internă a UE pe fondul exporturilor asiatice temperate.",
+        business_implication: "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
+        tactical_opportunity: "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
+        source_and_date: "EU PORK MARKET, Eurocarne, RaboResearch & Pig Progress | 28–30.10.2026"
       }
     ]
   }
@@ -694,6 +706,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
 
   const romaniaPublications = data.publications.filter(p => p.category === 'retail_fmcg');
   const internationalPublications = data.publications.filter(p => p.category === 'pork_industry');
+  const strategicInsights = data.competitive_intelligence?.strategic_insights || BASELINE_DATA.competitive_intelligence.strategic_insights;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
@@ -774,7 +787,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <TrendingUp className="w-3.5 h-3.5" /> Competitive Intelligence & Recomandări
+            <TrendingUp className="w-3.5 h-3.5" /> Strategic Category Intelligence
           </button>
         </div>
       </header>
@@ -1143,49 +1156,83 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
               </div>
             </div>
 
-            {/* 3 ACȚIUNI PRIORITARE PENTRU PROFI (FOCUS: CARNE PROASPĂTĂ) */}
+            {/* 3 STRATEGIC INSIGHTS | FRESH MEAT CATEGORY */}
             <div className="bg-slate-900 border border-emerald-500/40 rounded-xl p-5 sm:p-6 shadow-2xl space-y-5">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                <div className="flex items-center gap-2">
-                  <div className="p-1 rounded bg-emerald-500/20 text-emerald-400">
-                    <Award className="w-4 h-4" />
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-800 gap-2">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+                    <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-                      3 ACȚIUNI PRIORITARE PENTRU PROFI (FOCUS: CARNE PROASPĂTĂ)
+                    <h3 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+                      3 STRATEGIC INSIGHTS | FRESH MEAT CATEGORY
                     </h3>
-                    <p className="text-xs text-slate-400">Recomandări comerciale fundamentate pe monitorizarea zilnică</p>
+                    <p className="text-xs text-slate-400">
+                      Market intelligence, competitive positioning &amp; category growth opportunities
+                    </p>
                   </div>
                 </div>
-                <span className="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-xs">
-                  STRATEGIE EXECUTIVĂ
+                <span className="self-start sm:self-center px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-xs uppercase tracking-wider border border-emerald-500/30">
+                  CATEGORY INTELLIGENCE
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {data.competitive_intelligence.profi_recommendations.map((rec) => (
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                {strategicInsights.map((item, idx) => (
                   <div 
-                    key={rec.priority}
-                    className="bg-slate-950 p-4 sm:p-5 rounded-xl border border-slate-800/90 flex flex-col justify-between space-y-3"
+                    key={item.id || idx}
+                    className="bg-slate-950 p-5 rounded-xl border border-slate-800/90 flex flex-col justify-between space-y-4 hover:border-slate-700 transition"
                   >
-                    <div>
-                      <div className="flex items-center justify-between text-xs mb-2">
-                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px]">
-                          PRIORITATE #{rec.priority}
-                        </span>
-                        <span className="text-slate-500 text-[11px] font-medium">{rec.domain}</span>
+                    <div className="space-y-3">
+                      <div className="pb-2.5 border-b border-slate-800/80">
+                        <h4 className="text-xs sm:text-sm font-bold text-white leading-snug tracking-tight">
+                          {item.title}
+                        </h4>
+                        <p className="text-[11px] font-medium text-slate-400 mt-0.5">
+                          {item.domain}
+                        </p>
                       </div>
-                      <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
-                        {rec.title}
-                      </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed mt-2">
-                        {rec.action}
-                      </p>
+
+                      {/* 1. INSIGHT */}
+                      <div className="bg-slate-900/90 p-3 rounded-lg border border-slate-800/70 space-y-1">
+                        <div className="text-[10px] font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1">
+                          <span>1. INSIGHT</span>
+                        </div>
+                        <p className="text-xs text-slate-200 leading-relaxed">
+                          {item.insight}
+                        </p>
+                      </div>
+
+                      {/* 2. BUSINESS IMPLICATION */}
+                      <div className="bg-slate-900/90 p-3 rounded-lg border border-slate-800/70 space-y-1">
+                        <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                          <span>2. BUSINESS IMPLICATION</span>
+                        </div>
+                        <p className="text-xs text-slate-300 leading-relaxed">
+                          {item.business_implication}
+                        </p>
+                      </div>
+
+                      {/* 3. TACTICAL OPPORTUNITY */}
+                      <div className="bg-slate-900/90 p-3 rounded-lg border border-slate-800/70 space-y-1">
+                        <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1">
+                          <span>3. TACTICAL OPPORTUNITY</span>
+                        </div>
+                        <p className="text-xs text-slate-300 leading-relaxed">
+                          {item.tactical_opportunity}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-800/60 flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
-                      <span>Aplicabil imediat în rețea</span>
-                      <ChevronRight className="w-3.5 h-3.5" />
+                    {/* 4. SOURCE & DATE */}
+                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                      <div className="flex items-center gap-1 truncate">
+                        <span className="font-semibold text-slate-500">4. Sursă:</span>
+                        <span className="text-slate-300 truncate">{item.source_and_date}</span>
+                      </div>
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 font-medium">
+                        Verificat
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -1279,14 +1326,20 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 </div>
               </div>
 
-              {/* 3 Recomandări Profi */}
+              {/* 3 STRATEGIC INSIGHTS | FRESH MEAT CATEGORY */}
               <div className="p-4 rounded-xl bg-slate-950 border border-emerald-500/40">
-                <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-3">3. Recomandări Strategice pentru PROFI</h4>
+                <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-3">3. STRATEGIC INSIGHTS | FRESH MEAT CATEGORY</h4>
                 <div className="space-y-3">
-                  {data.competitive_intelligence.profi_recommendations.map((rec) => (
-                    <div key={rec.priority} className="text-xs">
-                      <strong className="text-white">#{rec.priority} [{rec.domain}] {rec.title}:</strong>
-                      <p className="text-slate-300 mt-0.5">{rec.action}</p>
+                  {strategicInsights.map((item) => (
+                    <div key={item.id} className="text-xs border-b border-slate-800/60 pb-2.5 last:border-0 last:pb-0">
+                      <div className="flex items-center justify-between text-white font-bold mb-1">
+                        <span>{item.title}</span>
+                        <span className="text-[10px] text-slate-400">{item.domain}</span>
+                      </div>
+                      <p className="text-slate-300"><span className="text-sky-400 font-semibold">Insight:</span> {item.insight}</p>
+                      <p className="text-slate-300 mt-0.5"><span className="text-amber-400 font-semibold">Implicare:</span> {item.business_implication}</p>
+                      <p className="text-slate-300 mt-0.5"><span className="text-emerald-400 font-semibold">Oportunitate:</span> {item.tactical_opportunity}</p>
+                      <p className="text-[10px] text-slate-500 mt-1">Sursă: {item.source_and_date}</p>
                     </div>
                   ))}
                 </div>
@@ -1296,8 +1349,12 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
 
             {/* Modal Footer */}
             <div className="p-3 border-t border-slate-800 bg-slate-950 text-center">
-              <p className="text-[11px] font-semibold text-slate-200 tracking-wider uppercase">KNOW MORE. MOVE FIRST.</p>
-              <p className="text-[10px] text-slate-400 font-normal mt-0.5">by Vasile Huma</p>
+              <p className="text-xs font-bold text-white tracking-wider uppercase">
+                KNOW MORE. MOVE FIRST.
+              </p>
+              <p className="text-[10px] text-slate-400 font-normal tracking-wide mt-0.5">
+                by Vasile Huma
+              </p>
             </div>
           </div>
         </div>

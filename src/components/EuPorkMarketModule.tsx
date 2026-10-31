@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { getAssetUrl } from '../utils';
-import { PinkPorkIcon } from './Homepage';
 import Footer from './Footer';
 import { 
   ArrowLeft, 
@@ -248,8 +247,12 @@ export default function EuPorkMarketModule({
               <span className="inline xs:hidden sm:hidden">Înapoi</span>
             </button>
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
-            <div className="p-1 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
-              <PinkPorkIcon className="w-8 h-8 sm:w-9 sm:h-9" />
+            <div className="shrink-0 flex items-center justify-center">
+              <img 
+                src={getAssetUrl('/eu_pork_market_logo.png')} 
+                alt="EU Pork Market Logo" 
+                className="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-lg drop-shadow-[0_2px_8px_rgba(236,72,153,0.3)]" 
+              />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">

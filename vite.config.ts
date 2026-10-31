@@ -4,8 +4,9 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  const isGitHubPages = process.env.GITHUB_PAGES === 'true';
   return {
-    base: '/Fresh-Meat-Retail-BI/',
+    base: isGitHubPages ? '/Fresh-Meat-Retail-BI/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
