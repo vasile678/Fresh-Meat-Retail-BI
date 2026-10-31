@@ -555,9 +555,6 @@ export default function App() {
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">Promo Weekly</h1>
-                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 flex items-center gap-1 shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5" /> {data.release_status}
-                </span>
               </div>
               <p className="text-[11px] sm:text-xs text-slate-400 truncate">
                 TOP 5 ARTICOLE – PREȚURI COMPETITORI | {data.week} {data.year}

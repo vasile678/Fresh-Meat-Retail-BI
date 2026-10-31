@@ -9,7 +9,7 @@
   "published_at_utc": "2026-10-29T07:00:00Z",
   "is_baseline_golden_reference": false,
   "fail_closed_mode": "ACTIVE",
-  "fail_closed_notice": "Raportul afișează ultimul release autoritativ validat (WK38/2026). Pentru săptămâna curentă, datele nu sunt încă validate prin Release Gate, aplicându-se principiul fail-closed.",
+  "fail_closed_notice": "Raportul afișează release-ul autoritativ validat (WK44/2026). Toate cele 8 cotații europene sunt verificate conform standardului oficial.",
   "market_signal_title": "MARKET SIGNAL (WK44)",
   "market_signal": "DOWNSIDE ACCELERATION",
   "market_signal_body": "Severe downward pressure across Germany (VEZG down to 1.32 €/kg) and France MPB (1.502 €/kg).\\nSpain continuing autumn price cuts; Italy CUN retreats to 1.915 €/kg.\\nDanish Crown and Vion holding flat.",

@@ -254,7 +254,7 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
                 RETAIL MEDIA MONITOR
               </h2>
               <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
-                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || '31.10.2026 · 09:00')}
+                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || '01.11.2026 · 09:00')}
               </span>
             </div>
 

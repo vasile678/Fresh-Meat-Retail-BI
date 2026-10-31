@@ -99,10 +99,10 @@ def generate_retail_media_data():
                 "id": "profi",
                 "name": "Profi",
                 "catalog_url": "https://www.profi.ro/reviste-ro/",
-                "validity": "Miercuri – Marți (Ediții Standard, Loco, City)",
+                "validity": "Joi – Miercuri (Revista săptămânală)",
                 "app_name": "Aplicația Profi",
                 "app_url": "https://www.profi.ro/aplicatia-profi/",
-                "private_brand": "Proxi & Ferma din Deal",
+                "private_brand": "Ferma din Deal",
                 "focus_meat_kvi": ["Pulpă porc f.o.", "Spată porc f.o.", "Ceafă porc f.o.", "Carne tocată amestec"],
                 "active_mechanics": "Cuponiada din aplicație, Reduceri pachet, Promoții locale de proximitate",
                 "meat_price_position": "Accesibilitate în proximitate urbană și rurală; oportunitate de reacție rapidă KVI"

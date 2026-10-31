@@ -172,10 +172,10 @@ const BASELINE_DATA: RetailMediaData = {
       id: "profi",
       name: "Profi",
       catalog_url: "https://www.profi.ro/reviste-ro/",
-      validity: "Miercuri – Marți",
+      validity: "Joi – Miercuri (Revista săptămânală)",
       app_name: "Aplicația Profi",
       app_url: "https://www.profi.ro/aplicatia-profi/",
-      private_brand: "Proxi & Ferma din Deal",
+      private_brand: "Ferma din Deal",
       focus_meat_kvi: ["Pulpă porc f.o.", "Spată porc f.o.", "Ceafă porc f.o.", "Carne tocată amestec"],
       active_mechanics: "Cuponiada din aplicație, Reduceri pachet, Promoții locale de proximitate",
       meat_price_position: "Accesibilitate în proximitate urbană și rurală; oportunitate de reacție rapidă KVI"
@@ -736,9 +736,6 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 <h1 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">
                   RETAIL MEDIA MONITOR
                 </h1>
-                <span className="px-2 py-0.5 text-[11px] sm:text-xs rounded-full bg-sky-500/20 text-sky-400 font-semibold border border-sky-500/30 flex items-center gap-1 shrink-0">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> ZILNIC 09:00 RO
-                </span>
               </div>
               <p className="text-[11px] sm:text-xs text-slate-400 truncate">
                 Retail România & European Pork Industry Intelligence
@@ -751,7 +748,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
               <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
               <span className="text-xs font-semibold text-slate-200">{data.period_analyzed?.split(' ')[0] || '24.10–31.10.2026'}</span>
               <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-0.5 font-medium tracking-tight">
-                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || data.updated || '31.10.2026 · 09:00')}
+                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || data.updated || '01.11.2026 · 09:00')}
               </span>
             </div>
             <button
