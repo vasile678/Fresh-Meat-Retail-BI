@@ -506,6 +506,48 @@ const BASELINE_DATA: RetailMediaData = {
         ]
     },
     {
+        "id": "retailarena",
+        "name": "RetailArena.ro",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://retailarena.ro/",
+        "articles": [
+            {
+                "title": "retailArena 2026 | De la pui cu certificare olandeză la AI intern: cum vede Familia Safir inovația în industria alimentară",
+                "published_at": "10.06.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "10.06.2026",
+                "summary": "În industria cărnii și procesării alimentare, inovația combină certificările de bunăstare animală cu trasabilitatea strictă și automatizarea avansată pentru eficientizarea lanțului de aprovizionare.",
+                "url": "https://retailarena.ro/retailarena-2026-de-la-pui-cu-certificare-olandeza-la-ai-intern-cum-vede-familia-safir-inovatia-in-industria-alimentara"
+            },
+            {
+                "title": "De Ziua Copilului, Sezamo ajunge în Ploiești: supermarketul online se extinde în țară",
+                "published_at": "26.05.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "26.05.2026",
+                "summary": "Supermarketul online Sezamo își extinde livrările de proximitate în Ploiești și județul Prahova, oferind carne proaspătă de la producători locali și livrare rapidă din depozit dedicat.",
+                "url": "https://retailarena.ro/stiri-si-noutatide-ziua-copilului-sezamo-ajunge-in-ploiesti-supermarketul-online-se-extinde-in-tara-15139"
+            },
+            {
+                "title": "Kaufland ”taie inflația”: reduceri timp de o lună în magazine",
+                "published_at": "09.05.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "09.05.2026",
+                "summary": "Kaufland România derulează campania comercială de reducere a prețurilor la peste 500 de articole de bază și produse proaspete pentru a proteja puterea de cumpărare a consumatorilor.",
+                "url": "https://retailarena.ro/stiri-si-noutatikaufland-taie-inflatia-reduceri-timp-de-o-luna-in-magazine-15120"
+            }
+        ]
+    },
+    {
         "id": "pigprogress",
         "name": "Pig Progress",
         "country": "Olanda / Global",
@@ -712,6 +754,48 @@ const BASELINE_DATA: RetailMediaData = {
                 "date": "30.10.2026",
                 "summary": "Evaluarea măsurilor de biosecuritate și a capacității abatoarelor din Spania de a susține exporturile continue de carcasă către UE.",
                 "url": "https://eurocarne.com/noticias/codigo/72573/kw/Porcat+analizar%C3%A1+la+evoluci%C3%B3n+de+la+PPA+en+Catalu%C3%B1a+un+a%C3%B1o+despu%C3%A9s"
+            }
+        ]
+    },
+    {
+        "id": "frs",
+        "name": "FRS – Food Retail & Service",
+        "country": "Spania / UE",
+        "category": "pork_industry",
+        "website": "https://www.foodretail.es/",
+        "articles": [
+            {
+                "title": "Híper y supermercados pierden un 1,3% de cuota frente a discounters, ecommerce y especialistas",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Creșterea frecvenței de cumpărare și orientarea spre proximitate erodează coșul mare în Spania și Europa, formatele discounter câștigând teren pe categorii proaspete.",
+                "url": "https://www.foodretail.es/retailers/hiper-y-supermercados-pierden-un-13-de-cuota-frente-a-discounters-ecommerce-y-especialistas.html"
+            },
+            {
+                "title": "MDD vs. MDF: de la indiferencia y la confrontación al reto compartido de crear valor",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "Liderii din retail și industria FMCG analizează reechilibrarea dintre mărcile proprii și mărcile naționale pe fondul presiunii pe preț la alimentele de bază.",
+                "url": "https://www.foodretail.es/sector-fmcg/mdd-vs-mdf-de-la-indiferencia-y-la-confrontacion-al-reto-compartido-de-crear-valor.html"
+            },
+            {
+                "title": "El gran consumo crece un 2,7% en septiembre, impulsado por la robustez de la demanda (+2,2%)",
+                "published_at": "27.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "27.10.2026",
+                "summary": "Sectorul bunurilor de larg consum avansează susținut de volume, în timp ce marca privată atinge o cotă record de 52% în valoare în retailul alimentar spaniol.",
+                "url": "https://www.foodretail.es/sector-fmcg/el-gran-consumo-crece-un-27-en-septiembre-impulsado-por-la-robustez-de-la-demanda-22.html"
             }
         ]
     }

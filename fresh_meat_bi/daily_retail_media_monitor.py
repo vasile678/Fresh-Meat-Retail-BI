@@ -4,7 +4,7 @@ FRESH MEAT RETAIL BI — DAILY RETAIL MEDIA MONITOR PIPELINE
 Execuție zilnică programată la ora 09:00 Europe/Bucharest.
 Monitorizează:
   - EXACT 7 retaileri din România
-  - EXACT 12 publicații specializate (7 RO + 5 Internaționale: Pig Progress, pig333, EuroMeatNews, Meat Management, Eurocarne)
+  - EXACT 14 publicații specializate (8 RO: Revista Progresiv, Revista Piața, Trends HRB, Modern Buyer, RO.aliment, Meat.Milk, Retail.ro, RetailArena.ro + 6 Internaționale: Pig Progress, pig333, EuroMeatNews, Meat Management, Eurocarne, FRS)
   - Strategic Category Intelligence (3 Strategic Insights | Fresh Meat Category).
 """
 
