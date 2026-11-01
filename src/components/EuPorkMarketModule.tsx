@@ -18,7 +18,8 @@ import {
   FileCode,
   TrendingDown,
   Minus,
-  CheckCircle2
+  CheckCircle2,
+  Calculator
 } from 'lucide-react';
 
 interface EuBenchmarkRow {
@@ -118,16 +119,69 @@ const BASELINE_FALLBACK: EuPorkExportData = {
   image_filename: 'EU_PORK_MARKET_WK44_2026.png'
 };
 
+interface PorkCutItem {
+  name: string;
+  yieldPercent: number;
+  quantityKg: number;
+  referencePrice?: number;
+  fixedPrice?: number;
+}
+
+const PORK_CUTS_CONFIG: PorkCutItem[] = [
+  { name: 'Pulpă porc fără os', yieldPercent: 21, quantityKg: 21.00, referencePrice: 2.15 },
+  { name: 'Spată porc fără os', yieldPercent: 13, quantityKg: 13.00, referencePrice: 1.90 },
+  { name: 'Piept porc cu os', yieldPercent: 18, quantityKg: 18.00, referencePrice: 2.50 },
+  { name: 'Ceafă porc fără os', yieldPercent: 8, quantityKg: 8.00, referencePrice: 3.00 },
+  { name: 'Cotlet porc fără os', yieldPercent: 10, quantityKg: 10.00, referencePrice: 2.60 },
+  { name: 'CPL 80/20', yieldPercent: 15, quantityKg: 15.00, referencePrice: 1.60 },
+  { name: 'Subproduse', yieldPercent: 12, quantityKg: 12.00, fixedPrice: 0.50 },
+  { name: 'Pierderi tehnologice', yieldPercent: 3, quantityKg: 3.00, fixedPrice: 0.00 },
+];
+
 export default function EuPorkMarketModule({
   onBack,
   onDownloadImage,
   onZoomImage,
   isDownloading
 }: EuPorkMarketModuleProps) {
-  const [selectedTab, setSelectedTab] = useState<'visual' | 'benchmarks' | 'takeaways'>('visual');
+  const [selectedTab, setSelectedTab] = useState<'visual' | 'benchmarks' | 'takeaways' | 'simulator'>('visual');
   const [data, setData] = useState<EuPorkExportData>(BASELINE_FALLBACK);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [carcassPriceStr, setCarcassPriceStr] = useState<string>('1,32');
   const { manifest, formatUpdatedDisplay } = useMarketIntelligence();
+
+  const simulatedCuts = useMemo(() => {
+    const parsed = parseFloat(carcassPriceStr.replace(',', '.'));
+    const price = !isNaN(parsed) && isFinite(parsed) && parsed >= 0 ? parsed : 0;
+
+    const costTotal = (price + 0.25) * 100;
+    const targetRevenue = costTotal / (1 - 0.20);
+    const byproductsRevenue = 12 * 0.50;
+    const commercialRevenue = targetRevenue - byproductsRevenue;
+
+    const referenceRevenue =
+      21 * 2.15 +
+      13 * 1.90 +
+      18 * 2.50 +
+       8 * 3.00 +
+      10 * 2.60 +
+      15 * 1.60;
+
+    const adjustmentFactor = referenceRevenue > 0 ? commercialRevenue / referenceRevenue : 0;
+
+    return PORK_CUTS_CONFIG.map(item => {
+      let estimatedPrice = 0;
+      if (item.fixedPrice !== undefined) {
+        estimatedPrice = item.fixedPrice;
+      } else if (item.referencePrice !== undefined) {
+        estimatedPrice = item.referencePrice * adjustmentFactor;
+      }
+      return {
+        ...item,
+        estimatedPrice
+      };
+    });
+  }, [carcassPriceStr]);
 
   // Compute current date and ISO 8601 calendar week based on Romanian local timezone (Europe/Bucharest)
   const currentBucharestInfo = useMemo(() => {
@@ -304,6 +358,16 @@ export default function EuPorkMarketModule({
             }`}
           >
             <TrendingUp className="w-3.5 h-3.5" /> Analiză & Implicații Comerciale
+          </button>
+          <button
+            onClick={() => setSelectedTab('simulator')}
+            className={`px-3 sm:px-4 py-2 text-xs font-medium border-b-2 transition flex items-center gap-1.5 sm:gap-2 shrink-0 cursor-pointer ${
+              selectedTab === 'simulator'
+                ? 'border-pink-500 text-pink-400 bg-slate-800/40'
+                : 'border-transparent text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <Calculator className="w-3.5 h-3.5" /> Pork Cuts Price Simulator
           </button>
         </div>
       </header>
@@ -549,6 +613,68 @@ export default function EuPorkMarketModule({
           </div>
         )}
 
+        {/* Tab 4: Pork Cuts Price Simulator */}
+        {selectedTab === 'simulator' && (
+          <div className="bg-slate-900 rounded-xl p-5 sm:p-6 border border-slate-800 shadow-xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-800">
+              <div>
+                <h2 className="text-base sm:text-lg font-bold text-white tracking-wide">
+                  Pork Cuts Price Simulator
+                </h2>
+              </div>
+              <div className="flex items-center gap-3">
+                <label htmlFor="carcassPriceInput" className="text-xs sm:text-sm font-semibold text-slate-300 shrink-0">
+                  Preț carcasă (EUR/kg)
+                </label>
+                <input
+                  id="carcassPriceInput"
+                  type="text"
+                  inputMode="decimal"
+                  value={carcassPriceStr}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    if (val === '' || /^[0-9]*[.,]?[0-9]*$/.test(val)) {
+                      setCarcassPriceStr(val);
+                    }
+                  }}
+                  className="w-28 sm:w-32 bg-slate-950 border border-slate-700 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-lg px-3 py-1.5 text-right font-mono text-white text-sm font-bold outline-none transition"
+                  placeholder="1,32"
+                />
+              </div>
+            </div>
+
+            <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800">
+              <table className="w-full text-left text-xs text-slate-300 min-w-[620px]">
+                <thead className="bg-slate-800/80 text-slate-200 uppercase font-semibold text-[11px] border-b border-slate-700">
+                  <tr>
+                    <th className="py-3 px-4 font-semibold text-slate-200">Produs</th>
+                    <th className="py-3 px-4 text-center font-semibold text-slate-200">Randament</th>
+                    <th className="py-3 px-4 text-right font-semibold text-slate-200">Cantitate din 100 kg</th>
+                    <th className="py-3 px-4 text-right font-semibold text-pink-400">Preț estimat EUR/kg</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                  {simulatedCuts.map((item) => (
+                    <tr key={item.name} className="hover:bg-slate-800/40 transition">
+                      <td className="py-3 px-4 font-medium text-white">{item.name}</td>
+                      <td className="py-3 px-4 text-center text-slate-300 font-mono">{item.yieldPercent}%</td>
+                      <td className="py-3 px-4 text-right text-slate-300 font-mono">
+                        {item.quantityKg.toFixed(2).replace('.', ',')} kg
+                      </td>
+                      <td className="py-3 px-4 text-right font-bold text-sm text-pink-400 font-mono">
+                        {item.estimatedPrice.toFixed(2).replace('.', ',')}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="text-xs text-slate-400 italic text-left pt-1">
+              Prețuri estimative calculate pe baza costului carcasei și a randamentelor de tranșare. Nu reprezintă cotații de piață.
+            </p>
+          </div>
+        )}
       </main>
 
       {/* Universal Shared Footer */}
