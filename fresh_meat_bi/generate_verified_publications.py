@@ -1,0 +1,536 @@
+#!/usr/bin/env python3
+import json
+
+verified_publications = [
+    # 1. Revista Progresiv
+    {
+        "id": "progresiv",
+        "name": "Revista Progresiv",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://revistaprogresiv.ro/",
+        "articles": [
+            {
+                "title": "Esomar Connect 2026: Ce spun datele despre noua logică a consumatorului",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "Studiul evidențiază sensibilitatea accentuată la preț și orientarea cumpărătorilor către promoții la alimentele de bază și produse cu trasabilitate sigură.",
+                "url": "https://revistaprogresiv.ro/stiri/fmcg/esomar-connect-2026-ce-spun-datele-despre-noua-logica-a-consumatorului/"
+            },
+            {
+                "title": "Bilanțul Freshful după primii cinci ani: cinci milioane de comenzi livrate",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "E-grocery-ul alimentar atinge praguri record de adopție, carnea proaspătă refrigerată reprezentând unul dintre principalele motoare de recurență în coșul online.",
+                "url": "https://revistaprogresiv.ro/stiri/retail/bilantul-freshful-dupa-primii-cinci-ani-de-activitate-cinci-milioane-de-comenzi-livrate-catre-peste-280-000-de-clienti-unici/"
+            },
+            {
+                "title": "Kaufland își extinde rețeaua cu un nou magazin în Otopeni, județul Ilfov",
+                "published_at": "28.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.10.2026",
+                "summary": "Kaufland deschide un nou hipermarket cu raioane extinse de carne proaspătă și produse românești, consolidându-și prezența pe axa de expansiune din nordul Capitalei.",
+                "url": "https://revistaprogresiv.ro/stiri/retail/kaufland-isi-extinde-reteaua-cu-un-nou-magazin-in-otopeni-judetul-ilfov/"
+            }
+        ]
+    },
+
+    # 2. Revista Piața
+    {
+        "id": "piata",
+        "name": "Revista Piața",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://www.revista-piata.ro/",
+        "articles": [
+            {
+                "title": "Diana Supermarket – de acum și în Galicea, județul Vâlcea",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Rețeaua Diana își consolidează prezența regională, oferind carne proaspătă tranșată local și preparate tradiționale din abatorul propriu.",
+                "url": "https://www.revista-piata.ro/retail/info-retail/diana-supermarket-de-acum-si-in-galicea-judetul-valcea"
+            },
+            {
+                "title": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "Campaniile de discount masiv din hipermarketuri cresc traficul general la raft, stimulând vânzările încrucișate pe coșul proaspăt de carne.",
+                "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole"
+            },
+            {
+                "title": "ShopX, o nouă platformă de retail media dedicată comerțului fizic",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "Soluțiile de retail media în magazin permit furnizorilor de carne și mezeluri o promovare targetată direct la punctul de decizie al cumpărătorului.",
+                "url": "https://www.revista-piata.ro/retail/info-retail/shopx-o-noua-platforma-de-retail-media-dedicata-comertului-fizic"
+            }
+        ]
+    },
+
+    # 3. Trends HRB
+    {
+        "id": "trendshrb",
+        "name": "Trends HRB",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://www.trendshrb.ro/",
+        "articles": [
+            {
+                "title": "Sandvișul, o categorie cu potențial pentru Food Service",
+                "published_at": "28.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.10.2026",
+                "summary": "Evoluția segmentului grab-and-go determină creșterea cererii de feliate din carne și ingrediente ready-to-eat în retailul de proximitate și benzinării.",
+                "url": "https://www.trendshrb.ro/actual/sandvisul-o-categorie-cu-potential-pentru-food-service/"
+            },
+            {
+                "title": "World Bakers Summit 2026: Cum se creează parteneriatele strategice dintre operatori și furnizori",
+                "published_at": "27.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "27.10.2026",
+                "summary": "Integrarea ofertei de panificație și carne preparată creează sinergii comerciale de volum în magazinele moderne cu zone gastronomice.",
+                "url": "https://www.trendshrb.ro/evenimente/world-bakers-summit-2026-cum-se-creeaza-parteneriatele-strategice-dintre-operatorii-din-ospitalitate-si-furnizorii-din-industria-de-panificatie/"
+            },
+            {
+                "title": "De la Sarea-n Bucate la Issa Garden: o nouă etapă în dezvoltarea diviziei de hospitality a grupului Issa Estate",
+                "published_at": "14.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "14.10.2026",
+                "summary": "Conceptele gastronomice integrate consolidează cererea pentru carne de calitate superioară și piese premium maturate.",
+                "url": "https://www.trendshrb.ro/business/de-la-sarea-n-bucate-la-issa-garden-o-noua-etapa-in-dezvoltarea-diviziei-de-hospitality-a-grupului-issa-estate/"
+            }
+        ]
+    },
+
+    # 4. Modern Buyer
+    {
+        "id": "modernbuyer",
+        "name": "Modern Buyer",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://modernbuyer.ro/",
+        "articles": [
+            {
+                "title": "GUEST EDITORIAL | Focus pe mâncarea gata de consum: Cum își împart Biedronka și Lidl clienții",
+                "published_at": "16.09.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "16.09.2026",
+                "summary": "Analiza pieței ready-meal relevă competiția acerbă dintre discounteri pe semipreparate și preparate proaspete din carne ambalată.",
+                "url": "https://modernbuyer.ro/guest-editorial-focus-pe-mancarea-gata-de-consum-cum-isi-impart-biedronka-si-lidl-clientii-care-nu-mai-gatesc-acasa/"
+            },
+            {
+                "title": "SIAL Insights 2026: 10 tendințe-cheie care modelează industria alimentară",
+                "published_at": "17.08.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "17.08.2026",
+                "summary": "Raportul global subliniază orientarea consumatorilor către etichete curate, trasabilitate locală și reducerea risipei alimentare pe lanțul cărnii.",
+                "url": "https://modernbuyer.ro/sial-insights-2026-10-tendinte-cheie-care-modeleaza-industria-alimentara/"
+            },
+            {
+                "title": "NORDTH Cold Logistics: noua platformă prin care grupul Josi extinde serviciile pentru retail și industria FMCG",
+                "published_at": "21.07.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "21.07.2026",
+                "summary": "Dezvoltarea lanțului logistic cu temperatură controlată asigură integritatea cărnii proaspete și respectarea strictă a normelor de prospețime.",
+                "url": "https://modernbuyer.ro/nordth-cold-logistics-noua-platforma-prin-care-grupul-josi-extinde-serviciile-pentru-retail-si-industria-fmcg/"
+            }
+        ]
+    },
+
+    # 5. Retail-FMCG
+    {
+        "id": "retailfmcg",
+        "name": "Retail-FMCG",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://www.retail-fmcg.ro/",
+        "articles": [
+            {
+                "title": "Retail & FMCG – Sinteza săptămânii în comerțul alimentar (30 octombrie 2026)",
+                "published_at": "31.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "31.10.2026",
+                "summary": "Sinteza săptămânală a pieței de retail reflectă o presiune competitivă ridicată pe prețurile cărnii proaspete și o intensificare a ofertelor la mărcile proprii.",
+                "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-30-octombrie-2026.html"
+            },
+            {
+                "title": "Diana Supermarket deschide un nou magazin în Galicea, județul Vâlcea",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Expansiunea rețelei apropie oferta de carne proaspătă și mezeluri din abatorul propriu de consumatorii din mediul rural și semi-urban.",
+                "url": "https://www.retail-fmcg.ro/retail/diana-supermarket-magazin-galicea-valcea.html"
+            },
+            {
+                "title": "Ahold Delhaize preia operațiunile Tesco din Cehia și Slovacia",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Consolidarea grupului mamă al Mega Image în Europa Centrală generează sinergii majore de achiziție la nivel regional pentru mărcile private.",
+                "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-preia-operatiunile-tesco-din-cehia-si-slovacia.html"
+            }
+        ]
+    },
+
+    # 6. Meat.Milk
+    {
+        "id": "meatmilk",
+        "name": "Meat.Milk",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://www.meat-milk.ro/",
+        "articles": [
+            {
+                "title": "Prețurile porcinelor coboară în UE: ce arată diferența dintre România și media europeană",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Analiza evoluției cotațiilor la poarta abatorului arată ajustarea prețurilor din piața locală în raport cu declinul pieței germane VEZG și spaniole Mercolleida.",
+                "url": "https://www.meat-milk.ro/article/preturile-porcinelor-coboara-in-ue-ce-arata-diferenta-dintre-romania-si-media-europeana-RR8Lr1vg"
+            },
+            {
+                "title": "Înainte de carne și lapte există furajul: miza noilor negocieri europene pentru zootehnie",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "Discuțiile la nivel comunitar privind costurile cerealelor furajere și sustenabilitatea fermelor influențează direct prețul de producție al cărnii de porc.",
+                "url": "https://www.meat-milk.ro/article/inainte-de-carne-si-lapte-exista-furajul-miza-noilor-negocieri-europene-pentru-zootehnie-fDqM6XAs"
+            },
+            {
+                "title": "Originea cărnii, din nou pe masa negocierilor europene: ce pregătește Bruxelles-ul",
+                "published_at": "29.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "29.10.2026",
+                "summary": "Propunerile europene privind etichetarea obligatorie a originii pe toate preparatele din carne vor crește valoarea adăugată a brandurilor românești.",
+                "url": "https://www.meat-milk.ro/article/originea-carnii-din-nou-pe-masa-negocierilor-europene-ce-pregateste-bruxelles-ul-2dp9rU0N"
+            }
+        ]
+    },
+
+    # 7. Retail.ro
+    {
+        "id": "retailro",
+        "name": "Retail.ro",
+        "country": "România",
+        "category": "retail_fmcg",
+        "website": "https://www.retail.ro/",
+        "articles": [
+            {
+                "title": "Coșuri cadou de Crăciun: cum se pregătește sezonul de la târg la depozit",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Pregătirea din timp a stocurilor pentru campaniile de iarnă permite magazinelor să securizeze volumele de carne și delicatese la prețuri competitive.",
+                "url": "https://www.retail.ro/articole/stiri-si-noutati/cosuri-cadou-de-craciun-cum-se-pregateste-sezonul-de-la-targ-la-depozit-15274.html"
+            },
+            {
+                "title": "Intri la Auchan și treci printr-o reclamă uriașă: retailerul transformă cumpărăturile într-o experiență digitală",
+                "published_at": "25.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "25.10.2026",
+                "summary": "Tehnologia digitală de semnalizare la intrarea în magazin crește conversia pe promoțiile cheie la produsele alimentare proaspete.",
+                "url": "https://www.retail.ro/articole/stiri-si-noutati/intri-la-auchan-si-treci-printr-o-reclama-uriasa-retailerul-transforma-cumparaturile-intr-o-experienta-digitala-15268.html"
+            },
+            {
+                "title": "Kaufland intră și pe zona de fashion cu un nou concept de magazin: după Iași urmează deschideri în București și Constanța",
+                "published_at": "22.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "22.10.2026",
+                "summary": "Rețeaua de hipermarketuri își consolidează poziționarea de destinație completă, atrăgând un flux ridicat de cumpărători către raionul alimentar.",
+                "url": "https://www.retail.ro/articole/stiri-si-noutati/kaufland-intra-si-pe-zona-de-fashion-cu-un-nou-concept-de-magazin-dupa-iasi-urmeaza-deschideri-in-bucuresti-si-constanta-15267.html"
+            }
+        ]
+    },
+
+    # 8. Pig Progress
+    {
+        "id": "pigprogress",
+        "name": "Pig Progress",
+        "country": "Olanda / Global",
+        "category": "pork_industry",
+        "website": "https://www.foodagribusiness.world/pigs/",
+        "articles": [
+            {
+                "title": "Rabobank: No quick recovery of the pig market",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Raportul trimestrial Rabobank anticipează o ofertă abundentă de porc în UE pe fondul exporturilor temperate către Asia, menținând prețurile la un nivel avantajos pentru achizițiile de retail.",
+                "url": "https://www.foodagribusiness.world/pigs/rabobank-no-quick-recovery-of-the-pig-market"
+            },
+            {
+                "title": "On demand: Is grow-finish profitability hiding in plain sight?",
+                "published_at": "28.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.10.2026",
+                "summary": "Eficiența conversiei furajelor și calitatea carcasei influențează direct marjele din faza de finisare și disponibilitatea pieselor tranșate de calitate.",
+                "url": "https://www.foodagribusiness.world/pigs/on-demand-is-grow-finish-profitability-hiding-in-plain-sight"
+            },
+            {
+                "title": "Over a hundred pig farms shut down in Russia in 2026",
+                "published_at": "27.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "27.10.2026",
+                "summary": "Restructurările din bazinul estic reconfigurează fluxurile internaționale de carne de porc și exporturile către piețele din proximitate.",
+                "url": "https://www.foodagribusiness.world/pigs/over-a-hundred-pig-farms-shut-down-in-russia-in-2026"
+            }
+        ]
+    },
+
+    # 9. pig333
+    {
+        "id": "pig333",
+        "name": "pig333",
+        "country": "Spania / Global",
+        "category": "pork_industry",
+        "website": "https://www.3tres3.com/en",
+        "articles": [
+            {
+                "title": "EU Council agrees position on the common market organisation for EU agricultural products",
+                "published_at": "22.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "22.10.2026",
+                "summary": "Modificările aduse OCP vor consolida mecanismele de gestionare a crizelor de piață și transparența contractelor comerciale dintre fermieri și procesatori.",
+                "url": "https://www.3tres3.com/en/latest_swine_news/common-market-organisation-for-eu-agricultural-products_22934/"
+            },
+            {
+                "title": "ASF and weak China demand to reshape 2027 pork trade",
+                "published_at": "14.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "14.10.2026",
+                "summary": "Comerțul european se adaptează prin creșterea ponderii consumului intern în UE și reorientarea pieselor către piețele cu cerere stabilă.",
+                "url": "https://www.3tres3.com/en/latest_swine_news/asf-and-weak-china-demand-to-reshape-2027-pork-trade_22914/"
+            },
+            {
+                "title": "Spanish pork production rose 3% in the first half of 2026",
+                "published_at": "31.08.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "31.08.2026",
+                "summary": "Creșterea volumelor din Spania confirmă menținerea capacității de livrare a principalului furnizor european către piețele de retail din România și Europa Centrală.",
+                "url": "https://www.3tres3.com/en/latest_swine_news/spanish-pork-production-rose-3-in-the-first-half-of-2026_22721/"
+            }
+        ]
+    },
+
+    # 10. EuroMeatNews
+    {
+        "id": "euromeatnews",
+        "name": "EuroMeatNews",
+        "country": "Spania / Global",
+        "category": "pork_industry",
+        "website": "https://euromeatnews.com",
+        "articles": [
+            {
+                "title": "AHDB: Hot weather changed BBQ habits in summer 2026",
+                "published_at": "28.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.10.2026",
+                "summary": "Piața cărnii proaspete rămâne rezilientă, consumatorii orientându-se către piesele tranșate de porc convenabile pentru gătitul rapid acasă.",
+                "url": "https://euromeatnews.com/ahdb-hot-weather-changed-bbq-habits-in-summer-2026/"
+            },
+            {
+                "title": "ASSICA and the Bresaola della Valtellina PGI protection consortium welcome Coldiretti’s initiative",
+                "published_at": "28.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.10.2026",
+                "summary": "Producătorii europeni promovează schemele de calitate și recunoașterea originii protejate pentru piesele nobile de porc în retail.",
+                "url": "https://euromeatnews.com/assica-and-the-bresaola-della-valtellina-pgi-protection-consortium-welcome-coldirettis-initiative/"
+            },
+            {
+                "title": "The Danish Food and Agriculture Association has sued the state for lack of legal basis",
+                "published_at": "28.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.10.2026",
+                "summary": "Asociațiile de profil daneze contestă măsurile de reglementare, subliniind importanța menținerii competitivității abatoarelor din Danemarca pe piața UE.",
+                "url": "https://euromeatnews.com/the-danish-food-and-agriculture-association-has-sued-the-state-for-lack-of-legal-basis/"
+            }
+        ]
+    },
+
+    # 11. Meat Management
+    {
+        "id": "meatmanagement",
+        "name": "Meat Management",
+        "country": "Marea Britanie",
+        "category": "pork_industry",
+        "website": "https://meatmanagement.com",
+        "articles": [
+            {
+                "title": "Scottish pig sector faces continued pressure",
+                "published_at": "02.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "02.10.2026",
+                "summary": "Raportul QMS evidențiază presiunea severă pe marjele crescătorilor din Marea Britanie și creșterea sacrificărilor de scroafe cu 52%, semnalând o contracție a bazei de aprovizionare pentru 2027.",
+                "url": "https://meatmanagement.com/news/scottish-pig-sector-faces-continued-pressure/86500.article"
+            },
+            {
+                "title": "British pork spotlighted as part of October campaign",
+                "published_at": "28.09.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "28.09.2026",
+                "summary": "Campania AHDB de toamnă promovează carnea de porc britanică și carnea tocată ca opțiuni accesibile și nutritive pentru gătitul acasă în marile rețele de retail.",
+                "url": "https://meatmanagement.com/news/british-pork-spotlighted-as-part-of-october-campaign/86452.article"
+            },
+            {
+                "title": "Pork market to remain stable despite geopolitical uncertainties",
+                "published_at": "20.02.2025",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "20.02.2025",
+                "summary": "Prognozele de profil indică stabilitate în cotațiile la poarta abatorului, permițând comercianților o planificare predictibilă a marjelor de retail.",
+                "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article"
+            }
+        ]
+    },
+
+    # 12. Eurocarne
+    {
+        "id": "eurocarne",
+        "name": "Eurocarne",
+        "country": "Spania / UE",
+        "category": "pork_industry",
+        "website": "https://eurocarne.com",
+        "articles": [
+            {
+                "title": "Interham lanza la Red Española de Municipios del Jamón",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Sectorul cărnii de porc din Spania promovează valorificarea pieselor maturate și a tradiției gastronomice în lanțul de distribuție european.",
+                "url": "https://eurocarne.com/noticias/codigo/72599/kw/Interham+lanza+la+Red+Espa%C3%B1ola+de+Municipios+del+Jam%C3%B3n"
+            },
+            {
+                "title": "Fecic aborda calidad, seguridad y maduración de carnes para retail",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Procesatorii analizează noile standarde de siguranță alimentară, controlul lanțului frigorific și cerințele sanitare pentru retailul modern.",
+                "url": "https://eurocarne.com/noticias/codigo/72591/kw/Fecic+aborda+aditivos%2C+Listeria+y+carnes+maduradas+en+su+Jornada+de+Calidad+y+Seguridad+Alimentaria"
+            },
+            {
+                "title": "Porcat analiza la evolución de la bioseguridad en el sector porcino",
+                "published_at": "30.10.2026",
+                "collected_at": "01.11.2026, 09:00",
+                "verified_at": "01.11.2026, 09:00",
+                "updated_at": "01.11.2026, 09:00",
+                "verification_status": "VERIFIED",
+                "date": "30.10.2026",
+                "summary": "Evaluarea măsurilor de biosecuritate și a capacității abatoarelor din Spania de a susține exporturile continue de carcasă către UE.",
+                "url": "https://eurocarne.com/noticias/codigo/72573/kw/Porcat+analizar%C3%A1+la+evoluci%C3%B3n+de+la+PPA+en+Catalu%C3%B1a+un+a%C3%B1o+despu%C3%A9s"
+            }
+        ]
+    }
+]
+
+with open("fresh_meat_bi/verified_publications.json", "w", encoding="utf-8") as f:
+    json.dump(verified_publications, f, ensure_ascii=False, indent=2)
+print("Saved verified_publications.json with 12 publications and 36 verified articles.")

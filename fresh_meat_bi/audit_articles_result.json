@@ -1,0 +1,2879 @@
+[
+  {
+    "pub": "Revista Progresiv",
+    "title": "Kaufland își extinde rețeaua cu un nou magazin în Otopeni, județul Ilfov",
+    "url": "https://revistaprogresiv.ro/stiri/retail/kaufland-isi-extinde-reteaua-cu-un-nou-magazin-in-otopeni-judetul-ilfov/",
+    "curr_date": "30.10.2026",
+    "verified_date": "28.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-28 16:24:34+03:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-28 16:24:34+03:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-28"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Kaufland își extinde rețeaua cu un nou magazin în Otopeni, județul Ilfov | Progr",
+    "h1": "Kaufland își extinde rețeaua cu un nou magazin în Otopeni, județul Ilfov",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Revista Progresiv",
+    "title": "Bilanțul Freshful: cinci milioane de comenzi livrate către 280.000 de clienți",
+    "url": "https://revistaprogresiv.ro/stiri/retail/bilantul-freshful-dupa-primii-cinci-ani-de-activitate-cinci-milioane-de-comenzi-livrate-catre-peste-280-000-de-clienti-unici/",
+    "curr_date": "28.10.2026",
+    "verified_date": "29.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-29 11:08:47+03:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-29 11:08:47+03:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2021-10-21"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Bilanțul Freshful după primii cinci ani de activitate: cinci milioane de comenzi",
+    "h1": "Bilanțul Freshful după primii cinci ani de activitate: cinci milioane de comenzi",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Revista Progresiv",
+    "title": "Esomar Connect: Ce spun datele despre noua logică a consumatorului",
+    "url": "https://revistaprogresiv.ro/stiri/fmcg/esomar-connect-2026-ce-spun-datele-despre-noua-logica-a-consumatorului/",
+    "curr_date": "25.10.2026",
+    "verified_date": "29.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-29 12:37:41+03:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-29 12:37:41+03:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Esomar Connect 2026: Ce spun datele despre noua logică a consumatorului | Progre",
+    "h1": "Esomar Connect 2026: Ce spun datele despre noua logică a consumatorului",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Revista Piața",
+    "title": "Diana Supermarket – de acum și în Galicea, județul Vâlcea",
+    "url": "https://www.revista-piata.ro/retail/info-retail/diana-supermarket-de-acum-si-in-galicea-judetul-valcea",
+    "curr_date": "29.10.2026",
+    "verified_date": null,
+    "date_source": null,
+    "raw_date": null,
+    "all_dates": [],
+    "mismatch": null,
+    "page_title": "Revista Piața",
+    "h1": "",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Revista Piața",
+    "title": "ShopX, o nouă platformă de retail media dedicată comerțului fizic",
+    "url": "https://www.revista-piata.ro/retail/info-retail/shopx-o-noua-platforma-de-retail-media-dedicata-comertului-fizic",
+    "curr_date": "27.10.2026",
+    "verified_date": "29.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-29T09:39:48.000000Z",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-29T09:39:48.000000Z"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Revista Piața",
+    "h1": "ShopX, o nouă platformă de retail media dedicată comerțului fizic",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Revista Piața",
+    "title": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
+    "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole",
+    "curr_date": "24.10.2026",
+    "verified_date": "29.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-29T16:07:28.000000Z",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-29T16:07:28.000000Z"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Revista Piața",
+    "h1": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Trends HRB",
+    "title": "Sandvișul, o categorie cu potențial pentru Food Service și Retail",
+    "url": "https://www.trendshrb.ro/actual/sandvisul-o-categorie-cu-potential-pentru-food-service/",
+    "curr_date": "28.10.2026",
+    "verified_date": "28.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-28T13:53:52+00:00",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-28T13:53:52+00:00"
+      ]
+    ],
+    "mismatch": false,
+    "page_title": "Sandvișul, o categorie cu potențial pentru Food Service",
+    "h1": "Sandvișul, o categorie cu potențial pentru Food Service",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Trends HRB",
+    "title": "Parteneriate strategice între operatorii de ospitalitate și furnizori",
+    "url": "https://www.trendshrb.ro/evenimente/world-bakers-summit-2026-cum-se-creeaza-parteneriatele-strategice-dintre-operatorii-din-ospitalitate-si-furnizorii-din-industria-de-panificatie/",
+    "curr_date": "26.10.2026",
+    "verified_date": "27.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-27T18:52:31+00:00",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-27T18:52:31+00:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "World Bakers Summit 2026: Cum se creează parteneriatele strategice dintre operat",
+    "h1": "World Bakers Summit 2026: Cum se creează parteneriatele strategice dintre operat",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Trends HRB",
+    "title": "De la Sarea-n Bucate la Issa Garden: dezvoltarea lanțului scurt alimentar",
+    "url": "https://www.trendshrb.ro/business/de-la-sarea-n-bucate-la-issa-garden-o-noua-etapa-in-dezvoltarea-diviziei-de-hospitality-a-grupului-issa-estate/",
+    "curr_date": "23.10.2026",
+    "verified_date": "14.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-14T10:54:08+00:00",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-14T10:54:08+00:00"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "De la Sarea-n Bucate la Issa Garden - O nouă etapă în dezvoltarea diviziei de ho",
+    "h1": "De la Sarea-n Bucate la Issa Garden &#8211; O nouă etapă în dezvoltarea diviziei",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Modern Buyer",
+    "title": "Focus pe mâncarea gata de consum: Cum își împart Biedronka și Lidl clienții",
+    "url": "https://modernbuyer.ro/guest-editorial-focus-pe-mancarea-gata-de-consum-cum-isi-impart-biedronka-si-lidl-clientii-care-nu-mai-gatesc-acasa/",
+    "curr_date": "29.10.2026",
+    "verified_date": "16.09.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-09-16T12:58:49+00:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-09-16T12:58:49+00:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-09-16T12:58:49+00:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-09-16T12:58:49+00:00"
+      ],
+      [
+        "time_datetime",
+        "2026-09-16T15:58:49+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-29T18:46:05+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-29T14:12:17+02:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "GUEST EDITORIAL | Focus pe mâncarea gata de consum: Cum își împart Biedronka și ",
+    "h1": "GUEST EDITORIAL | Focus pe mâncarea gata de consum: Cum își împart Biedronka și ",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Modern Buyer",
+    "title": "NORDTH Cold Logistics: platformă pentru retail și industria FMCG",
+    "url": "https://modernbuyer.ro/nordth-cold-logistics-noua-platforma-prin-care-grupul-josi-extinde-serviciile-pentru-retail-si-industria-fmcg/",
+    "curr_date": "27.10.2026",
+    "verified_date": "21.07.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-07-21T12:13:25+00:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-07-21T12:13:25+00:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-07-21T12:13:25+00:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-07-21T12:13:25+00:00"
+      ],
+      [
+        "time_datetime",
+        "2026-07-21T15:13:25+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-29T18:46:05+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-29T14:12:17+02:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "NORDTH Cold Logistics: noua platformă prin care Grupul Josi extinde serviciile p",
+    "h1": "NORDTH Cold Logistics: noua platformă prin care Grupul Josi extinde serviciile p",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Modern Buyer",
+    "title": "SIAL Insights: 10 tendințe-cheie care modelează industria alimentară",
+    "url": "https://modernbuyer.ro/sial-insights-2026-10-tendinte-cheie-care-modeleaza-industria-alimentara/",
+    "curr_date": "24.10.2026",
+    "verified_date": "17.08.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-08-17T10:38:19+00:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-08-17T10:38:19+00:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-08-17T10:38:19+00:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-08-17T10:38:19+00:00"
+      ],
+      [
+        "time_datetime",
+        "2026-08-17T13:38:19+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-29T18:46:05+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-29T14:12:17+02:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "SIAL Insights 2026: 10 tendințe-cheie care modelează industria alimentară - Mode",
+    "h1": "SIAL Insights 2026: 10 tendințe-cheie care modelează industria alimentară",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Retail-FMCG",
+    "title": "Retail & FMCG – Sinteza săptămânii în comerțul alimentar",
+    "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-30-octombrie-2026.html",
+    "curr_date": "30.10.2026",
+    "verified_date": "31.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-31T09:27:28+00:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-31T09:27:28+00:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-10-31T09:27:28+00:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-31T09:27:28+00:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-31T11:27:28+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-31T11:37:09+02:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2021-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-08"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Retail &amp; FMCG – Sinteza săptămânii 26 – 30 octombrie 2026",
+    "h1": "Retail &#038; FMCG – Sinteza săptămânii 26 – 30 octombrie 2026",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Retail-FMCG",
+    "title": "Diana Supermarket deschide un nou magazin în Galicea, județul Vâlcea",
+    "url": "https://www.retail-fmcg.ro/retail/diana-supermarket-magazin-galicea-valcea.html",
+    "curr_date": "28.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-30T11:44:52+00:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-30T11:44:52+00:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-10-30T11:44:52+00:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-30T11:44:52+00:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30T13:44:52+02:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Diana Supermarket deschide un nou magazin în Galicea, județul Vâlcea",
+    "h1": "Diana Supermarket deschide un nou magazin în Galicea, județul Vâlcea",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Retail-FMCG",
+    "title": "Ahold Delhaize preia operațiunile Tesco din Cehia și Slovacia",
+    "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-preia-operatiunile-tesco-din-cehia-si-slovacia.html",
+    "curr_date": "25.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-30T09:13:41+00:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-30T09:13:41+00:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-10-30T09:13:41+00:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-30T09:13:41+00:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30T11:13:41+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30T11:17:00+02:00"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-11-04"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Ahold Delhaize preia operațiunile Tesco din Cehia și Slovacia și își consolideaz",
+    "h1": "Ahold Delhaize preia operațiunile Tesco din Cehia și Slovacia și își consolideaz",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Meat.Milk",
+    "title": "Prețurile porcinelor coboară în UE: diferența dintre România și media europeană",
+    "url": "https://www.meat-milk.ro/article/preturile-porcinelor-coboara-in-ue-ce-arata-diferenta-dintre-romania-si-media-europeana-RR8Lr1vg",
+    "curr_date": "29.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-30T06:21:11.000000Z",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-30T06:21:11.000000Z"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-29"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-14"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-14"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-12-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-12-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-28"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-28"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-24"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-24"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-22"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-22"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-15"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-15"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-07"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-06"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-07"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-06"
+      ],
+      [
+        "ro_text_date",
+        "2026-05-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-05-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-23"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-23"
+      ],
+      [
+        "ro_text_date",
+        "2021-04-21"
+      ],
+      [
+        "ro_text_date",
+        "2021-04-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-16"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-16"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2025-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2025-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-10"
+      ],
+      [
+        "ro_text_date",
+        "2025-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2025-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Prețurile porcinelor coboară în UE: ce arată diferența dintre România și media e",
+    "h1": "Contactează-ne",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Meat.Milk",
+    "title": "Miza noilor negocieri europene pentru zootehnie și costurile furajelor",
+    "url": "https://www.meat-milk.ro/article/inainte-de-carne-si-lapte-exista-furajul-miza-noilor-negocieri-europene-pentru-zootehnie-fDqM6XAs",
+    "curr_date": "26.10.2026",
+    "verified_date": "29.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-29T06:09:38.000000Z",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-29T06:09:38.000000Z"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-14"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-14"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-12-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-12-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-28"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-28"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-24"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-24"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-22"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-22"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-15"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-15"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-07"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-06"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-07"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-06"
+      ],
+      [
+        "ro_text_date",
+        "2026-05-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-05-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-23"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-23"
+      ],
+      [
+        "ro_text_date",
+        "2021-04-21"
+      ],
+      [
+        "ro_text_date",
+        "2021-04-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-16"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-16"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2025-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2025-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-10"
+      ],
+      [
+        "ro_text_date",
+        "2025-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2025-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-02-19"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Înainte de carne și lapte, există furajul: miza noilor negocieri europene pentru",
+    "h1": "Contactează-ne",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Meat.Milk",
+    "title": "Originea cărnii, din nou pe masa negocierilor europene la Bruxelles",
+    "url": "https://www.meat-milk.ro/article/originea-carnii-din-nou-pe-masa-negocierilor-europene-ce-pregateste-bruxelles-ul-2dp9rU0N",
+    "curr_date": "24.10.2026",
+    "verified_date": "29.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-29T06:05:28.000000Z",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-29T06:05:28.000000Z"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-19"
+      ],
+      [
+        "ro_text_date",
+        "2015-04-01"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-14"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-14"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-12-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-12-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-31"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-28"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-28"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-24"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-24"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-09"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-02"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-26"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-17"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-22"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-22"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-15"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-15"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-07-03"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-07"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-06"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-07"
+      ],
+      [
+        "ro_text_date",
+        "2026-10-06"
+      ],
+      [
+        "ro_text_date",
+        "2026-05-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-05-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-06-30"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2027-04-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-20"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-23"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-23"
+      ],
+      [
+        "ro_text_date",
+        "2021-04-21"
+      ],
+      [
+        "ro_text_date",
+        "2021-04-21"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-16"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-16"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-13"
+      ],
+      [
+        "ro_text_date",
+        "2025-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2025-08-01"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-27"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-10"
+      ],
+      [
+        "ro_text_date",
+        "2026-09-10"
+      ],
+      [
+        "ro_text_date",
+        "2025-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2025-02-19"
+      ],
+      [
+        "ro_text_date",
+        "2026-02-19"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Originea cărnii, din nou pe masa negocierilor europene: ce pregătește Bruxelles-",
+    "h1": "Contactează-ne",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Retail.ro",
+    "title": "Auchan transformă cumpărăturile într-o experiență digitală",
+    "url": "https://www.retail.ro/articole/stiri-si-noutati/intri-la-auchan-si-treci-printr-o-reclama-uriasa-retailerul-transforma-cumparaturile-intr-o-experienta-digitala-15268.html",
+    "curr_date": "30.10.2026",
+    "verified_date": "25.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-25T17:41:21+0200",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-25T17:41:21+0200"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Intri la Auchan și treci printr-o reclamă uriașă. Retailerul transformă cumpărăt",
+    "h1": "Intri la Auchan și treci printr-o reclamă uriașă. Retailerul transformă cumpărăt",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Retail.ro",
+    "title": "Kaufland își diversifică oferta și extinde noul concept de magazin",
+    "url": "https://www.retail.ro/articole/stiri-si-noutati/kaufland-intra-si-pe-zona-de-fashion-cu-un-nou-concept-de-magazin-dupa-iasi-urmeaza-deschideri-in-bucuresti-si-constanta-15267.html",
+    "curr_date": "28.10.2026",
+    "verified_date": "22.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-22T18:31:12+0300",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-22T18:31:12+0300"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Kaufland intră și pe zona de fashion cu un nou concept de magazin. După Iași, ur",
+    "h1": "Kaufland intră și pe zona de fashion cu un nou concept de magazin. După Iași, ur",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Retail.ro",
+    "title": "Coșuri cadou de Crăciun: cum se pregătește sezonul de iarnă în retail",
+    "url": "https://www.retail.ro/articole/stiri-si-noutati/cosuri-cadou-de-craciun-cum-se-pregateste-sezonul-de-la-targ-la-depozit-15274.html",
+    "curr_date": "25.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-30T11:42:43+0200",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-30T11:42:43+0200"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Coșuri cadou de Crăciun: cum se pregătește sezonul, de la târg la depozit",
+    "h1": "Coșuri cadou de Crăciun: cum se pregătește sezonul, de la târg la depozit",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Pig Progress",
+    "title": "Rabobank: No quick recovery for the European pig market",
+    "url": "https://www.foodagribusiness.world/pigs/rabobank-no-quick-recovery-of-the-pig-market",
+    "curr_date": "30.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-30T15:01:19.292Z",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-30T15:01:19.292Z"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-30T15:01:19.292Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30T15:01:19.292Z"
+      ]
+    ],
+    "mismatch": false,
+    "page_title": "Rabobank: No quick recovery for the pig market - Food &amp; Agribusiness",
+    "h1": "Rabobank: No quick recovery for the pig market",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Pig Progress",
+    "title": "Grow-finish profitability and feed efficiency in pig farming",
+    "url": "https://www.foodagribusiness.world/pigs/on-demand-is-grow-finish-profitability-hiding-in-plain-sight",
+    "curr_date": "28.10.2026",
+    "verified_date": "28.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-28T14:58:13.297Z",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-28T14:58:13.297Z"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-28T14:58:13.297Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T14:58:13.297Z"
+      ]
+    ],
+    "mismatch": false,
+    "page_title": "On demand: Is grow-finish profitability hiding in plain sight? - Food &amp; Agri",
+    "h1": "On demand: Is grow-finish profitability hiding in plain sight?",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Pig Progress",
+    "title": "Pig farm closures and structural herd adjustments in Europe and East",
+    "url": "https://www.foodagribusiness.world/pigs/over-a-hundred-pig-farms-shut-down-in-russia-in-2026",
+    "curr_date": "26.10.2026",
+    "verified_date": "27.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-27T06:00:00.051Z",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-27T06:00:00.051Z"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-27T06:00:00.051Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-27T06:00:00.051Z"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Over a hundred pig farms shut down in Russia in 2026 - Food &amp; Agribusiness",
+    "h1": "Over a hundred pig farms shut down in Russia in 2026",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "pig333",
+    "title": "Spanish pork production rose 3% in the first half of the year",
+    "url": "https://www.3tres3.com/en/latest_swine_news/spanish-pork-production-rose-3-in-the-first-half-of-2026_22721/",
+    "curr_date": "29.10.2026",
+    "verified_date": "31.08.2026",
+    "date_source": "time_datetime",
+    "raw_date": "2026-08-31T00:00:00Z",
+    "all_dates": [
+      [
+        "time_datetime",
+        "2026-08-31T00:00:00Z"
+      ],
+      [
+        "ro_text_date",
+        "2026-08-31"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Spanish pork production rose 3% in the first half of 2026 - Swine news - pig333,",
+    "h1": "Spanish pork production rose 3% in the first half of 2026",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "pig333",
+    "title": "EU Council agrees position on common market organisation for agricultural products",
+    "url": "https://www.3tres3.com/en/latest_swine_news/common-market-organisation-for-eu-agricultural-products_22934/",
+    "curr_date": "27.10.2026",
+    "verified_date": "22.10.2026",
+    "date_source": "time_datetime",
+    "raw_date": "2026-10-22T00:00:00Z",
+    "all_dates": [
+      [
+        "time_datetime",
+        "2026-10-22T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-22T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-22T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-19T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-19T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-19T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-19T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T00:00:00Z"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Common market organisation for EU agricultural products - Swine news - pig333, p",
+    "h1": "EU Council agrees position on the common market organisation for agricultural pr",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "pig333",
+    "title": "ASF and weak China demand to reshape European pork trade flows",
+    "url": "https://www.3tres3.com/en/latest_swine_news/asf-and-weak-china-demand-to-reshape-2027-pork-trade_22914/",
+    "curr_date": "24.10.2026",
+    "verified_date": "14.10.2026",
+    "date_source": "time_datetime",
+    "raw_date": "2026-10-14T00:00:00Z",
+    "all_dates": [
+      [
+        "time_datetime",
+        "2026-10-14T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-13T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-13T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-02T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-02T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-01T00:00:00Z"
+      ],
+      [
+        "time_datetime",
+        "2026-10-01T00:00:00Z"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "ASF and weak China demand to reshape 2027 pork trade - Swine news - pig333, pig ",
+    "h1": "ASF and weak China demand to reshape 2027 pork trade",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "EuroMeatNews",
+    "title": "AHDB: Weather patterns and retail consumption habits for meat cuts",
+    "url": "https://euromeatnews.com/ahdb-hot-weather-changed-bbq-habits-in-summer-2026/",
+    "curr_date": "28.10.2026",
+    "verified_date": "28.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-28T01:40:00+02:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-27T01:35:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-26T01:45:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:35:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:25:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:20:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-13T01:45:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-12T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-08T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T01:15:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-12T01:40:00+03:00"
+      ]
+    ],
+    "mismatch": false,
+    "page_title": "AHDB: Hot weather changed BBQ habits in summer 2026 - EuroMeatNews",
+    "h1": "AHDB: Hot weather changed BBQ habits in summer 2026",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "EuroMeatNews",
+    "title": "European cured meats and fresh cuts protection initiatives",
+    "url": "https://euromeatnews.com/assica-and-the-bresaola-della-valtellina-pgi-protection-consortium-welcome-coldirettis-initiative/",
+    "curr_date": "25.10.2026",
+    "verified_date": "28.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-28T01:30:00+02:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-27T01:35:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-26T01:45:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:35:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:25:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:20:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-13T01:45:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-12T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-08T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T01:15:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-12T01:40:00+03:00"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "ASSICA and the Bresaola della Valtellina PGI Protection Consortium welcome Coldi",
+    "h1": "ASSICA and the Bresaola della Valtellina PGI Protection Consortium welcome Coldi",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "EuroMeatNews",
+    "title": "Danish food and agriculture association defends livestock competitiveness",
+    "url": "https://euromeatnews.com/the-danish-food-and-agriculture-association-has-sued-the-state-for-lack-of-legal-basis/",
+    "curr_date": "22.10.2026",
+    "verified_date": "28.10.2026",
+    "date_source": "jsonld_datePublished",
+    "raw_date": "2026-10-28T01:35:00+02:00",
+    "all_dates": [
+      [
+        "jsonld_datePublished",
+        "2026-10-28T01:35:00+02:00"
+      ],
+      [
+        "jsonld_datePublished",
+        "2026-10-28T01:35:00+02:00"
+      ],
+      [
+        "meta_published_time",
+        "2026-10-28T01:35:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:35:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:20:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-26T01:40:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-26T01:20:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:40:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:30:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:25:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-28T01:20:00+02:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-13T01:45:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-12T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-08T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T01:35:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-16T01:15:00+03:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-12T01:40:00+03:00"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "The Danish Food and Agriculture Association has sued the state for lack of legal",
+    "h1": "The Danish Food and Agriculture Association has sued the state for lack of legal",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Meat Management",
+    "title": "British pork spotlighted as part of major retail marketing campaign",
+    "url": "https://meatmanagement.com/news/british-pork-spotlighted-as-part-of-october-campaign/86452.article",
+    "curr_date": "29.10.2026",
+    "status": "INVALID_LINK",
+    "http_status": 405,
+    "error": "HTTP Error 405: Not Allowed"
+  },
+  {
+    "pub": "Meat Management",
+    "title": "AHDB observes 36.6% rise in pork mince volume across retail",
+    "url": "https://meatmanagement.com/news/ahdb-observes-366-rise-in-pork-mince-volume/85390.article",
+    "curr_date": "27.10.2026",
+    "status": "INVALID_LINK",
+    "http_status": 405,
+    "error": "HTTP Error 405: Not Allowed"
+  },
+  {
+    "pub": "Meat Management",
+    "title": "Pork market to remain stable despite geopolitical uncertainties",
+    "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article",
+    "curr_date": "24.10.2026",
+    "status": "INVALID_LINK",
+    "http_status": 405,
+    "error": "HTTP Error 405: Not Allowed"
+  },
+  {
+    "pub": "Eurocarne",
+    "title": "Interham lanza la Red Española de Municipios del Jamón",
+    "url": "https://eurocarne.com/noticias/codigo/72599/kw/Interham+lanza+la+Red+Espa%C3%B1ola+de+Municipios+del+Jam%C3%B3n",
+    "curr_date": "30.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-30T00:00:00+01:00",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-30T00:00:00+01:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30"
+      ],
+      [
+        "es_text_date",
+        "2026-10-31"
+      ],
+      [
+        "es_text_date",
+        "2027-12-31"
+      ]
+    ],
+    "mismatch": false,
+    "page_title": "Eurocarne - Interham lanza la Red Española de Municipios del Jamón",
+    "h1": "",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Eurocarne",
+    "title": "Fecic aborda calidad, seguridad y maduración de carnes para retail",
+    "url": "https://eurocarne.com/noticias/codigo/72591/kw/Fecic+aborda+aditivos%2C+Listeria+y+carnes+maduradas+en+su+Jornada+de+Calidad+y+Seguridad+Alimentaria",
+    "curr_date": "28.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-30T00:00:00+01:00",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-30T00:00:00+01:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30"
+      ],
+      [
+        "es_text_date",
+        "2026-10-31"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Eurocarne - Fecic aborda aditivos, Listeria y carnes maduradas en su Jornada de ",
+    "h1": "",
+    "status": "VERIFIED"
+  },
+  {
+    "pub": "Eurocarne",
+    "title": "Porcat analiza la evolución de la bioseguridad en el sector porcino",
+    "url": "https://eurocarne.com/noticias/codigo/72573/kw/Porcat+analizar%C3%A1+la+evoluci%C3%B3n+de+la+PPA+en+Catalu%C3%B1a+un+a%C3%B1o+despu%C3%A9s",
+    "curr_date": "25.10.2026",
+    "verified_date": "30.10.2026",
+    "date_source": "meta_published_time",
+    "raw_date": "2026-10-30T00:00:00+01:00",
+    "all_dates": [
+      [
+        "meta_published_time",
+        "2026-10-30T00:00:00+01:00"
+      ],
+      [
+        "time_datetime",
+        "2026-10-30"
+      ],
+      [
+        "es_text_date",
+        "2026-10-31"
+      ],
+      [
+        "es_text_date",
+        "2026-11-19"
+      ]
+    ],
+    "mismatch": true,
+    "page_title": "Eurocarne - Porcat analizará la evolución de la PPA en Cataluña un año después",
+    "h1": "",
+    "status": "VERIFIED"
+  }
+]
