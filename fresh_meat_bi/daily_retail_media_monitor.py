@@ -116,7 +116,7 @@ def generate_retail_media_data():
                 "validity": "Miercuri – Marți (Ciclul principal de miercuri)",
                 "app_name": "Kaufland Card",
                 "app_url": "https://www.kaufland.ro/kaufland-card.html",
-                "private_brand": "K-Purland (Carne 100% din România)",
+                "private_brand": "K-Purland & Vreau din România",
                 "focus_meat_kvi": ["Spată porc f.o.", "Pulpă porc f.o.", "Cotlet porc f.o.", "Ceafă porc f.o."],
                 "active_mechanics": "Reducere directă de catalog (-21% la -33%), Steaua Zilei, Weekend Kaufland",
                 "meat_price_position": "Agresivitate directă: pulpă porc la 15,99 lei/kg și cotlet întreg la 16,99 lei/kg"
