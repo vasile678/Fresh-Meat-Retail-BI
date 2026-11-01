@@ -187,9 +187,6 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
               <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-emerald-400 transition-colors">
                 PROMO WEEKLY
               </h2>
-              <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
-                {formatUpdatedDisplay(manifest.modules?.promo_weekly?.last_verified_update || '29.10.2026 · 09:00')}
-              </span>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}
@@ -222,9 +219,6 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
               <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-pink-400 transition-colors">
                 EU PORK MARKET
               </h2>
-              <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
-                {formatUpdatedDisplay(manifest.modules?.eu_pork_market?.last_verified_update || '29.10.2026 · 09:00')}
-              </span>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}
@@ -253,9 +247,6 @@ export default function Homepage({ onSelectModule }: HomepageProps) {
               <h2 className="text-base sm:text-lg md:text-lg font-bold text-white tracking-wide group-hover:text-sky-400 transition-colors">
                 RETAIL MEDIA MONITOR
               </h2>
-              <span className="text-[11px] text-slate-400 font-medium block mt-1 tracking-tight">
-                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || '01.11.2026 · 09:00')}
-              </span>
             </div>
 
             {/* Săgeată navigare mobil dreapta */}

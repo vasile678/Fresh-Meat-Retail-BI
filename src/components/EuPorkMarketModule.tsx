@@ -266,13 +266,10 @@ export default function EuPorkMarketModule({
             </div>
           </div>
 
-          {/* Perioadă analizată și Updated în antet */}
+          {/* Perioadă analizată în antet */}
           <div className="text-right shrink-0">
             <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
             <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.period}</span>
-            <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-0.5 font-medium tracking-tight">
-              {formatUpdatedDisplay(manifest.modules?.eu_pork_market?.last_verified_update || '29.10.2026 · 09:00')}
-            </span>
           </div>
         </div>
 

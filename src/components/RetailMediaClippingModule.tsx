@@ -950,13 +950,6 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
-            <div className="flex flex-col text-right pr-2 sm:border-r border-slate-800 text-[11px] text-slate-400">
-              <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
-              <span className="text-xs font-semibold text-slate-200">{data.period_analyzed?.split(' ')[0] || '24.10–31.10.2026'}</span>
-              <span className="text-[10px] sm:text-[11px] text-slate-400 block mt-0.5 font-medium tracking-tight">
-                {formatUpdatedDisplay(manifest.modules?.retail_media_monitor?.last_verified_update || data.updated || '01.11.2026 · 09:00')}
-              </span>
-            </div>
             <button
               type="button"
               onClick={() => setIsReportModalOpen(true)}
@@ -1011,16 +1004,11 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
         {selectedTab === 'catalogs' && (
           <div className="space-y-6">
             <div className="bg-slate-900 rounded-xl p-5 sm:p-6 border border-slate-800 shadow-xl">
-              <div className="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2 mb-6">
-                <div>
-                  <h2 className="text-base font-semibold text-white">Cataloage Promoționale & Programe de Loialitate</h2>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    Monitorizare activă pentru exact 7 retaileri alimentari. Acces direct la edițiile oficiale și aplicațiile de fidelizare.
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-slate-400 font-medium">Perioadă analizată: {data.period_analyzed}</span>
-                </div>
+              <div className="pb-4 border-b border-slate-800 mb-6">
+                <h2 className="text-base font-semibold text-white">Cataloage Promoționale & Programe de Loialitate</h2>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Monitorizare activă pentru exact 7 retaileri alimentari. Acces direct la edițiile oficiale și aplicațiile de fidelizare.
+                </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
