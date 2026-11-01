@@ -579,7 +579,7 @@ export default function App() {
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Eye className="w-3.5 h-3.5" /> Raport Executiv
+            <Eye className="w-3.5 h-3.5" /> Raport Săptămânal
           </button>
           <button 
             onClick={() => setSelectedTab('matrix')}
