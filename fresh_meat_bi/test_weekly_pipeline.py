@@ -268,8 +268,13 @@ def main():
         test_successful_weekly_run_staging()
         test_8_interruption_between_json_and_png()
         test_9_demonstrate_incomplete_release_never_active()
+        
+        # Test 10: Single source of truth & commercial conclusions integrity
+        from test_commercial_conclusions import test_commercial_conclusions
+        test_commercial_conclusions()
+        
         print("================================================================")
-        print(" TOATE CELE 9 TESTE DE CONTROL & ATOMICITATE AU TRECUT (100%)    ")
+        print(" TOATE CELE 10 TESTE DE CONTROL & ATOMICITATE AU TRECUT (100%)   ")
         print("================================================================")
     except AssertionError as e:
         print(f"\n[FAIL]: {e}")

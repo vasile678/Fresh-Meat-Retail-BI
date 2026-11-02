@@ -53,6 +53,45 @@ interface ActiveRelease {
   release_status: 'RELEASE_PASS' | 'FAIL_CLOSED';
 }
 
+interface CommercialConclusionItem {
+  kvi: string;
+  has_offers: boolean;
+  best_price: number | null;
+  best_retailers: string[];
+  summary_title: string;
+  text: string;
+  offers_count: number;
+  offers_detail: {
+    retailer: string;
+    price_lei_kg: number;
+    exact_product: string;
+    discount?: string | null;
+    mechanic?: string | null;
+    validity?: string | null;
+    is_best: boolean;
+    diff_lei_kg: number;
+    diff_percent: number;
+    is_conditional: boolean;
+  }[];
+  nv_retailers: string[];
+}
+
+interface CommercialConclusions {
+  schema_version: string;
+  week: string;
+  year: number;
+  calendar_period: string;
+  items: CommercialConclusionItem[];
+  competitive_summary: {
+    week: string;
+    year: number;
+    calendar_period: string;
+    best_price_counts: Record<string, number>;
+    verified_offer_counts: Record<string, number>;
+    ranked_retailers: string[];
+  };
+}
+
 interface DashboardExport {
   schema_version: string;
   release_status: 'RELEASE_PASS' | 'FAIL_CLOSED';
@@ -79,6 +118,7 @@ interface DashboardExport {
     renderer_sha256: string | null;
   };
   image_url: string | null;
+  commercial_conclusions?: CommercialConclusions;
   release_gate: {
     release_status: string;
     checks: Record<string, boolean>;
@@ -828,47 +868,147 @@ export default function App() {
           </div>
         )}
 
-        {/* Tab 3: Concluzii Comerciale */}
+        {/* Tab 3: Concluzii Comerciale (100% Dynamic from Active Release Dataset) */}
         {selectedTab === 'insights' && (
           <div className="space-y-6">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
-              <h3 className="text-base font-bold text-white mb-3">Analiză Comercială & Dinamică Prețuri Carne ({data.week} {data.year})</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-xs">
-                <div className="bg-slate-950 p-4 rounded-lg border border-slate-800">
-                  <h4 className="text-sm font-semibold text-emerald-400 mb-2 flex items-center gap-1.5">
-                    <TrendingDown className="w-4 h-4" /> Spată de porc fără os (Presiune agresivă)
-                  </h4>
-                  <p className="text-slate-300 leading-relaxed">
-                    Lidl conduce segmentul de bază la <strong>13,90 lei/kg</strong> (-1,39 lei/100g prin cupon Lidl Plus, max 6kg/bon), iar Kaufland răspunde cu <strong>14,90 lei/kg</strong> (Purland vacuum, reducere directă -21%).
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-2 mb-4">
+                <div>
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <TrendingDown className="w-4 h-4 text-emerald-400" />
+                    Analiză Comercială & Dinamică Prețuri Carne ({data.week} {data.year})
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Calculat exclusiv din datasetul validat al release-ului activ ({data.calendar_period})
                   </p>
                 </div>
-
-                <div className="bg-slate-950 p-4 rounded-lg border border-slate-800">
-                  <h4 className="text-sm font-semibold text-blue-400 mb-2 flex items-center gap-1.5">
-                    <TrendingDown className="w-4 h-4" /> Pulpă de porc fără os (Paritate la 15,99 lei/kg)
-                  </h4>
-                  <p className="text-slate-300 leading-relaxed">
-                    Kaufland (-33%) și PENNY (Hanul Boieresc, -30% cu Penny Card) afișează același nivel competitiv minim de <strong>15,99 lei/kg</strong>.
-                  </p>
+                <div className="flex items-center gap-2 text-xs">
+                  <span className="bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700 font-mono">
+                    {data.summary.verified_count} oferte confirmate / {data.summary.cell_count} celule
+                  </span>
                 </div>
+              </div>
 
-                <div className="bg-slate-950 p-4 rounded-lg border border-slate-800">
-                  <h4 className="text-sm font-semibold text-amber-400 mb-2 flex items-center gap-1.5">
-                    <TrendingDown className="w-4 h-4" /> Cotlet de porc fără os (Dispersie de format)
-                  </h4>
-                  <p className="text-slate-300 leading-relaxed">
-                    Kaufland oferă <strong>16,99 lei/kg</strong> la bucată întreagă, în timp ce variantele feliate la caserolă se situează la <strong>24,73 lei/kg</strong> (Lidl Plus) și <strong>27,68 lei/kg</strong> (PENNY).
-                  </p>
-                </div>
+              {/* Dynamic KVI Breakdown */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                {data.kvi.map((kviItem, idx) => {
+                  const verifiedOffers = data.cells.filter(
+                    c => c.kvi === kviItem && c.status === 'VERIFIED' && c.price_lei_kg != null
+                  ).sort((a, b) => a.price_lei_kg! - b.price_lei_kg!);
 
-                <div className="bg-slate-950 p-4 rounded-lg border border-slate-800">
-                  <h4 className="text-sm font-semibold text-purple-400 mb-2 flex items-center gap-1.5">
-                    <Info className="w-4 h-4" /> Ceafă de porc & Piept pui
-                  </h4>
-                  <p className="text-slate-300 leading-relaxed">
-                    Ceafa proaspătă fără os nu are reduceri comparabile de catalog național (N/V). Pieptul de pui dezosat are ca unică ofertă națională activă varianta Lidl (<strong>28,90 lei/kg</strong>).
-                  </p>
+                  const nvRetailers = data.cells.filter(
+                    c => c.kvi === kviItem && c.status === 'N/V'
+                  ).map(c => c.retailer);
+
+                  const minPrice = verifiedOffers.length > 0 ? verifiedOffers[0].price_lei_kg! : null;
+                  const leaders = verifiedOffers.filter(c => Math.abs(c.price_lei_kg! - minPrice!) < 0.001);
+                  const competitors = verifiedOffers.filter(c => Math.abs(c.price_lei_kg! - minPrice!) >= 0.001);
+
+                  const colorStyles = [
+                    { border: 'border-emerald-500/30', header: 'text-emerald-400', badge: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' },
+                    { border: 'border-blue-500/30', header: 'text-blue-400', badge: 'bg-blue-500/10 text-blue-400 border-blue-500/30' },
+                    { border: 'border-amber-500/30', header: 'text-amber-400', badge: 'bg-amber-500/10 text-amber-400 border-amber-500/30' },
+                    { border: 'border-purple-500/30', header: 'text-purple-400', badge: 'bg-purple-500/10 text-purple-400 border-purple-500/30' },
+                    { border: 'border-rose-500/30', header: 'text-rose-400', badge: 'bg-rose-500/10 text-rose-400 border-rose-500/30' }
+                  ][idx % 5];
+
+                  return (
+                    <div key={kviItem} className={`bg-slate-950 p-4 rounded-lg border ${colorStyles.border} flex flex-col justify-between`}>
+                      <div>
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className={`text-sm font-semibold ${colorStyles.header} flex items-center gap-1.5`}>
+                            <TrendingDown className="w-4 h-4" /> {kviItem}
+                          </h4>
+                          {minPrice !== null ? (
+                            <span className={`px-2 py-0.5 rounded text-[11px] font-bold border ${colorStyles.badge}`}>
+                              Minim: {minPrice.toFixed(2)} lei/kg
+                            </span>
+                          ) : (
+                            <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-800 text-slate-400 border border-slate-700">
+                              Nicio ofertă (N/V)
+                            </span>
+                          )}
+                        </div>
+
+                        {verifiedOffers.length > 0 ? (
+                          <div className="space-y-2 mt-2">
+                            {/* Leaders */}
+                            <p className="text-slate-300 leading-relaxed">
+                              {leaders.map(l => l.retailer).join(' și ')} asigură cel mai mic nivel de preț la{' '}
+                              <strong className="text-white">{minPrice?.toFixed(2)} lei/kg</strong>
+                              {leaders.map(l => {
+                                const details = [];
+                                if (l.discount) details.push(l.discount);
+                                if (l.mechanic) details.push(l.mechanic);
+                                if (l.exact_product) details.push(l.exact_product);
+                                return details.length > 0 ? ` (${l.retailer}: ${details.join(', ')})` : '';
+                              }).join('')}
+                              {competitors.length > 0 && (
+                                <>, în timp ce {competitors.map(c => {
+                                  const diff = (c.price_lei_kg! - minPrice!).toFixed(2);
+                                  const pct = (((c.price_lei_kg! - minPrice!) / minPrice!) * 100).toFixed(1);
+                                  const cond = c.mechanic ? ` [${c.mechanic}]` : '';
+                                  return (
+                                    <span key={c.retailer}>
+                                      {c.retailer} listează la <strong className="text-slate-200">{c.price_lei_kg?.toFixed(2)} lei/kg</strong>{cond} (+{diff} lei/kg, +{pct}%)
+                                    </span>
+                                  );
+                                }).reduce((prev, curr) => [prev, '; ', curr] as any)}.</>
+                              )}
+                            </p>
+
+                            {/* Format & Conditionality Tags */}
+                            <div className="flex flex-wrap gap-1.5 pt-1">
+                              {verifiedOffers.map(v => (
+                                <span 
+                                  key={v.retailer} 
+                                  className="text-[10px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400"
+                                >
+                                  {v.retailer}: {v.price_lei_kg?.toFixed(2)} lei ({v.mechanic || 'catalog'}) · {v.validity || 'WK' + data.week}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <p className="text-slate-400 leading-relaxed mt-2">
+                            Niciun retailer monitorizat nu are oferte promoționale active în catalog pentru acest sortiment în săptămâna {data.week} (toate celulele auditate N/V).
+                          </p>
+                        )}
+                      </div>
+
+                      {nvRetailers.length > 0 && (
+                        <div className="mt-3 pt-2 border-t border-slate-900 text-[10px] text-slate-500 flex items-center gap-1">
+                          <Info className="w-3 h-3 flex-shrink-0" />
+                          <span>Fără promoție în catalog: {nvRetailers.join(', ')}</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Competitive Positioning Matrix */}
+              <div className="mt-4 p-4 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                <h4 className="text-sm font-semibold text-slate-200 mb-2 flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  Poziționare Competitivă & Acoperire Promoțională ({data.week} {data.year})
+                </h4>
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-3">
+                  {data.retailers.map(ret => {
+                    const retVerified = data.cells.filter(c => c.retailer === ret && c.status === 'VERIFIED').length;
+                    const retBests = data.cells.filter(c => c.retailer === ret && c.status === 'VERIFIED' && c.isBest).length;
+                    return (
+                      <div key={ret} className="bg-slate-900/60 p-2.5 rounded border border-slate-800 text-center">
+                        <span className="font-bold text-slate-200 block text-xs">{ret}</span>
+                        <span className="text-[11px] text-emerald-400 font-semibold block mt-1">
+                          {retBests} {retBests === 1 ? 'preț minim' : 'prețuri minime'}
+                        </span>
+                        <span className="text-[10px] text-slate-400 block mt-0.5">
+                          {retVerified} / 5 oferte confirmate
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
