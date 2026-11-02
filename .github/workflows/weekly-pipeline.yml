@@ -126,11 +126,53 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/ releases/ fresh_meat_bi/*.json
+
+          # 1. Inspect execution status
+          RECOVERY_ACTION=""
+          if [ -f "public/data/schedule_status.json" ]; then
+            RECOVERY_ACTION=$(python3 -c "import json; print(json.load(open('public/data/schedule_status.json')).get('recovery_action', ''))")
+          fi
+          echo "Evaluated Recovery Action: $RECOVERY_ACTION"
+
+          # 2. Stage files based on execution status
+          if [ "$RECOVERY_ACTION" = "PUBLISHED_SUCCESSFULLY" ]; then
+            echo "Release passed: Validating required published artifacts..."
+            test -f "public/data/active_release.json" || { echo "Missing active_release.json"; exit 1; }
+            test -f "public/data/bi_dashboard_export.json" || { echo "Missing bi_dashboard_export.json"; exit 1; }
+            test -f "public/data/market_intelligence_manifest.json" || { echo "Missing market_intelligence_manifest.json"; exit 1; }
+            
+            # Stage only existing release artifacts
+            git add public/data/active_release.json
+            git add public/data/bi_dashboard_export.json
+            git add public/data/market_intelligence_manifest.json
+            git add public/data/schedule_status.json
+            [ -d "public/releases" ] && git add public/releases/
+            
+            # Stage candidate locks and receipts if they exist
+            for f in fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_*.json fresh_meat_bi/RESEARCH_RECEIPT_*.json fresh_meat_bi/RECONCILIATION_RECEIPT_*.json; do
+              [ -f "$f" ] && git add "$f"
+            done
+            COMMIT_MSG="chore(bi): automated weekly market intelligence release [skip ci]"
+          else
+            echo "Execution resulted in $RECOVERY_ACTION (FAIL_CLOSED preserved)."
+            # When FAIL_CLOSED, active_release.json MUST remain unmodified
+            if [ -f "public/data/schedule_status.json" ]; then
+              git add public/data/schedule_status.json
+            fi
+            COMMIT_MSG="chore(bi): update promo weekly schedule audit diagnosis [skip ci]"
+          fi
+
+          # 3. Check for staged changes
           if git diff --staged --quiet; then
             echo "No changes staged. Preserved existing production release unchanged."
-          else
-            git commit -m "chore(bi): automated weekly market intelligence release [skip ci]"
-            git push origin main
-            echo "Successfully persisted release update to origin main."
+            exit 0
           fi
+
+          # 4. Commit and push with concurrency safety (no force push)
+          echo "Committing staged updates..."
+          git commit -m "$COMMIT_MSG"
+          
+          # Pull any remote updates without force pushing
+          git pull --rebase origin main || true
+          git push origin main
+          echo "Successfully persisted updates to origin main."
