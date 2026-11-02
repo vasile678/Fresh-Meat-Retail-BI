@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "02.11.2026 09:30:00 EET",
-  "evaluated_at_utc": "2026-11-02T07:30:00+00:00",
+  "evaluated_at_bucharest": "02.11.2026 23:10:51 EET",
+  "evaluated_at_utc": "2026-11-02T21:10:51.152692+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -20,7 +20,7 @@
   "is_overdue": true,
   "status": "UPDATE_OVERDUE",
   "recovery_check": {
-    "dataset_path": "/app/applet/fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_WK45.json",
+    "dataset_path": "/home/runner/work/Fresh-Meat-Retail-BI/Fresh-Meat-Retail-BI/fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_WK45.json",
     "dataset_exists": false,
     "research_receipt_exists": false,
     "reconciliation_receipt_exists": false,
