@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "02.11.2026 23:10:51 EET",
-  "evaluated_at_utc": "2026-11-02T21:10:51.152692+00:00",
+  "evaluated_at_bucharest": "02.11.2026 23:27:51 EET",
+  "evaluated_at_utc": "2026-11-02T21:27:51.549099+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -10,43 +10,14 @@
     "period": "02–08 NOI 2026"
   },
   "active_release": {
-    "week": "WK44",
+    "week": "WK45",
     "year": 2026,
-    "release_id": "2026/WK44_16ebcd3c",
+    "release_id": "2026/WK45_b2389294",
     "release_status": "RELEASE_PASS",
-    "published_at_utc": "2026-10-29T05:49:51.716194+00:00",
-    "dataset_sha256": "16ebcd3c4a31b6f861e45358d48603cc0156d797cc4fddff9ff4793b57b9b915"
+    "published_at_utc": "2026-11-02T21:27:34.331136+00:00",
+    "dataset_sha256": "b2389294d10abdee3bee3fa43f884af68f19eb5a3da8fd6b118ef28534d04fb9"
   },
-  "is_overdue": true,
-  "status": "UPDATE_OVERDUE",
-  "recovery_check": {
-    "dataset_path": "/home/runner/work/Fresh-Meat-Retail-BI/Fresh-Meat-Retail-BI/fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_WK45.json",
-    "dataset_exists": false,
-    "research_receipt_exists": false,
-    "reconciliation_receipt_exists": false,
-    "missing_prerequisites": [
-      "DATASET_MISSING (PROMO_WEEKLY_CANONICAL_LOCK_WK45.json)",
-      "RESEARCH_RECEIPT_MISSING (RESEARCH_RECEIPT_WK45.json)",
-      "RECONCILIATION_RECEIPT_MISSING (RECONCILIATION_RECEIPT_WK45.json)"
-    ],
-    "can_auto_publish": false,
-    "policy": "FAIL_CLOSED"
-  },
-  "block_reason": "MISSING_VERIFIED_PREREQUISITES",
-  "detail": "Ora 09:00 a trecut pentru săptămâna WK45 (02–08 NOI 2026), dar dovezile verificate 25/25 lipsesc (DATASET_MISSING (PROMO_WEEKLY_CANONICAL_LOCK_WK45.json), RESEARCH_RECEIPT_MISSING (RESEARCH_RECEIPT_WK45.json), RECONCILIATION_RECEIPT_MISSING (RECONCILIATION_RECEIPT_WK45.json)). Conform politicii FAIL_CLOSED, raportul anterior (WK44 2026) este păstrat ca ultim raport oficial validat.",
-  "collector_audit": {
-    "coverage": "25/25",
-    "verified_count": 0,
-    "nv_count": 5,
-    "nc_count": 20,
-    "release_eligible": false,
-    "dataset_sha256": "6400f0b3d85a2326c55625860110805a72be9b6d30d21dda1d24c206cb58f025"
-  },
-  "recovery_action": "BLOCKED_FAIL_CLOSED",
-  "action_result": {
-    "status": "FAIL_CLOSED",
-    "message": "Actualizarea automată pentru WK45 (02–08 NOI 2026) a fost reținută conform politicii FAIL_CLOSED. Audit 25/25 finalizat: 0 VERIFIED, 5 N/V, 20 NC. Sursele oficiale nu conțin promoții confirmate pentru intervalul 02–08 NOI 2026. Raportul validat anterior (WK44 2026) rămâne 100% activ în producție.",
-    "retained_active_week": "WK44",
-    "retained_active_release_id": "2026/WK44_16ebcd3c"
-  }
+  "is_overdue": false,
+  "status": "UP_TO_DATE",
+  "detail": "Raportul WK45 este deja publicat și activ."
 }

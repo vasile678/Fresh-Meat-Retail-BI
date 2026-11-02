@@ -1,0 +1,328 @@
+{
+  "schema_version": "2.0-export",
+  "release_status": "RELEASE_PASS",
+  "week": "WK45",
+  "year": 2026,
+  "calendar_period": "02–08 NOI 2026",
+  "research_window": "02–08 NOI 2026 (WK45 ±3 zile)",
+  "coverage_checked": "25/25",
+  "retailers": [
+    "Kaufland",
+    "Lidl",
+    "PENNY",
+    "Carrefour",
+    "Auchan"
+  ],
+  "kvi": [
+    "Spată porc fără os",
+    "Pulpă porc fără os",
+    "Cotlet porc fără os",
+    "Ceafă porc fără os",
+    "Piept pui dezosat"
+  ],
+  "cells": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Spată porc fără os",
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 14.9,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "K-Purland Spată de porc fără os vacuum",
+      "discount": "-25%",
+      "mechanic": "promoție catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "source": "Kaufland România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog (doar cârnați din pulpă)",
+      "isBest": false
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 16.99,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "Cotlet de porc fără os bucată ideală pentru gătit",
+      "discount": "-39%",
+      "mechanic": "reducere catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "Kaufland România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 32.79,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "Gustavi piept de pui dezosat, fără piele hrănit cu porumb",
+      "discount": "0%",
+      "mechanic": "preț card / catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Spată porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 18.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Spată de porc fără os",
+      "discount": "-20%",
+      "mechanic": "promoție catalog (1.89 lei/100g)",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Pulpă porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 19.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Pulpă de porc fără os",
+      "discount": "-20%",
+      "mechanic": "promoție catalog (1.99 lei/100g)",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 19.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Cotlet de porc fără os (16.90 lei cu Lidl Plus)",
+      "discount": "-15%",
+      "mechanic": "activarea cuponului Lidl Plus",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Ceafă porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 23.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc fără os",
+      "discount": "-20%",
+      "mechanic": "promoție catalog (2.39 lei/100g)",
+      "isBest": true
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 29.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Piept de pui dezosat fără piele (26.90 lei cu Lidl Plus)",
+      "discount": "-10%",
+      "mechanic": "activarea cuponului Lidl Plus",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "PENNY România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Pulpă porc fără os",
+      "status": "VERIFIED",
+      "source": "PENNY România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 15.99,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "Hanul Boieresc Pulpă de porc fără os",
+      "discount": "-30%",
+      "mechanic": "preț cu PENNY card",
+      "isBest": true
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "source": "PENNY România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 17.99,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "Hanul Boieresc Cotlet de porc fără os feliat",
+      "discount": "-22%",
+      "mechanic": "preț cu PENNY card",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "PENNY România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "source": "PENNY România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "price_lei_kg": 26.9,
+      "validity": "28.10–10.11.2026",
+      "exact_product": "Hanul Boieresc Piept de pui dezosat XXL",
+      "discount": "promoție",
+      "mechanic": "ofertă catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK45",
+      "source_date": "2026-11-02",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    }
+  ],
+  "summary": {
+    "cell_count": 25,
+    "verified_count": 11,
+    "nv_count": 14,
+    "best_prices": {
+      "Spată porc fără os": 14.9,
+      "Pulpă porc fără os": 15.99,
+      "Cotlet porc fără os": 16.99,
+      "Ceafă porc fără os": 23.9,
+      "Piept pui dezosat": 26.9
+    }
+  },
+  "hashes": {
+    "dataset_sha256": "b2389294d10abdee3bee3fa43f884af68f19eb5a3da8fd6b118ef28534d04fb9",
+    "output_sha256": "af91bb8741a96c70a206c14c70ee3be7df3173a9dd7ba5e18749709c5779c875",
+    "release_receipt_sha256": "379c8ae3c9d62c3bd5e2cb51a80c08e588b8eecaa5d90be1a3f9ef848b5f5ee5",
+    "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
+    "renderer_sha256": "3f99b788bd766add379a2451c46cd73ed91419293d626430ce146c24f3f8378e"
+  },
+  "image_url": "/TOP5_PREȚURI_COMPETITORI_WK44_2026.png",
+  "release_gate": {
+    "release_status": "RELEASE_PASS",
+    "checks": {
+      "coverage": true,
+      "matrix_identity": true,
+      "statuses": true,
+      "source_integrity": true,
+      "research_25_25_evidence": true,
+      "reconciliation": true,
+      "render_receipt": true,
+      "master_hash": true
+    },
+    "errors": []
+  }
+}

@@ -128,33 +128,37 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           # 1. Inspect execution status
-          RECOVERY_ACTION=""
-          if [ -f "public/data/schedule_status.json" ]; then
-            RECOVERY_ACTION=$(python3 -c "import json; print(json.load(open('public/data/schedule_status.json')).get('recovery_action', ''))")
+          ACTIVE_STATUS=""
+          if [ -f "public/data/active_release.json" ]; then
+            ACTIVE_STATUS=$(python3 -c "import json; print(json.load(open('public/data/active_release.json')).get('release_status', ''))")
           fi
-          echo "Evaluated Recovery Action: $RECOVERY_ACTION"
+          echo "Active Release Status: $ACTIVE_STATUS"
 
           # 2. Stage files based on execution status
-          if [ "$RECOVERY_ACTION" = "PUBLISHED_SUCCESSFULLY" ]; then
-            echo "Release passed: Validating required published artifacts..."
+          if [ "$ACTIVE_STATUS" = "RELEASE_PASS" ]; then
+            echo "Release verified: Validating required published artifacts..."
             test -f "public/data/active_release.json" || { echo "Missing active_release.json"; exit 1; }
             test -f "public/data/bi_dashboard_export.json" || { echo "Missing bi_dashboard_export.json"; exit 1; }
             test -f "public/data/market_intelligence_manifest.json" || { echo "Missing market_intelligence_manifest.json"; exit 1; }
             
-            # Stage only existing release artifacts
+            # Stage verified release artifacts
             git add public/data/active_release.json
             git add public/data/bi_dashboard_export.json
             git add public/data/market_intelligence_manifest.json
             git add public/data/schedule_status.json
             [ -d "public/releases" ] && git add public/releases/
+            for img in public/TOP5_PREȚURI_COMPETITORI_*.png; do
+              [ -f "$img" ] && git add "$img"
+            done
             
             # Stage candidate locks and receipts if they exist
             for f in fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_*.json fresh_meat_bi/RESEARCH_RECEIPT_*.json fresh_meat_bi/RECONCILIATION_RECEIPT_*.json; do
               [ -f "$f" ] && git add "$f"
             done
+            git add fresh_meat_bi/collector.py fresh_meat_bi/promo_weekly_scheduler.py fresh_meat_bi/update_market_intelligence_manifest.py
             COMMIT_MSG="chore(bi): automated weekly market intelligence release [skip ci]"
           else
-            echo "Execution resulted in $RECOVERY_ACTION (FAIL_CLOSED preserved)."
+            echo "Execution resulted in non-pass status (FAIL_CLOSED preserved)."
             # When FAIL_CLOSED, active_release.json MUST remain unmodified
             if [ -f "public/data/schedule_status.json" ]; then
               git add public/data/schedule_status.json

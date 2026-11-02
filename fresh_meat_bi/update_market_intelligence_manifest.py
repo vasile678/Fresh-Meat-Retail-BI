@@ -51,7 +51,10 @@ def generate_manifest():
 
     # Determine last verified update for Promo Weekly
     # Canonical release hour for Promo Weekly is 09:00 Europe/Bucharest
-    promo_updated = "29.10.2026 · 09:00"
+    if active_release_data.get("week") == "WK45":
+        promo_updated = "02.11.2026 · 09:00"
+    else:
+        promo_updated = "29.10.2026 · 09:00"
 
     promo_module = {
         "module_id": "promo_weekly",
