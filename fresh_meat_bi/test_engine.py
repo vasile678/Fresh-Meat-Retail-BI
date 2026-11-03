@@ -180,27 +180,37 @@ def test_dashboard_export_integrity():
     export_script = BASE / "export_dashboard_data.py"
     assert export_script.exists(), "export_dashboard_data.py missing"
 
-    # Run exporter
-    cp = subprocess.run([sys.executable, str(export_script)], cwd=str(BASE), capture_output=True, text=True)
+    test_export_file = BASE / "tmp_test_export.json"
+    lock_file = BASE / "PROMO_WEEKLY_CANONICAL_LOCK_WK44.json"
+    if not lock_file.exists():
+        lock_file = BASE / "PROMO_WEEKLY_CANONICAL_LOCK.json"
+    png_file = BASE.parent / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
+    receipt_file = BASE.parent / "public" / "assets" / "aistudio" / "output_wk44.png.release_receipt.json"
+
+    # Run exporter targeting test sandbox destination
+    cmd = [
+        sys.executable, str(export_script),
+        str(lock_file), str(png_file), str(receipt_file), str(test_export_file)
+    ]
+    cp = subprocess.run(cmd, cwd=str(BASE), capture_output=True, text=True)
     assert cp.returncode == 0, f"Export script failed: {cp.stderr}"
 
-    export_file = BASE.parent / "public" / "data" / "bi_dashboard_export.json"
-    assert export_file.exists(), "bi_dashboard_export.json missing"
-    data = json.loads(export_file.read_text(encoding="utf-8"))
+    assert test_export_file.exists(), "tmp_test_export.json missing"
+    data = json.loads(test_export_file.read_text(encoding="utf-8"))
 
     assert data.get("release_status") == "RELEASE_PASS", f"Expected RELEASE_PASS, got {data.get('release_status')}"
     assert len(data.get("cells", [])) == 25, "Expected 25 cells in export"
     assert data.get("coverage_checked") == "25/25"
 
-    png_file = BASE.parent / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
     assert png_file.exists()
     assert data["hashes"]["output_sha256"] == sha256_file(png_file)
-
-    lock_file = BASE / "PROMO_WEEKLY_CANONICAL_LOCK_WK44.json"
-    if lock_file.exists():
-        assert data["hashes"]["dataset_sha256"] == sha256_file(lock_file)
-
+    assert data["hashes"]["dataset_sha256"] == sha256_file(lock_file)
     assert data.get("release_gate", {}).get("release_status") == "RELEASE_PASS"
+    assert "commercial_conclusions" in data
+
+    if test_export_file.exists():
+        test_export_file.unlink()
+
     print("  ✓ Dashboard JSON export cryptographic integrity and Release Gate binding: PASS\n")
 
 def main():

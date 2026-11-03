@@ -285,12 +285,18 @@ def export_data(lock_path: Path, png_path: Path, release_receipt_path: Path, out
     return True
 
 if __name__ == "__main__":
-    lock = BASE / "PROMO_WEEKLY_CANONICAL_LOCK_WK44.json"
-    if not lock.exists():
-        lock = BASE / "PROMO_WEEKLY_CANONICAL_LOCK.json"
-    png = ROOT / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
-    receipt = ROOT / "public" / "assets" / "aistudio" / "output_wk44.png.release_receipt.json"
-    dest = ROOT / "public" / "data" / "bi_dashboard_export.json"
+    if len(sys.argv) >= 5:
+        lock = Path(sys.argv[1])
+        png = Path(sys.argv[2])
+        receipt = Path(sys.argv[3])
+        dest = Path(sys.argv[4])
+    else:
+        lock = BASE / "PROMO_WEEKLY_CANONICAL_LOCK_WK44.json"
+        if not lock.exists():
+            lock = BASE / "PROMO_WEEKLY_CANONICAL_LOCK.json"
+        png = ROOT / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
+        receipt = ROOT / "public" / "assets" / "aistudio" / "output_wk44.png.release_receipt.json"
+        dest = BASE / "tmp_test_export.json"
     
     success = export_data(lock, png, receipt, dest)
     sys.exit(0 if success else 1)

@@ -144,7 +144,12 @@ def test_6_and_7_atomic_preservation_after_failure():
     
     # 1. Record existing production hashes
     prod_json = ROOT / "public" / "data" / "bi_dashboard_export.json"
-    prod_png = ROOT / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
+    pointer_file = ROOT / "public" / "data" / "active_release.json"
+    if pointer_file.exists():
+        pointer = json.loads(pointer_file.read_text(encoding="utf-8"))
+        prod_png = ROOT / "public" / pointer["image_path"].lstrip("/")
+    else:
+        prod_png = ROOT / "public" / "TOP5_PREȚURI_COMPETITORI_WK44_2026.png"
     
     assert prod_json.exists(), "Prod dashboard export should exist"
     assert prod_png.exists(), "Prod PNG should exist"
