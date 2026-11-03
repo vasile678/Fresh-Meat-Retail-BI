@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-02T23:29:12.319332+02:00",
+  "generated_at_utc": "2026-11-03T20:57:17.851095+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -17,7 +17,7 @@
       "status": "RELEASE_PASS",
       "data_file": "/data/bi_dashboard_export.json",
       "active_release_file": "/data/active_release.json",
-      "dataset_sha256": "a0b6f00e98ab6e4c4c046bbaf1d18600228af6de9062ac6ea2d2411b00984b96",
+      "dataset_sha256": "8bae8d95e888fdea8dcbf9cc373ba0abf033d409c4e24c9e7e5591f9e1fe9015",
       "verified_cells_count": 25,
       "verified_retailers_count": 5
     },
@@ -40,13 +40,13 @@
       "module_id": "retail_media_monitor",
       "title": "Retail Media Monitor (Presă Specializată)",
       "schedule": "Zilnic, 09:00 Europe/Bucharest",
-      "last_verified_update": "02.11.2026 · 09:00",
-      "updated_date": "02.11.2026",
-      "updated_time": "09:00",
-      "period": "26.10.2026 – 02.11.2026 (Ultimele 7 zile)",
+      "last_verified_update": "03.11.2026 · 08:00",
+      "updated_date": "03.11.2026",
+      "updated_time": "08:00",
+      "period": "27.10.2026 – 03.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "a6816854ace2ddf6c32c4a6670d47e55d0bcc0894032af294386527295016b85",
+      "dataset_sha256": "fb8d685d4d7478ef6f67e581e38615bac9c63b6c055326023788ee2f4b51b864",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },
@@ -54,9 +54,9 @@
       "module_id": "strategic_category_insights",
       "title": "Strategic Category Insights",
       "schedule": "Zilnic, după sincronizarea surselor relevante de piață",
-      "last_verified_update": "02.11.2026 · 09:00",
-      "updated_date": "02.11.2026",
-      "updated_time": "09:00",
+      "last_verified_update": "03.11.2026 · 08:00",
+      "updated_date": "03.11.2026",
+      "updated_time": "08:00",
       "status": "SYNCHRONIZED",
       "sources": [
         "PROMO_WEEKLY (Prețuri & Mecanici KVI)",

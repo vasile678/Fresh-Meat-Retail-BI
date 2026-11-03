@@ -2,10 +2,10 @@ name: Retail Media Monitor - Daily Competitive Intelligence
 
 on:
   schedule:
-    # Rulează la 06:00 UTC și 07:00 UTC în fiecare zi (inclusiv sâmbătă și duminică).
-    # Pasul de verificare a orei locale asigură execuția exact la 09:00 Europe/Bucharest
-    # gestionând automat tranziția oră de vară (UTC+3, 06:00 UTC) / iarnă (UTC+2, 07:00 UTC).
-    - cron: '0 6,7 * * *'
+    # Rulează la 05:00 UTC și 06:00 UTC în fiecare zi (inclusiv sâmbătă și duminică).
+    # Gestionează automat ora de vară (EEST = UTC+3, 05:00 UTC) și ora de iarnă (EET = UTC+2, 06:00 UTC)
+    # pentru a asigura execuția zilnică la 08:00 Europe/Bucharest.
+    - cron: '0 5,6 * * *'
   workflow_dispatch:
     inputs:
       force_run:
@@ -16,49 +16,138 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   daily-retail-media-monitor:
     name: Execute Daily Retail Media Competitive Intelligence Pipeline
     runs-on: ubuntu-24.04
+    outputs:
+      has_changes: ${{ steps.commit_push.outputs.has_changes }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Check Europe/Bucharest Local Time (09:00)
-        if: github.event_name == 'schedule'
+      - name: Check Europe/Bucharest Time & Idempotency (08:00)
         id: time_check
         run: |
-          LOCAL_HOUR=$(python3 -c "import datetime, zoneinfo; print(datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Bucharest')).hour)")
-          echo "Local hour in Europe/Bucharest is: $LOCAL_HOUR"
-          if [ "$LOCAL_HOUR" -ne 9 ]; then
-            echo "SHOULD_RUN=false" >> $GITHUB_ENV
-            echo "Not 09:00 Europe/Bucharest (current hour: $LOCAL_HOUR). Skipping this trigger."
-          else
-            echo "SHOULD_RUN=true" >> $GITHUB_ENV
-            echo "09:00 Europe/Bucharest confirmed. Proceeding with daily pipeline execution."
-          fi
+          python3 -c "
+          import datetime, zoneinfo, json, os, sys
+          tz = zoneinfo.ZoneInfo('Europe/Bucharest')
+          now = datetime.datetime.now(tz)
+          today_str = now.strftime('%d.%m.%Y')
+          hour = now.hour
+          is_forced = '${{ github.event_name }}' == 'workflow_dispatch' or '${{ github.event.inputs.force_run }}' == 'true'
+          print(f'Ora locală în Europe/Bucharest: {now.strftime(\"%Y-%m-%d %H:%M:%S\")} (ora: {hour})')
 
-      - name: Execute Daily Retail Media Monitor Pipeline
-        if: github.event_name == 'workflow_dispatch' || env.SHOULD_RUN == 'true'
+          export_file = 'public/data/retail_media_export.json'
+          already_updated_today = False
+          if os.path.exists(export_file):
+              try:
+                  data = json.load(open(export_file))
+                  if data.get('updated_date') == today_str and data.get('status') == 'ACTIVE_MONITORED':
+                      already_updated_today = True
+              except Exception:
+                  pass
+
+          should_run = False
+          if is_forced:
+              print('Execuție forțată solicitată (workflow_dispatch).')
+              should_run = True
+          elif hour == 8:
+              print('Fereastra exactă de rulare 08:00 Europe/Bucharest confirmată.')
+              should_run = True
+          elif hour > 8 and not already_updated_today:
+              print('Recuperare execuție întârziată: actualizarea de 08:00 nu a rulat încă astăzi.')
+              should_run = True
+          elif already_updated_today:
+              print(f'Idempotență: Actualizarea a fost deja efectuată pentru astăzi ({today_str}). Se omite rularea redundantă.')
+          else:
+              print(f'În afara ferestrei programate (ora curentă {hour}:00 != 08:00). Se omite declanșarea.')
+
+          with open(os.environ['GITHUB_ENV'], 'a') as f:
+              f.write(f'SHOULD_RUN={\"true\" if should_run else \"false\"}\n')
+          "
+
+      - name: Execute Autonomous Daily Retail Media Monitor Pipeline
+        if: env.SHOULD_RUN == 'true'
         run: |
           python3 fresh_meat_bi/daily_retail_media_monitor.py
+          python3 fresh_meat_bi/test_daily_retail_media.py
 
       - name: Commit and Push Updated Export
-        if: github.event_name == 'workflow_dispatch' || env.SHOULD_RUN == 'true'
+        id: commit_push
+        if: env.SHOULD_RUN == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/retail_media_export.json public/data/market_intelligence_manifest.json
+          git add public/data/retail_media_export.json fresh_meat_bi/verified_publications.json public/data/market_intelligence_manifest.json fresh_meat_bi/daily_collector_audit_receipt.json
           if git diff --staged --quiet; then
-            echo "No changes in retail media export or manifest for today. Already up to date."
+            echo "Nicio modificare nouă detectată în dataset. Datele sunt la zi."
+            echo "has_changes=false" >> $GITHUB_OUTPUT
           else
-            git commit -m "chore(retail-media): Daily 09:00 Europe/Bucharest competitive intelligence update [skip ci]"
+            git commit -m "chore(retail-media): Daily 08:00 Europe/Bucharest competitive intelligence update [skip ci]"
+            git pull --rebase origin main || true
             git push origin main
+            echo "Modificările au fost publicate în main."
+            echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
+
+  deploy-pages:
+    name: Build and Deploy to GitHub Pages
+    needs: [daily-retail-media-monitor]
+    if: needs.daily-retail-media-monitor.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          VITE_BASE_PATH: '/Fresh-Meat-Retail-BI/'
+
+      - name: Verify build output & retail media export
+        run: |
+          test -d dist
+          test -f dist/data/retail_media_export.json
+          test -f dist/data/market_intelligence_manifest.json
+          test -f dist/data/bi_dashboard_export.json
+          echo "Fresh Meat BI build and export bundle verified successfully"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

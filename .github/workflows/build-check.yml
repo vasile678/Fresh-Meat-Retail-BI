@@ -79,6 +79,7 @@ jobs:
         run: |
           python3 fresh_meat_bi/test_engine.py
           python3 fresh_meat_bi/test_weekly_pipeline.py
+          python3 fresh_meat_bi/test_daily_retail_media.py
 
   deploy-pages:
     name: Deploy to GitHub Pages

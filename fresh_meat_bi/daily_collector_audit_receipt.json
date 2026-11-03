@@ -1,0 +1,250 @@
+{
+  "execution_date": "03.11.2026",
+  "start_time_bucharest": "2026-11-03 20:57:02",
+  "end_time_bucharest": "2026-11-03 20:57:17",
+  "start_time_iso": "2026-11-03T20:57:02.074694+02:00",
+  "end_time_iso": "2026-11-03T20:57:17.842753+02:00",
+  "duration_seconds": 15.77,
+  "total_publications": 14,
+  "total_new_articles_accepted": 10,
+  "total_verified_articles": 42,
+  "publications_audit": [
+    {
+      "pub_id": "progresiv",
+      "name": "Revista Progresiv",
+      "website": "https://revistaprogresiv.ro/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Diacarn Food intră pe piața de retail și investește peste un milion de euro într-o rețea cu 12 magazine",
+          "published_at": "27.10.2026",
+          "url": "https://revistaprogresiv.ro/stiri/retail/diacarn-food-intra-pe-piata-de-retail-si-investeste-peste-un-milion-de-euro-intr-o-retea-cu-12-magazine/"
+        },
+        {
+          "title": "Dincolo de performanță: abordarea P&G privind siguranța produselor Ariel",
+          "published_at": "22.10.2026",
+          "url": "https://revistaprogresiv.ro/stiri/fmcg/dincolo-de-performanta-abordarea-pg-privind-siguranta-produselor-ariel/"
+        }
+      ],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "30.10.2026"
+    },
+    {
+      "pub_id": "piata",
+      "name": "Revista Piața",
+      "website": "https://www.revista-piata.ro/",
+      "status": "RETAINED_VERIFIED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "30.10.2026"
+    },
+    {
+      "pub_id": "trendshrb",
+      "name": "Trends HRB",
+      "website": "https://www.trendshrb.ro/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 5,
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Studiu ASE: Reducerea voucherelor de vacanță a costat turismul intern peste un milion de nopți de cazare",
+          "published_at": "30.10.2026",
+          "url": "https://www.trendshrb.ro/stiri/studiu-ase-reducerea-voucherelor-de-vacanta-a-costat-turismul-intern-peste-un-milion-de-nopti-de-cazare/"
+        },
+        {
+          "title": "Mesopotamia, bilanț la 16 ani: 90 de restaurante, afaceri de circa 90 de milioane de euro și peste 1.700 de angajați",
+          "published_at": "30.10.2026",
+          "url": "https://www.trendshrb.ro/stiri/mesopotamia-bilant-la-16-ani-90-de-restaurante-afaceri-de-circa-90-de-milioane-de-euro-si-peste-1-700-de-angajati/"
+        }
+      ],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "03.11.2026"
+    },
+    {
+      "pub_id": "modernbuyer",
+      "name": "Modern Buyer",
+      "website": "https://modernbuyer.ro/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 5,
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Retailerul online Freshful a ajuns la 280 de mii de shopperi în 5 ani",
+          "published_at": "29.10.2026",
+          "url": "https://modernbuyer.ro/retailerul-online-freshful-a-ajuns-la-280-de-mii-de-shopperi-in-5-ani/"
+        },
+        {
+          "title": "Rețeaua de magazine Good2Go a atins pragul de 50 de locații și vânzări de 13 mil. euro",
+          "published_at": "29.10.2026",
+          "url": "https://modernbuyer.ro/reteaua-de-magazine-good2go-a-atins-pragul-de-50-de-locatii-si-vanzari-de-13-mil-euro/"
+        }
+      ],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "02.11.2026"
+    },
+    {
+      "pub_id": "retailfmcg",
+      "name": "Retail-FMCG",
+      "website": "https://www.retail-fmcg.ro/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 5,
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Auchan dă startul Black Friday 2026: peste 2.500 de produse cu reduceri de până la 60% în magazine și pe auchan.ro",
+          "published_at": "02.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/auchan-black-friday-2026.html"
+        },
+        {
+          "title": "Romanian FMCG Retail – The most important news from October 2026",
+          "published_at": "02.11.2026",
+          "url": "https://www.retail-fmcg.ro/english/romanian-fmcg-retail-news-october-2026.html"
+        }
+      ],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "03.11.2026"
+    },
+    {
+      "pub_id": "meatmilk",
+      "name": "Meat.Milk",
+      "website": "https://www.meat-milk.ro/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "03.11.2026"
+    },
+    {
+      "pub_id": "retailro",
+      "name": "Retail.ro",
+      "website": "https://www.retail.ro/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "02.11.2026"
+    },
+    {
+      "pub_id": "retailarena",
+      "name": "RetailArena.ro",
+      "website": "https://retailarena.ro/",
+      "status": "RETAINED_VERIFIED_HISTORICAL",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "10.06.2026"
+    },
+    {
+      "pub_id": "pigprogress",
+      "name": "Pig Progress",
+      "website": "https://www.foodagribusiness.world/pigs/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "03.11.2026"
+    },
+    {
+      "pub_id": "pig333",
+      "name": "pig333",
+      "website": "https://www.3tres3.com/en",
+      "status": "RETAINED_VERIFIED_HISTORICAL",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "22.10.2026"
+    },
+    {
+      "pub_id": "euromeatnews",
+      "name": "EuroMeatNews",
+      "website": "https://euromeatnews.com",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 5,
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "ChilePork strengthens its presence in Southeast Asia and projects new business opportunities",
+          "published_at": "02.11.2026",
+          "url": "https://euromeatnews.com/chilepork-strengthens-its-presence-in-southeast-asia-and-projects-new-business-opportunities/"
+        },
+        {
+          "title": "Torrent i Fills expands its range of slow cooking dishes with recipes for the Christmas holidays",
+          "published_at": "02.11.2026",
+          "url": "https://euromeatnews.com/torrent-i-fills-expands-its-range-of-slow-cooking-dishes-with-recipes-for-the-christmas-holidays/"
+        }
+      ],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "02.11.2026"
+    },
+    {
+      "pub_id": "meatmanagement",
+      "name": "Meat Management",
+      "website": "https://meatmanagement.com",
+      "status": "PROTECTED_WAF_RETAINED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "02.10.2026"
+    },
+    {
+      "pub_id": "eurocarne",
+      "name": "Eurocarne",
+      "website": "https://eurocarne.com",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "03.11.2026"
+    },
+    {
+      "pub_id": "frs",
+      "name": "FRS – Food Retail & Service",
+      "website": "https://www.foodretail.es/",
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
+      "new_articles_count": 0,
+      "new_accepted": [],
+      "rejected_count": 0,
+      "rejected_details": [],
+      "final_top3_count": 3,
+      "latest_published_at": "03.11.2026"
+    }
+  ]
+}
