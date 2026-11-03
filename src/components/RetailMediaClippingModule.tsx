@@ -1056,7 +1056,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Store className="w-3.5 h-3.5" /> Cataloage & Aplicații (7 Retaileri)
+            <Store className="w-3.5 h-3.5" /> Cataloage & Aplicații
           </button>
           <button
             onClick={() => setSelectedTab('press')}
@@ -1066,7 +1066,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 : 'border-transparent text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Newspaper className="w-3.5 h-3.5" /> Presă Specializată ({data.publications.length} Publicații)
+            <Newspaper className="w-3.5 h-3.5" /> Media Monitor
           </button>
           <button
             onClick={() => setSelectedTab('intelligence')}
