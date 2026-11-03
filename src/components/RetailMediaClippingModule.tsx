@@ -993,28 +993,32 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     }
     lastApiCheckRef.current = now;
 
+    const apiBase = (import.meta.env.VITE_COLLECTOR_API_URL || '').replace(/\/$/, '');
+    const statusUrl = apiBase ? `${apiBase}/api/retail-media/status` : '/api/retail-media/status';
+    const triggerUrl = apiBase ? `${apiBase}/api/retail-media/trigger-collect` : '/api/retail-media/trigger-collect';
+
     try {
-      const statusRes = await fetch('/api/retail-media/status');
+      const statusRes = await fetch(statusUrl);
       if (statusRes.ok) {
         const statusJson = await statusRes.json();
         if (statusJson.can_collect_now) {
-          await fetch('/api/retail-media/trigger-collect', {
+          await fetch(triggerUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({})
           });
           // Start moderate polling loop
-          pollForCompletion();
+          pollForCompletion(statusUrl);
         } else if (statusJson.is_collecting) {
-          pollForCompletion();
+          pollForCompletion(statusUrl);
         }
       }
     } catch {
-      // Static host (GitHub Pages) without Node.js backend: silent graceful fallback
+      // Static host (GitHub Pages) without serverless gateway: silent graceful fallback
     }
   }, []);
 
-  const pollForCompletion = useCallback(() => {
+  const pollForCompletion = useCallback((statusUrl: string) => {
     if (isPollingRef.current) return;
     isPollingRef.current = true;
     let attempts = 0;
@@ -1023,7 +1027,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     const interval = setInterval(async () => {
       attempts++;
       try {
-        const res = await fetch('/api/retail-media/status');
+        const res = await fetch(statusUrl);
         if (res.ok) {
           const st = await res.json();
           if (!st.is_collecting || attempts >= maxAttempts) {

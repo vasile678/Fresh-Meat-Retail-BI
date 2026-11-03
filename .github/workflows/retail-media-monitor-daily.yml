@@ -13,6 +13,8 @@ on:
         required: false
         type: boolean
         default: false
+  repository_dispatch:
+    types: [on_demand_collect]
 
 permissions:
   contents: write
@@ -50,7 +52,7 @@ jobs:
           now = datetime.datetime.now(tz)
           today_str = now.strftime('%d.%m.%Y')
           hour = now.hour
-          is_forced = '${{ github.event_name }}' == 'workflow_dispatch' or '${{ github.event.inputs.force_run }}' == 'true'
+          is_forced = '${{ github.event_name }}' in ['workflow_dispatch', 'repository_dispatch'] or '${{ github.event.inputs.force_run }}' == 'true'
           print(f'Ora locală în Europe/Bucharest: {now.strftime(\"%Y-%m-%d %H:%M:%S\")} (ora: {hour})')
 
           export_file = 'public/data/retail_media_export.json'
@@ -109,7 +111,7 @@ jobs:
   deploy-pages:
     name: Build and Deploy to GitHub Pages
     needs: [daily-retail-media-monitor]
-    if: needs.daily-retail-media-monitor.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch'
+    if: needs.daily-retail-media-monitor.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
     runs-on: ubuntu-24.04
     environment:
       name: github-pages

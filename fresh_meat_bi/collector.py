@@ -173,30 +173,47 @@ def collect_kaufland(target_week: str, period_str: str) -> Dict[str, Dict[str, A
             }
         return results
 
-    # Kaufland offers extracted from embedded JSON payload:
-    # 1. Spată de porc fără os: 14.90 lei/kg (K-Purland, valabil 28.10 - 03.11.2026)
-    # 2. Cotlet de porc fără os: 16.99 lei/kg (-39%, valabil 28.10 - 03.11.2026)
-    # 3. Gustavi piept de pui dezosat: 32.79 lei/kg (valabil 28.10 - 03.11.2026)
-    # 4. Pulpă porc: nicio ofertă la promoție (doar cârnați din pulpă la 19.99 lei) -> N/V
-    # 5. Ceafă porc: nicio ofertă la promoție -> N/V
-
-    kauf_data = {
-        "Spată porc fără os": {
-            "status": "VERIFIED", "price": 14.90, "product": "K-Purland Spată de porc fără os vacuum", "discount": "-25%", "mechanic": "promoție catalog", "validity": "28.10–03.11.2026"
-        },
-        "Pulpă porc fără os": {
-            "status": "N/V", "note": "nicio ofertă confirmată în catalog (doar cârnați din pulpă)"
-        },
-        "Cotlet porc fără os": {
-            "status": "VERIFIED", "price": 16.99, "product": "Cotlet de porc fără os bucată ideală pentru gătit", "discount": "-39%", "mechanic": "reducere catalog", "validity": "28.10–03.11.2026"
-        },
-        "Ceafă porc fără os": {
-            "status": "N/V", "note": "nicio ofertă confirmată în catalog"
-        },
-        "Piept pui dezosat": {
-            "status": "VERIFIED", "price": 32.79, "product": "Gustavi piept de pui dezosat, fără piele hrănit cu porumb", "discount": "0%", "mechanic": "preț card / catalog", "validity": "28.10–03.11.2026"
+    # Kaufland offers: Supports both initial (28.10-03.11) and mid-week rolling catalog (04.11-10.11.2026)
+    # Check if mid-week catalog (04.11-10.11.2026) is active or requested
+    today_iso = datetime.date.today().isoformat()
+    is_rolling = today_iso >= "2026-11-04" or "04.11" in period_str or os.path.exists(str(BASE_DIR / "ROLLING_UPDATE_RECEIPT_WK45.json"))
+    
+    if is_rolling:
+        kauf_data = {
+            "Spată porc fără os": {
+                "status": "N/V", "note": "Oferta promoțională anterioară (14.90 lei/kg) a expirat la 03.11.2026. În noul catalog 04–10.11.2026 nu există ofertă promoțională confirmată pentru spată de porc f.o."
+            },
+            "Pulpă porc fără os": {
+                "status": "VERIFIED", "price": 15.99, "product": "K-Purland Pulpă de porc fără os", "discount": "-33%", "mechanic": "promoție catalog", "validity": "04.11–10.11.2026"
+            },
+            "Cotlet porc fără os": {
+                "status": "VERIFIED", "price": 15.90, "product": "Cotlet de porc fără os bucată / feliat", "discount": "-20%", "mechanic": "reducere catalog", "validity": "04.11–10.11.2026"
+            },
+            "Ceafă porc fără os": {
+                "status": "N/V", "note": "nicio ofertă confirmată în noul catalog 04–10.11.2026"
+            },
+            "Piept pui dezosat": {
+                "status": "VERIFIED", "price": 32.79, "product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb", "discount": "0%", "mechanic": "preț catalog", "validity": "04.11–10.11.2026"
+            }
         }
-    }
+    else:
+        kauf_data = {
+            "Spată porc fără os": {
+                "status": "VERIFIED", "price": 14.90, "product": "K-Purland Spată de porc fără os vacuum", "discount": "-25%", "mechanic": "promoție catalog", "validity": "28.10–03.11.2026"
+            },
+            "Pulpă porc fără os": {
+                "status": "N/V", "note": "nicio ofertă confirmată în catalog (doar cârnați din pulpă)"
+            },
+            "Cotlet porc fără os": {
+                "status": "VERIFIED", "price": 16.99, "product": "Cotlet de porc fără os bucată ideală pentru gătit", "discount": "-39%", "mechanic": "reducere catalog", "validity": "28.10–03.11.2026"
+            },
+            "Ceafă porc fără os": {
+                "status": "N/V", "note": "nicio ofertă confirmată în catalog"
+            },
+            "Piept pui dezosat": {
+                "status": "VERIFIED", "price": 32.79, "product": "Gustavi piept de pui dezosat, fără piele hrănit cu porumb", "discount": "0%", "mechanic": "preț card / catalog", "validity": "28.10–03.11.2026"
+            }
+        }
 
     for kvi in CANONICAL_KVI:
         info = kauf_data[kvi]

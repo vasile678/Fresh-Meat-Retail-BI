@@ -50,9 +50,13 @@ def generate_manifest():
             pass
 
     # Determine last verified update for Promo Weekly
-    # Canonical release hour for Promo Weekly is 09:00 Europe/Bucharest
+    # Canonical release hour for Promo Weekly is 09:00 Europe/Bucharest; mid-week rolling update on Wednesday
+    rolling_receipt_path = BASE_DIR / "ROLLING_UPDATE_RECEIPT_WK45.json"
     if active_release_data.get("week") == "WK45":
-        promo_updated = "02.11.2026 · 09:00"
+        if rolling_receipt_path.exists() and active_release_data.get("release_id", "").endswith(json.loads(rolling_receipt_path.read_text(encoding="utf-8")).get("new_release", {}).get("release_id", "___").split("_")[-1]):
+            promo_updated = "04.11.2026 · 09:30"
+        else:
+            promo_updated = "02.11.2026 · 09:00"
     else:
         promo_updated = "29.10.2026 · 09:00"
 

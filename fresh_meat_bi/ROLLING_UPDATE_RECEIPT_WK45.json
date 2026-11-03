@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "rolling_update_id": "ROLLING_WK45_6d6130ef",
+  "week": "WK45",
+  "year": 2026,
+  "applied_at_bucharest": "03.11.2026 21:35:29 EET",
+  "applied_at_utc": "2026-11-03T19:35:29.017057+00:00",
+  "source_catalog": {
+    "retailer": "Kaufland",
+    "title": "Catalog Kaufland Oferte de Miercuri 04.11 până Marți 10.11.2026",
+    "validity": "04.11–10.11.2026",
+    "url": "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
+  },
+  "previous_release": {
+    "release_id": "2026/WK45_b2389294",
+    "dataset_sha256": "b2389294d10abdee3bee3fa43f884af68f19eb5a3da8fd6b118ef28534d04fb9",
+    "published_at_utc": "2026-11-03T18:11:40.474105+00:00"
+  },
+  "new_release": {
+    "release_id": "2026/WK45_6d6130ef",
+    "dataset_sha256": "6d6130ef891c02b6fcb1df3e780b70478d63a4e6b0ca66b62dd9ae8d85f17911",
+    "output_sha256": "3e50b28cb98c7da6eec1390adc31cf3ab7b038b0d2ca90e38c5d4acf4390999b",
+    "export_path": "/releases/2026/WK45_6d6130ef/bi_dashboard_export.json",
+    "image_path": "/releases/2026/WK45_6d6130ef/TOP5_PREȚURI_COMPETITORI_WK45_2026.png"
+  },
+  "cell_delta_audit": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Spată porc fără os",
+      "before": {
+        "status": "VERIFIED",
+        "price": 14.9,
+        "validity": "28.10–03.11.2026"
+      },
+      "after": {
+        "status": "N/V",
+        "price": null,
+        "validity": null
+      },
+      "justification": "Promoția anterioară la 14.90 lei/kg a expirat marți 03.11. Noul catalog promovează piept de porc cu os (15.99) și cap de piept (14.99), fără spată. Celula devine N/V."
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Pulpă porc fără os",
+      "before": {
+        "status": "N/V",
+        "price": null,
+        "validity": null
+      },
+      "after": {
+        "status": "VERIFIED",
+        "price": 15.99,
+        "validity": "04.11–10.11.2026"
+      },
+      "justification": "Kaufland introduce K-Purland la 15.99 lei/kg (-33%), egalând minimul din piață al PENNY (15.99 lei/kg) fără a impune card de loialitate."
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Cotlet porc fără os",
+      "before": {
+        "status": "VERIFIED",
+        "price": 16.99,
+        "validity": "28.10–03.11.2026"
+      },
+      "after": {
+        "status": "VERIFIED",
+        "price": 15.9,
+        "validity": "04.11–10.11.2026"
+      },
+      "justification": "Prețul a scăzut de la 16.99 la 15.90 lei/kg (-1.09 lei/kg, -6.4%), stabilind noul minim absolut din piață pentru WK45."
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "before": {
+        "status": "N/V",
+        "price": null,
+        "validity": null
+      },
+      "after": {
+        "status": "N/V",
+        "price": null,
+        "validity": null
+      },
+      "justification": "Nicio promoție în ambele cataloage; celula rămâne N/V."
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Piept pui dezosat",
+      "before": {
+        "status": "VERIFIED",
+        "price": 32.79,
+        "validity": "28.10–03.11.2026"
+      },
+      "after": {
+        "status": "VERIFIED",
+        "price": 32.79,
+        "validity": "04.11–10.11.2026"
+      },
+      "justification": "Oferta Gustavi la 32.79 lei/kg este reconfirmată în noul catalog 04–10.11.2026 cu interval de valabilitate actualizat."
+    }
+  ],
+  "market_impact_kvi": {
+    "Cotlet porc fără os": {
+      "previous_best": "16.90 lei/kg (Lidl cu Lidl Plus)",
+      "new_best": "15.90 lei/kg (Kaufland)",
+      "delta": "-1.00 lei/kg (-5.9%)",
+      "impact": "Kaufland devine noul lider absolut pe piață cu preț promoțional direct de catalog, depășind Lidl Plus (16.90) și PENNY (17.99)."
+    },
+    "Pulpă porc fără os": {
+      "previous_best": "15.99 lei/kg (PENNY cu card)",
+      "new_best": "15.99 lei/kg (Kaufland & PENNY)",
+      "delta": "0.00 lei/kg (paritate)",
+      "impact": "Kaufland intră la paritate comercială exactă cu PENNY (15.99 lei/kg), dar oferă prețul fără necesitatea unui card de fidelitate."
+    },
+    "Spată porc fără os": {
+      "previous_best": "14.90 lei/kg (Kaufland)",
+      "new_best": "18.90 lei/kg (Lidl)",
+      "delta": "+4.00 lei/kg (+26.8%)",
+      "impact": "Promoția Kaufland a expirat la 03.11. Lidl rămâne singurul retailer monitorizat cu promoție activă pe spată (18.90 lei/kg)."
+    },
+    "Ceafă porc fără os": {
+      "best": "23.90 lei/kg (Lidl)",
+      "impact": "Neschimbat; Lidl deține unica ofertă promoțională confirmată din piață."
+    },
+    "Piept pui dezosat": {
+      "best": "26.90 lei/kg (PENNY XXL & Lidl Plus)",
+      "impact": "Neschimbat; Kaufland reconfirmat la 32.79 lei/kg (Gustavi)."
+    }
+  },
+  "three_sections_sync_check": {
+    "single_source_of_truth": "public/data/active_release.json",
+    "weekly_report_view": "SYNCHRONIZED (reads active_release.json export_path)",
+    "price_comparison_table": "SYNCHRONIZED (reads active_release.json cells)",
+    "commercial_conclusions": "SYNCHRONIZED (computed dynamically from active cells)"
+  }
+}

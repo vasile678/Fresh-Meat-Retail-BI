@@ -1,23 +1,23 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-03T21:08:43.034219+02:00",
+  "generated_at_utc": "2026-11-03T21:36:36.169201+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
       "module_id": "promo_weekly",
       "title": "Promo Weekly",
       "schedule": "Luni, 09:00 Europe/Bucharest",
-      "last_verified_update": "02.11.2026 · 09:00",
-      "updated_date": "02.11.2026",
-      "updated_time": "09:00",
+      "last_verified_update": "04.11.2026 · 09:30",
+      "updated_date": "04.11.2026",
+      "updated_time": "09:30",
       "week": "WK45",
       "year": 2026,
       "period": "02–08 NOI 2026",
       "status": "RELEASE_PASS",
       "data_file": "/data/bi_dashboard_export.json",
       "active_release_file": "/data/active_release.json",
-      "dataset_sha256": "8bae8d95e888fdea8dcbf9cc373ba0abf033d409c4e24c9e7e5591f9e1fe9015",
+      "dataset_sha256": "72236f4b61c630406723899957b5d662ff2787d284f74a54d6e9c837f0ada3b6",
       "verified_cells_count": 25,
       "verified_retailers_count": 5
     },

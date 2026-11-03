@@ -1,9 +1,10 @@
 {
   "status": "PASS",
-  "dataset_sha256": "b2389294d10abdee3bee3fa43f884af68f19eb5a3da8fd6b118ef28534d04fb9",
+  "dataset_sha256": "6d6130ef891c02b6fcb1df3e780b70478d63a4e6b0ca66b62dd9ae8d85f17911",
   "week": "WK45",
   "year": 2026,
-  "reconciled_at": "2026-11-02T21:27:33.442834+00:00",
+  "reconciled_at": "2026-11-03T19:35:27.412477+00:00",
   "conflict_count": 0,
-  "resolution": "ALL_CELLS_RECONCILED"
+  "resolution": "ALL_CELLS_RECONCILED",
+  "rolling_update": "KAUFLAND_04_10_NOV_RECONCILED"
 }

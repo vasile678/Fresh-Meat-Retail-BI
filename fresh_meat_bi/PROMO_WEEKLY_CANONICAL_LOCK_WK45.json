@@ -25,54 +25,104 @@
     {
       "retailer": "Kaufland",
       "kvi": "Spată porc fără os",
-      "status": "VERIFIED",
-      "source": "Kaufland România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "price_lei_kg": 14.9,
-      "validity": "28.10–03.11.2026",
-      "exact_product": "K-Purland Spată de porc fără os vacuum",
-      "discount": "-25%",
-      "mechanic": "promoție catalog"
+      "status": "N/V",
+      "source": "Kaufland România – catalog oficial 04–10.11.2026",
+      "source_date": "2026-11-04",
+      "offer_history": [
+        {
+          "period": "28.10–03.11.2026",
+          "status": "VERIFIED",
+          "price_lei_kg": 14.9,
+          "product": "K-Purland Spată de porc fără os vacuum",
+          "discount": "-25%",
+          "note": null
+        }
+      ],
+      "note": "Oferta promoțională anterioară (14.90 lei/kg) a expirat la 03.11.2026. În noul catalog 04–10.11.2026 nu există ofertă promoțională confirmată pentru spată de porc f.o."
     },
     {
       "retailer": "Kaufland",
       "kvi": "Pulpă porc fără os",
-      "status": "N/V",
-      "source": "Kaufland România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "note": "nicio ofertă confirmată în catalog (doar cârnați din pulpă)"
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial 04–10.11.2026",
+      "source_date": "2026-11-04",
+      "offer_history": [
+        {
+          "period": "28.10–03.11.2026",
+          "status": "N/V",
+          "price_lei_kg": null,
+          "product": null,
+          "discount": null,
+          "note": "nicio ofertă confirmată în catalog (doar cârnați din pulpă)"
+        }
+      ],
+      "price_lei_kg": 15.99,
+      "validity": "04.11–10.11.2026",
+      "exact_product": "K-Purland Pulpă de porc fără os",
+      "discount": "-33%",
+      "mechanic": "promoție catalog"
     },
     {
       "retailer": "Kaufland",
       "kvi": "Cotlet porc fără os",
       "status": "VERIFIED",
-      "source": "Kaufland România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "price_lei_kg": 16.99,
-      "validity": "28.10–03.11.2026",
-      "exact_product": "Cotlet de porc fără os bucată ideală pentru gătit",
-      "discount": "-39%",
-      "mechanic": "reducere catalog"
+      "source": "Kaufland România – catalog oficial 04–10.11.2026",
+      "source_date": "2026-11-04",
+      "price_lei_kg": 15.9,
+      "validity": "04.11–10.11.2026",
+      "exact_product": "Cotlet de porc fără os bucată / feliat",
+      "discount": "-20%",
+      "mechanic": "reducere catalog",
+      "offer_history": [
+        {
+          "period": "28.10–03.11.2026",
+          "status": "VERIFIED",
+          "price_lei_kg": 16.99,
+          "product": "Cotlet de porc fără os bucată ideală pentru gătit",
+          "discount": "-39%",
+          "note": null
+        }
+      ]
     },
     {
       "retailer": "Kaufland",
       "kvi": "Ceafă porc fără os",
       "status": "N/V",
-      "source": "Kaufland România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "note": "nicio ofertă confirmată în catalog"
+      "source": "Kaufland România – catalog oficial 04–10.11.2026",
+      "source_date": "2026-11-04",
+      "note": "Nicio ofertă confirmată în catalogul 04–10.11.2026.",
+      "offer_history": [
+        {
+          "period": "28.10–03.11.2026",
+          "status": "N/V",
+          "price_lei_kg": null,
+          "product": null,
+          "discount": null,
+          "note": "nicio ofertă confirmată în catalog"
+        }
+      ]
     },
     {
       "retailer": "Kaufland",
       "kvi": "Piept pui dezosat",
       "status": "VERIFIED",
-      "source": "Kaufland România – catalog oficial WK45",
-      "source_date": "2026-11-02",
+      "source": "Kaufland România – catalog oficial 04–10.11.2026",
+      "source_date": "2026-11-04",
       "price_lei_kg": 32.79,
-      "validity": "28.10–03.11.2026",
-      "exact_product": "Gustavi piept de pui dezosat, fără piele hrănit cu porumb",
+      "validity": "04.11–10.11.2026",
+      "exact_product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb",
       "discount": "0%",
-      "mechanic": "preț card / catalog"
+      "mechanic": "preț catalog",
+      "offer_history": [
+        {
+          "period": "28.10–03.11.2026",
+          "status": "VERIFIED",
+          "price_lei_kg": 32.79,
+          "product": "Gustavi piept de pui dezosat, fără piele hrănit cu porumb",
+          "discount": "0%",
+          "note": null
+        }
+      ]
     },
     {
       "retailer": "Lidl",
@@ -266,5 +316,11 @@
       "source_date": "2026-11-02",
       "note": "nicio ofertă confirmată în catalog"
     }
-  ]
+  ],
+  "rolling_update": {
+    "applied": true,
+    "rolling_date": "2026-11-04",
+    "description": "Actualizare la mijlocul săptămânii (Miercuri 04.11.2026): Catalog nou Kaufland 04–10.11.2026",
+    "source_catalog": "Catalog Kaufland Oferte de Miercuri 04.11 până Marți 10.11.2026"
+  }
 }

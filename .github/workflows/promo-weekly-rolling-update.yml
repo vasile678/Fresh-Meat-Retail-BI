@@ -1,0 +1,167 @@
+name: Promo Weekly - Rolling Update (Mid-Week Catalogs)
+
+on:
+  schedule:
+    # Rulează marți–duminică la 06:30 și 07:30 UTC (08:30 / 09:30 Europe/Bucharest EET/EEST)
+    # pentru a identifica imediat cataloagele de miercuri/sfârșit de săptămână.
+    - cron: '30 6,7 * * 2-7'
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "Execută verificarea forțat chiar dacă săptămâna a fost actualizată"
+        required: false
+        type: boolean
+        default: false
+      week:
+        description: "Săptămâna ISO țintă (ex: WK45). Lăsați gol pentru săptămâna activă."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  rolling-update-check:
+    name: Check & Apply Mid-Week Rolling Updates
+    runs-on: ubuntu-24.04
+    outputs:
+      has_changes: ${{ steps.commit_push.outputs.has_changes }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'fresh_meat_bi/requirements.txt'
+
+      - name: Install system fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-dejavu-core
+
+      - name: Install Python dependencies
+        run: pip install -r fresh_meat_bi/requirements.txt
+
+      - name: Check for Mid-Week Catalogs & Rolling Updates
+        id: check_step
+        run: |
+          TARGET_WEEK="${{ inputs.week }}"
+          if [ -z "$TARGET_WEEK" ]; then
+            TARGET_WEEK=$(python3 fresh_meat_bi/promo_weekly_scheduler.py --get-target-week)
+          fi
+          echo "Target week for rolling update check: $TARGET_WEEK"
+          echo "target_week=$TARGET_WEEK" >> $GITHUB_OUTPUT
+          
+          IS_FORCED="${{ github.event.inputs.force_run || 'false' }}"
+          CHECK_JSON=$(python3 fresh_meat_bi/promo_weekly_rolling_updater.py --week "$TARGET_WEEK" --check)
+          echo "Check result: $CHECK_JSON"
+          
+          NEEDED=$(python3 -c "import json; print('true' if json.loads('''$CHECK_JSON''').get('needed', False) else 'false')")
+          if [ "$IS_FORCED" = "true" ]; then
+            echo "Forced rolling update requested."
+            NEEDED="true"
+          fi
+          
+          echo "rolling_needed=$NEEDED" >> $GITHUB_OUTPUT
+          echo "ROLLING_NEEDED=$NEEDED" >> $GITHUB_ENV
+
+      - name: Apply Rolling Update & Deterministic Pipeline
+        if: env.ROLLING_NEEDED == 'true'
+        run: |
+          TARGET_WEEK="${{ steps.check_step.outputs.target_week }}"
+          echo "Executing rolling update for week: $TARGET_WEEK..."
+          python3 fresh_meat_bi/promo_weekly_rolling_updater.py --week "$TARGET_WEEK" --apply
+
+      - name: Validate Pipeline Control & Commercial Conclusions Suite
+        if: env.ROLLING_NEEDED == 'true'
+        run: |
+          python3 fresh_meat_bi/test_weekly_pipeline.py
+          python3 fresh_meat_bi/test_commercial_conclusions.py
+          python3 fresh_meat_bi/promo_weekly_rolling_updater.py --test
+
+      - name: Commit and Push Rolling Update Artifacts
+        id: commit_push
+        if: env.ROLLING_NEEDED == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage all updated release assets
+          git add public/data/active_release.json
+          git add public/data/bi_dashboard_export.json
+          git add public/data/market_intelligence_manifest.json
+          git add public/releases/
+          git add public/TOP5_PREȚURI_COMPETITORI_*.png
+          git add fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_*.json
+          git add fresh_meat_bi/RESEARCH_RECEIPT_*.json
+          git add fresh_meat_bi/RECONCILIATION_RECEIPT_*.json
+          git add fresh_meat_bi/ROLLING_UPDATE_RECEIPT_*.json
+          
+          if git diff --staged --quiet; then
+            echo "Nicio modificare nouă detectată în dataset. Raportul este la zi."
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore(promo-weekly): rolling update mid-week catalog reconciliation [skip ci]"
+            git pull --rebase origin main || true
+            git push origin main
+            echo "Modificările au fost publicate în main."
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+  deploy-pages:
+    name: Build & Deploy Updated Release to GitHub Pages
+    needs: [rolling-update-check]
+    if: needs.rolling-update-check.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          VITE_BASE_PATH: '/Fresh-Meat-Retail-BI/'
+
+      - name: Verify build output & active release
+        run: |
+          test -d dist
+          test -f dist/data/active_release.json
+          test -f dist/data/bi_dashboard_export.json
+          test -f dist/data/market_intelligence_manifest.json
+          echo "Promo Weekly rolling update distribution verified successfully"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
