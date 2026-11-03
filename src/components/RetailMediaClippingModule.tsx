@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { 
   ArrowLeft, 
   Newspaper, 
@@ -959,25 +959,123 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     document.title = 'Fresh Meat Retail BI | Market Intelligence & Insights';
   }, []);
 
-  useEffect(() => {
-    let isMounted = true;
-    async function loadData() {
+  // Continuous on-demand update mechanism:
+  // 1. Immediately loads latest validated dataset on mount, tab switch, refresh, or window focus.
+  // 2. Safely triggers background collector if backend API is available and cooldown has elapsed.
+  // 3. Silently polls for completion and auto-updates cards if new articles arrive.
+  const lastApiCheckRef = useRef<number>(0);
+  const isPollingRef = useRef<boolean>(false);
+
+  const loadLatestData = useCallback(async () => {
+    try {
+      const url = getAssetUrl('/data/retail_media_export.json?v=' + Date.now());
+      const res = await fetch(url);
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.retailers && json.publications) {
+          setData(prev => {
+            // Update only if timestamp or articles changed
+            if (prev.updated !== json.updated || JSON.stringify(prev.publications) !== JSON.stringify(json.publications)) {
+              return json;
+            }
+            return prev;
+          });
+        }
+      }
+    } catch {
+      // Fallback-ul autoritativ BASELINE_DATA este deja activat
+    }
+
+    // Trigger on-demand background check if backend API is available
+    const now = Date.now();
+    if (now - lastApiCheckRef.current < 30000 || isPollingRef.current) {
+      return; // Frontend throttling: do not spam API more than once per 30 seconds
+    }
+    lastApiCheckRef.current = now;
+
+    try {
+      const statusRes = await fetch('/api/retail-media/status');
+      if (statusRes.ok) {
+        const statusJson = await statusRes.json();
+        if (statusJson.can_collect_now) {
+          await fetch('/api/retail-media/trigger-collect', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({})
+          });
+          // Start moderate polling loop
+          pollForCompletion();
+        } else if (statusJson.is_collecting) {
+          pollForCompletion();
+        }
+      }
+    } catch {
+      // Static host (GitHub Pages) without Node.js backend: silent graceful fallback
+    }
+  }, []);
+
+  const pollForCompletion = useCallback(() => {
+    if (isPollingRef.current) return;
+    isPollingRef.current = true;
+    let attempts = 0;
+    const maxAttempts = 15; // Max 60 seconds (15 * 4s)
+
+    const interval = setInterval(async () => {
+      attempts++;
       try {
-        const url = getAssetUrl('/data/retail_media_export.json?v=' + Date.now());
-        const res = await fetch(url);
+        const res = await fetch('/api/retail-media/status');
         if (res.ok) {
-          const json = await res.json();
-          if (isMounted && json && json.retailers && json.publications) {
-            setData(json);
+          const st = await res.json();
+          if (!st.is_collecting || attempts >= maxAttempts) {
+            clearInterval(interval);
+            isPollingRef.current = false;
+            // Fetch updated data once completed
+            const url = getAssetUrl('/data/retail_media_export.json?v=' + Date.now());
+            const dataRes = await fetch(url);
+            if (dataRes.ok) {
+              const freshData = await dataRes.json();
+              if (freshData?.publications) {
+                setData(freshData);
+              }
+            }
           }
+        } else {
+          clearInterval(interval);
+          isPollingRef.current = false;
         }
       } catch {
-        // Fallback-ul autoritativ BASELINE_DATA este deja activat
+        clearInterval(interval);
+        isPollingRef.current = false;
       }
-    }
-    loadData();
-    return () => { isMounted = false; };
+    }, 4000);
   }, []);
+
+  // Run on mount
+  useEffect(() => {
+    loadLatestData();
+  }, [loadLatestData]);
+
+  // Run when returning to 'Media Monitor' tab
+  useEffect(() => {
+    if (selectedTab === 'press') {
+      loadLatestData();
+    }
+  }, [selectedTab, loadLatestData]);
+
+  // Run when window regains focus or visibility changes (user returns to page)
+  useEffect(() => {
+    const handleVisibilityOrFocus = () => {
+      if (document.visibilityState === 'visible') {
+        loadLatestData();
+      }
+    };
+    window.addEventListener('focus', handleVisibilityOrFocus);
+    document.addEventListener('visibilitychange', handleVisibilityOrFocus);
+    return () => {
+      window.removeEventListener('focus', handleVisibilityOrFocus);
+      document.removeEventListener('visibilitychange', handleVisibilityOrFocus);
+    };
+  }, [loadLatestData]);
 
   const romaniaPublications = data.publications.filter(p => p.category === 'retail_fmcg');
   const internationalPublications = data.publications.filter(p => p.category === 'pork_industry');
@@ -1170,7 +1268,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                     PRESĂ RETAIL & FMCG — ROMÂNIA ({romaniaPublications.length} PUBLICAȚII)
                   </h2>
                 </div>
-                <span className="text-xs text-slate-400 font-medium">Top 3 știri din ultimele 7 zile per publicație</span>
+                <span className="text-xs text-slate-400 font-medium">Top știri</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
