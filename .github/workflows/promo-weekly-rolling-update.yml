@@ -2,9 +2,9 @@ name: Promo Weekly - Rolling Update (Mid-Week Catalogs)
 
 on:
   schedule:
-    # Rulează marți–duminică la 06:30 și 07:30 UTC (08:30 / 09:30 Europe/Bucharest EET/EEST)
-    # pentru a identifica imediat cataloagele de miercuri/sfârșit de săptămână.
-    - cron: '30 6,7 * * 2-7'
+    # Rulează marți–duminică la 05:30 UTC (vară, EEST = UTC+3) și 06:30 UTC (iarnă, EET = UTC+2).
+    # Pasul de verificare a orei locale asigură execuția exact la 08:30 Europe/Bucharest.
+    - cron: '30 5,6 * * 0,2-6'
   workflow_dispatch:
     inputs:
       force_run:
@@ -54,8 +54,35 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r fresh_meat_bi/requirements.txt
 
+      - name: Check Europe/Bucharest Local Time (08:30)
+        id: time_check
+        run: |
+          python3 -c "
+          import datetime, zoneinfo, os, sys
+          tz = zoneinfo.ZoneInfo('Europe/Bucharest')
+          now = datetime.datetime.now(tz)
+          hour = now.hour
+          minute = now.minute
+          is_forced = '${{ github.event_name }}' in ['workflow_dispatch', 'repository_dispatch'] or '${{ github.event.inputs.force_run }}' == 'true'
+          print(f'Ora locală în Europe/Bucharest: {now.strftime(\"%Y-%m-%d %H:%M:%S\")} (ora: {hour}, minut: {minute})')
+
+          should_run = False
+          if is_forced:
+              print('Execuție forțată / manuală (workflow_dispatch). Se continuă verificarea.')
+              should_run = True
+          elif hour == 8 and minute >= 25:
+              print(f'Fereastra de rulare 08:30 Europe/Bucharest confirmată ({hour}:{minute:02d}). Se continuă execuția.')
+              should_run = True
+          else:
+              print(f'În afara ferestrei programate de 08:30 Europe/Bucharest (ora locală {hour}:{minute:02d}). Se omite rularea redundantă.')
+
+          with open(os.environ['GITHUB_ENV'], 'a') as f:
+              f.write(f'SHOULD_RUN={\"true\" if should_run else \"false\"}\n')
+          "
+
       - name: Check for Mid-Week Catalogs & Rolling Updates
         id: check_step
+        if: env.SHOULD_RUN == 'true'
         run: |
           TARGET_WEEK="${{ inputs.week }}"
           if [ -z "$TARGET_WEEK" ]; then
