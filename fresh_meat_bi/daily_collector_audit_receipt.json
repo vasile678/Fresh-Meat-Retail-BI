@@ -1,12 +1,12 @@
 {
-  "execution_date": "03.11.2026",
-  "start_time_bucharest": "2026-11-03 21:17:56",
-  "end_time_bucharest": "2026-11-03 21:18:11",
-  "start_time_iso": "2026-11-03T21:17:56.426901+02:00",
-  "end_time_iso": "2026-11-03T21:18:11.649272+02:00",
-  "duration_seconds": 15.22,
+  "execution_date": "04.11.2026",
+  "start_time_bucharest": "2026-11-04 14:43:58",
+  "end_time_bucharest": "2026-11-04 14:44:42",
+  "start_time_iso": "2026-11-04T14:43:58.490102+02:00",
+  "end_time_iso": "2026-11-04T14:44:42.624860+02:00",
+  "duration_seconds": 44.13,
   "total_publications": 14,
-  "total_new_articles_accepted": 10,
+  "total_new_articles_accepted": 22,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -52,23 +52,28 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 2,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Studiu ASE: Reducerea voucherelor de vacanță a costat turismul intern peste un milion de nopți de cazare",
-          "published_at": "30.10.2026",
-          "url": "https://www.trendshrb.ro/stiri/studiu-ase-reducerea-voucherelor-de-vacanta-a-costat-turismul-intern-peste-un-milion-de-nopti-de-cazare/"
+          "title": "Martina Bonello va reprezenta Regiunea South Europe & Mediterranean în Marea Finală S.Pellegrino Young Chef Academy Competition 2026/27",
+          "published_at": "04.11.2026",
+          "url": "https://www.trendshrb.ro/nwsl_promo/martina-bonello-va-reprezenta-regiunea-south-europe-mediterranean-in-marea-finala-s-pellegrino-young-chef-academy-competition-2026-27/"
         },
         {
-          "title": "Mesopotamia, bilanț la 16 ani: 90 de restaurante, afaceri de circa 90 de milioane de euro și peste 1.700 de angajați",
-          "published_at": "30.10.2026",
-          "url": "https://www.trendshrb.ro/stiri/mesopotamia-bilant-la-16-ani-90-de-restaurante-afaceri-de-circa-90-de-milioane-de-euro-si-peste-1-700-de-angajati/"
+          "title": "Vassilis Themelidis, Wyndham Hotels & Resorts: Ne adaptăm strategia de dezvoltare la oportunitățile oferite de piața locală",
+          "published_at": "04.11.2026",
+          "url": "https://www.trendshrb.ro/business/vassilis-themelidis-wyndham-hotels-resorts-ne-adaptam-strategia-de-dezvoltare-la-oportunitatile-oferite-de-piata-locala/"
+        },
+        {
+          "title": "Hesburger continuă să se extindă în Europa, deschizând primul său restaurant din Italia",
+          "published_at": "04.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/hesburger-continua-sa-se-extinda-in-europa-deschizand-primul-sau-restaurant-din-italia/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "03.11.2026"
+      "latest_published_at": "04.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -79,20 +84,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Retailerul online Freshful a ajuns la 280 de mii de shopperi în 5 ani",
-          "published_at": "29.10.2026",
-          "url": "https://modernbuyer.ro/retailerul-online-freshful-a-ajuns-la-280-de-mii-de-shopperi-in-5-ani/"
+          "title": "Mega Image, Profi și Shop&Go: Trei branduri care vor continua să spună trei povești distincte clienților români",
+          "published_at": "04.11.2026",
+          "url": "https://modernbuyer.ro/mega-image-profi-si-shopgo-trei-branduri-care-vor-continua-sa-spuna-trei-povesti-distincte-clientilor-romani/"
         },
         {
-          "title": "Rețeaua de magazine Good2Go a atins pragul de 50 de locații și vânzări de 13 mil. euro",
-          "published_at": "29.10.2026",
-          "url": "https://modernbuyer.ro/reteaua-de-magazine-good2go-a-atins-pragul-de-50-de-locatii-si-vanzari-de-13-mil-euro/"
+          "title": "Freshful NOW acoperă acum integral Bucureștiul",
+          "published_at": "04.11.2026",
+          "url": "https://modernbuyer.ro/freshful-now-acopera-acum-integral-bucurestiul/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "02.11.2026"
+      "latest_published_at": "04.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -100,23 +105,38 @@
       "website": "https://www.retail-fmcg.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 2,
+      "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "Auchan dă startul Black Friday 2026: peste 2.500 de produse cu reduceri de până la 60% în magazine și pe auchan.ro",
-          "published_at": "02.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/auchan-black-friday-2026.html"
+          "title": "Pactic, parte din Sameday Group, achiziționează QeOPS și își extinde operațiunile logistice în România",
+          "published_at": "04.11.2026",
+          "url": "https://www.retail-fmcg.ro/servicii/pactic-sameday-group-achizitioneaza-qeops.html"
         },
         {
-          "title": "Romanian FMCG Retail – The most important news from October 2026",
-          "published_at": "02.11.2026",
-          "url": "https://www.retail-fmcg.ro/english/romanian-fmcg-retail-news-october-2026.html"
+          "title": "Deloitte: Vânzarea afacerii nu încheie tranziția. Ce se schimbă pentru fondator și companie după tranzacție",
+          "published_at": "04.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/deloitte-vanzarea-afacerii-nu-incheie-tranzitia.html"
+        },
+        {
+          "title": "Freshful NOW, serviciul de livrare ultrarapidă al Freshful by eMAG, acoperă acum integral Bucureștiul",
+          "published_at": "04.11.2026",
+          "url": "https://www.retail-fmcg.ro/e-commerce-2/freshful-now-serviciul-livrare-ultrarapida-bucuresti.html"
+        },
+        {
+          "title": "Cum transformă Fragedo de la TRANSAVIA siguranța și constanța în valoare pentru consumatori și retail",
+          "published_at": "04.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/cum-transforma-fragedo-de-la-transavia-siguranta-si-constanta-in-valoare-pentru-consumatori-si-retail.html"
+        },
+        {
+          "title": "Mega Image, Profi și Shop&Go, reunite sub Ahold Delhaize România. Shop&Go devine brand cu management și strategie proprii",
+          "published_at": "04.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/mega-image-profi-shopgo-reunite-sub-ahold-delhaize-romania.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "03.11.2026"
+      "latest_published_at": "04.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -124,12 +144,23 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Vițelul din ferma de lapte, pregătit pentru carne: unde se decide durata îngrășării?",
+          "published_at": "04.11.2026",
+          "url": "https://www.meat-milk.ro/article/vitelul-din-ferma-de-lapte-pregatit-pentru-carne-unde-se-decide-durata-ingrasarii-sF4zx5df"
+        },
+        {
+          "title": "Ce pregătesc incubatoarele pentru piața cărnii de pasăre? România accelerează în datele pentru august",
+          "published_at": "04.11.2026",
+          "url": "https://www.meat-milk.ro/article/ce-pregatesc-incubatoarele-pentru-piata-carnii-de-pasare-romania-accelereaza-in-datele-pentru-august-f9rMhcR3"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "03.11.2026"
+      "latest_published_at": "04.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -161,8 +192,8 @@
       "pub_id": "pigprogress",
       "name": "Pig Progress",
       "website": "https://www.foodagribusiness.world/pigs/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 3,
+      "status": "RETAINED_VERIFIED",
+      "candidates_scanned": 0,
       "new_articles_count": 0,
       "new_accepted": [],
       "rejected_count": 0,
@@ -226,12 +257,28 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 3,
+      "new_accepted": [
+        {
+          "title": "El filo marca la diferencia: calidad y rendimiento en el corte Incluso con herramientas nuevas y motores en perfecto estado, la calidad del corte puede disminuir si el filo de la cuchilla no... Más información",
+          "published_at": "04.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72522/kw/El+filo+marca+la+diferencia%3A+calidad+y+rendimiento+en+el+corte"
+        },
+        {
+          "title": "Provacuno amplía su herramienta para el cálculo de la huella de carbono a mataderos y salas de despiece",
+          "published_at": "04.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72637/kw/Provacuno+ampl%C3%ADa+su+herramienta+para+el+c%C3%A1lculo+de+la+huella+de+carbono+a+mataderos+y+salas+de+despiece"
+        },
+        {
+          "title": "El Gobierno aprueba un real decreto que limita precocinados y frituras en hospitales y residencias",
+          "published_at": "04.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72635/kw/El+Gobierno+aprueba+un+real+decreto+que+limita+precocinados+y+frituras+en+hospitales+y+residencias"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "03.11.2026"
+      "latest_published_at": "04.11.2026"
     },
     {
       "pub_id": "frs",
@@ -239,12 +286,28 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 3,
+      "new_accepted": [
+        {
+          "title": "Lidl, nuevo patrocinador principal de La Vuelta y de otras cuatro pruebas del ciclismo español",
+          "published_at": "04.11.2026",
+          "url": "https://www.foodretail.es/retailers/lidl-nuevo-patrocinador-principal-de-la-vuelta-y-de-otras-cuatro-pruebas-del-ciclismo-espanol.html"
+        },
+        {
+          "title": "Müller prepara la apertura de su primer supermercado en Alcorcón (Madrid)",
+          "published_at": "04.11.2026",
+          "url": "https://www.foodretail.es/retailers/mller-prepara-la-apertura-de-su-primer-supermercado-en-alcorcon-madrid.html"
+        },
+        {
+          "title": "BM Supermercados inaugura tienda en San Lorenzo del Escorial (Madrid)",
+          "published_at": "04.11.2026",
+          "url": "https://www.foodretail.es/retailers/bm-supermercados-inaugura-tienda-en-san-lorenzo-del-escorial-madrid.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "03.11.2026"
+      "latest_published_at": "04.11.2026"
     }
   ]
 }
