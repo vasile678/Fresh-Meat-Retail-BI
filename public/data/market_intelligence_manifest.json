@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-04T14:44:42.629605+02:00",
+  "generated_at_utc": "2026-11-04T22:49:04.243548+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -17,7 +17,7 @@
       "status": "RELEASE_PASS",
       "data_file": "/data/bi_dashboard_export.json",
       "active_release_file": "/data/active_release.json",
-      "dataset_sha256": "72236f4b61c630406723899957b5d662ff2787d284f74a54d6e9c837f0ada3b6",
+      "dataset_sha256": "ea6e987c0c1347f50ae20bb9444c5fec70dd98b08d8a3c5e7b0f73e025384c20",
       "verified_cells_count": 25,
       "verified_retailers_count": 5
     },
@@ -25,15 +25,15 @@
       "module_id": "eu_pork_market",
       "title": "EU Pork Market",
       "schedule": "Joi, 09:00 Europe/Bucharest (cu integrare progresivă)",
-      "last_verified_update": "29.10.2026 · 09:00",
-      "updated_date": "29.10.2026",
+      "last_verified_update": "05.11.2026 · 09:00",
+      "updated_date": "05.11.2026",
       "updated_time": "09:00",
-      "week": "WK44",
+      "week": "WK45",
       "year": 2026,
-      "period": "26.10–01.11.2026",
+      "period": "02.11–08.11.2026",
       "status": "RELEASE_PASS",
       "data_file": "/data/eu_pork_market_export.json",
-      "dataset_sha256": "c1b97a9b081a60fbcceeb3090d199731b8d95b2ab0f903b509bacde6e868bc24",
+      "dataset_sha256": "c683c80cf5afaecb03593a7e7baa109831318034a7982836b5250394a9c861e6",
       "verified_benchmarks_count": 8
     },
     "retail_media_monitor": {
@@ -46,7 +46,7 @@
       "period": "28.10.2026 – 04.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "a96c12a534fbaa767fc2914dbaddb97c5720a82e76e62dfeb20d1b6d7e726a76",
+      "dataset_sha256": "550b39f318caf97b224a82b5f9c00a088580665d97860c7f2fe917ab07759edd",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },

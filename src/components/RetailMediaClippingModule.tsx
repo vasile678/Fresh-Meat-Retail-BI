@@ -1437,9 +1437,9 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
               <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
                 <span className="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-2">
-                  <Award className="w-4 h-4" /> Sinteză Executivă Zilnică (09:00 Europe/Bucharest)
+                  <Award className="w-4 h-4" /> Sinteză Zilnică
                 </span>
-                <span className="text-xs text-slate-400">{data.updated}</span>
+                <span className="text-xs text-slate-400">{data.updated_date || (data.updated ? data.updated.split(',')[0].split('·')[0].trim() : '')}</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
                 {data.competitive_intelligence.executive_summary}

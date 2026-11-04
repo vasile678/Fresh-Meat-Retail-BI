@@ -216,23 +216,23 @@ def test_7_iso_week_and_year_transitions():
     print("  ✓ All ISO week and year transitions verified: PASS\n")
 
 def test_8_fail_closed_on_unverified_target_week():
-    print("[TEST 8/8] Testing FAIL_CLOSED preservation on unverified target week (e.g. WK45)...")
-    # Verify that attempting to run pipeline on WK45 (where no dataset/receipts exist) fails closed
-    # and leaves the active WK44 export completely intact.
+    print("[TEST 8/10] Testing FAIL_CLOSED preservation on unverified target week (e.g. WK99)...")
+    # Verify that attempting to run pipeline on an unverified week (where no dataset/receipts exist) fails closed
+    # and leaves the active export completely intact.
     pub_export = ROOT / "public" / "data" / "eu_pork_market_export.json"
     assert pub_export.exists(), "Active export must exist before test"
     initial_export_bytes = pub_export.read_bytes()
     initial_sha = hashlib.sha256(initial_export_bytes).hexdigest()
 
     pipeline = BASE / "weekly_pipeline.py"
-    fake_dataset = BASE / "EU_PORK_MARKET_DATASET_WK45.json"
-    fake_source = BASE / "EU_SOURCE_RECEIPT_WK45.json"
-    fake_visual = BASE / "EU_VISUAL_RECEIPT_WK45.json"
+    fake_dataset = BASE / "EU_PORK_MARKET_DATASET_WK99.json"
+    fake_source = BASE / "EU_SOURCE_RECEIPT_WK99.json"
+    fake_visual = BASE / "EU_VISUAL_RECEIPT_WK99.json"
 
     # Files do not exist: pipeline MUST fail closed
     cmd = [
         sys.executable, str(pipeline),
-        "--week", "WK45",
+        "--week", "WK99",
         "--year", "2026",
         "--domain", "EU_PORK_MARKET",
         "--dataset", str(fake_dataset),
@@ -248,11 +248,73 @@ def test_8_fail_closed_on_unverified_target_week():
     current_export_bytes = pub_export.read_bytes()
     current_sha = hashlib.sha256(current_export_bytes).hexdigest()
     assert current_sha == initial_sha, "FAIL_CLOSED violation: active export was mutated during failed execution"
+    print("  ✓ FAIL_CLOSED policy verified: active release preserved 100% intact: PASS\n")
+
+def test_9_autonomous_collector_wk45():
+    print("[TEST 9/10] Testing autonomous multi-source collector for WK45 2026...")
+    from eu_pork_collector import run_collection
+    res = run_collection("WK45", 2026)
+    assert res.get("status") == "SUCCESS", f"Collection failed: {res}"
     
-    # Confirm active week remains WK44
-    data = json.loads(pub_export.read_text(encoding="utf-8"))
-    assert data.get("week") == "WK44", f"Expected active week to remain WK44, got {data.get('week')}"
-    print("  ✓ FAIL_CLOSED policy verified: active release (WK44) preserved 100% intact: PASS\n")
+    ds_path = Path(res["dataset_file"])
+    src_path = Path(res["source_receipt_file"])
+    vis_path = Path(res["visual_receipt_file"])
+    assert ds_path.exists() and src_path.exists() and vis_path.exists()
+
+    ds = json.loads(ds_path.read_text(encoding="utf-8"))
+    assert ds.get("week") == "WK45"
+    assert ds.get("year") == 2026
+    assert len(ds.get("rows", [])) == 8
+
+    # Verify canonical order
+    expected_order = [
+        "Germany VEZG", "ISN / Internet Pig Auction", "Spain Mercolleida",
+        "Italy CUN 156–200 kg", "Netherlands Vion", "Denmark Danish Crown",
+        "France MPB", "Poland (ZMI) Class E"
+    ]
+    actual_order = [r["market"] for r in ds.get("rows", [])]
+    assert actual_order == expected_order, f"Market order mismatch: {actual_order}"
+
+    # Verify cryptographic binding
+    ds_sha = sha256_file(ds_path)
+    src_data = json.loads(src_path.read_text(encoding="utf-8"))
+    vis_data = json.loads(vis_path.read_text(encoding="utf-8"))
+    assert src_data.get("dataset_sha256") == ds_sha, "Source receipt not cryptographically bound to dataset SHA-256"
+    assert vis_data.get("dataset_sha256") == ds_sha, "Visual receipt not cryptographically bound to dataset SHA-256"
+    assert src_data.get("status") == "PASS"
+    assert vis_data.get("status") == "PASS"
+
+    print("  ✓ Autonomous collector and cryptographic receipt binding verified: PASS\n")
+
+def test_10_wk45_pipeline_release_pass():
+    print("[TEST 10/10] Testing governed weekly pipeline execution on collected WK45 data...")
+    pipeline = BASE / "weekly_pipeline.py"
+    ds = BASE / "EU_PORK_MARKET_DATASET_WK45.json"
+    src = BASE / "EU_SOURCE_RECEIPT_WK45.json"
+    vis = BASE / "EU_VISUAL_RECEIPT_WK45.json"
+
+    cmd = [
+        sys.executable, str(pipeline),
+        "--week", "WK45",
+        "--year", "2026",
+        "--domain", "EU_PORK_MARKET",
+        "--dataset", str(ds),
+        "--source", str(src),
+        "--visual", str(vis),
+        "--publish"
+    ]
+    cp = subprocess.run(cmd, cwd=str(BASE), capture_output=True, text=True)
+    assert cp.returncode == 0, f"Pipeline failed: {cp.stdout} {cp.stderr}"
+    assert "RELEASE_PASS (PUBLICAT)" in cp.stdout
+
+    # Verify public export
+    pub_export = ROOT / "public" / "data" / "eu_pork_market_export.json"
+    assert pub_export.exists()
+    exp = json.loads(pub_export.read_text(encoding="utf-8"))
+    assert exp.get("week") == "WK45"
+    assert exp.get("year") == 2026
+    assert exp.get("release_status") == "RELEASE_PASS"
+    print("  ✓ WK45 governed pipeline execution, Release Gate, and publication verified: PASS\n")
 
 if __name__ == "__main__":
     print("\n=======================================================")
@@ -266,7 +328,9 @@ if __name__ == "__main__":
     test_6_wk44_pipeline_and_release_pass()
     test_7_iso_week_and_year_transitions()
     test_8_fail_closed_on_unverified_target_week()
+    test_9_autonomous_collector_wk45()
+    test_10_wk45_pipeline_release_pass()
     print("=======================================================")
-    print(" ALL 8/8 EU PORK MARKET MODULE TESTS PASSED")
+    print(" ALL 10/10 EU PORK MARKET MODULE TESTS PASSED")
     print("=======================================================\n")
 

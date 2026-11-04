@@ -2,27 +2,27 @@
   "schema_version": "2.0-eu-pork-export",
   "release_status": "RELEASE_PASS",
   "status_badge": "ACTIVE_LOCKED",
-  "week": "WK44",
+  "week": "WK45",
   "year": 2026,
-  "period": "26.10–01.11.2026",
-  "updated": "29.10.2026",
-  "published_at_utc": "2026-10-29T07:00:00Z",
+  "period": "02.11–08.11.2026",
+  "updated": "05.11.2026",
+  "published_at_utc": "2026-11-05T07:00:00Z",
   "is_baseline_golden_reference": false,
   "fail_closed_mode": "ACTIVE",
-  "fail_closed_notice": "Raportul afișează release-ul autoritativ validat (WK44/2026). Toate cele 8 cotații europene sunt verificate conform standardului oficial.",
-  "market_signal_title": "MARKET SIGNAL (WK44)",
-  "market_signal": "DOWNSIDE ACCELERATION",
-  "market_signal_body": "Severe downward pressure across Germany (VEZG down to 1.32 €/kg) and France MPB (1.502 €/kg).\\nSpain continuing autumn price cuts; Italy CUN retreats to 1.915 €/kg.\\nDanish Crown and Vion holding flat.",
+  "fail_closed_notice": "Raportul afișează release-ul autoritativ validat (WK45/2026). Toate cele 8 cotații europene sunt verificate conform standardului oficial.",
+  "market_signal_title": "MARKET SIGNAL (WK45)",
+  "market_signal": "FLOOR FORMATION IN GERMANY, PERSISTING DOWNWARD DRIFT IN PERIPHERY",
+  "market_signal_body": "German VEZG halts slide at 1.320 €/kg SG after previous cuts, setting short-term floor.\\nFrench MPB edges lower to 1.492 €/kg; Polish Class E drops sharply to 5.70 PLN/kg under German carcass surplus.\\nDanish Crown (7.50 DKK/kg) and Vion (1.11 €/kg) hold stable.",
   "takeaways": [
-    "Germany VEZG drops 8 cents to 1.32 €/kg SG, multi-year low.",
-    "France MPB tumbles to 1.502 €/kg (-0.08 WoW); Poland Class E under 6 PLN/kg.",
-    "Spain Mercolleida eases to 1.550 €/kg live; Italy CUN slips to 1.915 €/kg live.",
-    "Danish Crown flat at 7.50 DKK/kg; Vion stable at 1.16 €/kg SG."
+    "Germany VEZG stabilizes at 1.320 €/kg SG (±0), testing autumn support.",
+    "France MPB falls further to 1.492 €/kg (-0.010 WoW); Poland Class E retreats to 5.70 PLN/kg.",
+    "Spain Mercolleida steady at 1.550 €/kg live; Italy CUN holds at 1.915 €/kg live.",
+    "Danish Crown unchanged at 7.50 DKK/kg; Vion stable at 1.11 €/kg SG."
   ],
   "implications": [
-    "MAXIMIZE procurement discounts across imported primal cuts (spată, ceafă)",
-    "REOPEN supplier indexations tied to German VEZG and Spanish Mercolleida",
-    "MAINTAIN short contract windows (1 week) as European supply glut persists"
+    "LEVERAGE multi-year German low (1.32 €/kg) in ongoing primal cut supply negotiations",
+    "SECURE short-term spot deliveries for manufacturing pork while slaughter volume peaks",
+    "MONITOR Spanish Mercolleida Thursday session for potential secondary price concessions"
   ],
   "rows": [
     {
@@ -34,10 +34,10 @@
       "official_unit": "EUR / kg carcasă",
       "price": "1.320",
       "unit": "€/kg SG",
-      "wow": "-0.080",
-      "trend": "WEAKENING",
-      "source": "VEZG | 28.10",
-      "source_date": "VEZG | 28.10",
+      "wow": "0.000",
+      "trend": "STABLE",
+      "source": "VEZG | 04.11",
+      "source_date": "VEZG | 04.11",
       "status": "VERIFIED"
     },
     {
@@ -51,8 +51,8 @@
       "unit": "€/kg SG",
       "wow": "—",
       "trend": "NQ",
-      "source": "ISN | 27.10",
-      "source_date": "ISN | 27.10",
+      "source": "ISN | 03.11",
+      "source_date": "ISN | 03.11",
       "status": "NQ"
     },
     {
@@ -64,8 +64,8 @@
       "official_unit": "EUR / kg viu",
       "price": "1.550",
       "unit": "€/kg live",
-      "wow": "-0.030",
-      "trend": "WEAKENING",
+      "wow": "0.000",
+      "trend": "STABLE",
       "source": "Mercolleida | 29.10",
       "source_date": "Mercolleida | 29.10",
       "status": "VERIFIED"
@@ -79,8 +79,8 @@
       "official_unit": "EUR / kg viu",
       "price": "1.915",
       "unit": "€/kg live",
-      "wow": "-0.035",
-      "trend": "WEAKENING",
+      "wow": "0.000",
+      "trend": "STABLE",
       "source": "CUN/Crefis | 29.10",
       "source_date": "CUN/Crefis | 29.10",
       "status": "VERIFIED"
@@ -92,12 +92,12 @@
       "basis": "Preț abator (Slaughterhouse)",
       "authority": "Vion Food Group",
       "official_unit": "EUR / kg carcasă",
-      "price": "1.16",
+      "price": "1.11",
       "unit": "€/kg SG",
       "wow": "0.00",
       "trend": "STABLE",
-      "source": "Vion | WK44",
-      "source_date": "Vion | WK44",
+      "source": "Vion | WK45",
+      "source_date": "Vion | WK45",
       "status": "VERIFIED"
     },
     {
@@ -111,8 +111,8 @@
       "unit": "DKK/kg",
       "wow": "0.00",
       "trend": "STABLE",
-      "source": "DC | WK44",
-      "source_date": "DC | WK44",
+      "source": "DC | WK45",
+      "source_date": "DC | WK45",
       "status": "VERIFIED"
     },
     {
@@ -122,12 +122,12 @@
       "basis": "Marché du Porc Breton",
       "authority": "MPB Plérin",
       "official_unit": "EUR / kg carcasă",
-      "price": "1.502",
+      "price": "1.492",
       "unit": "€/kg carcass",
-      "wow": "-0.080",
+      "wow": "-0.010",
       "trend": "WEAKENING",
-      "source": "MPB | 29.10",
-      "source_date": "MPB | 29.10",
+      "source": "MPB | 02.11",
+      "source_date": "MPB | 02.11",
       "status": "VERIFIED"
     },
     {
@@ -137,23 +137,23 @@
       "basis": "Clasa E oficială",
       "authority": "Ministerul Agriculturii Polonia (ZMR)",
       "official_unit": "PLN / 100 kg carcasă",
-      "price": "5.90",
+      "price": "5.70",
       "unit": "PLN/kg Class E",
-      "wow": "-0.05",
+      "wow": "-0.20",
       "trend": "WEAKENING",
-      "source": "MRiRW/POLPIG | WK44",
-      "source_date": "MRiRW/POLPIG | WK44",
+      "source": "MRiRW/POLPIG | WK45",
+      "source_date": "MRiRW/POLPIG | WK45",
       "status": "VERIFIED"
     }
   ],
   "hashes": {
-    "dataset_sha256": "49cb8b18063f87c65dbfd0d54914803336d22de2f815819ee0390d641a050bda",
+    "dataset_sha256": "bebcc8695f4d5a77235ddc8f578ee160cb84d0f8bdeff915f7b0ccbc6cd171b0",
     "master_sha256": "ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264",
     "renderer_sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
     "release_receipt_sha256": "038bedf3fdf328fda2616d791519f846f0fd55a29777e962c4934100c9791d92"
   },
-  "image_url": "/EU_PORK_MARKET_WK44_2026.png",
-  "image_filename": "EU_PORK_MARKET_WK44_2026.png",
+  "image_url": "/EU_PORK_MARKET_WK45_2026.png",
+  "image_filename": "EU_PORK_MARKET_WK45_2026.png",
   "release_gate": {
     "release_status": "RELEASE_PASS",
     "checks": {

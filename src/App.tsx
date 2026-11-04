@@ -832,12 +832,12 @@ export default function App() {
                               ) : (
                                 <div className="py-1">
                                   <span className="text-xs font-bold text-slate-400">N/V</span>
-                                  {c.offer_history && c.offer_history.length > 0 && (
+                                  {c?.offer_history && c.offer_history.length > 0 && (
                                     <div className="text-[9px] text-amber-400/80 mt-0.5" title={`Ofertă anterioară expirată: ${c.offer_history[0].price_lei_kg} lei/kg (${c.offer_history[0].period})`}>
                                       expirat la {c.offer_history[0].period.split('–')[1] || c.offer_history[0].period}
                                     </div>
                                   )}
-                                  {(!c.offer_history || c.offer_history.length === 0) && (
+                                  {(!c?.offer_history || c.offer_history.length === 0) && (
                                     <div className="text-[10px] text-slate-400 mt-0.5">—</div>
                                   )}
                                 </div>

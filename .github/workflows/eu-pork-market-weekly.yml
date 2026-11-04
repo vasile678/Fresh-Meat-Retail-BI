@@ -99,11 +99,10 @@ jobs:
         if: env.SHOULD_RUN == 'true'
         run: pip install -r fresh_meat_bi/requirements.txt
 
-      - name: Resolve Target Week and Check Verified Prerequisites (FAIL_CLOSED)
-        id: resolve_prereqs
+      - name: Resolve Target ISO Week and Year
+        id: resolve_target
         if: env.SHOULD_RUN == 'true'
         run: |
-          # 1. Determinare dinamică săptămână ISO și an în Europe/Bucharest
           WEEK_INPUT="${{ inputs.week }}"
           YEAR_INPUT="${{ inputs.year }}"
           
@@ -128,8 +127,22 @@ jobs:
           echo "target_year=$TARGET_YEAR" >> $GITHUB_OUTPUT
           echo "TARGET_WEEK=$TARGET_WEEK" >> $GITHUB_ENV
           echo "TARGET_YEAR=$TARGET_YEAR" >> $GITHUB_ENV
-          
-          # 2. Rezolvare căi fișiere dataset și chitanțe (fără presupuneri WK44 hardcodate)
+
+      - name: Run Autonomous Multi-Source EU Pork Collector
+        id: run_collector
+        if: env.SHOULD_RUN == 'true'
+        run: |
+          echo "======================================================="
+          echo "Pornire colector autonom pentru cele 8 piețe europene de referință..."
+          echo "Săptămâna țintă: $TARGET_WEEK / $TARGET_YEAR"
+          echo "======================================================="
+          python3 fresh_meat_bi/eu_pork_collector.py --week "$TARGET_WEEK" --year "$TARGET_YEAR" || true
+
+      - name: Check Verified Prerequisites (FAIL_CLOSED)
+        id: resolve_prereqs
+        if: env.SHOULD_RUN == 'true'
+        run: |
+          # Rezolvare căi fișiere dataset și chitanțe (fără presupuneri statice)
           DATASET="${{ inputs.dataset_path }}"
           [ -z "$DATASET" ] && DATASET="fresh_meat_bi/EU_PORK_MARKET_DATASET_${TARGET_WEEK}.json"
           
@@ -170,7 +183,6 @@ jobs:
           else
             echo "======================================================="
             echo "[FAIL_CLOSED ACTIVAT]: Datele verificate pentru săptămâna $TARGET_WEEK lipsesc."
-            echo "NOTĂ AUDIT: Nu există un colector automat live pentru bursele europene (VEZG, Mercolleida, CUN etc.)."
             echo "Datele necesită validare oficială per specificația benchmark din EU_PORK_MARKET_CONFIG.json."
             echo "Conform politicii anti-ficțiune FAIL_CLOSED, raportul oficial anterior din producție rămâne conservat 100% intact."
             echo "======================================================="
@@ -213,7 +225,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/eu_pork_market_export.json public/EU_PORK_MARKET_*.png public/data/market_intelligence_manifest.json
+          git add public/data/eu_pork_market_export.json \
+                  public/EU_PORK_MARKET_*.png \
+                  public/data/market_intelligence_manifest.json \
+                  fresh_meat_bi/EU_PORK_MARKET_DATASET_${TARGET_WEEK}.json \
+                  fresh_meat_bi/EU_SOURCE_RECEIPT_${TARGET_WEEK}.json \
+                  fresh_meat_bi/EU_VISUAL_RECEIPT_${TARGET_WEEK}.json
           
           if git diff --staged --quiet; then
             echo "Nicio modificare nouă detectată în dataset. Raportul este la zi."

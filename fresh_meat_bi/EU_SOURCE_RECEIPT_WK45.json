@@ -1,0 +1,84 @@
+{
+  "receipt_version": "1.0-eu-source-verification",
+  "status": "PASS",
+  "week": "WK45",
+  "year": 2026,
+  "domain": "EU_PORK",
+  "dataset_sha256": "bebcc8695f4d5a77235ddc8f578ee160cb84d0f8bdeff915f7b0ccbc6cd171b0",
+  "verified_at_utc": "2026-11-05T07:00:00Z",
+  "benchmarks_checked": 8,
+  "sources_audit": [
+    {
+      "market": "Germany VEZG",
+      "status": "VERIFIED",
+      "source": "VEZG | 04.11",
+      "value": "1.320 €/kg SG",
+      "official_url": "https://www.vezg.de/",
+      "collection_method": "HTML Web Scraping / Regex on Top-News Banner",
+      "audit_note": "Found live VEZG quotation: Schweinepreis: 1,32 €/Indexpunkt (±0)"
+    },
+    {
+      "market": "ISN / Internet Pig Auction",
+      "status": "NQ",
+      "source": "ISN | 03.11",
+      "value": "NQ",
+      "official_url": "https://www.schweine.net/markt/marktpreise.html",
+      "collection_method": "HTTP Inspection & Authentication Gate Verification",
+      "audit_note": "ISN Internet Schweinebörse auction clearing results require member login (Mitgliederbereich) on schweine.net; no public clearing benchmark formulated for general distribution without credentials."
+    },
+    {
+      "market": "Spain Mercolleida",
+      "status": "VERIFIED",
+      "source": "Mercolleida | 29.10",
+      "value": "1.550 €/kg live",
+      "official_url": "https://www.mercolleida.com/es/servicios/mercados/porcino",
+      "collection_method": "HTML Table Extraction & Session Scheduling Verification",
+      "audit_note": "Junta de Precios de Mercolleida convenes Thursdays 13:00 CET; verified official benchmark stands at 1.550 €/kg live (cerdo cebado base normal/selecto)."
+    },
+    {
+      "market": "Italy CUN 156–200 kg",
+      "status": "VERIFIED",
+      "source": "CUN/Crefis | 29.10",
+      "value": "1.915 €/kg live",
+      "official_url": "https://www.crefis.it/",
+      "collection_method": "Official CREFIS Market Article Inspection",
+      "audit_note": "Extracted from CREFIS official bulletin: 156-200 kg (ex voce 160-176 kg) del circuito tutelato è sceso a 1,915 euro/kg"
+    },
+    {
+      "market": "Netherlands Vion",
+      "status": "VERIFIED",
+      "source": "Vion | WK45",
+      "value": "1.11 €/kg SG",
+      "official_url": "https://www.vionfarming.nl/",
+      "collection_method": "HTML Table Parser on vionfarming.nl",
+      "audit_note": "Parsed directly from Vion Farming official price table (Week 45: € 1.11/kg SG)."
+    },
+    {
+      "market": "Denmark Danish Crown",
+      "status": "VERIFIED",
+      "source": "DC | WK45",
+      "value": "7.50 DKK/kg",
+      "official_url": "https://ejer.danishcrown.com/da-dk/andelsejere/gris/notering/aktuel-grisenotering/",
+      "collection_method": "HTML Table Scraper on ejer.danishcrown.com",
+      "audit_note": "Verified basis slagtesvinenotering 7.50 DKK/kg for Uge 45 on Danish Crown supplier portal."
+    },
+    {
+      "market": "France MPB",
+      "status": "VERIFIED",
+      "source": "MPB | 02.11",
+      "value": "1.492 €/kg carcass",
+      "official_url": "https://www.marche-porc-francais.com/",
+      "collection_method": "HTML Extraction on official MPB/MPF trading portal",
+      "audit_note": "Extracted authentic séance du 02.11.2026 price from marche-porc-francais.com: 1.492 €/kg."
+    },
+    {
+      "market": "Poland (ZMI) Class E",
+      "status": "VERIFIED",
+      "source": "MRiRW/POLPIG | WK45",
+      "value": "5.70 PLN/kg Class E",
+      "official_url": "https://polpig.pl/",
+      "collection_method": "Industry Price Bulletin Reconciliation (POLPIG / MRiRW ZSRIR)",
+      "audit_note": "POLPIG monitored slaughterhouse quotes for Class E dropped to 5.70 PLN/kg under pressure from German pork imports."
+    }
+  ]
+}

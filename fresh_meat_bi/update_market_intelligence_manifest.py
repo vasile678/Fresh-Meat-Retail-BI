@@ -88,16 +88,17 @@ def generate_manifest():
         except Exception as e:
             print(f"Warning: Could not parse {eu_export_path}: {e}")
 
-    # Canonical weekly release for EU Pork Market is Thursday 09:00 Europe/Bucharest (WK44: 29.10.2026 · 09:00)
-    eu_updated = "29.10.2026 · 09:00"
+    # Canonical weekly release for EU Pork Market is Thursday 09:00 Europe/Bucharest
+    updated_date_str = eu_data.get("updated", "29.10.2026")
+    eu_updated = f"{updated_date_str} · 09:00"
 
     eu_module = {
         "module_id": "eu_pork_market",
         "title": "EU Pork Market",
         "schedule": "Joi, 09:00 Europe/Bucharest (cu integrare progresivă)",
         "last_verified_update": eu_updated,
-        "updated_date": eu_updated.split(" · ")[0] if " · " in eu_updated else "29.10.2026",
-        "updated_time": eu_updated.split(" · ")[1] if " · " in eu_updated else "09:00",
+        "updated_date": updated_date_str,
+        "updated_time": "09:00",
         "week": eu_data.get("week", "WK44"),
         "year": eu_data.get("year", 2026),
         "period": eu_data.get("period", "26.10–01.11.2026"),
