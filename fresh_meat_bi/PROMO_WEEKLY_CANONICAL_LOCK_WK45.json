@@ -31,14 +31,17 @@
       "offer_history": [
         {
           "period": "28.10–03.11.2026",
-          "status": "VERIFIED",
+          "status": "EXPIRED",
           "price_lei_kg": 14.9,
           "product": "K-Purland Spată de porc fără os vacuum",
           "discount": "-25%",
-          "note": null
+          "mechanic": "promoție catalog",
+          "source": "Kaufland România – catalog oficial WK45 (28.10–03.11.2026)",
+          "reason": "Oferta a expirat marți 03.11.2026; exclusă din matricea activă începând cu 04.11.2026 conform regulii ACTIVE OFFERS ONLY."
         }
       ],
-      "note": "Oferta promoțională anterioară (14.90 lei/kg) a expirat la 03.11.2026. În noul catalog 04–10.11.2026 nu există ofertă promoțională confirmată pentru spată de porc f.o."
+      "note": "Oferta promoțională anterioară (14.90 lei/kg) a expirat la 03.11.2026. În noul catalog 04–10.11.2026 nu există ofertă promoțională confirmată pentru spată de porc f.o.",
+      "mechanic_type": "standard"
     },
     {
       "retailer": "Kaufland",
@@ -54,13 +57,23 @@
           "product": null,
           "discount": null,
           "note": "nicio ofertă confirmată în catalog (doar cârnați din pulpă)"
+        },
+        {
+          "period": "04.11–10.11.2026",
+          "status": "SUPERSEDED",
+          "price_lei_kg": 15.99,
+          "product": "K-Purland Pulpă de porc fără os",
+          "discount": "-33%",
+          "note": null
         }
       ],
       "price_lei_kg": 15.99,
       "validity": "04.11–10.11.2026",
       "exact_product": "K-Purland Pulpă de porc fără os",
       "discount": "-33%",
-      "mechanic": "promoție catalog"
+      "mechanic": "promoție catalog",
+      "mechanic_type": "standard",
+      "price_standard_lei_kg": 15.99
     },
     {
       "retailer": "Kaufland",
@@ -81,8 +94,18 @@
           "product": "Cotlet de porc fără os bucată ideală pentru gătit",
           "discount": "-39%",
           "note": null
+        },
+        {
+          "period": "04.11–10.11.2026",
+          "status": "SUPERSEDED",
+          "price_lei_kg": 15.9,
+          "product": "Cotlet de porc fără os bucată / feliat",
+          "discount": "-20%",
+          "note": null
         }
-      ]
+      ],
+      "mechanic_type": "standard",
+      "price_standard_lei_kg": 15.9
     },
     {
       "retailer": "Kaufland",
@@ -100,7 +123,8 @@
           "discount": null,
           "note": "nicio ofertă confirmată în catalog"
         }
-      ]
+      ],
+      "mechanic_type": "standard"
     },
     {
       "retailer": "Kaufland",
@@ -121,8 +145,18 @@
           "product": "Gustavi piept de pui dezosat, fără piele hrănit cu porumb",
           "discount": "0%",
           "note": null
+        },
+        {
+          "period": "04.11–10.11.2026",
+          "status": "SUPERSEDED",
+          "price_lei_kg": 32.79,
+          "product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb",
+          "discount": "0%",
+          "note": null
         }
-      ]
+      ],
+      "mechanic_type": "standard",
+      "price_standard_lei_kg": 32.79
     },
     {
       "retailer": "Lidl",
@@ -156,9 +190,12 @@
       "source_date": "2026-11-02",
       "price_lei_kg": 19.9,
       "validity": "02.11–08.11.2026",
-      "exact_product": "Cotlet de porc fără os (16.90 lei cu Lidl Plus)",
-      "discount": "-15%",
-      "mechanic": "activarea cuponului Lidl Plus"
+      "exact_product": "Cotlet de porc fără os",
+      "discount": "-15% cu Lidl Plus",
+      "mechanic": "preț standard: 19.90 lei/kg; cu cupon Lidl Plus: 16.90 lei/kg (-15%)",
+      "price_standard_lei_kg": 19.9,
+      "price_cupon_lei_kg": 16.9,
+      "mechanic_type": "cupon"
     },
     {
       "retailer": "Lidl",
@@ -180,9 +217,12 @@
       "source_date": "2026-11-02",
       "price_lei_kg": 29.9,
       "validity": "02.11–08.11.2026",
-      "exact_product": "Piept de pui dezosat fără piele (26.90 lei cu Lidl Plus)",
-      "discount": "-10%",
-      "mechanic": "activarea cuponului Lidl Plus"
+      "exact_product": "Piept de pui dezosat fără piele",
+      "discount": "-10% cu Lidl Plus",
+      "mechanic": "preț standard: 29.90 lei/kg; cu cupon Lidl Plus: 26.90 lei/kg (-10%)",
+      "price_standard_lei_kg": 29.9,
+      "price_cupon_lei_kg": 26.9,
+      "mechanic_type": "cupon"
     },
     {
       "retailer": "PENNY",
@@ -202,7 +242,10 @@
       "validity": "28.10–03.11.2026",
       "exact_product": "Hanul Boieresc Pulpă de porc fără os",
       "discount": "-30%",
-      "mechanic": "preț cu PENNY card"
+      "mechanic": "preț cu PENNY card: 15.99 lei/kg (standard: 22.99 lei/kg)",
+      "price_standard_lei_kg": 22.99,
+      "price_card_lei_kg": 15.99,
+      "mechanic_type": "card"
     },
     {
       "retailer": "PENNY",
@@ -214,7 +257,10 @@
       "validity": "28.10–03.11.2026",
       "exact_product": "Hanul Boieresc Cotlet de porc fără os feliat",
       "discount": "-22%",
-      "mechanic": "preț cu PENNY card"
+      "mechanic": "preț cu PENNY card: 17.99 lei/kg (standard: 22.99 lei/kg)",
+      "price_standard_lei_kg": 22.99,
+      "price_card_lei_kg": 17.99,
+      "mechanic_type": "card"
     },
     {
       "retailer": "PENNY",
@@ -320,7 +366,7 @@
   "rolling_update": {
     "applied": true,
     "rolling_date": "2026-11-04",
-    "description": "Actualizare la mijlocul săptămânii (Miercuri 04.11.2026): Catalog nou Kaufland 04–10.11.2026",
+    "description": "Actualizare la mijlocul săptămânii (04.11.2026): Regula ACTIVE OFFERS ONLY, Catalog nou Kaufland 04–10.11.2026, Separare cupon Lidl Plus",
     "source_catalog": "Catalog Kaufland Oferte de Miercuri 04.11 până Marți 10.11.2026"
   }
 }

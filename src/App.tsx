@@ -15,7 +15,9 @@ import {
   FileCode, 
   Loader2, 
   Share2, 
-  ArrowLeft 
+  ArrowLeft,
+  History,
+  Tag
 } from 'lucide-react';
 import Homepage from './components/Homepage';
 import EuPorkMarketModule from './components/EuPorkMarketModule';
@@ -25,11 +27,27 @@ import { getAssetUrl } from './utils';
 import { useMarketIntelligence } from './hooks/useMarketIntelligence';
 export { getAssetUrl };
 
+interface CellHistoryItem {
+  period: string;
+  status: string;
+  price_lei_kg: number | null;
+  product?: string | null;
+  discount?: string | null;
+  mechanic?: string | null;
+  source?: string | null;
+  reason?: string | null;
+  note?: string | null;
+}
+
 interface CellData {
   retailer: string;
   kvi: string;
   status: 'VERIFIED' | 'USER-REPORTED' | 'N/V' | 'NC';
   price_lei_kg: number | null;
+  price_standard_lei_kg?: number | null;
+  price_cupon_lei_kg?: number | null;
+  price_card_lei_kg?: number | null;
+  mechanic_type?: 'standard' | 'card' | 'cupon' | null;
   validity: string | null;
   source: string | null;
   source_date: string | null;
@@ -37,6 +55,7 @@ interface CellData {
   discount: string | null;
   mechanic: string | null;
   isBest?: boolean;
+  offer_history?: CellHistoryItem[];
 }
 
 interface ActiveRelease {
@@ -796,6 +815,16 @@ export default function App() {
                                   <div className="text-[10px] font-semibold text-emerald-300">
                                     {c.discount || c.mechanic}
                                   </div>
+                                  {c.price_cupon_lei_kg && (
+                                    <div className="text-[10px] font-semibold text-amber-300 bg-amber-950/40 px-1 py-0.5 rounded border border-amber-500/30">
+                                      cu cupon: {c.price_cupon_lei_kg.toFixed(2).replace('.', ',')} lei
+                                    </div>
+                                  )}
+                                  {c.price_card_lei_kg && c.retailer === 'PENNY' && (
+                                    <div className="text-[10px] font-semibold text-sky-300 bg-sky-950/40 px-1 py-0.5 rounded border border-sky-500/30">
+                                      cu card: {c.price_card_lei_kg.toFixed(2).replace('.', ',')} lei
+                                    </div>
+                                  )}
                                   <div className="text-[10px] text-slate-400">
                                     {c.validity}
                                   </div>
@@ -803,7 +832,14 @@ export default function App() {
                               ) : (
                                 <div className="py-1">
                                   <span className="text-xs font-bold text-slate-400">N/V</span>
-                                  <div className="text-[10px] text-slate-400 mt-0.5">—</div>
+                                  {c.offer_history && c.offer_history.length > 0 && (
+                                    <div className="text-[9px] text-amber-400/80 mt-0.5" title={`Ofertă anterioară expirată: ${c.offer_history[0].price_lei_kg} lei/kg (${c.offer_history[0].period})`}>
+                                      expirat la {c.offer_history[0].period.split('–')[1] || c.offer_history[0].period}
+                                    </div>
+                                  )}
+                                  {(!c.offer_history || c.offer_history.length === 0) && (
+                                    <div className="text-[10px] text-slate-400 mt-0.5">—</div>
+                                  )}
                                 </div>
                               )}
                             </td>
@@ -818,15 +854,19 @@ export default function App() {
 
             {/* Selected Cell Audit Modal / Drawer */}
             {selectedCell && (
-              <div className="bg-slate-900 border border-emerald-500/30 rounded-xl p-5 shadow-2xl relative">
+              <div className="bg-slate-900 border border-emerald-500/30 rounded-xl p-5 shadow-2xl relative space-y-4">
                 <button 
                   onClick={() => setSelectedCell(null)}
                   className="absolute top-4 right-4 text-slate-400 hover:text-white text-xs px-2 py-1 rounded bg-slate-800"
                 >
                   Închide
                 </button>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2.5 py-0.5 rounded text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className={`px-2.5 py-0.5 rounded text-xs font-bold ${
+                    selectedCell.status === 'VERIFIED'
+                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                      : 'bg-slate-800 text-slate-400 border border-slate-700'
+                  }`}>
                     {selectedCell.status}
                   </span>
                   <h4 className="text-base font-bold text-white">
@@ -834,20 +874,20 @@ export default function App() {
                   </h4>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
                   <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                    <span className="text-slate-500 block">Preț normalizat</span>
+                    <span className="text-slate-500 block">Preț normalizat activ</span>
                     <span className="text-lg font-bold text-emerald-400">
-                      {selectedCell.price_lei_kg ? `${selectedCell.price_lei_kg.toFixed(2)} lei/kg` : 'N/V (Fără ofertă)'}
+                      {selectedCell.price_lei_kg ? `${selectedCell.price_lei_kg.toFixed(2)} lei/kg` : 'N/V (Fără ofertă activă)'}
                     </span>
                   </div>
                   <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
                     <span className="text-slate-500 block">Perioadă valabilitate</span>
-                    <span className="text-slate-200 font-semibold">{selectedCell.validity || 'Nu se aplică'}</span>
+                    <span className="text-slate-200 font-semibold">{selectedCell.validity || 'Nu se aplică (N/V)'}</span>
                   </div>
                   <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
                     <span className="text-slate-500 block">Produs exact</span>
-                    <span className="text-slate-200 font-semibold">{selectedCell.exact_product || 'Nicio ofertă de catalog comparabilă'}</span>
+                    <span className="text-slate-200 font-semibold">{selectedCell.exact_product || 'Nicio ofertă de catalog activă'}</span>
                   </div>
                   <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
                     <span className="text-slate-500 block">Mecanism promoțional</span>
@@ -855,7 +895,65 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="mt-3 text-xs bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center justify-between">
+                {/* Conditional Pricing Separation (Card vs Cupon vs Standard) */}
+                {selectedCell.price_cupon_lei_kg && (
+                  <div className="p-3.5 rounded-lg bg-amber-950/20 border border-amber-500/30 text-xs space-y-1.5">
+                    <div className="font-semibold text-amber-300 flex items-center gap-1.5">
+                      <Tag className="w-3.5 h-3.5" /> Separare Explicită Preț Standard vs. Cupon {selectedCell.retailer} Plus:
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300">
+                      <div>Preț standard la raft (fără cupon): <strong className="text-white">{selectedCell.price_standard_lei_kg?.toFixed(2)} lei/kg</strong></div>
+                      <div>Preț cu cupon activat: <strong className="text-emerald-400">{selectedCell.price_cupon_lei_kg?.toFixed(2)} lei/kg</strong> (economie {(selectedCell.price_standard_lei_kg! - selectedCell.price_cupon_lei_kg!).toFixed(2)} lei/kg)</div>
+                    </div>
+                  </div>
+                )}
+
+                {selectedCell.price_card_lei_kg && (
+                  <div className="p-3.5 rounded-lg bg-sky-950/20 border border-sky-500/30 text-xs space-y-1.5">
+                    <div className="font-semibold text-sky-300 flex items-center gap-1.5">
+                      <Tag className="w-3.5 h-3.5" /> Separare Explicită Preț Standard vs. Card {selectedCell.retailer}:
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300">
+                      <div>Preț standard (fără card): <strong className="text-white">{selectedCell.price_standard_lei_kg?.toFixed(2)} lei/kg</strong></div>
+                      <div>Preț cu card {selectedCell.retailer}: <strong className="text-emerald-400">{selectedCell.price_card_lei_kg?.toFixed(2)} lei/kg</strong></div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Expired Offer Audit History (ACTIVE OFFERS ONLY Rule) */}
+                {selectedCell.offer_history && selectedCell.offer_history.length > 0 && (
+                  <div className="p-3.5 rounded-lg bg-slate-950 border border-amber-500/30 text-xs space-y-2">
+                    <div className="font-semibold text-amber-400 flex items-center justify-between">
+                      <span className="flex items-center gap-1.5">
+                        <History className="w-3.5 h-3.5" /> Istoric Audit – Oferte Anterioare (Regula ACTIVE OFFERS ONLY):
+                      </span>
+                      <span className="text-[10px] text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                        {selectedCell.offer_history.length} {selectedCell.offer_history.length === 1 ? 'înregistrare' : 'înregistrări'}
+                      </span>
+                    </div>
+                    <div className="space-y-1.5 text-slate-300">
+                      {selectedCell.offer_history.map((hist, hIdx) => (
+                        <div key={hIdx} className="bg-slate-900/80 p-2.5 rounded border border-slate-800 text-xs">
+                          <div className="flex items-center justify-between font-medium">
+                            <span className="text-slate-200">{hist.product || selectedCell.kvi}</span>
+                            <span className="text-amber-400 font-bold">
+                              {hist.price_lei_kg ? `${hist.price_lei_kg.toFixed(2)} lei/kg` : hist.status}
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-slate-400 mt-1">
+                            Perioadă: <span className="text-slate-200">{hist.period}</span> · Statut: <span className="text-amber-300 uppercase font-semibold">{hist.status}</span>
+                            {hist.discount && ` (${hist.discount})`}
+                          </div>
+                          <div className="text-[11px] text-slate-500 mt-1 italic">
+                            {hist.reason || hist.note || 'Ofertă arhivată conform politicii de audit.'}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="text-xs bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center justify-between">
                   <span className="text-slate-400">
                     Sursă verificare: <strong className="text-slate-200">{selectedCell.source || 'Monitorizare catalog național & verificare ±3 zile'}</strong>
                   </span>
@@ -964,7 +1062,10 @@ export default function App() {
                                   key={v.retailer} 
                                   className="text-[10px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400"
                                 >
-                                  {v.retailer}: {v.price_lei_kg?.toFixed(2)} lei ({v.mechanic || 'catalog'}) · {v.validity || 'WK' + data.week}
+                                  {v.retailer}: {v.price_lei_kg?.toFixed(2)} lei
+                                  {v.price_cupon_lei_kg && ` (cupon: ${v.price_cupon_lei_kg.toFixed(2)} lei)`}
+                                  {v.price_card_lei_kg && ` (card: ${v.price_card_lei_kg.toFixed(2)} lei)`}
+                                  {' · '}{v.validity || 'WK' + data.week}
                                 </span>
                               ))}
                             </div>

@@ -175,7 +175,7 @@ def export_data(lock_path: Path, png_path: Path, release_receipt_path: Path, out
                 diff = round(p - min_p, 2)
                 pct = round(((p - min_p) / min_p) * 100, 1) if min_p > 0 else 0
                 is_cond = bool(c.get("mechanic") and any(w in c["mechanic"].lower() for w in ["card", "cupon", "plus", "activarea"]))
-                details.append({
+                detail_dict = {
                     "retailer": c["retailer"],
                     "price_lei_kg": p,
                     "exact_product": c.get("exact_product", k_name),
@@ -186,7 +186,16 @@ def export_data(lock_path: Path, png_path: Path, release_receipt_path: Path, out
                     "diff_lei_kg": diff,
                     "diff_percent": pct,
                     "is_conditional": is_cond
-                })
+                }
+                if c.get("price_standard_lei_kg") is not None:
+                    detail_dict["price_standard_lei_kg"] = c["price_standard_lei_kg"]
+                if c.get("price_cupon_lei_kg") is not None:
+                    detail_dict["price_cupon_lei_kg"] = c["price_cupon_lei_kg"]
+                if c.get("price_card_lei_kg") is not None:
+                    detail_dict["price_card_lei_kg"] = c["price_card_lei_kg"]
+                if c.get("mechanic_type") is not None:
+                    detail_dict["mechanic_type"] = c["mechanic_type"]
+                details.append(detail_dict)
                 
             if len(k_cells) == 1:
                 single = k_cells[0]
@@ -203,8 +212,26 @@ def export_data(lock_path: Path, png_path: Path, release_receipt_path: Path, out
                     for o in others:
                         d_l = o["price_lei_kg"] - min_p
                         d_p = round(((o["price_lei_kg"] - min_p) / min_p) * 100, 1) if min_p > 0 else 0
-                        cond_o = f" [{o.get('mechanic', '')}]" if o.get("mechanic") and ("card" in o["mechanic"].lower() or "cupon" in o["mechanic"].lower()) else ""
-                        other_chunks.append(f"{o['retailer']} la {o['price_lei_kg']:.2f} lei/kg{cond_o} (+{d_l:.2f} lei, +{d_p}%)")
+                        
+                        # Explicit separation of standard vs coupon vs card pricing
+                        if o.get("price_cupon_lei_kg") is not None:
+                            std_p = o.get("price_standard_lei_kg", o["price_lei_kg"])
+                            cupon_p = o["price_cupon_lei_kg"]
+                            c_diff = round(cupon_p - min_p, 2)
+                            c_pct = round(((cupon_p - min_p) / min_p) * 100, 1) if min_p > 0 else 0
+                            other_chunks.append(
+                                f"{o['retailer']} la {std_p:.2f} lei/kg preț standard (+{d_l:.2f} lei, +{d_p}%) "
+                                f"și {cupon_p:.2f} lei/kg cu cupon {o['retailer']} Plus (+{c_diff:.2f} lei, +{c_pct}%)"
+                            )
+                        elif o.get("price_card_lei_kg") is not None:
+                            std_p = o.get("price_standard_lei_kg", 22.99)
+                            other_chunks.append(
+                                f"{o['retailer']} la {o['price_lei_kg']:.2f} lei/kg cu card {o['retailer']} (+{d_l:.2f} lei, +{d_p}%; "
+                                f"preț standard fără card: {std_p:.2f} lei/kg)"
+                            )
+                        else:
+                            cond_o = f" [{o.get('mechanic', '')}]" if o.get("mechanic") and ("card" in o["mechanic"].lower() or "cupon" in o["mechanic"].lower()) else ""
+                            other_chunks.append(f"{o['retailer']} la {o['price_lei_kg']:.2f} lei/kg{cond_o} (+{d_l:.2f} lei, +{d_p}%)")
                     others_desc = ", în timp ce " + "; ".join(other_chunks) + "."
                 else:
                     others_desc = " (paritate competitivă la nivelul minim)."

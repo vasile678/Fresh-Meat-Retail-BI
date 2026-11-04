@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "rolling_update_id": "ROLLING_WK45_6d6130ef",
+  "rolling_update_id": "ROLLING_WK45_258a510d",
   "week": "WK45",
   "year": 2026,
-  "applied_at_bucharest": "03.11.2026 21:35:29 EET",
-  "applied_at_utc": "2026-11-03T19:35:29.017057+00:00",
+  "applied_at_bucharest": "04.11.2026 21:23:10 EET",
+  "applied_at_utc": "2026-11-04T19:23:10.772278+00:00",
   "source_catalog": {
     "retailer": "Kaufland",
     "title": "Catalog Kaufland Oferte de Miercuri 04.11 până Marți 10.11.2026",
@@ -12,25 +12,25 @@
     "url": "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
   },
   "previous_release": {
-    "release_id": "2026/WK45_b2389294",
-    "dataset_sha256": "b2389294d10abdee3bee3fa43f884af68f19eb5a3da8fd6b118ef28534d04fb9",
-    "published_at_utc": "2026-11-03T18:11:40.474105+00:00"
-  },
-  "new_release": {
     "release_id": "2026/WK45_6d6130ef",
     "dataset_sha256": "6d6130ef891c02b6fcb1df3e780b70478d63a4e6b0ca66b62dd9ae8d85f17911",
+    "published_at_utc": "2026-11-03T19:35:28.998243+00:00"
+  },
+  "new_release": {
+    "release_id": "2026/WK45_258a510d",
+    "dataset_sha256": "258a510dc0c2ba238b6265fdd4ddd5c51afe3a602ff906399504c1e84542aa8b",
     "output_sha256": "3e50b28cb98c7da6eec1390adc31cf3ab7b038b0d2ca90e38c5d4acf4390999b",
-    "export_path": "/releases/2026/WK45_6d6130ef/bi_dashboard_export.json",
-    "image_path": "/releases/2026/WK45_6d6130ef/TOP5_PREȚURI_COMPETITORI_WK45_2026.png"
+    "export_path": "/releases/2026/WK45_258a510d/bi_dashboard_export.json",
+    "image_path": "/releases/2026/WK45_258a510d/TOP5_PREȚURI_COMPETITORI_WK45_2026.png"
   },
   "cell_delta_audit": [
     {
       "retailer": "Kaufland",
       "kvi": "Spată porc fără os",
       "before": {
-        "status": "VERIFIED",
-        "price": 14.9,
-        "validity": "28.10–03.11.2026"
+        "status": "N/V",
+        "price": null,
+        "validity": null
       },
       "after": {
         "status": "N/V",
@@ -43,9 +43,9 @@
       "retailer": "Kaufland",
       "kvi": "Pulpă porc fără os",
       "before": {
-        "status": "N/V",
-        "price": null,
-        "validity": null
+        "status": "VERIFIED",
+        "price": 15.99,
+        "validity": "04.11–10.11.2026"
       },
       "after": {
         "status": "VERIFIED",
@@ -59,8 +59,8 @@
       "kvi": "Cotlet porc fără os",
       "before": {
         "status": "VERIFIED",
-        "price": 16.99,
-        "validity": "28.10–03.11.2026"
+        "price": 15.9,
+        "validity": "04.11–10.11.2026"
       },
       "after": {
         "status": "VERIFIED",
@@ -90,7 +90,7 @@
       "before": {
         "status": "VERIFIED",
         "price": 32.79,
-        "validity": "28.10–03.11.2026"
+        "validity": "04.11–10.11.2026"
       },
       "after": {
         "status": "VERIFIED",

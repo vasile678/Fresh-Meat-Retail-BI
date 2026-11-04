@@ -143,18 +143,24 @@ def check_rolling_update_needed(target_week: str = "WK45") -> Tuple[bool, str, D
         
     lock_data = json.loads(lock_path.read_text(encoding="utf-8"))
     
-    # Check Kaufland Cotlet price in current canonical lock
+    # Check Kaufland Cotlet price, Spată status, and Lidl coupon separation in current canonical lock
     kauf_cotlet = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Kaufland" and c.get("kvi") == "Cotlet porc fără os"), None)
+    kauf_spata = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Kaufland" and c.get("kvi") == "Spată porc fără os"), None)
+    lidl_cotlet = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Lidl" and c.get("kvi") == "Cotlet porc fără os"), None)
     
-    if kauf_cotlet and kauf_cotlet.get("price_lei_kg") == 15.90 and "04.11" in str(kauf_cotlet.get("validity", "")):
-        return False, f"Rolling update for {target_week} (Kaufland 04–10.11) is ALREADY active in current release.", active
+    is_spata_nv = kauf_spata and kauf_spata.get("status") == "N/V" and bool(kauf_spata.get("offer_history"))
+    is_kauf_cotlet_updated = kauf_cotlet and kauf_cotlet.get("price_lei_kg") == 15.90 and "04.11" in str(kauf_cotlet.get("validity", ""))
+    is_lidl_separated = lidl_cotlet and lidl_cotlet.get("price_cupon_lei_kg") == 16.90
+    
+    if is_spata_nv and is_kauf_cotlet_updated and is_lidl_separated:
+        return False, f"Rolling update for {target_week} (ACTIVE OFFERS ONLY: Kaufland 04–10.11, Spată N/V with history, Lidl coupon separated) is ALREADY active in current release.", active
         
-    return True, f"New catalog detected: Kaufland 04–10.11.2026 with new prices for WK45.", active
+    return True, f"Active offers update needed: Kaufland 04–10.11.2026, Spată N/V expired rule, and Lidl coupon price separation.", active
 
 def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     """
     Constructs the reconciled canonical lock incorporating the rolling update,
-    preserving offer history and validity intervals.
+    preserving offer history and validity intervals (ACTIVE OFFERS ONLY policy).
     """
     base_lock_path = BASE_DIR / f"PROMO_WEEKLY_CANONICAL_LOCK_{target_week}.json"
     if not base_lock_path.exists():
@@ -166,7 +172,7 @@ def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) ->
     updated_lock["rolling_update"] = {
         "applied": True,
         "rolling_date": "2026-11-04",
-        "description": "Actualizare la mijlocul săptămânii (Miercuri 04.11.2026): Catalog nou Kaufland 04–10.11.2026",
+        "description": "Actualizare la mijlocul săptămânii (04.11.2026): Regula ACTIVE OFFERS ONLY, Catalog nou Kaufland 04–10.11.2026, Separare cupon Lidl Plus",
         "source_catalog": KAUFLAND_WK45_ROLLING_CATALOG["catalog_title"]
     }
     
@@ -185,24 +191,41 @@ def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) ->
             old_validity = cell.get("validity")
             
             # Archive previous offer in history
-            history = cell.get("offer_history", [])
-            history.append({
-                "period": old_validity or "28.10–03.11.2026",
-                "status": old_status,
-                "price_lei_kg": old_price,
-                "product": cell.get("exact_product"),
-                "discount": cell.get("discount"),
-                "note": cell.get("note")
-            })
-            cell["offer_history"] = history
+            if kvi == "Spată porc fără os":
+                cell["offer_history"] = [
+                    {
+                        "period": "28.10–03.11.2026",
+                        "status": "EXPIRED",
+                        "price_lei_kg": 14.90,
+                        "product": "K-Purland Spată de porc fără os vacuum",
+                        "discount": "-25%",
+                        "mechanic": "promoție catalog",
+                        "source": "Kaufland România – catalog oficial WK45 (28.10–03.11.2026)",
+                        "reason": "Oferta a expirat marți 03.11.2026; exclusă din matricea activă începând cu 04.11.2026 conform regulii ACTIVE OFFERS ONLY."
+                    }
+                ]
+            else:
+                history = cell.get("offer_history", [])
+                if not any(h.get("period") == (old_validity or "28.10–03.11.2026") for h in history):
+                    history.append({
+                        "period": old_validity or "28.10–03.11.2026",
+                        "status": "SUPERSEDED" if old_status == "VERIFIED" else "N/V",
+                        "price_lei_kg": old_price,
+                        "product": cell.get("exact_product"),
+                        "discount": cell.get("discount"),
+                        "note": cell.get("note")
+                    })
+                cell["offer_history"] = history
             
             # Update fields based on new catalog
             cell["status"] = new_offer["status"]
             cell["source"] = KAUFLAND_WK45_ROLLING_CATALOG["source_name"]
             cell["source_date"] = "2026-11-04"
+            cell["mechanic_type"] = "standard"
             
             if new_offer["status"] == "VERIFIED":
                 cell["price_lei_kg"] = new_offer["price_lei_kg"]
+                cell["price_standard_lei_kg"] = new_offer["price_lei_kg"]
                 cell["validity"] = new_offer["validity"]
                 cell["exact_product"] = new_offer["exact_product"]
                 cell["discount"] = new_offer["discount"]
@@ -214,6 +237,8 @@ def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) ->
                 cell["note"] = new_offer["note"]
                 if "price_lei_kg" in cell:
                     del cell["price_lei_kg"]
+                if "price_standard_lei_kg" in cell:
+                    del cell["price_standard_lei_kg"]
                 if "validity" in cell:
                     del cell["validity"]
                 if "exact_product" in cell:
@@ -230,9 +255,30 @@ def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) ->
                 "after": {"status": cell.get("status"), "price": cell.get("price_lei_kg"), "validity": cell.get("validity")},
                 "justification": new_offer["justification"]
             })
-        else:
-            # Other 4 retailers remain 100% untouched
-            pass
+        elif ret == "Lidl" and kvi == "Cotlet porc fără os":
+            cell["price_standard_lei_kg"] = 19.90
+            cell["price_cupon_lei_kg"] = 16.90
+            cell["mechanic_type"] = "cupon"
+            cell["discount"] = "-15% cu Lidl Plus"
+            cell["exact_product"] = "Cotlet de porc fără os"
+            cell["mechanic"] = "preț standard: 19.90 lei/kg; cu cupon Lidl Plus: 16.90 lei/kg (-15%)"
+        elif ret == "Lidl" and kvi == "Piept pui dezosat":
+            cell["price_standard_lei_kg"] = 29.90
+            cell["price_cupon_lei_kg"] = 26.90
+            cell["mechanic_type"] = "cupon"
+            cell["discount"] = "-10% cu Lidl Plus"
+            cell["exact_product"] = "Piept de pui dezosat fără piele"
+            cell["mechanic"] = "preț standard: 29.90 lei/kg; cu cupon Lidl Plus: 26.90 lei/kg (-10%)"
+        elif ret == "PENNY" and kvi == "Cotlet porc fără os":
+            cell["price_standard_lei_kg"] = 22.99
+            cell["price_card_lei_kg"] = 17.99
+            cell["mechanic_type"] = "card"
+            cell["mechanic"] = "preț cu PENNY card: 17.99 lei/kg (standard: 22.99 lei/kg)"
+        elif ret == "PENNY" and kvi == "Pulpă porc fără os":
+            cell["price_standard_lei_kg"] = 22.99
+            cell["price_card_lei_kg"] = 15.99
+            cell["mechanic_type"] = "card"
+            cell["mechanic"] = "preț cu PENNY card: 15.99 lei/kg (standard: 22.99 lei/kg)"
             
         new_cells.append(cell)
         
@@ -306,7 +352,7 @@ def build_reconciliation_receipt(lock_data: Dict[str, Any], lock_sha: str) -> Di
         "rolling_update": "KAUFLAND_04_10_NOV_RECONCILED"
     }
 
-def execute_rolling_update(target_week: str = "WK45", year: int = 2026, dry_run: bool = False) -> Dict[str, Any]:
+def execute_rolling_update(target_week: str = "WK45", year: int = 2026, dry_run: bool = False, force: bool = False) -> Dict[str, Any]:
     """
     Executes full rolling update cycle:
     1. Checks if update is needed.
@@ -324,7 +370,7 @@ def execute_rolling_update(target_week: str = "WK45", year: int = 2026, dry_run:
     print(f"[CHECK] Status: {'NECESAR' if needed else 'DEJA APLICAT'}")
     print(f"        Detalii: {reason}")
     
-    if not needed and not dry_run:
+    if not needed and not dry_run and not force:
         print("[IDEMPOTENT] Raportul activ conține deja actualizarea rolling. Nicio modificare necesară.")
         return {
             "status": "ALREADY_APPLIED",
@@ -503,17 +549,31 @@ def run_tests():
     assert kauf_spata["status"] == "N/V"
     assert "price_lei_kg" not in kauf_spata
     assert len(kauf_spata.get("offer_history", [])) >= 1
-    print(f"[TEST 4/5] Spată Kaufland expirată la 03.11 trecută în N/V cu istoric: PASS")
+    print(f"[TEST 4/7] Spată Kaufland expirată la 03.11 trecută în N/V cu istoric (ACTIVE OFFERS ONLY): PASS")
     
     # Test 5: Validate Pulpă porc transition from N/V to 15.99 VERIFIED
     kauf_pulpa = next(c for c in lock["cells"] if c["retailer"] == "Kaufland" and c["kvi"] == "Pulpă porc fără os")
     assert kauf_pulpa["status"] == "VERIFIED"
     assert kauf_pulpa["price_lei_kg"] == 15.99
     assert "04.11" in kauf_pulpa["validity"]
-    print(f"[TEST 5/5] Pulpă Kaufland nouă la 15.99 lei/kg confirmată VERIFIED: PASS")
+    print(f"[TEST 5/7] Pulpă Kaufland nouă la 15.99 lei/kg confirmată VERIFIED: PASS")
     
+    # Test 6: Validate Lidl Cotlet standard price separated from Lidl Plus coupon
+    lidl_cotlet = next(c for c in lock["cells"] if c["retailer"] == "Lidl" and c["kvi"] == "Cotlet porc fără os")
+    assert lidl_cotlet["price_standard_lei_kg"] == 19.90, f"Expected 19.90, got {lidl_cotlet.get('price_standard_lei_kg')}"
+    assert lidl_cotlet["price_cupon_lei_kg"] == 16.90, f"Expected 16.90, got {lidl_cotlet.get('price_cupon_lei_kg')}"
+    assert lidl_cotlet["mechanic_type"] == "cupon"
+    print(f"[TEST 6/7] Cotlet Lidl: preț cupon (16.90 lei/kg) separat corect de prețul standard (19.90 lei/kg): PASS")
+    
+    # Test 7: Validate PENNY Cotlet card price separated from standard price
+    penny_cotlet = next(c for c in lock["cells"] if c["retailer"] == "PENNY" and c["kvi"] == "Cotlet porc fără os")
+    assert penny_cotlet["price_card_lei_kg"] == 17.99, f"Expected 17.99, got {penny_cotlet.get('price_card_lei_kg')}"
+    assert penny_cotlet["price_standard_lei_kg"] == 22.99, f"Expected 22.99, got {penny_cotlet.get('price_standard_lei_kg')}"
+    assert penny_cotlet["mechanic_type"] == "card"
+    print(f"[TEST 7/7] Cotlet PENNY: preț card (17.99 lei/kg) separat corect de prețul standard (22.99 lei/kg): PASS")
+
     print("=================================================================")
-    print(" TOATE CELE 5 TESTE ALE ROLLING UPDATE ENGINE AU TRECUT (100%)")
+    print(" TOATE CELE 7 TESTE ALE ROLLING UPDATE ENGINE AU TRECUT (100%)")
     print("=================================================================")
 
 def main():
@@ -523,6 +583,7 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check if rolling update is needed")
     parser.add_argument("--dry-run", action="store_true", help="Simulate rolling update without modifying files")
     parser.add_argument("--apply", action="store_true", help="Execute and publish rolling update")
+    parser.add_argument("--force", action="store_true", help="Force re-generation and publication even if already applied")
     parser.add_argument("--test", action="store_true", help="Run rolling update test suite")
     args = parser.parse_args()
     
@@ -536,12 +597,12 @@ def main():
         sys.exit(0)
         
     if args.dry_run:
-        res = execute_rolling_update(args.week, args.year, dry_run=True)
+        res = execute_rolling_update(args.week, args.year, dry_run=True, force=args.force)
         print(json.dumps(res, indent=2, ensure_ascii=False))
         sys.exit(0)
         
     if args.apply:
-        res = execute_rolling_update(args.week, args.year, dry_run=False)
+        res = execute_rolling_update(args.week, args.year, dry_run=False, force=args.force)
         print(json.dumps(res, indent=2, ensure_ascii=False))
         sys.exit(0)
         

@@ -1,12 +1,12 @@
 {
-  "release_id": "2026/WK45_6d6130ef",
+  "release_id": "2026/WK45_258a510d",
   "week": "WK45",
   "year": 2026,
-  "published_at_utc": "2026-11-03T19:35:28.998243+00:00",
-  "export_path": "/releases/2026/WK45_6d6130ef/bi_dashboard_export.json",
-  "image_path": "/releases/2026/WK45_6d6130ef/TOP5_PREȚURI_COMPETITORI_WK45_2026.png",
-  "release_receipt_path": "/releases/2026/WK45_6d6130ef/release_receipt.json",
-  "dataset_sha256": "6d6130ef891c02b6fcb1df3e780b70478d63a4e6b0ca66b62dd9ae8d85f17911",
+  "published_at_utc": "2026-11-04T19:23:10.747121+00:00",
+  "export_path": "/releases/2026/WK45_258a510d/bi_dashboard_export.json",
+  "image_path": "/releases/2026/WK45_258a510d/TOP5_PREȚURI_COMPETITORI_WK45_2026.png",
+  "release_receipt_path": "/releases/2026/WK45_258a510d/release_receipt.json",
+  "dataset_sha256": "258a510dc0c2ba238b6265fdd4ddd5c51afe3a602ff906399504c1e84542aa8b",
   "output_sha256": "3e50b28cb98c7da6eec1390adc31cf3ab7b038b0d2ca90e38c5d4acf4390999b",
   "release_receipt_sha256": "379c8ae3c9d62c3bd5e2cb51a80c08e588b8eecaa5d90be1a3f9ef848b5f5ee5",
   "release_status": "RELEASE_PASS"
