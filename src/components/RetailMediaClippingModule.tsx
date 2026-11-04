@@ -1193,7 +1193,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
               <div className="pb-4 border-b border-slate-800 mb-6">
                 <h2 className="text-base font-semibold text-white">Cataloage Promoționale & Programe de Loialitate</h2>
                 <p className="text-xs text-slate-400 mt-0.5">
-                  Monitorizare activă pentru exact 7 retaileri alimentari. Acces direct la edițiile oficiale și aplicațiile de fidelizare.
+                  Monitorizare activă a cataloagelor promoționale ale retailerilor alimentari. Acces direct la edițiile oficiale și aplicațiile de fidelizare.
                 </p>
               </div>
 

@@ -2,66 +2,87 @@ name: EU Pork Market Weekly - Scheduled Thursday Pipeline
 
 on:
   schedule:
-    # Rulează la 06:00 UTC și 07:00 UTC în fiecare joi.
-    # Pasul de verificare a orei locale asigură execuția exact la 09:00 Europe/Bucharest
-    # indiferent de trecerea la ora de vară (UTC+3, când 06:00 UTC = 09:00 RO) sau iarnă (UTC+2, când 07:00 UTC = 09:00 RO).
+    # Rulează la 06:00 UTC (vară, EEST = UTC+3) și 07:00 UTC (iarnă, EET = UTC+2) în fiecare joi.
+    # Pasul de verificare a orei locale asigură execuția exact la 09:00 Europe/Bucharest.
     - cron: '0 6,7 * * 4'
   workflow_dispatch:
     inputs:
       week:
-        description: "Săptămâna ISO de procesat (ex: WK44, WK45)"
-        required: true
-        default: "WK44"
+        description: "Săptămâna ISO de procesat (ex: WK44, WK45). Lăsați gol pentru săptămâna curentă."
+        required: false
+        default: ""
       year:
-        description: "Anul calendaristic"
-        required: true
-        default: "2026"
+        description: "Anul calendaristic (ex: 2026). Lăsați gol pentru anul curent."
+        required: false
+        default: ""
       dataset_path:
-        description: "Calea către datasetul autoritativ EU Pork Market"
-        required: true
-        default: "fresh_meat_bi/EU_PORK_MARKET_DATASET_WK44.json"
+        description: "Calea către datasetul autoritativ EU Pork Market (lăsați gol pentru convenția automată)"
+        required: false
+        default: ""
       source_path:
-        description: "Calea către chitanța SOURCE_VERIFICATION"
+        description: "Calea către chitanța SOURCE_VERIFICATION (lăsați gol pentru convenția automată)"
         required: false
-        default: "fresh_meat_bi/EU_SOURCE_RECEIPT_WK44.json"
+        default: ""
       visual_path:
-        description: "Calea către chitanța VISUAL_QA"
+        description: "Calea către chitanța VISUAL_QA (lăsați gol pentru convenția automată)"
         required: false
-        default: "fresh_meat_bi/EU_VISUAL_RECEIPT_WK44.json"
+        default: ""
       publish:
         description: "Publică atomic rezultatele în dashboard (doar la RELEASE_PASS)"
-        required: true
+        required: false
         type: boolean
         default: true
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   eu-pork-weekly:
     name: Execute EU Pork Market Weekly Controlled Pipeline
     runs-on: ubuntu-24.04
+    outputs:
+      has_changes: ${{ steps.commit_push.outputs.has_changes }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Check Europe/Bucharest Local Time (09:00)
-        if: github.event_name == 'schedule'
         id: time_check
         run: |
-          LOCAL_HOUR=$(python3 -c "import datetime, zoneinfo; print(datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Bucharest')).hour)")
-          echo "Local hour in Europe/Bucharest is: $LOCAL_HOUR"
-          if [ "$LOCAL_HOUR" -ne 9 ]; then
-            echo "SHOULD_RUN=false" >> $GITHUB_ENV
-            echo "Not 09:00 in Europe/Bucharest (current hour is $LOCAL_HOUR). Skipping this hourly trigger."
-          else
-            echo "SHOULD_RUN=true" >> $GITHUB_ENV
-            echo "09:00 Europe/Bucharest confirmed. Proceeding with weekly pipeline execution."
-          fi
+          python3 -c "
+          import datetime, zoneinfo, os, sys
+          tz = zoneinfo.ZoneInfo('Europe/Bucharest')
+          now = datetime.datetime.now(tz)
+          hour = now.hour
+          minute = now.minute
+          is_forced = '${{ github.event_name }}' in ['workflow_dispatch', 'repository_dispatch']
+          print(f'Ora locală în Europe/Bucharest: {now.strftime(\"%Y-%m-%d %H:%M:%S\")} (ora: {hour}, minut: {minute})')
+
+          should_run = False
+          if is_forced:
+              print('Execuție manuală solicitată (workflow_dispatch). Se continuă verificarea.')
+              should_run = True
+          elif hour == 9:
+              print('Fereastra exactă de rulare 09:00 Europe/Bucharest confirmată.')
+              should_run = True
+          else:
+              print(f'În afara ferestrei programate de 09:00 Europe/Bucharest (ora curentă {hour}:{minute:02d}). Se omite acest trigger orar.')
+
+          with open(os.environ['GITHUB_ENV'], 'a') as f:
+              f.write(f'SHOULD_RUN={\"true\" if should_run else \"false\"}\n')
+          "
 
       - name: Setup Python
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: '3.11'
@@ -69,47 +90,184 @@ jobs:
           cache-dependency-path: 'fresh_meat_bi/requirements.txt'
 
       - name: Install system fonts
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends fonts-dejavu-core
 
       - name: Install Python dependencies
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true'
         run: pip install -r fresh_meat_bi/requirements.txt
 
+      - name: Resolve Target Week and Check Verified Prerequisites (FAIL_CLOSED)
+        id: resolve_prereqs
+        if: env.SHOULD_RUN == 'true'
+        run: |
+          # 1. Determinare dinamică săptămână ISO și an în Europe/Bucharest
+          WEEK_INPUT="${{ inputs.week }}"
+          YEAR_INPUT="${{ inputs.year }}"
+          
+          if [ -z "$WEEK_INPUT" ] || [ -z "$YEAR_INPUT" ]; then
+            CAL_INFO=$(python3 -c "
+          import datetime, zoneinfo
+          tz = zoneinfo.ZoneInfo('Europe/Bucharest')
+          now = datetime.datetime.now(tz)
+          iso_year, iso_week, _ = now.isocalendar()
+          print(f'WK{iso_week:02d} {iso_year}')
+          ")
+            AUTO_WEEK=$(echo $CAL_INFO | cut -d' ' -f1)
+            AUTO_YEAR=$(echo $CAL_INFO | cut -d' ' -f2)
+            TARGET_WEEK="${WEEK_INPUT:-$AUTO_WEEK}"
+            TARGET_YEAR="${YEAR_INPUT:-$AUTO_YEAR}"
+          else
+            TARGET_WEEK="$WEEK_INPUT"
+            TARGET_YEAR="$YEAR_INPUT"
+          fi
+          
+          echo "target_week=$TARGET_WEEK" >> $GITHUB_OUTPUT
+          echo "target_year=$TARGET_YEAR" >> $GITHUB_OUTPUT
+          echo "TARGET_WEEK=$TARGET_WEEK" >> $GITHUB_ENV
+          echo "TARGET_YEAR=$TARGET_YEAR" >> $GITHUB_ENV
+          
+          # 2. Rezolvare căi fișiere dataset și chitanțe (fără presupuneri WK44 hardcodate)
+          DATASET="${{ inputs.dataset_path }}"
+          [ -z "$DATASET" ] && DATASET="fresh_meat_bi/EU_PORK_MARKET_DATASET_${TARGET_WEEK}.json"
+          
+          SOURCE="${{ inputs.source_path }}"
+          [ -z "$SOURCE" ] && SOURCE="fresh_meat_bi/EU_SOURCE_RECEIPT_${TARGET_WEEK}.json"
+          
+          VISUAL="${{ inputs.visual_path }}"
+          [ -z "$VISUAL" ] && VISUAL="fresh_meat_bi/EU_VISUAL_RECEIPT_${TARGET_WEEK}.json"
+          
+          echo "DATASET_PATH=$DATASET" >> $GITHUB_ENV
+          echo "SOURCE_PATH=$SOURCE" >> $GITHUB_ENV
+          echo "VISUAL_PATH=$VISUAL" >> $GITHUB_ENV
+          
+          echo "======================================================="
+          echo "Verificare premise EU Pork Market pentru $TARGET_WEEK / $TARGET_YEAR:"
+          echo " - Dataset: $DATASET"
+          echo " - Sursă: $SOURCE"
+          echo " - Vizual: $VISUAL"
+          echo "======================================================="
+          
+          PREREQS_MET=true
+          if [ ! -f "$DATASET" ]; then
+            echo "[LIPSĂ PREMISĂ] Datasetul $DATASET nu există."
+            PREREQS_MET=false
+          fi
+          if [ ! -f "$SOURCE" ]; then
+            echo "[LIPSĂ PREMISĂ] Chitanța de verificare $SOURCE nu există."
+            PREREQS_MET=false
+          fi
+          if [ ! -f "$VISUAL" ]; then
+            echo "[LIPSĂ PREMISĂ] Chitanța vizuală $VISUAL nu există."
+            PREREQS_MET=false
+          fi
+          
+          if [ "$PREREQS_MET" = "true" ]; then
+            echo "Toate premisele verificate pentru $TARGET_WEEK sunt prezente. Se continuă execuția pipeline-ului."
+            echo "PREREQS_MET=true" >> $GITHUB_ENV
+          else
+            echo "======================================================="
+            echo "[FAIL_CLOSED ACTIVAT]: Datele verificate pentru săptămâna $TARGET_WEEK lipsesc."
+            echo "NOTĂ AUDIT: Nu există un colector automat live pentru bursele europene (VEZG, Mercolleida, CUN etc.)."
+            echo "Datele necesită validare oficială per specificația benchmark din EU_PORK_MARKET_CONFIG.json."
+            echo "Conform politicii anti-ficțiune FAIL_CLOSED, raportul oficial anterior din producție rămâne conservat 100% intact."
+            echo "======================================================="
+            echo "PREREQS_MET=false" >> $GITHUB_ENV
+          fi
+
       - name: Run EU Pork Module Verification Tests
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
         run: |
           python3 fresh_meat_bi/test_eu_pork_module.py
 
       - name: Execute Full Weekly Pipeline with Release Gate & Staging
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
         run: |
-          WEEK="${{ inputs.week || 'WK44' }}"
-          YEAR="${{ inputs.year || '2026' }}"
-          DATASET="${{ inputs.dataset_path || 'fresh_meat_bi/EU_PORK_MARKET_DATASET_WK44.json' }}"
-          SOURCE="${{ inputs.source_path || 'fresh_meat_bi/EU_SOURCE_RECEIPT_WK44.json' }}"
-          VISUAL="${{ inputs.visual_path || 'fresh_meat_bi/EU_VISUAL_RECEIPT_WK44.json' }}"
-          
           python3 fresh_meat_bi/weekly_pipeline.py \
-            --week "$WEEK" \
-            --year "$YEAR" \
+            --week "$TARGET_WEEK" \
+            --year "$TARGET_YEAR" \
             --domain EU_PORK_MARKET \
-            --dataset "$DATASET" \
-            --source "$SOURCE" \
-            --visual "$VISUAL" \
+            --dataset "$DATASET_PATH" \
+            --source "$SOURCE_PATH" \
+            --visual "$VISUAL_PATH" \
             --publish
 
       - name: Update Unified Market Intelligence Manifest
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
         run: |
           python3 fresh_meat_bi/update_market_intelligence_manifest.py
 
       - name: Verify Published Assets & Release Gate Status
-        if: github.event_name != 'schedule' || env.SHOULD_RUN == 'true'
+        if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
         run: |
           test -f public/data/eu_pork_market_export.json
           test -f public/data/market_intelligence_manifest.json
           python3 -c "import json; d=json.load(open('public/data/eu_pork_market_export.json')); assert d['release_status'] == 'RELEASE_PASS'"
           echo "Verified: public/data/eu_pork_market_export.json exists with RELEASE_PASS"
+
+      - name: Commit and Push Updated EU Pork Market Release
+        id: commit_push
+        if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/eu_pork_market_export.json public/EU_PORK_MARKET_*.png public/data/market_intelligence_manifest.json
+          
+          if git diff --staged --quiet; then
+            echo "Nicio modificare nouă detectată în dataset. Raportul este la zi."
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore(eu-pork): Weekly 09:00 Europe/Bucharest release publication ($TARGET_WEEK) [skip ci]"
+            git pull --rebase origin main || true
+            git push origin main
+            echo "Modificările au fost publicate în main."
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+  deploy-pages:
+    name: Build & Deploy Updated Release to GitHub Pages
+    needs: [eu-pork-weekly]
+    if: needs.eu-pork-weekly.outputs.has_changes == 'true' || (github.event_name == 'workflow_dispatch' && inputs.publish)
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          VITE_BASE_PATH: '/Fresh-Meat-Retail-BI/'
+
+      - name: Verify build output
+        run: |
+          test -d dist
+          test -f dist/data/eu_pork_market_export.json
+          test -f dist/data/market_intelligence_manifest.json
+          echo "EU Pork Market build and distribution verified successfully"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

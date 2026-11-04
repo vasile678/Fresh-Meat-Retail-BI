@@ -185,6 +185,75 @@ def test_6_wk44_pipeline_and_release_pass():
 
     print("  ✓ WK44 pipeline execution, Release Gate RELEASE_PASS and publication verified: PASS\n")
 
+def test_7_iso_week_and_year_transitions():
+    print("[TEST 7/8] Testing ISO 8601 week and year boundary transitions (Europe/Bucharest)...")
+    from zoneinfo import ZoneInfo
+    tz = ZoneInfo("Europe/Bucharest")
+
+    def get_iso_week_year(dt: datetime.datetime):
+        local_dt = dt.astimezone(tz)
+        iso_year, iso_week, _ = local_dt.isocalendar()
+        return f"WK{iso_week:02d}", iso_year
+
+    transition_cases = [
+        # Regular mid-season weeks
+        (datetime.datetime(2026, 10, 29, 9, 0, tzinfo=tz), ("WK44", 2026)),
+        (datetime.datetime(2026, 11, 5, 9, 0, tzinfo=tz), ("WK45", 2026)),
+        # Year end 2026 (Thursday 31 Dec 2026 is in WK53 2026)
+        (datetime.datetime(2026, 12, 31, 9, 0, tzinfo=tz), ("WK53", 2026)),
+        # Start of 2027 (Thursday 07 Jan 2027 is in WK01 2027)
+        (datetime.datetime(2027, 1, 7, 9, 0, tzinfo=tz), ("WK01", 2027)),
+        # Transition 2025/2026 (Thursday 01 Jan 2026 is in WK01 2026)
+        (datetime.datetime(2026, 1, 1, 9, 0, tzinfo=tz), ("WK01", 2026)),
+        # Leap year 2024 boundary (Thursday 26 Dec 2024 is WK52 2024, Thursday 02 Jan 2025 is WK01 2025)
+        (datetime.datetime(2024, 12, 26, 9, 0, tzinfo=tz), ("WK52", 2024)),
+        (datetime.datetime(2025, 1, 2, 9, 0, tzinfo=tz), ("WK01", 2025)),
+    ]
+
+    for dt, expected in transition_cases:
+        actual = get_iso_week_year(dt)
+        assert actual == expected, f"Transition failed for {dt}: expected {expected}, got {actual}"
+    print("  ✓ All ISO week and year transitions verified: PASS\n")
+
+def test_8_fail_closed_on_unverified_target_week():
+    print("[TEST 8/8] Testing FAIL_CLOSED preservation on unverified target week (e.g. WK45)...")
+    # Verify that attempting to run pipeline on WK45 (where no dataset/receipts exist) fails closed
+    # and leaves the active WK44 export completely intact.
+    pub_export = ROOT / "public" / "data" / "eu_pork_market_export.json"
+    assert pub_export.exists(), "Active export must exist before test"
+    initial_export_bytes = pub_export.read_bytes()
+    initial_sha = hashlib.sha256(initial_export_bytes).hexdigest()
+
+    pipeline = BASE / "weekly_pipeline.py"
+    fake_dataset = BASE / "EU_PORK_MARKET_DATASET_WK45.json"
+    fake_source = BASE / "EU_SOURCE_RECEIPT_WK45.json"
+    fake_visual = BASE / "EU_VISUAL_RECEIPT_WK45.json"
+
+    # Files do not exist: pipeline MUST fail closed
+    cmd = [
+        sys.executable, str(pipeline),
+        "--week", "WK45",
+        "--year", "2026",
+        "--domain", "EU_PORK_MARKET",
+        "--dataset", str(fake_dataset),
+        "--source", str(fake_source),
+        "--visual", str(fake_visual),
+        "--publish"
+    ]
+    cp = subprocess.run(cmd, cwd=str(BASE), capture_output=True, text=True)
+    # Pipeline returns status: FAIL_CLOSED
+    assert "FAIL_CLOSED" in cp.stdout or cp.returncode != 0
+
+    # Ensure existing production report was NOT modified or corrupted
+    current_export_bytes = pub_export.read_bytes()
+    current_sha = hashlib.sha256(current_export_bytes).hexdigest()
+    assert current_sha == initial_sha, "FAIL_CLOSED violation: active export was mutated during failed execution"
+    
+    # Confirm active week remains WK44
+    data = json.loads(pub_export.read_text(encoding="utf-8"))
+    assert data.get("week") == "WK44", f"Expected active week to remain WK44, got {data.get('week')}"
+    print("  ✓ FAIL_CLOSED policy verified: active release (WK44) preserved 100% intact: PASS\n")
+
 if __name__ == "__main__":
     print("\n=======================================================")
     print(" RUNNING EU PORK MARKET WEEKLY MODULE TEST SUITE")
@@ -195,6 +264,9 @@ if __name__ == "__main__":
     test_4_fail_closed_on_missing_receipts()
     test_5_export_generation_and_schema()
     test_6_wk44_pipeline_and_release_pass()
+    test_7_iso_week_and_year_transitions()
+    test_8_fail_closed_on_unverified_target_week()
     print("=======================================================")
-    print(" ALL 6/6 EU PORK MARKET MODULE TESTS PASSED")
+    print(" ALL 8/8 EU PORK MARKET MODULE TESTS PASSED")
     print("=======================================================\n")
+
