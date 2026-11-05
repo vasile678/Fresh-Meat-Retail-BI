@@ -89,6 +89,7 @@ jobs:
         run: |
           python3 fresh_meat_bi/test_weekly_pipeline.py
           python3 fresh_meat_bi/promo_weekly_scheduler.py --test
+          python3 fresh_meat_bi/test_strategic_category_intelligence.py
 
       - name: Execute Autonomous Pipeline (Scheduled or Dynamic Dispatch)
         if: env.SHOULD_RUN == 'true' && (github.event_name == 'schedule' || inputs.week == '')
@@ -145,6 +146,7 @@ jobs:
             git add public/data/active_release.json
             git add public/data/bi_dashboard_export.json
             git add public/data/market_intelligence_manifest.json
+            git add public/data/retail_media_export.json
             git add public/data/schedule_status.json
             [ -d "public/releases" ] && git add public/releases/
             for img in public/TOP5_PREȚURI_COMPETITORI_*.png; do

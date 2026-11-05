@@ -136,6 +136,10 @@ def export_eu_pork_data(dataset_path: Path, output_json_path: Path, release_rece
             "trend": r.get("trend", "N/V"),
             "source": r.get("source", r.get("source_date", "")),
             "source_date": r.get("source_date", ""),
+            "source_publication_date": r.get("source_publication_date", ""),
+            "source_url": r.get("source_url", r.get("official_url", "")),
+            "freshness_status": r.get("freshness_status", "CURRENT_VERIFIED" if r.get("status") == "VERIFIED" else r.get("status", "N/V")),
+            "audit_note": r.get("audit_note", ""),
             "status": r.get("status", "N/V")
         })
 

@@ -511,9 +511,20 @@ def execute_rolling_update(target_week: str = "WK45", year: int = 2026, dry_run:
     receipt_path.write_text(json.dumps(rolling_receipt, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"[PAS 5] Chitanță detaliată generată: {receipt_path.name}")
     
+    # Update Strategic Category Intelligence
+    try:
+        try:
+            from strategic_category_intelligence import update_strategic_category_intelligence
+        except ImportError:
+            from fresh_meat_bi.strategic_category_intelligence import update_strategic_category_intelligence
+        update_strategic_category_intelligence()
+        print(f"[PAS 6] Strategic Category Intelligence sincronizat cu noul release.")
+    except Exception as e:
+        print(f"[AVERTISMENT] Sincronizare Strategic Category Intelligence: {e}")
+
     # Update unified market intelligence manifest
     subprocess.run([sys.executable, str(BASE_DIR / "update_market_intelligence_manifest.py")], cwd=str(BASE_DIR))
-    print(f"[PAS 6] Market Intelligence Manifest actualizat cu succes.")
+    print(f"[PAS 7] Market Intelligence Manifest actualizat cu succes.")
     
     print(f"\n=======================================================")
     print(f" [SUCCES] ROLLING UPDATE FINALIZAT: {new_release_id}")

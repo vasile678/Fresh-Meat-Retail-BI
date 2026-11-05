@@ -117,6 +117,7 @@ jobs:
           python3 fresh_meat_bi/test_weekly_pipeline.py
           python3 fresh_meat_bi/test_commercial_conclusions.py
           python3 fresh_meat_bi/promo_weekly_rolling_updater.py --test
+          python3 fresh_meat_bi/test_strategic_category_intelligence.py
 
       - name: Commit and Push Rolling Update Artifacts
         id: commit_push
@@ -129,6 +130,7 @@ jobs:
           git add public/data/active_release.json
           git add public/data/bi_dashboard_export.json
           git add public/data/market_intelligence_manifest.json
+          git add public/data/retail_media_export.json
           git add public/releases/
           git add public/TOP5_PREȚURI_COMPETITORI_*.png
           git add fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_*.json

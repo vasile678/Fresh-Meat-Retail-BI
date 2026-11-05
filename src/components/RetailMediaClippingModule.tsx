@@ -95,6 +95,12 @@ interface StrategicCategoryInsight {
 }
 
 interface CompetitiveIntelligenceData {
+  release_id?: string;
+  promo_week?: string;
+  promo_year?: number;
+  promo_period?: string;
+  active_offers_only?: boolean;
+  synchronized_at_utc?: string;
   executive_summary: string;
   top_signals: TopSignal[];
   retailer_dashboard: RetailerDashboardRow[];
@@ -800,108 +806,112 @@ const BASELINE_DATA: RetailMediaData = {
         ]
     }
 ],
-    competitive_intelligence: {
-    executive_summary: "Sinteza comercială zilnică relevă o presiune promoțională acută exercitată de discounteri (Kaufland, Lidl, Penny) pe piesele cheie de porc (spată și pulpă f.o.). Condiționarea reducerilor prin aplicații mobile depășește 60% din ofertele de primă linie. În paralel, cotațiile europene la carcasă rămân la un nivel stabil, creând un context favorabil pentru negocierea contractelor de aprovizionare pe trimestrul IV.",
+  competitive_intelligence: {
+    release_id: "2026/WK45_258a510d",
+    promo_week: "WK45",
+    promo_year: 2026,
+    promo_period: "02–08 NOI 2026",
+    active_offers_only: true,
+    synchronized_at_utc: "2026-11-05T18:23:39.267605+00:00",
+    executive_summary: "Sinteza comercială WK45 (02–08 NOI 2026) relevă o presiune promoțională concentrată exercitată de discounteri (Kaufland, Lidl, Penny) pe piesele cheie de porc. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă pe spată (18,90 lei/kg) și cel mai bun preț pe ceafă (23,90 lei/kg). Condiționarea reducerilor prin aplicații mobile (Lidl Plus, PENNY Card) depășește 60% pe ofertele de primă linie, în timp ce cotațiile europene la carcasă (VEZG 1.320 €/kg) indică formarea unui platou de stabilitate.",
     top_signals: [
       {
-        source: "Lidl / Catalog Săptămânal",
-        date: "29.10.2026",
+        source: "Lidl / Catalog Săptămânal WK45",
+        date: "02.11.2026",
         type: "PRICE_MOVE",
-        signal: "Lidl menține cel mai agresiv preț național la spata de porc f.o. la 13,90 lei/kg (cupon Lidl Plus, max. 6kg/bon).",
-        impact: "Forțează concurența de proximitate să ofere alternative competitive pe categoria KVI spată."
+        signal: "Lidl menține cel mai agresiv preț la ceafă de porc f.o. la 23,90 lei/kg și promovează cotletul la 16,90 lei/kg prin cupon Lidl Plus (față de 19,90 lei/kg standard). Deține unica ofertă activă de catalog pe spată de porc (18,90 lei/kg).",
+        impact: "Forțează concurența de proximitate să ofere alternative competitive pe categoria KVI proaspătă."
       },
       {
-        source: "Kaufland & Penny / Monitorizare Preț",
-        date: "28.10.2026",
+        source: "Kaufland & Penny / Rolling Update WK45",
+        date: "04.11.2026",
         type: "PRICE_PARITY",
-        signal: "Paritate de preț la pulpa de porc f.o. între Kaufland (K-Purland) și Penny (Hanul Boieresc) la pragul de 15,99 lei/kg.",
-        impact: "Stabilește nivelul minim psihologic de 16 lei/kg pentru pulpa de porc refrigerată în retail."
+        signal: "Kaufland conduce cotletul fără os cu 15,90 lei/kg (catalog 04–10.11), în timp ce pe pulpa fără os Kaufland (15,99 lei/kg standard) împarte liderul cu Penny (15,99 lei/kg cu card). Spata Kaufland (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din matricea activă conform regulii ACTIVE OFFERS ONLY.",
+        impact: "Stabilește noul prag minim de referință la 15,90–15,99 lei/kg pentru piesele majore de porc fără os în retailul modern."
       },
       {
-        source: "Pig Progress & pig333",
-        date: "29.10.2026",
+        source: "EU Pork Market (WK45 · 05.11.2026)",
+        date: "05.11.2026",
         type: "EU_MARKET",
-        signal: "Cotațiile carcasei de porc Clasa E din UE rămân moderate în Germania și Olanda pe fondul exporturilor asiatice temperate.",
+        signal: "Bursa germană VEZG se stabilizează la 1.320 €/kg SG (±0), în timp ce bursa franceză MPB coboară la 1.492 €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la 5.70 PLN/kg sub afluxul de carne germană.",
         impact: "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
       },
       {
-        source: "Revista Piața / ANPC",
-        date: "27.10.2026",
+        source: "Meat.Milk & Revista Piața",
+        date: "03.11.2026",
         type: "REGULATORY_COMPLIANCE",
-        signal: "Intensificarea controalelor privind transparența originii 100% România și conformitatea reducerilor tăiate din catalog.",
-        impact: "Necesitatea conformității absolute pe etichetele mărcii proprii pentru evitarea sancțiunilor și a riscurilor de imagine."
-      },
-      {
-        source: "Modern Buyer / Studiu Categorie",
-        date: "26.10.2026",
-        type: "CONSUMER_TREND",
-        signal: "Creșterea cererii pentru carne porționată la caserolă cu gramaj fix și termen extins de valabilitate MAP.",
-        impact: "Optimizarea comenzilor pe ambalaje calibrate pentru reducerea pierderilor la raft din magazinele de proximitate."
+        signal: "Sprijinul strategic pentru sectorul suin autohton intră în faza verificărilor finale (245 cereri), consolidând aprovizionarea cu origine România.",
+        impact: "Securizează contractele anuale cu fermierii locali și crește ponderea cărnii românești la raft."
       }
     ],
     retailer_dashboard: [
       {
         retailer: "Lidl",
         aggressiveness: "FOARTE RIDICATĂ",
-        primary_mechanic: "Cupon aplicație mobilă (Lidl Plus)",
-        lead_kvi_price: "Spată porc f.o. 13,90 lei/kg",
-        private_brand_share: "Peste 85%",
-        positioning_note: "Principalul formator de preț pe coșul de bază."
+        primary_mechanic: "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
+        lead_kvi_price: "Ceafă porc f.o. 23,90 lei/kg | Cotlet porc f.o. 16,90 lei/kg (cupon) / 19,90 lei/kg (std) | Spată porc f.o. 18,90 lei/kg",
+        private_brand_share: "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
+        positioning_note: "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg necondiționat."
       },
       {
         retailer: "Kaufland",
-        aggressiveness: "FOARTE RIDICATĂ",
-        primary_mechanic: "Reducere procentuală directă + Card",
-        lead_kvi_price: "Pulpă porc 15,99 lei/kg | Cotlet 16,99 lei/kg",
-        private_brand_share: "Peste 70% (K-Purland)",
-        positioning_note: "Volum mare și diversitate de piese tranșate."
+        aggressiveness: "RIDICATĂ",
+        primary_mechanic: "Reducere directă de catalog (-20% la -33%) 04–10.11",
+        lead_kvi_price: "Cotlet porc f.o. 15,90 lei/kg | Pulpă porc f.o. 15,99 lei/kg | Spată porc f.o. N/V (expirată la 03.11)",
+        private_brand_share: "Peste 75% din carne sub mărcile K-Purland și Vreau din România",
+        positioning_note: "Lider de preț absolut pe cotlet f.o. (15,90 lei/kg) și pulpă f.o. (15,99 lei/kg) fără condiționare de card. Spata de 14,90 lei/kg a expirat la 03.11."
       },
       {
         retailer: "Penny",
         aggressiveness: "RIDICATĂ",
-        primary_mechanic: "Scanare PENNY Card la casă (-30%)",
-        lead_kvi_price: "Pulpă porc Hanul Boieresc 15,99 lei/kg",
-        private_brand_share: "Aproximativ 65%",
-        positioning_note: "Focalizare pe originea autohtonă 'Hanul Boieresc'."
-      },
-      {
-        retailer: "Profi",
-        aggressiveness: "MODERATĂ / OPORTUNITATE",
-        primary_mechanic: "Cuponiada & Promoții zilnice aplicație",
-        lead_kvi_price: "Pulpă și spată porc 17,99 – 19,99 lei/kg",
-        private_brand_share: "În creștere (Ferma din Deal / Proxi)",
-        positioning_note: "Punct forte: proximitatea imediată și flexibilitatea cartierului."
+        primary_mechanic: "Preț redus cu scanare PENNY Card (-22% la -27%)",
+        lead_kvi_price: "Pulpă porc f.o. 15,99 lei/kg (card) / 22,99 lei/kg (std) | Cotlet porc f.o. 17,99 lei/kg (card) | Piept pui dezosat 26,90 lei/kg",
+        private_brand_share: "Peste 80% din carnea proaspătă sub marca proprie Hanul Boieresc (100% România)",
+        positioning_note: "Paritate pe pulpă f.o. la 15,99 lei/kg prin card de fidelitate; lider pe piept de pui dezosat la 26,90 lei/kg."
       },
       {
         retailer: "Carrefour",
-        aggressiveness: "MODERATĂ",
-        primary_mechanic: "Cupoane ActForFood & pachete 2+1",
-        lead_kvi_price: "Pulpă porc f.o. 18,49 lei/kg",
-        private_brand_share: "55-60% (Filiera Calității)",
-        positioning_note: "Accent pe trasabilitate și calitate certificată."
+        aggressiveness: "MEDIE",
+        primary_mechanic: "Cupoane ActForFood în aplicație + Promoții 2+1 la preț special",
+        lead_kvi_price: "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)",
+        private_brand_share: "55-60% din volum acoperit de Filiera Calității Carrefour și Drag de România",
+        positioning_note: "Diferențiere prin trasabilitate și calitatea superioară a lanțului scurt; absență promoții agresive pe KVI proaspete de bază în săptămâna curentă."
+      },
+      {
+        retailer: "Profi",
+        aggressiveness: "MEDIE-RIDICATĂ",
+        primary_mechanic: "Cuponiada din aplicație + Promoții locale de proximitate",
+        lead_kvi_price: "Neinclus în matricea promoțională 5×5 (promoții locale de proximitate și Cuponiada)",
+        private_brand_share: "Circa 65% sub brandul Ferma din Deal și mărci partenere",
+        positioning_note: "Accesibilitate geografică maximă în cartiere și mediul rural; promoții rapide de weekend."
       },
       {
         retailer: "Auchan",
-        aggressiveness: "MODERATĂ",
-        primary_mechanic: "Cashback pe card MyClub Auchan",
-        lead_kvi_price: "Pulpă porc caserolă mare 17,99 lei/kg",
-        private_brand_share: "Aproximativ 50%",
-        positioning_note: "Atragere clienți prin gramaje XXL și economie de volum."
+        aggressiveness: "MEDIE",
+        primary_mechanic: "Cashback MyClub Auchan (5-10% bani înapoi ca bonus)",
+        lead_kvi_price: "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)",
+        private_brand_share: "Aproximativ 50% din volum reprezentat de Filiera Auchan și Pouce",
+        positioning_note: "Atragerea familiilor mari prin caserole de volum economic; fără ofertă promoțională confirmată pe cele 5 KVI în WK45."
       },
       {
         retailer: "Mega Image",
-        aggressiveness: "PRUDENTĂ / PREMIUM",
-        primary_mechanic: "Card Connect & reduceri selective de weekend",
-        lead_kvi_price: "Cotlet feliat 24,99 – 27,99 lei/kg",
-        private_brand_share: "40-45% (Gusturi Românești)",
-        positioning_note: "Targetează comoditatea și prepararea rapidă, marje mai mari."
+        aggressiveness: "MODERATĂ",
+        primary_mechanic: "Prețuri speciale Card Connect + Pachete proaspete ready-to-cook",
+        lead_kvi_price: "Neinclus în matricea promoțională 5×5 (orientare premium pe piese feliate porționate)",
+        private_brand_share: "Peste 60% prin Gusturi Românești și Mega Apetit",
+        positioning_note: "Poziționare premium bazată pe proximitate urbană rapidă, comoditate (ready-to-cook) și carne porționată fin."
       }
     ],
     viral_alerts: [
       {
-        category: "Preț & Transparență",
+        category: "Prețuri la Raft vs. Aplicație",
+        status: "SENSIBILITATE RIDICATĂ",
+        detail: "Consumatorii semnalează pe rețelele sociale discrepanțe la casă când cupoanele din aplicație nu sunt activate înainte de scanare (Lidl Plus, PENNY Card)."
+      },
+      {
+        category: "Origine România 100%",
         status: "ATENȚIE SPORITĂ",
-        detail: "Consumatorii reclamă diferențele mari de preț când uită să scaneze cardul de fidelitate sau nu activează cupoanele din aplicație."
+        detail: "Cumpărătorii verifică atent eticheta ovală de sănătate pentru a confirma proveniența cărnii din abatoare românești autorizate."
       },
       {
         category: "Prospețime & Aspect",
@@ -919,11 +929,11 @@ const BASELINE_DATA: RetailMediaData = {
         id: "price-positioning",
         title: "PRICE & COMPETITIVE POSITIONING",
         domain: "Arhitectură de Preț & Promoții",
-        insight: "Discounterii (Lidl, Kaufland, Penny) mențin o presiune promoțională agresivă pe piesele KVI (spată la 13,90 lei/kg, pulpă la paritate de 15,99 lei/kg), condiționând peste 65% din reduceri de scanarea cardului digital din aplicație.",
-        business_implication: "Se consolidează un prag psihologic strict pentru consumator, obligând retailerii să își apere cota de piață fără a declanșa un război al prețurilor ce ar eroda marja brută a categoriei.",
-        tactical_opportunity: "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
-        recommended_action: "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
-        source_and_date: "Cataloage promoționale oficiale, aplicații mobile de fidelitate & PROMO WEEKLY | 28–30.10.2026"
+        insight: "În WK45, discounterii (Kaufland, Lidl, Penny) concentrează bătălia pe cotlet (15,90 lei/kg la Kaufland; 16,90 lei/kg cupon Lidl Plus) și pulpă (15,99 lei/kg la Kaufland și Penny Card). Oferta Kaufland la spată (14,90 lei/kg) a expirat la 03.11, lăsând Lidl drept singura ofertă activă de catalog la 18,90 lei/kg.",
+        business_implication: "Pragul de acces la carne de porc fără os se reconfigurează în jurul valorii de 15,90–15,99 lei/kg. Condiționarea prin card/cupon devine mecanism de diferențiere față de reducerile directe de catalog.",
+        tactical_opportunity: "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+        recommended_action: "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+        source_and_date: "Cataloage promoționale oficiale, aplicații mobile & PROMO WEEKLY | WK45 2026 (2026/WK45_258a510d)"
       },
       {
         id: "category-growth",
@@ -933,17 +943,17 @@ const BASELINE_DATA: RetailMediaData = {
         business_implication: "Mărcile proprii locale securizează loialitatea și reduc sensibilitatea la preț, în timp ce tehnologia MAP cu absorbant transparent reduce pierderile operaționale (shrinkage) cu până la 18%.",
         tactical_opportunity: "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
         recommended_action: "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
-        source_and_date: "Revista Progresiv, Modern Buyer & Retail.ro | 26–29.10.2026"
+        source_and_date: "Revista Progresiv, Modern Buyer & Retail.ro | Noiembrie 2026"
       },
       {
         id: "market-signals",
         title: "MARKET OPPORTUNITIES & EARLY SIGNALS",
         domain: "Aprovizionare & Piață Europeană",
-        insight: "Cotațiile europene la carcasă (VEZG Germania la 1,320 €/kg, Spania Mercolleida la 1,550 €/kg) și analizele Rabobank / EuroMeatNews indică o stabilitate a ofertei pe piața internă a UE pe fondul exporturilor asiatice temperate.",
+        insight: "Cotațiile europene de referință (VEZG Germania 1.320 €/kg SG, Spania Mercolleida 1,550 €/kg viu, Franța MPB 1.492 €/kg carcasă) indică stabilizarea ofertei pe piața internă UE după corecțiile de toamnă.",
         business_implication: "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
         tactical_opportunity: "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
         recommended_action: "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
-        source_and_date: "EU PORK MARKET, Eurocarne, RaboResearch & Pig Progress | 28–30.10.2026"
+        source_and_date: "EU PORK MARKET (WK45 · 05.11.2026), Eurocarne, RaboResearch & Pig Progress"
       }
     ]
   }
@@ -974,8 +984,12 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
         const json = await res.json();
         if (json && json.retailers && json.publications) {
           setData(prev => {
-            // Update only if timestamp or articles changed
-            if (prev.updated !== json.updated || JSON.stringify(prev.publications) !== JSON.stringify(json.publications)) {
+            // Update if timestamp, publications, or competitive intelligence changed
+            if (
+              prev.updated !== json.updated ||
+              JSON.stringify(prev.publications) !== JSON.stringify(json.publications) ||
+              JSON.stringify(prev.competitive_intelligence) !== JSON.stringify(json.competitive_intelligence)
+            ) {
               return json;
             }
             return prev;
@@ -1059,11 +1073,9 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     loadLatestData();
   }, [loadLatestData]);
 
-  // Run when returning to 'Media Monitor' tab
+  // Run when switching tabs
   useEffect(() => {
-    if (selectedTab === 'press') {
-      loadLatestData();
-    }
+    loadLatestData();
   }, [selectedTab, loadLatestData]);
 
   // Run when window regains focus or visibility changes (user returns to page)

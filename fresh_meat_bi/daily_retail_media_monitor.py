@@ -37,6 +37,11 @@ PUBLIC_DATA_DIR = ROOT_DIR / "public" / "data"
 OUTPUT_FILE = PUBLIC_DATA_DIR / "retail_media_export.json"
 VERIFIED_FILE = BASE_DIR / "verified_publications.json"
 
+try:
+    from strategic_category_intelligence import recalculate_competitive_intelligence
+except ImportError:
+    from fresh_meat_bi.strategic_category_intelligence import recalculate_competitive_intelligence
+
 CTX = ssl.create_default_context()
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 FreshMeatBI/3.0",
@@ -746,156 +751,8 @@ def generate_retail_media_data():
         # EXACT 14 PUBLICAȚII SPECIALIZATE (8 RO + 6 INTERNAȚIONALE)
         "publications": pubs,
 
-        # COMPETITIVE INTELLIGENCE & RECOMANDĂRI
-        "competitive_intelligence": {
-            "executive_summary": "Sinteza comercială zilnică relevă o presiune promoțională acută exercitată de discounteri (Kaufland, Lidl, Penny) pe piesele cheie de porc (spată și pulpă f.o.). Condiționarea reducerilor prin aplicații mobile depășește 60% din ofertele de primă linie. În paralel, cotațiile europene la carcasă rămân la un nivel stabil, creând un context favorabil pentru negocierea contractelor de aprovizionare pe trimestrul IV.",
-
-            "top_signals": [
-                {
-                    "source": "Lidl / Catalog Săptămânal",
-                    "date": "02.11.2026",
-                    "type": "PRICE_MOVE",
-                    "signal": "Lidl menține cel mai agresiv preț național la ceafă de porc f.o. la 23,90 lei/kg și promovează cotletul la 19,90 lei/kg prin cupon Lidl Plus.",
-                    "impact": "Forțează concurența de proximitate să ofere alternative competitive pe categoria KVI proaspătă."
-                },
-                {
-                    "source": "Kaufland & Penny / Monitorizare Preț",
-                    "date": "02.11.2026",
-                    "type": "PRICE_PARITY",
-                    "signal": "Kaufland securizează cel mai mic preț la spata de porc (14,90 lei/kg), în timp ce Penny conduce pulpa la 15,99 lei/kg prin PENNY card.",
-                    "impact": "Stabilește nivelul minim psihologic de 15-16 lei/kg pentru piesele de bază în retail."
-                },
-                {
-                    "source": "Pig Progress & EuroMeatNews",
-                    "date": "02.11.2026",
-                    "type": "EU_MARKET",
-                    "signal": "Comisia Europeană estimează o stabilitate cu ușoară creștere a producției de carne de porc în 2026, pe fondul cererii asiatice temperate.",
-                    "impact": "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
-                },
-                {
-                    "source": "Meat.Milk & Revista Piața",
-                    "date": "03.11.2026",
-                    "type": "REGULATORY_COMPLIANCE",
-                    "signal": "Sprijinul strategic pentru sectorul suin autohton intră în faza verificărilor finale (245 cereri), consolidând aprovizionarea cu origine România.",
-                    "impact": "Securizează contractele anuale cu fermierii locali și crește ponderea cărnii românești la raft."
-                }
-            ],
-
-            "retailer_dashboard": [
-                {
-                    "retailer": "Lidl",
-                    "aggressiveness": "FOARTE RIDICATĂ",
-                    "primary_mechanic": "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
-                    "lead_kvi_price": "Ceafă porc f.o. 23,90 lei/kg | Cotlet porc f.o. 19,90 lei/kg (cupon)",
-                    "private_brand_share": "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
-                    "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; cele mai mici prețuri condiționate de scanarea cardului la casă."
-                },
-                {
-                    "retailer": "Kaufland",
-                    "aggressiveness": "RIDICATĂ",
-                    "primary_mechanic": "Reducere directă de catalog (-21% la -33%) + Kaufland Card",
-                    "lead_kvi_price": "Spată porc f.o. 14,90 lei/kg | Cotlet porc f.o. 16,99 lei/kg",
-                    "private_brand_share": "Peste 75% din carne sub mărcile K-Purland și Vreau din România",
-                    "positioning_note": "Dominare pe coșul complet săptămânal; reduceri agresive necondiționate și oferte exclusive prin Kaufland Card."
-                },
-                {
-                    "retailer": "Penny",
-                    "aggressiveness": "RIDICATĂ",
-                    "primary_mechanic": "Preț redus cu scanare PENNY Card (-25% la -30%)",
-                    "lead_kvi_price": "Pulpă porc f.o. 15,99 lei/kg (card) | Piept pui dezosat 26,90 lei/kg",
-                    "private_brand_share": "Peste 80% din carnea proaspătă sub marca proprie Hanul Boieresc (100% România)",
-                    "positioning_note": "Competiție directă cu Kaufland pe produsele KVI esențiale și comunicare masivă pe originea autohtonă."
-                },
-                {
-                    "retailer": "Carrefour",
-                    "aggressiveness": "MEDIE",
-                    "primary_mechanic": "Cupoane ActForFood în aplicație + Promoții 2+1 la preț special",
-                    "lead_kvi_price": "Preț echilibrat pe filieră controlată",
-                    "private_brand_share": "55-60% din volum acoperit de Filiera Calității Carrefour și Drag de România",
-                    "positioning_note": "Diferențiere prin trasabilitate și calitatea superioară a lanțului scurt de aprovizionare locală."
-                },
-                {
-                    "retailer": "Profi",
-                    "aggressiveness": "MEDIE-RIDICATĂ",
-                    "primary_mechanic": "Cuponiada din aplicație + Promoții locale de proximitate",
-                    "lead_kvi_price": "Promoții de volum pe carnea proaspătă",
-                    "private_brand_share": "Circa 65% sub brandul Ferma din Deal și mărci partenere",
-                    "positioning_note": "Accesibilitate geografică maximă în cartiere și mediul rural; promoții rapide de weekend."
-                },
-                {
-                    "retailer": "Auchan",
-                    "aggressiveness": "MEDIE",
-                    "primary_mechanic": "Cashback MyClub Auchan (5-10% bani înapoi ca bonus)",
-                    "lead_kvi_price": "Format economic familie pe piesele mari",
-                    "private_brand_share": "Aproximativ 50% din volum reprezentat de Filiera Auchan și Pouce",
-                    "positioning_note": "Atragerea familiilor mari prin caserole de volum economic și fidelizare prin credit direct pe cardul MyClub."
-                },
-                {
-                    "retailer": "Mega Image",
-                    "aggressiveness": "MODERATĂ",
-                    "primary_mechanic": "Prețuri speciale Card Connect + Pachete proaspete ready-to-cook",
-                    "lead_kvi_price": "Piese feliate gourmet; preț per kg superior pieței",
-                    "private_brand_share": "Peste 60% prin Gusturi Românești și Mega Apetit",
-                    "positioning_note": "Poziționare premium bazată pe proximitate urbană rapidă, comoditate (ready-to-cook) și carne porționată fin."
-                }
-            ],
-
-            "viral_alerts": [
-                {
-                    "category": "Prețuri la Raft vs. Aplicație",
-                    "status": "SENSIBILITATE RIDICATĂ",
-                    "detail": "Consumatorii semnalează pe rețelele sociale discrepanțe la casă când cupoanele din aplicație nu sunt activate înainte de scanare."
-                },
-                {
-                    "category": "Origine România 100%",
-                    "status": "ATENȚIE SPORITĂ",
-                    "detail": "Cumpărătorii verifică atent eticheta ovală de sănătate pentru a confirma proveniența cărnii din abatoare românești autorizate."
-                },
-                {
-                    "category": "Prospețime & Aspect",
-                    "status": "SATISFĂCĂTOR",
-                    "detail": "Caserolele MAP cu vizibilitate clară pe ambele părți sunt preferate categoric în fața tăvițelor cu absorbant opac."
-                },
-                {
-                    "category": "Disponibilitate la Raft",
-                    "status": "SENSIBIL DUPĂ-AMIAZA",
-                    "detail": "Produsele KVI aflate pe prima pagină de catalog se epuizează rapid după ora 17:00 în magazinele mici de proximitate."
-                }
-            ],
-
-            "strategic_insights": [
-                {
-                    "id": "price-positioning",
-                    "title": "PRICE & COMPETITIVE POSITIONING",
-                    "domain": "Arhitectură de Preț & Promoții",
-                    "insight": "Discounterii (Kaufland, Lidl, Penny) mențin o presiune promoțională agresivă pe piesele KVI (spată la 14,90 lei/kg, pulpă la 15,99 lei/kg), condiționând peste 65% din reduceri de scanarea cardului digital din aplicație.",
-                    "business_implication": "Se consolidează un prag psihologic strict pentru consumator, obligând retailerii să își apere cota de piață fără a declanșa un război al prețurilor ce ar eroda marja brută a categoriei.",
-                    "tactical_opportunity": "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
-                    "recommended_action": "Segmentarea ofertei prin ambalaje calibrate (600g–800g), promovarea pieselor alternative cu marjă superioară (cotlet, ceafă) și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
-                    "source_and_date": "Cataloage promoționale oficiale, aplicații mobile de fidelitate & PROMO WEEKLY | WK45 2026"
-                },
-                {
-                    "id": "category-growth",
-                    "title": "CATEGORY GROWTH & SHOPPER INSIGHTS",
-                    "domain": "Sortimentație & Comportament Shopper",
-                    "insight": "Peste 70% din volumele de carne de porc vândute în retailul modern provin din mărcile proprii cu origine 100% România ambalate MAP, cumpărătorii prioritizând trasabilitatea garantată și prospețimea vizibilă.",
-                    "business_implication": "Mărcile proprii locale securizează loialitatea și reduc sensibilitatea la preț, în timp ce tehnologia MAP cu absorbant transparent reduce pierderile operaționale (shrinkage) cu până la 18%.",
-                    "tactical_opportunity": "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
-                    "recommended_action": "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
-                    "source_and_date": "Revista Progresiv, Modern Buyer & Retail.ro | Noiembrie 2026"
-                },
-                {
-                    "id": "market-signals",
-                    "title": "MARKET OPPORTUNITIES & EARLY SIGNALS",
-                    "domain": "Aprovizionare & Piață Europeană",
-                    "insight": "Cotațiile europene la carcasă (VEZG Germania la 1,320 €/kg, Spania Mercolleida la 1,550 €/kg) și analizele Rabobank / EuroMeatNews indică o stabilitate a ofertei pe piața internă a UE pe fondul exporturilor asiatice temperate.",
-                    "business_implication": "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
-                    "tactical_opportunity": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
-                    "recommended_action": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
-                    "source_and_date": "EU PORK MARKET, Eurocarne, RaboResearch & Pig Progress | Noiembrie 2026"
-                }
-            ]
-        }
+        # COMPETITIVE INTELLIGENCE & RECOMANDĂRI (Sincronizate automat cu Promo Weekly)
+        "competitive_intelligence": recalculate_competitive_intelligence()
     }
 
     PUBLIC_DATA_DIR.mkdir(parents=True, exist_ok=True)

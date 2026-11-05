@@ -1,12 +1,12 @@
 {
   "execution_date": "05.11.2026",
-  "start_time_bucharest": "2026-11-05 14:53:47",
-  "end_time_bucharest": "2026-11-05 14:54:25",
-  "start_time_iso": "2026-11-05T14:53:47.770418+02:00",
-  "end_time_iso": "2026-11-05T14:54:25.313673+02:00",
-  "duration_seconds": 37.54,
+  "start_time_bucharest": "2026-11-05 20:32:07",
+  "end_time_bucharest": "2026-11-05 20:32:25",
+  "start_time_iso": "2026-11-05T20:32:07.310822+02:00",
+  "end_time_iso": "2026-11-05T20:32:25.256108+02:00",
+  "duration_seconds": 17.95,
   "total_publications": 14,
-  "total_new_articles_accepted": 28,
+  "total_new_articles_accepted": 29,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -52,8 +52,13 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 4,
+      "new_articles_count": 5,
       "new_accepted": [
+        {
+          "title": "Burger King deschide primul său restaurant din Turda, respectiv al 44-lea la nivel național",
+          "published_at": "05.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/burger-king-deschide-primul-sau-restaurant-din-turda-respectiv-al-44-lea-la-nivel-national/"
+        },
         {
           "title": "Horeca Trading Distribution își extinde capacitatea de depozitare cu 80%",
           "published_at": "05.11.2026",
@@ -85,18 +90,18 @@
       "name": "Modern Buyer",
       "website": "https://modernbuyer.ro/",
       "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 5,
+      "candidates_scanned": 4,
       "new_articles_count": 2,
       "new_accepted": [
+        {
+          "title": "Ce speakeri urcă pe scenă la RO Fruits & Vegetables Show 2026",
+          "published_at": "05.11.2026",
+          "url": "https://modernbuyer.ro/ce-speakeri-urca-pe-scena-la-ro-fruits-vegetables-show-2026/"
+        },
         {
           "title": "Purcari lansează în România gama de vinuri Parcela și ajunge la investiții de 30 mil. euro în 2026",
           "published_at": "05.11.2026",
           "url": "https://modernbuyer.ro/purcari-lanseaza-in-romania-gama-de-vinuri-parcela-si-ajunge-la-investitii-de-30-mil-euro-in-2026/"
-        },
-        {
-          "title": "EcoCert: Doar 6% din suprafața agricolă a României are certificare Bio. Cum arată viitorul agriculturii ecologice?",
-          "published_at": "31.10.2026",
-          "url": "https://modernbuyer.ro/ecocert-doar-6-din-suprafata-agricola-a-romaniei-are-certificare-bio-cum-arata-viitorul-agriculturii-ecologice/"
         }
       ],
       "rejected_count": 0,
@@ -320,19 +325,19 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Costco destina 80 millones de euros a la apertura de su tercera tienda en Madrid",
+          "title": "Bon Preu invierte 58 millones en cinco nuevas aperturas este último trimestre",
           "published_at": "05.11.2026",
-          "url": "https://www.foodretail.es/retailers/costco-destina-80-millones-de-euros-a-la-apertura-de-su-tercera-tienda-en-madrid.html"
+          "url": "https://www.foodretail.es/retailers/bon-preu-invierte-58-millones-en-cinco-nuevas-aperturas-este-ultimo-trimestre.html"
         },
         {
-          "title": "5 Rusia, principal sospechoso del ciberataque a los supermercados europeos, que no ha afectado a España",
-          "published_at": "04.11.2026",
-          "url": "https://www.foodretail.es/retailers/rusia-principal-sospechoso-del-ciberataque-a-los-supermercados-europeos-que-no-ha-afectado-a-espana.html"
+          "title": "Dia pone fin a su última aventura internacional: vende su filial argentina por 55 millones de dólares",
+          "published_at": "05.11.2026",
+          "url": "https://www.foodretail.es/retailers/dia-pone-fin-a-su-ultima-aventura-internacional-vende-su-filial-argentina-por-55-millones-de-dolares.html"
         },
         {
-          "title": "2 Spar Gran Canaria reabre su tienda Spar La Ciel en Santa Lucía de Tirajana",
-          "published_at": "04.11.2026",
-          "url": "https://www.foodretail.es/retailers/spar-gran-canaria-reabre-su-tienda-spar-la-ciel-en-santa-lucia-de-tirajana.html"
+          "title": "Aldi, Dia y Lidl España, entre las cadenas que ganan más compradores de Europa",
+          "published_at": "05.11.2026",
+          "url": "https://www.foodretail.es/retailers/aldi-dia-y-lidl-espana-entre-las-cadenas-que-ganan-mas-compradores-de-europa.html"
         }
       ],
       "rejected_count": 0,

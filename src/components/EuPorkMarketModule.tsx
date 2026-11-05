@@ -35,6 +35,10 @@ interface EuBenchmarkRow {
   trend: string;
   source: string;
   source_date: string;
+  source_publication_date?: string;
+  source_url?: string;
+  freshness_status?: 'CURRENT_VERIFIED' | 'LATEST_AVAILABLE' | 'NQ' | 'N/V';
+  audit_note?: string;
   status: 'VERIFIED' | 'NQ' | 'N/V';
 }
 
@@ -435,36 +439,46 @@ export default function EuPorkMarketModule({
                   Ordine canonică fixă în protocolul v2.6. Fără amestec între carcasă și greutate vie.
                 </p>
               </div>
-              <span className="text-xs text-slate-400 bg-slate-800 px-2.5 py-1 rounded-full border border-slate-700">
-                {data.rows?.filter(r => r.status === 'VERIFIED').length || 7} din {data.rows?.length || 8} cotații VERIFIED
-              </span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/60 font-medium">
+                  {data.rows?.filter(r => (r.freshness_status || r.status) === 'CURRENT_VERIFIED' || (r.status === 'VERIFIED' && !r.freshness_status)).length || 4} CURRENT VERIFIED
+                </span>
+                <span className="text-[11px] text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-800/60 font-medium">
+                  {data.rows?.filter(r => r.freshness_status === 'LATEST_AVAILABLE').length || 3} LATEST AVAILABLE
+                </span>
+                <span className="text-[11px] text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700 font-medium">
+                  {data.rows?.filter(r => r.status === 'NQ').length || 1} NQ
+                </span>
+              </div>
             </div>
 
             <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800">
               <div className="sm:hidden px-3 py-1.5 bg-slate-800/40 border-b border-slate-800 text-[11px] text-slate-400 text-center flex items-center justify-center gap-1">
                 <span>← Glisați orizontal pentru toate cele 8 piețe UE →</span>
               </div>
-              <table className="w-full text-left text-xs text-slate-300 min-w-[680px]">
+              <table className="w-full text-left text-xs text-slate-300 min-w-[720px]">
                 <thead className="bg-slate-800/80 text-slate-200 uppercase font-semibold text-[11px] border-b border-slate-700">
                   <tr>
                     <th className="py-3 px-3">#</th>
                     <th className="py-3 px-3">Piață UE</th>
                     <th className="py-3 px-4">Cotație Oficială</th>
-                    <th className="py-3 px-3 text-right">Preț Curent</th>
+                    <th className="py-3 px-3 text-right">Preț</th>
                     <th className="py-3 px-3">Unitate</th>
                     <th className="py-3 px-3 text-center">WoW</th>
                     <th className="py-3 px-3 text-center">Tendință</th>
-                    <th className="py-3 px-4">Sursă & Dată</th>
+                    <th className="py-3 px-4">Sursă & Dată Publicare</th>
                     <th className="py-3 px-3">Bază Calcul</th>
-                    <th className="py-3 px-3 text-center">Statut</th>
+                    <th className="py-3 px-3 text-center">Freshness & Statut</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800 font-mono">
                   {data.rows?.map((row, idx) => {
-                    const isVerified = row.status === 'VERIFIED';
                     const isWeaker = row.trend === 'WEAKENING';
                     const isRising = row.trend === 'RISING';
                     const isStable = row.trend === 'STABLE';
+                    const isLatest = row.trend === 'LATEST' || row.freshness_status === 'LATEST_AVAILABLE';
+                    const isNQ = row.status === 'NQ' || row.freshness_status === 'NQ';
+                    const isCurrent = row.freshness_status === 'CURRENT_VERIFIED' || (!row.freshness_status && row.status === 'VERIFIED');
 
                     return (
                       <tr key={row.market} className="hover:bg-slate-800/40 transition">
@@ -484,7 +498,8 @@ export default function EuPorkMarketModule({
                         </td>
                         <td className={`py-3 px-3 text-center font-bold ${
                           String(row.wow).startsWith('+') ? 'text-emerald-400' : 
-                          String(row.wow).startsWith('-') ? 'text-red-400' : 'text-slate-300'
+                          String(row.wow).startsWith('-') ? 'text-red-400' : 
+                          row.wow === '—' ? 'text-slate-500' : 'text-slate-300'
                         }`}>
                           {row.wow}
                         </td>
@@ -504,24 +519,44 @@ export default function EuPorkMarketModule({
                               <Minus className="w-3 h-3" /> STABLE
                             </span>
                           )}
-                          {!isWeaker && !isRising && !isStable && (
+                          {isLatest && !isWeaker && !isRising && !isStable && (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20" title="Cotație anterioară disponibilă (ședință curentă în desfășurare)">
+                              LATEST
+                            </span>
+                          )}
+                          {isNQ && (
+                            <span className="text-slate-400 font-mono text-[11px]">NQ</span>
+                          )}
+                          {!isWeaker && !isRising && !isStable && !isLatest && !isNQ && (
                             <span className="text-slate-400 font-mono text-[11px]">{row.trend}</span>
                           )}
                         </td>
                         <td className="py-3 px-4 text-slate-300 font-sans text-[11px]">
-                          {row.source_date || row.source}
+                          <div className="font-medium text-slate-200">{row.source_date || row.source}</div>
+                          {row.source_publication_date && (
+                            <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5">
+                              <Calendar className="w-2.5 h-2.5 text-slate-500" />
+                              <span>Publ: {row.source_publication_date}</span>
+                            </div>
+                          )}
                         </td>
                         <td className="py-3 px-3 font-sans text-slate-400 text-[11px]">
                           {row.basis}
                         </td>
                         <td className="py-3 px-3 text-center font-sans">
-                          {isVerified ? (
-                            <span className="px-2 py-0.5 text-[11px] rounded bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30">
-                              VERIFIED
+                          {isCurrent && (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] rounded bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30 whitespace-nowrap">
+                              <CheckCircle2 className="w-2.5 h-2.5" /> CURRENT VERIFIED
                             </span>
-                          ) : (
-                            <span className="px-2 py-0.5 text-[11px] rounded bg-slate-800 text-slate-400 font-semibold border border-slate-700">
-                              {row.status}
+                          )}
+                          {row.freshness_status === 'LATEST_AVAILABLE' && (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] rounded bg-amber-500/20 text-amber-300 font-semibold border border-amber-500/30 whitespace-nowrap" title="Cotație oficială din ședința anterioară; ședința săptămânii curente este în desfășurare">
+                              <Clock className="w-2.5 h-2.5" /> LATEST AVAILABLE
+                            </span>
+                          )}
+                          {isNQ && (
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] rounded bg-slate-800 text-slate-400 font-semibold border border-slate-700 whitespace-nowrap" title="Licitație cu acces restricționat / fără preț clearing formulat public">
+                              <Lock className="w-2.5 h-2.5" /> NQ (RESTRICTED)
                             </span>
                           )}
                         </td>

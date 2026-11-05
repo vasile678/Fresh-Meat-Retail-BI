@@ -11,8 +11,11 @@
       "unit": "€/kg SG",
       "wow": "0.000",
       "trend": "STABLE",
-      "source": "VEZG | 04.11",
-      "source_date": "VEZG | 04.11",
+      "source": "VEZG | 05.11",
+      "source_date": "VEZG | 05.11",
+      "source_publication_date": "05.11.2026",
+      "freshness_status": "CURRENT_VERIFIED",
+      "official_url": "https://www.vezg.de/",
       "status": "VERIFIED"
     },
     {
@@ -23,26 +26,35 @@
       "trend": "NQ",
       "source": "ISN | 03.11",
       "source_date": "ISN | 03.11",
+      "source_publication_date": "03.11.2026",
+      "freshness_status": "NQ",
+      "official_url": "https://www.schweine.net/markt/marktpreise.html",
       "status": "NQ"
     },
     {
       "market": "Spain Mercolleida",
       "price": "1.550",
       "unit": "€/kg live",
-      "wow": "0.000",
-      "trend": "STABLE",
+      "wow": "—",
+      "trend": "LATEST",
       "source": "Mercolleida | 29.10",
       "source_date": "Mercolleida | 29.10",
+      "source_publication_date": "29.10.2026",
+      "freshness_status": "LATEST_AVAILABLE",
+      "official_url": "https://www.mercolleida.com/es/servicios/mercados/porcino",
       "status": "VERIFIED"
     },
     {
       "market": "Italy CUN 156–200 kg",
       "price": "1.915",
       "unit": "€/kg live",
-      "wow": "0.000",
-      "trend": "STABLE",
+      "wow": "—",
+      "trend": "LATEST",
       "source": "CUN/Crefis | 29.10",
       "source_date": "CUN/Crefis | 29.10",
+      "source_publication_date": "29.10.2026",
+      "freshness_status": "LATEST_AVAILABLE",
+      "official_url": "https://www.crefis.it/",
       "status": "VERIFIED"
     },
     {
@@ -53,6 +65,9 @@
       "trend": "STABLE",
       "source": "Vion | WK45",
       "source_date": "Vion | WK45",
+      "source_publication_date": "02.11.2026",
+      "freshness_status": "CURRENT_VERIFIED",
+      "official_url": "https://www.vionfarming.nl/varkens/vleesvarkens/prijzen/",
       "status": "VERIFIED"
     },
     {
@@ -63,6 +78,9 @@
       "trend": "STABLE",
       "source": "DC | WK45",
       "source_date": "DC | WK45",
+      "source_publication_date": "02.11.2026",
+      "freshness_status": "CURRENT_VERIFIED",
+      "official_url": "https://ejer.danishcrown.com/da-dk/andelsejere/gris/notering/aktuel-grisenotering/",
       "status": "VERIFIED"
     },
     {
@@ -73,27 +91,33 @@
       "trend": "WEAKENING",
       "source": "MPB | 02.11",
       "source_date": "MPB | 02.11",
+      "source_publication_date": "02.11.2026",
+      "freshness_status": "CURRENT_VERIFIED",
+      "official_url": "https://www.marche-porc-francais.com/",
       "status": "VERIFIED"
     },
     {
       "market": "Poland (ZMI) Class E",
       "price": "5.70",
       "unit": "PLN/kg Class E",
-      "wow": "-0.20",
-      "trend": "WEAKENING",
-      "source": "MRiRW/POLPIG | WK45",
-      "source_date": "MRiRW/POLPIG | WK45",
+      "wow": "—",
+      "trend": "LATEST",
+      "source": "MRiRW/POLPIG | T44",
+      "source_date": "MRiRW/POLPIG | T44",
+      "source_publication_date": "02.11.2026",
+      "freshness_status": "LATEST_AVAILABLE",
+      "official_url": "https://polpig.pl/notowania/",
       "status": "VERIFIED"
     }
   ],
   "market_signal_title": "MARKET SIGNAL (WK45)",
   "market_signal": "FLOOR FORMATION IN GERMANY, PERSISTING DOWNWARD DRIFT IN PERIPHERY",
-  "market_signal_body": "German VEZG halts slide at 1.320 €/kg SG after previous cuts, setting short-term floor.\\nFrench MPB edges lower to 1.492 €/kg; Polish Class E drops sharply to 5.70 PLN/kg under German carcass surplus.\\nDanish Crown (7.50 DKK/kg) and Vion (1.11 €/kg) hold stable.",
+  "market_signal_body": "German VEZG halts slide at 1.320 €/kg SG after previous cuts, setting short-term floor.\\nFrench MPB edges lower to 1.492 €/kg (-0.010); Danish Crown (7.50 DKK/kg) and Vion (1.11 €/kg) hold stable.\\nSpain Mercolleida (1.550 €/kg live), Italy CUN (1.915 €/kg live), and Poland Class E (5.70 PLN/kg) reflect latest available official baselines pending new sessions.",
   "takeaways": [
     "Germany VEZG stabilizes at 1.320 €/kg SG (±0), testing autumn support.",
-    "France MPB falls further to 1.492 €/kg (-0.010 WoW); Poland Class E retreats to 5.70 PLN/kg.",
-    "Spain Mercolleida steady at 1.550 €/kg live; Italy CUN holds at 1.915 €/kg live.",
-    "Danish Crown unchanged at 7.50 DKK/kg; Vion stable at 1.11 €/kg SG."
+    "France MPB falls further to 1.492 €/kg (-0.010 WoW); Vion (1.11 €/kg) and Danish Crown (7.50 DKK/kg) steady.",
+    "Spain Mercolleida (1.550 €/kg live) and Italy CUN (1.915 €/kg live) hold previous session references.",
+    "Poland Class E at 5.70 PLN/kg reflects latest available official MRiRW bulletin (T44)."
   ],
   "implications": [
     "LEVERAGE multi-year German low (1.32 €/kg) in ongoing primal cut supply negotiations",

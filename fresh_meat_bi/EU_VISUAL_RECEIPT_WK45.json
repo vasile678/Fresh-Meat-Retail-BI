@@ -4,7 +4,7 @@
   "week": "WK45",
   "year": 2026,
   "domain": "EU_PORK",
-  "dataset_sha256": "bebcc8695f4d5a77235ddc8f578ee160cb84d0f8bdeff915f7b0ccbc6cd171b0",
+  "dataset_sha256": "f9509db85a2f261c2456e87a2e87df0b1f4cb25ac5e9ab34f8a653fa54d6e8b9",
   "qa_checked_at_utc": "2026-11-05T07:00:00Z",
   "checks": {
     "dimensions": "1536x1024",

@@ -12,12 +12,12 @@
   "fail_closed_notice": "Raportul afișează release-ul autoritativ validat (WK45/2026). Toate cele 8 cotații europene sunt verificate conform standardului oficial.",
   "market_signal_title": "MARKET SIGNAL (WK45)",
   "market_signal": "FLOOR FORMATION IN GERMANY, PERSISTING DOWNWARD DRIFT IN PERIPHERY",
-  "market_signal_body": "German VEZG halts slide at 1.320 €/kg SG after previous cuts, setting short-term floor.\\nFrench MPB edges lower to 1.492 €/kg; Polish Class E drops sharply to 5.70 PLN/kg under German carcass surplus.\\nDanish Crown (7.50 DKK/kg) and Vion (1.11 €/kg) hold stable.",
+  "market_signal_body": "German VEZG halts slide at 1.320 €/kg SG after previous cuts, setting short-term floor.\\nFrench MPB edges lower to 1.492 €/kg (-0.010); Danish Crown (7.50 DKK/kg) and Vion (1.11 €/kg) hold stable.\\nSpain Mercolleida (1.550 €/kg live), Italy CUN (1.915 €/kg live), and Poland Class E (5.70 PLN/kg) reflect latest available official baselines pending new sessions.",
   "takeaways": [
     "Germany VEZG stabilizes at 1.320 €/kg SG (±0), testing autumn support.",
-    "France MPB falls further to 1.492 €/kg (-0.010 WoW); Poland Class E retreats to 5.70 PLN/kg.",
-    "Spain Mercolleida steady at 1.550 €/kg live; Italy CUN holds at 1.915 €/kg live.",
-    "Danish Crown unchanged at 7.50 DKK/kg; Vion stable at 1.11 €/kg SG."
+    "France MPB falls further to 1.492 €/kg (-0.010 WoW); Vion (1.11 €/kg) and Danish Crown (7.50 DKK/kg) steady.",
+    "Spain Mercolleida (1.550 €/kg live) and Italy CUN (1.915 €/kg live) hold previous session references.",
+    "Poland Class E at 5.70 PLN/kg reflects latest available official MRiRW bulletin (T44)."
   ],
   "implications": [
     "LEVERAGE multi-year German low (1.32 €/kg) in ongoing primal cut supply negotiations",
@@ -36,8 +36,12 @@
       "unit": "€/kg SG",
       "wow": "0.000",
       "trend": "STABLE",
-      "source": "VEZG | 04.11",
-      "source_date": "VEZG | 04.11",
+      "source": "VEZG | 05.11",
+      "source_date": "VEZG | 05.11",
+      "source_publication_date": "05.11.2026",
+      "source_url": "https://www.vezg.de/",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -53,6 +57,10 @@
       "trend": "NQ",
       "source": "ISN | 03.11",
       "source_date": "ISN | 03.11",
+      "source_publication_date": "03.11.2026",
+      "source_url": "https://www.schweine.net/markt/marktpreise.html",
+      "freshness_status": "NQ",
+      "audit_note": "",
       "status": "NQ"
     },
     {
@@ -64,10 +72,14 @@
       "official_unit": "EUR / kg viu",
       "price": "1.550",
       "unit": "€/kg live",
-      "wow": "0.000",
-      "trend": "STABLE",
+      "wow": "—",
+      "trend": "LATEST",
       "source": "Mercolleida | 29.10",
       "source_date": "Mercolleida | 29.10",
+      "source_publication_date": "29.10.2026",
+      "source_url": "https://www.mercolleida.com/es/servicios/mercados/porcino",
+      "freshness_status": "LATEST_AVAILABLE",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -79,10 +91,14 @@
       "official_unit": "EUR / kg viu",
       "price": "1.915",
       "unit": "€/kg live",
-      "wow": "0.000",
-      "trend": "STABLE",
+      "wow": "—",
+      "trend": "LATEST",
       "source": "CUN/Crefis | 29.10",
       "source_date": "CUN/Crefis | 29.10",
+      "source_publication_date": "29.10.2026",
+      "source_url": "https://www.crefis.it/",
+      "freshness_status": "LATEST_AVAILABLE",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -98,6 +114,10 @@
       "trend": "STABLE",
       "source": "Vion | WK45",
       "source_date": "Vion | WK45",
+      "source_publication_date": "02.11.2026",
+      "source_url": "https://www.vionfarming.nl/varkens/vleesvarkens/prijzen/",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -113,6 +133,10 @@
       "trend": "STABLE",
       "source": "DC | WK45",
       "source_date": "DC | WK45",
+      "source_publication_date": "02.11.2026",
+      "source_url": "https://ejer.danishcrown.com/da-dk/andelsejere/gris/notering/aktuel-grisenotering/",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -128,6 +152,10 @@
       "trend": "WEAKENING",
       "source": "MPB | 02.11",
       "source_date": "MPB | 02.11",
+      "source_publication_date": "02.11.2026",
+      "source_url": "https://www.marche-porc-francais.com/",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -139,15 +167,19 @@
       "official_unit": "PLN / 100 kg carcasă",
       "price": "5.70",
       "unit": "PLN/kg Class E",
-      "wow": "-0.20",
-      "trend": "WEAKENING",
-      "source": "MRiRW/POLPIG | WK45",
-      "source_date": "MRiRW/POLPIG | WK45",
+      "wow": "—",
+      "trend": "LATEST",
+      "source": "MRiRW/POLPIG | T44",
+      "source_date": "MRiRW/POLPIG | T44",
+      "source_publication_date": "02.11.2026",
+      "source_url": "https://polpig.pl/notowania/",
+      "freshness_status": "LATEST_AVAILABLE",
+      "audit_note": "",
       "status": "VERIFIED"
     }
   ],
   "hashes": {
-    "dataset_sha256": "bebcc8695f4d5a77235ddc8f578ee160cb84d0f8bdeff915f7b0ccbc6cd171b0",
+    "dataset_sha256": "f9509db85a2f261c2456e87a2e87df0b1f4cb25ac5e9ab34f8a653fa54d6e8b9",
     "master_sha256": "ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264",
     "renderer_sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
     "release_receipt_sha256": "038bedf3fdf328fda2616d791519f846f0fd55a29777e962c4934100c9791d92"

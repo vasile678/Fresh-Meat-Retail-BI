@@ -38,6 +38,10 @@
       "trend": "WEAKENING",
       "source": "VEZG | 28.10",
       "source_date": "VEZG | 28.10",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -53,6 +57,10 @@
       "trend": "NQ",
       "source": "ISN | 27.10",
       "source_date": "ISN | 27.10",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "NQ",
+      "audit_note": "",
       "status": "NQ"
     },
     {
@@ -68,6 +76,10 @@
       "trend": "WEAKENING",
       "source": "Mercolleida | 29.10",
       "source_date": "Mercolleida | 29.10",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -83,6 +95,10 @@
       "trend": "WEAKENING",
       "source": "CUN/Crefis | 29.10",
       "source_date": "CUN/Crefis | 29.10",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -98,6 +114,10 @@
       "trend": "STABLE",
       "source": "Vion | WK44",
       "source_date": "Vion | WK44",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -113,6 +133,10 @@
       "trend": "STABLE",
       "source": "DC | WK44",
       "source_date": "DC | WK44",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -128,6 +152,10 @@
       "trend": "WEAKENING",
       "source": "MPB | 29.10",
       "source_date": "MPB | 29.10",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     },
     {
@@ -143,6 +171,10 @@
       "trend": "WEAKENING",
       "source": "MRiRW/POLPIG | WK44",
       "source_date": "MRiRW/POLPIG | WK44",
+      "source_publication_date": "",
+      "source_url": "",
+      "freshness_status": "CURRENT_VERIFIED",
+      "audit_note": "",
       "status": "VERIFIED"
     }
   ],

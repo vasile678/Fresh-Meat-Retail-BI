@@ -398,6 +398,17 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
 
             print(f"        Pointer unic activat atomic: {active_pointer_file}")
             print(f"        Release activ Promo: {release_id} (RELEASE_PASS)")
+
+            # 6. Sincronizare automată Strategic Category Intelligence & Manifest
+            try:
+                try:
+                    from strategic_category_intelligence import update_strategic_category_intelligence
+                except ImportError:
+                    from fresh_meat_bi.strategic_category_intelligence import update_strategic_category_intelligence
+                update_strategic_category_intelligence()
+                print(f"        Strategic Category Intelligence sincronizat automat cu noul release.")
+            except Exception as e:
+                print(f"        [AVERTISMENT] Sincronizare Strategic Category Intelligence: {e}")
         else:
             # EU_PORK_MARKET publication
             rel_png_name = f"EU_PORK_MARKET_{week}_{year}.png"
