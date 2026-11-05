@@ -353,8 +353,79 @@ export default function App() {
     }
   };
 
+  // Background release checker: auto-detects new release and refreshes without interrupting the user
+  const checkBackgroundRelease = async () => {
+    try {
+      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()));
+      if (!pointerRes.ok) return;
+      const pointer: ActiveRelease = await pointerRes.json();
+      if (!pointer || pointer.release_status !== 'RELEASE_PASS') return;
+
+      // Detect if release changed or is newer
+      if (activeRelease && pointer.release_id === activeRelease.release_id) {
+        return;
+      }
+
+      const exportUrl = getAssetUrl(pointer.export_path + '?v=' + Date.now());
+      const res = await fetch(exportUrl);
+      if (!res.ok) return;
+      const json: DashboardExport = await res.json();
+
+      if (
+        json.hashes.dataset_sha256 === pointer.dataset_sha256 &&
+        json.hashes.output_sha256 === pointer.output_sha256
+      ) {
+        json.image_url = getAssetUrl(pointer.image_path);
+        setActiveRelease(pointer);
+        setData(json);
+      }
+    } catch {
+      // Silent background check; tolerate offline / transient network disconnects
+    }
+  };
+
+  // On-demand serverless trigger: only attempts if backend exists, respecting global cooldown & mutex
+  // On static hosting (GitHub Pages), gracefully falls back with zero errors and no token exposure
+  const attemptOnDemandCollection = async () => {
+    try {
+      const statusRes = await fetch('/api/promo-weekly/status');
+      if (!statusRes.ok) return; // Static host: endpoint 404, gracefully skip
+      const statusData = await statusRes.json();
+      if (statusData && statusData.can_collect_now && !statusData.is_collecting) {
+        await fetch('/api/promo-weekly/trigger-collect', { method: 'POST' });
+      }
+    } catch {
+      // Fallback for purely static environments
+    }
+  };
+
   useEffect(() => {
+    // 1. Load latest validated release immediately on open/refresh
     loadDashboardData();
+
+    // 2. Check if on-demand collection can run in background
+    attemptOnDemandCollection();
+
+    // 3. Periodic background polling every 60 seconds
+    const intervalId = setInterval(() => {
+      checkBackgroundRelease();
+    }, 60000);
+
+    // 4. Tab visibility and window focus listeners
+    const handleVisibilityOrFocus = () => {
+      if (document.visibilityState === 'visible') {
+        checkBackgroundRelease();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityOrFocus);
+    window.addEventListener('focus', handleVisibilityOrFocus);
+
+    return () => {
+      clearInterval(intervalId);
+      document.removeEventListener('visibilitychange', handleVisibilityOrFocus);
+      window.removeEventListener('focus', handleVisibilityOrFocus);
+    };
   }, []);
 
   const copyToClipboard = (text: string, id: string) => {

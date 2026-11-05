@@ -215,7 +215,7 @@
       "exact_product": "Ceafă de porc fără os",
       "discount": "-20%",
       "mechanic": "promoție catalog (2.39 lei/100g)",
-      "isBest": true
+      "isBest": false
     },
     {
       "retailer": "Lidl",
@@ -326,11 +326,17 @@
     {
       "retailer": "Carrefour",
       "kvi": "Ceafă porc fără os",
-      "status": "N/V",
-      "source": "Carrefour România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "note": "nicio ofertă confirmată în catalog",
-      "isBest": false
+      "status": "VERIFIED",
+      "source": "Carrefour România – promoție oficială (promotiile-zilei)",
+      "source_date": "2026-11-04",
+      "price_lei_kg": 17.9,
+      "price_standard_lei_kg": 23.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc dezosată",
+      "discount": "-25%",
+      "mechanic": "ofertă promoțională oficială (1,79 lei/100 g = 17.90 lei/kg; standard: 2,39 lei/100 g = 23.90 lei/kg)",
+      "mechanic_type": "standard",
+      "isBest": true
     },
     {
       "retailer": "Carrefour",
@@ -371,10 +377,16 @@
     {
       "retailer": "Auchan",
       "kvi": "Ceafă porc fără os",
-      "status": "N/V",
-      "source": "Auchan România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "note": "nicio ofertă confirmată în catalog",
+      "status": "VERIFIED",
+      "source": "Auchan România – magazin oficial & catalog WK45",
+      "source_date": "2026-11-04",
+      "price_lei_kg": 19.99,
+      "price_standard_lei_kg": 29.99,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc fără os, vrac, +/- 1 kg",
+      "discount": "-33%",
+      "mechanic": "reducere catalog / magazin online (19.99 lei/kg redus de la 29.99 lei/kg)",
+      "mechanic_type": "standard",
       "isBest": false
     },
     {
@@ -389,19 +401,19 @@
   ],
   "summary": {
     "cell_count": 25,
-    "verified_count": 11,
-    "nv_count": 14,
+    "verified_count": 13,
+    "nv_count": 12,
     "best_prices": {
       "Spată porc fără os": 18.9,
       "Pulpă porc fără os": 15.99,
       "Cotlet porc fără os": 15.9,
-      "Ceafă porc fără os": 23.9,
+      "Ceafă porc fără os": 17.9,
       "Piept pui dezosat": 26.9
     }
   },
   "hashes": {
-    "dataset_sha256": "258a510dc0c2ba238b6265fdd4ddd5c51afe3a602ff906399504c1e84542aa8b",
-    "output_sha256": "3e50b28cb98c7da6eec1390adc31cf3ab7b038b0d2ca90e38c5d4acf4390999b",
+    "dataset_sha256": "80d77b81ddf0442975aa06a604be69fc32ba4c28c8d69c9162040bc52dc460c0",
+    "output_sha256": "e55af8ef421416f013cb13d9a6361b02e0b2f1666f016cf219611d949223b579",
     "release_receipt_sha256": "379c8ae3c9d62c3bd5e2cb51a80c08e588b8eecaa5d90be1a3f9ef848b5f5ee5",
     "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
     "renderer_sha256": "3f99b788bd766add379a2451c46cd73ed91419293d626430ce146c24f3f8378e"
@@ -567,14 +579,42 @@
       {
         "kvi": "Ceafă porc fără os",
         "has_offers": true,
-        "best_price": 23.9,
+        "best_price": 17.9,
         "best_retailers": [
-          "Lidl"
+          "Carrefour"
         ],
-        "summary_title": "Ceafă porc fără os (Ofertă unică Lidl)",
-        "text": "Lidl asigură unica ofertă promoțională confirmată din piață la 23.90 lei/kg [promoție catalog (2.39 lei/100g)]. Ceilalți retaileri (Kaufland, PENNY, Carrefour, Auchan) nu au inclus Ceafă porc fără os în cataloagele promoționale din WK45.",
-        "offers_count": 1,
+        "summary_title": "Ceafă porc fără os (Lider Carrefour la 17.90 lei/kg)",
+        "text": "Carrefour asigură cel mai mic preț la 17.90 lei/kg, în timp ce Auchan la 19.99 lei/kg (+2.09 lei, +11.7%); Lidl la 23.90 lei/kg (+6.00 lei, +33.5%).",
+        "offers_count": 3,
         "offers_detail": [
+          {
+            "retailer": "Carrefour",
+            "price_lei_kg": 17.9,
+            "exact_product": "Ceafă de porc dezosată",
+            "discount": "-25%",
+            "mechanic": "ofertă promoțională oficială (1,79 lei/100 g = 17.90 lei/kg; standard: 2,39 lei/100 g = 23.90 lei/kg)",
+            "validity": "02.11–08.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false,
+            "price_standard_lei_kg": 23.9,
+            "mechanic_type": "standard"
+          },
+          {
+            "retailer": "Auchan",
+            "price_lei_kg": 19.99,
+            "exact_product": "Ceafă de porc fără os, vrac, +/- 1 kg",
+            "discount": "-33%",
+            "mechanic": "reducere catalog / magazin online (19.99 lei/kg redus de la 29.99 lei/kg)",
+            "validity": "02.11–08.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 2.09,
+            "diff_percent": 11.7,
+            "is_conditional": false,
+            "price_standard_lei_kg": 29.99,
+            "mechanic_type": "standard"
+          },
           {
             "retailer": "Lidl",
             "price_lei_kg": 23.9,
@@ -582,17 +622,15 @@
             "discount": "-20%",
             "mechanic": "promoție catalog (2.39 lei/100g)",
             "validity": "02.11–08.11.2026",
-            "is_best": true,
-            "diff_lei_kg": 0.0,
-            "diff_percent": 0.0,
+            "is_best": false,
+            "diff_lei_kg": 6.0,
+            "diff_percent": 33.5,
             "is_conditional": false
           }
         ],
         "nv_retailers": [
           "Kaufland",
-          "PENNY",
-          "Carrefour",
-          "Auchan"
+          "PENNY"
         ]
       },
       {
@@ -659,19 +697,22 @@
       "year": 2026,
       "calendar_period": "02–08 NOI 2026",
       "best_price_counts": {
-        "Lidl": 2,
+        "Lidl": 1,
         "Kaufland": 2,
-        "PENNY": 2
+        "PENNY": 2,
+        "Carrefour": 1
       },
       "verified_offer_counts": {
         "Lidl": 5,
         "Kaufland": 3,
-        "PENNY": 3
+        "PENNY": 3,
+        "Carrefour": 1,
+        "Auchan": 1
       },
       "ranked_retailers": [
-        "Lidl",
         "Kaufland",
         "PENNY",
+        "Lidl",
         "Carrefour",
         "Auchan"
       ]

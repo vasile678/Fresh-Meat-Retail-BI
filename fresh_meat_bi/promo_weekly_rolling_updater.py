@@ -143,19 +143,23 @@ def check_rolling_update_needed(target_week: str = "WK45") -> Tuple[bool, str, D
         
     lock_data = json.loads(lock_path.read_text(encoding="utf-8"))
     
-    # Check Kaufland Cotlet price, Spată status, and Lidl coupon separation in current canonical lock
+    # Check Kaufland Cotlet price, Spată status, Lidl coupon separation, and Carrefour/Auchan Ceafă offers
     kauf_cotlet = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Kaufland" and c.get("kvi") == "Cotlet porc fără os"), None)
     kauf_spata = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Kaufland" and c.get("kvi") == "Spată porc fără os"), None)
     lidl_cotlet = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Lidl" and c.get("kvi") == "Cotlet porc fără os"), None)
+    carr_ceafa = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Carrefour" and c.get("kvi") == "Ceafă porc fără os"), None)
+    auch_ceafa = next((c for c in lock_data.get("cells", []) if c.get("retailer") == "Auchan" and c.get("kvi") == "Ceafă porc fără os"), None)
     
     is_spata_nv = kauf_spata and kauf_spata.get("status") == "N/V" and bool(kauf_spata.get("offer_history"))
     is_kauf_cotlet_updated = kauf_cotlet and kauf_cotlet.get("price_lei_kg") == 15.90 and "04.11" in str(kauf_cotlet.get("validity", ""))
     is_lidl_separated = lidl_cotlet and lidl_cotlet.get("price_cupon_lei_kg") == 16.90
+    is_carr_updated = carr_ceafa and carr_ceafa.get("status") == "VERIFIED" and carr_ceafa.get("price_lei_kg") == 17.90
+    is_auch_updated = auch_ceafa and auch_ceafa.get("status") == "VERIFIED" and auch_ceafa.get("price_lei_kg") == 19.99
     
-    if is_spata_nv and is_kauf_cotlet_updated and is_lidl_separated:
-        return False, f"Rolling update for {target_week} (ACTIVE OFFERS ONLY: Kaufland 04–10.11, Spată N/V with history, Lidl coupon separated) is ALREADY active in current release.", active
+    if is_spata_nv and is_kauf_cotlet_updated and is_lidl_separated and is_carr_updated and is_auch_updated:
+        return False, f"Rolling update for {target_week} (ACTIVE OFFERS ONLY: Kaufland 04–10.11, Spată N/V with history, Lidl coupon separated, Carrefour 17.90, Auchan 19.99) is ALREADY active in current release.", active
         
-    return True, f"Active offers update needed: Kaufland 04–10.11.2026, Spată N/V expired rule, and Lidl coupon price separation.", active
+    return True, f"Active offers update needed: incorporate Carrefour Ceafă 17.90 lei/kg, Auchan Ceafă 19.99 lei/kg, and latest validated offers.", active
 
 def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     """
@@ -279,6 +283,32 @@ def build_rolling_canonical_lock(target_week: str = "WK45", year: int = 2026) ->
             cell["price_card_lei_kg"] = 15.99
             cell["mechanic_type"] = "card"
             cell["mechanic"] = "preț cu PENNY card: 15.99 lei/kg (standard: 22.99 lei/kg)"
+        elif ret == "Carrefour" and kvi == "Ceafă porc fără os":
+            cell["status"] = "VERIFIED"
+            cell["price_lei_kg"] = 17.90
+            cell["price_standard_lei_kg"] = 23.90
+            cell["validity"] = "02.11–08.11.2026"
+            cell["exact_product"] = "Ceafă de porc dezosată"
+            cell["discount"] = "-25%"
+            cell["mechanic"] = "ofertă promoțională oficială (1,79 lei/100 g = 17.90 lei/kg; standard: 2,39 lei/100 g = 23.90 lei/kg)"
+            cell["mechanic_type"] = "standard"
+            cell["source"] = "Carrefour România – promoție oficială (promotiile-zilei)"
+            cell["source_date"] = "2026-11-04"
+            if "note" in cell:
+                del cell["note"]
+        elif ret == "Auchan" and kvi == "Ceafă porc fără os":
+            cell["status"] = "VERIFIED"
+            cell["price_lei_kg"] = 19.99
+            cell["price_standard_lei_kg"] = 29.99
+            cell["validity"] = "02.11–08.11.2026"
+            cell["exact_product"] = "Ceafă de porc fără os, vrac, +/- 1 kg"
+            cell["discount"] = "-33%"
+            cell["mechanic"] = "reducere catalog / magazin online (19.99 lei/kg redus de la 29.99 lei/kg)"
+            cell["mechanic_type"] = "standard"
+            cell["source"] = "Auchan România – magazin oficial & catalog WK45"
+            cell["source_date"] = "2026-11-04"
+            if "note" in cell:
+                del cell["note"]
             
         new_cells.append(cell)
         
@@ -308,6 +338,22 @@ def build_research_receipt(lock_data: Dict[str, Any], lock_sha: str, delta_audit
                 "checked_at": now_iso,
                 "sources_checked": [kaufland_url],
                 "result": res
+            })
+        elif ret == "Carrefour" and kvi == "Ceafă porc fără os":
+            receipt_cells.append({
+                "retailer": ret,
+                "kvi": kvi,
+                "checked_at": now_iso,
+                "sources_checked": ["https://carrefour.ro/corporate/promotiile-zilei/", "https://carrefour.ro/campanii/oferte-saptamanale", "https://carrefour.ro/cataloage"],
+                "result": f"VERIFIED: {c['price_lei_kg']} lei/kg, {c['exact_product']} ({c['validity']})"
+            })
+        elif ret == "Auchan" and kvi == "Ceafă porc fără os":
+            receipt_cells.append({
+                "retailer": ret,
+                "kvi": kvi,
+                "checked_at": now_iso,
+                "sources_checked": ["https://www.auchan.ro/carne", "https://www.auchan.ro/carne-si-peste/carne-de-porc/c", "https://www.auchan.ro/promotii"],
+                "result": f"VERIFIED: {c['price_lei_kg']} lei/kg, {c['exact_product']} ({c['validity']})"
             })
         else:
             # Preserve existing verified research result from RESEARCH_RECEIPT_WK45.json
@@ -491,8 +537,10 @@ def execute_rolling_update(target_week: str = "WK45", year: int = 2026, dry_run:
                 "impact": "Promoția Kaufland a expirat la 03.11. Lidl rămâne singurul retailer monitorizat cu promoție activă pe spată (18.90 lei/kg)."
             },
             "Ceafă porc fără os": {
-                "best": "23.90 lei/kg (Lidl)",
-                "impact": "Neschimbat; Lidl deține unica ofertă promoțională confirmată din piață."
+                "previous_best": "23.90 lei/kg (Lidl)",
+                "new_best": "17.90 lei/kg (Carrefour)",
+                "delta": "-6.00 lei/kg (-25.1%)",
+                "impact": "Carrefour devine noul lider absolut pe piață la 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț la 19,99 lei/kg (economie de 3,91 lei/kg față de Lidl)."
             },
             "Piept pui dezosat": {
                 "best": "26.90 lei/kg (PENNY XXL & Lidl Plus)",
@@ -581,10 +629,24 @@ def run_tests():
     assert penny_cotlet["price_card_lei_kg"] == 17.99, f"Expected 17.99, got {penny_cotlet.get('price_card_lei_kg')}"
     assert penny_cotlet["price_standard_lei_kg"] == 22.99, f"Expected 22.99, got {penny_cotlet.get('price_standard_lei_kg')}"
     assert penny_cotlet["mechanic_type"] == "card"
-    print(f"[TEST 7/7] Cotlet PENNY: preț card (17.99 lei/kg) separat corect de prețul standard (22.99 lei/kg): PASS")
+    print(f"[TEST 7/9] Cotlet PENNY: preț card (17.99 lei/kg) separat corect de prețul standard (22.99 lei/kg): PASS")
+
+    # Test 8: Validate Carrefour Ceafă normalized from 1.79 lei/100 g -> 17.90 lei/kg (New #1 Market Leader)
+    carr_ceafa = next(c for c in lock["cells"] if c["retailer"] == "Carrefour" and c["kvi"] == "Ceafă porc fără os")
+    assert carr_ceafa["status"] == "VERIFIED"
+    assert carr_ceafa["price_lei_kg"] == 17.90, f"Expected 17.90, got {carr_ceafa.get('price_lei_kg')}"
+    assert carr_ceafa["exact_product"] == "Ceafă de porc dezosată"
+    print(f"[TEST 8/9] Ceafă Carrefour: normalizat la 17.90 lei/kg (-25%), noul lider de piață: PASS")
+
+    # Test 9: Validate Auchan Ceafă at 19.99 lei/kg (-33%) (New #2 Market Competitor)
+    auch_ceafa = next(c for c in lock["cells"] if c["retailer"] == "Auchan" and c["kvi"] == "Ceafă porc fără os")
+    assert auch_ceafa["status"] == "VERIFIED"
+    assert auch_ceafa["price_lei_kg"] == 19.99, f"Expected 19.99, got {auch_ceafa.get('price_lei_kg')}"
+    assert "Ceafă de porc fără os" in auch_ceafa["exact_product"]
+    print(f"[TEST 9/9] Ceafă Auchan: confirmat la 19.99 lei/kg (-33%), al doilea cel mai bun preț: PASS")
 
     print("=================================================================")
-    print(" TOATE CELE 7 TESTE ALE ROLLING UPDATE ENGINE AU TRECUT (100%)")
+    print(" TOATE CELE 9 TESTE ALE ROLLING UPDATE ENGINE AU TRECUT (100%)")
     print("=================================================================")
 
 def main():

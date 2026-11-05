@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-05T21:25:40.129208+02:00",
+  "generated_at_utc": "2026-11-05T21:50:39.153728+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -17,7 +17,7 @@
       "status": "RELEASE_PASS",
       "data_file": "/data/bi_dashboard_export.json",
       "active_release_file": "/data/active_release.json",
-      "dataset_sha256": "ea6e987c0c1347f50ae20bb9444c5fec70dd98b08d8a3c5e7b0f73e025384c20",
+      "dataset_sha256": "4a95676302821105e787056e22fe013b65ee3886bc86ab38420bd37db9a48865",
       "verified_cells_count": 25,
       "verified_retailers_count": 5
     },
@@ -46,7 +46,7 @@
       "period": "29.10.2026 – 05.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "03a53de6826be311bec355fece34139b7a471e7af2f9206d88e0401bc8400141",
+      "dataset_sha256": "7ca86bc6a3376f648ca51c24c26911178a38556bf56f9316556eac42419d1a67",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },

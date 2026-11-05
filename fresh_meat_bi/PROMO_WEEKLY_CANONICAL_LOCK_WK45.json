@@ -309,10 +309,16 @@
     {
       "retailer": "Carrefour",
       "kvi": "Ceafă porc fără os",
-      "status": "N/V",
-      "source": "Carrefour România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "note": "nicio ofertă confirmată în catalog"
+      "status": "VERIFIED",
+      "source": "Carrefour România – promoție oficială (promotiile-zilei)",
+      "source_date": "2026-11-04",
+      "price_lei_kg": 17.9,
+      "price_standard_lei_kg": 23.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc dezosată",
+      "discount": "-25%",
+      "mechanic": "ofertă promoțională oficială (1,79 lei/100 g = 17.90 lei/kg; standard: 2,39 lei/100 g = 23.90 lei/kg)",
+      "mechanic_type": "standard"
     },
     {
       "retailer": "Carrefour",
@@ -349,10 +355,16 @@
     {
       "retailer": "Auchan",
       "kvi": "Ceafă porc fără os",
-      "status": "N/V",
-      "source": "Auchan România – catalog oficial WK45",
-      "source_date": "2026-11-02",
-      "note": "nicio ofertă confirmată în catalog"
+      "status": "VERIFIED",
+      "source": "Auchan România – magazin oficial & catalog WK45",
+      "source_date": "2026-11-04",
+      "price_lei_kg": 19.99,
+      "price_standard_lei_kg": 29.99,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc fără os, vrac, +/- 1 kg",
+      "discount": "-33%",
+      "mechanic": "reducere catalog / magazin online (19.99 lei/kg redus de la 29.99 lei/kg)",
+      "mechanic_type": "standard"
     },
     {
       "retailer": "Auchan",

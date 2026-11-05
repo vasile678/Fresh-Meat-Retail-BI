@@ -716,20 +716,20 @@
     }
   ],
   "competitive_intelligence": {
-    "release_id": "2026/WK45_258a510d",
+    "release_id": "2026/WK45_80d77b81",
     "promo_week": "WK45",
     "promo_year": 2026,
     "promo_period": "02–08 NOI 2026",
     "active_offers_only": true,
-    "synchronized_at_utc": "2026-11-05T19:25:40.071618+00:00",
-    "executive_summary": "Sinteza comercială WK45 (02–08 NOI 2026) relevă o presiune promoțională concentrată exercitată de discounteri (Kaufland, Lidl, Penny) pe piesele cheie de porc. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă pe spată (18,90 lei/kg) și cel mai bun preț pe ceafă (23,90 lei/kg). Condiționarea reducerilor prin aplicații mobile (Lidl Plus, PENNY Card) depășește 60% pe ofertele de primă linie, în timp ce cotațiile europene la carcasă (VEZG 1.320 €/kg) indică formarea unui platou de stabilitate.",
+    "synchronized_at_utc": "2026-11-05T19:50:39.100627+00:00",
+    "executive_summary": "Sinteza comercială WK45 (02–08 NOI 2026) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg).",
     "top_signals": [
       {
-        "source": "Lidl / Catalog Săptămânal WK45",
-        "date": "02.11.2026",
+        "source": "Carrefour & Auchan / Promoții Active WK45",
+        "date": "05.11.2026",
         "type": "PRICE_MOVE",
-        "signal": "Lidl menține cel mai agresiv preț la ceafă de porc f.o. la 23,90 lei/kg și promovează cotletul la 16,90 lei/kg prin cupon Lidl Plus (față de 19,90 lei/kg standard). Deține unica ofertă activă de catalog pe spată de porc (18,90 lei/kg).",
-        "impact": "Forțează concurența de proximitate să ofere alternative competitive pe categoria KVI proaspătă."
+        "signal": "Carrefour devine noul lider absolut de piață la ceafă de porc dezosată cu 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț pe ceafă la 19,99 lei/kg (redus de la 29,99 lei/kg; economie de 3,91 lei/kg față de Lidl).",
+        "impact": "Reconfigurează ierarhia competitivă pe ceafă de porc, punând presiune pe marjele discounterilor și atrăgând shopperii spre hipermarketuri."
       },
       {
         "source": "Kaufland & Penny / Rolling Update WK45",
@@ -760,7 +760,7 @@
         "primary_mechanic": "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
         "lead_kvi_price": "Ceafă porc f.o. 23,90 lei/kg | Cotlet porc f.o. 16,90 lei/kg (cupon) / 19,90 lei/kg (std) | Spată porc f.o. 18,90 lei/kg",
         "private_brand_share": "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
-        "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg necondiționat."
+        "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg (depășit de Carrefour 17,90 și Auchan 19,99)."
       },
       {
         "retailer": "Kaufland",
@@ -780,11 +780,11 @@
       },
       {
         "retailer": "Carrefour",
-        "aggressiveness": "MEDIE",
-        "primary_mechanic": "Cupoane ActForFood în aplicație + Promoții 2+1 la preț special",
-        "lead_kvi_price": "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)",
+        "aggressiveness": "RIDICATĂ",
+        "primary_mechanic": "Promoții oficiale zilnice (promotiile-zilei) + ActForFood",
+        "lead_kvi_price": "Ceafă porc dezosată 17,90 lei/kg (-25%)",
         "private_brand_share": "55-60% din volum acoperit de Filiera Calității Carrefour și Drag de România",
-        "positioning_note": "Diferențiere prin trasabilitate și calitatea superioară a lanțului scurt; absență promoții agresive pe KVI proaspete de bază în săptămâna curentă."
+        "positioning_note": "Lider absolut pe ceafă de porc dezosată la 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg vs Lidl 23,90 lei/kg). Diferențiere prin prospețime și calitatea lanțului scurt."
       },
       {
         "retailer": "Profi",
@@ -796,11 +796,11 @@
       },
       {
         "retailer": "Auchan",
-        "aggressiveness": "MEDIE",
-        "primary_mechanic": "Cashback MyClub Auchan (5-10% bani înapoi ca bonus)",
-        "lead_kvi_price": "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)",
+        "aggressiveness": "RIDICATĂ",
+        "primary_mechanic": "Reduceri directe magazin online / catalog + Cashback MyClub",
+        "lead_kvi_price": "Ceafă porc f.o. vrac 19,99 lei/kg (redus de la 29,99 lei/kg, -33%)",
         "private_brand_share": "Aproximativ 50% din volum reprezentat de Filiera Auchan și Pouce",
-        "positioning_note": "Atragerea familiilor mari prin caserole de volum economic; fără ofertă promoțională confirmată pe cele 5 KVI în WK45."
+        "positioning_note": "Al doilea cel mai bun preț pe ceafă de porc la 19,99 lei/kg (economie de 3,91 lei/kg vs Lidl 23,90 lei/kg). Format vrac orientat pe volume mari și familii."
       },
       {
         "retailer": "Mega Image",
@@ -842,7 +842,7 @@
         "business_implication": "Pragul de acces la carne de porc fără os se reconfigurează în jurul valorii de 15,90–15,99 lei/kg. Condiționarea prin card/cupon devine mecanism de diferențiere față de reducerile directe de catalog.",
         "tactical_opportunity": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
         "recommended_action": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
-        "source_and_date": "Cataloage promoționale oficiale, aplicații mobile & PROMO WEEKLY | WK45 2026 (2026/WK45_258a510d)"
+        "source_and_date": "Cataloage promoționale oficiale, aplicații mobile & PROMO WEEKLY | WK45 2026 (2026/WK45_80d77b81)"
       },
       {
         "id": "category-growth",

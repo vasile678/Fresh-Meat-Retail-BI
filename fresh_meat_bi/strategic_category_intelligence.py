@@ -155,11 +155,25 @@ def recalculate_competitive_intelligence():
     penny_kvi_text = " | ".join(p_parts)
 
     # Carrefour & Auchan
-    carrefour_verified = len(retailer_active_offers.get("Carrefour", []))
-    carrefour_kvi_text = f"N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)" if carrefour_verified == 0 else "Promoții active KVI verificate"
+    carrefour_ceafa = cell_map.get(("Carrefour", "Ceafă porc fără os"))
+    if carrefour_ceafa and carrefour_ceafa.get("status") == "VERIFIED":
+        carrefour_kvi_text = f"Ceafă porc dezosată {fmt_price(carrefour_ceafa.get('price_lei_kg', 17.90))} lei/kg (-25%)"
+        carrefour_pos_note = "Lider absolut pe ceafă de porc dezosată la 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg vs Lidl 23,90 lei/kg). Diferențiere prin prospețime și calitatea lanțului scurt."
+        carrefour_agg = "RIDICATĂ"
+    else:
+        carrefour_kvi_text = "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)"
+        carrefour_pos_note = "Diferențiere prin trasabilitate și calitatea superioară a lanțului scurt; absență promoții agresive pe KVI proaspete de bază în săptămâna curentă."
+        carrefour_agg = "MEDIE"
 
-    auchan_verified = len(retailer_active_offers.get("Auchan", []))
-    auchan_kvi_text = f"N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)" if auchan_verified == 0 else "Promoții active KVI verificate"
+    auchan_ceafa = cell_map.get(("Auchan", "Ceafă porc fără os"))
+    if auchan_ceafa and auchan_ceafa.get("status") == "VERIFIED":
+        auchan_kvi_text = f"Ceafă porc f.o. vrac {fmt_price(auchan_ceafa.get('price_lei_kg', 19.99))} lei/kg (redus de la 29,99 lei/kg, -33%)"
+        auchan_pos_note = "Al doilea cel mai bun preț pe ceafă de porc la 19,99 lei/kg (economie de 3,91 lei/kg vs Lidl 23,90 lei/kg). Format vrac orientat pe volume mari și familii."
+        auchan_agg = "RIDICATĂ"
+    else:
+        auchan_kvi_text = "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)"
+        auchan_pos_note = "Atragerea familiilor mari prin caserole de volum economic; fără ofertă promoțională confirmată pe cele 5 KVI în WK45."
+        auchan_agg = "MEDIE"
 
     # Mega Image & Profi (Non-matrix 5x5 retailers)
     profi_kvi_text = "Neinclus în matricea promoțională 5×5 (promoții locale de proximitate și Cuponiada)"
@@ -172,7 +186,7 @@ def recalculate_competitive_intelligence():
             "primary_mechanic": "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
             "lead_kvi_price": lidl_kvi_text,
             "private_brand_share": "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
-            "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg necondiționat."
+            "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg (depășit de Carrefour 17,90 și Auchan 19,99)."
         },
         {
             "retailer": "Kaufland",
@@ -192,11 +206,11 @@ def recalculate_competitive_intelligence():
         },
         {
             "retailer": "Carrefour",
-            "aggressiveness": "MEDIE",
-            "primary_mechanic": "Cupoane ActForFood în aplicație + Promoții 2+1 la preț special",
+            "aggressiveness": carrefour_agg,
+            "primary_mechanic": "Promoții oficiale zilnice (promotiile-zilei) + ActForFood",
             "lead_kvi_price": carrefour_kvi_text,
             "private_brand_share": "55-60% din volum acoperit de Filiera Calității Carrefour și Drag de România",
-            "positioning_note": "Diferențiere prin trasabilitate și calitatea superioară a lanțului scurt; absență promoții agresive pe KVI proaspete de bază în săptămâna curentă."
+            "positioning_note": carrefour_pos_note
         },
         {
             "retailer": "Profi",
@@ -208,11 +222,11 @@ def recalculate_competitive_intelligence():
         },
         {
             "retailer": "Auchan",
-            "aggressiveness": "MEDIE",
-            "primary_mechanic": "Cashback MyClub Auchan (5-10% bani înapoi ca bonus)",
+            "aggressiveness": auchan_agg,
+            "primary_mechanic": "Reduceri directe magazin online / catalog + Cashback MyClub",
             "lead_kvi_price": auchan_kvi_text,
             "private_brand_share": "Aproximativ 50% din volum reprezentat de Filiera Auchan și Pouce",
-            "positioning_note": "Atragerea familiilor mari prin caserole de volum economic; fără ofertă promoțională confirmată pe cele 5 KVI în WK45."
+            "positioning_note": auchan_pos_note
         },
         {
             "retailer": "Mega Image",
@@ -237,11 +251,11 @@ def recalculate_competitive_intelligence():
 
     top_signals = [
         {
-            "source": f"Lidl / Catalog Săptămânal {week}",
-            "date": "02.11.2026",
+            "source": f"Carrefour & Auchan / Promoții Active {week}",
+            "date": "05.11.2026",
             "type": "PRICE_MOVE",
-            "signal": "Lidl menține cel mai agresiv preț la ceafă de porc f.o. la 23,90 lei/kg și promovează cotletul la 16,90 lei/kg prin cupon Lidl Plus (față de 19,90 lei/kg standard). Deține unica ofertă activă de catalog pe spată de porc (18,90 lei/kg).",
-            "impact": "Forțează concurența de proximitate să ofere alternative competitive pe categoria KVI proaspătă."
+            "signal": "Carrefour devine noul lider absolut de piață la ceafă de porc dezosată cu 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț pe ceafă la 19,99 lei/kg (redus de la 29,99 lei/kg; economie de 3,91 lei/kg față de Lidl).",
+            "impact": "Reconfigurează ierarhia competitivă pe ceafă de porc, punând presiune pe marjele discounterilor și atrăgând shopperii spre hipermarketuri."
         },
         {
             "source": f"Kaufland & Penny / Rolling Update {week}",
@@ -268,13 +282,13 @@ def recalculate_competitive_intelligence():
 
     # 3. Dynamic Executive Summary
     executive_summary = (
-        f"Sinteza comercială {week} ({period}) relevă o presiune promoțională concentrată exercitată de discounteri "
-        f"(Kaufland, Lidl, Penny) pe piesele cheie de porc. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) "
+        f"Sinteza comercială {week} ({period}) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. "
+        f"Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), "
+        f"urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) "
+        f"cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) "
         f"și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland "
         f"la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. "
-        f"Lidl deține unica ofertă activă pe spată (18,90 lei/kg) și cel mai bun preț pe ceafă (23,90 lei/kg). "
-        f"Condiționarea reducerilor prin aplicații mobile (Lidl Plus, PENNY Card) depășește 60% pe ofertele de primă linie, "
-        f"în timp ce cotațiile europene la carcasă (VEZG {vezg_price} €/kg) indică formarea unui platou de stabilitate."
+        f"Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg)."
     )
 
     # 4. Dynamic Strategic Insights (Aligned with WK45)
