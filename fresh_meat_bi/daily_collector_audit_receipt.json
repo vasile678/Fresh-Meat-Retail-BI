@@ -1,12 +1,12 @@
 {
-  "execution_date": "04.11.2026",
-  "start_time_bucharest": "2026-11-04 14:43:58",
-  "end_time_bucharest": "2026-11-04 14:44:42",
-  "start_time_iso": "2026-11-04T14:43:58.490102+02:00",
-  "end_time_iso": "2026-11-04T14:44:42.624860+02:00",
-  "duration_seconds": 44.13,
+  "execution_date": "05.11.2026",
+  "start_time_bucharest": "2026-11-05 14:53:47",
+  "end_time_bucharest": "2026-11-05 14:54:25",
+  "start_time_iso": "2026-11-05T14:53:47.770418+02:00",
+  "end_time_iso": "2026-11-05T14:54:25.313673+02:00",
+  "duration_seconds": 37.54,
   "total_publications": 14,
-  "total_new_articles_accepted": 22,
+  "total_new_articles_accepted": 28,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -52,28 +52,33 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 3,
+      "new_articles_count": 4,
       "new_accepted": [
         {
-          "title": "Martina Bonello va reprezenta Regiunea South Europe & Mediterranean în Marea Finală S.Pellegrino Young Chef Academy Competition 2026/27",
-          "published_at": "04.11.2026",
-          "url": "https://www.trendshrb.ro/nwsl_promo/martina-bonello-va-reprezenta-regiunea-south-europe-mediterranean-in-marea-finala-s-pellegrino-young-chef-academy-competition-2026-27/"
+          "title": "Horeca Trading Distribution își extinde capacitatea de depozitare cu 80%",
+          "published_at": "05.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/horeca-trading-distribution-isi-extinde-capacitatea-de-depozitare-cu-80/"
         },
         {
-          "title": "Vassilis Themelidis, Wyndham Hotels & Resorts: Ne adaptăm strategia de dezvoltare la oportunitățile oferite de piața locală",
-          "published_at": "04.11.2026",
-          "url": "https://www.trendshrb.ro/business/vassilis-themelidis-wyndham-hotels-resorts-ne-adaptam-strategia-de-dezvoltare-la-oportunitatile-oferite-de-piata-locala/"
+          "title": "Taco Bell bifează opt restaurante în București, după o investiție de circa 750.000 euro",
+          "published_at": "05.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/taco-bell-bifeaza-opt-restaurante-in-bucuresti-dupa-o-investitie-de-circa-750-000-euro/"
         },
         {
-          "title": "Hesburger continuă să se extindă în Europa, deschizând primul său restaurant din Italia",
+          "title": "RO-Wine ajunge pentru prima dată la Craiova, cu Winter Special Edition",
+          "published_at": "05.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/ro-wine-ajunge-pentru-prima-data-la-craiova-cu-winter-special-edition/"
+        },
+        {
+          "title": "Christian Tour creează brandul Peregrin, care reunește o cafenea, circuite și un club pentru călători",
           "published_at": "04.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/hesburger-continua-sa-se-extinda-in-europa-deschizand-primul-sau-restaurant-din-italia/"
+          "url": "https://www.trendshrb.ro/stiri/christian-tour-creeaza-brandul-peregrin-care-reuneste-o-cafenea-circuite-si-un-club-pentru-calatori/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "05.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -84,20 +89,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Mega Image, Profi și Shop&Go: Trei branduri care vor continua să spună trei povești distincte clienților români",
-          "published_at": "04.11.2026",
-          "url": "https://modernbuyer.ro/mega-image-profi-si-shopgo-trei-branduri-care-vor-continua-sa-spuna-trei-povesti-distincte-clientilor-romani/"
+          "title": "Purcari lansează în România gama de vinuri Parcela și ajunge la investiții de 30 mil. euro în 2026",
+          "published_at": "05.11.2026",
+          "url": "https://modernbuyer.ro/purcari-lanseaza-in-romania-gama-de-vinuri-parcela-si-ajunge-la-investitii-de-30-mil-euro-in-2026/"
         },
         {
-          "title": "Freshful NOW acoperă acum integral Bucureștiul",
-          "published_at": "04.11.2026",
-          "url": "https://modernbuyer.ro/freshful-now-acopera-acum-integral-bucurestiul/"
+          "title": "EcoCert: Doar 6% din suprafața agricolă a României are certificare Bio. Cum arată viitorul agriculturii ecologice?",
+          "published_at": "31.10.2026",
+          "url": "https://modernbuyer.ro/ecocert-doar-6-din-suprafata-agricola-a-romaniei-are-certificare-bio-cum-arata-viitorul-agriculturii-ecologice/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "05.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -108,35 +113,35 @@
       "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "Pactic, parte din Sameday Group, achiziționează QeOPS și își extinde operațiunile logistice în România",
-          "published_at": "04.11.2026",
-          "url": "https://www.retail-fmcg.ro/servicii/pactic-sameday-group-achizitioneaza-qeops.html"
+          "title": "BETTY-COM își extinde capacitățile de producție și vizează dezvoltarea distribuției la nivel național",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/betty-com-isi-extinde-capacitatile-de-productie.html"
         },
         {
-          "title": "Deloitte: Vânzarea afacerii nu încheie tranziția. Ce se schimbă pentru fondator și companie după tranzacție",
-          "published_at": "04.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/deloitte-vanzarea-afacerii-nu-incheie-tranzitia.html"
+          "title": "Taco Bell deschide un nou restaurant în București și ajunge la 20 de unități în România și Republica Moldova",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/food-service/taco-bell-restaurant-bucuresti-20.html"
         },
         {
-          "title": "Freshful NOW, serviciul de livrare ultrarapidă al Freshful by eMAG, acoperă acum integral Bucureștiul",
-          "published_at": "04.11.2026",
-          "url": "https://www.retail-fmcg.ro/e-commerce-2/freshful-now-serviciul-livrare-ultrarapida-bucuresti.html"
+          "title": "Froo își pregătește următoarea etapă de extindere în România: consolidarea rețelei și oportunități în noi orașe și regiuni",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/froo-isi-pregateste-urmatoarea-etapa-de-extindere-in-romania.html"
         },
         {
-          "title": "Cum transformă Fragedo de la TRANSAVIA siguranța și constanța în valoare pentru consumatori și retail",
+          "title": "Situația deschiderilor de magazine din retailul FMCG din România, în luna octombrie 2026",
           "published_at": "04.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/cum-transforma-fragedo-de-la-transavia-siguranta-si-constanta-in-valoare-pentru-consumatori-si-retail.html"
+          "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-fmcg-romania-octombrie-2026.html"
         },
         {
-          "title": "Mega Image, Profi și Shop&Go, reunite sub Ahold Delhaize România. Shop&Go devine brand cu management și strategie proprii",
+          "title": "PENNY continuă extinderea rețelei și deschide patru magazine noi",
           "published_at": "04.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/mega-image-profi-shopgo-reunite-sub-ahold-delhaize-romania.html"
+          "url": "https://www.retail-fmcg.ro/retail/penny-deschide-patru-magazine-noi.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "05.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -147,20 +152,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Vițelul din ferma de lapte, pregătit pentru carne: unde se decide durata îngrășării?",
-          "published_at": "04.11.2026",
-          "url": "https://www.meat-milk.ro/article/vitelul-din-ferma-de-lapte-pregatit-pentru-carne-unde-se-decide-durata-ingrasarii-sF4zx5df"
+          "title": "Următoarea lactație începe la înțărcare: ce merită pregătit înainte de ultima mulsoare?",
+          "published_at": "05.11.2026",
+          "url": "https://www.meat-milk.ro/article/urmatoarea-lactatie-incepe-la-intarcare-ce-merita-pregatit-inainte-de-ultima-mulsoare-xv1luFMV"
         },
         {
-          "title": "Ce pregătesc incubatoarele pentru piața cărnii de pasăre? România accelerează în datele pentru august",
-          "published_at": "04.11.2026",
-          "url": "https://www.meat-milk.ro/article/ce-pregatesc-incubatoarele-pentru-piata-carnii-de-pasare-romania-accelereaza-in-datele-pentru-august-f9rMhcR3"
+          "title": "Porcul continuă să se ieftinească în UE: România se apropie de media europeană la clasa E",
+          "published_at": "05.11.2026",
+          "url": "https://www.meat-milk.ro/article/porcul-continua-sa-se-ieftineasca-in-ue-romania-se-apropie-de-media-europeana-la-clasa-e-wA5TH9B8"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "05.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -168,12 +173,23 @@
       "website": "https://www.retail.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Gigantul panificației care și-a crescut vânzările de 10 ori în România",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail.ro/articole/stiri-si-noutati/gigantul-panificatiei-care-si-a-crescut-vanzarile-de-10-ori-in-romania-15281.html"
+        },
+        {
+          "title": "Auchan a dat startul reducerilor de Black Friday 2026. Ce poți cumpăra mai...",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail.ro/articole/stiri-si-noutati/1-auchan-a-dat-startul-reducerilor-de-black-friday-2026-ce-poti-cumpara-mai-ieftin-si-ce-surpriza-pregateste-pentru-craciun-15280.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "02.11.2026"
+      "latest_published_at": "05.11.2026"
     },
     {
       "pub_id": "retailarena",
@@ -220,23 +236,38 @@
       "website": "https://euromeatnews.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 2,
+      "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "ChilePork strengthens its presence in Southeast Asia and projects new business opportunities",
-          "published_at": "02.11.2026",
-          "url": "https://euromeatnews.com/chilepork-strengthens-its-presence-in-southeast-asia-and-projects-new-business-opportunities/"
+          "title": "U.S. pork, beef exports both at record-setting pace to Dominican Republic",
+          "published_at": "04.11.2026",
+          "url": "https://euromeatnews.com/u-s-pork-beef-exports-both-at-record-setting-pace-to-dominican-republic/"
         },
         {
-          "title": "Torrent i Fills expands its range of slow cooking dishes with recipes for the Christmas holidays",
-          "published_at": "02.11.2026",
-          "url": "https://euromeatnews.com/torrent-i-fills-expands-its-range-of-slow-cooking-dishes-with-recipes-for-the-christmas-holidays/"
+          "title": "Spanish exports of fresh beef grew by 6.8 percent in volume this year",
+          "published_at": "04.11.2026",
+          "url": "https://euromeatnews.com/spanish-exports-of-fresh-beef-grew-by-6-8-percent-in-volume-this-year/"
+        },
+        {
+          "title": "Maturatta Friboi consolidates its dominance in the barbecue market",
+          "published_at": "04.11.2026",
+          "url": "https://euromeatnews.com/maturatta-friboi-consolidates-its-dominance-in-the-barbecue-market/"
+        },
+        {
+          "title": "Danish Crown sells slaughterhouse land in Saeby",
+          "published_at": "04.11.2026",
+          "url": "https://euromeatnews.com/danish-crown-sells-slaughterhouse-land-in-saeby/"
+        },
+        {
+          "title": "MLA and Drakes team up to put more goatmeat on Aussie shelves",
+          "published_at": "04.11.2026",
+          "url": "https://euromeatnews.com/mla-and-drakes-team-up-to-put-more-goatmeat-on-aussie-shelves/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "02.11.2026"
+      "latest_published_at": "04.11.2026"
     },
     {
       "pub_id": "meatmanagement",
@@ -260,25 +291,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "El filo marca la diferencia: calidad y rendimiento en el corte Incluso con herramientas nuevas y motores en perfecto estado, la calidad del corte puede disminuir si el filo de la cuchilla no... Más información",
-          "published_at": "04.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72522/kw/El+filo+marca+la+diferencia%3A+calidad+y+rendimiento+en+el+corte"
+          "title": "Entrevista con Sebastián Azzollini , director general de Jarvis España Con más de un siglo de trayectoria a nivel mundial y diez años de implantación directa en España, Jarvis Products Corporation se... Más información",
+          "published_at": "05.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72520/kw/Entrevista+con+Sebasti%C3%A1n+Azzollini%2C+director+general+de+Jarvis+Espa%C3%B1a"
         },
         {
-          "title": "Provacuno amplía su herramienta para el cálculo de la huella de carbono a mataderos y salas de despiece",
-          "published_at": "04.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72637/kw/Provacuno+ampl%C3%ADa+su+herramienta+para+el+c%C3%A1lculo+de+la+huella+de+carbono+a+mataderos+y+salas+de+despiece"
+          "title": "Los medios especializados, entre las fuentes más creíbles sobre marcas y empresas en España",
+          "published_at": "05.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72648/kw/Los+medios+especializados%2C+entre+las+fuentes+m%C3%A1s+cre%C3%ADbles+sobre+marcas+y+empresas+en+Espa%C3%B1a"
         },
         {
-          "title": "El Gobierno aprueba un real decreto que limita precocinados y frituras en hospitales y residencias",
-          "published_at": "04.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72635/kw/El+Gobierno+aprueba+un+real+decreto+que+limita+precocinados+y+frituras+en+hospitales+y+residencias"
+          "title": "La Aesan alerta de la presencia de Listeria monocytogenes en jamón cocido de la marca Urkabe",
+          "published_at": "05.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72642/kw/La+Aesan+alerta+de+la+presencia+de+Listeria+monocytogenes+en+jam%C3%B3n+cocido+de+la+marca+Urkabe"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "05.11.2026"
     },
     {
       "pub_id": "frs",
@@ -289,25 +320,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Lidl, nuevo patrocinador principal de La Vuelta y de otras cuatro pruebas del ciclismo español",
-          "published_at": "04.11.2026",
-          "url": "https://www.foodretail.es/retailers/lidl-nuevo-patrocinador-principal-de-la-vuelta-y-de-otras-cuatro-pruebas-del-ciclismo-espanol.html"
+          "title": "Costco destina 80 millones de euros a la apertura de su tercera tienda en Madrid",
+          "published_at": "05.11.2026",
+          "url": "https://www.foodretail.es/retailers/costco-destina-80-millones-de-euros-a-la-apertura-de-su-tercera-tienda-en-madrid.html"
         },
         {
-          "title": "Müller prepara la apertura de su primer supermercado en Alcorcón (Madrid)",
+          "title": "5 Rusia, principal sospechoso del ciberataque a los supermercados europeos, que no ha afectado a España",
           "published_at": "04.11.2026",
-          "url": "https://www.foodretail.es/retailers/mller-prepara-la-apertura-de-su-primer-supermercado-en-alcorcon-madrid.html"
+          "url": "https://www.foodretail.es/retailers/rusia-principal-sospechoso-del-ciberataque-a-los-supermercados-europeos-que-no-ha-afectado-a-espana.html"
         },
         {
-          "title": "BM Supermercados inaugura tienda en San Lorenzo del Escorial (Madrid)",
+          "title": "2 Spar Gran Canaria reabre su tienda Spar La Ciel en Santa Lucía de Tirajana",
           "published_at": "04.11.2026",
-          "url": "https://www.foodretail.es/retailers/bm-supermercados-inaugura-tienda-en-san-lorenzo-del-escorial-madrid.html"
+          "url": "https://www.foodretail.es/retailers/spar-gran-canaria-reabre-su-tienda-spar-la-ciel-en-santa-lucia-de-tirajana.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "05.11.2026"
     }
   ]
 }
