@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-05T21:50:39.153728+02:00",
+  "generated_at_utc": "2026-11-06T14:41:01.198441+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -40,13 +40,13 @@
       "module_id": "retail_media_monitor",
       "title": "Retail Media Monitor (Presă Specializată)",
       "schedule": "Zilnic, 09:00 Europe/Bucharest",
-      "last_verified_update": "05.11.2026 · 08:00",
-      "updated_date": "05.11.2026",
+      "last_verified_update": "06.11.2026 · 08:00",
+      "updated_date": "06.11.2026",
       "updated_time": "08:00",
-      "period": "29.10.2026 – 05.11.2026 (Ultimele 7 zile)",
+      "period": "30.10.2026 – 06.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "7ca86bc6a3376f648ca51c24c26911178a38556bf56f9316556eac42419d1a67",
+      "dataset_sha256": "02a80f0bec106a492437c2a62e570adfe5a10a2ec4fd4339a99332d2d288baaf",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },
@@ -54,8 +54,8 @@
       "module_id": "strategic_category_insights",
       "title": "Strategic Category Insights",
       "schedule": "Zilnic, după sincronizarea surselor relevante de piață",
-      "last_verified_update": "05.11.2026 · 08:00",
-      "updated_date": "05.11.2026",
+      "last_verified_update": "06.11.2026 · 08:00",
+      "updated_date": "06.11.2026",
       "updated_time": "08:00",
       "status": "SYNCHRONIZED",
       "sources": [
