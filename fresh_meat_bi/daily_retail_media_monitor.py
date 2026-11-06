@@ -20,6 +20,7 @@ import json
 import re
 import ssl
 import html
+import hashlib
 import datetime
 import urllib.request
 import urllib.error
@@ -537,7 +538,9 @@ def get_verified_publications(today_str: str) -> tuple:
                     is_new = False
                     break
 
+            art_id = f"{pub_meta['id']}-{hashlib.md5(u.encode('utf-8')).hexdigest()[:8]}"
             art_obj = {
+                "id": art_id,
                 "title": t,
                 "published_at": d,
                 "collected_at": now_audit,

@@ -498,7 +498,10 @@ export default function App() {
               <div className="mt-3 text-xs text-slate-400 flex flex-wrap items-center justify-center gap-4">
                 <button 
                   type="button"
-                  onClick={(e) => handleDownloadCustomImage(zoomedImage.url, 'EU_PORK_MARKET_GOLDEN_REFERENCE_WK38.png', e)}
+                  onClick={(e) => {
+                    const fallbackName = zoomedImage.url.includes('EU_PORK') ? 'EU_PORK_MARKET_WK45_2026.png' : 'RAPORT_GRAFIC.png';
+                    handleDownloadCustomImage(zoomedImage.url, fallbackName, e);
+                  }}
                   disabled={isDownloading}
                   className="text-amber-400 hover:text-amber-300 hover:underline font-semibold flex items-center gap-1.5 cursor-pointer disabled:opacity-60"
                 >

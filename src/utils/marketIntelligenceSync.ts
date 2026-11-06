@@ -44,53 +44,56 @@ export interface MarketIntelligenceManifest {
 export const DEFAULT_MANIFEST: MarketIntelligenceManifest = {
   schema_version: "2.0-market-intelligence-manifest",
   platform_policy: "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  generated_at_utc: "2026-10-31T15:00:00Z",
+  generated_at_utc: "2026-11-06T14:00:00Z",
   execution_timezone: "Europe/Bucharest",
   modules: {
     promo_weekly: {
       module_id: "promo_weekly",
       title: "Promo Weekly",
       schedule: "Luni, 09:00 Europe/Bucharest",
-      last_verified_update: "29.10.2026 · 09:00",
-      updated_date: "29.10.2026",
-      updated_time: "09:00",
-      week: "WK44",
+      last_verified_update: "04.11.2026 · 09:30",
+      updated_date: "04.11.2026",
+      updated_time: "09:30",
+      week: "WK45",
       year: 2026,
-      period: "26 OCT – 01 NOI 2026",
+      period: "02–08 NOI 2026",
       status: "RELEASE_PASS",
-      data_file: "/data/bi_dashboard_export.json"
+      data_file: "/data/bi_dashboard_export.json",
+      dataset_sha256: "4a95676302821105e787056e22fe013b65ee3886bc86ab38420bd37db9a48865"
     },
     eu_pork_market: {
       module_id: "eu_pork_market",
       title: "EU Pork Market",
-      schedule: "Joi, 09:00 Europe/Bucharest",
-      last_verified_update: "29.10.2026 · 09:00",
-      updated_date: "29.10.2026",
-      updated_time: "09:00",
-      week: "WK44",
+      schedule: "Joi, 09:00 & 16:00 Europe/Bucharest (sesiune completă)",
+      last_verified_update: "05.11.2026 · 16:00",
+      updated_date: "05.11.2026",
+      updated_time: "16:00",
+      week: "WK45",
       year: 2026,
-      period: "26.10–01.11.2026",
+      period: "02.11–08.11.2026",
       status: "RELEASE_PASS",
-      data_file: "/data/eu_pork_market_export.json"
+      data_file: "/data/eu_pork_market_export.json",
+      dataset_sha256: "6ff91636ece5dadb64b28833815752a9d6dd4c5f5823f58f782012769ee8fa19"
     },
     retail_media_monitor: {
       module_id: "retail_media_monitor",
       title: "Retail Media Monitor (Presă Specializată)",
       schedule: "Zilnic, 09:00 Europe/Bucharest",
-      last_verified_update: "31.10.2026 · 09:00",
-      updated_date: "31.10.2026",
-      updated_time: "09:00",
-      period: "24.10.2026 – 31.10.2026",
+      last_verified_update: "05.11.2026 · 08:00",
+      updated_date: "05.11.2026",
+      updated_time: "08:00",
+      period: "29.10.2026 – 05.11.2026 (Ultimele 7 zile)",
       status: "ACTIVE_MONITORED",
-      data_file: "/data/retail_media_export.json"
+      data_file: "/data/retail_media_export.json",
+      dataset_sha256: "e71403b99cf26936d7337c3e1dc1779e88e89c75d99ef6d8781bc905641b14eb"
     },
     strategic_category_insights: {
       module_id: "strategic_category_insights",
       title: "Strategic Category Insights",
-      schedule: "Zilnic, după sincronizarea surselor relevante",
-      last_verified_update: "31.10.2026 · 09:00",
-      updated_date: "31.10.2026",
-      updated_time: "09:00",
+      schedule: "Zilnic, după sincronizarea surselor relevante de piață",
+      last_verified_update: "05.11.2026 · 08:00",
+      updated_date: "05.11.2026",
+      updated_time: "08:00",
       status: "SYNCHRONIZED"
     }
   }

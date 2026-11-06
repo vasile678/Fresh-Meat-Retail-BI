@@ -316,10 +316,73 @@ def test_10_wk45_pipeline_release_pass():
     assert exp.get("release_status") == "RELEASE_PASS"
     print("  ✓ WK45 governed pipeline execution, Release Gate, and publication verified: PASS\n")
 
+def test_11_secondary_fallback_validation():
+    print("[TEST 11/11] Validating secondary source fallback layer and audit fields for EU Pork Market...")
+    pub_export = ROOT / "public" / "data" / "eu_pork_market_export.json"
+    assert pub_export.exists(), "Export file not found"
+    exp = json.loads(pub_export.read_text(encoding="utf-8"))
+
+    rows_by_m = {r["market"]: r for r in exp.get("rows", [])}
+    assert len(rows_by_m) == 8, f"Expected 8 markets, got {len(rows_by_m)}"
+
+    # 1. Italy CUN secondary fallback verification
+    cun = rows_by_m["Italy CUN 156–200 kg"]
+    assert cun["source_type"] == "SECONDARY", f"Expected SECONDARY for CUN, got {cun.get('source_type')}"
+    assert "3tres3" in cun["source"], f"Expected 3tres3 in CUN source, got {cun.get('source')}"
+    assert cun["price"] == "1.875", f"Expected CUN price 1.875, got {cun.get('price')}"
+    assert cun["unit"] == "€/kg live", f"Expected unit €/kg live, got {cun.get('unit')}"
+    assert cun["freshness_status"] == "CURRENT_VERIFIED", f"Expected CURRENT_VERIFIED, got {cun.get('freshness_status')}"
+    assert cun["verification_status"] == "CURRENT_VERIFIED"
+    assert cun["wow"] == "-0.040", f"Expected WoW -0.040, got {cun.get('wow')}"
+    assert cun["trend"] == "WEAKENING", f"Expected WEAKENING trend, got {cun.get('trend')}"
+
+    # 2. Spain Mercolleida secondary fallback verification
+    spain = rows_by_m["Spain Mercolleida"]
+    assert spain["source_type"] == "SECONDARY", f"Expected SECONDARY for Spain Mercolleida, got {spain.get('source_type')}"
+    assert "3tres3" in spain["source"], f"Expected 3tres3 in Mercolleida source, got {spain.get('source')}"
+    assert spain["price"] == "1.137", f"Expected Mercolleida price 1.137, got {spain.get('price')}"
+    assert spain["unit"] == "€/kg live", f"Expected unit €/kg live, got {spain.get('unit')}"
+    assert spain["freshness_status"] == "CURRENT_VERIFIED", f"Expected CURRENT_VERIFIED, got {spain.get('freshness_status')}"
+    assert spain["wow"] == "-0.031", f"Expected WoW -0.031, got {spain.get('wow')}"
+    assert spain["trend"] == "WEAKENING", f"Expected WEAKENING trend, got {spain.get('trend')}"
+
+    # 3. France MPB secondary fallback verification
+    france = rows_by_m["France MPB"]
+    assert france["price"] == "1.442", f"Expected France MPB price 1.442, got {france.get('price')}"
+    assert france["freshness_status"] == "CURRENT_VERIFIED"
+    assert france["wow"] == "-0.060", f"Expected WoW -0.060, got {france.get('wow')}"
+
+    # 4. Poland Class E verified from POLPIG T45
+    poland = rows_by_m["Poland (ZMI) Class E"]
+    assert poland["price"] == "5.66", f"Expected Poland Class E price 5.66, got {poland.get('price')}"
+    assert poland["unit"] == "PLN/kg Class E", f"Expected PLN/kg Class E, got {poland.get('unit')}"
+    assert poland["freshness_status"] == "CURRENT_VERIFIED"
+    assert poland["wow"] == "-0.04", f"Expected WoW -0.04, got {poland.get('wow')}"
+
+    # 5. Audit fields integrity across all 8 markets
+    required_audit_keys = [
+        "source_name", "source_url", "source_type", "quotation_date",
+        "collection_timestamp", "verification_status", "freshness_status"
+    ]
+    for m, r in rows_by_m.items():
+        for k in required_audit_keys:
+            assert k in r and r[k] not in (None, ""), f"Missing or empty audit key '{k}' for market {m}"
+        assert r["source_type"] in ("PRIMARY", "SECONDARY")
+
+    # 6. Check source receipt audit fields and probe logs
+    src_receipt_file = BASE / "EU_SOURCE_RECEIPT_WK45.json"
+    assert src_receipt_file.exists(), "WK45 source receipt missing"
+    src_data = json.loads(src_receipt_file.read_text(encoding="utf-8"))
+    assert src_data.get("secondary_fallbacks_active") >= 2
+    assert src_data.get("status") == "PASS"
+    assert "source_probes" in src_data and len(src_data["source_probes"]) >= 8
+
+    print("  ✓ Secondary source fallback, audit fields, and Mercolleida/CUN/MPB/Poland validation verified: PASS\n")
+
 if __name__ == "__main__":
     print("\n=======================================================")
     print(" RUNNING EU PORK MARKET WEEKLY MODULE TEST SUITE")
-    print("=======================================================\n")
+    print("=======================================================")
     test_1_manifest_hashes()
     test_2_market_order_and_units()
     test_3_iso_calendar_calculation()
@@ -330,7 +393,9 @@ if __name__ == "__main__":
     test_8_fail_closed_on_unverified_target_week()
     test_9_autonomous_collector_wk45()
     test_10_wk45_pipeline_release_pass()
+    test_11_secondary_fallback_validation()
     print("=======================================================")
-    print(" ALL 10/10 EU PORK MARKET MODULE TESTS PASSED")
+    print(" ALL 11/11 EU PORK MARKET MODULE TESTS PASSED")
     print("=======================================================\n")
+
 

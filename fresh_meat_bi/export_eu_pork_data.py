@@ -136,9 +136,14 @@ def export_eu_pork_data(dataset_path: Path, output_json_path: Path, release_rece
             "trend": r.get("trend", "N/V"),
             "source": r.get("source", r.get("source_date", "")),
             "source_date": r.get("source_date", ""),
+            "source_name": r.get("source_name", r.get("source", "")),
+            "source_type": r.get("source_type", "PRIMARY"),
+            "quotation_date": r.get("quotation_date", r.get("source_publication_date", "")),
             "source_publication_date": r.get("source_publication_date", ""),
             "source_url": r.get("source_url", r.get("official_url", "")),
+            "collection_timestamp": r.get("collection_timestamp", dataset.get("published_at_utc", "")),
             "freshness_status": r.get("freshness_status", "CURRENT_VERIFIED" if r.get("status") == "VERIFIED" else r.get("status", "N/V")),
+            "verification_status": r.get("verification_status", r.get("freshness_status", "CURRENT_VERIFIED" if r.get("status") == "VERIFIED" else r.get("status", "N/V"))),
             "audit_note": r.get("audit_note", ""),
             "status": r.get("status", "N/V")
         })
@@ -177,6 +182,7 @@ def export_eu_pork_data(dataset_path: Path, output_json_path: Path, release_rece
         "year": current_year,
         "period": dataset.get("period", "26.10–01.11.2026"),
         "updated": dataset.get("updated", "29.10.2026"),
+        "updated_time": dataset.get("updated_time", "16:00"),
         "published_at_utc": dataset.get("published_at_utc", "2026-10-29T07:00:00Z"),
         "is_baseline_golden_reference": dataset.get("week") == "WK38",
         "fail_closed_mode": "ACTIVE",

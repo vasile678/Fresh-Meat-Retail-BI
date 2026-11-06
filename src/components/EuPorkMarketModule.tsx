@@ -35,9 +35,14 @@ interface EuBenchmarkRow {
   trend: string;
   source: string;
   source_date: string;
+  source_name?: string;
+  source_type?: 'PRIMARY' | 'SECONDARY';
+  quotation_date?: string;
   source_publication_date?: string;
   source_url?: string;
+  collection_timestamp?: string;
   freshness_status?: 'CURRENT_VERIFIED' | 'LATEST_AVAILABLE' | 'NQ' | 'N/V';
+  verification_status?: string;
   audit_note?: string;
   status: 'VERIFIED' | 'NQ' | 'N/V';
 }
@@ -77,50 +82,50 @@ interface EuPorkMarketModuleProps {
   isDownloading: boolean;
 }
 
-// Fallback baseline in accordance with WK44 Golden Reference
+// Fallback baseline in accordance with WK45 Canonical Verified Release
 const BASELINE_FALLBACK: EuPorkExportData = {
   schema_version: '2.0-eu-pork-export',
   release_status: 'RELEASE_PASS',
   status_badge: 'ACTIVE_LOCKED',
-  week: 'WK44',
+  week: 'WK45',
   year: 2026,
-  period: '26.10–01.11.2026',
-  updated: '29.10.2026',
-  published_at_utc: '2026-10-29T07:00:00Z',
+  period: '02.11–08.11.2026',
+  updated: '05.11.2026',
+  published_at_utc: '2026-11-05T14:00:00Z',
   is_baseline_golden_reference: false,
   fail_closed_mode: 'ACTIVE',
-  fail_closed_notice: 'Raportul afișează release-ul autoritativ validat pentru săptămâna WK44/2026.',
-  market_signal_title: 'MARKET SIGNAL (WK44)',
-  market_signal: 'DOWNSIDE ACCELERATION',
-  market_signal_body: 'Severe downward pressure across Germany (VEZG down to 1.32 €/kg) and France MPB (1.502 €/kg).\nSpain continuing autumn price cuts; Italy CUN retreats to 1.915 €/kg.\nDanish Crown and Vion holding flat.',
+  fail_closed_notice: 'Raportul afișează release-ul autoritativ validat pentru săptămâna WK45/2026.',
+  market_signal_title: 'MARKET SIGNAL (WK45)',
+  market_signal: 'EU SUPPLY ADJUSTMENT',
+  market_signal_body: 'German VEZG confirms stability at 1.320 €/kg SG after previous autumn drops.\nSpain Mercolleida weakens to 1.137 €/kg live; Italy CUN eases to 1.875 €/kg live.\nFrance MPB drops to 1.442 €/kg carcass; Poland Class E adjusts to 5.66 PLN/kg.',
   takeaways: [
-    'Germany VEZG drops 8 cents to 1.32 €/kg SG, multi-year low.',
-    'France MPB tumbles to 1.502 €/kg (-0.08 WoW); Poland Class E under 6 PLN/kg.',
-    'Spain Mercolleida eases to 1.550 €/kg live; Italy CUN slips to 1.915 €/kg live.',
-    'Danish Crown flat at 7.50 DKK/kg; Vion stable at 1.16 €/kg SG.'
+    'Germany VEZG stabilizes at 1.320 €/kg SG (±0.00 WoW); supply and demand balanced at slaughterhouse gates.',
+    'Spain Mercolleida decreases by 3.1 cents to 1.137 €/kg live; seasonal supply pressure continues.',
+    'Italy CUN heavy pigs ease 4.0 cents to 1.875 €/kg live; slaughter weights expand across northern regions.',
+    'France MPB eases to 1.442 €/kg carcass (-0.06 WoW); Poland Class E retreats to 5.66 PLN/kg (-0.04 WoW).'
   ],
   implications: [
-    'MAXIMIZE procurement discounts across imported primal cuts (spată, ceafă)',
-    'REOPEN supplier indexations tied to German VEZG and Spanish Mercolleida',
-    'MAINTAIN short contract windows (1 week) as European supply glut persists'
+    'LOCK IN procurement discounts across imported primal cuts (spată, ceafă) following Spanish and French declines',
+    'REINDEX Romanian supplier contracts referencing Spanish Mercolleida (1.137 €/kg) and German VEZG (1.320 €/kg)',
+    'MAINTAIN short contract horizons (1-2 weeks) as European pork supplies remain elevated heading into mid-November'
   ],
   rows: [
-    { market: 'Germany VEZG', country: 'Germania', flag: '🇩🇪', basis: 'Carcasă (Carcass)', authority: 'VEZG (Vereinigung der Erzeugergemeinschaften)', official_unit: 'EUR / kg carcasă', price: '1.320', unit: '€/kg SG', wow: '-0.080', trend: 'WEAKENING', source: 'VEZG | 28.10', source_date: 'VEZG | 28.10', status: 'VERIFIED' },
-    { market: 'ISN / Internet Pig Auction', country: 'Germania', flag: '🇩🇪', basis: 'Comerț licitație', authority: 'ISN (Interessengemeinschaft der Schweinehalter)', official_unit: 'EUR / kg carcasă', price: 'NQ', unit: '€/kg SG', wow: '—', trend: 'NQ', source: 'ISN | 27.10', source_date: 'ISN | 27.10', status: 'NQ' },
-    { market: 'Spain Mercolleida', country: 'Spania', flag: '🇪🇸', basis: 'Greutate vie (Live-weight)', authority: 'Lonja de Mercolleida', official_unit: 'EUR / kg viu', price: '1.550', unit: '€/kg live', wow: '-0.030', trend: 'WEAKENING', source: 'Mercolleida | 29.10', source_date: 'Mercolleida | 29.10', status: 'VERIFIED' },
-    { market: 'Italy CUN 156–200 kg', country: 'Italia', flag: '🇮🇹', basis: 'Porc greu (Heavy pig)', authority: 'Commissione Unica Nazionale (CUN)', official_unit: 'EUR / kg viu', price: '1.915', unit: '€/kg live', wow: '-0.035', trend: 'WEAKENING', source: 'CUN/Crefis | 29.10', source_date: 'CUN/Crefis | 29.10', status: 'VERIFIED' },
-    { market: 'Netherlands Vion', country: 'Olanda', flag: '🇳🇱', basis: 'Preț abator (Slaughterhouse)', authority: 'Vion Food Group', official_unit: 'EUR / kg carcasă', price: '1.16', unit: '€/kg SG', wow: '0.00', trend: 'STABLE', source: 'Vion | WK44', source_date: 'Vion | WK44', status: 'VERIFIED' },
-    { market: 'Denmark Danish Crown', country: 'Danemarca', flag: '🇩🇰', basis: 'Preț abator săptămânal', authority: 'Danish Crown', official_unit: 'DKK / kg carcasă', price: '7.50', unit: 'DKK/kg', wow: '0.00', trend: 'STABLE', source: 'DC | WK44', source_date: 'DC | WK44', status: 'VERIFIED' },
-    { market: 'France MPB', country: 'Franța', flag: '🇫🇷', basis: 'Marché du Porc Breton', authority: 'MPB Plérin', official_unit: 'EUR / kg carcasă', price: '1.502', unit: '€/kg carcass', wow: '-0.080', trend: 'WEAKENING', source: 'MPB | 29.10', source_date: 'MPB | 29.10', status: 'VERIFIED' },
-    { market: 'Poland (ZMI) Class E', country: 'Polonia', flag: '🇵🇱', basis: 'Clasa E oficială', authority: 'Ministerul Agriculturii Polonia (ZMR)', official_unit: 'PLN / 100 kg carcasă', price: '5.90', unit: 'PLN/kg Class E', wow: '-0.05', trend: 'WEAKENING', source: 'MRiRW/POLPIG | WK44', source_date: 'MRiRW/POLPIG | WK44', status: 'VERIFIED' }
+    { market: 'Germany VEZG', country: 'Germania', flag: '🇩🇪', basis: 'Carcasă (Carcass)', authority: 'VEZG (Vereinigung der Erzeugergemeinschaften)', official_unit: 'EUR / kg carcasă', price: '1.320', unit: '€/kg SG', wow: '0.000', trend: 'STABLE', source: 'VEZG | 05.11', source_date: 'VEZG | 05.11', status: 'VERIFIED' },
+    { market: 'ISN / Internet Pig Auction', country: 'Germania', flag: '🇩🇪', basis: 'Comerț licitație', authority: 'ISN (Interessengemeinschaft der Schweinehalter)', official_unit: 'EUR / kg carcasă', price: 'NQ', unit: '€/kg SG', wow: '—', trend: 'NQ', source: 'ISN | 03.11', source_date: 'ISN | 03.11', status: 'NQ' },
+    { market: 'Spain Mercolleida', country: 'Spania', flag: '🇪🇸', basis: 'Greutate vie (Live-weight)', authority: 'Lonja de Mercolleida', official_unit: 'EUR / kg viu', price: '1.137', unit: '€/kg live', wow: '-0.031', trend: 'WEAKENING', source: '3tres3/Mercolleida | 05.11', source_date: '3tres3/Mercolleida | 05.11', status: 'VERIFIED' },
+    { market: 'Italy CUN 156–200 kg', country: 'Italia', flag: '🇮🇹', basis: 'Porc greu (Heavy pig)', authority: 'Commissione Unica Nazionale (CUN)', official_unit: 'EUR / kg viu', price: '1.875', unit: '€/kg live', wow: '-0.040', trend: 'WEAKENING', source: '3tres3/CUN | 05.11', source_date: '3tres3/CUN | 05.11', status: 'VERIFIED' },
+    { market: 'Netherlands Vion', country: 'Olanda', flag: '🇳🇱', basis: 'Preț abator (Slaughterhouse)', authority: 'Vion Food Group', official_unit: 'EUR / kg carcasă', price: '1.11', unit: '€/kg SG', wow: '0.00', trend: 'STABLE', source: 'Vion | WK45', source_date: 'Vion | WK45', status: 'VERIFIED' },
+    { market: 'Denmark Danish Crown', country: 'Danemarca', flag: '🇩🇰', basis: 'Preț abator săptămânal', authority: 'Danish Crown', official_unit: 'DKK / kg carcasă', price: '7.50', unit: 'DKK/kg', wow: '0.00', trend: 'STABLE', source: 'DC | WK45', source_date: 'DC | WK45', status: 'VERIFIED' },
+    { market: 'France MPB', country: 'Franța', flag: '🇫🇷', basis: 'Marché du Porc Breton', authority: 'MPB Plérin', official_unit: 'EUR / kg carcasă', price: '1.442', unit: '€/kg carcass', wow: '-0.060', trend: 'WEAKENING', source: '3tres3/MPF | 05.11', source_date: '3tres3/MPF | 05.11', status: 'VERIFIED' },
+    { market: 'Poland (ZMI) Class E', country: 'Polonia', flag: '🇵🇱', basis: 'Clasa E oficială', authority: 'Ministerul Agriculturii Polonia (ZMR)', official_unit: 'PLN / 100 kg carcasă', price: '5.66', unit: 'PLN/kg Class E', wow: '-0.04', trend: 'WEAKENING', source: 'POLPIG | T45', source_date: 'POLPIG | T45', status: 'VERIFIED' }
   ],
   hashes: {
     master_sha256: 'ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264',
     renderer_sha256: '2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455',
-    dataset_sha256: '49cb8b18063f87c65dbfd0d54914803336d22de2f815819ee0390d641a050bda'
+    dataset_sha256: '6dadd071c675c7f0366f8e05464a3da18bead2dc392a3a35c2d1304a6401a5f8'
   },
-  image_url: '/EU_PORK_MARKET_WK44_2026.png',
-  image_filename: 'EU_PORK_MARKET_WK44_2026.png'
+  image_url: '/EU_PORK_MARKET_WK45_2026.png',
+  image_filename: 'EU_PORK_MARKET_WK45_2026.png'
 };
 
 interface PorkCutItem {
@@ -248,13 +253,14 @@ export default function EuPorkMarketModule({
     document.title = 'Fresh Meat Retail BI | Market Intelligence & Insights';
   }, []);
 
-  // Fetch dynamic export from /data/eu_pork_market_export.json
+  // Fetch dynamic export from /data/eu_pork_market_export.json with cache-busting version
   useEffect(() => {
     let isMounted = true;
     async function loadEuData() {
       try {
-        const url = getAssetUrl('/data/eu_pork_market_export.json');
-        const res = await fetch(url, { cache: 'no-cache' });
+        const vTag = manifest?.modules?.eu_pork_market?.dataset_sha256?.slice(0, 12) || `${Date.now()}`;
+        const url = getAssetUrl(`/data/eu_pork_market_export.json?v=${vTag}`);
+        const res = await fetch(url, { cache: 'no-store' });
         if (res.ok) {
           const json = await res.json();
           if (isMounted && json && json.rows && json.rows.length === 8) {
@@ -269,10 +275,17 @@ export default function EuPorkMarketModule({
     }
     loadEuData();
     return () => { isMounted = false; };
-  }, []);
+  }, [manifest?.modules?.eu_pork_market?.dataset_sha256, manifest?.modules?.eu_pork_market?.last_verified_update]);
 
-  const imageUrl = getAssetUrl(data.image_url || '/EU_PORK_MARKET_GOLDEN_REFERENCE.png');
-  const filename = data.image_filename || 'EU_PORK_MARKET_GOLDEN_REFERENCE_WK38.png';
+  // Construct versioned image URL based on dataset SHA-256 to force immediate browser & CDN cache invalidation
+  const imageVersion = data.hashes?.dataset_sha256?.slice(0, 12) || 
+                       manifest?.modules?.eu_pork_market?.dataset_sha256?.slice(0, 12) || 
+                       data.updated?.replace(/\D/g, '') || 
+                       'WK45';
+  const rawImageUrl = data.image_url || '/EU_PORK_MARKET_WK45_2026.png';
+  const sep = rawImageUrl.includes('?') ? '&' : '?';
+  const imageUrl = getAssetUrl(`${rawImageUrl}${sep}v=${imageVersion}`);
+  const filename = data.image_filename || `EU_PORK_MARKET_${data.week || 'WK45'}_${data.year || 2026}.png`;
 
   const downloadJsonExport = () => {
     try {
@@ -385,12 +398,12 @@ export default function EuPorkMarketModule({
             {/* Titlul dinamic RAPORT SĂPTĂMÂNA XX & Comenzile vizuale Mărește | Salvează imaginea */}
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
               <h2 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight uppercase text-left">
-                RAPORT SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '44'}
+                RAPORT SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '45'}
               </h2>
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   type="button"
-                  onClick={() => onZoomImage(imageUrl, `RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '44'} — EU PORK MARKET`)}
+                  onClick={() => onZoomImage(imageUrl, `RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '45'} — EU PORK MARKET`)}
                   className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 shadow-sm transition cursor-pointer"
                   title="Mărește imaginea în ecran complet"
                 >
@@ -418,9 +431,9 @@ export default function EuPorkMarketModule({
             <div className="relative bg-slate-950 rounded-lg p-1.5 sm:p-2.5 border border-slate-800/80 overflow-hidden flex justify-center items-center">
               <img
                 src={imageUrl}
-                alt={`EU Pork Market Weekly — RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '44'}`}
+                alt={`EU Pork Market Weekly — RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '45'}`}
                 className="w-full max-w-5xl h-auto max-h-[78vh] object-contain rounded shadow-2xl cursor-pointer transition hover:opacity-95"
-                onClick={() => onZoomImage(imageUrl, `RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '44'} — EU PORK MARKET`)}
+                onClick={() => onZoomImage(imageUrl, `RAPORT SĂPTĂMÂNA ${data.week ? data.week.replace(/\D/g, '') : '45'} — EU PORK MARKET`)}
                 title="Click pentru a mări imaginea"
               />
             </div>
@@ -532,7 +545,18 @@ export default function EuPorkMarketModule({
                           )}
                         </td>
                         <td className="py-3 px-4 text-slate-300 font-sans text-[11px]">
-                          <div className="font-medium text-slate-200">{row.source_date || row.source}</div>
+                          <div className="font-medium text-slate-200 flex items-center gap-1.5 flex-wrap">
+                            <span>{row.source_date || row.source}</span>
+                            {row.source_type && (
+                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider ${
+                                row.source_type === 'SECONDARY'
+                                  ? 'bg-purple-950/70 text-purple-300 border border-purple-700/60'
+                                  : 'bg-slate-800 text-slate-400 border border-slate-700'
+                              }`}>
+                                {row.source_type}
+                              </span>
+                            )}
+                          </div>
                           {row.source_publication_date && (
                             <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5">
                               <Calendar className="w-2.5 h-2.5 text-slate-500" />
