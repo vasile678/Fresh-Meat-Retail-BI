@@ -1045,15 +1045,10 @@ export default function App() {
           <div className="space-y-6">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
               <div className="pb-4 border-b border-slate-800 mb-4">
-                <div>
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <TrendingDown className="w-4 h-4 text-emerald-400" />
-                    Analiză Comercială & Dinamică Prețuri Carne ({data.week} {data.year})
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    Calculat exclusiv din datasetul validat al release-ului activ ({data.calendar_period})
-                  </p>
-                </div>
+                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                  <TrendingDown className="w-4 h-4 text-emerald-400" />
+                  Analiză Comercială & Dinamică Prețuri Carne ({data.week} {data.year})
+                </h3>
               </div>
 
               {/* Dynamic KVI Breakdown */}
