@@ -1281,7 +1281,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                   <h2 className="text-sm font-bold text-white uppercase tracking-wider">
-                    PRESĂ RETAIL & FMCG — ROMÂNIA ({romaniaPublications.length} PUBLICAȚII)
+                    PRESĂ RETAIL & FMCG — ROMÂNIA
                   </h2>
                 </div>
                 <span className="text-xs text-slate-400 font-medium">Top știri</span>
@@ -1361,7 +1361,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-pink-400" />
                   <h2 className="text-sm font-bold text-white uppercase tracking-wider">
-                    PORK INDUSTRY INTELLIGENCE — INTERNAȚIONAL ({internationalPublications.length} PUBLICAȚII)
+                    PORK INDUSTRY INTELLIGENCE — INTERNAȚIONAL
                   </h2>
                 </div>
                 <span className="text-xs text-slate-400 font-medium">Sinteză sectorială carne de porc UE & Internațional</span>
