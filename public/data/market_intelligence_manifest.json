@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-07T15:42:04.376827+02:00",
+  "generated_at_utc": "2026-11-07T20:30:24.843608+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -33,7 +33,7 @@
       "period": "02.11–08.11.2026",
       "status": "RELEASE_PASS",
       "data_file": "/data/eu_pork_market_export.json",
-      "dataset_sha256": "069c5a1a97028dc8f84bf521d1e89a32ef6ba44a3fed9a31a77d565c514d2528",
+      "dataset_sha256": "009b008016f6f6e167a3d34d9ccc5df6013df31c85200e0c2f74ca86fd77387a",
       "verified_benchmarks_count": 8
     },
     "retail_media_monitor": {
