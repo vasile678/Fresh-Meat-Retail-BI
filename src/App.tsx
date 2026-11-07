@@ -1044,7 +1044,7 @@ export default function App() {
         {selectedTab === 'insights' && (
           <div className="space-y-6">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-2 mb-4">
+              <div className="pb-4 border-b border-slate-800 mb-4">
                 <div>
                   <h3 className="text-base font-bold text-white flex items-center gap-2">
                     <TrendingDown className="w-4 h-4 text-emerald-400" />
@@ -1053,11 +1053,6 @@ export default function App() {
                   <p className="text-xs text-slate-400 mt-0.5">
                     Calculat exclusiv din datasetul validat al release-ului activ ({data.calendar_period})
                   </p>
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700 font-mono">
-                    {data.summary.verified_count} oferte confirmate / {data.summary.cell_count} celule
-                  </span>
                 </div>
               </div>
 
