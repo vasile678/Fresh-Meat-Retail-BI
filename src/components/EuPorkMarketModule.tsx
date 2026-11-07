@@ -121,7 +121,7 @@ const BASELINE_FALLBACK: EuPorkExportData = {
   ],
   hashes: {
     master_sha256: 'ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264',
-    renderer_sha256: '2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455',
+    renderer_sha256: '681ef257c72ac641b9615510d13f50971dd062478eb3577582d8a9fdea085720',
     dataset_sha256: '6dadd071c675c7f0366f8e05464a3da18bead2dc392a3a35c2d1304a6401a5f8'
   },
   image_url: '/EU_PORK_MARKET_WK45_2026.png',

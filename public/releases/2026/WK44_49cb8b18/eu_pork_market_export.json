@@ -222,7 +222,7 @@
   "hashes": {
     "dataset_sha256": "49cb8b18063f87c65dbfd0d54914803336d22de2f815819ee0390d641a050bda",
     "master_sha256": "ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264",
-    "renderer_sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
+    "renderer_sha256": "681ef257c72ac641b9615510d13f50971dd062478eb3577582d8a9fdea085720",
     "release_receipt_sha256": "038bedf3fdf328fda2616d791519f846f0fd55a29777e962c4934100c9791d92"
   },
   "image_url": "/EU_PORK_MARKET_WK44_2026.png",

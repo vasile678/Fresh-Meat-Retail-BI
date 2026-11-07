@@ -10,7 +10,7 @@
   },
   "renderer": {
     "file": "EU_PORK_MARKET_RENDERER.py",
-    "sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
+    "sha256": "681ef257c72ac641b9615510d13f50971dd062478eb3577582d8a9fdea085720",
     "mode": "DETERMINISTIC_MASTER_OVERLAY",
     "external_mask_map_required": false,
     "generative_image": "FORBIDDEN"

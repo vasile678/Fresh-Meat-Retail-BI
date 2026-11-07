@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-07T14:45:24.653236+02:00",
+  "generated_at_utc": "2026-11-07T15:42:04.376827+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -33,7 +33,7 @@
       "period": "02.11–08.11.2026",
       "status": "RELEASE_PASS",
       "data_file": "/data/eu_pork_market_export.json",
-      "dataset_sha256": "bcab5a31906053f8c573360aa56246a58a6376df618e59375b155ae1b37738a9",
+      "dataset_sha256": "069c5a1a97028dc8f84bf521d1e89a32ef6ba44a3fed9a31a77d565c514d2528",
       "verified_benchmarks_count": 8
     },
     "retail_media_monitor": {
@@ -46,7 +46,7 @@
       "period": "31.10.2026 – 07.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "f009ac34e70c3d144ee8e07e2633798c422c3544992a020911243fcff6eec7fa",
+      "dataset_sha256": "1ed1332d9a3e9892c507a2db41796f8791c7322114a115322c37595375f81946",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },

@@ -49,8 +49,8 @@
     "golden_reference": "EU_PORK_MARKET_GOLDEN_REFERENCE.png",
     "golden_reference_sha256": "ac785f514eed0ae6e1cf8fc115e9e1ff384645cc4b30b33d5603ed35718da264",
     "renderer": "EU_PORK_MARKET_RENDERER.py",
-    "renderer_version": "1.1-layout-hardening",
-    "renderer_sha256": "2bb1d9f3ebc0ea9276086e0111ededbd334a2c6ebccdcaecff3e98f5b8ee1455",
+    "renderer_version": "1.2-typography-containment",
+    "renderer_sha256": "681ef257c72ac641b9615510d13f50971dd062478eb3577582d8a9fdea085720",
     "render_mode": "DETERMINISTIC_ONLY",
     "status_semantics": [
       "VERIFIED",
