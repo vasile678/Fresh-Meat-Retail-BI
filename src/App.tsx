@@ -787,13 +787,13 @@ export default function App() {
               </div>
             </div>
 
-            {/* Secțiune Comercială: Cele mai bune prețuri per rând */}
+            {/* Secțiune Comercială: Cele mai bune prețuri per produs */}
             <div className="flex justify-center">
               <div className="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-xl p-4 sm:p-5 shadow-lg">
                 <div className="text-xs sm:text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3 flex items-center justify-between pb-2.5 border-b border-slate-800">
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    Cele mai bune prețuri per rând
+                    Cele mai bune prețuri per produs
                   </span>
                   <span className="text-[11px] font-normal text-slate-400 normal-case">
                     Top oferte active KVI
