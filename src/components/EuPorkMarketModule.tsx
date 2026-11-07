@@ -488,26 +488,10 @@ export default function EuPorkMarketModule({
         {/* Tab 2: Benchmarks Table */}
         {selectedTab === 'benchmarks' && (
           <div className="bg-slate-900 rounded-xl p-4 sm:p-6 border border-slate-800 shadow-xl space-y-4">
-            <div className="flex flex-wrap items-center justify-between pb-3 border-b border-slate-800 gap-2">
-              <div>
-                <h2 className="text-base font-semibold text-white">
-                  Cele 8 Cotații Europene de Referință — {data.week} ({data.period})
-                </h2>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Ordine canonică fixă în protocolul v2.6. Fără amestec între carcasă și greutate vie.
-                </p>
-              </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <span className="text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/60 font-medium">
-                  {data.rows?.filter(r => (r.freshness_status || r.status) === 'CURRENT_VERIFIED' || (r.status === 'VERIFIED' && !r.freshness_status)).length || 4} CURRENT VERIFIED
-                </span>
-                <span className="text-[11px] text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-800/60 font-medium">
-                  {data.rows?.filter(r => r.freshness_status === 'LATEST_AVAILABLE').length || 3} LATEST AVAILABLE
-                </span>
-                <span className="text-[11px] text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700 font-medium">
-                  {data.rows?.filter(r => r.status === 'NQ').length || 1} NQ
-                </span>
-              </div>
+            <div className="pb-3 border-b border-slate-800">
+              <h2 className="text-base font-semibold text-white">
+                Cotații Europene de Referință — {data.week} ({data.period})
+              </h2>
             </div>
 
             <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800">
