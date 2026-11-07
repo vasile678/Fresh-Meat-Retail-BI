@@ -25,6 +25,25 @@ def sha256(path):
         for b in iter(lambda:f.read(1<<20), b""): h.update(b)
     return h.hexdigest()
 
+def wrap_text_pixel(text, f, max_w):
+    words = text.split(" ")
+    lines = []
+    cur = []
+    for w in words:
+        cand = " ".join(cur + [w])
+        if f.getlength(cand) <= max_w:
+            cur.append(w)
+        else:
+            if cur:
+                lines.append(" ".join(cur))
+                cur = [w]
+            else:
+                lines.append(w)
+                cur = []
+    if cur:
+        lines.append(" ".join(cur))
+    return lines
+
 def render(master_path, dataset_path, output_path, receipt_path):
     d=json.loads(Path(dataset_path).read_text(encoding="utf-8"))
     im=Image.open(master_path).convert("RGB")
@@ -82,46 +101,108 @@ def render(master_path, dataset_path, output_path, receipt_path):
     dr.rectangle((1040,642,1524,945), fill=pale_blue)
     dr.line((1039,660,1039,930), fill=(185,215,235), width=1)
 
-    dr.text((62,668), d["market_signal_title"], fill=(0,103,71), font=font(26,True))
-    # Market signal title/value: wrap to the actual left-panel width.
-    import textwrap
-    signal_lines=textwrap.wrap(d["market_signal"], width=18)
-    sy=716
-    for line in signal_lines:
-        dr.text((64,sy), line, fill=(0,103,71), font=font(31,True))
-        sy += 36
+    # Panel 1: MARKET SIGNAL
+    dr.text((40,660), d.get("market_signal_title", "MARKET SIGNAL"), fill=(0,103,71), font=font(21,True))
+    max_w1 = 435
+    head_fs = 17
+    head_f = font(head_fs, True)
+    head_lines = wrap_text_pixel(d.get("market_signal", ""), head_f, max_w1)
+    if len(head_lines) > 2:
+        head_fs = 15
+        head_f = font(head_fs, True)
+        head_lines = wrap_text_pixel(d.get("market_signal", ""), head_f, max_w1)
 
-    # Market signal body: smaller type and tighter leading so it stays inside
-    # the fixed left panel and above the footer.
-    yy=sy+12
-    for paragraph in d["market_signal_body"].splitlines():
-        for line in textwrap.wrap(paragraph, width=37):
-            if yy > 910:
-                break
-            dr.text((64,yy), line, fill=navy, font=font(17))
-            yy += 23
+    sy = 696
+    head_lh = head_fs + 4
+    for l in head_lines:
+        dr.text((40, sy), l, fill=(0,103,71), font=head_f)
+        sy += head_lh
 
-    dr.text((526,668),"KEY TAKEAWAYS",fill=navy,font=font(27,True))
-    yy=714
-    for t in d["takeaways"]:
-        dr.ellipse((530,yy+7,543,yy+20), fill=green)
-        # Wrap takeaway text to stay inside the center panel.
-        import textwrap
-        lines=textwrap.wrap(t, width=48)
-        for j,line in enumerate(lines):
-            dr.text((570,yy+j*24), line, fill=navy, font=font(17))
-        yy += max(42, len(lines)*24+10)
+    body_raw = d.get("market_signal_body", "").replace("\\n", "\n")
+    paragraphs = [p.strip() for p in body_raw.splitlines() if p.strip()]
 
-    dr.text((1070,668),"IMPLICATIONS FOR BUYERS",fill=navy,font=font(26,True))
-    yy=722
-    for t in d["implications"]:
-        dr.text((1080,yy),"•",fill=green,font=font(30,True))
-        # Wrap implication text to stay inside the right panel.
-        import textwrap
-        lines=textwrap.wrap(t, width=35)
-        for j,line in enumerate(lines):
-            dr.text((1110,yy+2+j*23), line, fill=navy, font=font(16, True if yy==722 else False))
-        yy += max(58, len(lines)*23+12)
+    body_fs = 12
+    while body_fs >= 10:
+        bf = font(body_fs, False)
+        blh = body_fs + 4
+        p_gap = 6
+        total_h = 0
+        para_wrapped = []
+        for p in paragraphs:
+            lines = wrap_text_pixel(p, bf, max_w1)
+            para_wrapped.append(lines)
+            total_h += len(lines) * blh + p_gap
+        total_h -= p_gap
+        if sy + 10 + total_h <= 935:
+            break
+        body_fs -= 1
+
+    bf = font(body_fs, False)
+    blh = body_fs + 4
+    by = sy + 10
+    for lines in para_wrapped:
+        for l in lines:
+            dr.text((40, by), l, fill=navy, font=bf)
+            by += blh
+        by += 6
+
+    # Panel 2: KEY TAKEAWAYS
+    dr.text((524,660), "KEY TAKEAWAYS", fill=navy, font=font(21,True))
+    max_w2 = 476
+    tk_fs = 13
+    while tk_fs >= 10:
+        tf = font(tk_fs, False)
+        tlh = tk_fs + 4
+        t_gap = 8
+        total_h = 0
+        t_wrapped = []
+        for t in d.get("takeaways", []):
+            lines = wrap_text_pixel(t, tf, max_w2)
+            t_wrapped.append(lines)
+            total_h += len(lines) * tlh + t_gap
+        total_h -= t_gap
+        if 694 + total_h <= 910:
+            break
+        tk_fs -= 1
+
+    tf = font(tk_fs, False)
+    tlh = tk_fs + 4
+    ty = 694
+    for lines in t_wrapped:
+        dr.ellipse((526, ty+4, 534, ty+12), fill=green)
+        for l in lines:
+            dr.text((544, ty), l, fill=navy, font=tf)
+            ty += tlh
+        ty += 8
+
+    # Panel 3: IMPLICATIONS FOR BUYERS
+    dr.text((1064,660), "IMPLICATIONS FOR BUYERS", fill=navy, font=font(21,True))
+    max_w3 = 422
+    imp_fs = 13
+    while imp_fs >= 10:
+        imf = font(imp_fs, False)
+        imlh = imp_fs + 4
+        imp_gap = 12
+        total_h = 0
+        imp_wrapped = []
+        for t in d.get("implications", []):
+            lines = wrap_text_pixel(t, imf, max_w3)
+            imp_wrapped.append(lines)
+            total_h += len(lines) * imlh + imp_gap
+        total_h -= imp_gap
+        if 694 + total_h <= 910:
+            break
+        imp_fs -= 1
+
+    imf = font(imp_fs, False)
+    imlh = imp_fs + 4
+    iy = 694
+    for lines in imp_wrapped:
+        dr.ellipse((1066, iy+4, 1074, iy+12), fill=green)
+        for l in lines:
+            dr.text((1086, iy), l, fill=navy, font=imf)
+            iy += imlh
+        iy += 12
 
     # Footer date.
     dr.rectangle((1300,968,1524,1017), fill=white)
