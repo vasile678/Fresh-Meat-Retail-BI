@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { getAssetUrl } from '../utils';
 import Footer from './Footer';
 import { useMarketIntelligence } from '../hooks/useMarketIntelligence';
@@ -147,6 +147,28 @@ const PORK_CUTS_CONFIG: PorkCutItem[] = [
   { name: 'Pierderi tehnologice', yieldPercent: 3, quantityKg: 3.00, fixedPrice: 0.00 },
 ];
 
+/**
+ * Safely extracts the active verified Germany VEZG carcass quotation from the active dataset.
+ * Adheres strictly to FAIL_CLOSED: returns empty string if not found, not verified, or invalid.
+ */
+export function getActiveVezgQuotation(exportData?: EuPorkExportData | null): string {
+  if (!exportData || !Array.isArray(exportData.rows)) return '';
+  const vezgRow = exportData.rows.find(r => 
+    r.market === 'Germany VEZG' || 
+    (typeof r.market === 'string' && r.market.toLowerCase().includes('vezg'))
+  );
+  if (!vezgRow) return '';
+  if (vezgRow.status !== 'VERIFIED') return '';
+  const rawPrice = (vezgRow.price || '').trim();
+  if (!rawPrice || rawPrice === 'NQ' || rawPrice === 'N/V') return '';
+
+  const parsed = parseFloat(rawPrice.replace(',', '.'));
+  if (isNaN(parsed) || !isFinite(parsed) || parsed <= 0) return '';
+
+  // Format with decimal comma as used throughout the simulator
+  return rawPrice.replace('.', ',');
+}
+
 export default function EuPorkMarketModule({
   onBack,
   onDownloadImage,
@@ -156,8 +178,31 @@ export default function EuPorkMarketModule({
   const [selectedTab, setSelectedTab] = useState<'visual' | 'benchmarks' | 'takeaways' | 'simulator'>('visual');
   const [data, setData] = useState<EuPorkExportData>(BASELINE_FALLBACK);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [carcassPriceStr, setCarcassPriceStr] = useState<string>('1,32');
+  const [carcassPriceStr, setCarcassPriceStr] = useState<string>(() => getActiveVezgQuotation(BASELINE_FALLBACK));
   const { manifest, formatUpdatedDisplay } = useMarketIntelligence();
+
+  // Trackers for tab transition and manual user inputs during simulator session
+  const prevTabRef = useRef<'visual' | 'benchmarks' | 'takeaways' | 'simulator'>(selectedTab);
+  const isUserEditedRef = useRef<boolean>(false);
+
+  // Automatically pre-fill Germany VEZG quotation upon opening the simulator tab,
+  // while preserving user manual input during the same simulation session against background refreshes.
+  useEffect(() => {
+    const isOpeningSimulator = selectedTab === 'simulator' && prevTabRef.current !== 'simulator';
+
+    if (isOpeningSimulator) {
+      isUserEditedRef.current = false;
+      const latestVezg = getActiveVezgQuotation(data);
+      setCarcassPriceStr(latestVezg);
+    } else if (selectedTab === 'simulator') {
+      if (!isUserEditedRef.current) {
+        const latestVezg = getActiveVezgQuotation(data);
+        setCarcassPriceStr(latestVezg);
+      }
+    }
+
+    prevTabRef.current = selectedTab;
+  }, [selectedTab, data]);
 
   const simulatedCuts = useMemo(() => {
     const parsed = parseFloat(carcassPriceStr.replace(',', '.'));
@@ -693,11 +738,12 @@ export default function EuPorkMarketModule({
                   onChange={(e) => {
                     const val = e.target.value;
                     if (val === '' || /^[0-9]*[.,]?[0-9]*$/.test(val)) {
+                      isUserEditedRef.current = true;
                       setCarcassPriceStr(val);
                     }
                   }}
                   className="w-28 sm:w-32 bg-slate-950 border border-slate-700 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-lg px-3 py-1.5 text-right font-mono text-white text-sm font-bold outline-none transition"
-                  placeholder="1,32"
+                  placeholder={getActiveVezgQuotation(data) || "0,00"}
                 />
               </div>
             </div>

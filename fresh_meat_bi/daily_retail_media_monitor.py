@@ -22,6 +22,7 @@ import ssl
 import html
 import hashlib
 import datetime
+import urllib
 import urllib.request
 import urllib.error
 from pathlib import Path
@@ -538,7 +539,7 @@ def get_verified_publications(today_str: str) -> tuple:
                     is_new = False
                     break
 
-            art_id = f"{pub_meta['id']}-{hashlib.md5(u.encode('utf-8')).hexdigest()[:8]}"
+            art_id = f"{pid}-{hashlib.md5(u.encode('utf-8')).hexdigest()[:8]}"
             art_obj = {
                 "id": art_id,
                 "title": t,
@@ -569,6 +570,7 @@ def get_verified_publications(today_str: str) -> tuple:
             seen_titles.add(norm_title)
 
             clean_ea = dict(ea)
+            clean_ea["id"] = ea.get("id") or f"{pid}-{hashlib.md5(u.encode('utf-8')).hexdigest()[:8]}"
             clean_ea["published_at"] = d
             clean_ea["date"] = d
             clean_ea["verification_status"] = "VERIFIED"

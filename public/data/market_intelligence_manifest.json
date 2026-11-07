@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-06T20:36:04.791344+02:00",
+  "generated_at_utc": "2026-11-07T14:45:24.653236+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -33,20 +33,20 @@
       "period": "02.11–08.11.2026",
       "status": "RELEASE_PASS",
       "data_file": "/data/eu_pork_market_export.json",
-      "dataset_sha256": "5965e36617abd8e67d08033a2afb262eb972a5f2bc0ae71f485462502b902862",
+      "dataset_sha256": "bcab5a31906053f8c573360aa56246a58a6376df618e59375b155ae1b37738a9",
       "verified_benchmarks_count": 8
     },
     "retail_media_monitor": {
       "module_id": "retail_media_monitor",
       "title": "Retail Media Monitor (Presă Specializată)",
       "schedule": "Zilnic, 09:00 Europe/Bucharest",
-      "last_verified_update": "05.11.2026 · 08:00",
-      "updated_date": "05.11.2026",
+      "last_verified_update": "07.11.2026 · 08:00",
+      "updated_date": "07.11.2026",
       "updated_time": "08:00",
-      "period": "29.10.2026 – 05.11.2026 (Ultimele 7 zile)",
+      "period": "31.10.2026 – 07.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "e71403b99cf26936d7337c3e1dc1779e88e89c75d99ef6d8781bc905641b14eb",
+      "dataset_sha256": "f009ac34e70c3d144ee8e07e2633798c422c3544992a020911243fcff6eec7fa",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },
@@ -54,8 +54,8 @@
       "module_id": "strategic_category_insights",
       "title": "Strategic Category Insights",
       "schedule": "Zilnic, după sincronizarea surselor relevante de piață",
-      "last_verified_update": "05.11.2026 · 08:00",
-      "updated_date": "05.11.2026",
+      "last_verified_update": "07.11.2026 · 08:00",
+      "updated_date": "07.11.2026",
       "updated_time": "08:00",
       "status": "SYNCHRONIZED",
       "sources": [

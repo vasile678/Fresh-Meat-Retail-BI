@@ -1,12 +1,12 @@
 {
-  "execution_date": "06.11.2026",
-  "start_time_bucharest": "2026-11-06 14:40:17",
-  "end_time_bucharest": "2026-11-06 14:41:01",
-  "start_time_iso": "2026-11-06T14:40:17.035207+02:00",
-  "end_time_iso": "2026-11-06T14:41:01.194007+02:00",
-  "duration_seconds": 44.16,
+  "execution_date": "07.11.2026",
+  "start_time_bucharest": "2026-11-07 14:38:24",
+  "end_time_bucharest": "2026-11-07 14:38:42",
+  "start_time_iso": "2026-11-07T14:38:24.800675+02:00",
+  "end_time_iso": "2026-11-07T14:38:42.222999+02:00",
+  "duration_seconds": 17.42,
   "total_publications": 14,
-  "total_new_articles_accepted": 17,
+  "total_new_articles_accepted": 13,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -55,9 +55,9 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Cine sunt câștigătorii celei de-a doua ediții a Campionatului Național de Cofetari – Chefi de România",
-          "published_at": "06.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/cine-sunt-castigatorii-celei-de-a-doua-editii-a-campionatului-national-de-cofetari-chefi-de-romania/"
+          "title": "Taco Bell bifează opt restaurante în București, după o investiție de circa 750.000 euro",
+          "published_at": "05.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/taco-bell-bifeaza-opt-restaurante-in-bucuresti-dupa-o-investitie-de-circa-750-000-euro/"
         },
         {
           "title": "RO-Wine ajunge pentru prima dată la Craiova, cu Winter Special Edition",
@@ -98,14 +98,14 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "13 companii din FMCG lansează Asociația Română a Produselor de Marcă. Indra Mihăilă, PepsiCo, preia conducerea",
-          "published_at": "06.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/companii-fmcg-asociatia-romana-a-produselor-de-marca-arpm.html"
+          "title": "Taco Bell deschide un nou restaurant în București și ajunge la 20 de unități în România și Republica Moldova",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/food-service/taco-bell-restaurant-bucuresti-20.html"
         },
         {
-          "title": "Sezamo aniversează 4 ani și sărbătorește cu triplu SGR și reduceri de până la 40%",
-          "published_at": "06.11.2026",
-          "url": "https://www.retail-fmcg.ro/e-commerce-2/sezamo-aniverseaza-4-ani.html"
+          "title": "Froo își pregătește următoarea etapă de extindere în România: consolidarea rețelei și oportunități în noi orașe și regiuni",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/froo-isi-pregateste-urmatoarea-etapa-de-extindere-in-romania.html"
         }
       ],
       "rejected_count": 0,
@@ -119,19 +119,8 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
-      "new_accepted": [
-        {
-          "title": "Bazna și Mangalița: 2.300 de lei pe scroafă, într-un nou proiect de sprijin pentru reproducție",
-          "published_at": "06.11.2026",
-          "url": "https://www.meat-milk.ro/article/bazna-si-mangalita-2300-de-lei-pe-scroafa-intr-un-nou-proiect-de-sprijin-pentru-reproductie-SCZ2Gfdx"
-        },
-        {
-          "title": "Mielul se scumpește în UE: ce arată piața europeană și unde se situează România",
-          "published_at": "06.11.2026",
-          "url": "https://www.meat-milk.ro/article/mielul-se-scumpeste-in-ue-ce-arata-piata-europeana-si-unde-se-situeaza-romania-KjVG4eln"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -143,14 +132,8 @@
       "website": "https://www.retail.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 1,
-      "new_accepted": [
-        {
-          "title": "Black Friday 2026 la ITGStore: reduceri de până la 80% la echipamente și...",
-          "published_at": "06.11.2026",
-          "url": "https://www.retail.ro/articole/stiri-si-noutati/black-friday-2026-la-itgstore-reduceri-de-pana-la-80-la-echipamente-si-solutii-pentru-afaceri-15282.html"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -241,20 +224,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Cataluña confirma un nuevo positivo de peste porcina africana en restos de un jabalí muerto hace más de cinco meses",
-          "published_at": "06.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72653/kw/Catalu%C3%B1a+confirma+un+nuevo+positivo+de+peste+porcina+africana+en+restos+de+un+jabal%C3%AD+muerto+hace+m%C3%A1s+de+cinco+meses"
+          "title": "Los medios especializados , entre las fuentes más creíbles sobre marcas y empresas en España Los medios de comunicación especializados, en papel y online como es el caso de eurocarne, son la tercera fuente de información... Más información",
+          "published_at": "07.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72648/kw/Los+medios+especializados%2C+entre+las+fuentes+m%C3%A1s+cre%C3%ADbles+sobre+marcas+y+empresas+en+Espa%C3%B1a"
         },
         {
-          "title": "Legado Ibérico lanza su ‘Panceta Ibérica Salada’ en formato taco",
-          "published_at": "06.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72652/kw/Legado+Ib%C3%A9rico+lanza+su+%E2%80%98Panceta+Ib%C3%A9rica+Salada%E2%80%99+en+formato+taco"
+          "title": "Habrá huelga: Anice y Fecic acusan a CCOO y UGT de bloquear el acuerdo en la industria cárnica tras rechazar su última oferta",
+          "published_at": "07.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72667/kw/Habr%C3%A1+huelga%3A%26nbsp%3BAnice+y+Fecic+acusan+a+CCOO+y+UGT+de+bloquear+el+acuerdo+en+la+industria+c%C3%A1rnica+tras+rechazar+su+%C3%BAltima+oferta"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "06.11.2026"
+      "latest_published_at": "07.11.2026"
     },
     {
       "pub_id": "frs",
@@ -262,22 +245,17 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Supernormal, la cadena ecológica de moda en Madrid, busca inversores para seguir creciendo",
+          "title": "Ángel Jareño (Uvesco): \"Creemos que los fondos miran demasiado al corto plazo y pervierten el modelo\"",
           "published_at": "06.11.2026",
-          "url": "https://www.foodretail.es/retailers/supernormal-la-cadena-ecologica-de-moda-en-madrid-busca-inversores-para-seguir-creciendo.html"
+          "url": "https://www.foodretail.es/retailers/angel-jareno-uvesco-creemos-que-los-fondos-miran-demasiado-al-corto-plazo-y-pervierten-el-modelo.html"
         },
         {
-          "title": "Lidl España abre once tiendas en noviembre a las que destina 66 millones de euros",
+          "title": "Musgrave abre un nuevo Dialprix en L'Alfàs del Pi (Alicante)",
           "published_at": "06.11.2026",
-          "url": "https://www.foodretail.es/retailers/lidl-espana-abre-once-tiendas-en-noviembre-a-las-que-destina-66-millones-de-euros.html"
-        },
-        {
-          "title": "Covirán abre nueve supermercados entre septiembre y octubre y suma 2.000 m2 de sala de ventas",
-          "published_at": "06.11.2026",
-          "url": "https://www.foodretail.es/retailers/coviran-abre-nueve-supermercados-entre-septiembre-y-octubre-y-suma-2000-m2-de-sala-de-ventas.html"
+          "url": "https://www.foodretail.es/retailers/musgrave-abre-un-nuevo-dialprix-en-lalfas-del-pi-alicante.html"
         }
       ],
       "rejected_count": 0,

@@ -7,11 +7,12 @@
     "website": "https://revistaprogresiv.ro/",
     "articles": [
       {
+        "id": "progresiv-366a2a6a",
         "title": "Proprietarul Mega Image bifează o nouă achiziție și preia magazinele Tesco din Cehia și Slovacia",
         "published_at": "30.10.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "30.10.2026",
         "summary": "Știri și analize de piață pentru industria FMCG și retail.",
@@ -22,22 +23,24 @@
         "published_at": "29.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "29.10.2026",
         "summary": "Studiul evidențiază sensibilitatea accentuată la preț și orientarea cumpărătorilor către promoții la alimentele de bază și produse cu trasabilitate sigură.",
-        "url": "https://revistaprogresiv.ro/stiri/fmcg/esomar-connect-2026-ce-spun-datele-despre-noua-logica-a-consumatorului/"
+        "url": "https://revistaprogresiv.ro/stiri/fmcg/esomar-connect-2026-ce-spun-datele-despre-noua-logica-a-consumatorului/",
+        "id": "progresiv-a89cf737"
       },
       {
         "title": "Bilanțul Freshful după primii cinci ani: cinci milioane de comenzi livrate",
         "published_at": "29.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "29.10.2026",
         "summary": "E-grocery-ul alimentar atinge praguri record de adopție, carnea proaspătă refrigerată reprezentând unul dintre principalele motoare de recurență în coșul online.",
-        "url": "https://revistaprogresiv.ro/stiri/retail/bilantul-freshful-dupa-primii-cinci-ani-de-activitate-cinci-milioane-de-comenzi-livrate-catre-peste-280-000-de-clienti-unici/"
+        "url": "https://revistaprogresiv.ro/stiri/retail/bilantul-freshful-dupa-primii-cinci-ani-de-activitate-cinci-milioane-de-comenzi-livrate-catre-peste-280-000-de-clienti-unici/",
+        "id": "progresiv-22a1b4f7"
       }
     ]
   },
@@ -53,33 +56,36 @@
         "published_at": "30.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "30.10.2026",
         "summary": "Rețeaua Diana își consolidează prezența regională, oferind carne proaspătă tranșată local și preparate tradiționale din abatorul propriu.",
-        "url": "https://www.revista-piata.ro/retail/info-retail/diana-supermarket-de-acum-si-in-galicea-judetul-valcea"
+        "url": "https://www.revista-piata.ro/retail/info-retail/diana-supermarket-de-acum-si-in-galicea-judetul-valcea",
+        "id": "piata-cc676294"
       },
       {
         "title": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
         "published_at": "29.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "29.10.2026",
         "summary": "Campaniile de discount masiv din hipermarketuri cresc traficul general la raft, stimulând vânzările încrucișate pe coșul proaspăt de carne.",
-        "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole"
+        "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole",
+        "id": "piata-df41cf5a"
       },
       {
         "title": "ShopX, o nouă platformă de retail media dedicată comerțului fizic",
         "published_at": "29.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "29.10.2026",
         "summary": "Soluțiile de retail media în magazin permit furnizorilor de carne și mezeluri o promovare targetată direct la punctul de decizie al cumpărătorului.",
-        "url": "https://www.revista-piata.ro/retail/info-retail/shopx-o-noua-platforma-de-retail-media-dedicata-comertului-fizic"
+        "url": "https://www.revista-piata.ro/retail/info-retail/shopx-o-noua-platforma-de-retail-media-dedicata-comertului-fizic",
+        "id": "piata-0fee155e"
       }
     ]
   },
@@ -91,33 +97,36 @@
     "website": "https://www.trendshrb.ro/",
     "articles": [
       {
+        "id": "trendshrb-1ad4ba5e",
         "title": "Cine sunt câștigătorii celei de-a doua ediții a Campionatului Național de Cofetari – Chefi de România",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "Cea de-a doua ediție a Campionatului Național de Cofetari – Chefi de România, competiție dedicată cofetarilor și patiserilor, și-a desemnat câștigătorii în a doua parte a lunii octombrie, la Culinaryon, București. Anul acesta, tema competiț...",
         "url": "https://www.trendshrb.ro/stiri/cine-sunt-castigatorii-celei-de-a-doua-editii-a-campionatului-national-de-cofetari-chefi-de-romania/"
       },
       {
+        "id": "trendshrb-178bdf46",
         "title": "Burger King deschide primul său restaurant din Turda, respectiv al 44-lea la nivel național",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Burger King continuă procesul de extindere pe piața locală și inaugurează, pe 12 noiembrie, primul său restaurant din Turda. Noua unitate este cel de-al 44-lea restaurant Burger King la nivel național și al cincilea din județul Cluj, consol...",
         "url": "https://www.trendshrb.ro/stiri/burger-king-deschide-primul-sau-restaurant-din-turda-respectiv-al-44-lea-la-nivel-national/"
       },
       {
+        "id": "trendshrb-f4358670",
         "title": "Horeca Trading Distribution își extinde capacitatea de depozitare cu 80%",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Horeca Trading Distribution (HTD Shop), companie ce activează pe piața distribuției de consumabile pentru companii, își extinde capacitatea logistică cu 80%, creștere generată de intensificarea volumului de operațiuni și de cererea extinsă ...",
@@ -133,33 +142,36 @@
     "website": "https://modernbuyer.ro/",
     "articles": [
       {
+        "id": "modernbuyer-861fdc7d",
         "title": "Ce speakeri urcă pe scenă la RO Fruits & Vegetables Show 2026",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Ediția din acest an a “RO Fruits & Vegetables Show”, evenimentul Modern Buyer de referință dedicat industriei de legume și fructe proaspete din România, va avea 5 speakeri din retailul modern și tot atâția din rândul marilor producători de ...",
         "url": "https://modernbuyer.ro/ce-speakeri-urca-pe-scena-la-ro-fruits-vegetables-show-2026/"
       },
       {
+        "id": "modernbuyer-338bfb32",
         "title": "Purcari lansează în România gama de vinuri Parcela și ajunge la investiții de 30 mil. euro în 2026",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Purcari Wineries Group a lansat oficial în România colecția Purcari Parcela, în cadrul unui eveniment organizat la Palatul Parlamentului din București ce a reunit peste 300 de invitați – parteneri de business, diplomați, jurnaliști, special...",
         "url": "https://modernbuyer.ro/purcari-lanseaza-in-romania-gama-de-vinuri-parcela-si-ajunge-la-investitii-de-30-mil-euro-in-2026/"
       },
       {
+        "id": "modernbuyer-61e8a5e5",
         "title": "Mega Image, Profi și Shop&Go: Trei branduri care vor continua să spună trei povești distincte clienților români",
         "published_at": "04.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "04.11.2026",
         "summary": "Cele trei branduri distincte sunt reunite în România sub umbrela unei singure organizații, cu obiectivul comun de a răspunde cât mai bine asteptărilor privind cumpărăturile de proximitate ale comunităților din întreaga țară. Mega Image, Pro...",
@@ -175,33 +187,36 @@
     "website": "https://www.retail-fmcg.ro/",
     "articles": [
       {
+        "id": "retailfmcg-36d5c83e",
         "title": "13 companii din FMCG lansează Asociația Română a Produselor de Marcă. Indra Mihăilă, PepsiCo, preia conducerea",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "PepsiCo, Coca-Cola, Nestlé, Unilever și alte nouă companii din industria bunurilor de larg consum lansează Asociația Română a Produselor de Marcă (ARPM), prin care își propun să susțină, în dialogul cu autoritățile, un cadru de reglementare...",
         "url": "https://www.retail-fmcg.ro/fmcg/companii-fmcg-asociatia-romana-a-produselor-de-marca-arpm.html"
       },
       {
+        "id": "retailfmcg-3dc27f0a",
         "title": "Sezamo aniversează 4 ani și sărbătorește cu triplu SGR și reduceri de până la 40%",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "Supermarketul online Sezamo împlinește patru ani pe piața din România și marchează aniversarea printr-o serie de campanii speciale dedicate clienților: prețuri ca acum patru ani, valoarea triplă a garanției SGR pentru ambalajele returnate, ...",
         "url": "https://www.retail-fmcg.ro/e-commerce-2/sezamo-aniverseaza-4-ani.html"
       },
       {
+        "id": "retailfmcg-efddb63d",
         "title": "BETTY-COM își extinde capacitățile de producție și vizează dezvoltarea distribuției la nivel național",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "BETTY-COM, producător român de panificație, patiserie și cofetărie din Galați, a deschis în 2026 o nouă fabrică de patiserie, extinzându-și capacitățile de producție pentru diversificarea portofoliului și dezvoltarea activității comerciale....",
@@ -217,33 +232,36 @@
     "website": "https://www.meat-milk.ro/",
     "articles": [
       {
+        "id": "meatmilk-7bad9e83",
         "title": "Bazna și Mangalița: 2.300 de lei pe scroafă, într-un nou proiect de sprijin pentru reproducție",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "Eligibilitatea începe cu animalul și evidențele fermei",
         "url": "https://www.meat-milk.ro/article/bazna-si-mangalita-2300-de-lei-pe-scroafa-intr-un-nou-proiect-de-sprijin-pentru-reproductie-SCZ2Gfdx"
       },
       {
+        "id": "meatmilk-c072f561",
         "title": "Mielul se scumpește în UE: ce arată piața europeană și unde se situează România",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "Sacrificările nu urmează același ritm",
         "url": "https://www.meat-milk.ro/article/mielul-se-scumpeste-in-ue-ce-arata-piata-europeana-si-unde-se-situeaza-romania-KjVG4eln"
       },
       {
+        "id": "meatmilk-78747f25",
         "title": "Următoarea lactație începe la înțărcare: ce merită pregătit înainte de ultima mulsoare?",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Organizarea procedurii face parte din prevenție",
@@ -259,33 +277,36 @@
     "website": "https://www.retail.ro/",
     "articles": [
       {
+        "id": "retailro-832a6991",
         "title": "Black Friday 2026 la ITGStore: reduceri de până la 80% la echipamente și...",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "În perioada 6 – 8 noiembrie 2026, ITGStore, platforma de e-commerce B2B a IT Genetics, lansează o nouă ediție Black Friday, cu reduceri de până la 80% la echipamente profesionale și soluții tehnologice dedicate companiilor din retail, logis...",
         "url": "https://www.retail.ro/articole/stiri-si-noutati/black-friday-2026-la-itgstore-reduceri-de-pana-la-80-la-echipamente-si-solutii-pentru-afaceri-15282.html"
       },
       {
+        "id": "retailro-ce697d68",
         "title": "Gigantul panificației care și-a crescut vânzările de 10 ori în România",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Peste 500 de milioane de produse de panificație ies anual din fabrica Lantmännen Unibake din Pantelimon, iar aproximativ 30% din producție ajunge la export, pe 19 piețe externe. Compania, care marchează în 2026 zece ani de prezență în Român...",
         "url": "https://www.retail.ro/articole/stiri-si-noutati/gigantul-panificatiei-care-si-a-crescut-vanzarile-de-10-ori-in-romania-15281.html"
       },
       {
+        "id": "retailro-2d2d0959",
         "title": "Auchan a dat startul reducerilor de Black Friday 2026. Ce poți cumpăra mai...",
         "published_at": "05.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "05.11.2026",
         "summary": "Black Friday nu este doar despre telefoane, televizoare și electrocasnice. Auchan România a dat startul campaniei de reduceri din 2026, care include peste 2.500 de produse, de la alimente și detergenți până la cafea, articole pentru casă și...",
@@ -305,33 +326,36 @@
         "published_at": "10.06.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "10.06.2026",
         "summary": "În industria cărnii și procesării alimentare, inovația combină certificările de bunăstare animală cu trasabilitatea strictă și automatizarea avansată pentru eficientizarea lanțului de aprovizionare.",
-        "url": "https://retailarena.ro/retailarena-2026-de-la-pui-cu-certificare-olandeza-la-ai-intern-cum-vede-familia-safir-inovatia-in-industria-alimentara"
+        "url": "https://retailarena.ro/retailarena-2026-de-la-pui-cu-certificare-olandeza-la-ai-intern-cum-vede-familia-safir-inovatia-in-industria-alimentara",
+        "id": "retailarena-973a229c"
       },
       {
         "title": "De Ziua Copilului, Sezamo ajunge în Ploiești: supermarketul online se extinde în țară",
         "published_at": "26.05.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "26.05.2026",
         "summary": "Supermarketul online Sezamo își extinde livrările de proximitate în Ploiești și județul Prahova, oferind carne proaspătă de la producători locali și livrare rapidă din depozit dedicat.",
-        "url": "https://retailarena.ro/stiri-si-noutatide-ziua-copilului-sezamo-ajunge-in-ploiesti-supermarketul-online-se-extinde-in-tara-15139"
+        "url": "https://retailarena.ro/stiri-si-noutatide-ziua-copilului-sezamo-ajunge-in-ploiesti-supermarketul-online-se-extinde-in-tara-15139",
+        "id": "retailarena-fca2d0dc"
       },
       {
         "title": "Kaufland ”taie inflația”: reduceri timp de o lună în magazine",
         "published_at": "09.05.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "09.05.2026",
         "summary": "Kaufland România derulează campania comercială de reducere a prețurilor la peste 500 de articole de bază și produse proaspete pentru a proteja puterea de cumpărare a consumatorilor.",
-        "url": "https://retailarena.ro/stiri-si-noutatikaufland-taie-inflatia-reduceri-timp-de-o-luna-in-magazine-15120"
+        "url": "https://retailarena.ro/stiri-si-noutatikaufland-taie-inflatia-reduceri-timp-de-o-luna-in-magazine-15120",
+        "id": "retailarena-079e49ae"
       }
     ]
   },
@@ -347,33 +371,36 @@
         "published_at": "03.11.2026",
         "collected_at": "03.11.2026, 08:00",
         "verified_at": "03.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "03.11.2026",
         "summary": "European and international swine industry intelligence and market dynamics.",
-        "url": "https://www.foodagribusiness.world/pigs/uk-aims-to-ban-pre-slaughter-use-of-co2"
+        "url": "https://www.foodagribusiness.world/pigs/uk-aims-to-ban-pre-slaughter-use-of-co2",
+        "id": "pigprogress-357552f5"
       },
       {
         "title": "Coming soon: seminar at EuroTier 2026 on Gut Health Pig Progress is going to delve deeper into the theme of “Gut Health” at the upcoming edition of EuroTier in Hanover, Germany.",
         "published_at": "02.11.2026",
         "collected_at": "03.11.2026, 08:00",
         "verified_at": "03.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "02.11.2026",
         "summary": "European and international swine industry intelligence and market dynamics.",
-        "url": "https://www.foodagribusiness.world/pigs/coming-soon-seminar-at-eurotier-2026-on-gut-health"
+        "url": "https://www.foodagribusiness.world/pigs/coming-soon-seminar-at-eurotier-2026-on-gut-health",
+        "id": "pigprogress-1d2f7cb0"
       },
       {
         "title": "Belgium & Netherlands: Court cases on castration and tail docking Medical procedures involving pigs have once again come under scrutiny due to recent court rulings in Belgium and the Netherlands.",
         "published_at": "02.11.2026",
         "collected_at": "03.11.2026, 08:00",
         "verified_at": "03.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "02.11.2026",
         "summary": "European and international swine industry intelligence and market dynamics.",
-        "url": "https://www.foodagribusiness.world/pigs/belgium-amp-netherlands-court-cases-on-castration-and-tail-docking"
+        "url": "https://www.foodagribusiness.world/pigs/belgium-amp-netherlands-court-cases-on-castration-and-tail-docking",
+        "id": "pigprogress-10431087"
       }
     ]
   },
@@ -389,33 +416,36 @@
         "published_at": "22.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "22.10.2026",
         "summary": "Modificările aduse OCP vor consolida mecanismele de gestionare a crizelor de piață și transparența contractelor comerciale dintre fermieri și procesatori.",
-        "url": "https://www.3tres3.com/en/latest_swine_news/common-market-organisation-for-eu-agricultural-products_22934/"
+        "url": "https://www.3tres3.com/en/latest_swine_news/common-market-organisation-for-eu-agricultural-products_22934/",
+        "id": "pig333-c7219e15"
       },
       {
         "title": "ASF and weak China demand to reshape 2027 pork trade",
         "published_at": "14.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "14.10.2026",
         "summary": "Comerțul european se adaptează prin creșterea ponderii consumului intern în UE și reorientarea pieselor către piețele cu cerere stabilă.",
-        "url": "https://www.3tres3.com/en/latest_swine_news/asf-and-weak-china-demand-to-reshape-2027-pork-trade_22914/"
+        "url": "https://www.3tres3.com/en/latest_swine_news/asf-and-weak-china-demand-to-reshape-2027-pork-trade_22914/",
+        "id": "pig333-bfd4e071"
       },
       {
         "title": "Spanish pork production rose 3% in the first half of 2026",
         "published_at": "31.08.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "31.08.2026",
         "summary": "Creșterea volumelor din Spania confirmă menținerea capacității de livrare a principalului furnizor european către piețele de retail din România și Europa Centrală.",
-        "url": "https://www.3tres3.com/en/latest_swine_news/spanish-pork-production-rose-3-in-the-first-half-of-2026_22721/"
+        "url": "https://www.3tres3.com/en/latest_swine_news/spanish-pork-production-rose-3-in-the-first-half-of-2026_22721/",
+        "id": "pig333-06a10d90"
       }
     ]
   },
@@ -427,33 +457,36 @@
     "website": "https://euromeatnews.com",
     "articles": [
       {
+        "id": "euromeatnews-3196cc4a",
         "title": "U.S. pork, beef exports both at record-setting pace to Dominican Republic",
         "published_at": "04.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "04.11.2026",
         "summary": "U.S. pork exports to Dominican Republic from Jan – Aug 2026 increased 23% by volume and 22% in value over year-ago, reaching $212.3 million. U.S. beef exports grew 19% by volume and 37% by value from Jan – Aug, reaching $121.8 million. As t...",
         "url": "https://euromeatnews.com/u-s-pork-beef-exports-both-at-record-setting-pace-to-dominican-republic/"
       },
       {
+        "id": "euromeatnews-c283398c",
         "title": "Spanish exports of fresh beef grew by 6.8 percent in volume this year",
         "published_at": "04.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "04.11.2026",
         "summary": "Spain exported 115,660 tons of beef between January and July 2026, with a turnover of 929.6 million euros. Fresh or chilled beef is strengthening its presence abroad. According to ASAJA, based on provisional data from the Spanish Tax Agency...",
         "url": "https://euromeatnews.com/spanish-exports-of-fresh-beef-grew-by-6-8-percent-in-volume-this-year/"
       },
       {
+        "id": "euromeatnews-ff470a2b",
         "title": "Maturatta Friboi consolidates its dominance in the barbecue market",
         "published_at": "04.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "04.11.2026",
         "summary": "The brand expanded its operations into new categories, won consumer preference in São Paulo and Rio de Janeiro, and consolidated barbecue as its main area of operation. Maturatta Friboi has increased its monthly sales volume sixfold in ten ...",
@@ -473,33 +506,36 @@
         "published_at": "02.10.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "02.10.2026",
         "summary": "Raportul QMS evidențiază presiunea severă pe marjele crescătorilor din Marea Britanie și creșterea sacrificărilor de scroafe cu 52%, semnalând o contracție a bazei de aprovizionare pentru 2027.",
-        "url": "https://meatmanagement.com/news/scottish-pig-sector-faces-continued-pressure/86500.article"
+        "url": "https://meatmanagement.com/news/scottish-pig-sector-faces-continued-pressure/86500.article",
+        "id": "meatmanagement-a1aefe6c"
       },
       {
         "title": "British pork spotlighted as part of October campaign",
         "published_at": "28.09.2026",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "28.09.2026",
         "summary": "Campania AHDB de toamnă promovează carnea de porc britanică și carnea tocată ca opțiuni accesibile și nutritive pentru gătitul acasă în marile rețele de retail.",
-        "url": "https://meatmanagement.com/news/british-pork-spotlighted-as-part-of-october-campaign/86452.article"
+        "url": "https://meatmanagement.com/news/british-pork-spotlighted-as-part-of-october-campaign/86452.article",
+        "id": "meatmanagement-6a60ce0d"
       },
       {
         "title": "Pork market to remain stable despite geopolitical uncertainties",
         "published_at": "20.02.2025",
         "collected_at": "01.11.2026, 09:00",
         "verified_at": "01.11.2026, 09:00",
-        "updated_at": "06.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "20.02.2025",
         "summary": "Prognozele de profil indică stabilitate în cotațiile la poarta abatorului, permițând comercianților o planificare predictibilă a marjelor de retail.",
-        "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article"
+        "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article",
+        "id": "meatmanagement-dd9b4d8d"
       }
     ]
   },
@@ -511,37 +547,40 @@
     "website": "https://eurocarne.com",
     "articles": [
       {
-        "title": "Entrevista con Sebastián Azzollini , director general de Jarvis España Con más de un siglo de trayectoria a nivel mundial y diez años de implantación directa en España, Jarvis Products Corporation se... Más información",
-        "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "id": "eurocarne-52acf736",
+        "title": "Los medios especializados , entre las fuentes más creíbles sobre marcas y empresas en España Los medios de comunicación especializados, en papel y online como es el caso de eurocarne, son la tercera fuente de información... Más información",
+        "published_at": "07.11.2026",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
-        "date": "06.11.2026",
+        "date": "07.11.2026",
         "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
-        "url": "https://eurocarne.com/noticias/codigo/72520/kw/Entrevista+con+Sebasti%C3%A1n+Azzollini%2C+director+general+de+Jarvis+Espa%C3%B1a"
+        "url": "https://eurocarne.com/noticias/codigo/72648/kw/Los+medios+especializados%2C+entre+las+fuentes+m%C3%A1s+cre%C3%ADbles+sobre+marcas+y+empresas+en+Espa%C3%B1a"
       },
       {
-        "title": "Cataluña confirma un nuevo positivo de peste porcina africana en restos de un jabalí muerto hace más de cinco meses",
-        "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "id": "eurocarne-387e49a2",
+        "title": "Habrá huelga: Anice y Fecic acusan a CCOO y UGT de bloquear el acuerdo en la industria cárnica tras rechazar su última oferta",
+        "published_at": "07.11.2026",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
-        "date": "06.11.2026",
+        "date": "07.11.2026",
+        "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
+        "url": "https://eurocarne.com/noticias/codigo/72667/kw/Habr%C3%A1+huelga%3A%26nbsp%3BAnice+y+Fecic+acusan+a+CCOO+y+UGT+de+bloquear+el+acuerdo+en+la+industria+c%C3%A1rnica+tras+rechazar+su+%C3%BAltima+oferta"
+      },
+      {
+        "id": "eurocarne-f52245d4",
+        "title": "Cataluña confirma un nuevo positivo de peste porcina africana en restos de un jabalí muerto hace más de cinco meses",
+        "published_at": "07.11.2026",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
+        "verification_status": "VERIFIED",
+        "date": "07.11.2026",
         "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
         "url": "https://eurocarne.com/noticias/codigo/72653/kw/Catalu%C3%B1a+confirma+un+nuevo+positivo+de+peste+porcina+africana+en+restos+de+un+jabal%C3%AD+muerto+hace+m%C3%A1s+de+cinco+meses"
-      },
-      {
-        "title": "Legado Ibérico lanza su ‘Panceta Ibérica Salada’ en formato taco",
-        "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
-        "verification_status": "VERIFIED",
-        "date": "06.11.2026",
-        "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
-        "url": "https://eurocarne.com/noticias/codigo/72652/kw/Legado+Ib%C3%A9rico+lanza+su+%E2%80%98Panceta+Ib%C3%A9rica+Salada%E2%80%99+en+formato+taco"
       }
     ]
   },
@@ -553,37 +592,40 @@
     "website": "https://www.foodretail.es/",
     "articles": [
       {
-        "title": "Supernormal, la cadena ecológica de moda en Madrid, busca inversores para seguir creciendo",
+        "id": "frs-d64fbf49",
+        "title": "Ángel Jareño (Uvesco): \"Creemos que los fondos miran demasiado al corto plazo y pervierten el modelo\"",
         "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
+        "verification_status": "VERIFIED",
+        "date": "06.11.2026",
+        "summary": "Analiză de retail alimentar și comerț modern internațional.",
+        "url": "https://www.foodretail.es/retailers/angel-jareno-uvesco-creemos-que-los-fondos-miran-demasiado-al-corto-plazo-y-pervierten-el-modelo.html"
+      },
+      {
+        "id": "frs-42237f05",
+        "title": "Musgrave abre un nuevo Dialprix en L'Alfàs del Pi (Alicante)",
+        "published_at": "06.11.2026",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
+        "verification_status": "VERIFIED",
+        "date": "06.11.2026",
+        "summary": "Analiză de retail alimentar și comerț modern internațional.",
+        "url": "https://www.foodretail.es/retailers/musgrave-abre-un-nuevo-dialprix-en-lalfas-del-pi-alicante.html"
+      },
+      {
+        "id": "frs-85010ff8",
+        "title": "5 Supernormal, la cadena ecológica de moda en Madrid, busca inversores para seguir creciendo",
+        "published_at": "06.11.2026",
+        "collected_at": "07.11.2026, 08:00",
+        "verified_at": "07.11.2026, 08:00",
+        "updated_at": "07.11.2026, 08:00",
         "verification_status": "VERIFIED",
         "date": "06.11.2026",
         "summary": "Analiză de retail alimentar și comerț modern internațional.",
         "url": "https://www.foodretail.es/retailers/supernormal-la-cadena-ecologica-de-moda-en-madrid-busca-inversores-para-seguir-creciendo.html"
-      },
-      {
-        "title": "Lidl España abre once tiendas en noviembre a las que destina 66 millones de euros",
-        "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
-        "verification_status": "VERIFIED",
-        "date": "06.11.2026",
-        "summary": "Analiză de retail alimentar și comerț modern internațional.",
-        "url": "https://www.foodretail.es/retailers/lidl-espana-abre-once-tiendas-en-noviembre-a-las-que-destina-66-millones-de-euros.html"
-      },
-      {
-        "title": "Covirán abre nueve supermercados entre septiembre y octubre y suma 2.000 m2 de sala de ventas",
-        "published_at": "06.11.2026",
-        "collected_at": "06.11.2026, 08:00",
-        "verified_at": "06.11.2026, 08:00",
-        "updated_at": "06.11.2026, 08:00",
-        "verification_status": "VERIFIED",
-        "date": "06.11.2026",
-        "summary": "Analiză de retail alimentar și comerț modern internațional.",
-        "url": "https://www.foodretail.es/retailers/coviran-abre-nueve-supermercados-entre-septiembre-y-octubre-y-suma-2000-m2-de-sala-de-ventas.html"
       }
     ]
   }
