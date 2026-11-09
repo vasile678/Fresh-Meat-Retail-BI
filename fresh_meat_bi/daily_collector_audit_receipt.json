@@ -1,12 +1,12 @@
 {
-  "execution_date": "07.11.2026",
-  "start_time_bucharest": "2026-11-07 14:38:24",
-  "end_time_bucharest": "2026-11-07 14:38:42",
-  "start_time_iso": "2026-11-07T14:38:24.800675+02:00",
-  "end_time_iso": "2026-11-07T14:38:42.222999+02:00",
-  "duration_seconds": 17.42,
+  "execution_date": "09.11.2026",
+  "start_time_bucharest": "2026-11-09 15:33:33",
+  "end_time_bucharest": "2026-11-09 15:34:13",
+  "start_time_iso": "2026-11-09T15:33:33.788201+02:00",
+  "end_time_iso": "2026-11-09T15:34:13.345945+02:00",
+  "duration_seconds": 39.56,
   "total_publications": 14,
-  "total_new_articles_accepted": 13,
+  "total_new_articles_accepted": 21,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -18,20 +18,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
+          "title": "Andrei Ursulescu, Scandia Food Group: Piața conservelor este stabilă, dar presiunea economică schimbă...",
+          "published_at": "09.11.2026",
+          "url": "https://revistaprogresiv.ro/stiri/fmcg/andrei-ursulescu-scandia-food-group-piata-conservelor-este-stabila-dar-presiunea-economica-schimba-mixul-de-vanzari/"
+        },
+        {
           "title": "Diacarn Food intră pe piața de retail și investește peste un milion de euro într-o rețea cu 12 magazine",
           "published_at": "27.10.2026",
           "url": "https://revistaprogresiv.ro/stiri/retail/diacarn-food-intra-pe-piata-de-retail-si-investeste-peste-un-milion-de-euro-intr-o-retea-cu-12-magazine/"
-        },
-        {
-          "title": "Dincolo de performanță: abordarea P&G privind siguranța produselor Ariel",
-          "published_at": "22.10.2026",
-          "url": "https://revistaprogresiv.ro/stiri/fmcg/dincolo-de-performanta-abordarea-pg-privind-siguranta-produselor-ariel/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "30.10.2026"
+      "latest_published_at": "09.11.2026"
     },
     {
       "pub_id": "piata",
@@ -55,20 +55,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
+          "title": "Cristina Huzum a preluat funcția de Președinte al WTTA – Women in Transport and Tourism Association",
+          "published_at": "09.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/cristina-huzum-a-preluat-functia-de-presedinte-al-wtta-women-in-transport-and-tourism-association/"
+        },
+        {
           "title": "Taco Bell bifează opt restaurante în București, după o investiție de circa 750.000 euro",
           "published_at": "05.11.2026",
           "url": "https://www.trendshrb.ro/stiri/taco-bell-bifeaza-opt-restaurante-in-bucuresti-dupa-o-investitie-de-circa-750-000-euro/"
-        },
-        {
-          "title": "RO-Wine ajunge pentru prima dată la Craiova, cu Winter Special Edition",
-          "published_at": "05.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/ro-wine-ajunge-pentru-prima-data-la-craiova-cu-winter-special-edition/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "06.11.2026"
+      "latest_published_at": "09.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -76,18 +76,23 @@
       "website": "https://modernbuyer.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 4,
-      "new_articles_count": 1,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Freshful NOW acoperă acum integral Bucureștiul",
-          "published_at": "04.11.2026",
-          "url": "https://modernbuyer.ro/freshful-now-acopera-acum-integral-bucurestiul/"
+          "title": "Kaufland România lansează campania de sărbători „Crăciunul este când îl simți tu”",
+          "published_at": "09.11.2026",
+          "url": "https://modernbuyer.ro/kaufland-romania-lanseaza-campania-de-sarbatori-craciunul-este-cand-il-simti-tu/"
+        },
+        {
+          "title": "Eveniment B2B la București: Oportunități noi de import și distribuție pentru sectorul Food & Drinks",
+          "published_at": "09.11.2026",
+          "url": "https://modernbuyer.ro/eveniment-b2b-la-bucuresti-oportunitati-noi-de-import-si-distributie-pentru-sectorul-food-drinks/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "05.11.2026"
+      "latest_published_at": "09.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -95,23 +100,38 @@
       "website": "https://www.retail-fmcg.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 2,
+      "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "Taco Bell deschide un nou restaurant în București și ajunge la 20 de unități în România și Republica Moldova",
-          "published_at": "05.11.2026",
-          "url": "https://www.retail-fmcg.ro/food-service/taco-bell-restaurant-bucuresti-20.html"
+          "title": "Kaufland România lansează campania de sărbători „Crăciunul este când îl simți tu”",
+          "published_at": "09.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/kaufland-romania-campania-sarbatori-craciunul-este-cand-il-simti-tu.html"
         },
         {
-          "title": "Froo își pregătește următoarea etapă de extindere în România: consolidarea rețelei și oportunități în noi orașe și regiuni",
-          "published_at": "05.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/froo-isi-pregateste-urmatoarea-etapa-de-extindere-in-romania.html"
+          "title": "Ahold Delhaize (Mega Image și Profi) a deschis 64 de magazine în România în 2026 și pregătește noi extinderi",
+          "published_at": "09.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-a-deschis-64-de-magazine-in-romania-in-2026.html"
+        },
+        {
+          "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+          "published_at": "07.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html"
+        },
+        {
+          "title": "EXPO RETAIL 2027 – Digital, Green & Tech deschide rezervările pentru expozanți și parteneri. Oferta Early Booking, valabilă până la 15 decembrie",
+          "published_at": "07.11.2026",
+          "url": "https://www.retail-fmcg.ro/evenimente/expo-retail-2027-digital-green-tech-deschide-rezervarile.html"
+        },
+        {
+          "title": "Black Friday la eMAG: comenzi de peste 1 miliard de lei, cu un avans de 40% al produselor vândute de sellerii Marketplace",
+          "published_at": "07.11.2026",
+          "url": "https://www.retail-fmcg.ro/e-commerce-2/black-friday-la-emag-comenzi-de-peste-1-miliard-de-lei.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "06.11.2026"
+      "latest_published_at": "09.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -119,12 +139,23 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "România produce. Cât reușește să și proceseze?",
+          "published_at": "09.11.2026",
+          "url": "https://www.meat-milk.ro/article/romania-produce-cat-reuseste-sa-si-proceseze-JWGRTBpQ"
+        },
+        {
+          "title": "Dincolo de echipamente: cum devine capacitatea de laborator un serviciu pentru siguranța alimentară regională",
+          "published_at": "09.11.2026",
+          "url": "https://www.meat-milk.ro/article/dincolo-de-echipamente-cum-devine-capacitatea-de-laborator-un-serviciu-pentru-siguranta-alimentara-regionala-Du8DrEWk"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "06.11.2026"
+      "latest_published_at": "09.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -132,12 +163,18 @@
       "website": "https://www.retail.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 1,
+      "new_accepted": [
+        {
+          "title": "Peste 886 de milioane de lei în 10 ore de Black Friday la eMAG! Românii au...",
+          "published_at": "08.11.2026",
+          "url": "https://www.retail.ro/articole/stiri-si-noutati/peste-886-de-milioane-de-lei-in-10-ore-de-black-friday-la-emag-romanii-au-comandat-inclusiv-31-de-masini-si-12-6-kilograme-de-aur-argint-si-monede-15283.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "06.11.2026"
+      "latest_published_at": "08.11.2026"
     },
     {
       "pub_id": "retailarena",
@@ -184,23 +221,38 @@
       "website": "https://euromeatnews.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 2,
+      "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "Danish Crown sells slaughterhouse land in Saeby",
-          "published_at": "04.11.2026",
-          "url": "https://euromeatnews.com/danish-crown-sells-slaughterhouse-land-in-saeby/"
+          "title": "INTERPORC brings Spanish pork gastronomy closer to the Philippines",
+          "published_at": "08.11.2026",
+          "url": "https://euromeatnews.com/interporc-brings-spanish-pork-gastronomy-closer-to-the-philippines/"
         },
         {
-          "title": "MLA and Drakes team up to put more goatmeat on Aussie shelves",
-          "published_at": "04.11.2026",
-          "url": "https://euromeatnews.com/mla-and-drakes-team-up-to-put-more-goatmeat-on-aussie-shelves/"
+          "title": "USMEF: Beef exports edged higher in September",
+          "published_at": "08.11.2026",
+          "url": "https://euromeatnews.com/usmef-beef-exports-edged-higher-in-september/"
+        },
+        {
+          "title": "AHDB: UK pig meat production growth eases in Q3 2026",
+          "published_at": "08.11.2026",
+          "url": "https://euromeatnews.com/ahdb-uk-pig-meat-production-growth-eases-in-q3-2026/"
+        },
+        {
+          "title": "Dutch piglet exports have fallen significantly in 2026",
+          "published_at": "08.11.2026",
+          "url": "https://euromeatnews.com/dutch-piglet-exports-have-fallen-significantly-in-2026/"
+        },
+        {
+          "title": "ABPA will strengthen institutional relations with China during CIIE 2026",
+          "published_at": "08.11.2026",
+          "url": "https://euromeatnews.com/abpa-will-strengthen-institutional-relations-with-china-during-ciie-2026/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "04.11.2026"
+      "latest_published_at": "08.11.2026"
     },
     {
       "pub_id": "meatmanagement",
@@ -224,20 +276,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Los medios especializados , entre las fuentes más creíbles sobre marcas y empresas en España Los medios de comunicación especializados, en papel y online como es el caso de eurocarne, son la tercera fuente de información... Más información",
-          "published_at": "07.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72648/kw/Los+medios+especializados%2C+entre+las+fuentes+m%C3%A1s+cre%C3%ADbles+sobre+marcas+y+empresas+en+Espa%C3%B1a"
+          "title": "Cinven vende Restaurant Brands Europe a un consorcio de inversores en el que participa Grupo Costa",
+          "published_at": "09.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72678/kw/Cinven+vende+Restaurant+Brands+Europe+a+un+consorcio+de+inversores+en+el+que+participa%26nbsp%3BGrupo+Costa"
         },
         {
-          "title": "Habrá huelga: Anice y Fecic acusan a CCOO y UGT de bloquear el acuerdo en la industria cárnica tras rechazar su última oferta",
-          "published_at": "07.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72667/kw/Habr%C3%A1+huelga%3A%26nbsp%3BAnice+y+Fecic+acusan+a+CCOO+y+UGT+de+bloquear+el+acuerdo+en+la+industria+c%C3%A1rnica+tras+rechazar+su+%C3%BAltima+oferta"
+          "title": "Cárnicas Cinco Villas logra cubrir el 37 % de su demanda electrica con energía fotovoltaica y un nuevo aerogenerador",
+          "published_at": "09.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72677/kw/C%C3%A1rnicas+Cinco+Villas+logra+cubrir+el+37+%25+de+su+demanda+electrica+con+energ%C3%ADa+fotovoltaica+y+un+nuevo+aerogenerador"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "07.11.2026"
+      "latest_published_at": "09.11.2026"
     },
     {
       "pub_id": "frs",
@@ -245,19 +297,8 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
-      "new_accepted": [
-        {
-          "title": "Ángel Jareño (Uvesco): \"Creemos que los fondos miran demasiado al corto plazo y pervierten el modelo\"",
-          "published_at": "06.11.2026",
-          "url": "https://www.foodretail.es/retailers/angel-jareno-uvesco-creemos-que-los-fondos-miran-demasiado-al-corto-plazo-y-pervierten-el-modelo.html"
-        },
-        {
-          "title": "Musgrave abre un nuevo Dialprix en L'Alfàs del Pi (Alicante)",
-          "published_at": "06.11.2026",
-          "url": "https://www.foodretail.es/retailers/musgrave-abre-un-nuevo-dialprix-en-lalfas-del-pi-alicante.html"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
