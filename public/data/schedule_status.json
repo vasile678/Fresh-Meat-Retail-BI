@@ -1,23 +1,24 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "02.11.2026 23:27:51 EET",
-  "evaluated_at_utc": "2026-11-02T21:27:51.549099+00:00",
+  "evaluated_at_bucharest": "09.11.2026 09:15:00 EET",
+  "evaluated_at_utc": "2026-11-09T07:15:00+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
-    "week": "WK45",
+    "week": "WK46",
     "year": 2026,
-    "period": "02–08 NOI 2026"
+    "period": "09–15 NOI 2026"
   },
   "active_release": {
-    "week": "WK45",
+    "week": "WK46",
     "year": 2026,
-    "release_id": "2026/WK45_b2389294",
+    "release_id": "2026/WK46_b2f0924a",
     "release_status": "RELEASE_PASS",
-    "published_at_utc": "2026-11-02T21:27:34.331136+00:00",
-    "dataset_sha256": "b2389294d10abdee3bee3fa43f884af68f19eb5a3da8fd6b118ef28534d04fb9"
+    "published_at_utc": "2026-11-09T07:34:46.088899+00:00",
+    "dataset_sha256": "b2f0924ad669488e9620958c8986f6e8d3c33ce1528a7ea61bb99ef8160e15ed"
   },
   "is_overdue": false,
   "status": "UP_TO_DATE",
-  "detail": "Raportul WK45 este deja publicat și activ."
+  "detail": "Raportul WK46 este deja publicat și activ.",
+  "result_code": "ALREADY_CURRENT"
 }

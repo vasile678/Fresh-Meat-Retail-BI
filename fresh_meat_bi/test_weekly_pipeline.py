@@ -259,6 +259,54 @@ def test_9_demonstrate_incomplete_release_never_active():
     print("  ✓ O versiune incompletă/coruptă din depozit nu este activată de pointer: PASS\n")
     shutil.rmtree(releases_dir, ignore_errors=True)
 
+def test_11_reject_expired_historical_offers_in_new_week():
+    print("[TEST 11] Test: Respingere explicită oferte expirate din săptămâni anterioare (WK45 în WK46)...")
+    pipeline = BASE / "weekly_pipeline.py"
+    test_sandbox = BASE / "tmp_test_expired"
+    test_sandbox.mkdir(exist_ok=True)
+    
+    # Take authentic WK46 dataset and inject an expired offer from WK45 (e.g. PENNY 28.10-03.11.2026)
+    wk46_lock = json.loads((BASE / "PROMO_WEEKLY_CANONICAL_LOCK_WK46.json").read_text(encoding="utf-8"))
+    for c in wk46_lock["cells"]:
+        if c["retailer"] == "PENNY" and c["kvi"] == "Pulpă porc fără os":
+            c["status"] = "VERIFIED"
+            c["price_lei_kg"] = 15.99
+            c["validity"] = "28.10–03.11.2026"
+            c["exact_product"] = "Hanul Boieresc Pulpă de porc fără os"
+            c["source"] = "PENNY catalog expirat"
+            c["source_date"] = "2026-11-09"
+            break
+            
+    bad_dataset = test_sandbox / "expired_wk46_dataset.json"
+    bad_dataset.write_text(json.dumps(wk46_lock, indent=2), encoding="utf-8")
+    
+    # Create matching receipts with the bad dataset hash so hash binding passes, but temporal check catches it!
+    bad_sha = sha256_file(bad_dataset)
+    rec_r = json.loads((BASE / "RESEARCH_RECEIPT_WK46.json").read_text(encoding="utf-8"))
+    rec_r["dataset_sha256"] = bad_sha
+    bad_res = test_sandbox / "research.json"
+    bad_res.write_text(json.dumps(rec_r, indent=2), encoding="utf-8")
+    
+    rec_c = json.loads((BASE / "RECONCILIATION_RECEIPT_WK46.json").read_text(encoding="utf-8"))
+    rec_c["dataset_sha256"] = bad_sha
+    bad_rec = test_sandbox / "reconciliation.json"
+    bad_rec.write_text(json.dumps(rec_c, indent=2), encoding="utf-8")
+
+    cmd = [
+        sys.executable, str(pipeline),
+        "--week", "WK46",
+        "--year", "2026",
+        "--domain", "PROMO",
+        "--dataset", str(bad_dataset),
+        "--research", str(bad_res),
+        "--reconciliation", str(bad_rec)
+    ]
+    cp = subprocess.run(cmd, cwd=str(BASE), capture_output=True, text=True)
+    assert cp.returncode == 2, f"Expected returncode 2 (FAIL_CLOSED), got {cp.returncode}: {cp.stdout} {cp.stderr}"
+    assert "EXPIRED_OFFER_IN_DATASET" in cp.stdout or "EXPIRED_OFFER_IN_DATASET" in cp.stderr, "Pipeline should report EXPIRED_OFFER_IN_DATASET"
+    print("  ✓ Pipeline-ul a respins oferta expirată din 03.11 în săptămâna WK46 (09.11): PASS (FAIL_CLOSED)\n")
+    shutil.rmtree(test_sandbox, ignore_errors=True)
+
 def main():
     print("================================================================")
     print(" FRESH MEAT RETAIL BI — SUITĂ DE TESTE ETAPA 4 (WEEKLY PIPELINE)")
@@ -273,13 +321,14 @@ def main():
         test_successful_weekly_run_staging()
         test_8_interruption_between_json_and_png()
         test_9_demonstrate_incomplete_release_never_active()
+        test_11_reject_expired_historical_offers_in_new_week()
         
         # Test 10: Single source of truth & commercial conclusions integrity
         from test_commercial_conclusions import test_commercial_conclusions
         test_commercial_conclusions()
         
         print("================================================================")
-        print(" TOATE CELE 10 TESTE DE CONTROL & ATOMICITATE AU TRECUT (100%)   ")
+        print(" TOATE CELE 11 TESTE DE CONTROL & ATOMICITATE AU TRECUT (100%)   ")
         print("================================================================")
     except AssertionError as e:
         print(f"\n[FAIL]: {e}")

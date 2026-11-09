@@ -49,16 +49,27 @@ def generate_manifest():
         except Exception:
             pass
 
-    # Determine last verified update for Promo Weekly
-    # Canonical release hour for Promo Weekly is 09:00 Europe/Bucharest; mid-week rolling update on Wednesday
-    rolling_receipt_path = BASE_DIR / "ROLLING_UPDATE_RECEIPT_WK45.json"
-    if active_release_data.get("week") == "WK45":
-        if rolling_receipt_path.exists() and active_release_data.get("release_id", "").endswith(json.loads(rolling_receipt_path.read_text(encoding="utf-8")).get("new_release", {}).get("release_id", "___").split("_")[-1]):
-            promo_updated = "04.11.2026 · 09:30"
-        else:
-            promo_updated = "02.11.2026 · 09:00"
-    else:
-        promo_updated = "29.10.2026 · 09:00"
+    # Determine last verified update for Promo Weekly dynamically
+    active_week = active_release_data.get("week") or promo_data.get("week", "WK46")
+    active_year = active_release_data.get("year") or promo_data.get("year", 2026)
+    try:
+        w_num = int(active_week.replace("WK", ""))
+        mon_date = datetime.fromisocalendar(int(active_year), w_num, 1).date()
+        promo_updated = f"{mon_date.strftime('%d.%m.%Y')} · 09:00"
+    except Exception:
+        promo_updated = "09.11.2026 · 09:00"
+
+    rolling_receipt_path = BASE_DIR / f"ROLLING_UPDATE_RECEIPT_{active_week}.json"
+    if rolling_receipt_path.exists():
+        try:
+            r_data = json.loads(rolling_receipt_path.read_text(encoding="utf-8"))
+            if active_release_data.get("release_id", "").endswith(r_data.get("new_release", {}).get("release_id", "___").split("_")[-1]):
+                applied_at = r_data.get("applied_at_bucharest", "")
+                if applied_at:
+                    parts = applied_at.split(" ")
+                    promo_updated = f"{parts[0]} · {parts[1][:5]}"
+        except Exception:
+            pass
 
     promo_module = {
         "module_id": "promo_weekly",

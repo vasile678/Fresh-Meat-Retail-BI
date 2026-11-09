@@ -70,6 +70,42 @@ def validate_calendar_week(week_str: str, year: int):
     research_window = f"{week_str} {year} (±3 ZILE)"
     return week_num, mon, sun, calendar_period, research_window
 
+def parse_validity_dates(validity_str: str, default_year: int):
+    """
+    Parses start and end dates from validity strings like:
+    '04.11–10.11.2026', '28.10–03.11.2026', '09.11–15.11.2026'
+    """
+    if not validity_str:
+        return None, None
+    cleaned = validity_str.replace("—", "-").replace("–", "-").strip()
+    parts = [p.strip() for p in cleaned.split("-") if p.strip()]
+    if len(parts) == 2:
+        start_part, end_part = parts[0], parts[1]
+        
+        # End date
+        end_d = None
+        m_end = re.search(r"(\d{1,2})\.(\d{1,2})\.(\d{4})", end_part)
+        if m_end:
+            end_d = datetime.date(int(m_end.group(3)), int(m_end.group(2)), int(m_end.group(1)))
+        else:
+            m_end = re.search(r"(\d{1,2})\.(\d{1,2})", end_part)
+            if m_end:
+                end_d = datetime.date(default_year, int(m_end.group(2)), int(m_end.group(1)))
+                
+        # Start date
+        start_d = None
+        m_start = re.search(r"(\d{1,2})\.(\d{1,2})\.(\d{4})", start_part)
+        if m_start:
+            start_d = datetime.date(int(m_start.group(3)), int(m_start.group(2)), int(m_start.group(1)))
+        else:
+            m_start = re.search(r"(\d{1,2})\.(\d{1,2})", start_part)
+            if m_start:
+                start_year = end_d.year if end_d else default_year
+                start_d = datetime.date(start_year, int(m_start.group(2)), int(m_start.group(1)))
+                
+        return start_d, end_d
+    return None, None
+
 def verify_static_pixels(master_img: Path, rendered_img: Path):
     """
     Ensures that fixed Golden Master regions remain 100% identical.
@@ -166,6 +202,16 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
             errors.append(f"UNBOUND_RECONCILIATION_RECEIPT: dataset_sha256 din chitanță ({reconciliation.get('dataset_sha256')}) nu corespunde datasetului curent ({dataset_sha})")
         if reconciliation.get("status") != "PASS":
             errors.append("RECONCILIATION_RECEIPT_NOT_PASS")
+
+        # Strict Temporal Validation: No expired offers from previous weeks allowed
+        for c in dataset.get("cells", []):
+            if c.get("status") == "VERIFIED":
+                val = c.get("validity", "")
+                s_d, e_d = parse_validity_dates(val, year)
+                if e_d and e_d < mon:
+                    errors.append(f"EXPIRED_OFFER_IN_DATASET: {c.get('retailer')} - {c.get('kvi')} ({val}) a expirat la {e_d.isoformat()} înainte de luni {mon.isoformat()} din {week}")
+                if s_d and s_d > sun:
+                    errors.append(f"FUTURE_OFFER_IN_DATASET: {c.get('retailer')} - {c.get('kvi')} ({val}) începe la {s_d.isoformat()} după duminică {sun.isoformat()} din {week}")
 
     elif domain == "EU_PORK_MARKET":
         if not source_path or not source_path.exists():

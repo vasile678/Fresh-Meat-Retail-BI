@@ -758,23 +758,23 @@
     }
   ],
   "competitive_intelligence": {
-    "release_id": "2026/WK45_80d77b81",
-    "promo_week": "WK45",
+    "release_id": "2026/WK46_b2f0924a",
+    "promo_week": "WK46",
     "promo_year": 2026,
-    "promo_period": "02–08 NOI 2026",
+    "promo_period": "09–15 NOI 2026",
     "active_offers_only": true,
-    "synchronized_at_utc": "2026-11-08T11:39:26.313142+00:00",
-    "executive_summary": "Sinteza comercială WK45 (02–08 NOI 2026) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg).",
+    "synchronized_at_utc": "2026-11-09T08:07:21.807131+00:00",
+    "executive_summary": "Sinteza comercială WK46 (09–15 NOI 2026) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg).",
     "top_signals": [
       {
-        "source": "Carrefour & Auchan / Promoții Active WK45",
+        "source": "Carrefour & Auchan / Promoții Active WK46",
         "date": "05.11.2026",
         "type": "PRICE_MOVE",
         "signal": "Carrefour devine noul lider absolut de piață la ceafă de porc dezosată cu 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț pe ceafă la 19,99 lei/kg (redus de la 29,99 lei/kg; economie de 3,91 lei/kg față de Lidl).",
         "impact": "Reconfigurează ierarhia competitivă pe ceafă de porc, punând presiune pe marjele discounterilor și atrăgând shopperii spre hipermarketuri."
       },
       {
-        "source": "Kaufland & Penny / Rolling Update WK45",
+        "source": "Kaufland & Penny / Rolling Update WK46",
         "date": "04.11.2026",
         "type": "PRICE_PARITY",
         "signal": "Kaufland conduce cotletul fără os cu 15,90 lei/kg (catalog 04–10.11), în timp ce pe pulpa fără os Kaufland (15,99 lei/kg standard) împarte liderul cu Penny (15,99 lei/kg cu card). Spata Kaufland (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din matricea activă conform regulii ACTIVE OFFERS ONLY.",
@@ -800,7 +800,7 @@
         "retailer": "Lidl",
         "aggressiveness": "FOARTE RIDICATĂ",
         "primary_mechanic": "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
-        "lead_kvi_price": "Ceafă porc f.o. 23,90 lei/kg | Cotlet porc f.o. 16,90 lei/kg (cupon) / 19,90 lei/kg (std) | Spată porc f.o. 18,90 lei/kg",
+        "lead_kvi_price": "Ceafă porc f.o. 17,90 lei/kg (cupon) / 23,90 lei/kg (std) | Cotlet porc f.o. 19,90 lei/kg | Piept pui dezosat 24,60 lei/kg (cupon) / 29,90 lei/kg (std)",
         "private_brand_share": "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
         "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg (depășit de Carrefour 17,90 și Auchan 19,99)."
       },
@@ -816,7 +816,7 @@
         "retailer": "Penny",
         "aggressiveness": "RIDICATĂ",
         "primary_mechanic": "Preț redus cu scanare PENNY Card (-22% la -27%)",
-        "lead_kvi_price": "Pulpă porc f.o. 15,99 lei/kg (card) / 22,99 lei/kg (std) | Cotlet porc f.o. 17,99 lei/kg (card) | Piept pui dezosat 26,90 lei/kg",
+        "lead_kvi_price": "Piept pui dezosat 26,90 lei/kg",
         "private_brand_share": "Peste 80% din carnea proaspătă sub marca proprie Hanul Boieresc (100% România)",
         "positioning_note": "Paritate pe pulpă f.o. la 15,99 lei/kg prin card de fidelitate; lider pe piept de pui dezosat la 26,90 lei/kg."
       },
@@ -880,11 +880,11 @@
         "id": "price-positioning",
         "title": "PRICE & COMPETITIVE POSITIONING",
         "domain": "Arhitectură de Preț & Promoții",
-        "insight": "În WK45, discounterii (Kaufland, Lidl, Penny) concentrează bătălia pe cotlet (15,90 lei/kg la Kaufland; 16,90 lei/kg cupon Lidl Plus) și pulpă (15,99 lei/kg la Kaufland și Penny Card). Oferta Kaufland la spată (14,90 lei/kg) a expirat la 03.11, lăsând Lidl drept singura ofertă activă de catalog la 18,90 lei/kg.",
+        "insight": "În WK46, discounterii (Kaufland, Lidl, Penny) concentrează bătălia pe cotlet (15,90 lei/kg la Kaufland; 16,90 lei/kg cupon Lidl Plus) și pulpă (15,99 lei/kg la Kaufland și Penny Card). Oferta Kaufland la spată (14,90 lei/kg) a expirat la 03.11, lăsând Lidl drept singura ofertă activă de catalog la 18,90 lei/kg.",
         "business_implication": "Pragul de acces la carne de porc fără os se reconfigurează în jurul valorii de 15,90–15,99 lei/kg. Condiționarea prin card/cupon devine mecanism de diferențiere față de reducerile directe de catalog.",
         "tactical_opportunity": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
         "recommended_action": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
-        "source_and_date": "Cataloage promoționale oficiale, aplicații mobile & PROMO WEEKLY | WK45 2026 (2026/WK45_80d77b81)"
+        "source_and_date": "Cataloage promoționale oficiale, aplicații mobile & PROMO WEEKLY | WK46 2026 (2026/WK46_b2f0924a)"
       },
       {
         "id": "category-growth",

@@ -1,12 +1,12 @@
 {
-  "execution_date": "08.11.2026",
-  "start_time_bucharest": "2026-11-08 13:38:40",
-  "end_time_bucharest": "2026-11-08 13:39:26",
-  "start_time_iso": "2026-11-08T13:38:40.442132+02:00",
-  "end_time_iso": "2026-11-08T13:39:26.310870+02:00",
-  "duration_seconds": 45.87,
+  "execution_date": "07.11.2026",
+  "start_time_bucharest": "2026-11-07 14:38:24",
+  "end_time_bucharest": "2026-11-07 14:38:42",
+  "start_time_iso": "2026-11-07T14:38:24.800675+02:00",
+  "end_time_iso": "2026-11-07T14:38:42.222999+02:00",
+  "duration_seconds": 17.42,
   "total_publications": 14,
-  "total_new_articles_accepted": 11,
+  "total_new_articles_accepted": 13,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -95,28 +95,23 @@
       "website": "https://www.retail-fmcg.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 3,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
-          "published_at": "07.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html"
+          "title": "Taco Bell deschide un nou restaurant în București și ajunge la 20 de unități în România și Republica Moldova",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/food-service/taco-bell-restaurant-bucuresti-20.html"
         },
         {
-          "title": "EXPO RETAIL 2027 – Digital, Green & Tech deschide rezervările pentru expozanți și parteneri. Oferta Early Booking, valabilă până la 15 decembrie",
-          "published_at": "07.11.2026",
-          "url": "https://www.retail-fmcg.ro/evenimente/expo-retail-2027-digital-green-tech-deschide-rezervarile.html"
-        },
-        {
-          "title": "Black Friday la eMAG: comenzi de peste 1 miliard de lei, cu un avans de 40% al produselor vândute de sellerii Marketplace",
-          "published_at": "07.11.2026",
-          "url": "https://www.retail-fmcg.ro/e-commerce-2/black-friday-la-emag-comenzi-de-peste-1-miliard-de-lei.html"
+          "title": "Froo își pregătește următoarea etapă de extindere în România: consolidarea rețelei și oportunități în noi orașe și regiuni",
+          "published_at": "05.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/froo-isi-pregateste-urmatoarea-etapa-de-extindere-in-romania.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "07.11.2026"
+      "latest_published_at": "06.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -137,18 +132,12 @@
       "website": "https://www.retail.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 1,
-      "new_accepted": [
-        {
-          "title": "Peste 886 de milioane de lei în 10 ore de Black Friday la eMAG! Românii au...",
-          "published_at": "08.11.2026",
-          "url": "https://www.retail.ro/articole/stiri-si-noutati/peste-886-de-milioane-de-lei-in-10-ore-de-black-friday-la-emag-romanii-au-comandat-inclusiv-31-de-masini-si-12-6-kilograme-de-aur-argint-si-monede-15283.html"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "08.11.2026"
+      "latest_published_at": "06.11.2026"
     },
     {
       "pub_id": "retailarena",
@@ -232,12 +221,23 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Los medios especializados , entre las fuentes más creíbles sobre marcas y empresas en España Los medios de comunicación especializados, en papel y online como es el caso de eurocarne, son la tercera fuente de información... Más información",
+          "published_at": "07.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72648/kw/Los+medios+especializados%2C+entre+las+fuentes+m%C3%A1s+cre%C3%ADbles+sobre+marcas+y+empresas+en+Espa%C3%B1a"
+        },
+        {
+          "title": "Habrá huelga: Anice y Fecic acusan a CCOO y UGT de bloquear el acuerdo en la industria cárnica tras rechazar su última oferta",
+          "published_at": "07.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72667/kw/Habr%C3%A1+huelga%3A%26nbsp%3BAnice+y+Fecic+acusan+a+CCOO+y+UGT+de+bloquear+el+acuerdo+en+la+industria+c%C3%A1rnica+tras+rechazar+su+%C3%BAltima+oferta"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "08.11.2026"
+      "latest_published_at": "07.11.2026"
     },
     {
       "pub_id": "frs",
@@ -245,8 +245,19 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Ángel Jareño (Uvesco): \"Creemos que los fondos miran demasiado al corto plazo y pervierten el modelo\"",
+          "published_at": "06.11.2026",
+          "url": "https://www.foodretail.es/retailers/angel-jareno-uvesco-creemos-que-los-fondos-miran-demasiado-al-corto-plazo-y-pervierten-el-modelo.html"
+        },
+        {
+          "title": "Musgrave abre un nuevo Dialprix en L'Alfàs del Pi (Alicante)",
+          "published_at": "06.11.2026",
+          "url": "https://www.foodretail.es/retailers/musgrave-abre-un-nuevo-dialprix-en-lalfas-del-pi-alicante.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,

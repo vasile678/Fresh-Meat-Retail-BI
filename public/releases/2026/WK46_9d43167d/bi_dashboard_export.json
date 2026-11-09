@@ -1,0 +1,597 @@
+{
+  "schema_version": "2.0-export",
+  "release_status": "RELEASE_PASS",
+  "week": "WK46",
+  "year": 2026,
+  "calendar_period": "09–15 NOI 2026",
+  "research_window": "09–15 NOI 2026 (WK46 ±3 zile)",
+  "coverage_checked": "25/25",
+  "retailers": [
+    "Kaufland",
+    "Lidl",
+    "PENNY",
+    "Carrefour",
+    "Auchan"
+  ],
+  "kvi": [
+    "Spată porc fără os",
+    "Pulpă porc fără os",
+    "Cotlet porc fără os",
+    "Ceafă porc fără os",
+    "Piept pui dezosat"
+  ],
+  "cells": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "Kaufland România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "Oferta promoțională anterioară (14.90 lei/kg) a expirat la 03.11.2026. În noul catalog 04–10.11.2026 nu există ofertă promoțională confirmată pentru spată de porc f.o.",
+      "isBest": false
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Pulpă porc fără os",
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 15.99,
+      "validity": "04.11–10.11.2026",
+      "exact_product": "K-Purland Pulpă de porc fără os",
+      "discount": "-33%",
+      "mechanic": "promoție catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 15.9,
+      "validity": "04.11–10.11.2026",
+      "exact_product": "Cotlet de porc fără os bucată / feliat",
+      "discount": "-20%",
+      "mechanic": "reducere catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "Kaufland România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în noul catalog 04–10.11.2026",
+      "isBest": false
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "source": "Kaufland România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 32.79,
+      "validity": "04.11–10.11.2026",
+      "exact_product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb",
+      "discount": "0%",
+      "mechanic": "preț catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Spată porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 18.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Spată de porc fără os",
+      "discount": "-20%",
+      "mechanic": "promoție catalog (1.89 lei/100g)",
+      "isBest": true
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Pulpă porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 19.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Pulpă de porc fără os",
+      "discount": "-20%",
+      "mechanic": "promoție catalog (1.99 lei/100g)",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 19.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Cotlet de porc fără os (16.90 lei cu Lidl Plus)",
+      "discount": "-15%",
+      "mechanic": "activarea cuponului Lidl Plus",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Ceafă porc fără os",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 23.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc fără os",
+      "discount": "-20%",
+      "mechanic": "promoție catalog (2.39 lei/100g)",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "source": "Lidl România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 29.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Piept de pui dezosat fără piele (26.90 lei cu Lidl Plus)",
+      "discount": "-10%",
+      "mechanic": "activarea cuponului Lidl Plus",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "PENNY România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Pulpă porc fără os",
+      "status": "VERIFIED",
+      "source": "PENNY România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 15.99,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "Hanul Boieresc Pulpă de porc fără os",
+      "discount": "-30%",
+      "mechanic": "preț cu PENNY card",
+      "isBest": true
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "source": "PENNY România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 17.99,
+      "validity": "28.10–03.11.2026",
+      "exact_product": "Hanul Boieresc Cotlet de porc fără os feliat",
+      "discount": "-22%",
+      "mechanic": "preț cu PENNY card",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "PENNY România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "source": "PENNY România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 26.9,
+      "validity": "28.10–10.11.2026",
+      "exact_product": "Hanul Boieresc Piept de pui dezosat XXL",
+      "discount": "promoție",
+      "mechanic": "ofertă catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Ceafă porc fără os",
+      "status": "VERIFIED",
+      "source": "Carrefour România – promoție oficială (promotiile-zilei)",
+      "source_date": "2026-11-09",
+      "price_lei_kg": 17.9,
+      "validity": "02.11–08.11.2026",
+      "exact_product": "Ceafă de porc dezosată",
+      "discount": "-25%",
+      "mechanic": "ofertă promoțională oficială (1,79 lei/100 g = 17.90 lei/kg; standard: 2,39 lei/100 g = 23.90 lei/kg)",
+      "isBest": true
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "source": "Carrefour România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "source": "Auchan România – catalog oficial WK46",
+      "source_date": "2026-11-09",
+      "note": "nicio ofertă confirmată în catalog",
+      "isBest": false
+    }
+  ],
+  "summary": {
+    "cell_count": 25,
+    "verified_count": 12,
+    "nv_count": 13,
+    "best_prices": {
+      "Spată porc fără os": 18.9,
+      "Pulpă porc fără os": 15.99,
+      "Cotlet porc fără os": 15.9,
+      "Ceafă porc fără os": 17.9,
+      "Piept pui dezosat": 26.9
+    }
+  },
+  "hashes": {
+    "dataset_sha256": "9d43167da50e97f27d15b5f3c5341e1e147b3b5d36391c7320805040cb7a948d",
+    "output_sha256": "2089ecd27bff75a4c39f94d72284485f20f278f2a1ec9bd7e9402f541446b973",
+    "release_receipt_sha256": "379c8ae3c9d62c3bd5e2cb51a80c08e588b8eecaa5d90be1a3f9ef848b5f5ee5",
+    "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
+    "renderer_sha256": "3f99b788bd766add379a2451c46cd73ed91419293d626430ce146c24f3f8378e"
+  },
+  "image_url": "/TOP5_PREȚURI_COMPETITORI_WK46_2026.png",
+  "commercial_conclusions": {
+    "schema_version": "1.0-commercial-conclusions",
+    "week": "WK46",
+    "year": 2026,
+    "calendar_period": "09–15 NOI 2026",
+    "items": [
+      {
+        "kvi": "Spată porc fără os",
+        "has_offers": true,
+        "best_price": 18.9,
+        "best_retailers": [
+          "Lidl"
+        ],
+        "summary_title": "Spată porc fără os (Ofertă unică Lidl)",
+        "text": "Lidl asigură unica ofertă promoțională confirmată din piață la 18.90 lei/kg [promoție catalog (1.89 lei/100g)]. Ceilalți retaileri (Kaufland, PENNY, Carrefour, Auchan) nu au inclus Spată porc fără os în cataloagele promoționale din WK46.",
+        "offers_count": 1,
+        "offers_detail": [
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 18.9,
+            "exact_product": "Spată de porc fără os",
+            "discount": "-20%",
+            "mechanic": "promoție catalog (1.89 lei/100g)",
+            "validity": "02.11–08.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Kaufland",
+          "PENNY",
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Pulpă porc fără os",
+        "has_offers": true,
+        "best_price": 15.99,
+        "best_retailers": [
+          "Kaufland",
+          "PENNY"
+        ],
+        "summary_title": "Pulpă porc fără os (Lider Kaufland și PENNY la 15.99 lei/kg)",
+        "text": "Kaufland și PENNY asigură cel mai mic preț la 15.99 lei/kg, în timp ce Lidl la 19.90 lei/kg (+3.91 lei, +24.5%).",
+        "offers_count": 3,
+        "offers_detail": [
+          {
+            "retailer": "Kaufland",
+            "price_lei_kg": 15.99,
+            "exact_product": "K-Purland Pulpă de porc fără os",
+            "discount": "-33%",
+            "mechanic": "promoție catalog",
+            "validity": "04.11–10.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          },
+          {
+            "retailer": "PENNY",
+            "price_lei_kg": 15.99,
+            "exact_product": "Hanul Boieresc Pulpă de porc fără os",
+            "discount": "-30%",
+            "mechanic": "preț cu PENNY card",
+            "validity": "28.10–03.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": true
+          },
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 19.9,
+            "exact_product": "Pulpă de porc fără os",
+            "discount": "-20%",
+            "mechanic": "promoție catalog (1.99 lei/100g)",
+            "validity": "02.11–08.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 3.91,
+            "diff_percent": 24.5,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Cotlet porc fără os",
+        "has_offers": true,
+        "best_price": 15.9,
+        "best_retailers": [
+          "Kaufland"
+        ],
+        "summary_title": "Cotlet porc fără os (Lider Kaufland la 15.90 lei/kg)",
+        "text": "Kaufland asigură cel mai mic preț la 15.90 lei/kg, în timp ce PENNY la 17.99 lei/kg [preț cu PENNY card] (+2.09 lei, +13.1%); Lidl la 19.90 lei/kg [activarea cuponului Lidl Plus] (+4.00 lei, +25.2%).",
+        "offers_count": 3,
+        "offers_detail": [
+          {
+            "retailer": "Kaufland",
+            "price_lei_kg": 15.9,
+            "exact_product": "Cotlet de porc fără os bucată / feliat",
+            "discount": "-20%",
+            "mechanic": "reducere catalog",
+            "validity": "04.11–10.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          },
+          {
+            "retailer": "PENNY",
+            "price_lei_kg": 17.99,
+            "exact_product": "Hanul Boieresc Cotlet de porc fără os feliat",
+            "discount": "-22%",
+            "mechanic": "preț cu PENNY card",
+            "validity": "28.10–03.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 2.09,
+            "diff_percent": 13.1,
+            "is_conditional": true
+          },
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 19.9,
+            "exact_product": "Cotlet de porc fără os (16.90 lei cu Lidl Plus)",
+            "discount": "-15%",
+            "mechanic": "activarea cuponului Lidl Plus",
+            "validity": "02.11–08.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 4.0,
+            "diff_percent": 25.2,
+            "is_conditional": true
+          }
+        ],
+        "nv_retailers": [
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Ceafă porc fără os",
+        "has_offers": true,
+        "best_price": 17.9,
+        "best_retailers": [
+          "Carrefour"
+        ],
+        "summary_title": "Ceafă porc fără os (Lider Carrefour la 17.90 lei/kg)",
+        "text": "Carrefour asigură cel mai mic preț la 17.90 lei/kg, în timp ce Lidl la 23.90 lei/kg (+6.00 lei, +33.5%).",
+        "offers_count": 2,
+        "offers_detail": [
+          {
+            "retailer": "Carrefour",
+            "price_lei_kg": 17.9,
+            "exact_product": "Ceafă de porc dezosată",
+            "discount": "-25%",
+            "mechanic": "ofertă promoțională oficială (1,79 lei/100 g = 17.90 lei/kg; standard: 2,39 lei/100 g = 23.90 lei/kg)",
+            "validity": "02.11–08.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          },
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 23.9,
+            "exact_product": "Ceafă de porc fără os",
+            "discount": "-20%",
+            "mechanic": "promoție catalog (2.39 lei/100g)",
+            "validity": "02.11–08.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 6.0,
+            "diff_percent": 33.5,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Kaufland",
+          "PENNY",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Piept pui dezosat",
+        "has_offers": true,
+        "best_price": 26.9,
+        "best_retailers": [
+          "PENNY"
+        ],
+        "summary_title": "Piept pui dezosat (Lider PENNY la 26.90 lei/kg)",
+        "text": "PENNY asigură cel mai mic preț la 26.90 lei/kg, în timp ce Lidl la 29.90 lei/kg [activarea cuponului Lidl Plus] (+3.00 lei, +11.2%); Kaufland la 32.79 lei/kg (+5.89 lei, +21.9%).",
+        "offers_count": 3,
+        "offers_detail": [
+          {
+            "retailer": "PENNY",
+            "price_lei_kg": 26.9,
+            "exact_product": "Hanul Boieresc Piept de pui dezosat XXL",
+            "discount": "promoție",
+            "mechanic": "ofertă catalog",
+            "validity": "28.10–10.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          },
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 29.9,
+            "exact_product": "Piept de pui dezosat fără piele (26.90 lei cu Lidl Plus)",
+            "discount": "-10%",
+            "mechanic": "activarea cuponului Lidl Plus",
+            "validity": "02.11–08.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 3.0,
+            "diff_percent": 11.2,
+            "is_conditional": true
+          },
+          {
+            "retailer": "Kaufland",
+            "price_lei_kg": 32.79,
+            "exact_product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb",
+            "discount": "0%",
+            "mechanic": "preț catalog",
+            "validity": "04.11–10.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 5.89,
+            "diff_percent": 21.9,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Carrefour",
+          "Auchan"
+        ]
+      }
+    ],
+    "competitive_summary": {
+      "week": "WK46",
+      "year": 2026,
+      "calendar_period": "09–15 NOI 2026",
+      "best_price_counts": {
+        "Lidl": 1,
+        "Kaufland": 2,
+        "PENNY": 2,
+        "Carrefour": 1
+      },
+      "verified_offer_counts": {
+        "Lidl": 5,
+        "Kaufland": 3,
+        "PENNY": 3,
+        "Carrefour": 1
+      },
+      "ranked_retailers": [
+        "Kaufland",
+        "PENNY",
+        "Lidl",
+        "Carrefour",
+        "Auchan"
+      ]
+    }
+  },
+  "release_gate": {
+    "release_status": "RELEASE_PASS",
+    "checks": {
+      "coverage": true,
+      "matrix_identity": true,
+      "statuses": true,
+      "source_integrity": true,
+      "research_25_25_evidence": true,
+      "reconciliation": true,
+      "render_receipt": true,
+      "master_hash": true
+    },
+    "errors": []
+  }
+}

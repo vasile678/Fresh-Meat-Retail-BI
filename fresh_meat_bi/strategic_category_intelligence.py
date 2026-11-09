@@ -125,16 +125,28 @@ def recalculate_competitive_intelligence():
     
     l_parts = []
     if lidl_ceafa and lidl_ceafa.get("status") == "VERIFIED":
-        l_parts.append(f"Ceafă porc f.o. {fmt_price(lidl_ceafa.get('price_lei_kg', 23.90))} lei/kg")
+        p_std = lidl_ceafa.get("price_standard_lei_kg")
+        p_cup = lidl_ceafa.get("price_cupon_lei_kg")
+        if p_cup and p_std and p_cup != p_std:
+            l_parts.append(f"Ceafă porc f.o. {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
+        else:
+            l_parts.append(f"Ceafă porc f.o. {fmt_price(lidl_ceafa.get('price_lei_kg', 23.90))} lei/kg")
     if lidl_cotlet and lidl_cotlet.get("status") == "VERIFIED":
         p_std = lidl_cotlet.get("price_standard_lei_kg", 19.90)
-        p_cup = lidl_cotlet.get("price_cupon_lei_kg", 16.90)
-        if p_cup:
+        p_cup = lidl_cotlet.get("price_cupon_lei_kg")
+        if p_cup and p_std and p_cup != p_std:
             l_parts.append(f"Cotlet porc f.o. {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
         else:
             l_parts.append(f"Cotlet porc f.o. {fmt_price(p_std)} lei/kg")
     if lidl_spata and lidl_spata.get("status") == "VERIFIED":
         l_parts.append(f"Spată porc f.o. {fmt_price(lidl_spata.get('price_lei_kg', 18.90))} lei/kg")
+    if lidl_piept and lidl_piept.get("status") == "VERIFIED":
+        p_std = lidl_piept.get("price_standard_lei_kg")
+        p_cup = lidl_piept.get("price_cupon_lei_kg")
+        if p_cup and p_std and p_cup != p_std:
+            l_parts.append(f"Piept pui dezosat {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
+        else:
+            l_parts.append(f"Piept pui dezosat {fmt_price(lidl_piept.get('price_lei_kg', 29.90))} lei/kg")
     lidl_kvi_text = " | ".join(l_parts)
 
     # PENNY

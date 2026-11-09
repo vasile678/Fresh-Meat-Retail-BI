@@ -73,39 +73,48 @@ class TestStrategicCategoryIntelligence(unittest.TestCase):
 
     def test_03_separate_standard_card_cupon_prices(self):
         """3. Separarea prețurilor standard, cu card și cupon."""
+        active_pointer, promo_data = get_active_promo_data()
         comp_intel = recalculate_competitive_intelligence()
 
-        # Lidl Cotlet
+        # Lidl separation
         lidl_row = next((r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Lidl"), None)
         self.assertIsNotNone(lidl_row)
-        self.assertIn("16,90 lei/kg (cupon)", lidl_row["lead_kvi_price"])
-        self.assertIn("19,90 lei/kg (std)", lidl_row["lead_kvi_price"])
-
-        # Penny Pulpă & Cotlet
-        penny_row = next((r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny"), None)
-        self.assertIsNotNone(penny_row)
-        self.assertIn("15,99 lei/kg (card)", penny_row["lead_kvi_price"])
-        self.assertIn("17,99 lei/kg (card)", penny_row["lead_kvi_price"])
+        if active_pointer.get("week") == "WK45":
+            self.assertIn("16,90 lei/kg (cupon)", lidl_row["lead_kvi_price"])
+            self.assertIn("19,90 lei/kg (std)", lidl_row["lead_kvi_price"])
+            penny_row = next((r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny"), None)
+            self.assertIsNotNone(penny_row)
+            self.assertIn("15,99 lei/kg (card)", penny_row["lead_kvi_price"])
+            self.assertIn("17,99 lei/kg (card)", penny_row["lead_kvi_price"])
+        else:
+            self.assertIn("17,90 lei/kg (cupon)", lidl_row["lead_kvi_price"])
+            self.assertIn("23,90 lei/kg (std)", lidl_row["lead_kvi_price"])
+            penny_row = next((r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny"), None)
+            self.assertIsNotNone(penny_row)
+            self.assertIn("26,90 lei/kg", penny_row["lead_kvi_price"])
 
     def test_04_market_leaders_recalculated_wk45(self):
-        """4. Recalcularea corectă a liderilor pentru WK45."""
+        """4. Recalcularea corectă a liderilor conform săptămânii active."""
+        active_pointer, promo_data = get_active_promo_data()
         comp_intel = recalculate_competitive_intelligence()
 
-        # Cotlet porc lider: Kaufland la 15.90 lei/kg necondiționat
         kaufland_row = next(r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Kaufland")
-        self.assertIn("Cotlet porc f.o. 15,90 lei/kg", kaufland_row["lead_kvi_price"])
-
-        # Pulpă porc lider: Kaufland (15.99 lei/kg) și Penny (15.99 lei/kg card)
-        self.assertIn("Pulpă porc f.o. 15,99 lei/kg", kaufland_row["lead_kvi_price"])
-        penny_row = next(r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny")
-        self.assertIn("Pulpă porc f.o. 15,99 lei/kg (card)", penny_row["lead_kvi_price"])
-
-        # Spată porc lider activ: Lidl la 18.90 lei/kg
         lidl_row = next(r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Lidl")
-        self.assertIn("Spată porc f.o. 18,90 lei/kg", lidl_row["lead_kvi_price"])
 
-        # Ceafă porc lider: Lidl la 23.90 lei/kg
-        self.assertIn("Ceafă porc f.o. 23,90 lei/kg", lidl_row["lead_kvi_price"])
+        if active_pointer.get("week") == "WK45":
+            self.assertIn("Cotlet porc f.o. 15,90 lei/kg", kaufland_row["lead_kvi_price"])
+            self.assertIn("Pulpă porc f.o. 15,99 lei/kg", kaufland_row["lead_kvi_price"])
+            penny_row = next(r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny")
+            self.assertIn("Pulpă porc f.o. 15,99 lei/kg (card)", penny_row["lead_kvi_price"])
+            self.assertIn("Spată porc f.o. 18,90 lei/kg", lidl_row["lead_kvi_price"])
+            self.assertIn("Ceafă porc f.o. 23,90 lei/kg", lidl_row["lead_kvi_price"])
+        else:
+            # WK46 leaders
+            self.assertIn("Cotlet porc f.o. 15,90 lei/kg", kaufland_row["lead_kvi_price"])
+            self.assertIn("Pulpă porc f.o. 15,99 lei/kg", kaufland_row["lead_kvi_price"])
+            self.assertIn("Ceafă porc f.o. 17,90 lei/kg (cupon)", lidl_row["lead_kvi_price"])
+            penny_row = next(r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny")
+            self.assertIn("Piept pui dezosat 26,90 lei/kg", penny_row["lead_kvi_price"])
 
     def test_05_no_unsupported_prices_for_mega_and_profi(self):
         """5. Fără prețuri inventate pentru Mega Image și Profi (neincluse în matricea 5x5)."""
@@ -123,8 +132,8 @@ class TestStrategicCategoryIntelligence(unittest.TestCase):
         self.assertTrue(success)
 
         rm_data = json.loads(RETAIL_MEDIA_FILE.read_text(encoding="utf-8"))
-        self.assertIn("competitive_intelligence", rm_data)
-        self.assertEqual(rm_data["competitive_intelligence"]["promo_week"], "WK45")
+        active_promo, _ = get_active_promo_data()
+        self.assertEqual(rm_data["competitive_intelligence"]["promo_week"], active_promo.get("week"))
 
         manifest_file = PUBLIC_DATA_DIR / "market_intelligence_manifest.json"
         if manifest_file.exists():

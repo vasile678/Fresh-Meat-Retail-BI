@@ -279,8 +279,8 @@ export default function App() {
 
   const handleDownloadImage = async (e?: React.MouseEvent) => {
     if (!data) return;
-    const targetUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
-    const filename = `TOP5_PREȚURI_COMPETITORI_${data.week || 'WK44'}_${data.year || '2026'}.png`;
+    const targetUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK46_2026.png');
+    const filename = `TOP5_PREȚURI_COMPETITORI_${data.week || 'WK46'}_${data.year || '2026'}.png`;
     handleDownloadCustomImage(targetUrl, filename, e);
   };
 
@@ -309,25 +309,29 @@ export default function App() {
     setLoading(true);
     setFetchError(null);
     try {
-      // 1. Fetch the active atomic pointer with cache-busting
-      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()));
+      // 1. Fetch the active atomic pointer with cache-busting and no-store
+      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()), {
+        cache: 'no-store'
+      });
       let pointer: ActiveRelease | null = null;
       let exportUrl = getAssetUrl('/data/bi_dashboard_export.json?v=' + Date.now());
-      let imageUrl = getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
+      let imageUrl = getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK46_2026.png?v=' + Date.now());
 
       if (pointerRes.ok) {
         pointer = await pointerRes.json();
         if (pointer && pointer.release_status === 'RELEASE_PASS') {
           setActiveRelease(pointer);
-          exportUrl = getAssetUrl(pointer.export_path);
-          imageUrl = getAssetUrl(pointer.image_path);
+          const v = pointer.dataset_sha256 || Date.now().toString();
+          const imgV = pointer.output_sha256 || Date.now().toString();
+          exportUrl = getAssetUrl(`${pointer.export_path}?v=${v}`);
+          imageUrl = getAssetUrl(`${pointer.image_path}?v=${imgV}`);
         } else if (pointer && pointer.release_status === 'FAIL_CLOSED') {
           throw new Error('Pointerul activ indică FAIL_CLOSED (lansare blocată de poartă)');
         }
       }
 
       // 2. Consume immutable export JSON corresponding strictly to the active release
-      const res = await fetch(exportUrl);
+      const res = await fetch(exportUrl, { cache: 'no-store' });
       if (!res.ok) {
         throw new Error(`Eroare la încărcarea exportului validat (HTTP ${res.status})`);
       }
@@ -342,6 +346,8 @@ export default function App() {
           throw new Error('Nepotrivire SHA-256 între pointerul activ și imaginea randată!');
         }
         json.image_url = imageUrl;
+      } else {
+        json.image_url = json.image_url ? getAssetUrl(`${json.image_url}?v=${Date.now()}`) : imageUrl;
       }
 
       setData(json);
@@ -356,18 +362,18 @@ export default function App() {
   // Background release checker: auto-detects new release and refreshes without interrupting the user
   const checkBackgroundRelease = async () => {
     try {
-      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()));
+      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()), { cache: 'no-store' });
       if (!pointerRes.ok) return;
       const pointer: ActiveRelease = await pointerRes.json();
       if (!pointer || pointer.release_status !== 'RELEASE_PASS') return;
 
       // Detect if release changed or is newer
-      if (activeRelease && pointer.release_id === activeRelease.release_id) {
+      if (activeRelease && pointer.release_id === activeRelease.release_id && data?.week === pointer.week) {
         return;
       }
 
-      const exportUrl = getAssetUrl(pointer.export_path + '?v=' + Date.now());
-      const res = await fetch(exportUrl);
+      const exportUrl = getAssetUrl(`${pointer.export_path}?v=${pointer.dataset_sha256 || Date.now()}`);
+      const res = await fetch(exportUrl, { cache: 'no-store' });
       if (!res.ok) return;
       const json: DashboardExport = await res.json();
 
@@ -375,7 +381,7 @@ export default function App() {
         json.hashes.dataset_sha256 === pointer.dataset_sha256 &&
         json.hashes.output_sha256 === pointer.output_sha256
       ) {
-        json.image_url = getAssetUrl(pointer.image_path);
+        json.image_url = getAssetUrl(`${pointer.image_path}?v=${pointer.output_sha256 || Date.now()}`);
         setActiveRelease(pointer);
         setData(json);
       }
@@ -427,6 +433,13 @@ export default function App() {
       window.removeEventListener('focus', handleVisibilityOrFocus);
     };
   }, []);
+
+  // When user navigates directly to promo module, ensure fresh data is retrieved
+  useEffect(() => {
+    if (activeModule === 'promo') {
+      loadDashboardData();
+    }
+  }, [activeModule]);
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
@@ -661,7 +674,7 @@ export default function App() {
   // 6. Normal RELEASE_PASS State: Displaying authentic verified Promo data
   const retailers = data.retailers || ['Kaufland', 'Lidl', 'PENNY', 'Carrefour', 'Auchan'];
   const kvi = data.kvi || ['Spată porc fără os', 'Pulpă porc fără os', 'Cotlet porc fără os', 'Ceafă porc fără os', 'Piept pui dezosat'];
-  const pngUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK44_2026.png');
+  const pngUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK46_2026.png');
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
@@ -746,7 +759,7 @@ export default function App() {
               {/* Titlul dinamic RAPORT SĂPTĂMÂNA XX & Comenzile vizuale Mărește | Salvează imaginea */}
               <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
                 <h2 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight uppercase text-left">
-                  RAPORT SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '44'}
+                  RAPORT SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '46'}
                 </h2>
                 <div className="flex items-center gap-2 shrink-0">
                   <button 
@@ -828,7 +841,7 @@ export default function App() {
               <div className="p-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-white tracking-tight uppercase">
-                    COMPARAȚIE PREȚURI — SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '44'}
+                    COMPARAȚIE PREȚURI — SĂPTĂMÂNA {data.week ? data.week.replace(/\D/g, '') : '46'}
                   </h3>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 text-xs">

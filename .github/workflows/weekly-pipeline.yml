@@ -2,13 +2,15 @@ name: Fresh Meat BI - Weekly Controlled Pipeline
 
 on:
   schedule:
-    # Rulează în fiecare luni la 06:00, 07:00 și 08:00 UTC (EET / EEST).
-    # Acoperă exact 09:00 Europe/Bucharest și tolerează întârzierile de coadă GitHub Actions.
-    - cron: '0 6,7,8 * * 1'
+    # Rulează în fiecare luni la 06:00, 07:00, 08:00, 09:00, 10:00, 12:00, 14:00 UTC (EET / EEST).
+    # Acoperă 08:00, 09:00, 10:00, 11:00, 12:00, 14:00, 16:00 Europe/Bucharest cu recuperare automată a întârzierilor.
+    # Include de asemenea verificări zilnice de recuperare marți–vineri la 07:00 UTC dacă săptămâna activă este în urmă.
+    - cron: '0 6,7,8,9,10,12,14 * * 1'
+    - cron: '0 7 * * 2-5'
   workflow_dispatch:
     inputs:
       week:
-        description: "Săptămâna ISO (ex: WK45). Lăsați gol pentru determinare automată dinamică conform calendarului."
+        description: "Săptămâna ISO (ex: WK46). Lăsați gol pentru determinare automată dinamică conform calendarului."
         required: false
         default: ""
       year:
@@ -34,16 +36,20 @@ on:
         default: true
 
 concurrency:
-  group: fresh-meat-promo-weekly
+  group: "pages"
   cancel-in-progress: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   weekly-pipeline:
     name: Execute Weekly Controlled Pipeline
     runs-on: ubuntu-24.04
+    outputs:
+      has_changes: ${{ steps.commit_push.outputs.has_changes }}
 
     steps:
       - name: Checkout repository
@@ -123,6 +129,7 @@ jobs:
           echo "Release manifest & schedule status successfully verified."
 
       - name: Commit & Push to Repository (Atomic Production Persistence)
+        id: commit_push
         if: env.SHOULD_RUN == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
@@ -171,6 +178,7 @@ jobs:
           # 3. Check for staged changes
           if git diff --staged --quiet; then
             echo "No changes staged. Preserved existing production release unchanged."
+            echo "has_changes=false" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -182,3 +190,50 @@ jobs:
           git pull --rebase origin main || true
           git push origin main
           echo "Successfully persisted updates to origin main."
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+
+  deploy-pages:
+    name: Build & Deploy Updated Release to GitHub Pages
+    needs: [weekly-pipeline]
+    if: needs.weekly-pipeline.outputs.has_changes == 'true' || (github.event_name == 'workflow_dispatch' && inputs.publish)
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          VITE_BASE_PATH: '/Fresh-Meat-Retail-BI/'
+
+      - name: Verify build output & active release
+        run: |
+          test -d dist
+          test -f dist/data/active_release.json
+          test -f dist/data/bi_dashboard_export.json
+          test -f dist/data/market_intelligence_manifest.json
+          echo "Promo Weekly release distribution verified successfully"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

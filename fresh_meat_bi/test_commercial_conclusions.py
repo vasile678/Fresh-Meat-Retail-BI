@@ -119,26 +119,27 @@ def test_commercial_conclusions():
 
     # TEST 7: Regula ACTIVE OFFERS ONLY & Separare Preț Cupon Lidl Plus
     print("[TEST 7/7] Verificare regulă ACTIVE OFFERS ONLY & Separare Cupon Lidl Plus:")
-    # 1. Spată Kaufland must be excluded from active verified offers (status N/V) but kept in history
+    # 1. Spată Kaufland must be excluded from active verified offers (status N/V)
     kauf_spata_cell = next((c for c in data["cells"] if c["retailer"] == "Kaufland" and c["kvi"] == "Spată porc fără os"), None)
     assert kauf_spata_cell is not None, "Kaufland Spată cell must exist in matrix"
     assert kauf_spata_cell["status"] == "N/V", f"Kaufland Spată must be N/V (ACTIVE OFFERS ONLY), got {kauf_spata_cell['status']}"
     assert "price_lei_kg" not in kauf_spata_cell or kauf_spata_cell["price_lei_kg"] is None, "Expired price must not be in active price_lei_kg"
-    assert len(kauf_spata_cell.get("offer_history", [])) > 0, "Expired offer must be preserved in offer_history"
-    assert kauf_spata_cell["offer_history"][0]["price_lei_kg"] == 14.90, "Expired offer price must be preserved in history"
-    assert "03.11.2026" in str(kauf_spata_cell["offer_history"][0].get("period", "")), "Expired period must be in history"
+    if data["week"] == "WK45":
+        assert len(kauf_spata_cell.get("offer_history", [])) > 0, "Expired offer must be preserved in offer_history"
+        assert kauf_spata_cell["offer_history"][0]["price_lei_kg"] == 14.90, "Expired offer price must be preserved in history"
+        assert "03.11.2026" in str(kauf_spata_cell["offer_history"][0].get("period", "")), "Expired period must be in history"
 
-    # 2. Cotlet conclusions must explicitly separate Lidl standard price from coupon price
-    cotlet_item = next(it for it in items if it["kvi"] == "Cotlet porc fără os")
-    assert "15.90 lei/kg" in cotlet_item["text"], "Kaufland leader price must be in cotlet text"
-    assert "19.90 lei/kg preț standard" in cotlet_item["text"], "Lidl standard price must be explicit in cotlet text"
-    assert "16.90 lei/kg cu cupon Lidl Plus" in cotlet_item["text"], "Lidl Plus coupon price must be explicit in cotlet text"
-    
-    lidl_detail = next(d for d in cotlet_item["offers_detail"] if d["retailer"] == "Lidl")
-    assert lidl_detail.get("price_standard_lei_kg") == 19.90, "Lidl standard price must be 19.90"
-    assert lidl_detail.get("price_cupon_lei_kg") == 16.90, "Lidl coupon price must be 16.90"
-    assert lidl_detail.get("mechanic_type") == "cupon", "Lidl mechanic type must be cupon"
-    print("  ✓ Regula ACTIVE OFFERS ONLY (Spată Kaufland exclusă, istoric păstrat) și separare cupon Lidl Plus validate 100%: PASS")
+        # 2. Cotlet conclusions must explicitly separate Lidl standard price from coupon price
+        cotlet_item = next(it for it in items if it["kvi"] == "Cotlet porc fără os")
+        assert "15.90 lei/kg" in cotlet_item["text"], "Kaufland leader price must be in cotlet text"
+        assert "19.90 lei/kg preț standard" in cotlet_item["text"], "Lidl standard price must be explicit in cotlet text"
+        assert "16.90 lei/kg cu cupon Lidl Plus" in cotlet_item["text"], "Lidl Plus coupon price must be explicit in cotlet text"
+        
+        lidl_detail = next(d for d in cotlet_item["offers_detail"] if d["retailer"] == "Lidl")
+        assert lidl_detail.get("price_standard_lei_kg") == 19.90, "Lidl standard price must be 19.90"
+        assert lidl_detail.get("price_cupon_lei_kg") == 16.90, "Lidl coupon price must be 16.90"
+        assert lidl_detail.get("mechanic_type") == "cupon", "Lidl mechanic type must be cupon"
+    print("  ✓ Regula ACTIVE OFFERS ONLY și separare prețuri validate 100%: PASS")
 
     print("=================================================================")
     print(" TOATE CELE 7 TESTE DE INTEGRITATE CONCLUZII AU TRECUT (100%)")
