@@ -78,21 +78,21 @@ export const DEFAULT_MANIFEST: MarketIntelligenceManifest = {
     retail_media_monitor: {
       module_id: "retail_media_monitor",
       title: "Retail Media Monitor (Presă Specializată)",
-      schedule: "Zilnic, 09:00 Europe/Bucharest",
-      last_verified_update: "08.11.2026 · 08:00",
-      updated_date: "08.11.2026",
+      schedule: "Zilnic, 08:00 Europe/Bucharest",
+      last_verified_update: "11.11.2026 · 08:00",
+      updated_date: "11.11.2026",
       updated_time: "08:00",
-      period: "01.11.2026 – 08.11.2026 (Ultimele 7 zile)",
+      period: "04.11.2026 – 11.11.2026 (Ultimele 7 zile)",
       status: "ACTIVE_MONITORED",
       data_file: "/data/retail_media_export.json",
-      dataset_sha256: "c011c2c6c23d84446e5e9eb2077ce8bf5362b64085c03539df3a65556f977f03"
+      dataset_sha256: "767e4a3e2296602c22328ebb6b3b0ee1e6b8ecce91cf287b7671eef56aba1f99"
     },
     strategic_category_insights: {
       module_id: "strategic_category_insights",
       title: "Strategic Category Insights",
       schedule: "Zilnic, după sincronizarea surselor relevante de piață",
-      last_verified_update: "08.11.2026 · 08:00",
-      updated_date: "08.11.2026",
+      last_verified_update: "11.11.2026 · 08:00",
+      updated_date: "11.11.2026",
       updated_time: "08:00",
       status: "SYNCHRONIZED"
     }

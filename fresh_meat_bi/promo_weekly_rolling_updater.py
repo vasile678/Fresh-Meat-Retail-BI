@@ -416,6 +416,15 @@ def execute_rolling_update(target_week: str = "WK45", year: int = 2026, dry_run:
     print(f"[CHECK] Status: {'NECESAR' if needed else 'DEJA APLICAT'}")
     print(f"        Detalii: {reason}")
     
+    if active_info.get("week") and active_info.get("week") > target_week:
+        print(f"[GUARD] Săptămâna activă ({active_info.get('week')}) este mai nouă decât ținta ({target_week}). Păstrare release activ.")
+        return {
+            "status": "ALREADY_APPLIED",
+            "active_release_id": active_info.get("release_id"),
+            "dataset_sha256": active_info.get("dataset_sha256"),
+            "message": f"Active week {active_info.get('week')} is ahead of target {target_week}."
+        }
+        
     if not needed and not dry_run and not force:
         print("[IDEMPOTENT] Raportul activ conține deja actualizarea rolling. Nicio modificare necesară.")
         return {

@@ -1,0 +1,1777 @@
+{
+  "schema_version": "2.0-daily-7retailers-6pillars",
+  "status": "ACTIVE_MONITORED",
+  "update_state": "VERIFIED_FRESH_UPDATE",
+  "update_state_label": "Actualizare Verificată (+29 noutăți)",
+  "updated": "11.11.2026, 08:00",
+  "updated_date": "11.11.2026",
+  "updated_time": "08:00",
+  "last_collection_bucharest": "11.11.2026 22:19",
+  "last_collection_iso": "2026-11-11T22:19:14.495580+02:00",
+  "last_successful_check": "11.11.2026 22:19",
+  "period_analyzed": "04.11.2026 – 11.11.2026 (Ultimele 7 zile)",
+  "execution_timezone": "Europe/Bucharest",
+  "new_articles_count": 29,
+  "total_verified_articles": 42,
+  "retailers": [
+    {
+      "id": "lidl",
+      "name": "Lidl",
+      "catalog_url": "https://www.lidl.ro/l/ro/cataloage/",
+      "validity": "Luni – Duminică (Ediții Săptămânale)",
+      "app_name": "Lidl Plus",
+      "app_url": "https://www.lidl.ro/lidl-plus",
+      "private_brand": "Cămara Noastră & Pikok",
+      "focus_meat_kvi": [
+        "Spată porc f.o.",
+        "Pulpă porc f.o.",
+        "Cotlet porc f.o.",
+        "Piept pui dezosat"
+      ],
+      "active_mechanics": "Cupon Lidl Plus (-20% la -25%), Promoții XXL, Super Weekend",
+      "meat_price_position": "Lider de preț pe spata de porc (cupon digital / catalog)",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "lidl-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "lidl-commercial_decisions-a0b060e6",
+              "title": "Pilos, marca proprie Lidl cu notorietate record, ajunge la o pondere de 88% lapte proaspat provenit de la furnizori locali",
+              "summary": "Marca proprie Lidl dedicată produselor lactate, Pilos, ocupă prima poziție în topul celor mai cunoscute mărci proprii din România, potrivit studiului NielsenIQ „Private Labels 2025”. Cu un nivel de notorietate de 66%, Pilos conduce clasamen...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/pilos-marca-proprie-lidl-lapte-proaspat-furnizori-locali.html",
+              "published_at": "03.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "lidl-expansion_investments-65dc8ef5",
+              "title": "Exporturi românești de fructe și legume prin Lidl: 8.800 de tone și 6,8 mil. euro",
+              "summary": "În perioada iunie – septembrie 2026, Lidl România a facilitat exportul a peste 8.839 de tone de fructe și legume românești, în valoare totală de peste 6.800.000 de euro. Un număr de nouă producători români au livrat pepeni, fructe de pădure...",
+              "source": "Modern Buyer",
+              "url": "https://modernbuyer.ro/exporturi-romanesti-de-fructe-si-legume-prin-lidl-8-800-de-tone-si-68-mil-euro/",
+              "published_at": "11.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "lidl-expansion_investments-aa9d0490",
+              "title": "Exporturile de fructe și legume românești stabilesc noi recorduri în rețeaua internațională Lidl: peste 8.800 de tone și 6,8 milioane de euro",
+              "summary": "În perioada iunie – septembrie 2026, Lidl România a facilitat exportul a peste 8.839 de tone de fructe și legume românești, în valoare totală de peste 6.800.000 de euro. 9 producători români au livrat pepeni, fructe de pădure, roșii și stru...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/exporturi-fructe-legume-romanesti-lidl.html",
+              "published_at": "10.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [
+            {
+              "id": "lidl-fresh_meat_impact-0f05397e",
+              "title": "Cum transformă Fragedo de la TRANSAVIA siguranța și constanța în valoare pentru consumatori și retail",
+              "summary": "Un brand puternic în categoria carnea de pui poate aduce consumatorul la raft prin încrederea dată de experiența avută la fiecare achiziție, prin produse sigure, de calitate constantă. Extinderea lui către soluții mai ușor de pregătit, prod...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/fmcg/cum-transforma-fragedo-de-la-transavia-siguranta-si-constanta-in-valoare-pentru-consumatori-si-retail.html",
+              "published_at": "04.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        }
+      }
+    },
+    {
+      "id": "kaufland",
+      "name": "Kaufland",
+      "catalog_url": "https://www.kaufland.ro/cataloage-cu-reduceri.html",
+      "validity": "Miercuri – Marți (Ciclul principal de miercuri)",
+      "app_name": "Kaufland Card",
+      "app_url": "https://www.kaufland.ro/kaufland-card.html",
+      "private_brand": "K-Purland & Vreau din România",
+      "focus_meat_kvi": [
+        "Spată porc f.o.",
+        "Pulpă porc f.o.",
+        "Cotlet porc f.o.",
+        "Ceafă porc f.o."
+      ],
+      "active_mechanics": "Reducere directă de catalog (-21% la -33%), Steaua Zilei, Weekend Kaufland",
+      "meat_price_position": "Agresivitate directă: pulpă porc la 15,99 lei/kg și cotlet întreg la 16,99 lei/kg",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "kaufland-commercial_decisions-8eefecfc",
+              "title": "Kaufland România lansează campania de sărbători „Crăciunul este când îl simți tu”",
+              "summary": "Kaufland România lansează campania de sărbători „Crăciunul este când îl simți tu”, o invitație deschisă de a ne bucura oricând de momentele și lucrurile care contează cu adevărat. Pentru unii, Crăciunul începe când casa se umple de aroma co...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/kaufland-romania-campania-sarbatori-craciunul-este-cand-il-simti-tu.html",
+              "published_at": "09.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "kaufland-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [
+            {
+              "id": "kaufland-pricing_promotions-079e49ae",
+              "title": "Kaufland ”taie inflația”: reduceri timp de o lună în magazine",
+              "summary": "Kaufland România derulează campania comercială de reducere a prețurilor la peste 500 de articole de bază și produse proaspete pentru a proteja puterea de cumpărare a consumatorilor.",
+              "source": "RetailArena.ro",
+              "url": "https://retailarena.ro/stiri-si-noutatikaufland-taie-inflatia-reduceri-timp-de-o-luna-in-magazine-15120",
+              "published_at": "09.05.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "kaufland-expansion_investments-c2b277d3",
+              "title": "Situația deschiderilor de magazine din retailul FMCG din România, în luna octombrie 2026",
+              "summary": "În luna octombrie 2026, în retailul FMCG din România au fost deschise, în total, 11 magazine. Acest calcul include deschiderile comunicate oficial, motiv pentru care este posibil să mai revenim cu update-uri la acest articol. Retailerii car...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-fmcg-romania-octombrie-2026.html",
+              "published_at": "04.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            },
+            {
+              "id": "kaufland-expansion_investments-1d48ac77",
+              "title": "Kaufland deschide un magazin în Otopeni, județul Ilfov",
+              "summary": "Kaufland România își extinde prezența la nivel național și deschide un magazin în orașul Otopeni, județul Ilfov. Prin această investiție, compania creează 70 de noi locuri de muncă. Situat pe strada 23 August nr. 216-230, noul Kaufland este...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/kaufland-magazin-otopeni-judetul-ilfov.html",
+              "published_at": "28.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [
+            {
+              "id": "kaufland-fresh_meat_impact-df41cf5a",
+              "title": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
+              "summary": "Campaniile de discount masiv din hipermarketuri cresc traficul general la raft, stimulând vânzările încrucișate pe coșul proaspăt de carne.",
+              "source": "Revista Piața",
+              "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole",
+              "published_at": "29.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        }
+      }
+    },
+    {
+      "id": "carrefour",
+      "name": "Carrefour",
+      "catalog_url": "https://carrefour.ro/corporate/cataloage",
+      "validity": "Joi – Miercuri (Catalog Hipermarket / Market)",
+      "app_name": "ActForFood / Aplicația Carrefour",
+      "app_url": "https://carrefour.ro/corporate/aplicatia-carrefour",
+      "private_brand": "Filiera Calității Carrefour & Drag de România",
+      "focus_meat_kvi": [
+        "Pulpă porc f.o.",
+        "Cotlet porc f.o.",
+        "Piept pui dezosat",
+        "Carne tocată"
+      ],
+      "active_mechanics": "Cupoane în aplicație, Reduceri 2+1 la preț special, Promoții ActForFood",
+      "meat_price_position": "Focus pe trasabilitate și filieră de calitate românească, preț mediu KVI",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "carrefour-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "carrefour-commercial_decisions-39bded95",
+              "title": "Romanian FMCG Retail – The most important news from October 2026",
+              "summary": "Romanian retail & FMCG market – For all our readers abroad, these are the most important news from Romanian retail & FMCG market, in October 2026, provided by retail-FMCG.ro, the most read B2B online publication, in Romania, from the retail...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/english/romanian-fmcg-retail-news-october-2026.html",
+              "published_at": "02.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "carrefour-expansion_investments-9a1db486",
+              "title": "4 Carrefour impulsará su enseña Express en los campings españoles",
+              "summary": "Evoluția retailului alimentar și a formatelor de proximitate în Europa.",
+              "source": "FRS – Food Retail & Service",
+              "url": "https://www.foodretail.es/retailers/carrefour-impulsara-su-ensena-express-en-los-campings-espanoles.html",
+              "published_at": "11.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "carrefour-expansion_investments-c2b277d3",
+              "title": "Situația deschiderilor de magazine din retailul FMCG din România, în luna octombrie 2026",
+              "summary": "În luna octombrie 2026, în retailul FMCG din România au fost deschise, în total, 11 magazine. Acest calcul include deschiderile comunicate oficial, motiv pentru care este posibil să mai revenim cu update-uri la acest articol. Retailerii car...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-fmcg-romania-octombrie-2026.html",
+              "published_at": "04.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        }
+      }
+    },
+    {
+      "id": "penny",
+      "name": "Penny",
+      "catalog_url": "https://www.penny.ro/vezi-pliantele-saptamanii",
+      "validity": "Miercuri – Marți (Pliant Național)",
+      "app_name": "PENNY Card",
+      "app_url": "https://www.penny.ro/penny-card",
+      "private_brand": "Hanul Boieresc (Carne cu origine România)",
+      "focus_meat_kvi": [
+        "Pulpă porc f.o.",
+        "Spată porc f.o.",
+        "Cotlet porc feliat",
+        "Piept pui dezosat"
+      ],
+      "active_mechanics": "Preț redus cu scanare PENNY Card (-30%), Reduceri de volum (3 bucăți)",
+      "meat_price_position": "Paritate competitivă la pulpa de porc f.o. Hanul Boieresc (15,99 lei/kg)",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "penny-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "penny-commercial_decisions-70f99949",
+              "title": "Retail & FMCG – Sinteza săptămânii 12 – 16 octombrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 12 – 16 octombrie 2026. EXPO RETAIL 2026 – Digital, Green & Tech, eveniment expozițional organizat de publicația de business re...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-16-octombrie-2026.html",
+              "published_at": "17.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [
+            {
+              "id": "penny-pricing_promotions-8421e5ce",
+              "title": "Retail & FMCG – Sinteza săptămânii 28 septembrie – 2 octombrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 14 – 18 septembrie 2026. Retail Lanțul danez de retail NORMAL, un retailer de tip variety discount, axat pe produse FMCG non-fo...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-2-octombrie-2026.html",
+              "published_at": "03.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "penny-expansion_investments-f8aae068",
+              "title": "PENNY inaugurează primul magazin din Sâncraiu de Mureș și ajunge la 479 de unități la nivel național",
+              "summary": "PENNY continuă extinderea rețelei la nivel național și inaugurează un nou magazin în Sâncraiu de Mureș, județul Mureș. Odată cu această deschidere, rețeaua PENNY ajunge la 479 de unități la nivel național. Magazinul din localitatea Sâncraiu...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/penny-magazin-sancraiu-de-mures-479.html",
+              "published_at": "11.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "penny-expansion_investments-db30df9b",
+              "title": "PENNY continuă extinderea rețelei și deschide patru magazine noi",
+              "summary": "PENNY continuă extinderea rețelei sale la nivel național și inaugurează patru noi magazine în Vânju Mare (județul Mehedinți), Turnu Măgurele (județul Teleorman) și două în județul Giurgiu în Crevedia Mare și în orașul Giurgiu. Astfel, rețea...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/penny-deschide-patru-magazine-noi.html",
+              "published_at": "04.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        }
+      }
+    },
+    {
+      "id": "profi",
+      "name": "Profi",
+      "catalog_url": "https://www.profi.ro/reviste-ro/",
+      "validity": "Joi – Miercuri (Revista săptămânală)",
+      "app_name": "Aplicația Profi",
+      "app_url": "https://www.profi.ro/aplicatia-profi/",
+      "private_brand": "Ferma din Deal",
+      "focus_meat_kvi": [
+        "Pulpă porc f.o.",
+        "Spată porc f.o.",
+        "Ceafă porc f.o.",
+        "Carne tocată amestec"
+      ],
+      "active_mechanics": "Cuponiada din aplicație, Reduceri pachet, Promoții locale de proximitate",
+      "meat_price_position": "Accesibilitate în proximitate urbană și rurală; oportunitate de reacție rapidă KVI",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "profi-commercial_decisions-2aad34d4",
+              "title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
+              "summary": "Biroul Român de Audit Transmedia (BRAT) lansează un proiect în vederea realizării primului sistem de măsurare și certificare independentă a performanțelor retail media. Retail media devine o nouă verticală de comunicare, evaluată după crite...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html",
+              "published_at": "10.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "profi-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [
+            {
+              "id": "profi-pricing_promotions-6539b351",
+              "title": "Black Friday la eMAG: comenzi de peste 1 miliard de lei, cu un avans de 40% al produselor vândute de sellerii Marketplace",
+              "summary": "eMAG a încheiat ediția Black Friday 2026 cu comenzi în valoare de 1,041 miliarde de lei și peste 4,1 milioane de produse comandate de 714.000 de clienți. Alături de electronice și electrocasnice, în coșurile de cumpărături au ajuns cantităț...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/e-commerce-2/black-friday-la-emag-comenzi-de-peste-1-miliard-de-lei.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "profi-expansion_investments-f500fc28",
+              "title": "Ahold Delhaize (Mega Image și Profi) a deschis 64 de magazine în România în 2026 și pregătește noi extinderi",
+              "summary": "Ahold Delhaize, grupul care operează în România rețelele Mega Image, Profi și Shop&Go, a deschis 64 de magazine pe piața locală de la începutul anului 2026 și are în plan continuarea extinderii, potrivit declarațiilor lui Frans Muller, preș...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-a-deschis-64-de-magazine-in-romania-in-2026.html",
+              "published_at": "09.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "profi-expansion_investments-dfe9c726",
+              "title": "EXPO RETAIL 2027 – Digital, Green & Tech deschide rezervările pentru expozanți și parteneri. Oferta Early Booking, valabilă până la 15 decembrie",
+              "summary": "EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul expozițional B2B organizat de publicația de business retail-FMCG.ro, va avea loc în perioada 22–23 septembrie 2027, la Universitatea Națională de Știință și Tehnologie POLITEHNICA Bucure...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/evenimente/expo-retail-2027-digital-green-tech-deschide-rezervarile.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [
+            {
+              "id": "profi-operations_management-b909aa1f",
+              "title": "Mega Image, Profi și Shop&Go, reunite sub Ahold Delhaize România. Shop&Go devine brand cu management și strategie proprii",
+              "summary": "Mega Image, Profi și Shop&Go, cele trei branduri distincte, sunt reunite în România sub umbrela Ahold Delhaize România, cu obiectivul comun de a răspunde cât mai bine așteptărilor privind cumpărăturile de proximitate ale comunităților din î...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/mega-image-profi-shopgo-reunite-sub-ahold-delhaize-romania.html",
+              "published_at": "04.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [
+            {
+              "id": "profi-fresh_meat_impact-dd9b4d8d",
+              "title": "Pork market to remain stable despite geopolitical uncertainties",
+              "summary": "Prognozele de profil indică stabilitate în cotațiile la poarta abatorului, permițând comercianților o planificare predictibilă a marjelor de retail.",
+              "source": "Meat Management",
+              "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article",
+              "published_at": "20.02.2025",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "1 informație/informații verificate"
+        }
+      }
+    },
+    {
+      "id": "auchan",
+      "name": "Auchan",
+      "catalog_url": "https://www.auchan.ro/cataloage",
+      "validity": "Miercuri – Marți (Catalog Național)",
+      "app_name": "MyClub Auchan",
+      "app_url": "https://romania.auchan.ro/myclub-auchan/",
+      "private_brand": "Filiera Auchan & Pouce",
+      "focus_meat_kvi": [
+        "Pulpă porc f.o.",
+        "Cotlet porc f.o.",
+        "Piept pui dezosat"
+      ],
+      "active_mechanics": "Cashback pe card MyClub (5-10% bani înapoi), Preț redus direct la casă",
+      "meat_price_position": "Pondere ridicată a ambalajelor mari și caserolelor economice de familie",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "auchan-commercial_decisions-2aad34d4",
+              "title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
+              "summary": "Biroul Român de Audit Transmedia (BRAT) lansează un proiect în vederea realizării primului sistem de măsurare și certificare independentă a performanțelor retail media. Retail media devine o nouă verticală de comunicare, evaluată după crite...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html",
+              "published_at": "10.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "auchan-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [
+            {
+              "id": "auchan-pricing_promotions-bc10ea40",
+              "title": "Auchan dă startul Black Friday 2026: peste 2.500 de produse cu reduceri de până la 60% în magazine și pe auchan.ro",
+              "summary": "Auchan România anunță lansarea campaniei Black Friday 2026, care se va desfășura în perioada 4–17 noiembrie, atât în magazinele fizice, cât și online, pe auchan.ro. Cumpărătorii vor avea parte de peste 2.500 de produse cu reduceri de până l...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/auchan-black-friday-2026.html",
+              "published_at": "02.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            },
+            {
+              "id": "auchan-pricing_promotions-0d94359c",
+              "title": "Black Friday 2026: eMAG a pregătit peste 1,8 milioane de produse la cel mai mic preț din an",
+              "summary": "eMAG organizează pe 6 noiembrie cea de-a 16-a ediție de Black Friday, ziua cu cele mai multe reduceri din an. Clienții vor avea la dispoziție peste 1,8 milioane de produse la cel mai mic preț din an, alături de oferte speciale la servicii, ...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/e-commerce-2/black-friday-2026-emag-produse-cel-mai-mic-pret-din-an.html",
+              "published_at": "02.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "auchan-expansion_investments-3236b23c",
+              "title": "Auchan introduce prima intrare imersivă LED din retailul românesc, într-un nou concept de retail media",
+              "summary": "Auchan România a lansat în hipermarketul Auchan Drumul Taberei din București un nou concept de retail media in-store, care include prima intrare imersivă LED din retailul românesc. Proiectul integrează două intrări imersive, Food și Non-foo...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/auchan-prima-intrare-imersiva-led-din-retailul-romanesc.html",
+              "published_at": "16.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            },
+            {
+              "id": "auchan-expansion_investments-d8e19246",
+              "title": "Situația deschiderilor de magazine din retailul alimentar din România, în luna septembrie 2026",
+              "summary": "În luna septembrie 2026, în retailul alimentar din România au fost deschise, în total, 10 magazine. Acest calcul include deschiderile comunicate oficial, motiv pentru care este posibil să mai revenim cu update-uri la acest articol. Retailer...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-alimentar-romania-septembrie-2026.html",
+              "published_at": "13.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        }
+      }
+    },
+    {
+      "id": "mega-image",
+      "name": "Mega Image",
+      "catalog_url": "https://revista.mega-image.ro/",
+      "validity": "Joi – Miercuri (Revista Săptămânală)",
+      "app_name": "Card Connect & Mega Image App",
+      "app_url": "https://www.mega-image.ro/card-connect",
+      "private_brand": "Gusturi Românești & Mega Apetit",
+      "focus_meat_kvi": [
+        "Cotlet porc feliat",
+        "Ceafă porc feliată",
+        "Piept pui dezosat"
+      ],
+      "active_mechanics": "Preț Card Connect, Promoții de weekend, Pachete proaspete gata de gătit",
+      "meat_price_position": "Orientare premium pe piese feliate porționate; preț superior mediei pieței",
+      "intelligence_stream": {
+        "commercial_decisions": {
+          "pillar_id": "commercial_decisions",
+          "title": "Știri și decizii comerciale",
+          "description": "Parteneriate strategice, achiziții, politică comercială, branduri naționale și private label",
+          "items": [
+            {
+              "id": "mega-image-commercial_decisions-7e77f0b7",
+              "title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+              "summary": "Retail & FMCG – Principalele titluri din retailul alimentar şi industria FMCG din România, în sinteza săptămânii 2 – 6 noiembrie 2026. Lansare EXPO RETAIL 2026 – Digital, Green & Tech EXPO RETAIL 2026 – Digital, Green & Tech, evenimentul ex...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
+              "published_at": "07.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "mega-image-commercial_decisions-5f3c08dd",
+              "title": "Romanian FMCG Retail – The most important news from April 2026",
+              "summary": "Romanian retail & FMCG market – For all our readers abroad, these are the most important news from Romanian retail & FMCG market, in April 2026, provided by retail-FMCG.ro, the most read B2B online publication, in Romania, from the retail &...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/english/romanian-fmcg-retail-news-april-2026.html",
+              "published_at": "05.05.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "pricing_promotions": {
+          "pillar_id": "pricing_promotions",
+          "title": "Promoții și strategii de preț",
+          "description": "Mecanisme promoționale, cupoane digitale, campanii sezoniere și agresivitate KVI",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "expansion_investments": {
+          "pillar_id": "expansion_investments",
+          "title": "Expansiune și investiții",
+          "description": "Deschideri de magazine noi, modernizări, capacități logistice și investiții în rețea",
+          "items": [
+            {
+              "id": "mega-image-expansion_investments-f500fc28",
+              "title": "Ahold Delhaize (Mega Image și Profi) a deschis 64 de magazine în România în 2026 și pregătește noi extinderi",
+              "summary": "Ahold Delhaize, grupul care operează în România rețelele Mega Image, Profi și Shop&Go, a deschis 64 de magazine pe piața locală de la începutul anului 2026 și are în plan continuarea extinderii, potrivit declarațiilor lui Frans Muller, preș...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-a-deschis-64-de-magazine-in-romania-in-2026.html",
+              "published_at": "09.11.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
+            },
+            {
+              "id": "mega-image-expansion_investments-5a7dd61b",
+              "title": "Ahold Delhaize preia operațiunile Tesco din Cehia și Slovacia și își consolidează poziția în Europa Centrală",
+              "summary": "Ahold Delhaize a anunțat un acord pentru achiziția integrală a operațiunilor Tesco din Cehia și Slovacia, care generează vânzări de aproximativ 3,5 miliarde de euro. Tranzacția, supusă aprobărilor autorităților, va consolida prezența grupul...",
+              "source": "Retail-FMCG.ro",
+              "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-preia-operatiunile-tesco-din-cehia-si-slovacia.html",
+              "published_at": "30.10.2026",
+              "verified_at": "11.11.2026 22:19",
+              "verification_status": "VERIFIED",
+              "is_new": false,
+              "time_horizon": "ISTORIC DE CONTEXT"
+            }
+          ],
+          "has_news": true,
+          "message": "2 informație/informații verificate"
+        },
+        "operations_management": {
+          "pillar_id": "operations_management",
+          "title": "Modificări operaționale și management",
+          "description": "Numiri cheie în conducere, reorganizări, digitalizare în magazin și procese operaționale",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "reputation_claims": {
+          "pillar_id": "reputation_claims",
+          "title": "Reputație, reclamații și apariții negative",
+          "description": "Controverse, retrageri de produse, controale ANPC/DSVSA și impact reputațional",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        },
+        "fresh_meat_impact": {
+          "pillar_id": "fresh_meat_impact",
+          "title": "Tendințe competitive și impact potențial asupra Fresh Meat",
+          "description": "Dinamica raioanelor de carne, filiere locale de calitate și oportunități de categorie",
+          "items": [],
+          "has_news": false,
+          "message": "Fără noutăți verificate"
+        }
+      }
+    }
+  ],
+  "publications": [
+    {
+      "id": "progresiv",
+      "name": "Revista Progresiv",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://revistaprogresiv.ro/",
+      "articles": [
+        {
+          "id": "progresiv-43e32010",
+          "title": "Bitdefender și ING folosesc AI pentru a identifica cine încasează banii din magazinele online false",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Știri și analize de piață pentru industria FMCG și retail.",
+          "url": "https://revistaprogresiv.ro/stiri/tech/bitdefender-si-ing-folosesc-ai-pentru-a-identifica-cine-incaseaza-banii-din-magazinele-online-false/",
+          "source": "Revista Progresiv"
+        },
+        {
+          "id": "progresiv-77299f86",
+          "title": "Andrei Ursulescu, Scandia Food Group: Piața conservelor este stabilă, dar presiunea economică schimbă...",
+          "published_at": "09.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "09.11.2026",
+          "summary": "Știri și analize de piață pentru industria FMCG și retail.",
+          "url": "https://revistaprogresiv.ro/stiri/fmcg/andrei-ursulescu-scandia-food-group-piata-conservelor-este-stabila-dar-presiunea-economica-schimba-mixul-de-vanzari/",
+          "source": "Revista Progresiv"
+        },
+        {
+          "id": "progresiv-366a2a6a",
+          "title": "Proprietarul Mega Image bifează o nouă achiziție și preia magazinele Tesco din Cehia și Slovacia",
+          "published_at": "30.10.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "30.10.2026",
+          "summary": "Știri și analize de piață pentru industria FMCG și retail.",
+          "url": "https://revistaprogresiv.ro/stiri/retail/proprietarul-mega-image-bifeaza-o-noua-achizitie-si-preia-magazinele-tesco-din-cehia-si-slovacia/",
+          "source": "Revista Progresiv"
+        }
+      ]
+    },
+    {
+      "id": "piata",
+      "name": "Revista Piața",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://www.revista-piata.ro/",
+      "articles": [
+        {
+          "title": "Diana Supermarket – de acum și în Galicea, județul Vâlcea",
+          "published_at": "30.10.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "30.10.2026",
+          "summary": "Rețeaua Diana își consolidează prezența regională, oferind carne proaspătă tranșată local și preparate tradiționale din abatorul propriu.",
+          "url": "https://www.revista-piata.ro/retail/info-retail/diana-supermarket-de-acum-si-in-galicea-judetul-valcea",
+          "id": "piata-cc676294",
+          "source": "Revista Piața"
+        },
+        {
+          "title": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
+          "published_at": "29.10.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "29.10.2026",
+          "summary": "Campaniile de discount masiv din hipermarketuri cresc traficul general la raft, stimulând vânzările încrucișate pe coșul proaspăt de carne.",
+          "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole",
+          "id": "piata-df41cf5a",
+          "source": "Revista Piața"
+        },
+        {
+          "title": "ShopX, o nouă platformă de retail media dedicată comerțului fizic",
+          "published_at": "29.10.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "29.10.2026",
+          "summary": "Soluțiile de retail media în magazin permit furnizorilor de carne și mezeluri o promovare targetată direct la punctul de decizie al cumpărătorului.",
+          "url": "https://www.revista-piata.ro/retail/info-retail/shopx-o-noua-platforma-de-retail-media-dedicata-comertului-fizic",
+          "id": "piata-0fee155e",
+          "source": "Revista Piața"
+        }
+      ]
+    },
+    {
+      "id": "trendshrb",
+      "name": "Trends HRB",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://www.trendshrb.ro/",
+      "articles": [
+        {
+          "id": "trendshrb-3e8aeb05",
+          "title": "Arta degustării brânzeturilor italiene, la RO-WINE Craiova: tradiție, autenticitate și excelență Made in Italy",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "ICE – Agenția Italiană pentru Comerț Exterior și Assolatte aduc la Craiova un masterclass dedicat brânzeturilor italiene DOP, în cadrul celei de-a XI-a ediții a Săptămânii Bucătăriei Italiene în Lume. Evenimentul se adresează profesioniștil...",
+          "url": "https://www.trendshrb.ro/nwsl_promo/arta-degustarii-branzeturilor-italiene-la-ro-wine-craiova-traditie-autenticitate-si-excelenta-made-in-italy/",
+          "source": "Trends HRB"
+        },
+        {
+          "id": "trendshrb-b31c40df",
+          "title": "Pop-up caritabil: Zacusca și Horinca Bar la Casa del Pan din București",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Campania #mancareafacebine continuă cu un nou eveniment culinaro-caritabil: Pop-up Zacusca & Horinca Bar la Casa del Pan din București, pe 21 noiembrie 2026, între orele 10:00 și 16:00. Organizatorii vor pregăti 300 de porții din selecția d...",
+          "url": "https://www.trendshrb.ro/stiri/pop-up-caritabil-zacusca-si-horinca-bar-la-casa-del-pan-din-bucuresti-2/",
+          "source": "Trends HRB"
+        },
+        {
+          "id": "trendshrb-26261e78",
+          "title": "How to: Anatomia unui „pre-opening” eșuat",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Piața hotelieră din România trece printr-un val fără precedent de dezvoltare, iar investitorii alocă bugete generoase pentru arhitectură, finisaje și mobilier premium, tehnologii ultramoderne, concepte culinare ambițioase. Cu toate acestea,...",
+          "url": "https://www.trendshrb.ro/actual/how-to-anatomia-unui-pre-opening-esuat/",
+          "source": "Trends HRB"
+        }
+      ]
+    },
+    {
+      "id": "modernbuyer",
+      "name": "Modern Buyer",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://modernbuyer.ro/",
+      "articles": [
+        {
+          "id": "modernbuyer-65dc8ef5",
+          "title": "Exporturi românești de fructe și legume prin Lidl: 8.800 de tone și 6,8 mil. euro",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "În perioada iunie – septembrie 2026, Lidl România a facilitat exportul a peste 8.839 de tone de fructe și legume românești, în valoare totală de peste 6.800.000 de euro. Un număr de nouă producători români au livrat pepeni, fructe de pădure...",
+          "url": "https://modernbuyer.ro/exporturi-romanesti-de-fructe-si-legume-prin-lidl-8-800-de-tone-si-68-mil-euro/",
+          "source": "Modern Buyer"
+        },
+        {
+          "id": "modernbuyer-336bd077",
+          "title": "20 de producători de food din Republica Moldova își prezintă oferta la București. Întâlniri B2B cu importatori, distribuitori și retaileri",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Producători din Republica Moldova, activi în mai multe segmente ale industriei alimentare, vin la București pe 19 noiembrie 2026 pentru a identifica noi oportunități comerciale și parteneriate cu importatori, distribuitori și rețele de reta...",
+          "url": "https://modernbuyer.ro/20-de-producatori-de-food-din-republica-moldova-isi-prezinta-oferta-la-bucuresti-intalniri-b2b-cu-importatori-distribuitori-si-retaileri/",
+          "source": "Modern Buyer"
+        },
+        {
+          "id": "modernbuyer-c228b042",
+          "title": "O companie românească pregătește lansarea unei noi rețele de magazine: Alma Cash & Carry",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "În piața de retail din România își face apariția un nou jucător care mizează pe un concept autohton de cash & carry. AGROVERDEFRUIT, companie cu experiență în procesarea și distribuția de produse agroalimentare, pregătește lansarea unui mag...",
+          "url": "https://modernbuyer.ro/o-companie-romaneasca-pregateste-lansarea-unei-noi-retele-de-magazine-alma-cash-carry/",
+          "source": "Modern Buyer"
+        }
+      ]
+    },
+    {
+      "id": "retailfmcg",
+      "name": "Retail-FMCG",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://www.retail-fmcg.ro/",
+      "articles": [
+        {
+          "id": "retailfmcg-f8aae068",
+          "title": "PENNY inaugurează primul magazin din Sâncraiu de Mureș și ajunge la 479 de unități la nivel național",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "PENNY continuă extinderea rețelei la nivel național și inaugurează un nou magazin în Sâncraiu de Mureș, județul Mureș. Odată cu această deschidere, rețeaua PENNY ajunge la 479 de unități la nivel național. Magazinul din localitatea Sâncraiu...",
+          "url": "https://www.retail-fmcg.ro/retail/penny-magazin-sancraiu-de-mures-479.html",
+          "source": "Retail-FMCG"
+        },
+        {
+          "id": "retailfmcg-56ee1496",
+          "title": "Hambar atrage prima investiție de tip seed de la Vest Ventures, în valoare de 250.000 de euro",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Hambar, platforma online care conectează producătorii locali și cumpărătorii, anunță atragerea unei investiții de tip seed, în valoare de 250.000 de euro, din partea Vest Ventures. Acordul de investiție a fost semnat pe 29 octombrie 2026, i...",
+          "url": "https://www.retail-fmcg.ro/e-commerce-2/hambar-investitie-tip-seed-vest-ventures.html",
+          "source": "Retail-FMCG"
+        },
+        {
+          "id": "retailfmcg-5019e7bb",
+          "title": "Global Payments: De la procesarea plăților la soluții inteligente pentru dezvoltarea afacerilor",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Digitalizarea plăților transformă modul în care companiile își desfășoară activitatea, interacționează cu clienții și își dezvoltă afacerile. De la retail și Food Service până la servicii și comerț online, plata nu mai reprezintă doar etapa...",
+          "url": "https://www.retail-fmcg.ro/servicii/global-payments-de-la-procesarea-platilor-la-solutii-inteligente-pentru-dezvoltarea-afacerilor.html",
+          "source": "Retail-FMCG"
+        }
+      ]
+    },
+    {
+      "id": "meatmilk",
+      "name": "Meat.Milk",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://www.meat-milk.ro/",
+      "articles": [
+        {
+          "id": "meatmilk-c29f836c",
+          "title": "Carne și brânzeturi europene în Mexic: de la contactul comercial la primul export",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Acordul comercial și accesul sanitar-veterinar se verifică separat",
+          "url": "https://www.meat-milk.ro/article/carne-si-branzeturi-europene-in-mexic-de-la-contactul-comercial-la-primul-export-IEa2iymx",
+          "source": "Meat.Milk"
+        },
+        {
+          "id": "meatmilk-4bf4478c",
+          "title": "Gripă aviară: Scoția extinde biosecuritatea la nivel național. Ce se schimbă pentru crescători?",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Ce se schimbă în rutina fermelor",
+          "url": "https://www.meat-milk.ro/article/gripa-aviara-scotia-extinde-biosecuritatea-la-nivel-national-ce-se-schimba-pentru-crescatori-qdZpD9Pk",
+          "source": "Meat.Milk"
+        },
+        {
+          "id": "meatmilk-c9902d6d",
+          "title": "Recuperarea căldurii din instalațiile frigorifice: o resursă pentru fabricile de carne și lapte",
+          "published_at": "10.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "10.11.2026",
+          "summary": "Cum se transformă căldura evacuată într-o resursă",
+          "url": "https://www.meat-milk.ro/article/recuperarea-caldurii-din-instalatiile-frigorifice-o-resursa-pentru-fabricile-de-carne-si-lapte-ZJdNUmQs",
+          "source": "Meat.Milk"
+        }
+      ]
+    },
+    {
+      "id": "retailro",
+      "name": "Retail.ro",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://www.retail.ro/",
+      "articles": [
+        {
+          "id": "retailro-ba32a46d",
+          "title": "De la JISOO la Travis Kelce: Tommy Hilfiger aduce vedete din muzică, sport și...",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Tommy Hilfiger a lansat campania pentru sezonul sărbătorilor de iarnă 2026, reunind opt personalități internaționale din muzică, sport, film și mediul online. Printre acestea se numără JISOO, Travis Kelce și fotbaliștii Florian Wirtz, Domin...",
+          "url": "https://retail.ro/articole/stiri-si-noutati/de-la-jisoo-la-travis-kelce-tommy-hilfiger-aduce-vedete-din-muzica-sport-si-film-in-campania-de-sarbatori-2026-15290.html",
+          "source": "Retail.ro"
+        },
+        {
+          "id": "retailro-3f77580e",
+          "title": "Jung Kook de la BTS, imaginea noii campanii Calvin Klein pentru sărbătorile...",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Calvin Klein a lansat campania globală Holiday 2026, care îl are în prim-plan pe Jung Kook, membru al trupei sud-coreene BTS și ambasador internațional al brandului. Artistul a selectat o serie de articole vestimentare pentru sezonul sărbăt...",
+          "url": "https://retail.ro/articole/stiri-si-noutati/jung-kook-de-la-bts-imaginea-noii-campanii-calvin-klein-pentru-sarbatorile-de-iarna-2026-ce-articole-a-ales-artistul-15289.html",
+          "source": "Retail.ro"
+        },
+        {
+          "id": "retailro-b6db4de0",
+          "title": "Peste 886 de milioane de lei în 10 ore de Black Friday la eMAG! Românii au...",
+          "published_at": "08.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "08.11.2026",
+          "summary": "Românii au plasat comenzi de peste 886 de milioane de lei în primele 10 ore de Black Friday 2026 la eMAG, cumpărând peste 3,3 milioane de produse. Dintre acestea, peste un milion provin de la sellerii din Marketplace, care au depășit deja v...",
+          "url": "https://retail.ro/articole/stiri-si-noutati/peste-886-de-milioane-de-lei-in-10-ore-de-black-friday-la-emag-romanii-au-comandat-inclusiv-31-de-masini-si-12-6-kilograme-de-aur-argint-si-monede-15283.html",
+          "source": "Retail.ro"
+        }
+      ]
+    },
+    {
+      "id": "retailarena",
+      "name": "RetailArena.ro",
+      "country": "România",
+      "category": "retail_fmcg",
+      "website": "https://retailarena.ro/",
+      "articles": [
+        {
+          "title": "retailArena 2026 | De la pui cu certificare olandeză la AI intern: cum vede Familia Safir inovația în industria alimentară",
+          "published_at": "10.06.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "10.06.2026",
+          "summary": "În industria cărnii și procesării alimentare, inovația combină certificările de bunăstare animală cu trasabilitatea strictă și automatizarea avansată pentru eficientizarea lanțului de aprovizionare.",
+          "url": "https://retailarena.ro/retailarena-2026-de-la-pui-cu-certificare-olandeza-la-ai-intern-cum-vede-familia-safir-inovatia-in-industria-alimentara",
+          "id": "retailarena-973a229c",
+          "source": "RetailArena.ro"
+        },
+        {
+          "title": "De Ziua Copilului, Sezamo ajunge în Ploiești: supermarketul online se extinde în țară",
+          "published_at": "26.05.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "26.05.2026",
+          "summary": "Supermarketul online Sezamo își extinde livrările de proximitate în Ploiești și județul Prahova, oferind carne proaspătă de la producători locali și livrare rapidă din depozit dedicat.",
+          "url": "https://retailarena.ro/stiri-si-noutatide-ziua-copilului-sezamo-ajunge-in-ploiesti-supermarketul-online-se-extinde-in-tara-15139",
+          "id": "retailarena-fca2d0dc",
+          "source": "RetailArena.ro"
+        },
+        {
+          "title": "Kaufland ”taie inflația”: reduceri timp de o lună în magazine",
+          "published_at": "09.05.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "09.05.2026",
+          "summary": "Kaufland România derulează campania comercială de reducere a prețurilor la peste 500 de articole de bază și produse proaspete pentru a proteja puterea de cumpărare a consumatorilor.",
+          "url": "https://retailarena.ro/stiri-si-noutatikaufland-taie-inflatia-reduceri-timp-de-o-luna-in-magazine-15120",
+          "id": "retailarena-079e49ae",
+          "source": "RetailArena.ro"
+        }
+      ]
+    },
+    {
+      "id": "pigprogress",
+      "name": "Pig Progress",
+      "country": "Olanda / Global",
+      "category": "pork_industry",
+      "website": "https://www.foodagribusiness.world/pigs/",
+      "articles": [
+        {
+          "id": "pigprogress-70e69e3b",
+          "title": "Nov 11 Article Pig Progress Farm Visit: Heavy piglets in new free-farrowing pens In 2023, Mathieu Le Nouvel’s La Butte Rouge pig farm in Brittany, France, expanded to 320 sows in a closed system. During the expansion process, he also purchased free-farrowing pens. Ever since, the piglets have been heavier at weaning. After 3 years of experience with free-farrowing pens, Mathieu Le Nouvel is confident to say that free-farrowing management no longer holds many secrets. One of the key lessons he learned is that sows perform better when they are not confined before and during farrowing. Therefore, the pens are not closed until the piglets have been born. Le Nouvel says, “The sows eat better, experience less stress, and I...",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "European and international swine industry intelligence and market dynamics.",
+          "url": "https://www.foodagribusiness.world/pigs/farm-visit-heavy-piglets-in-new-free-farrowing-pens",
+          "source": "Pig Progress"
+        },
+        {
+          "id": "pigprogress-102898d3",
+          "title": "Pork trade between Russia and China gathers pace Russian exports of pork and pig offal to China surged by 64% year on year to around 79,000 tonnes in the first 9 months of 2026.",
+          "published_at": "10.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "10.11.2026",
+          "summary": "European and international swine industry intelligence and market dynamics.",
+          "url": "https://www.foodagribusiness.world/pigs/26ppr-russia-china-pork-trade",
+          "source": "Pig Progress"
+        },
+        {
+          "id": "pigprogress-5cc67683",
+          "title": "Nov 9 Article Pig Progress Given the choice, where do sows prefer to lie down? Underfloor cooling may be a promising strategy to alleviate heat stress and improve thermal comfort for gestating sows in loose-housed pig houses.",
+          "published_at": "09.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "09.11.2026",
+          "summary": "European and international swine industry intelligence and market dynamics.",
+          "url": "https://www.foodagribusiness.world/pigs/given-the-choice-where-do-sows-prefer-to-lie-down",
+          "source": "Pig Progress"
+        }
+      ]
+    },
+    {
+      "id": "pig333",
+      "name": "pig333",
+      "country": "Spania / Global",
+      "category": "pork_industry",
+      "website": "https://www.3tres3.com/en",
+      "articles": [
+        {
+          "title": "EU Council agrees position on the common market organisation for EU agricultural products",
+          "published_at": "22.10.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "22.10.2026",
+          "summary": "Modificările aduse OCP vor consolida mecanismele de gestionare a crizelor de piață și transparența contractelor comerciale dintre fermieri și procesatori.",
+          "url": "https://www.3tres3.com/en/latest_swine_news/common-market-organisation-for-eu-agricultural-products_22934/",
+          "id": "pig333-c7219e15",
+          "source": "pig333"
+        },
+        {
+          "title": "ASF and weak China demand to reshape 2027 pork trade",
+          "published_at": "14.10.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "14.10.2026",
+          "summary": "Comerțul european se adaptează prin creșterea ponderii consumului intern în UE și reorientarea pieselor către piețele cu cerere stabilă.",
+          "url": "https://www.3tres3.com/en/latest_swine_news/asf-and-weak-china-demand-to-reshape-2027-pork-trade_22914/",
+          "id": "pig333-bfd4e071",
+          "source": "pig333"
+        },
+        {
+          "title": "Spanish pork production rose 3% in the first half of 2026",
+          "published_at": "31.08.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "31.08.2026",
+          "summary": "Creșterea volumelor din Spania confirmă menținerea capacității de livrare a principalului furnizor european către piețele de retail din România și Europa Centrală.",
+          "url": "https://www.3tres3.com/en/latest_swine_news/spanish-pork-production-rose-3-in-the-first-half-of-2026_22721/",
+          "id": "pig333-06a10d90",
+          "source": "pig333"
+        }
+      ]
+    },
+    {
+      "id": "euromeatnews",
+      "name": "EuroMeatNews",
+      "country": "Spania / Global",
+      "category": "pork_industry",
+      "website": "https://euromeatnews.com",
+      "articles": [
+        {
+          "id": "euromeatnews-08d95180",
+          "title": "USMEF: Pork still trending lower in September",
+          "published_at": "10.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "10.11.2026",
+          "summary": "Pork exports were below year-ago levels for the fifth consecutive month, due in part to a sharp decline in variety meat shipments, according to data released by USDA and compiled by the U.S. Meat Export Federation (USMEF). September pork ex...",
+          "url": "https://euromeatnews.com/usmef-pork-still-trending-lower-in-september/",
+          "source": "EuroMeatNews"
+        },
+        {
+          "id": "euromeatnews-6b559e65",
+          "title": "Brazil: Chicken meat exports reach highest monthly volume of 2026 in October",
+          "published_at": "10.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "10.11.2026",
+          "summary": "Shipments totaled 512,800 tons, generating revenue of US$994.1 million; year-to-date volume increased by 12.7%. Brazilian chicken meat exports, considering all products, both fresh and processed, totaled 512,800 tons in October, according t...",
+          "url": "https://euromeatnews.com/brazil-chicken-meat-exports-reach-highest-monthly-volume-of-2026-in-october/",
+          "source": "EuroMeatNews"
+        },
+        {
+          "id": "euromeatnews-dc072f9c",
+          "title": "Brazilian beef exports totaled 2.66 million tons in the first ten months of 2026",
+          "published_at": "10.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "10.11.2026",
+          "summary": "China regains monthly leadership, and sales to other markets grow 10.7% in volume and 24.9% in revenue compared to October 2025. Brazilian beef exports totaled 231,300 tons in October 2026, generating US$1.37 billion in revenue. Compared to...",
+          "url": "https://euromeatnews.com/brazilian-beef-exports-totaled-2-66-million-tons-in-the-first-ten-months-of-2026/",
+          "source": "EuroMeatNews"
+        }
+      ]
+    },
+    {
+      "id": "meatmanagement",
+      "name": "Meat Management",
+      "country": "Marea Britanie",
+      "category": "pork_industry",
+      "website": "https://meatmanagement.com",
+      "articles": [
+        {
+          "title": "Scottish pig sector faces continued pressure",
+          "published_at": "02.10.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "02.10.2026",
+          "summary": "Raportul QMS evidențiază presiunea severă pe marjele crescătorilor din Marea Britanie și creșterea sacrificărilor de scroafe cu 52%, semnalând o contracție a bazei de aprovizionare pentru 2027.",
+          "url": "https://meatmanagement.com/news/scottish-pig-sector-faces-continued-pressure/86500.article",
+          "id": "meatmanagement-a1aefe6c",
+          "source": "Meat Management"
+        },
+        {
+          "title": "British pork spotlighted as part of October campaign",
+          "published_at": "28.09.2026",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "28.09.2026",
+          "summary": "Campania AHDB de toamnă promovează carnea de porc britanică și carnea tocată ca opțiuni accesibile și nutritive pentru gătitul acasă în marile rețele de retail.",
+          "url": "https://meatmanagement.com/news/british-pork-spotlighted-as-part-of-october-campaign/86452.article",
+          "id": "meatmanagement-6a60ce0d",
+          "source": "Meat Management"
+        },
+        {
+          "title": "Pork market to remain stable despite geopolitical uncertainties",
+          "published_at": "20.02.2025",
+          "collected_at": "01.11.2026, 09:00",
+          "verified_at": "01.11.2026, 09:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "20.02.2025",
+          "summary": "Prognozele de profil indică stabilitate în cotațiile la poarta abatorului, permițând comercianților o planificare predictibilă a marjelor de retail.",
+          "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article",
+          "id": "meatmanagement-dd9b4d8d",
+          "source": "Meat Management"
+        }
+      ]
+    },
+    {
+      "id": "eurocarne",
+      "name": "Eurocarne",
+      "country": "Spania / UE",
+      "category": "pork_industry",
+      "website": "https://eurocarne.com",
+      "articles": [
+        {
+          "id": "eurocarne-e93533e9",
+          "title": ".div-main-img{ text-align: center; } .div-main-img-2{ display: inline-block; width:100%; max-width:620px; position: relative; } .div-main-galery{ width: 100%; max-width: 620px; height: auto; max-height: 480px; cursor:zoom-in; object-fit: contain; background-color: black; } .div-main-galery-zoom{ width: 100%; max-width: 1200px; height: 675px !important; max-height: 675px !important; cursor: pointer; object-fit: contain; background-color: black; } .caption-galery{ width: 100%; max-width: 620px; height: auto; margin-top:0.7rem; } #img_main { transition: opacity 0.5s ease-in-out; } .thumbnails-container { display: flex; overflow: hidden; width: 620px; /* Ajusta el ancho según necesites */ height:72px; } .container-img{ display:contents; height:72px; width:72px; } .img-thumbnail { opacity: 0.5; transition: opacity 0.3s; } .img-thumbnail.active-thumbnail { opacity: 1; border: 2px solid red; /* Indica la miniatura activa */ } .img-thumbs{ height:72px; width:72px; object-fit: cover; } .btn-back-gi, .btn-next-gi { position: absolute; top: 41%; transform: translateY(-50%); cursor: pointer; color: white; font-size: 20px; padding: 125px 10px; } .text-btn-back, .text-btn-next{ opacity: 0; } .glyphicon-chevron-left, .glyphicon-chevron-right, .camera-icon, .text-qty-img{ text-shadow: -1px -1px 0 #898989, 1px -1px 0 #898989, -1px 1px 0 #898989, 1px 1px 0 #898989; } .btn-back-gi { left: 10px; } .btn-next-gi { right: 10px; } .btn-camera{ font-size:1rem !important; position: absolute; top: 20px; right: 20px; z-index: 1; font-weight: 900; } .camera-icon { font-size: 5rem; color: #ffffff; opacity: 0.7; font-weight: 500; } .btn-camera{ top: 7px; right: 7px; } .camera-icon { font-size: 3rem; } .img-cont { position: relative; } .text-qty-img { position: absolute; bottom: 5px; right: 5px; color: white; font-size: 2rem; padding: 5px; font-weight: 900; } .date-galeria{ font-size: 1.5rem; } /* Estilos para la capa de fondo */ #background-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */ z-index: 999; /* Z-index alto para colocarlo debajo de la imagen principal */ display: none; /* Inicialmente oculto */ } .div-main-img { position: relative; /* Establece la posición relativa para permitir superposiciones */ z-index: 1; /* Coloca la imagen principal sobre la capa de fondo */ text-align: center; } #img_main { cursor: pointer; /* Cambia el cursor al hacer clic */ } /* Estilos para la capa de fondo cuando se muestra */ #background-layer.show-background { display: block; /* Muestra la capa de fondo */ } #desc_img{ display:none; } /* Ajusta el tamaño de las imágenes del carrusel */ .carousel-inner .item img { width: 100%; height: auto; } /* Estilo para el título y descripción del footer */ .modal-footer h4 { margin: 0; font-weight: bold; } .modal-footer div { margin: 0; text-align:left !important; } .carousel-title{ font-weight: bold !important; font-size:3rem; } .firma{ font-size:1rem; } .firma-zoom{ font-weight:600; font-size:1.3rem; padding-bottom:0px; margin-bottom:0px; } GALERÍA COMPLETA",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
+          "url": "https://eurocarne.com/noticias/codigo/72708/kw/Empack%2C+Logistics+%26+Automation+y+Logistics+%26+Industrial+Build+arrancan+su+edici%C3%B3n+de+2026+con+una+buena+respuesta+del+p%C3%BAblico+profesional",
+          "source": "Eurocarne"
+        },
+        {
+          "id": "eurocarne-471b4ac1",
+          "title": "Desconvocada la huelga en las industrias cárnicas ante la firma de un preacuerdo de convenio",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
+          "url": "https://eurocarne.com/noticias/codigo/72709/kw/Desconvocada+la+huelga+en+las+industrias+c%C3%A1rnicas+ante+la+firma+de+un+preacuerdo+de+convenio",
+          "source": "Eurocarne"
+        },
+        {
+          "id": "eurocarne-89b41fb3",
+          "title": "Unión de Uniones pide a la Administración que medie en la huelga del sector cárnico para limitar los perjuicios a los ganaderos",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Noutăți și reglementări din sectorul european al cărnii și procesării.",
+          "url": "https://eurocarne.com/noticias/codigo/72702/kw/Uni%C3%B3n+de+Uniones+pide+a+la+Administraci%C3%B3n+que+medie+en+la+huelga+del+sector+c%C3%A1rnico+para+limitar+los+perjuicios+a+los+ganaderos",
+          "source": "Eurocarne"
+        }
+      ]
+    },
+    {
+      "id": "frs",
+      "name": "FRS – Food Retail & Service",
+      "country": "Spania / UE",
+      "category": "pork_industry",
+      "website": "https://www.foodretail.es/",
+      "articles": [
+        {
+          "id": "frs-a0ea46d0",
+          "title": "La huelga general deja a medio gas mercados y plantas industriales, pero tiene menos impacto en los súper y hostelería",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Evoluția retailului alimentar și a formatelor de proximitate în Europa.",
+          "url": "https://www.foodretail.es/retailers/la-huelga-general-deja-a-medio-gas-mercados-y-plantas-industriales-pero-tiene-menos-impacto-en-los-super-y-hosteleria.html",
+          "source": "FRS – Food Retail & Service"
+        },
+        {
+          "id": "frs-9a1db486",
+          "title": "4 Carrefour impulsará su enseña Express en los campings españoles",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Evoluția retailului alimentar și a formatelor de proximitate în Europa.",
+          "url": "https://www.foodretail.es/retailers/carrefour-impulsara-su-ensena-express-en-los-campings-espanoles.html",
+          "source": "FRS – Food Retail & Service"
+        },
+        {
+          "id": "frs-99f9e140",
+          "title": "1 Alcampo prevé elevar sus ventas en las principales categorías durante la campaña de Navidad 2026",
+          "published_at": "11.11.2026",
+          "collected_at": "11.11.2026, 08:00",
+          "verified_at": "11.11.2026, 08:00",
+          "updated_at": "11.11.2026, 08:00",
+          "verification_status": "VERIFIED",
+          "date": "11.11.2026",
+          "summary": "Evoluția retailului alimentar și a formatelor de proximitate în Europa.",
+          "url": "https://www.foodretail.es/retailers/alcampo-preve-elevar-sus-ventas-en-las-principales-categorias-durante-la-campana-de-navidad-2026.html",
+          "source": "FRS – Food Retail & Service"
+        }
+      ]
+    }
+  ],
+  "competitive_intelligence": {
+    "release_id": "2026/WK46_b2f0924a",
+    "promo_week": "WK46",
+    "promo_year": 2026,
+    "promo_period": "09–15 NOI 2026",
+    "active_offers_only": true,
+    "synchronized_at_utc": "2026-11-11T20:19:31.083833+00:00",
+    "executive_summary": "Sinteza comercială WK46 (09–15 NOI 2026) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg).",
+    "top_signals": [
+      {
+        "source": "Carrefour & Auchan / Promoții Active WK46",
+        "date": "05.11.2026",
+        "type": "PRICE_MOVE",
+        "signal": "Carrefour devine noul lider absolut de piață la ceafă de porc dezosată cu 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț pe ceafă la 19,99 lei/kg (redus de la 29,99 lei/kg; economie de 3,91 lei/kg față de Lidl).",
+        "impact": "Reconfigurează ierarhia competitivă pe ceafă de porc, punând presiune pe marjele discounterilor și atrăgând shopperii spre hipermarketuri."
+      },
+      {
+        "source": "Kaufland & Penny / Rolling Update WK46",
+        "date": "04.11.2026",
+        "type": "PRICE_PARITY",
+        "signal": "Kaufland conduce cotletul fără os cu 15,90 lei/kg (catalog 04–10.11), în timp ce pe pulpa fără os Kaufland (15,99 lei/kg standard) împarte liderul cu Penny (15,99 lei/kg cu card). Spata Kaufland (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din matricea activă conform regulii ACTIVE OFFERS ONLY.",
+        "impact": "Stabilește noul prag minim de referință la 15,90–15,99 lei/kg pentru piesele majore de porc fără os în retailul modern."
+      },
+      {
+        "source": "EU Pork Market (WK45 · 05.11.2026)",
+        "date": "05.11.2026",
+        "type": "EU_MARKET",
+        "signal": "Bursa germană VEZG se stabilizează la 1.320 €/kg SG (±0), în timp ce bursa franceză MPB coboară la 1.442 €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la 5.66 PLN/kg sub afluxul de carne germană.",
+        "impact": "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
+      },
+      {
+        "source": "Meat.Milk & Revista Piața",
+        "date": "03.11.2026",
+        "type": "REGULATORY_COMPLIANCE",
+        "signal": "Sprijinul strategic pentru sectorul suin autohton intră în faza verificărilor finale (245 cereri), consolidând aprovizionarea cu origine România.",
+        "impact": "Securizează contractele anuale cu fermierii locali și crește ponderea cărnii românești la raft."
+      }
+    ],
+    "retailer_dashboard": [
+      {
+        "retailer": "Lidl",
+        "aggressiveness": "FOARTE RIDICATĂ",
+        "primary_mechanic": "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
+        "lead_kvi_price": "Ceafă porc f.o. 17,90 lei/kg (cupon) / 23,90 lei/kg (std) | Cotlet porc f.o. 19,90 lei/kg | Piept pui dezosat 24,60 lei/kg (cupon) / 29,90 lei/kg (std)",
+        "private_brand_share": "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
+        "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg (depășit de Carrefour 17,90 și Auchan 19,99)."
+      },
+      {
+        "retailer": "Kaufland",
+        "aggressiveness": "RIDICATĂ",
+        "primary_mechanic": "Reducere directă de catalog (-20% la -33%) 04–10.11",
+        "lead_kvi_price": "Cotlet porc f.o. 15,90 lei/kg | Pulpă porc f.o. 15,99 lei/kg | Spată porc f.o. N/V (expirată la 03.11)",
+        "private_brand_share": "Peste 75% din carne sub mărcile K-Purland și Vreau din România",
+        "positioning_note": "Lider de preț absolut pe cotlet f.o. (15,90 lei/kg) și pulpă f.o. (15,99 lei/kg) fără condiționare de card. Spata de 14,90 lei/kg a expirat la 03.11."
+      },
+      {
+        "retailer": "Penny",
+        "aggressiveness": "RIDICATĂ",
+        "primary_mechanic": "Preț redus cu scanare PENNY Card (-22% la -27%)",
+        "lead_kvi_price": "Piept pui dezosat 26,90 lei/kg",
+        "private_brand_share": "Peste 80% din carnea proaspătă sub marca proprie Hanul Boieresc (100% România)",
+        "positioning_note": "Paritate pe pulpă f.o. la 15,99 lei/kg prin card de fidelitate; lider pe piept de pui dezosat la 26,90 lei/kg."
+      },
+      {
+        "retailer": "Carrefour",
+        "aggressiveness": "RIDICATĂ",
+        "primary_mechanic": "Promoții oficiale zilnice (promotiile-zilei) + ActForFood",
+        "lead_kvi_price": "Ceafă porc dezosată 17,90 lei/kg (-25%)",
+        "private_brand_share": "55-60% din volum acoperit de Filiera Calității Carrefour și Drag de România",
+        "positioning_note": "Lider absolut pe ceafă de porc dezosată la 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg vs Lidl 23,90 lei/kg). Diferențiere prin prospețime și calitatea lanțului scurt."
+      },
+      {
+        "retailer": "Profi",
+        "aggressiveness": "MEDIE-RIDICATĂ",
+        "primary_mechanic": "Cuponiada din aplicație + Promoții locale de proximitate",
+        "lead_kvi_price": "Neinclus în matricea promoțională 5×5 (promoții locale de proximitate și Cuponiada)",
+        "private_brand_share": "Circa 65% sub brandul Ferma din Deal și mărci partenere",
+        "positioning_note": "Accesibilitate geografică maximă în cartiere și mediul rural; promoții rapide de weekend."
+      },
+      {
+        "retailer": "Auchan",
+        "aggressiveness": "RIDICATĂ",
+        "primary_mechanic": "Reduceri directe magazin online / catalog + Cashback MyClub",
+        "lead_kvi_price": "Ceafă porc f.o. vrac 19,99 lei/kg (redus de la 29,99 lei/kg, -33%)",
+        "private_brand_share": "Aproximativ 50% din volum reprezentat de Filiera Auchan și Pouce",
+        "positioning_note": "Al doilea cel mai bun preț pe ceafă de porc la 19,99 lei/kg (economie de 3,91 lei/kg vs Lidl 23,90 lei/kg). Format vrac orientat pe volume mari și familii."
+      },
+      {
+        "retailer": "Mega Image",
+        "aggressiveness": "MODERATĂ",
+        "primary_mechanic": "Prețuri speciale Card Connect + Pachete proaspete ready-to-cook",
+        "lead_kvi_price": "Neinclus în matricea promoțională 5×5 (orientare premium pe piese feliate porționate)",
+        "private_brand_share": "Peste 60% prin Gusturi Românești și Mega Apetit",
+        "positioning_note": "Poziționare premium bazată pe proximitate urbană rapidă, comoditate (ready-to-cook) și carne porționată fin."
+      }
+    ],
+    "viral_alerts": [
+      {
+        "category": "Prețuri la Raft vs. Aplicație",
+        "status": "SENSIBILITATE RIDICATĂ",
+        "detail": "Consumatorii semnalează pe rețelele sociale discrepanțe la casă când cupoanele din aplicație nu sunt activate înainte de scanare (Lidl Plus, PENNY Card)."
+      },
+      {
+        "category": "Origine România 100%",
+        "status": "ATENȚIE SPORITĂ",
+        "detail": "Cumpărătorii verifică atent eticheta ovală de sănătate pentru a confirma proveniența cărnii din abatoare românești autorizate."
+      },
+      {
+        "category": "Prospețime & Aspect",
+        "status": "SATISFĂCĂTOR",
+        "detail": "Caserolele MAP cu vizibilitate clară pe ambele părți sunt preferate categoric în fața tăvițelor cu absorbant opac."
+      },
+      {
+        "category": "Disponibilitate la Raft",
+        "status": "SENSIBIL DUPĂ-AMIAZA",
+        "detail": "Produsele KVI aflate pe prima pagină de catalog se epuizează rapid după ora 17:00 în magazinele mici de proximitate."
+      }
+    ],
+    "strategic_insights": [
+      {
+        "id": "price-positioning",
+        "title": "PRICE & COMPETITIVE POSITIONING",
+        "domain": "Arhitectură de Preț & Promoții",
+        "insight": "În WK46, discounterii (Kaufland, Lidl, Penny) concentrează bătălia pe cotlet (15,90 lei/kg la Kaufland; 16,90 lei/kg cupon Lidl Plus) și pulpă (15,99 lei/kg la Kaufland și Penny Card). Oferta Kaufland la spată (14,90 lei/kg) a expirat la 03.11, lăsând Lidl drept singura ofertă activă de catalog la 18,90 lei/kg.",
+        "business_implication": "Pragul de acces la carne de porc fără os se reconfigurează în jurul valorii de 15,90–15,99 lei/kg. Condiționarea prin card/cupon devine mecanism de diferențiere față de reducerile directe de catalog.",
+        "tactical_opportunity": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+        "recommended_action": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
+        "source_and_date": "Cataloage promoționale oficiale, aplicații mobile & PROMO WEEKLY | WK46 2026 (2026/WK46_b2f0924a)"
+      },
+      {
+        "id": "category-growth",
+        "title": "CATEGORY GROWTH & SHOPPER INSIGHTS",
+        "domain": "Sortimentație & Comportament Shopper",
+        "insight": "Peste 70% din volumele de carne de porc vândute în retailul modern provin din mărcile proprii cu origine 100% România ambalate MAP, cumpărătorii prioritizând trasabilitatea garantată și prospețimea vizibilă.",
+        "business_implication": "Mărcile proprii locale securizează loialitatea și reduc sensibilitatea la preț, în timp ce tehnologia MAP cu absorbant transparent reduce pierderile operaționale (shrinkage) cu până la 18%.",
+        "tactical_opportunity": "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
+        "recommended_action": "Consolidarea parteneriatelor directe cu abatoarele locale pentru calibrare uniformă la raft, garantarea disponibilității optime la orele de vârf (17:00–20:00) și semnalizarea vizuală a originii autohtone.",
+        "source_and_date": "Revista Progresiv, Modern Buyer & Retail.ro | Noiembrie 2026"
+      },
+      {
+        "id": "market-signals",
+        "title": "MARKET OPPORTUNITIES & EARLY SIGNALS",
+        "domain": "Aprovizionare & Piață Europeană",
+        "insight": "Cotațiile europene de referință (VEZG Germania 1.320 €/kg SG, Spania Mercolleida 1,550 €/kg viu, Franța MPB 1.442 €/kg carcasă) indică stabilizarea ofertei pe piața internă UE după corecțiile de toamnă.",
+        "business_implication": "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
+        "tactical_opportunity": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
+        "recommended_action": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
+        "source_and_date": "EU PORK MARKET (WK45 · 05.11.2026), Eurocarne, RaboResearch & Pig Progress"
+      }
+    ]
+  },
+  "dataset_sha256": "6846d4abdacd296374486efdd10f773a960836368576ea6d99c34fd105ce7e26"
+}

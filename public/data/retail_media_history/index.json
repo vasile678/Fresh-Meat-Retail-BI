@@ -1,0 +1,11 @@
+[
+  {
+    "filename": "report_20261111_0800.json",
+    "edition_date": "11.11.2026",
+    "edition_time": "08:00",
+    "period_analyzed": "04.11.2026 – 11.11.2026 (Ultimele 7 zile)",
+    "update_state": "VERIFIED_FRESH_UPDATE",
+    "total_new_items": 29,
+    "dataset_sha256": "6846d4abdacd296374486efdd10f773a960836368576ea6d99c34fd105ce7e26"
+  }
+]

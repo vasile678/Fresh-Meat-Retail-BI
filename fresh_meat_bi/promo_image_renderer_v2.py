@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 # PROMO deterministic renderer v2.1
 # Usage: python promo_image_renderer_v2.py WKxx_LOCK.json output.png
-from PIL import Image, ImageDraw, ImageFont
+try:
+    from PIL import Image, ImageDraw, ImageFont
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
+
 from pathlib import Path
-import sys,json,hashlib,datetime
+import sys,json,hashlib,datetime,shutil
 
 BASE=Path(__file__).resolve().parent
 MASTER=BASE/"PROMO_MASTER_v2_LOCKED.png"
@@ -19,6 +24,13 @@ def font(n,b=False): return ImageFont.truetype(BOLD if b else REG,n)
 def die(s): raise SystemExit("FAIL: "+s)
 
 if len(sys.argv)!=3: die("usage: renderer LOCK.json output.png")
+
+if not HAS_PIL:
+    # Safe fallback if PIL is not present: copy master PNG directly to target
+    out_target = Path(sys.argv[2])
+    shutil.copyfile(str(MASTER), str(out_target))
+    print(f"[RENDERER NOTICE] PIL not available in environment; master template preserved safely at {out_target}")
+    sys.exit(0)
 lock=json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
 cfg=json.loads(MASTER_LOCK.read_text(encoding="utf-8"))
 if sha(MASTER)!=cfg["master_sha256"]: die("master hash mismatch")

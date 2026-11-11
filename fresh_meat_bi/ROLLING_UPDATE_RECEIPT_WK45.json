@@ -3,8 +3,8 @@
   "rolling_update_id": "ROLLING_WK45_80d77b81",
   "week": "WK45",
   "year": 2026,
-  "applied_at_bucharest": "05.11.2026 21:46:40 EET",
-  "applied_at_utc": "2026-11-05T19:46:40.789324+00:00",
+  "applied_at_bucharest": "11.11.2026 22:20:15 EET",
+  "applied_at_utc": "2026-11-11T20:20:15.324292+00:00",
   "source_catalog": {
     "retailer": "Kaufland",
     "title": "Catalog Kaufland Oferte de Miercuri 04.11 până Marți 10.11.2026",
@@ -12,9 +12,9 @@
     "url": "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
   },
   "previous_release": {
-    "release_id": "2026/WK45_258a510d",
-    "dataset_sha256": "258a510dc0c2ba238b6265fdd4ddd5c51afe3a602ff906399504c1e84542aa8b",
-    "published_at_utc": "2026-11-04T19:23:10.747121+00:00"
+    "release_id": "2026/WK46_b2f0924a",
+    "dataset_sha256": "b2f0924ad669488e9620958c8986f6e8d3c33ce1528a7ea61bb99ef8160e15ed",
+    "published_at_utc": "2026-11-09T07:34:46.088899+00:00"
   },
   "new_release": {
     "release_id": "2026/WK45_80d77b81",

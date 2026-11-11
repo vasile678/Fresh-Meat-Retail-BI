@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "09.11.2026 09:15:00 EET",
-  "evaluated_at_utc": "2026-11-09T07:15:00+00:00",
+  "evaluated_at_bucharest": "11.11.2026 22:24:09 EET",
+  "evaluated_at_utc": "2026-11-11T20:24:09.689519+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -12,13 +12,12 @@
   "active_release": {
     "week": "WK46",
     "year": 2026,
-    "release_id": "2026/WK46_b2f0924a",
+    "release_id": "2026/WK46_9d7e5d6b",
     "release_status": "RELEASE_PASS",
-    "published_at_utc": "2026-11-09T07:34:46.088899+00:00",
-    "dataset_sha256": "b2f0924ad669488e9620958c8986f6e8d3c33ce1528a7ea61bb99ef8160e15ed"
+    "published_at_utc": "2026-11-11T20:21:09.806561+00:00",
+    "dataset_sha256": "9d7e5d6b1dba12adc7c59f6c7e64cb5d26057086012a2e3c3b529582de5fd00e"
   },
   "is_overdue": false,
   "status": "UP_TO_DATE",
-  "detail": "Raportul WK46 este deja publicat și activ.",
-  "result_code": "ALREADY_CURRENT"
+  "detail": "Raportul curent (WK46) este conform cu calendarul de publicare."
 }
