@@ -2085,25 +2085,6 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                   ))}
                 </div>
               </div>
-
-              {/* 4. AUDIT & TRASABILITATE CRIPTOGRAFICĂ */}
-              <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-[10px] text-slate-400 space-y-1">
-                <div className="font-bold text-slate-300 uppercase tracking-wider text-[10px]">
-                  4. Trasabilitate & Integritate Criptografică
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400 pt-1">
-                  <div>
-                    <span>Data verificării:</span> <strong className="text-slate-200">{data.last_successful_check || data.last_collection_bucharest || data.updated}</strong>
-                  </div>
-                  <div>
-                    <span>Conformitate surse:</span> <strong className="text-emerald-400">100% VERIFICATE (Zero Ficțiune)</strong>
-                  </div>
-                  <div className="sm:col-span-2 break-all font-mono text-[9px] text-slate-500">
-                    SHA-256: <span className="text-slate-400">{data.dataset_sha256 || 'Calculat la publicare'}</span>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
             {/* Modal Footer */}
