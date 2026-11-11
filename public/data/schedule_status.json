@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "11.11.2026 22:24:09 EET",
-  "evaluated_at_utc": "2026-11-11T20:24:09.689519+00:00",
+  "evaluated_at_bucharest": "09.11.2026 09:15:00 EET",
+  "evaluated_at_utc": "2026-11-09T07:15:00+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -19,5 +19,6 @@
   },
   "is_overdue": false,
   "status": "UP_TO_DATE",
-  "detail": "Raportul curent (WK46) este conform cu calendarul de publicare."
+  "detail": "Raportul WK46 este deja publicat și activ.",
+  "result_code": "ALREADY_CURRENT"
 }

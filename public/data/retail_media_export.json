@@ -2,16 +2,16 @@
   "schema_version": "2.0-daily-7retailers-6pillars",
   "status": "ACTIVE_MONITORED",
   "update_state": "VERIFIED_FRESH_UPDATE",
-  "update_state_label": "Actualizare Verificată (+29 noutăți)",
+  "update_state_label": "Actualizare Verificată (+27 noutăți)",
   "updated": "11.11.2026, 08:00",
   "updated_date": "11.11.2026",
   "updated_time": "08:00",
-  "last_collection_bucharest": "11.11.2026 22:19",
-  "last_collection_iso": "2026-11-11T22:19:14.495580+02:00",
-  "last_successful_check": "11.11.2026 22:19",
+  "last_collection_bucharest": "11.11.2026 23:11",
+  "last_collection_iso": "2026-11-11T23:11:39.444235+02:00",
+  "last_successful_check": "11.11.2026 23:11",
   "period_analyzed": "04.11.2026 – 11.11.2026 (Ultimele 7 zile)",
   "execution_timezone": "Europe/Bucharest",
-  "new_articles_count": 29,
+  "new_articles_count": 27,
   "total_verified_articles": 42,
   "retailers": [
     {
@@ -43,7 +43,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -55,7 +55,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/pilos-marca-proprie-lidl-lapte-proaspat-furnizori-locali.html",
               "published_at": "03.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -84,7 +84,7 @@
               "source": "Modern Buyer",
               "url": "https://modernbuyer.ro/exporturi-romanesti-de-fructe-si-legume-prin-lidl-8-800-de-tone-si-68-mil-euro/",
               "published_at": "11.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -96,7 +96,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/exporturi-fructe-legume-romanesti-lidl.html",
               "published_at": "10.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -133,7 +133,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/fmcg/cum-transforma-fragedo-de-la-transavia-siguranta-si-constanta-in-valoare-pentru-consumatori-si-retail.html",
               "published_at": "04.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -173,7 +173,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/kaufland-romania-campania-sarbatori-craciunul-este-cand-il-simti-tu.html",
               "published_at": "09.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -185,7 +185,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -206,7 +206,7 @@
               "source": "RetailArena.ro",
               "url": "https://retailarena.ro/stiri-si-noutatikaufland-taie-inflatia-reduceri-timp-de-o-luna-in-magazine-15120",
               "published_at": "09.05.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -227,7 +227,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-fmcg-romania-octombrie-2026.html",
               "published_at": "04.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -239,7 +239,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/kaufland-magazin-otopeni-judetul-ilfov.html",
               "published_at": "28.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -276,7 +276,7 @@
               "source": "Revista Piața",
               "url": "https://www.revista-piata.ro/retail/info-retail/black-friday-la-kaufland-reduceri-de-pana-la-65-la-peste-300-de-articole",
               "published_at": "29.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -316,7 +316,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -328,7 +328,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/english/romanian-fmcg-retail-news-october-2026.html",
               "published_at": "02.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -357,7 +357,7 @@
               "source": "FRS – Food Retail & Service",
               "url": "https://www.foodretail.es/retailers/carrefour-impulsara-su-ensena-express-en-los-campings-espanoles.html",
               "published_at": "11.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -369,7 +369,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-fmcg-romania-octombrie-2026.html",
               "published_at": "04.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -433,7 +433,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -445,7 +445,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-16-octombrie-2026.html",
               "published_at": "17.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -466,7 +466,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-2-octombrie-2026.html",
               "published_at": "03.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -487,22 +487,22 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/penny-magazin-sancraiu-de-mures-479.html",
               "published_at": "11.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
             },
             {
-              "id": "penny-expansion_investments-db30df9b",
-              "title": "PENNY continuă extinderea rețelei și deschide patru magazine noi",
-              "summary": "PENNY continuă extinderea rețelei sale la nivel național și inaugurează patru noi magazine în Vânju Mare (județul Mehedinți), Turnu Măgurele (județul Teleorman) și două în județul Giurgiu în Crevedia Mare și în orașul Giurgiu. Astfel, rețea...",
-              "source": "Retail-FMCG.ro",
-              "url": "https://www.retail-fmcg.ro/retail/penny-deschide-patru-magazine-noi.html",
-              "published_at": "04.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "id": "penny-expansion_investments-149106ca",
+              "title": "PENNY își extinde rețeaua prin deschiderea primului magazin din Sâncraiu de Mureș",
+              "summary": "Știri și analize de piață pentru industria FMCG și retail.",
+              "source": "Revista Progresiv",
+              "url": "https://revistaprogresiv.ro/stiri/retail/penny-isi-extinde-reteaua-prin-deschiderea-primului-magazin-din-sancraiu-de-mures/",
+              "published_at": "11.11.2026",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
-              "is_new": false,
-              "time_horizon": "ISTORIC DE CONTEXT"
+              "is_new": true,
+              "time_horizon": "NOU (Ultimele 7 zile)"
             }
           ],
           "has_news": true,
@@ -563,7 +563,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html",
               "published_at": "10.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -575,7 +575,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -596,7 +596,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/e-commerce-2/black-friday-la-emag-comenzi-de-peste-1-miliard-de-lei.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -617,7 +617,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-a-deschis-64-de-magazine-in-romania-in-2026.html",
               "published_at": "09.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -629,7 +629,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/evenimente/expo-retail-2027-digital-green-tech-deschide-rezervarile.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -650,7 +650,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/mega-image-profi-shopgo-reunite-sub-ahold-delhaize-romania.html",
               "published_at": "04.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -679,7 +679,7 @@
               "source": "Meat Management",
               "url": "https://meatmanagement.com/news/pork-market-to-remain-stable-despite-geopolitical-uncertainties/84513.article",
               "published_at": "20.02.2025",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -718,7 +718,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html",
               "published_at": "10.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -730,7 +730,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -751,7 +751,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/auchan-black-friday-2026.html",
               "published_at": "02.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -763,7 +763,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/e-commerce-2/black-friday-2026-emag-produse-cel-mai-mic-pret-din-an.html",
               "published_at": "02.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -784,7 +784,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/auchan-prima-intrare-imersiva-led-din-retailul-romanesc.html",
               "published_at": "16.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -796,7 +796,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/deschideri-magazine-retailul-alimentar-romania-septembrie-2026.html",
               "published_at": "13.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -859,7 +859,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-6-noiembrie-2026.html",
               "published_at": "07.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -871,7 +871,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/english/romanian-fmcg-retail-news-april-2026.html",
               "published_at": "05.05.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -900,7 +900,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-a-deschis-64-de-magazine-in-romania-in-2026.html",
               "published_at": "09.11.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": true,
               "time_horizon": "NOU (Ultimele 7 zile)"
@@ -912,7 +912,7 @@
               "source": "Retail-FMCG.ro",
               "url": "https://www.retail-fmcg.ro/retail/ahold-delhaize-preia-operatiunile-tesco-din-cehia-si-slovacia.html",
               "published_at": "30.10.2026",
-              "verified_at": "11.11.2026 22:19",
+              "verified_at": "11.11.2026 23:11",
               "verification_status": "VERIFIED",
               "is_new": false,
               "time_horizon": "ISTORIC DE CONTEXT"
@@ -957,8 +957,8 @@
       "website": "https://revistaprogresiv.ro/",
       "articles": [
         {
-          "id": "progresiv-43e32010",
-          "title": "Bitdefender și ING folosesc AI pentru a identifica cine încasează banii din magazinele online false",
+          "id": "progresiv-149106ca",
+          "title": "PENNY își extinde rețeaua prin deschiderea primului magazin din Sâncraiu de Mureș",
           "published_at": "11.11.2026",
           "collected_at": "11.11.2026, 08:00",
           "verified_at": "11.11.2026, 08:00",
@@ -966,7 +966,7 @@
           "verification_status": "VERIFIED",
           "date": "11.11.2026",
           "summary": "Știri și analize de piață pentru industria FMCG și retail.",
-          "url": "https://revistaprogresiv.ro/stiri/tech/bitdefender-si-ing-folosesc-ai-pentru-a-identifica-cine-incaseaza-banii-din-magazinele-online-false/",
+          "url": "https://revistaprogresiv.ro/stiri/retail/penny-isi-extinde-reteaua-prin-deschiderea-primului-magazin-din-sancraiu-de-mures/",
           "source": "Revista Progresiv"
         },
         {
@@ -1628,7 +1628,7 @@
     "promo_year": 2026,
     "promo_period": "09–15 NOI 2026",
     "active_offers_only": true,
-    "synchronized_at_utc": "2026-11-11T20:21:09.814884+00:00",
+    "synchronized_at_utc": "2026-11-11T21:12:22.183993+00:00",
     "executive_summary": "Sinteza comercială WK46 (09–15 NOI 2026) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg).",
     "top_signals": [
       {
@@ -1649,7 +1649,7 @@
         "source": "EU Pork Market (WK45 · 05.11.2026)",
         "date": "05.11.2026",
         "type": "EU_MARKET",
-        "signal": "Bursa germană VEZG se stabilizează la 1.320 €/kg SG (±0), în timp ce bursa franceză MPB coboară la 1.442 €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la 5.66 PLN/kg sub afluxul de carne germană.",
+        "signal": "Bursa germană VEZG se stabilizează la 1.320 €/kg SG (±0), în timp ce bursa franceză MPB coboară la 1.492 €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la 5.66 PLN/kg sub afluxul de carne germană.",
         "impact": "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
       },
       {
@@ -1765,7 +1765,7 @@
         "id": "market-signals",
         "title": "MARKET OPPORTUNITIES & EARLY SIGNALS",
         "domain": "Aprovizionare & Piață Europeană",
-        "insight": "Cotațiile europene de referință (VEZG Germania 1.320 €/kg SG, Spania Mercolleida 1,550 €/kg viu, Franța MPB 1.442 €/kg carcasă) indică stabilizarea ofertei pe piața internă UE după corecțiile de toamnă.",
+        "insight": "Cotațiile europene de referință (VEZG Germania 1.320 €/kg SG, Spania Mercolleida 1,550 €/kg viu, Franța MPB 1.492 €/kg carcasă) indică stabilizarea ofertei pe piața internă UE după corecțiile de toamnă.",
         "business_implication": "Contextul european predictibil oferă cumpărătorilor și procesatorilor o oportunitate comercială pentru contractarea volumelor din trimestrul IV la costuri de materie primă avantajoase.",
         "tactical_opportunity": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
         "recommended_action": "Negocierea unor contracte trimestriale flexibile ancorate în cotațiile de referință UE și securizarea din timp a stocurilor pentru campaniile de iarnă pe piesele cu cerere sezonieră ridicată.",
@@ -1773,5 +1773,5 @@
       }
     ]
   },
-  "dataset_sha256": "6846d4abdacd296374486efdd10f773a960836368576ea6d99c34fd105ce7e26"
+  "dataset_sha256": "7232b9c489f62849b1ea77e1af20e8120ab36194ed4a6d8e49b1b1d67896b9f6"
 }

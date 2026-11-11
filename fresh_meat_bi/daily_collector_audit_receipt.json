@@ -1,28 +1,22 @@
 {
   "execution_date": "11.11.2026",
-  "start_time_bucharest": "2026-11-11 14:21:37",
-  "end_time_bucharest": "2026-11-11 14:22:11",
-  "start_time_iso": "2026-11-11T14:21:37.867154+02:00",
-  "end_time_iso": "2026-11-11T14:22:11.440706+02:00",
-  "duration_seconds": 33.57,
+  "start_time_bucharest": "2026-11-11 23:11:39",
+  "end_time_bucharest": "2026-11-11 23:11:49",
+  "start_time_iso": "2026-11-11T23:11:39.444235+02:00",
+  "end_time_iso": "2026-11-11T23:11:49.989201+02:00",
+  "duration_seconds": 10.54,
   "total_publications": 14,
-  "total_new_articles_accepted": 23,
+  "total_new_articles_accepted": 8,
   "total_verified_articles": 42,
   "publications_audit": [
     {
       "pub_id": "progresiv",
       "name": "Revista Progresiv",
       "website": "https://revistaprogresiv.ro/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 3,
-      "new_articles_count": 1,
-      "new_accepted": [
-        {
-          "title": "PENNY își extinde rețeaua prin deschiderea primului magazin din Sâncraiu de Mureș",
-          "published_at": "11.11.2026",
-          "url": "https://revistaprogresiv.ro/stiri/retail/penny-isi-extinde-reteaua-prin-deschiderea-primului-magazin-din-sancraiu-de-mures/"
-        }
-      ],
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -32,7 +26,7 @@
       "pub_id": "piata",
       "name": "Revista Piața",
       "website": "https://www.revista-piata.ro/",
-      "status": "RETAINED_VERIFIED",
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
       "candidates_scanned": 0,
       "new_articles_count": 0,
       "new_accepted": [],
@@ -46,14 +40,9 @@
       "name": "Trends HRB",
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 5,
-      "new_articles_count": 3,
+      "candidates_scanned": 6,
+      "new_articles_count": 2,
       "new_accepted": [
-        {
-          "title": "Arta degustării brânzeturilor italiene, la RO-WINE Craiova: tradiție, autenticitate și excelență Made in Italy",
-          "published_at": "11.11.2026",
-          "url": "https://www.trendshrb.ro/actual/arta-degustarii-branzeturilor-italiene-la-ro-wine-craiova-traditie-autenticitate-si-excelenta-made-in-italy/"
-        },
         {
           "title": "La Lorraine, 15 ani în România: investiții de peste 120 de milioane de euro și 580 de angajați",
           "published_at": "11.11.2026",
@@ -65,8 +54,13 @@
           "url": "https://www.trendshrb.ro/stiri/retravel-forum-2026-cum-schimba-ai-comportamentul-turistilor-si-activitatea-agentiilor-de-turism/"
         }
       ],
-      "rejected_count": 0,
-      "rejected_details": [],
+      "rejected_count": 1,
+      "rejected_details": [
+        {
+          "url": "https://www.trendshrb.ro/actual/arta-degustarii-branzeturilor-italiene-la-ro-wine-craiova-traditie-autenticitate-si-excelenta-made-in-italy/",
+          "reason": "DUPLICATE_IN_BATCH"
+        }
+      ],
       "final_top3_count": 3,
       "latest_published_at": "11.11.2026"
     },
@@ -75,8 +69,8 @@
       "name": "Modern Buyer",
       "website": "https://modernbuyer.ro/",
       "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 4,
-      "new_articles_count": 2,
+      "candidates_scanned": 6,
+      "new_articles_count": 3,
       "new_accepted": [
         {
           "title": "România: Proiecte de retail estimate la 79,78 miliarde de lei în ultimele 12 luni",
@@ -87,6 +81,11 @@
           "title": "BRAT lansează primul sistem independent de măsurare pentru Retail Media din România",
           "published_at": "10.11.2026",
           "url": "https://modernbuyer.ro/brat-lanseaza-primul-sistem-independent-de-masurare-pentru-retail-media-din-romania/"
+        },
+        {
+          "title": "Kaufland România lansează campania de sărbători „Crăciunul este când îl simți tu”",
+          "published_at": "09.11.2026",
+          "url": "https://modernbuyer.ro/kaufland-romania-lanseaza-campania-de-sarbatori-craciunul-este-cand-il-simti-tu/"
         }
       ],
       "rejected_count": 0,
@@ -99,14 +98,9 @@
       "name": "Retail-FMCG",
       "website": "https://www.retail-fmcg.ro/",
       "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 5,
+      "candidates_scanned": 6,
       "new_articles_count": 3,
       "new_accepted": [
-        {
-          "title": "Global Payments: De la procesarea plăților la soluții inteligente pentru dezvoltarea afacerilor",
-          "published_at": "11.11.2026",
-          "url": "https://www.retail-fmcg.ro/servicii/global-payments-de-la-procesarea-platilor-la-solutii-inteligente-pentru-dezvoltarea-afacerilor.html"
-        },
         {
           "title": "Analiză IBC Focus: România are 3816 proiecte de retail, cu investiții estimate la aproape 80 de miliarde de lei",
           "published_at": "11.11.2026",
@@ -116,6 +110,11 @@
           "title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
           "published_at": "10.11.2026",
           "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html"
+        },
+        {
+          "title": "Exporturile de fructe și legume românești stabilesc noi recorduri în rețeaua internațională Lidl: peste 8.800 de tone și 6,8 milioane de euro",
+          "published_at": "10.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/exporturi-fructe-legume-romanesti-lidl.html"
         }
       ],
       "rejected_count": 0,
@@ -129,19 +128,8 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
-      "new_accepted": [
-        {
-          "title": "Carne și brânzeturi europene în Mexic: de la contactul comercial la primul export",
-          "published_at": "11.11.2026",
-          "url": "https://www.meat-milk.ro/article/carne-si-branzeturi-europene-in-mexic-de-la-contactul-comercial-la-primul-export-IEa2iymx"
-        },
-        {
-          "title": "Gripă aviară: Scoția extinde biosecuritatea la nivel național. Ce se schimbă pentru crescători?",
-          "published_at": "11.11.2026",
-          "url": "https://www.meat-milk.ro/article/gripa-aviara-scotia-extinde-biosecuritatea-la-nivel-national-ce-se-schimba-pentru-crescatori-qdZpD9Pk"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -151,21 +139,10 @@
       "pub_id": "retailro",
       "name": "Retail.ro",
       "website": "https://www.retail.ro/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 3,
-      "new_articles_count": 2,
-      "new_accepted": [
-        {
-          "title": "De la JISOO la Travis Kelce: Tommy Hilfiger aduce vedete din muzică, sport și...",
-          "published_at": "11.11.2026",
-          "url": "https://retail.ro/articole/stiri-si-noutati/de-la-jisoo-la-travis-kelce-tommy-hilfiger-aduce-vedete-din-muzica-sport-si-film-in-campania-de-sarbatori-2026-15290.html"
-        },
-        {
-          "title": "Jung Kook de la BTS, imaginea noii campanii Calvin Klein pentru sărbătorile...",
-          "published_at": "11.11.2026",
-          "url": "https://retail.ro/articole/stiri-si-noutati/jung-kook-de-la-bts-imaginea-noii-campanii-calvin-klein-pentru-sarbatorile-de-iarna-2026-ce-articole-a-ales-artistul-15289.html"
-        }
-      ],
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -175,7 +152,7 @@
       "pub_id": "retailarena",
       "name": "RetailArena.ro",
       "website": "https://retailarena.ro/",
-      "status": "RETAINED_VERIFIED_HISTORICAL",
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
       "candidates_scanned": 0,
       "new_articles_count": 0,
       "new_accepted": [],
@@ -188,20 +165,20 @@
       "pub_id": "pigprogress",
       "name": "Pig Progress",
       "website": "https://www.foodagribusiness.world/pigs/",
-      "status": "RETAINED_VERIFIED",
-      "candidates_scanned": 0,
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 3,
       "new_articles_count": 0,
       "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "03.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "pig333",
       "name": "pig333",
       "website": "https://www.3tres3.com/en",
-      "status": "RETAINED_VERIFIED_HISTORICAL",
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
       "candidates_scanned": 0,
       "new_articles_count": 0,
       "new_accepted": [],
@@ -214,36 +191,10 @@
       "pub_id": "euromeatnews",
       "name": "EuroMeatNews",
       "website": "https://euromeatnews.com",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 5,
-      "new_articles_count": 5,
-      "new_accepted": [
-        {
-          "title": "USMEF: Pork still trending lower in September",
-          "published_at": "10.11.2026",
-          "url": "https://euromeatnews.com/usmef-pork-still-trending-lower-in-september/"
-        },
-        {
-          "title": "Brazil: Chicken meat exports reach highest monthly volume of 2026 in October",
-          "published_at": "10.11.2026",
-          "url": "https://euromeatnews.com/brazil-chicken-meat-exports-reach-highest-monthly-volume-of-2026-in-october/"
-        },
-        {
-          "title": "Brazilian beef exports totaled 2.66 million tons in the first ten months of 2026",
-          "published_at": "10.11.2026",
-          "url": "https://euromeatnews.com/brazilian-beef-exports-totaled-2-66-million-tons-in-the-first-ten-months-of-2026/"
-        },
-        {
-          "title": "Paraguay passed inspection of meat exported to Taiwan",
-          "published_at": "10.11.2026",
-          "url": "https://euromeatnews.com/paraguay-passed-inspection-of-meat-exported-to-taiwan/"
-        },
-        {
-          "title": "Vietnamese tuna goes against the import trend in Germany",
-          "published_at": "10.11.2026",
-          "url": "https://euromeatnews.com/vietnamese-tuna-goes-against-the-import-trend-in-germany/"
-        }
-      ],
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -253,7 +204,7 @@
       "pub_id": "meatmanagement",
       "name": "Meat Management",
       "website": "https://meatmanagement.com",
-      "status": "PROTECTED_WAF_RETAINED",
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
       "candidates_scanned": 0,
       "new_articles_count": 0,
       "new_accepted": [],
@@ -268,19 +219,8 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
-      "new_accepted": [
-        {
-          "title": "Unión de Uniones pide a la Administración que medie en la huelga del sector cárnico para limitar los perjuicios a los ganaderos",
-          "published_at": "11.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72702/kw/Uni%C3%B3n+de+Uniones+pide+a+la+Administraci%C3%B3n+que+medie+en+la+huelga+del+sector+c%C3%A1rnico+para+limitar+los+perjuicios+a+los+ganaderos"
-        },
-        {
-          "title": "Anetif y amec alimentec renuevan su acuerdo para impulsar el intercambio de soluciones en la industria cárnica de México y España",
-          "published_at": "11.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72701/kw/Anetif+y+amec+alimentec+renuevan+su+acuerdo+para+impulsar+el+intercambio+de+soluciones+en+la+industria+c%C3%A1rnica+de+M%C3%A9xico+y+Espa%C3%B1a"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -292,24 +232,8 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
-      "new_accepted": [
-        {
-          "title": "Alcampo prevé elevar sus ventas en las principales categorías durante la campaña de Navidad 2026",
-          "published_at": "11.11.2026",
-          "url": "https://www.foodretail.es/retailers/alcampo-preve-elevar-sus-ventas-en-las-principales-categorias-durante-la-campana-de-navidad-2026.html"
-        },
-        {
-          "title": "Carlos Pedreira (Alcampo): \"En 2027 vamos a crecer más rápido, con un gran foco en la franquicia\"",
-          "published_at": "11.11.2026",
-          "url": "https://www.foodretail.es/retailers/carlos-pedreira-alcampo-en-2027-vamos-a-crecer-mas-rapido-con-un-gran-foco-en-la-franquicia.html"
-        },
-        {
-          "title": "Álvaro Fernández (HiperDino): \"Este 2026 marcará un antes y un después, con nuestra propia IA en marcha para facilitar la compra\"",
-          "published_at": "11.11.2026",
-          "url": "https://www.foodretail.es/retailers/alvaro-fernandez-hiperdino-este-2026-marcara-un-antes-y-un-despues-con-nuestra-propia-ia-en-marcha-para-facilitar-la-compra.html"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
