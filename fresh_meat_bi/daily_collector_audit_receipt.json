@@ -1,12 +1,12 @@
 {
-  "execution_date": "10.11.2026",
-  "start_time_bucharest": "2026-11-10 15:12:30",
-  "end_time_bucharest": "2026-11-10 15:13:07",
-  "start_time_iso": "2026-11-10T15:12:30.762622+02:00",
-  "end_time_iso": "2026-11-10T15:13:07.318497+02:00",
-  "duration_seconds": 36.56,
+  "execution_date": "11.11.2026",
+  "start_time_bucharest": "2026-11-11 14:21:37",
+  "end_time_bucharest": "2026-11-11 14:22:11",
+  "start_time_iso": "2026-11-11T14:21:37.867154+02:00",
+  "end_time_iso": "2026-11-11T14:22:11.440706+02:00",
+  "duration_seconds": 33.57,
   "total_publications": 14,
-  "total_new_articles_accepted": 20,
+  "total_new_articles_accepted": 23,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -18,15 +18,15 @@
       "new_articles_count": 1,
       "new_accepted": [
         {
-          "title": "Diacarn Food intră pe piața de retail și investește peste un milion de euro într-o rețea cu 12 magazine",
-          "published_at": "27.10.2026",
-          "url": "https://revistaprogresiv.ro/stiri/retail/diacarn-food-intra-pe-piata-de-retail-si-investeste-peste-un-milion-de-euro-intr-o-retea-cu-12-magazine/"
+          "title": "PENNY își extinde rețeaua prin deschiderea primului magazin din Sâncraiu de Mureș",
+          "published_at": "11.11.2026",
+          "url": "https://revistaprogresiv.ro/stiri/retail/penny-isi-extinde-reteaua-prin-deschiderea-primului-magazin-din-sancraiu-de-mures/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "09.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "piata",
@@ -50,25 +50,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Brandurile Mercure și ibis își fac intrarea în Ploiești. Hotelurile se vor deschide în 2028",
-          "published_at": "10.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/brandurile-mercure-si-ibis-isi-fac-intrarea-in-ploiesti-hotelurile-se-vor-deschide-in-2028/"
+          "title": "Arta degustării brânzeturilor italiene, la RO-WINE Craiova: tradiție, autenticitate și excelență Made in Italy",
+          "published_at": "11.11.2026",
+          "url": "https://www.trendshrb.ro/actual/arta-degustarii-branzeturilor-italiene-la-ro-wine-craiova-traditie-autenticitate-si-excelenta-made-in-italy/"
         },
         {
-          "title": "One United Properties, partener în dezvoltarea ORA by Casa Tua din Miami, proiect rezidențial mixt cu componentă de ospitalitate",
-          "published_at": "10.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/one-united-properties-partener-in-dezvoltarea-ora-by-casa-tua-din-miami-proiect-rezidential-mixt-cu-componenta-de-ospitalitate/"
+          "title": "La Lorraine, 15 ani în România: investiții de peste 120 de milioane de euro și 580 de angajați",
+          "published_at": "11.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/la-lorraine-15-ani-in-romania-investitii-de-peste-120-de-milioane-de-euro-si-580-de-angajati/"
         },
         {
-          "title": "A 10-a ediție a Campionatului Național „Academia Junilor Bucătari” va avea loc pe 14 noiembrie",
-          "published_at": "09.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/a-10-a-editie-a-campionatului-national-academia-junilor-bucatari-va-avea-loc-pe-14-noiembrie/"
+          "title": "re:TRAVEL FORUM 2026: Cum schimbă AI comportamentul turiștilor și activitatea agențiilor de turism",
+          "published_at": "11.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/retravel-forum-2026-cum-schimba-ai-comportamentul-turistilor-si-activitatea-agentiilor-de-turism/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "10.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -76,18 +76,23 @@
       "website": "https://modernbuyer.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 4,
-      "new_articles_count": 1,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Purcari lansează în România gama de vinuri Parcela și ajunge la investiții de 30 mil. euro în 2026",
-          "published_at": "05.11.2026",
-          "url": "https://modernbuyer.ro/purcari-lanseaza-in-romania-gama-de-vinuri-parcela-si-ajunge-la-investitii-de-30-mil-euro-in-2026/"
+          "title": "România: Proiecte de retail estimate la 79,78 miliarde de lei în ultimele 12 luni",
+          "published_at": "11.11.2026",
+          "url": "https://modernbuyer.ro/romania-proiecte-de-retail-estimate-la-7978-miliarde-de-lei-in-ultimele-12-luni/"
+        },
+        {
+          "title": "BRAT lansează primul sistem independent de măsurare pentru Retail Media din România",
+          "published_at": "10.11.2026",
+          "url": "https://modernbuyer.ro/brat-lanseaza-primul-sistem-independent-de-masurare-pentru-retail-media-din-romania/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "09.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -95,23 +100,28 @@
       "website": "https://www.retail-fmcg.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 5,
-      "new_articles_count": 2,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Exporturile de fructe și legume românești stabilesc noi recorduri în rețeaua internațională Lidl: peste 8.800 de tone și 6,8 milioane de euro",
-          "published_at": "10.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/exporturi-fructe-legume-romanesti-lidl.html"
+          "title": "Global Payments: De la procesarea plăților la soluții inteligente pentru dezvoltarea afacerilor",
+          "published_at": "11.11.2026",
+          "url": "https://www.retail-fmcg.ro/servicii/global-payments-de-la-procesarea-platilor-la-solutii-inteligente-pentru-dezvoltarea-afacerilor.html"
         },
         {
-          "title": "EXPO RETAIL 2027 – Digital, Green & Tech deschide rezervările pentru expozanți și parteneri. Oferta Early Booking, valabilă până la 15 decembrie",
-          "published_at": "07.11.2026",
-          "url": "https://www.retail-fmcg.ro/evenimente/expo-retail-2027-digital-green-tech-deschide-rezervarile.html"
+          "title": "Analiză IBC Focus: România are 3816 proiecte de retail, cu investiții estimate la aproape 80 de miliarde de lei",
+          "published_at": "11.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/analiza-ibc-focus-romania-proiecte-de-retail-investitii.html"
+        },
+        {
+          "title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
+          "published_at": "10.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "10.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -122,20 +132,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Recuperarea căldurii din instalațiile frigorifice: o resursă pentru fabricile de carne și lapte",
-          "published_at": "10.11.2026",
-          "url": "https://www.meat-milk.ro/article/recuperarea-caldurii-din-instalatiile-frigorifice-o-resursa-pentru-fabricile-de-carne-si-lapte-ZJdNUmQs"
+          "title": "Carne și brânzeturi europene în Mexic: de la contactul comercial la primul export",
+          "published_at": "11.11.2026",
+          "url": "https://www.meat-milk.ro/article/carne-si-branzeturi-europene-in-mexic-de-la-contactul-comercial-la-primul-export-IEa2iymx"
         },
         {
-          "title": "Înaintea unei investiții, merită o conversație.",
-          "published_at": "10.11.2026",
-          "url": "https://www.meat-milk.ro/article/inaintea-unei-investitii-merita-o-conversatie-1qfAnfda"
+          "title": "Gripă aviară: Scoția extinde biosecuritatea la nivel național. Ce se schimbă pentru crescători?",
+          "published_at": "11.11.2026",
+          "url": "https://www.meat-milk.ro/article/gripa-aviara-scotia-extinde-biosecuritatea-la-nivel-national-ce-se-schimba-pentru-crescatori-qdZpD9Pk"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "10.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -143,12 +153,23 @@
       "website": "https://www.retail.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "De la JISOO la Travis Kelce: Tommy Hilfiger aduce vedete din muzică, sport și...",
+          "published_at": "11.11.2026",
+          "url": "https://retail.ro/articole/stiri-si-noutati/de-la-jisoo-la-travis-kelce-tommy-hilfiger-aduce-vedete-din-muzica-sport-si-film-in-campania-de-sarbatori-2026-15290.html"
+        },
+        {
+          "title": "Jung Kook de la BTS, imaginea noii campanii Calvin Klein pentru sărbătorile...",
+          "published_at": "11.11.2026",
+          "url": "https://retail.ro/articole/stiri-si-noutati/jung-kook-de-la-bts-imaginea-noii-campanii-calvin-klein-pentru-sarbatorile-de-iarna-2026-ce-articole-a-ales-artistul-15289.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "08.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "retailarena",
@@ -198,29 +219,29 @@
       "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "Weber develops Neubrandenburg into a model location for modern industrial energy supply",
+          "title": "USMEF: Pork still trending lower in September",
           "published_at": "10.11.2026",
-          "url": "https://euromeatnews.com/weber-develops-neubrandenburg-into-a-model-location-for-modern-industrial-energy-supply/"
+          "url": "https://euromeatnews.com/usmef-pork-still-trending-lower-in-september/"
         },
         {
-          "title": "Spain: Widespread meat industry strike paralyzes slaughterhouses",
-          "published_at": "09.11.2026",
-          "url": "https://euromeatnews.com/spain-widespread-meat-industry-strike-paralyzes-slaughterhouses/"
+          "title": "Brazil: Chicken meat exports reach highest monthly volume of 2026 in October",
+          "published_at": "10.11.2026",
+          "url": "https://euromeatnews.com/brazil-chicken-meat-exports-reach-highest-monthly-volume-of-2026-in-october/"
         },
         {
-          "title": "Health and trade changes are reshaping the global meat market",
-          "published_at": "09.11.2026",
-          "url": "https://euromeatnews.com/health-and-trade-changes-are-reshaping-the-global-meat-market/"
+          "title": "Brazilian beef exports totaled 2.66 million tons in the first ten months of 2026",
+          "published_at": "10.11.2026",
+          "url": "https://euromeatnews.com/brazilian-beef-exports-totaled-2-66-million-tons-in-the-first-ten-months-of-2026/"
         },
         {
-          "title": "US Broiler industry supports over 1.5 Million jobs and $533 Billion in total economic impact",
-          "published_at": "09.11.2026",
-          "url": "https://euromeatnews.com/us-broiler-industry-supports-over-1-5-million-jobs-and-533-billion-in-total-economic-impact/"
+          "title": "Paraguay passed inspection of meat exported to Taiwan",
+          "published_at": "10.11.2026",
+          "url": "https://euromeatnews.com/paraguay-passed-inspection-of-meat-exported-to-taiwan/"
         },
         {
-          "title": "Friboi is the most remembered meat brand by Brazilians for the seventh time",
-          "published_at": "09.11.2026",
-          "url": "https://euromeatnews.com/friboi-is-the-most-remembered-meat-brand-by-brazilians-for-the-seventh-time/"
+          "title": "Vietnamese tuna goes against the import trend in Germany",
+          "published_at": "10.11.2026",
+          "url": "https://euromeatnews.com/vietnamese-tuna-goes-against-the-import-trend-in-germany/"
         }
       ],
       "rejected_count": 0,
@@ -247,28 +268,23 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "El seguimiento de la huelga en industrias cárnicas se mantiene en el 90 % según UGT FICA La Federación de Industria, Construcción y Agro de UGT (UGT FICA) ha cifrado en torno al 90 % el seguimiento de la segunda... Más información",
-          "published_at": "10.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72693/kw/El+seguimiento+de+la+huelga+en+industrias+c%C3%A1rnicas+se+mantiene+en+el+90+%25+seg%C3%BAn+UGT+FICA"
+          "title": "Unión de Uniones pide a la Administración que medie en la huelga del sector cárnico para limitar los perjuicios a los ganaderos",
+          "published_at": "11.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72702/kw/Uni%C3%B3n+de+Uniones+pide+a+la+Administraci%C3%B3n+que+medie+en+la+huelga+del+sector+c%C3%A1rnico+para+limitar+los+perjuicios+a+los+ganaderos"
         },
         {
-          "title": "Asfac y Afapic piden una actuación urgente para garantizar el acceso al Puerto de Tarragona y el suministro de materias primas para piensos",
-          "published_at": "10.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72690/kw/Asfac+y+Afapic+piden+una+actuaci%C3%B3n+urgente+para+garantizar+el+acceso+al+Puerto+de+Tarragona+y+el+suministro+de+materias+primas+para+piensos"
-        },
-        {
-          "title": "Asunción acoge la 28.ª Conferencia Regional de la OMSA para las Américas",
-          "published_at": "10.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72686/kw/Asunci%C3%B3n+acoge+la+28.%C2%AA+Conferencia+Regional+de+la+OMSA+para+las+Am%C3%A9ricas"
+          "title": "Anetif y amec alimentec renuevan su acuerdo para impulsar el intercambio de soluciones en la industria cárnica de México y España",
+          "published_at": "11.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72701/kw/Anetif+y+amec+alimentec+renuevan+su+acuerdo+para+impulsar+el+intercambio+de+soluciones+en+la+industria+c%C3%A1rnica+de+M%C3%A9xico+y+Espa%C3%B1a"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "10.11.2026"
+      "latest_published_at": "11.11.2026"
     },
     {
       "pub_id": "frs",
@@ -279,25 +295,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Lidl pierde paso frente a Aldi, Mercadona, Dia y Consum, que conquistan más cuota de mercado hasta noviembre",
-          "published_at": "10.11.2026",
-          "url": "https://www.foodretail.es/retailers/lidl-pierde-paso-frente-a-aldi-mercadona-dia-y-consum-que-conquistan-mas-cuota-de-mercado-hasta-noviembre.html"
+          "title": "Alcampo prevé elevar sus ventas en las principales categorías durante la campaña de Navidad 2026",
+          "published_at": "11.11.2026",
+          "url": "https://www.foodretail.es/retailers/alcampo-preve-elevar-sus-ventas-en-las-principales-categorias-durante-la-campana-de-navidad-2026.html"
         },
         {
-          "title": "Aldi abrirá su primer supermercado en Coria del Río (Sevilla)",
-          "published_at": "10.11.2026",
-          "url": "https://www.foodretail.es/retailers/aldi-abrira-su-primer-supermercado-en-coria-del-rio-sevilla.html"
+          "title": "Carlos Pedreira (Alcampo): \"En 2027 vamos a crecer más rápido, con un gran foco en la franquicia\"",
+          "published_at": "11.11.2026",
+          "url": "https://www.foodretail.es/retailers/carlos-pedreira-alcampo-en-2027-vamos-a-crecer-mas-rapido-con-un-gran-foco-en-la-franquicia.html"
         },
         {
-          "title": "Veritas abrirá tres nuevas tiendas en Cádiz, Pontevedra y Girona y cerrará 2026 con 102 supermercados",
-          "published_at": "10.11.2026",
-          "url": "https://www.foodretail.es/retailers/veritas-abrira-tres-nuevas-tiendas-en-cadiz-pontevedra-y-girona-y-cerrara-2026-con-102-supermercados.html"
+          "title": "Álvaro Fernández (HiperDino): \"Este 2026 marcará un antes y un después, con nuestra propia IA en marcha para facilitar la compra\"",
+          "published_at": "11.11.2026",
+          "url": "https://www.foodretail.es/retailers/alvaro-fernandez-hiperdino-este-2026-marcara-un-antes-y-un-despues-con-nuestra-propia-ia-en-marcha-para-facilitar-la-compra.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "10.11.2026"
+      "latest_published_at": "11.11.2026"
     }
   ]
 }
