@@ -703,14 +703,14 @@ export default function EuPorkMarketModule({
 
         {/* Tab 4: Pork Cuts Price Simulator */}
         {selectedTab === 'simulator' && (
-          <div className="bg-slate-900 rounded-xl p-5 sm:p-6 border border-slate-800 shadow-xl space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-800">
+          <div className="max-w-5xl w-full mx-auto bg-slate-900 rounded-xl p-4 sm:p-5 border border-slate-800 shadow-xl space-y-4">
+            <div className="flex flex-row items-center justify-between gap-3 pb-3 border-b border-slate-800">
               <div>
                 <h2 className="text-base sm:text-lg font-bold text-white tracking-wide">
                   Pork Cuts Price Simulator
                 </h2>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                 <label htmlFor="carcassPriceInput" className="text-xs sm:text-sm font-semibold text-slate-300 shrink-0">
                   Preț carcasă (EUR/kg)
                 </label>
@@ -726,31 +726,31 @@ export default function EuPorkMarketModule({
                       setCarcassPriceStr(val);
                     }
                   }}
-                  className="w-28 sm:w-32 bg-slate-950 border border-slate-700 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-lg px-3 py-1.5 text-right font-mono text-white text-sm font-bold outline-none transition"
+                  className="w-24 sm:w-28 bg-slate-950 border border-slate-700 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 text-right font-mono text-white text-sm font-bold outline-none transition"
                   placeholder={getActiveVezgQuotation(data) || "0,00"}
                 />
               </div>
             </div>
 
             <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800">
-              <table className="w-full text-left text-xs text-slate-300 min-w-[620px]">
+              <table className="w-full text-left text-xs text-slate-300 min-w-[540px]">
                 <thead className="bg-slate-800/80 text-slate-200 uppercase font-semibold text-[11px] border-b border-slate-700">
                   <tr>
-                    <th className="py-3 px-4 font-semibold text-slate-200">Produs</th>
-                    <th className="py-3 px-4 text-center font-semibold text-slate-200">Randament</th>
-                    <th className="py-3 px-4 text-right font-semibold text-slate-200">Cantitate din 100 kg</th>
-                    <th className="py-3 px-4 text-right font-semibold text-pink-400">Preț estimat EUR/kg</th>
+                    <th className="py-2.5 px-3.5 text-left font-semibold text-slate-200">Produs</th>
+                    <th className="py-2.5 px-3.5 text-center font-semibold text-slate-200">Randament</th>
+                    <th className="py-2.5 px-3.5 text-center font-semibold text-slate-200">Cantitate din 100 kg</th>
+                    <th className="py-2.5 px-3.5 text-right font-semibold text-pink-400">Preț estimat EUR/kg</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800">
                   {simulatedCuts.map((item) => (
                     <tr key={item.name} className="hover:bg-slate-800/40 transition">
-                      <td className="py-3 px-4 font-medium text-white">{item.name}</td>
-                      <td className="py-3 px-4 text-center text-slate-300 font-mono">{item.yieldPercent}%</td>
-                      <td className="py-3 px-4 text-right text-slate-300 font-mono">
+                      <td className="py-2.5 px-3.5 text-left font-medium text-white">{item.name}</td>
+                      <td className="py-2.5 px-3.5 text-center text-slate-300 font-mono">{item.yieldPercent}%</td>
+                      <td className="py-2.5 px-3.5 text-center text-slate-300 font-mono">
                         {item.quantityKg.toFixed(2).replace('.', ',')} kg
                       </td>
-                      <td className="py-3 px-4 text-right font-bold text-sm text-pink-400 font-mono">
+                      <td className="py-2.5 px-3.5 text-right font-bold text-sm text-pink-400 font-mono">
                         {item.estimatedPrice.toFixed(2).replace('.', ',')}
                       </td>
                     </tr>
@@ -759,7 +759,7 @@ export default function EuPorkMarketModule({
               </table>
             </div>
 
-            <p className="text-xs text-slate-400 italic text-left pt-1">
+            <p className="text-xs text-slate-400 italic text-left pt-0.5">
               Prețuri estimative calculate pe baza costului carcasei și a randamentelor de tranșare. Nu reprezintă cotații de piață.
             </p>
           </div>
