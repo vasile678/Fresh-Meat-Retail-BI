@@ -1385,46 +1385,57 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
 
                         {expandedRetailerId === ret.id && (
                           <div className="mt-3 space-y-2.5 pt-2 border-t border-slate-800/60">
-                            {Object.entries(ret.intelligence_stream).map(([k, pillar]) => (
-                              <div key={k} className="p-2 rounded bg-slate-900/90 border border-slate-800/80 text-[11px]">
-                                <div className="flex items-center justify-between font-semibold text-slate-200 mb-1">
-                                  <span className="text-slate-300 text-[10.5px]">{pillar.title}</span>
-                                  {pillar.has_news ? (
-                                    <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                      {pillar.items.filter(it => it.is_new).length > 0 ? 'NOU' : 'ISTORIC'}
+                            {(() => {
+                              const activePillars = Object.entries(ret.intelligence_stream)
+                                .map(([k, pillar]) => {
+                                  const newItems = (pillar.items || []).filter(it => it.is_new);
+                                  return { key: k, pillar, newItems };
+                                })
+                                .filter(e => e.pillar.has_news && e.newItems.length > 0);
+
+                              if (activePillars.length === 0) {
+                                return (
+                                  <p className="text-[10px] text-slate-400 italic py-1.5 text-center bg-slate-900/60 rounded border border-slate-800/60">
+                                    Nu există noutăți verificate pentru perioada selectată.
+                                  </p>
+                                );
+                              }
+
+                              return activePillars.map(({ key, pillar, newItems }) => (
+                                <div key={key} className="p-2 rounded bg-slate-900/90 border border-slate-800/80 text-[11px] space-y-1.5">
+                                  <div className="flex items-center justify-between font-semibold text-slate-200">
+                                    <span className="text-slate-300 text-[10.5px]">{pillar.title}</span>
+                                    <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                      NOU
                                     </span>
-                                  ) : (
-                                    <span className="px-1.5 py-0.2 rounded text-[9px] font-medium bg-slate-800 text-slate-400 border border-slate-700/60">
-                                      Fără noutăți verificate
-                                    </span>
-                                  )}
-                                </div>
-                                {pillar.has_news && pillar.items.length > 0 ? (
-                                  <div className="space-y-1.5 mt-1.5">
-                                    {pillar.items.map((it) => (
-                                      <div key={it.id} className="p-1.5 rounded bg-slate-950/80 border border-slate-800/50">
+                                  </div>
+                                  <div className="space-y-1.5">
+                                    {newItems.map((it) => (
+                                      <div key={it.id} className="p-1.5 rounded bg-slate-950/80 border border-slate-800/50 space-y-1">
                                         <a 
                                           href={it.url}
                                           target="_blank"
                                           rel="noopener noreferrer"
                                           className="font-medium text-slate-200 hover:text-sky-300 transition text-[11px] leading-tight block"
                                         >
-                                          {it.title} ↗
+                                          {it.title} <span className="text-sky-400">↗</span>
                                         </a>
-                                        <div className="flex items-center justify-between text-[9.5px] text-slate-400 mt-1">
+                                        <p className="text-[10px] text-slate-400 line-clamp-2 leading-relaxed">
+                                          {it.summary}
+                                        </p>
+                                        <div className="flex items-center justify-between text-[9px] text-slate-500 pt-0.5 border-t border-slate-900">
                                           <span>{it.source}</span>
-                                          <span className="text-sky-400">{it.published_at}</span>
+                                          <div className="flex items-center gap-1.5">
+                                            <span className="text-sky-400">{it.published_at}</span>
+                                            <span className="text-emerald-400 font-semibold">✓ VERIFIED</span>
+                                          </div>
                                         </div>
                                       </div>
                                     ))}
                                   </div>
-                                ) : (
-                                  <p className="text-[10px] text-slate-400 italic">
-                                    Nu au fost înregistrate modificări validate în ultimele 7 zile.
-                                  </p>
-                                )}
-                              </div>
-                            ))}
+                                </div>
+                              ));
+                            })()}
                           </div>
                         )}
                       </div>
@@ -1895,109 +1906,132 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
               </div>
 
               {/* 1. MONITORIZAREA CELOR 7 RETAILERI — 6 PILONI STRATEGICI */}
+              {/* 1. MONITORIZAREA CELOR 7 RETAILERI — NUMAI DIMENSIUNI CU NOUTĂȚI VERIFICATE */}
               <div>
                 <div className="flex items-center justify-between mb-3 pb-1 border-b border-slate-800">
                   <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                    1. Monitorizarea celor 7 Retaileri (Analiză pe 6 Piloni Strategici)
+                    1. Monitorizarea celor 7 Retaileri (Noutăți Verificate pe Dimensiuni Strategice)
                   </h4>
                   <span className="text-[10px] text-slate-400 font-medium">
                     Lidl, Kaufland, Carrefour, Penny, Profi, Auchan, Mega Image
                   </span>
                 </div>
 
-                <div className="space-y-4">
-                  {data.retailers.map((r) => (
-                    <div key={r.id} className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-3">
-                      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 pb-2">
-                        <div className="flex items-center gap-2">
-                          <h5 className="font-bold text-white text-sm tracking-wide">{r.name}</h5>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-sky-400 border border-slate-700">
-                            {r.validity}
-                          </span>
-                        </div>
-                        <div className="text-[11px] text-emerald-400 font-medium">
-                          Marcă: <span className="text-slate-300">{r.private_brand}</span>
-                        </div>
-                      </div>
+                {data.retailers.reduce((acc, ret) => {
+                  if (!ret.intelligence_stream) return acc;
+                  return acc + Object.values(ret.intelligence_stream).filter(p => p.has_news && (p.items || []).some(it => it.is_new)).length;
+                }, 0) === 0 ? (
+                  <div className="p-6 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1.5">
+                    <Clock className="w-6 h-6 text-slate-400 mx-auto mb-1" />
+                    <p className="text-xs font-semibold text-slate-200">
+                      Nu există noutăți verificate pentru perioada selectată.
+                    </p>
+                    <p className="text-[11px] text-slate-400">
+                      Toate cele 6 dimensiuni strategice au fost auditate pe sursele oficiale; niciun retailer nu prezintă modificări noi în ciclul curent.
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {data.retailers.map((r) => {
+                      const activePillars = r.intelligence_stream
+                        ? Object.entries(r.intelligence_stream)
+                            .map(([k, pillar]) => {
+                              const newItems = (pillar.items || []).filter(it => it.is_new);
+                              return {
+                                key: k,
+                                pillar,
+                                newItems
+                              };
+                            })
+                            .filter(entry => entry.pillar.has_news && entry.newItems.length > 0)
+                        : [];
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/60">
-                        <div>
-                          <span className="text-slate-500 block font-medium">Poziționare preț KVI:</span>
-                          <span className="text-slate-200">{r.meat_price_position}</span>
-                        </div>
-                        <div>
-                          <span className="text-slate-500 block font-medium">Mecanisme active:</span>
-                          <span className="text-slate-300">{r.active_mechanics}</span>
-                        </div>
-                      </div>
+                      return (
+                        <div key={r.id} className="p-4 sm:p-5 bg-slate-950 rounded-xl border border-slate-800 space-y-3 shadow-md">
+                          {/* Retailer Header */}
+                          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/80 pb-2.5">
+                            <div className="flex items-center gap-2.5">
+                              <h5 className="font-bold text-white text-sm tracking-wide">{r.name}</h5>
+                              <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-800 text-sky-400 border border-slate-700">
+                                {r.validity}
+                              </span>
+                            </div>
+                            <div className="text-[11px] text-emerald-400 font-medium">
+                              Marcă: <span className="text-slate-300">{r.private_brand}</span>
+                            </div>
+                          </div>
 
-                      {/* 6 Piloni Strategici */}
-                      <div className="space-y-2 pt-1">
-                        <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                          Flux Informații Monitorizate (6 Dimensiuni Obligatorii):
-                        </div>
+                          {/* Quick Position Bar */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/60">
+                            <div>
+                              <span className="text-slate-500 block font-medium">Poziționare preț KVI:</span>
+                              <span className="text-slate-200">{r.meat_price_position}</span>
+                            </div>
+                            <div>
+                              <span className="text-slate-500 block font-medium">Mecanisme active:</span>
+                              <span className="text-slate-300">{r.active_mechanics}</span>
+                            </div>
+                          </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                          {r.intelligence_stream ? (
-                            Object.entries(r.intelligence_stream).map(([k, pillar]) => (
-                              <div key={k} className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800/80 space-y-1.5">
-                                <div className="flex items-center justify-between text-[11px] font-semibold text-slate-200">
-                                  <span className="text-slate-300 text-[10.5px]">{pillar.title}</span>
-                                  {pillar.has_news && pillar.items.length > 0 ? (
-                                    <span className={`px-1.5 py-0.2 rounded text-[9px] font-bold ${
-                                      pillar.items.some(it => it.is_new)
-                                        ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                        : 'bg-sky-500/10 text-sky-400 border border-sky-500/20'
-                                    }`}>
-                                      {pillar.items.some(it => it.is_new) ? 'NOU' : 'ISTORIC'}
-                                    </span>
-                                  ) : (
-                                    <span className="px-1.5 py-0.2 rounded text-[9px] font-medium bg-slate-800 text-slate-400 border border-slate-700/60">
-                                      Fără noutăți verificate
-                                    </span>
-                                  )}
-                                </div>
+                          {/* Dimensiuni cu noutăți active */}
+                          {activePillars.length > 0 ? (
+                            <div className="space-y-2 pt-1">
+                              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                Dimensiuni cu Noutăți Verificate ({activePillars.length}):
+                              </div>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                {activePillars.map(({ key, pillar, newItems }) => (
+                                  <div key={key} className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/90 hover:border-slate-700/80 transition flex flex-col justify-between space-y-2">
+                                    <div className="flex items-center justify-between text-xs font-semibold text-slate-200 pb-1.5 border-b border-slate-800/80">
+                                      <div className="flex items-center gap-1.5 min-w-0">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                                        <span className="text-slate-200 text-xs font-bold truncate">{pillar.title}</span>
+                                      </div>
+                                      <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shrink-0">
+                                        NOU
+                                      </span>
+                                    </div>
 
-                                {pillar.has_news && pillar.items.length > 0 ? (
-                                  <div className="space-y-1.5">
-                                    {pillar.items.map((it) => (
-                                      <div key={it.id} className="p-2 rounded bg-slate-950 border border-slate-800/60 space-y-1">
-                                        <a 
-                                          href={it.url}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="text-xs font-semibold text-slate-200 hover:text-sky-300 transition line-clamp-2 block leading-snug"
-                                        >
-                                          {it.title} ↗
-                                        </a>
-                                        <p className="text-[10px] text-slate-400 line-clamp-2">{it.summary}</p>
-                                        <div className="flex items-center justify-between text-[9px] text-slate-500 pt-0.5 border-t border-slate-900">
-                                          <span>Sursă: <strong className="text-slate-400">{it.source}</strong></span>
-                                          <div className="flex items-center gap-1.5">
-                                            <span>Pub: <strong className="text-sky-400">{it.published_at}</strong></span>
-                                            <span className="text-emerald-400 font-bold">✓ VERIFIED</span>
+                                    <div className="space-y-2">
+                                      {newItems.map((it) => (
+                                        <div key={it.id} className="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80 space-y-1.5 hover:border-slate-700 transition">
+                                          <a 
+                                            href={it.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs font-semibold text-white hover:text-sky-300 transition line-clamp-2 block leading-snug"
+                                          >
+                                            {it.title} <span className="text-sky-400 font-normal">↗</span>
+                                          </a>
+                                          <p className="text-[11px] text-slate-300 line-clamp-3 leading-relaxed">
+                                            {it.summary}
+                                          </p>
+                                          <div className="flex items-center justify-between text-[9.5px] text-slate-500 pt-1.5 border-t border-slate-900">
+                                            <span className="truncate max-w-[150px] sm:max-w-[190px]">
+                                              Sursă: <strong className="text-slate-300">{it.source}</strong>
+                                            </span>
+                                            <div className="flex items-center gap-2 shrink-0">
+                                              <span>Pub: <strong className="text-sky-400">{it.published_at}</strong></span>
+                                              <span className="text-emerald-400 font-bold">✓ VERIFIED</span>
+                                            </div>
                                           </div>
                                         </div>
-                                      </div>
-                                    ))}
+                                      ))}
+                                    </div>
                                   </div>
-                                ) : (
-                                  <p className="text-[10px] text-slate-400 italic py-1">
-                                    Fără noutăți verificate în ciclul de raportare curent.
-                                  </p>
-                                )}
+                                ))}
                               </div>
-                            ))
+                            </div>
                           ) : (
-                            <div className="col-span-2 p-2 bg-slate-900 text-slate-400 text-[10px] text-center rounded">
-                              Fluxul pe 6 piloni se încarcă...
+                            <div className="p-3 rounded-lg bg-slate-900/50 border border-slate-800/60 text-slate-400 text-xs italic text-center">
+                              Nu există noutăți verificate pentru perioada selectată.
                             </div>
                           )}
                         </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
               {/* 2. Știri Sectoriale Cheie */}
@@ -2005,23 +2039,25 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                 <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">
                   2. Știri Sectoriale Cheie (Presă Specializată: 14 Publicații — 8 România + 6 Internaționale)
                 </h4>
-                <div className="space-y-2">
-                  {data.publications.flatMap(p => p.articles.slice(0, 1)).map((a, i) => (
-                    <div key={i} className="p-3 bg-slate-950 rounded-lg border border-slate-800 flex flex-col justify-between">
-                      <div className="flex flex-wrap items-center justify-between gap-1 text-slate-200 text-xs font-semibold">
-                        <a 
-                          href={a.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-sky-300 transition text-xs font-semibold leading-snug"
-                        >
-                          {a.title} ↗
-                        </a>
-                        <span className="text-sky-400 text-[10px] font-mono shrink-0">{a.published_at || a.date}</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                  {data.publications.flatMap(p => p.articles.slice(0, 1).map(a => ({ ...a, pubName: p.name }))).map((a, i) => (
+                    <div key={i} className="p-3 bg-slate-950 rounded-xl border border-slate-800 hover:border-slate-700/80 transition flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-start justify-between gap-2 text-slate-200 text-xs font-semibold">
+                          <a 
+                            href={a.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-sky-300 transition text-xs font-semibold leading-snug line-clamp-2"
+                          >
+                            {a.title} <span className="text-sky-400 font-normal">↗</span>
+                          </a>
+                          <span className="text-sky-400 text-[10px] font-mono shrink-0 mt-0.5">{a.published_at || a.date}</span>
+                        </div>
+                        <p className="text-[11px] text-slate-300 mt-1.5 leading-relaxed line-clamp-3">{a.summary}</p>
                       </div>
-                      <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">{a.summary}</p>
-                      <div className="flex items-center justify-between text-[9.5px] text-slate-500 mt-1.5 pt-1 border-t border-slate-900">
-                        <span>URL oficial: <span className="text-slate-400 truncate max-w-xs inline-block align-bottom">{a.url}</span></span>
+                      <div className="flex items-center justify-between text-[9.5px] text-slate-500 mt-2 pt-1.5 border-t border-slate-900">
+                        <span className="text-slate-400 truncate max-w-[160px]">{a.pubName || 'Presă Specializată'}</span>
                         <span className="text-emerald-400 font-semibold">✓ VERIFIED SOURCE</span>
                       </div>
                     </div>
