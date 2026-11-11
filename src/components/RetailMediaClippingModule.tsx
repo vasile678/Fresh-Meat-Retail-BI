@@ -1979,10 +1979,10 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                               <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                                 Dimensiuni cu Noutăți Verificate ({activePillars.length}):
                               </div>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
                                 {activePillars.map(({ key, pillar, newItems }) => (
-                                  <div key={key} className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/90 hover:border-slate-700/80 transition flex flex-col justify-between space-y-2">
-                                    <div className="flex items-center justify-between text-xs font-semibold text-slate-200 pb-1.5 border-b border-slate-800/80">
+                                  <div key={key} className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/90 hover:border-slate-700/80 transition flex flex-col items-start self-start w-full h-auto space-y-2.5">
+                                    <div className="w-full flex items-center justify-between text-xs font-semibold text-slate-200 pb-1.5 border-b border-slate-800/80">
                                       <div className="flex items-center gap-1.5 min-w-0">
                                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
                                         <span className="text-slate-200 text-xs font-bold truncate">{pillar.title}</span>
@@ -1992,7 +1992,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                                       </span>
                                     </div>
 
-                                    <div className="space-y-2">
+                                    <div className="w-full space-y-2">
                                       {newItems.map((it) => (
                                         <div key={it.id} className="p-2.5 rounded-lg bg-slate-950 border border-slate-800/80 space-y-1.5 hover:border-slate-700 transition">
                                           <a 
