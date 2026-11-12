@@ -190,6 +190,34 @@ jobs:
             echo "PREREQS_MET=false" >> $GITHUB_ENV
           fi
 
+      - name: Validate Dataset Consistency & Anti-Stale Guard (FAIL_CLOSED)
+        if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
+        run: |
+          python3 -c "
+          import json, datetime, sys, os
+          from pathlib import Path
+
+          target_week = os.environ['TARGET_WEEK']
+          target_year = int(os.environ['TARGET_YEAR'])
+          w_num = int(target_week.replace('WK', ''))
+          d_mon = datetime.date.fromisocalendar(target_year, w_num, 1)
+          d_sun = datetime.date.fromisocalendar(target_year, w_num, 7)
+          expected_period = f'{d_mon.strftime(\"%d.%m\")}–{d_sun.strftime(\"%d.%m.%Y\")}'
+
+          ds_path = Path(os.environ['DATASET_PATH'])
+          ds = json.loads(ds_path.read_text(encoding='utf-8'))
+          if ds.get('period') != expected_period:
+              print(f'[FAIL_CLOSED ERROR] Dataset period {ds.get(\"period\")} != expected {expected_period}')
+              sys.exit(1)
+          if ds.get('week') != target_week:
+              print(f'[FAIL_CLOSED ERROR] Dataset week {ds.get(\"week\")} != expected {target_week}')
+              sys.exit(1)
+          if target_week == 'WK46' and ('02.11' in ds.get('period', '') or ds.get('updated') == '05.11.2026'):
+              print(f'[FAIL_CLOSED ERROR] Stale WK45 timestamps detected in WK46 dataset: {ds.get(\"period\")}')
+              sys.exit(1)
+          print(f'✓ Dataset {target_week} period {expected_period} verified.')
+          "
+
       - name: Run EU Pork Module Verification Tests
         if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
         run: |
@@ -212,13 +240,57 @@ jobs:
         run: |
           python3 fresh_meat_bi/update_market_intelligence_manifest.py
 
-      - name: Verify Published Assets & Release Gate Status
+      - name: Strict Verification of Published Assets & Release Gate (FAIL_CLOSED)
         if: env.SHOULD_RUN == 'true' && env.PREREQS_MET == 'true'
         run: |
-          test -f public/data/eu_pork_market_export.json
-          test -f public/data/market_intelligence_manifest.json
-          python3 -c "import json; d=json.load(open('public/data/eu_pork_market_export.json')); assert d['release_status'] == 'RELEASE_PASS'"
-          echo "Verified: public/data/eu_pork_market_export.json exists with RELEASE_PASS"
+          python3 -c "
+          import json, datetime, sys, os, hashlib
+          from pathlib import Path
+          from PIL import Image
+
+          target_week = os.environ['TARGET_WEEK']
+          target_year = int(os.environ['TARGET_YEAR'])
+          w_num = int(target_week.replace('WK', ''))
+          d_mon = datetime.date.fromisocalendar(target_year, w_num, 1)
+          d_sun = datetime.date.fromisocalendar(target_year, w_num, 7)
+          expected_period = f'{d_mon.strftime(\"%d.%m\")}–{d_sun.strftime(\"%d.%m.%Y\")}'
+
+          # 1. Verify export JSON
+          exp_path = Path('public/data/eu_pork_market_export.json')
+          assert exp_path.exists(), 'Export file missing'
+          exp = json.loads(exp_path.read_text(encoding='utf-8'))
+          assert exp.get('release_status') == 'RELEASE_PASS', f'Status must be RELEASE_PASS, got {exp.get(\"release_status\")}'
+          assert exp.get('week') == target_week, f'Week mismatch: expected {target_week}, got {exp.get(\"week\")}'
+          assert exp.get('year') == target_year, f'Year mismatch: expected {target_year}, got {exp.get(\"year\")}'
+          assert exp.get('period') == expected_period, f'Period mismatch: expected {expected_period}, got {exp.get(\"period\")}'
+          assert len(exp.get('rows', [])) == 8, f'Expected 8 canonical markets, got {len(exp.get(\"rows\", []))}'
+
+          # Anti-stale check: reject WK45 dates in WK46
+          if target_week == 'WK46':
+              assert '02.11' not in exp.get('period', ''), 'Stale WK45 period in WK46'
+              assert exp.get('updated') != '05.11.2026', 'Stale WK45 update date in WK46'
+
+          # 2. Verify published PNG image
+          img_path = Path(f'public/EU_PORK_MARKET_{target_week}_{target_year}.png')
+          assert img_path.exists(), f'Published PNG {img_path} missing'
+          assert img_path.stat().st_size > 500000, f'Published PNG is too small or corrupt: {img_path.stat().st_size} bytes'
+          im = Image.open(img_path)
+          assert im.size == (1536, 1024), f'Image dimensions must be 1536x1024, got {im.size}'
+
+          # 3. Verify manifest synchronization
+          mf_path = Path('public/data/market_intelligence_manifest.json')
+          assert mf_path.exists(), 'Manifest missing'
+          mf = json.loads(mf_path.read_text(encoding='utf-8'))
+          eu_mf = mf.get('modules', {}).get('eu_pork_market', {})
+          assert eu_mf.get('week') == target_week, 'Manifest week mismatch'
+          assert eu_mf.get('period') == expected_period, 'Manifest period mismatch'
+          assert eu_mf.get('status') == 'RELEASE_PASS', 'Manifest status mismatch'
+          
+          exp_sha = hashlib.sha256(exp_path.read_bytes()).hexdigest()
+          assert eu_mf.get('dataset_sha256') == exp_sha, f'Manifest dataset_sha256 mismatch: expected {exp_sha}, got {eu_mf.get(\"dataset_sha256\")}'
+
+          print(f'✓ All strict verification checks passed: {target_week} {expected_period} RELEASE_PASS (100% verified)')
+          "
 
       - name: Commit and Push Updated EU Pork Market Release
         id: commit_push

@@ -379,6 +379,62 @@ def test_11_secondary_fallback_validation():
 
     print("  ✓ Secondary source fallback, audit fields, and Mercolleida/CUN/MPB/Poland validation verified: PASS\n")
 
+def test_12_wk46_pipeline_release_pass():
+    print("[TEST 12/12] Testing governed weekly pipeline execution on current WK46 data...")
+    from eu_pork_collector import run_collection
+    res = run_collection("WK46", 2026)
+    assert res.get("status") == "SUCCESS", f"Collection failed: {res}"
+
+    ds = BASE / "EU_PORK_MARKET_DATASET_WK46.json"
+    src = BASE / "EU_SOURCE_RECEIPT_WK46.json"
+    vis = BASE / "EU_VISUAL_RECEIPT_WK46.json"
+    assert ds.exists() and src.exists() and vis.exists()
+
+    d_json = json.loads(ds.read_text(encoding="utf-8"))
+    assert d_json.get("week") == "WK46"
+    assert d_json.get("period") == "09.11–15.11.2026"
+    assert d_json.get("updated") == "12.11.2026"
+
+    pipeline = BASE / "weekly_pipeline.py"
+    cmd = [
+        sys.executable, str(pipeline),
+        "--week", "WK46",
+        "--year", "2026",
+        "--domain", "EU_PORK_MARKET",
+        "--dataset", str(ds),
+        "--source", str(src),
+        "--visual", str(vis),
+        "--publish"
+    ]
+    cp = subprocess.run(cmd, cwd=str(BASE), capture_output=True, text=True)
+    assert cp.returncode == 0, f"Pipeline failed: {cp.stdout} {cp.stderr}"
+    assert "RELEASE_PASS (PUBLICAT)" in cp.stdout
+
+    # Verify public export has WK46 and latest quotations
+    pub_export = ROOT / "public" / "data" / "eu_pork_market_export.json"
+    assert pub_export.exists()
+    exp = json.loads(pub_export.read_text(encoding="utf-8"))
+    assert exp.get("week") == "WK46"
+    assert exp.get("year") == 2026
+    assert exp.get("period") == "09.11–15.11.2026"
+    assert exp.get("updated") == "12.11.2026"
+    assert exp.get("release_status") == "RELEASE_PASS"
+
+    rows = {r["market"]: r for r in exp.get("rows", [])}
+    assert rows["Germany VEZG"]["price"] == "1.320"
+    assert rows["Italy CUN 156–200 kg"]["price"] == "1.835"
+    assert rows["France MPB"]["price"] == "1.432"
+    assert rows["Spain Mercolleida"]["price"] == "1.137"
+    assert rows["Netherlands Vion"]["price"] == "1.11"
+    assert rows["Denmark Danish Crown"]["price"] == "7.50"
+    assert rows["Poland (ZMI) Class E"]["price"] == "5.66"
+
+    # Also update market intelligence manifest
+    manifest_script = BASE / "update_market_intelligence_manifest.py"
+    subprocess.run([sys.executable, str(manifest_script)], cwd=str(BASE), check=True)
+
+    print("  ✓ WK46 governed pipeline, Release Gate, and publication verified: PASS\n")
+
 if __name__ == "__main__":
     print("\n=======================================================")
     print(" RUNNING EU PORK MARKET WEEKLY MODULE TEST SUITE")
@@ -394,8 +450,9 @@ if __name__ == "__main__":
     test_9_autonomous_collector_wk45()
     test_10_wk45_pipeline_release_pass()
     test_11_secondary_fallback_validation()
+    test_12_wk46_pipeline_release_pass()
     print("=======================================================")
-    print(" ALL 11/11 EU PORK MARKET MODULE TESTS PASSED")
+    print(" ALL 12/12 EU PORK MARKET MODULE TESTS PASSED")
     print("=======================================================\n")
 
 

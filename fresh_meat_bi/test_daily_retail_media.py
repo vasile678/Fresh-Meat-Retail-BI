@@ -177,15 +177,15 @@ def run_all_tests():
     cells_count = len(bi_export.get("cells", [])) or len(bi_export.get("offers", []))
     assert cells_count == 25, f"Promo Weekly trebuie să aibă 25 celule validate, are {cells_count}"
     
-    # B. EU Pork Market WK45
+    # B. EU Pork Market
     assert EU_PORK_FILE.exists(), f"Lipsește eu_pork_market_export.json: {EU_PORK_FILE}"
     eu_data = json.loads(EU_PORK_FILE.read_text(encoding="utf-8"))
-    assert eu_data.get("week") == "WK45", f"EU Pork Market week alterat: {eu_data.get('week')}"
+    assert eu_data.get("week") in ("WK45", "WK46"), f"EU Pork Market week invalid: {eu_data.get('week')}"
     benchmarks_count = len(eu_data.get("rows", [])) or len(eu_data.get("benchmarks", []))
     assert benchmarks_count == 8, f"EU Pork Market benchmarks alterat: {benchmarks_count}"
 
     print(f"  ✓ Promo Weekly WK46 (25 oferte, status PASS): INTEGRU")
-    print(f"  ✓ EU Pork Market WK45 (8 benchmarks): INTEGRU")
+    print(f"  ✓ EU Pork Market {eu_data.get('week')} (8 benchmarks): INTEGRU")
     print(f"  ✓ Nicio modificare în formule, concluzii sau arhive [PASS]")
 
     print("\n=================================================================")
