@@ -1,12 +1,12 @@
 {
-  "execution_date": "11.11.2026",
-  "start_time_bucharest": "2026-11-11 23:11:39",
-  "end_time_bucharest": "2026-11-11 23:11:49",
-  "start_time_iso": "2026-11-11T23:11:39.444235+02:00",
-  "end_time_iso": "2026-11-11T23:11:49.989201+02:00",
-  "duration_seconds": 10.54,
+  "execution_date": "12.11.2026",
+  "start_time_bucharest": "2026-11-12 15:29:47",
+  "end_time_bucharest": "2026-11-12 15:30:18",
+  "start_time_iso": "2026-11-12T15:29:47.871444+02:00",
+  "end_time_iso": "2026-11-12T15:30:18.459443+02:00",
+  "duration_seconds": 30.59,
   "total_publications": 14,
-  "total_new_articles_accepted": 8,
+  "total_new_articles_accepted": 16,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -41,17 +41,22 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 6,
-      "new_articles_count": 2,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "La Lorraine, 15 ani în România: investiții de peste 120 de milioane de euro și 580 de angajați",
-          "published_at": "11.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/la-lorraine-15-ani-in-romania-investitii-de-peste-120-de-milioane-de-euro-si-580-de-angajati/"
+          "title": "Deli Group deschide un restaurant în Business Garden Bucharest, proiect dezvoltat de Vastint",
+          "published_at": "12.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/deli-group-deschide-un-restaurant-in-business-garden-bucharest-proiect-dezvoltat-de-vastint/"
         },
         {
-          "title": "re:TRAVEL FORUM 2026: Cum schimbă AI comportamentul turiștilor și activitatea agențiilor de turism",
-          "published_at": "11.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/retravel-forum-2026-cum-schimba-ai-comportamentul-turistilor-si-activitatea-agentiilor-de-turism/"
+          "title": "Platforma Hambar atrage o investiție de 250.000 de euro de la Vest Ventures",
+          "published_at": "12.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/platforma-hambar-atrage-o-investitie-de-250-000-de-euro-de-la-vest-ventures/"
+        },
+        {
+          "title": "120 de tineri au participat la cea de-a treia ediție Barmasters Empowered, program inițiat de Coca-Cola Hbc România și Asociația The Social Incubator",
+          "published_at": "12.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/120-de-tineri-au-participat-la-cea-de-a-treia-editie-barmasters-empowered-program-initiat-de-coca-cola-hbc-romania-si-asociatia-the-social-incubator/"
         }
       ],
       "rejected_count": 1,
@@ -62,7 +67,7 @@
         }
       ],
       "final_top3_count": 3,
-      "latest_published_at": "11.11.2026"
+      "latest_published_at": "12.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -102,25 +107,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Analiză IBC Focus: România are 3816 proiecte de retail, cu investiții estimate la aproape 80 de miliarde de lei",
-          "published_at": "11.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/analiza-ibc-focus-romania-proiecte-de-retail-investitii.html"
+          "title": "Caroli Foods Group accelerează inovația în portofoliu prin extinderea brandului Caroli în categoria high protein",
+          "published_at": "12.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/caroli-foods-group-portofoliu-high-protein.html"
         },
         {
-          "title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
-          "published_at": "10.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/brat-primul-sistem-independent-masurare-certificare-retail-media-romania.html"
+          "title": "Puratos investește peste 15 milioane de euro într-o nouă fabrică în România, cea mai mare investiție locală din istoria companiei",
+          "published_at": "12.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/puratos-noua-fabrica-romania.html"
         },
         {
-          "title": "Exporturile de fructe și legume românești stabilesc noi recorduri în rețeaua internațională Lidl: peste 8.800 de tone și 6,8 milioane de euro",
-          "published_at": "10.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/exporturi-fructe-legume-romanesti-lidl.html"
+          "title": "NielsenIQ: Piața FMCG din România a ajuns la 91,8 miliarde de lei în nouă luni. Supermarketurile și discounterii câștigă teren",
+          "published_at": "12.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/nielseniq-piata-fmcg-din-romania-a-ajuns-la-918-miliarde-de-lei.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "11.11.2026"
+      "latest_published_at": "12.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -128,12 +133,23 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "200 de milioane de lei în plus pentru ameliorarea animalelor: ce a votat Senatul și cum s-ar împărți banii",
+          "published_at": "12.11.2026",
+          "url": "https://www.meat-milk.ro/article/200-de-milioane-de-lei-in-plus-pentru-ameliorarea-animalelor-ce-a-votat-senatul-si-cum-s-ar-imparti-banii-Ficfi3JK"
+        },
+        {
+          "title": "România și Tunisia discută exporturile pentru 2027: carcasele de oaie și vită, primele pe agendă",
+          "published_at": "12.11.2026",
+          "url": "https://www.meat-milk.ro/article/romania-si-tunisia-discuta-exporturile-pentru-2027-carcasele-de-oaie-si-vita-primele-pe-agenda-W0jETwsa"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "11.11.2026"
+      "latest_published_at": "12.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -165,8 +181,8 @@
       "pub_id": "pigprogress",
       "name": "Pig Progress",
       "website": "https://www.foodagribusiness.world/pigs/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 3,
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
       "new_articles_count": 0,
       "new_accepted": [],
       "rejected_count": 0,
@@ -219,12 +235,23 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Interovic recibe una misión técnica de empresas húngaras de ovino en Aragón y Cataluña",
+          "published_at": "12.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72722/kw/Interovic+recibe+una+misi%C3%B3n+t%C3%A9cnica+de+empresas+h%C3%BAngaras+de+ovino+en+Arag%C3%B3n+y+Catalu%C3%B1a"
+        },
+        {
+          "title": "Puntos incluidos en el preacuerdo alcanzado por las asociaciones cárnicas y sindicatos que ha desbloqueado la huelga en el sector",
+          "published_at": "12.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72718/kw/Puntos+incluidos+en+el+preacuerdo%26nbsp%3Balcanzado+por+las+asociaciones+c%C3%A1rnicas+y+sindicatos+que+ha+desbloqueado+la+huelga+en+el+sector"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "11.11.2026"
+      "latest_published_at": "12.11.2026"
     },
     {
       "pub_id": "frs",
@@ -232,12 +259,28 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 3,
+      "new_accepted": [
+        {
+          "title": "BM Supermercados reabre en Eibar (Guipúzcoa) tras invertir 1,4 millones en una reforma integral",
+          "published_at": "12.11.2026",
+          "url": "https://www.foodretail.es/retailers/bm-supermercados-reabre-en-eibar-guipuzcoa-tras-invertir-14-millones-en-una-reforma-integral.html"
+        },
+        {
+          "title": "Consum abre una tienda en el barrio de Campanar y suma 101 supermercados en Valencia capital",
+          "published_at": "12.11.2026",
+          "url": "https://www.foodretail.es/retailers/consum-abre-una-tienda-en-el-barrio-de-campanar-y-suma-101-supermercados-en-valencia-capital.html"
+        },
+        {
+          "title": "El Corte Inglés eleva un 11% su beneficio neto en el primer semestre 2024-25, hasta los 203 millones",
+          "published_at": "12.11.2026",
+          "url": "https://www.foodretail.es/retailers/el-corte-ingles-eleva-un-11-su-beneficio-neto-en-el-primer-semestre-2024-25-hasta-los-203-millones.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "11.11.2026"
+      "latest_published_at": "12.11.2026"
     }
   ]
 }
