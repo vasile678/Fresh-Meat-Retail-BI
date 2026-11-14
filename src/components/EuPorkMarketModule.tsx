@@ -703,15 +703,16 @@ export default function EuPorkMarketModule({
 
         {/* Tab 4: Pork Cuts Price Simulator */}
         {selectedTab === 'simulator' && (
-          <div className="max-w-5xl w-full mx-auto bg-slate-900 rounded-xl p-4 sm:p-5 border border-slate-800 shadow-xl space-y-4">
-            <div className="flex flex-row items-center justify-between gap-3 pb-3 border-b border-slate-800">
-              <div>
-                <h2 className="text-base sm:text-lg font-bold text-white tracking-wide">
+          <div className="max-w-3xl w-full mx-auto bg-slate-900 rounded-xl p-3.5 sm:p-4 border border-slate-800 shadow-xl space-y-2.5">
+            <div className="flex flex-row items-center justify-between gap-3 pb-2.5 border-b border-slate-800/80">
+              <div className="flex items-center gap-2">
+                <Calculator className="w-4 h-4 text-emerald-400 shrink-0" />
+                <h2 className="text-sm sm:text-base font-bold text-white tracking-tight">
                   Pork Cuts Price Simulator
                 </h2>
               </div>
-              <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-                <label htmlFor="carcassPriceInput" className="text-xs sm:text-sm font-semibold text-slate-300 shrink-0">
+              <div className="flex items-center gap-2 shrink-0">
+                <label htmlFor="carcassPriceInput" className="text-xs font-medium text-slate-300 whitespace-nowrap">
                   Preț carcasă (EUR/kg)
                 </label>
                 <input
@@ -726,37 +727,37 @@ export default function EuPorkMarketModule({
                       setCarcassPriceStr(val);
                     }
                   }}
-                  className="w-24 sm:w-28 bg-slate-950 border border-slate-700 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 text-right font-mono text-white text-sm font-bold outline-none transition"
+                  className="w-20 sm:w-24 bg-slate-950 border border-slate-700/80 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 rounded-md px-2.5 py-1 text-right font-mono text-white text-xs sm:text-sm font-semibold outline-none transition"
                   placeholder={getActiveVezgQuotation(data) || "0,00"}
                 />
               </div>
             </div>
 
-            <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800 max-w-4xl mx-auto">
-              <table className="w-full table-fixed text-left text-xs text-slate-300 min-w-[500px]">
+            <div className="overflow-x-auto touch-scroll rounded-lg border border-slate-800/80 w-full">
+              <table className="w-full table-fixed text-left text-xs text-slate-300 min-w-[460px]">
                 <colgroup>
-                  <col className="w-[34%]" />
-                  <col className="w-[18%]" />
-                  <col className="w-[26%]" />
+                  <col className="w-[38%]" />
+                  <col className="w-[17%]" />
+                  <col className="w-[23%]" />
                   <col className="w-[22%]" />
                 </colgroup>
-                <thead className="bg-slate-800/80 text-slate-200 uppercase font-semibold text-[11px] border-b border-slate-700">
-                  <tr>
-                    <th className="py-2.5 px-2.5 sm:px-3 text-left font-semibold text-slate-200">Produs</th>
-                    <th className="py-2.5 px-2.5 sm:px-3 text-center font-semibold text-slate-200">Randament</th>
-                    <th className="py-2.5 px-2.5 sm:px-3 text-center font-semibold text-slate-200">Cantitate din 100 kg</th>
-                    <th className="py-2.5 px-2.5 sm:px-3 text-right font-semibold text-pink-400">Preț estimat EUR/kg</th>
+                <thead className="bg-slate-800/70 text-slate-300 uppercase font-semibold text-[11px] tracking-wider border-b border-slate-700/80">
+                  <tr className="h-[34px]">
+                    <th className="py-1.5 px-3 text-left font-semibold text-slate-300">Produs</th>
+                    <th className="py-1.5 px-3 text-center font-semibold text-slate-300">Randament</th>
+                    <th className="py-1.5 px-3 text-center font-semibold text-slate-300">Cantitate din 100 kg</th>
+                    <th className="py-1.5 px-3 text-right font-semibold text-pink-400">Preț estimat EUR/kg</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800">
+                <tbody className="divide-y divide-slate-800/60 text-[12px] sm:text-[13px]">
                   {simulatedCuts.map((item) => (
-                    <tr key={item.name} className="hover:bg-slate-800/40 transition">
-                      <td className="py-2.5 px-2.5 sm:px-3 text-left font-medium text-white truncate">{item.name}</td>
-                      <td className="py-2.5 px-2.5 sm:px-3 text-center text-slate-300 font-mono">{item.yieldPercent}%</td>
-                      <td className="py-2.5 px-2.5 sm:px-3 text-center text-slate-300 font-mono">
+                    <tr key={item.name} className="h-[33px] hover:bg-slate-800/40 transition-colors duration-150">
+                      <td className="py-1.5 px-3 text-left font-medium text-slate-100 truncate">{item.name}</td>
+                      <td className="py-1.5 px-3 text-center text-slate-300 font-mono tabular-nums">{item.yieldPercent}%</td>
+                      <td className="py-1.5 px-3 text-center text-slate-300 font-mono tabular-nums">
                         {item.quantityKg.toFixed(2).replace('.', ',')} kg
                       </td>
-                      <td className="py-2.5 px-2.5 sm:px-3 text-right font-bold text-sm text-pink-400 font-mono">
+                      <td className="py-1.5 px-3 text-right font-bold text-pink-400 font-mono tabular-nums">
                         {item.estimatedPrice.toFixed(2).replace('.', ',')}
                       </td>
                     </tr>
@@ -765,7 +766,7 @@ export default function EuPorkMarketModule({
               </table>
             </div>
 
-            <p className="text-xs text-slate-400 italic text-left pt-0.5">
+            <p className="text-[11px] text-slate-400 italic text-left pt-0.5">
               Prețuri estimative calculate pe baza costului carcasei și a randamentelor de tranșare. Nu reprezintă cotații de piață.
             </p>
           </div>
