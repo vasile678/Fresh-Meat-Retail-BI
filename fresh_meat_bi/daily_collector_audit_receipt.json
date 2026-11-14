@@ -1,12 +1,12 @@
 {
-  "execution_date": "13.11.2026",
-  "start_time_bucharest": "2026-11-13 14:47:05",
-  "end_time_bucharest": "2026-11-13 14:47:37",
-  "start_time_iso": "2026-11-13T14:47:05.618613+02:00",
-  "end_time_iso": "2026-11-13T14:47:37.050216+02:00",
-  "duration_seconds": 31.43,
+  "execution_date": "14.11.2026",
+  "start_time_bucharest": "2026-11-14 13:54:04",
+  "end_time_bucharest": "2026-11-14 13:54:36",
+  "start_time_iso": "2026-11-14T13:54:04.807220+02:00",
+  "end_time_iso": "2026-11-14T13:54:36.462710+02:00",
+  "duration_seconds": 31.66,
   "total_publications": 14,
-  "total_new_articles_accepted": 20,
+  "total_new_articles_accepted": 12,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -41,23 +41,8 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 6,
-      "new_articles_count": 6,
+      "new_articles_count": 3,
       "new_accepted": [
-        {
-          "title": "Zsolt Torjai: Am creat ORIX Event Hub pentru a simplifica organizarea evenimentelor corporate",
-          "published_at": "13.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/zsolt-torjai-am-creat-orix-event-hub-pentru-a-simplifica-organizarea-evenimentelor-corporate/"
-        },
-        {
-          "title": "Puratos își crește capacitatea de producție din România după o investiție de peste 15 mil. euro în noua fabrică",
-          "published_at": "13.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/puratos-isi-creste-capacitatea-de-productie-din-romania-dupa-o-investitie-de-peste-15-mil-euro-in-noua-fabrica/"
-        },
-        {
-          "title": "Aquila a raportat venituri de 2,5 miliarde de lei pentru primele trei trimestre din acest an",
-          "published_at": "13.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/aquila-a-raportat-venituri-de-25-miliarde-de-lei-pentru-primele-trei-trimestre-din-acest-an/"
-        },
         {
           "title": "30 de rețete și 14 autori în cartea „Banatul e fruntea în bucate!”, lansată de Cronicari Digitali",
           "published_at": "13.11.2026",
@@ -88,19 +73,19 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Vești mai bune pentru piața FMCG: vânzările cresc, iar volumele revin pe plus",
-          "published_at": "12.11.2026",
-          "url": "https://modernbuyer.ro/vesti-mai-bune-pentru-piata-fmcg-vanzarile-cresc-iar-volumele-revin-pe-plus/"
+          "title": "Exporturi românești de fructe și legume prin Lidl: 8.800 de tone și 6,8 mil. euro",
+          "published_at": "11.11.2026",
+          "url": "https://modernbuyer.ro/exporturi-romanesti-de-fructe-si-legume-prin-lidl-8-800-de-tone-si-68-mil-euro/"
         },
         {
-          "title": "Caroli Foods Group lansează o gamă de produse cu un aport ridicat de proteine",
-          "published_at": "12.11.2026",
-          "url": "https://modernbuyer.ro/caroli-foods-group-lanseaza-o-gama-de-produse-cu-un-aport-ridicat-de-proteine/"
+          "title": "20 de producători de food din Republica Moldova își prezintă oferta la București. Întâlniri B2B cu importatori, distribuitori și retaileri",
+          "published_at": "11.11.2026",
+          "url": "https://modernbuyer.ro/20-de-producatori-de-food-din-republica-moldova-isi-prezinta-oferta-la-bucuresti-intalniri-b2b-cu-importatori-distribuitori-si-retaileri/"
         },
         {
-          "title": "Puratos a finalizat investiții de 15 mil. euro într-o fabrică nouă în România",
-          "published_at": "12.11.2026",
-          "url": "https://modernbuyer.ro/puratos-a-finalizat-investitii-de-15-mil-euro-intr-o-fabrica-noua-in-romania/"
+          "title": "O companie românească pregătește lansarea unei noi rețele de magazine: Alma Cash & Carry",
+          "published_at": "11.11.2026",
+          "url": "https://modernbuyer.ro/o-companie-romaneasca-pregateste-lansarea-unei-noi-retele-de-magazine-alma-cash-carry/"
         }
       ],
       "rejected_count": 0,
@@ -117,25 +102,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Cometex deschide la Jilava prima fază din București Sud Retail Park, un nou pol de retail de peste 45.000 mp",
+          "title": "Retail & FMCG – Sinteza săptămânii 9 – 13 noiembrie 2026",
+          "published_at": "14.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-13-noiembrie-2026.html"
+        },
+        {
+          "title": "Andreea Vârvoreanu s-a alăturat Grupului DIANA în calitate de Director Marketing",
           "published_at": "13.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/cometex-jilava-bucuresti-sud-retail-park.html"
+          "url": "https://www.retail-fmcg.ro/retail/andreea-varvoreanu-grupul-diana-director-marketing.html"
         },
         {
-          "title": "Coca-Cola HBC România și Asociația The Social Incubator investesc în viitorul profesional al tinerilor din România",
+          "title": "Puratos investește peste 15 milioane de euro într-o nouă fabrică în România, cea mai mare investiție locală din istoria companiei",
           "published_at": "12.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/coca-cola-hbc-investitie-tineri.html"
-        },
-        {
-          "title": "PENNY inaugurează primul magazin din Sâncraiu de Mureș și ajunge la 479 de unități la nivel național",
-          "published_at": "11.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/penny-magazin-sancraiu-de-mures-479.html"
+          "url": "https://www.retail-fmcg.ro/fmcg/puratos-noua-fabrica-romania.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "13.11.2026"
+      "latest_published_at": "14.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -143,19 +128,8 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
-      "new_accepted": [
-        {
-          "title": "Mieii ușori se scumpesc mai repede în UE. Cum se poziționează România?",
-          "published_at": "13.11.2026",
-          "url": "https://www.meat-milk.ro/article/mieii-usori-se-scumpesc-mai-repede-in-ue-cum-se-pozitioneaza-romania-s8Y1EmIl"
-        },
-        {
-          "title": "Laptele se redresează la poarta fermei, dar piața lactatelor merge în două direcții",
-          "published_at": "13.11.2026",
-          "url": "https://www.meat-milk.ro/article/laptele-se-redreseaza-la-poarta-fermei-dar-piata-lactatelor-merge-in-doua-directii-5PLJdkbf"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -245,24 +219,8 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
-      "new_accepted": [
-        {
-          "title": "Provacuno completa el mapa ambiental del sector en España con la ampliación de su app web ‘Huella Vacuno Sostenible’ a la industria La Interprofesional de la Carne de Vacuno de España (Provacuno) ha anunciado que ya se encuentra disponible el módulo industrial... Más información",
-          "published_at": "13.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72663/kw/Provacuno+completa+el+mapa+ambiental+del+sector+en+Espa%C3%B1a+con+la+ampliaci%C3%B3n+de+su+app+web+%E2%80%98Huella+Vacuno+Sostenible%E2%80%99+a+la+industria"
-        },
-        {
-          "title": "CharcutExpo se traslada a Barcelona para celebrar su segunda edición los días 11 y 12 de mayo de 2027",
-          "published_at": "12.05.2027",
-          "url": "https://eurocarne.com/noticias/codigo/72741/kw/CharcutExpo+se+traslada+a+Barcelona+para+celebrar+su+segunda+edici%C3%B3n+los+d%C3%ADas+11+y+12+de+mayo+de+2027"
-        },
-        {
-          "title": "APAE y la Universidad de Córdoba abren la preinscripción del Diploma en Comunicación Agroalimentaria",
-          "published_at": "13.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72737/kw/APAE+y+la+Universidad+de+C%C3%B3rdoba+abren+la+preinscripci%C3%B3n+del+Diploma+en+Comunicaci%C3%B3n+Agroalimentaria"
-        }
-      ],
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -277,19 +235,19 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "BonÀrea abre un nuevo supermercado en Bescanó y suma 51 tiendas en la provincia de Girona",
-          "published_at": "13.11.2026",
-          "url": "https://www.foodretail.es/retailers/bonarea-abre-un-nuevo-supermercado-en-bescano-y-suma-51-tiendas-en-la-provincia-de-girona.html"
+          "title": "El Corte Inglés eleva un 11% su beneficio neto en el primer semestre 2024-25, hasta los 203 millones",
+          "published_at": "12.11.2026",
+          "url": "https://www.foodretail.es/retailers/el-corte-ingles-eleva-un-11-su-beneficio-neto-en-el-primer-semestre-2024-25-hasta-los-203-millones.html"
         },
         {
-          "title": "Lidl abre una nueva tienda en el barrio de Patraix, en Valencia",
-          "published_at": "13.11.2026",
-          "url": "https://www.foodretail.es/retailers/lidl-abre-una-nueva-tienda-en-el-barrio-de-patraix-en-valencia.html"
+          "title": "Carlos Pedreira (Alcampo): \"En 2027 vamos a crecer más rápido, con un gran foco en la franquicia\"",
+          "published_at": "11.11.2026",
+          "url": "https://www.foodretail.es/retailers/carlos-pedreira-alcampo-en-2027-vamos-a-crecer-mas-rapido-con-un-gran-foco-en-la-franquicia.html"
         },
         {
-          "title": "Los supermercados acumulan 145 millones de euros de sobrecoste eléctrico por la guerra de Irán",
-          "published_at": "13.11.2026",
-          "url": "https://www.foodretail.es/retailers/los-supermercados-acumulan-145-millones-de-euros-de-sobrecoste-electrico-por-la-guerra-de-iran.html"
+          "title": "Dia pone fin a su última aventura internacional: vende su filial argentina por 53,8 millones de dólares",
+          "published_at": "05.11.2026",
+          "url": "https://www.foodretail.es/retailers/dia-pone-fin-a-su-ultima-aventura-internacional-vende-su-filial-argentina-por-55-millones-de-dolares.html"
         }
       ],
       "rejected_count": 0,
