@@ -1,12 +1,12 @@
 {
-  "execution_date": "15.11.2026",
-  "start_time_bucharest": "2026-11-15 14:26:47",
-  "end_time_bucharest": "2026-11-15 14:27:16",
-  "start_time_iso": "2026-11-15T14:26:47.401335+02:00",
-  "end_time_iso": "2026-11-15T14:27:16.749257+02:00",
-  "duration_seconds": 29.35,
+  "execution_date": "16.11.2026",
+  "start_time_bucharest": "2026-11-16 15:18:42",
+  "end_time_bucharest": "2026-11-16 15:19:07",
+  "start_time_iso": "2026-11-16T15:18:42.417514+02:00",
+  "end_time_iso": "2026-11-16T15:19:07.936037+02:00",
+  "duration_seconds": 25.52,
   "total_publications": 14,
-  "total_new_articles_accepted": 12,
+  "total_new_articles_accepted": 16,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -102,25 +102,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Coca-Cola HBC România și Asociația The Social Incubator investesc în viitorul profesional al tinerilor din România",
-          "published_at": "12.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/coca-cola-hbc-investitie-tineri.html"
+          "title": "Zitec: Atacurile asupra supermarketurilor europene au pornit din accese în care companiile aveau încredere",
+          "published_at": "16.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/zitec-atacuri-supermarteuri-europene.html"
         },
         {
-          "title": "Caroli Foods Group accelerează inovația în portofoliu prin extinderea brandului Caroli în categoria high protein",
-          "published_at": "12.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/caroli-foods-group-portofoliu-high-protein.html"
+          "title": "Teodora Agafiței, Bergenbier: „Promoția poate aduce o primă achiziție, dar încrederea îl face pe cumpărător să revină”",
+          "published_at": "16.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/teodora-agafitei-bergenbier-interviu-retail-fmcg-ro.html"
         },
         {
-          "title": "Puratos investește peste 15 milioane de euro într-o nouă fabrică în România, cea mai mare investiție locală din istoria companiei",
-          "published_at": "12.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/puratos-noua-fabrica-romania.html"
+          "title": "România a înregistrat cea mai mare creștere a valorii producției agricole din UE în 2025",
+          "published_at": "16.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/romania-a-inregistrat-cea-mai-mare-crestere-a-valorii-productiei-agricole-din-ue-in-2025.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "14.11.2026"
+      "latest_published_at": "16.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -128,12 +128,23 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Zootehnia europeană în 2025: mai multă producție sau prețuri mai mari?",
+          "published_at": "16.11.2026",
+          "url": "https://www.meat-milk.ro/article/zootehnia-europeana-in-2025-mai-multa-productie-sau-preturi-mai-mari-YAxfxCXR"
+        },
+        {
+          "title": "Ce cumpără PAC, de fapt, când sprijină o fermă de munte?",
+          "published_at": "16.11.2026",
+          "url": "https://www.meat-milk.ro/article/ce-cumpara-pac-de-fapt-cand-sprijina-o-ferma-de-munte-W1LXSqOU"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "13.11.2026"
+      "latest_published_at": "16.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -219,8 +230,19 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Dave Bruntz asume la presidencia de Usmef en la conferencia de su 50 aniversario",
+          "published_at": "16.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72748/kw/Dave+Bruntz+asume+la+presidencia+de+Usmef%26nbsp%3Ben+la+conferencia+de+su+50+aniversario"
+        },
+        {
+          "title": "La conselleira del Medio Rural visita la sala de despiece de Avigal en Cambados",
+          "published_at": "16.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72747/kw/La+conselleira+del+Medio+Rural+visita+la+sala+de+despiece+de+Avigal+en+Cambados"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -235,25 +257,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "3 Eroski suspende su publicidad en TikTok después de los escándalos por pedofilia en la red social china",
-          "published_at": "13.11.2026",
-          "url": "https://www.foodretail.es/retailers/eroski-suspende-su-publicidad-en-tiktok-despues-de-los-escandalos-por-pedofilia-en-la-red-social-china.html"
+          "title": "El Jamón completa la integración de Supermercados Dani",
+          "published_at": "16.11.2026",
+          "url": "https://www.foodretail.es/retailers/el-jamon-completa-la-integracion-de-supermercados-dani.html"
         },
         {
-          "title": "4 Ametller Origen, única cadena española en sumarse al etiquetado ambiental de alimentos",
-          "published_at": "13.11.2026",
-          "url": "https://www.foodretail.es/retailers/ametller-origen-unica-cadena-en-espana-en-sumarse-al-etiquetado-ambiental-de-alimentos.html"
+          "title": "BM Supermercados abre una nueva franquicia en Bilbao y alcanza las 354 tiendas",
+          "published_at": "16.11.2026",
+          "url": "https://www.foodretail.es/retailers/bm-supermercados-abre-una-nueva-franquicia-en-bilbao-y-alcanza-las-354-tiendas.html"
         },
         {
-          "title": "1 La Despensa Supermercados abre una tienda en Illescas (Toledo) con 1.500 m2",
-          "published_at": "13.11.2026",
-          "url": "https://www.foodretail.es/retailers/la-despensa-supermercados-abre-una-tienda-en-illescas-toledo-con-1500-m2.html"
+          "title": "Consum inaugura supermercado en el Mercat de l'Abaceria de Barcelona",
+          "published_at": "16.11.2026",
+          "url": "https://www.foodretail.es/retailers/consum-inaugura-supermercado-en-el-mercat-de-labaceria-de-barcelona.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "13.11.2026"
+      "latest_published_at": "16.11.2026"
     }
   ]
 }
