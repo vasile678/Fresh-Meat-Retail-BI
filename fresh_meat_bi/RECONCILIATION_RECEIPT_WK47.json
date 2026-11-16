@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "dataset_sha256": "ca2aae555c632cf21bff79dc7afabaa9fb883e5614efbab9d30b7116ab507298",
+  "week": "WK47",
+  "year": 2026,
+  "reconciled_at": "2026-11-16T14:25:47.368814+00:00",
+  "conflict_count": 0,
+  "resolution": "ALL_CELLS_RECONCILED"
+}
