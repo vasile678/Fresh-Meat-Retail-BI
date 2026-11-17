@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "16.11.2026 16:25:33 EET",
-  "evaluated_at_utc": "2026-11-16T14:25:33.422785+00:00",
+  "evaluated_at_bucharest": "17.11.2026 18:49:47 EET",
+  "evaluated_at_utc": "2026-11-17T16:49:47.029696+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -21,33 +21,28 @@
   "status": "EXECUTION_ERROR",
   "recovery_check": {
     "dataset_path": "/home/runner/work/Fresh-Meat-Retail-BI/Fresh-Meat-Retail-BI/fresh_meat_bi/PROMO_WEEKLY_CANONICAL_LOCK_WK47.json",
-    "dataset_exists": false,
-    "research_receipt_exists": false,
-    "reconciliation_receipt_exists": false,
-    "missing_prerequisites": [
-      "DATASET_MISSING (PROMO_WEEKLY_CANONICAL_LOCK_WK47.json)",
-      "RESEARCH_RECEIPT_MISSING (RESEARCH_RECEIPT_WK47.json)",
-      "RECONCILIATION_RECEIPT_MISSING (RECONCILIATION_RECEIPT_WK47.json)"
-    ],
-    "can_auto_publish": false,
+    "dataset_exists": true,
+    "research_receipt_exists": true,
+    "reconciliation_receipt_exists": true,
+    "missing_prerequisites": [],
+    "can_auto_publish": true,
     "policy": "FAIL_CLOSED"
   },
-  "block_reason": "MISSING_VERIFIED_PREREQUISITES",
-  "detail": "Ora 09:00 a trecut pentru săptămâna WK47 (16–22 NOI 2026), dar dovezile verificate 25/25 lipsesc (DATASET_MISSING (PROMO_WEEKLY_CANONICAL_LOCK_WK47.json), RESEARCH_RECEIPT_MISSING (RESEARCH_RECEIPT_WK47.json), RECONCILIATION_RECEIPT_MISSING (RECONCILIATION_RECEIPT_WK47.json)). Conform politicii FAIL_CLOSED, raportul anterior (WK46 2026) este păstrat ca ultim raport oficial validat.",
+  "detail": "Toate premisele pentru WK47 sunt prezente. Recuperarea poate fi executată.",
   "collector_audit": {
     "coverage": "25/25",
-    "verified_count": 8,
-    "nv_count": 17,
+    "verified_count": 7,
+    "nv_count": 18,
     "nc_count": 0,
     "release_eligible": true,
-    "dataset_sha256": "ca2aae555c632cf21bff79dc7afabaa9fb883e5614efbab9d30b7116ab507298"
+    "dataset_sha256": "5e4b87f15c788738e5fb41a7a73802186e6398565b2dca48709fc5c7a8e98572"
   },
   "result_code": "EXECUTION_ERROR",
   "recovery_action": "PIPELINE_FAILED_FAIL_CLOSED",
   "action_result": {
     "status": "FAIL_CLOSED",
     "stderr": "",
-    "stdout": "fă porc fără os (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Lidl - Piept pui dezosat (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: PENNY - Piept pui dezosat (28.10–10.11.2026) a expirat la 2026-11-10 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Auchan - Ceafă porc fără os (04.11–10.11.2026) a expirat la 2026-11-10 înainte de luni 2026-11-16 din WK47']\n",
+    "stdout": "tlet porc fără os (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Lidl - Ceafă porc fără os (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Lidl - Piept pui dezosat (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: PENNY - Piept pui dezosat (28.10–10.11.2026) a expirat la 2026-11-10 înainte de luni 2026-11-16 din WK47']\n",
     "retained_active_week": "WK46",
     "retained_active_release_id": "2026/WK46_9d7e5d6b"
   }
