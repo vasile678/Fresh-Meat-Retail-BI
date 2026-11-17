@@ -1,12 +1,12 @@
 {
-  "execution_date": "16.11.2026",
-  "start_time_bucharest": "2026-11-16 15:18:42",
-  "end_time_bucharest": "2026-11-16 15:19:07",
-  "start_time_iso": "2026-11-16T15:18:42.417514+02:00",
-  "end_time_iso": "2026-11-16T15:19:07.936037+02:00",
-  "duration_seconds": 25.52,
+  "execution_date": "17.11.2026",
+  "start_time_bucharest": "2026-11-17 16:03:36",
+  "end_time_bucharest": "2026-11-17 16:04:04",
+  "start_time_iso": "2026-11-17T16:03:36.302873+02:00",
+  "end_time_iso": "2026-11-17T16:04:04.019089+02:00",
+  "duration_seconds": 27.72,
   "total_publications": 14,
-  "total_new_articles_accepted": 16,
+  "total_new_articles_accepted": 18,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -41,28 +41,33 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 6,
-      "new_articles_count": 3,
+      "new_articles_count": 4,
       "new_accepted": [
         {
-          "title": "30 de rețete și 14 autori în cartea „Banatul e fruntea în bucate!”, lansată de Cronicari Digitali",
-          "published_at": "13.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/30-de-retete-si-14-autori-in-cartea-banatul-e-fruntea-in-bucate-lansata-de-cronicari-digitali/"
+          "title": "Gastronomie, experiențe ecvestre, patinoar, meșteșuguri și spectacole de sezon, la Issa Christmas Fair",
+          "published_at": "17.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/gastronomie-experiente-ecvestre-patinoar-mestesuguri-si-spectacole-de-sezon-la-issa-christmas-fair/"
         },
         {
-          "title": "Brandul românesc 5 to go, pe locul 4 în topul celor mai mari lanțuri de cafenele din Europa",
-          "published_at": "12.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/brandul-romanesc-5-to-go-pe-locul-4-in-topul-celor-mai-mari-lanturi-de-cafenele-din-europa/"
+          "title": "Sippers Bucharest Cocktail Bar a investit 345.000 de euro pentru a se reloca într-un nou spațiu",
+          "published_at": "17.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/sippers-bucharest-cocktail-bar-a-investit-345-000-de-euro-pentru-a-se-reloca-intr-un-nou-spatiu/"
         },
         {
-          "title": "Deli Group Professional Services deschide un restaurant în Business Garden Bucharest, proiect dezvoltat de Vastint",
-          "published_at": "12.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/deli-group-deschide-un-restaurant-in-business-garden-bucharest-proiect-dezvoltat-de-vastint-2/"
+          "title": "PPD Global România își extinde portofoliul de băuturi spirtoase premium printr-un parteneriat cu Gruppo Montenegro",
+          "published_at": "17.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/ppd-global-romania-isi-extinde-portofoliul-de-bauturi-spirtoase-premium-printr-un-parteneriat-cu-gruppo-montenegro/"
+        },
+        {
+          "title": "Popeyes va deschide la Cluj și Ploiești, ajungând la 25 de restaurante",
+          "published_at": "16.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/popeyes-va-deschide-la-cluj-si-ploiesti-ajungand-la-25-de-restaurante/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "13.11.2026"
+      "latest_published_at": "17.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -73,25 +78,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
+          "title": "Guest Editorial: Cum transformăm exportul de mărfuri în export de branduri",
+          "published_at": "17.11.2026",
+          "url": "https://modernbuyer.ro/guest-editorial-cum-transformam-exportul-de-marfuri-in-export-de-branduri/"
+        },
+        {
+          "title": "Brânzeturi românești premiate la prestigioasa competiție World Cheese Awards",
+          "published_at": "17.11.2026",
+          "url": "https://modernbuyer.ro/36196-2/"
+        },
+        {
           "title": "Exporturi românești de fructe și legume prin Lidl: 8.800 de tone și 6,8 mil. euro",
           "published_at": "11.11.2026",
           "url": "https://modernbuyer.ro/exporturi-romanesti-de-fructe-si-legume-prin-lidl-8-800-de-tone-si-68-mil-euro/"
-        },
-        {
-          "title": "20 de producători de food din Republica Moldova își prezintă oferta la București. Întâlniri B2B cu importatori, distribuitori și retaileri",
-          "published_at": "11.11.2026",
-          "url": "https://modernbuyer.ro/20-de-producatori-de-food-din-republica-moldova-isi-prezinta-oferta-la-bucuresti-intalniri-b2b-cu-importatori-distribuitori-si-retaileri/"
-        },
-        {
-          "title": "O companie românească pregătește lansarea unei noi rețele de magazine: Alma Cash & Carry",
-          "published_at": "11.11.2026",
-          "url": "https://modernbuyer.ro/o-companie-romaneasca-pregateste-lansarea-unei-noi-retele-de-magazine-alma-cash-carry/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "12.11.2026"
+      "latest_published_at": "17.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -102,25 +107,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Zitec: Atacurile asupra supermarketurilor europene au pornit din accese în care companiile aveau încredere",
-          "published_at": "16.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/zitec-atacuri-supermarteuri-europene.html"
+          "title": "Lidl și Kaufland, singurii retaileri din studiul ICAP CRIF cu lichiditate imediată satisfăcătoare în 2025",
+          "published_at": "17.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/lidl-kaufland-retaileri-studiul-icap-crif-lichiditate-imediata-satisfacatoare-2025.html"
         },
         {
-          "title": "Teodora Agafiței, Bergenbier: „Promoția poate aduce o primă achiziție, dar încrederea îl face pe cumpărător să revină”",
-          "published_at": "16.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/teodora-agafitei-bergenbier-interviu-retail-fmcg-ro.html"
+          "title": "Retail & FMCG – Sinteza săptămânii 9 – 13 noiembrie 2026",
+          "published_at": "14.11.2026",
+          "url": "https://www.retail-fmcg.ro/analize/retail-fmcg-sinteza-13-noiembrie-2026.html"
         },
         {
-          "title": "România a înregistrat cea mai mare creștere a valorii producției agricole din UE în 2025",
-          "published_at": "16.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/romania-a-inregistrat-cea-mai-mare-crestere-a-valorii-productiei-agricole-din-ue-in-2025.html"
+          "title": "Andreea Vârvoreanu s-a alăturat Grupului DIANA în calitate de Director Marketing",
+          "published_at": "13.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/andreea-varvoreanu-grupul-diana-director-marketing.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "16.11.2026"
+      "latest_published_at": "17.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -131,20 +136,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Zootehnia europeană în 2025: mai multă producție sau prețuri mai mari?",
-          "published_at": "16.11.2026",
-          "url": "https://www.meat-milk.ro/article/zootehnia-europeana-in-2025-mai-multa-productie-sau-preturi-mai-mari-YAxfxCXR"
+          "title": "O industrie întreagă, în aceeași sală!",
+          "published_at": "17.11.2026",
+          "url": "https://www.meat-milk.ro/article/o-industrie-intreaga-in-aceeasi-sala-wWm0Sws7"
         },
         {
-          "title": "Ce cumpără PAC, de fapt, când sprijină o fermă de munte?",
-          "published_at": "16.11.2026",
-          "url": "https://www.meat-milk.ro/article/ce-cumpara-pac-de-fapt-cand-sprijina-o-ferma-de-munte-W1LXSqOU"
+          "title": "România livrează mai multe brânzeturi în UE. La unt, diferența se adâncește",
+          "published_at": "17.11.2026",
+          "url": "https://www.meat-milk.ro/article/romania-livreaza-mai-multe-branzeturi-in-ue-la-unt-diferenta-se-adanceste-vJPqW0dG"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "16.11.2026"
+      "latest_published_at": "17.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -230,17 +235,22 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Dave Bruntz asume la presidencia de Usmef en la conferencia de su 50 aniversario",
-          "published_at": "16.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72748/kw/Dave+Bruntz+asume+la+presidencia+de+Usmef%26nbsp%3Ben+la+conferencia+de+su+50+aniversario"
+          "title": "El canal Horeca concentra ya casi la mitad del consumo de ovino-caprino en España El consumo de carne de ovino y caprino fuera del hogar casi se ha duplicado en España entre 2009 y 2025 (+92 %). En el mismo... Más información",
+          "published_at": "17.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72751/kw/El+canal+Horeca+concentra+ya+casi+la+mitad+del+consumo+de+ovino-caprino+en+Espa%C3%B1a"
         },
         {
-          "title": "La conselleira del Medio Rural visita la sala de despiece de Avigal en Cambados",
-          "published_at": "16.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72747/kw/La+conselleira+del+Medio+Rural+visita+la+sala+de+despiece+de+Avigal+en+Cambados"
+          "title": "Anafric pide al próximo Gobierno una estrategia nacional para la ganadería y la industria cárnica",
+          "published_at": "17.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72769/kw/Anafric+pide+al+pr%C3%B3ximo+Gobierno+una+estrategia+nacional+para+la+ganader%C3%ADa+y+la+industria+c%C3%A1rnica"
+        },
+        {
+          "title": "ElPozo Alimentación refuerza su patrocinio de la Selección Española con acciones para aficionados",
+          "published_at": "17.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72768/kw/ElPozo+Alimentaci%C3%B3n+refuerza+su+patrocinio+de+la+Selecci%C3%B3n+Espa%C3%B1ola+con+acciones+para+aficionados"
         }
       ],
       "rejected_count": 0,
@@ -257,25 +267,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "El Jamón completa la integración de Supermercados Dani",
-          "published_at": "16.11.2026",
-          "url": "https://www.foodretail.es/retailers/el-jamon-completa-la-integracion-de-supermercados-dani.html"
+          "title": "Mercadona abre en Aranda de Duero su primera Tienda 9 de Burgos",
+          "published_at": "17.11.2026",
+          "url": "https://www.foodretail.es/retailers/mercadona-abre-en-aranda-de-duero-su-primera-tienda-9-de-burgos.html"
         },
         {
-          "title": "BM Supermercados abre una nueva franquicia en Bilbao y alcanza las 354 tiendas",
+          "title": "1 Spar Gran Canaria amplía su oferta con nuevas referencias de legumbres a granel",
           "published_at": "16.11.2026",
-          "url": "https://www.foodretail.es/retailers/bm-supermercados-abre-una-nueva-franquicia-en-bilbao-y-alcanza-las-354-tiendas.html"
+          "url": "https://www.foodretail.es/retailers/spar-gran-canaria-amplia-su-oferta-con-nuevas-referencias-de-legumbres-a-granel.html"
         },
         {
-          "title": "Consum inaugura supermercado en el Mercat de l'Abaceria de Barcelona",
+          "title": "5 Bon Preu renueva las etiquetas de la carne envasada para dar mayor visibilidad a los productos",
           "published_at": "16.11.2026",
-          "url": "https://www.foodretail.es/retailers/consum-inaugura-supermercado-en-el-mercat-de-labaceria-de-barcelona.html"
+          "url": "https://www.foodretail.es/retailers/bon-preu-renueva-las-etiquetas-de-la-carne-envasada-para-dar-mayor-visibilidad-a-los-productos.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "16.11.2026"
+      "latest_published_at": "17.11.2026"
     }
   ]
 }
