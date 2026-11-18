@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-18T15:38:39.352735+02:00",
+  "generated_at_utc": "2026-11-18T18:21:11.673733+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -46,7 +46,7 @@
       "period": "11.11.2026 – 18.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "399e1cd86852a3bbaeb82f4475573f33b505ee850fed8cacffe435da1c9f8e20",
+      "dataset_sha256": "2caa825420a7d1c624188cf76d609bbc708d3abc015519256302228e4349a761",
       "verified_publications_count": 14,
       "verified_articles_count": 42
     },

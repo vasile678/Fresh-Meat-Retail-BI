@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "17.11.2026 18:49:47 EET",
-  "evaluated_at_utc": "2026-11-17T16:49:47.029696+00:00",
+  "evaluated_at_bucharest": "18.11.2026 18:21:11 EET",
+  "evaluated_at_utc": "2026-11-18T16:21:11.770416+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -35,7 +35,7 @@
     "nv_count": 18,
     "nc_count": 0,
     "release_eligible": true,
-    "dataset_sha256": "5e4b87f15c788738e5fb41a7a73802186e6398565b2dca48709fc5c7a8e98572"
+    "dataset_sha256": "843019a35a188b9d57b2636f3f8f0d0bc6a3a060290dac20bfcb6b8e58903d48"
   },
   "result_code": "EXECUTION_ERROR",
   "recovery_action": "PIPELINE_FAILED_FAIL_CLOSED",
