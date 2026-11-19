@@ -1,12 +1,12 @@
 {
-  "execution_date": "18.11.2026",
-  "start_time_bucharest": "2026-11-18 15:38:02",
-  "end_time_bucharest": "2026-11-18 15:38:26",
-  "start_time_iso": "2026-11-18T15:38:02.011715+02:00",
-  "end_time_iso": "2026-11-18T15:38:26.148671+02:00",
-  "duration_seconds": 24.14,
+  "execution_date": "19.11.2026",
+  "start_time_bucharest": "2026-11-19 16:04:17",
+  "end_time_bucharest": "2026-11-19 16:04:43",
+  "start_time_iso": "2026-11-19T16:04:17.710779+02:00",
+  "end_time_iso": "2026-11-19T16:04:43.543789+02:00",
+  "duration_seconds": 25.83,
   "total_publications": 14,
-  "total_new_articles_accepted": 17,
+  "total_new_articles_accepted": 19,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -41,28 +41,38 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 6,
-      "new_articles_count": 3,
+      "new_articles_count": 5,
       "new_accepted": [
         {
-          "title": "Vincent Dujardin, numit Director General al Swissôtel Bucharest. Hotelul se va deschide în 2027",
+          "title": "Vânzările Spartan au crescut cu 7% în primele zece luni, până la de 166 de milioane de lei",
+          "published_at": "19.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/vanzarile-spartan-au-crescut-cu-7-in-primele-zece-luni-pana-la-de-166-de-milioane-de-lei/"
+        },
+        {
+          "title": "Claudia Stan preia și funcția de Deputy General Manager al Domeniului Issa",
+          "published_at": "19.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/claudia-stan-preia-si-functia-de-deputy-general-manager-al-domeniului-issa/"
+        },
+        {
+          "title": "A IV-a ediție a Conferinței Naționale a Punctelor Gastronomice Locale are loc în perioada 20-21 noiembrie",
+          "published_at": "19.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/a-iv-a-editie-a-conferintei-nationale-a-punctelor-gastronomice-locale-are-loc-in-perioada-20-21-noiembrie/"
+        },
+        {
+          "title": "Marian Anghel, OmniaGusti: Avantajul competitiv aparține celor care pot livra soluții integrate",
           "published_at": "18.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/vincent-dujardin-numit-director-general-al-swissotel-bucharest-hotelul-se-va-deschide-in-2027/"
+          "url": "https://www.trendshrb.ro/business/marian-anghel-omniagusti-avantajul-competitiv-apartine-celor-care-pot-livra-solutii-integrate-nu-doar-produse/"
         },
         {
-          "title": "Popeyes va deschide la Cluj și Ploiești, ajungând la 25 de restaurante",
-          "published_at": "16.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/popeyes-va-deschide-la-cluj-si-ploiesti-ajungand-la-25-de-restaurante/"
-        },
-        {
-          "title": "Zsolt Torjai: Am creat ORIX Event Hub pentru a simplifica organizarea evenimentelor corporate",
-          "published_at": "13.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/zsolt-torjai-am-creat-orix-event-hub-pentru-a-simplifica-organizarea-evenimentelor-corporate/"
+          "title": "Visit Oradea, parteneriat cu proiectul HOST pentru susținerea dezvoltării competențelor profesionale în industria ospitalității",
+          "published_at": "18.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/visit-oradea-parteneriat-cu-proiectul-host-pentru-sustinerea-dezvoltarii-competentelor-profesionale-in-industria-ospitalitatii/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "18.11.2026"
+      "latest_published_at": "19.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -73,9 +83,9 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "“Hype-ul” lansării PAM PAM: 60.000 de sucuri vândute de gamerul Sky în primul weekend în Kaufland",
-          "published_at": "18.11.2026",
-          "url": "https://modernbuyer.ro/hype-ul-lansarii-pam-pam-60-000-de-sucuri-vandute-de-gamerul-sky-in-primul-weekend-in-kaufland/"
+          "title": "Vești mai bune pentru piața FMCG: vânzările cresc, iar volumele revin pe plus",
+          "published_at": "12.11.2026",
+          "url": "https://modernbuyer.ro/vesti-mai-bune-pentru-piata-fmcg-vanzarile-cresc-iar-volumele-revin-pe-plus/"
         },
         {
           "title": "Caroli Foods Group lansează o gamă de produse cu un aport ridicat de proteine",
@@ -102,25 +112,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Lidl România inaugurează pe 19 noiembrie primul său magazin din Vicovu de Sus",
-          "published_at": "18.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/lidl-romania-magazin-vicovu-de-sus.html"
+          "title": "K-Beauty, categoria produselor cosmetice sud-coreene de îngrijire a pielii, a ajuns la o cotă de aproximativ 15% din piața românească de skincare",
+          "published_at": "19.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/k-beauty-piata-romaneasca-skincare-one-master-distribution.html"
         },
         {
-          "title": "Kaufland lansează Kaufland Pay, pentru plata cumpărăturilor direct din aplicație",
-          "published_at": "17.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/kaufland-pay-plata-cumparaturi-direct-aplicatie.html"
+          "title": "Votat Produsul Anului®: Cum transformă brandurile inovația în încredere și vizibilitate la raft",
+          "published_at": "19.11.2026",
+          "url": "https://www.retail-fmcg.ro/evenimente/votat-produsul-anului-cum-transforma-brandurile-inovatia-in-incredere-si-vizibilitate-la-raft.html"
         },
         {
-          "title": "România a înregistrat cea mai mare creștere a valorii producției agricole din UE în 2025",
+          "title": "Zitec: Atacurile asupra supermarketurilor europene au pornit din accese în care companiile aveau încredere",
           "published_at": "16.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/romania-a-inregistrat-cea-mai-mare-crestere-a-valorii-productiei-agricole-din-ue-in-2025.html"
+          "url": "https://www.retail-fmcg.ro/analize/zitec-atacuri-supermarteuri-europene.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "18.11.2026"
+      "latest_published_at": "19.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -128,28 +138,23 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Andreea Vârvoreanu preia conducerea marketingului în Grupul DIANA",
-          "published_at": "18.11.2026",
-          "url": "https://www.meat-milk.ro/article/andreea-varvoreanu-preia-conducerea-marketingului-in-grupul-diana-Oe6IY3uO"
+          "title": "Cât lapte susține furajul din siloz? Rația de iarnă începe cu o analiză",
+          "published_at": "19.11.2026",
+          "url": "https://www.meat-milk.ro/article/cat-lapte-sustine-furajul-din-siloz-ratia-de-iarna-incepe-cu-o-analiza-1RPXg5BH"
         },
         {
-          "title": "Opt medalii la World Cheese Awards 2026: brânzeturile românești își confirmă valoarea la Córdoba",
-          "published_at": "18.11.2026",
-          "url": "https://www.meat-milk.ro/article/opt-medalii-la-world-cheese-awards-2026-branzeturile-romanesti-isi-confirma-valoarea-la-cordoba-eC2qqM3l"
-        },
-        {
-          "title": "Carnea de pasăre, în centrul avertismentului privind acordul UE–Thailanda",
-          "published_at": "18.11.2026",
-          "url": "https://www.meat-milk.ro/article/carnea-de-pasare-in-centrul-avertismentului-privind-acordul-ue-thailanda-Fsfft9kG"
+          "title": "Opt zile de la sacrificare: ce ar schimba proiectul pentru circuitul cărnii de porc?",
+          "published_at": "19.11.2026",
+          "url": "https://www.meat-milk.ro/article/opt-zile-de-la-sacrificare-ce-ar-schimba-proiectul-pentru-circuitul-carnii-de-porc-AGxowsWB"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "18.11.2026"
+      "latest_published_at": "19.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -235,17 +240,22 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Avianza, AMPE y Amaco piden cerrar el convenio de mataderos de aves y conejos",
-          "published_at": "18.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72776/kw/Avianza%2C+AMPE+y+Amaco+piden+cerrar+el+convenio+de+mataderos+de+aves+y+conejos"
+          "title": "FAM Stumabo inaugura su nueva sede de Paterna FAM Stumabo, compañía especializada en soluciones de corte de precisión para la industria alimentaria, ha inaugurado oficialmente... Más información",
+          "published_at": "19.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72778/kw/FAM+Stumabo+inaugura+su+nueva+sede+de+Paterna"
         },
         {
-          "title": "300.000 euros en ayudas para el funcionamiento de los mataderos de Islas Baleares",
-          "published_at": "18.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72774/kw/300.000+euros+en+ayudas+para+el+funcionamiento+de+los+mataderos+de+Islas+Baleares"
+          "title": "Argentina restringe los promotores del crecimiento en toda la cadena animal para impulsar sus exportaciones",
+          "published_at": "19.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72795/kw/Argentina+restringe+los+promotores+del+crecimiento+en+toda+la+cadena+animal+para+impulsar+sus+exportaciones"
+        },
+        {
+          "title": "Asturias destinará más de 6,7 millones de euros a la campaña de saneamiento ganadero de 2027",
+          "published_at": "19.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72793/kw/Asturias+destinar%C3%A1+m%C3%A1s+de+6%2C7+millones+de+euros+a+la+campa%C3%B1a+de+saneamiento+ganadero+de+2027"
         }
       ],
       "rejected_count": 0,
@@ -262,25 +272,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Beatriz Santos (Eroski): \"La Navidad puede ser una oportunidad para atraer al consumidor que se ha ido a la marca propia\"",
-          "published_at": "18.11.2026",
-          "url": "https://www.foodretail.es/retailers/beatriz-santos-eroski-la-navidad-puede-ser-una-oportunidad-para-atraer-al-consumidor-que-se-ha-ido-a-la-marca-propia.html"
+          "title": "Carrefour diversifica su negocio: presenta dos nuevas enseñas de restauración y travel retail",
+          "published_at": "19.11.2026",
+          "url": "https://www.foodretail.es/retailers/carrefour-diversifica-su-negocio-presenta-dos-nuevas-ensenas-de-restauracion-y-travel-retail.html"
         },
         {
-          "title": "Consum abre en Santa Fe su décimo supermercado en la provincia de Granada",
-          "published_at": "18.11.2026",
-          "url": "https://www.foodretail.es/retailers/consum-abre-en-santa-fe-su-decimo-supermercado-en-la-provincia-de-granada.html"
+          "title": "Gadisa abre un nuevo Claudio Express en Ortigueira (A Coruña)",
+          "published_at": "19.11.2026",
+          "url": "https://www.foodretail.es/retailers/gadisa-abre-un-nuevo-claudio-express-en-ortigueira-a-coruna.html"
         },
         {
-          "title": "Estas Navidades los españoles gastarán un 10% más, hasta los 1.067 euros",
-          "published_at": "18.11.2026",
-          "url": "https://www.foodretail.es/retailers/los-espanoles-gastaran-un-10-mas-estas-navidades-hasta-los-1067-euros.html"
+          "title": "Dia inaugura tiendas en Asturias, Aragón y Baleares",
+          "published_at": "19.11.2026",
+          "url": "https://www.foodretail.es/retailers/dia-inaugura-tiendas-en-asturias-aragon-y-baleares.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "18.11.2026"
+      "latest_published_at": "19.11.2026"
     }
   ]
 }
