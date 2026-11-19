@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0-scheduler-diagnosis",
-  "evaluated_at_bucharest": "18.11.2026 18:21:11 EET",
-  "evaluated_at_utc": "2026-11-18T16:21:11.770416+00:00",
+  "evaluated_at_bucharest": "19.11.2026 18:28:50 EET",
+  "evaluated_at_utc": "2026-11-19T16:28:50.166507+00:00",
   "timezone": "Europe/Bucharest",
   "schedule_rule": "Every Monday at 09:00 Europe/Bucharest",
   "target_release": {
@@ -31,18 +31,18 @@
   "detail": "Toate premisele pentru WK47 sunt prezente. Recuperarea poate fi executată.",
   "collector_audit": {
     "coverage": "25/25",
-    "verified_count": 7,
-    "nv_count": 18,
+    "verified_count": 8,
+    "nv_count": 17,
     "nc_count": 0,
     "release_eligible": true,
-    "dataset_sha256": "843019a35a188b9d57b2636f3f8f0d0bc6a3a060290dac20bfcb6b8e58903d48"
+    "dataset_sha256": "e01b0a62d8a5b12ccdad675b81816b25c4ba418ba211d1cdbb18656aaa6e23ab"
   },
   "result_code": "EXECUTION_ERROR",
   "recovery_action": "PIPELINE_FAILED_FAIL_CLOSED",
   "action_result": {
     "status": "FAIL_CLOSED",
     "stderr": "",
-    "stdout": "tlet porc fără os (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Lidl - Ceafă porc fără os (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Lidl - Piept pui dezosat (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: PENNY - Piept pui dezosat (28.10–10.11.2026) a expirat la 2026-11-10 înainte de luni 2026-11-16 din WK47']\n",
+    "stdout": "fă porc fără os (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Lidl - Piept pui dezosat (09.11–15.11.2026) a expirat la 2026-11-15 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: PENNY - Piept pui dezosat (28.10–10.11.2026) a expirat la 2026-11-10 înainte de luni 2026-11-16 din WK47', 'EXPIRED_OFFER_IN_DATASET: Auchan - Ceafă porc fără os (04.11–10.11.2026) a expirat la 2026-11-10 înainte de luni 2026-11-16 din WK47']\n",
     "retained_active_week": "WK46",
     "retained_active_release_id": "2026/WK46_9d7e5d6b"
   }
