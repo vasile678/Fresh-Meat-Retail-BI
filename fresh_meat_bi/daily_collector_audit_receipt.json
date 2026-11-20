@@ -1,12 +1,12 @@
 {
-  "execution_date": "19.11.2026",
-  "start_time_bucharest": "2026-11-19 16:04:17",
-  "end_time_bucharest": "2026-11-19 16:04:43",
-  "start_time_iso": "2026-11-19T16:04:17.710779+02:00",
-  "end_time_iso": "2026-11-19T16:04:43.543789+02:00",
-  "duration_seconds": 25.83,
+  "execution_date": "20.11.2026",
+  "start_time_bucharest": "2026-11-20 15:47:16",
+  "end_time_bucharest": "2026-11-20 15:47:42",
+  "start_time_iso": "2026-11-20T15:47:16.966622+02:00",
+  "end_time_iso": "2026-11-20T15:47:42.568842+02:00",
+  "duration_seconds": 25.6,
   "total_publications": 14,
-  "total_new_articles_accepted": 19,
+  "total_new_articles_accepted": 17,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -41,38 +41,28 @@
       "website": "https://www.trendshrb.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 6,
-      "new_articles_count": 5,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Vânzările Spartan au crescut cu 7% în primele zece luni, până la de 166 de milioane de lei",
-          "published_at": "19.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/vanzarile-spartan-au-crescut-cu-7-in-primele-zece-luni-pana-la-de-166-de-milioane-de-lei/"
+          "title": "Mihai Bârsan: Competiția Destinația Anului va avea, din 2027, un nou format",
+          "published_at": "20.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/mihai-barsan-competitia-destinatia-anului-va-avea-din-2027-un-nou-format/"
         },
         {
-          "title": "Claudia Stan preia și funcția de Deputy General Manager al Domeniului Issa",
-          "published_at": "19.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/claudia-stan-preia-si-functia-de-deputy-general-manager-al-domeniului-issa/"
+          "title": "Yalco România, afaceri de 78 de milioane de lei. Compania vizează dezvoltarea diviziei HoReCa și extinderea în Europa de Sud-Est",
+          "published_at": "20.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/yalco-romania-afaceri-de-78-de-milioane-de-lei-compania-vizeaza-dezvoltarea-diviziei-horeca-si-extinderea-in-europa-de-sud-est/"
         },
         {
-          "title": "A IV-a ediție a Conferinței Naționale a Punctelor Gastronomice Locale are loc în perioada 20-21 noiembrie",
-          "published_at": "19.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/a-iv-a-editie-a-conferintei-nationale-a-punctelor-gastronomice-locale-are-loc-in-perioada-20-21-noiembrie/"
-        },
-        {
-          "title": "Marian Anghel, OmniaGusti: Avantajul competitiv aparține celor care pot livra soluții integrate",
-          "published_at": "18.11.2026",
-          "url": "https://www.trendshrb.ro/business/marian-anghel-omniagusti-avantajul-competitiv-apartine-celor-care-pot-livra-solutii-integrate-nu-doar-produse/"
-        },
-        {
-          "title": "Visit Oradea, parteneriat cu proiectul HOST pentru susținerea dezvoltării competențelor profesionale în industria ospitalității",
-          "published_at": "18.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/visit-oradea-parteneriat-cu-proiectul-host-pentru-sustinerea-dezvoltarii-competentelor-profesionale-in-industria-ospitalitatii/"
+          "title": "Încă trei noi restaurante Popeyes planificate în luna decembrie pentru extinderea în țară",
+          "published_at": "20.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/inca-trei-noi-restaurante-popeyes-planificate-in-luna-decembrie-pentru-extinderea-in-tara/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "19.11.2026"
+      "latest_published_at": "20.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -83,6 +73,11 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
+          "title": "SeasonBox, soluție SIMPAK: De ce să cumpărați utilaje de lipire când le puteți închiria?",
+          "published_at": "19.11.2026",
+          "url": "https://modernbuyer.ro/seasonbox-solutie-simpak-de-ce-sa-cumparati-utilaje-de-lipire-cand-le-puteti-inchiria/"
+        },
+        {
           "title": "Vești mai bune pentru piața FMCG: vânzările cresc, iar volumele revin pe plus",
           "published_at": "12.11.2026",
           "url": "https://modernbuyer.ro/vesti-mai-bune-pentru-piata-fmcg-vanzarile-cresc-iar-volumele-revin-pe-plus/"
@@ -91,17 +86,12 @@
           "title": "Caroli Foods Group lansează o gamă de produse cu un aport ridicat de proteine",
           "published_at": "12.11.2026",
           "url": "https://modernbuyer.ro/caroli-foods-group-lanseaza-o-gama-de-produse-cu-un-aport-ridicat-de-proteine/"
-        },
-        {
-          "title": "Puratos a finalizat investiții de 15 mil. euro într-o fabrică nouă în România",
-          "published_at": "12.11.2026",
-          "url": "https://modernbuyer.ro/puratos-a-finalizat-investitii-de-15-mil-euro-intr-o-fabrica-noua-in-romania/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "18.11.2026"
+      "latest_published_at": "19.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -112,25 +102,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "K-Beauty, categoria produselor cosmetice sud-coreene de îngrijire a pielii, a ajuns la o cotă de aproximativ 15% din piața românească de skincare",
-          "published_at": "19.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/k-beauty-piata-romaneasca-skincare-one-master-distribution.html"
+          "title": "YALCO România marchează 20 de ani și anunță planuri pentru dezvoltarea diviziei HoReCa",
+          "published_at": "20.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/yalco-romania-marcheaza-20-de-ani-planuri-pentru-dezvoltarea-diviziei-horeca.html"
         },
         {
-          "title": "Votat Produsul Anului®: Cum transformă brandurile inovația în încredere și vizibilitate la raft",
+          "title": "Fragedo este desemnat, pentru al optulea an consecutiv, «#1 Brand for Kids by Forbes România» la categoria «cea mai de încredere marcă de carne proaspătă",
           "published_at": "19.11.2026",
-          "url": "https://www.retail-fmcg.ro/evenimente/votat-produsul-anului-cum-transforma-brandurile-inovatia-in-incredere-si-vizibilitate-la-raft.html"
+          "url": "https://www.retail-fmcg.ro/fmcg/fragedo-transavia-brand-for-kids.html"
         },
         {
-          "title": "Zitec: Atacurile asupra supermarketurilor europene au pornit din accese în care companiile aveau încredere",
-          "published_at": "16.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/zitec-atacuri-supermarteuri-europene.html"
+          "title": "Kaufland lansează Kaufland Pay, pentru plata cumpărăturilor direct din aplicație",
+          "published_at": "17.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/kaufland-pay-plata-cumparaturi-direct-aplicatie.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "19.11.2026"
+      "latest_published_at": "20.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -141,20 +131,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Cât lapte susține furajul din siloz? Rația de iarnă începe cu o analiză",
-          "published_at": "19.11.2026",
-          "url": "https://www.meat-milk.ro/article/cat-lapte-sustine-furajul-din-siloz-ratia-de-iarna-incepe-cu-o-analiza-1RPXg5BH"
+          "title": "Laptele trece prin pasteurizare. Ce bacterii pot rămâne?",
+          "published_at": "20.11.2026",
+          "url": "https://www.meat-milk.ro/article/laptele-trece-prin-pasteurizare-ce-bacterii-pot-ramane-Tw9d7d7p"
         },
         {
-          "title": "Opt zile de la sacrificare: ce ar schimba proiectul pentru circuitul cărnii de porc?",
-          "published_at": "19.11.2026",
-          "url": "https://www.meat-milk.ro/article/opt-zile-de-la-sacrificare-ce-ar-schimba-proiectul-pentru-circuitul-carnii-de-porc-AGxowsWB"
+          "title": "Fermele vor să investească. Cât durează până primesc undă verde?",
+          "published_at": "20.11.2026",
+          "url": "https://www.meat-milk.ro/article/fermele-vor-sa-investeasca-cat-dureaza-pana-primesc-unda-verde-2uVrxgZC"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "19.11.2026"
+      "latest_published_at": "20.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -243,19 +233,19 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "FAM Stumabo inaugura su nueva sede de Paterna FAM Stumabo, compañía especializada en soluciones de corte de precisión para la industria alimentaria, ha inaugurado oficialmente... Más información",
-          "published_at": "19.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72778/kw/FAM+Stumabo+inaugura+su+nueva+sede+de+Paterna"
+          "title": "La FAO eleva a 395 millones de toneladas la producción mundial de carne en 2026 La Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) prevé que la producción mundial de carne... Más información",
+          "published_at": "20.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72807/kw/La+FAO+eleva+a+395+millones+de+toneladas+la+producci%C3%B3n+mundial+de+carne+en+2026"
         },
         {
-          "title": "Argentina restringe los promotores del crecimiento en toda la cadena animal para impulsar sus exportaciones",
-          "published_at": "19.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72795/kw/Argentina+restringe+los+promotores+del+crecimiento+en+toda+la+cadena+animal+para+impulsar+sus+exportaciones"
+          "title": "Interovic lleva el lechal, el cordero y el cabrito a 80 restaurantes y cafeterías de El Corte Inglés",
+          "published_at": "20.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72808/kw/Interovic+lleva+el+lechal%2C+el+cordero+y+el+cabrito+a+80+restaurantes+y+cafeter%C3%ADas%26nbsp%3Bde+El+Corte+Ingl%C3%A9s"
         },
         {
-          "title": "Asturias destinará más de 6,7 millones de euros a la campaña de saneamiento ganadero de 2027",
-          "published_at": "19.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72793/kw/Asturias+destinar%C3%A1+m%C3%A1s+de+6%2C7+millones+de+euros+a+la+campa%C3%B1a+de+saneamiento+ganadero+de+2027"
+          "title": "Cataluña confirma 19 nuevos positivos de PPA en restos de jabalíes muertos desde hace al menos 5 meses",
+          "published_at": "20.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72802/kw/Catalu%C3%B1a+confirma+19+nuevos+positivos+de+PPA%26nbsp%3Ben+restos+de+jabal%C3%ADes%26nbsp%3Bmuertos+desde+hace+al+menos+5+meses"
         }
       ],
       "rejected_count": 0,
@@ -272,25 +262,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Carrefour diversifica su negocio: presenta dos nuevas enseñas de restauración y travel retail",
-          "published_at": "19.11.2026",
-          "url": "https://www.foodretail.es/retailers/carrefour-diversifica-su-negocio-presenta-dos-nuevas-ensenas-de-restauracion-y-travel-retail.html"
+          "title": "Gadisa alcanza las 20 tiendas Claudio este año con una nueva apertura en Coristanco (A Coruña)",
+          "published_at": "20.11.2026",
+          "url": "https://www.foodretail.es/retailers/gadisa-alcanza-las-20-tiendas-claudio-este-ano-con-una-nueva-apertura-en-coristanco-a-coruna.html"
         },
         {
-          "title": "Gadisa abre un nuevo Claudio Express en Ortigueira (A Coruña)",
-          "published_at": "19.11.2026",
-          "url": "https://www.foodretail.es/retailers/gadisa-abre-un-nuevo-claudio-express-en-ortigueira-a-coruna.html"
+          "title": "El hipermercado, una reinvención que pasa por las frutas y hortalizas",
+          "published_at": "20.11.2026",
+          "url": "https://www.foodretail.es/retailers/el-hipermercado-una-reinvencion-que-pasa-por-las-frutas-y-hortalizas.html"
         },
         {
-          "title": "Dia inaugura tiendas en Asturias, Aragón y Baleares",
-          "published_at": "19.11.2026",
-          "url": "https://www.foodretail.es/retailers/dia-inaugura-tiendas-en-asturias-aragon-y-baleares.html"
+          "title": "Aldi abre su primera tienda en Coria del Río (Sevilla) y cierra 2026 con 116 supermercados en Andalucía",
+          "published_at": "20.11.2026",
+          "url": "https://www.foodretail.es/retailers/aldi-abre-su-primera-tienda-en-coria-del-rio-sevilla-y-cierra-2026-con-116-supermercados-en-andalucia.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "19.11.2026"
+      "latest_published_at": "20.11.2026"
     }
   ]
 }
