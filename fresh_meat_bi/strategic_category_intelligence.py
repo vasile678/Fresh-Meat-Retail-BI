@@ -103,18 +103,29 @@ def recalculate_competitive_intelligence():
         return f"{float(val):.2f}".replace(".", ",")
 
     # 1. Build Lead KVI Price for each of the 7 retailers (ACTIVE OFFERS ONLY)
+    is_wk47 = week == "WK47" or "16.11" in period
+
     # Kaufland
     kaufland_cotlet = cell_map.get(("Kaufland", "Cotlet porc fără os"))
     kaufland_pulpa = cell_map.get(("Kaufland", "Pulpă porc fără os"))
     kaufland_spata = cell_map.get(("Kaufland", "Spată porc fără os"))
+    kaufland_ceafa = cell_map.get(("Kaufland", "Ceafă porc fără os"))
+    kaufland_piept = cell_map.get(("Kaufland", "Piept pui dezosat"))
     
     k_parts = []
-    if kaufland_cotlet and kaufland_cotlet.get("status") == "VERIFIED":
-        k_parts.append(f"Cotlet porc f.o. {fmt_price(kaufland_cotlet.get('price_lei_kg', 15.90))} lei/kg")
+    if kaufland_spata and kaufland_spata.get("status") == "VERIFIED":
+        reg_tag = f" ({kaufland_spata.get('region')})" if kaufland_spata.get('region') == "Muntenia" else ""
+        k_parts.append(f"Spată porc f.o. {fmt_price(kaufland_spata.get('price_lei_kg', 13.99))} lei/kg{reg_tag}")
+    elif kaufland_spata and kaufland_spata.get("status") != "VERIFIED":
+        k_parts.append("Spată porc f.o. N/V")
     if kaufland_pulpa and kaufland_pulpa.get("status") == "VERIFIED":
         k_parts.append(f"Pulpă porc f.o. {fmt_price(kaufland_pulpa.get('price_lei_kg', 15.99))} lei/kg")
-    if kaufland_spata and kaufland_spata.get("status") != "VERIFIED":
-        k_parts.append("Spată porc f.o. N/V (expirată la 03.11)")
+    if kaufland_cotlet and kaufland_cotlet.get("status") == "VERIFIED":
+        k_parts.append(f"Cotlet porc f.o. {fmt_price(kaufland_cotlet.get('price_lei_kg', 15.90))} lei/kg")
+    if kaufland_ceafa and kaufland_ceafa.get("status") == "VERIFIED":
+        k_parts.append(f"Ceafă porc f.o. {fmt_price(kaufland_ceafa.get('price_lei_kg', 20.99))} lei/kg")
+    if kaufland_piept and kaufland_piept.get("status") == "VERIFIED":
+        k_parts.append(f"Piept pui dezosat {fmt_price(kaufland_piept.get('price_lei_kg', 32.79))} lei/kg")
     kaufland_kvi_text = " | ".join(k_parts) if k_parts else "N/V pe ofertele KVI active"
 
     # Lidl
@@ -124,13 +135,8 @@ def recalculate_competitive_intelligence():
     lidl_piept = cell_map.get(("Lidl", "Piept pui dezosat"))
     
     l_parts = []
-    if lidl_ceafa and lidl_ceafa.get("status") == "VERIFIED":
-        p_std = lidl_ceafa.get("price_standard_lei_kg")
-        p_cup = lidl_ceafa.get("price_cupon_lei_kg")
-        if p_cup and p_std and p_cup != p_std:
-            l_parts.append(f"Ceafă porc f.o. {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
-        else:
-            l_parts.append(f"Ceafă porc f.o. {fmt_price(lidl_ceafa.get('price_lei_kg', 23.90))} lei/kg")
+    if lidl_spata and lidl_spata.get("status") == "VERIFIED":
+        l_parts.append(f"Spată porc f.o. {fmt_price(lidl_spata.get('price_lei_kg', 18.90))} lei/kg")
     if lidl_cotlet and lidl_cotlet.get("status") == "VERIFIED":
         p_std = lidl_cotlet.get("price_standard_lei_kg", 19.90)
         p_cup = lidl_cotlet.get("price_cupon_lei_kg")
@@ -138,8 +144,13 @@ def recalculate_competitive_intelligence():
             l_parts.append(f"Cotlet porc f.o. {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
         else:
             l_parts.append(f"Cotlet porc f.o. {fmt_price(p_std)} lei/kg")
-    if lidl_spata and lidl_spata.get("status") == "VERIFIED":
-        l_parts.append(f"Spată porc f.o. {fmt_price(lidl_spata.get('price_lei_kg', 18.90))} lei/kg")
+    if lidl_ceafa and lidl_ceafa.get("status") == "VERIFIED":
+        p_std = lidl_ceafa.get("price_standard_lei_kg")
+        p_cup = lidl_ceafa.get("price_cupon_lei_kg")
+        if p_cup and p_std and p_cup != p_std:
+            l_parts.append(f"Ceafă porc f.o. {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
+        else:
+            l_parts.append(f"Ceafă porc f.o. {fmt_price(lidl_ceafa.get('price_lei_kg', 23.90))} lei/kg")
     if lidl_piept and lidl_piept.get("status") == "VERIFIED":
         p_std = lidl_piept.get("price_standard_lei_kg")
         p_cup = lidl_piept.get("price_cupon_lei_kg")
@@ -147,13 +158,17 @@ def recalculate_competitive_intelligence():
             l_parts.append(f"Piept pui dezosat {fmt_price(p_cup)} lei/kg (cupon) / {fmt_price(p_std)} lei/kg (std)")
         else:
             l_parts.append(f"Piept pui dezosat {fmt_price(lidl_piept.get('price_lei_kg', 29.90))} lei/kg")
-    lidl_kvi_text = " | ".join(l_parts)
+    lidl_kvi_text = " | ".join(l_parts) if l_parts else "N/V pe ofertele KVI active"
 
     # PENNY
+    penny_spata = cell_map.get(("PENNY", "Spată porc fără os"))
     penny_pulpa = cell_map.get(("PENNY", "Pulpă porc fără os"))
     penny_cotlet = cell_map.get(("PENNY", "Cotlet porc fără os"))
+    penny_ceafa = cell_map.get(("PENNY", "Ceafă porc fără os"))
     penny_piept = cell_map.get(("PENNY", "Piept pui dezosat"))
     p_parts = []
+    if penny_spata and penny_spata.get("status") == "VERIFIED":
+        p_parts.append(f"Spată porc f.o. {fmt_price(penny_spata.get('price_lei_kg', 15.99))} lei/kg (card)")
     if penny_pulpa and penny_pulpa.get("status") == "VERIFIED":
         p_card = penny_pulpa.get("price_card_lei_kg", 15.99)
         p_std = penny_pulpa.get("price_standard_lei_kg", 21.99)
@@ -162,9 +177,11 @@ def recalculate_competitive_intelligence():
         p_card = penny_cotlet.get("price_card_lei_kg", 17.99)
         p_std = penny_cotlet.get("price_standard_lei_kg", 22.99)
         p_parts.append(f"Cotlet porc f.o. {fmt_price(p_card)} lei/kg (card)")
+    if penny_ceafa and penny_ceafa.get("status") == "VERIFIED":
+        p_parts.append(f"Ceafă porc f.o. {fmt_price(penny_ceafa.get('price_lei_kg', 19.99))} lei/kg")
     if penny_piept and penny_piept.get("status") == "VERIFIED":
-        p_parts.append(f"Piept pui dezosat {fmt_price(penny_piept.get('price_lei_kg', 26.90))} lei/kg")
-    penny_kvi_text = " | ".join(p_parts)
+        p_parts.append(f"Piept pui dezosat {fmt_price(penny_piept.get('price_lei_kg', 24.60))} lei/kg (card)")
+    penny_kvi_text = " | ".join(p_parts) if p_parts else "N/V pe ofertele KVI active"
 
     # Carrefour & Auchan
     carrefour_ceafa = cell_map.get(("Carrefour", "Ceafă porc fără os"))
@@ -174,7 +191,7 @@ def recalculate_competitive_intelligence():
         carrefour_agg = "RIDICATĂ"
     else:
         carrefour_kvi_text = "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)"
-        carrefour_pos_note = "Diferențiere prin trasabilitate și calitatea superioară a lanțului scurt; absență promoții agresive pe KVI proaspete de bază în săptămâna curentă."
+        carrefour_pos_note = "Diferențiere prin trasabilitate și calitatea superioară a Filiera Calității; absență promoții agresive pe KVI proaspete de bază în săptămâna curentă."
         carrefour_agg = "MEDIE"
 
     auchan_ceafa = cell_map.get(("Auchan", "Ceafă porc fără os"))
@@ -184,37 +201,54 @@ def recalculate_competitive_intelligence():
         auchan_agg = "RIDICATĂ"
     else:
         auchan_kvi_text = "N/V pe cele 5 produse KVI monitorizate (fără promoție activă în catalogul curent)"
-        auchan_pos_note = "Atragerea familiilor mari prin caserole de volum economic; fără ofertă promoțională confirmată pe cele 5 KVI în WK45."
+        auchan_pos_note = "Atragerea familiilor mari prin caserole de volum economic; fără ofertă promoțională confirmată pe cele 5 KVI în săptămâna curentă."
         auchan_agg = "MEDIE"
 
     # Mega Image & Profi (Non-matrix 5x5 retailers)
     profi_kvi_text = "Neinclus în matricea promoțională 5×5 (promoții locale de proximitate și Cuponiada)"
     mega_kvi_text = "Neinclus în matricea promoțională 5×5 (orientare premium pe piese feliate porționate)"
 
+    if is_wk47:
+        kaufland_pos_note = "Lider absolut pe spată f.o. (13,99 lei/kg, -39% de la 22,99 lei, catalog Muntenia), pulpă f.o. (15,99 lei/kg, -33%) și ceafă f.o. (20,99 lei/kg, -27%) fără condiționare de card. Cotletul este N/V."
+        kaufland_mech = "Reduceri directe catalog (-27% la -39%) 11–17.11 și 18–24.11 (inclusiv ediția Muntenia)"
+        lidl_pos_note = "Spată f.o. la 18,90 lei/kg în catalogul săptămânal 16–22.11; cotlet f.o. la preț standard de raft 19,90 lei/kg; cupoanele Lidl Plus anterioare pe ceafă și piept au expirat la 15.11."
+        lidl_mech = "Promoție catalog spată (1,89 lei/100g) + Preț permanent raft cotlet (19,90 lei/kg)"
+        lidl_agg = "MEDIE-RIDICATĂ"
+        penny_pos_note = "Al doilea cel mai bun preț pe spată f.o. (15,99 lei/kg, depășit de Kaufland Muntenia 13,99 lei/kg) și lider pe piept de pui dezosat (24,60 lei/kg, caserolă 650g la 15,99 lei) prin scanare PENNY Card; ofertele anterioare pe cotlet și pulpă au expirat."
+        penny_mech = "Preț redus cu scanare PENNY Card (-25% la -26%)"
+    else:
+        kaufland_pos_note = "Lider de preț absolut pe cotlet f.o. (15,90 lei/kg) și pulpă f.o. (15,99 lei/kg) fără condiționare de card. Spata de 14,90 lei/kg a expirat la 03.11."
+        kaufland_mech = "Reducere directă de catalog (-20% la -33%) 04–10.11"
+        lidl_pos_note = "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg (depășit de Carrefour 17,90 și Auchan 19,99)."
+        lidl_mech = "Cupoane Lidl Plus (-20% la -25%) + Super Weekend"
+        lidl_agg = "FOARTE RIDICATĂ"
+        penny_pos_note = "Paritate pe pulpă f.o. la 15,99 lei/kg prin card de fidelitate; lider pe piept de pui dezosat la 26,90 lei/kg."
+        penny_mech = "Preț redus cu scanare PENNY Card (-22% la -27%)"
+
     retailer_dashboard = [
         {
             "retailer": "Lidl",
-            "aggressiveness": "FOARTE RIDICATĂ",
-            "primary_mechanic": "Cupoane Lidl Plus (-20% la -25%) + Super Weekend",
+            "aggressiveness": lidl_agg,
+            "primary_mechanic": lidl_mech,
             "lead_kvi_price": lidl_kvi_text,
             "private_brand_share": "Peste 85% volum carne din mărcile proprii Cămara Noastră & Pikok",
-            "positioning_note": "Fidelizare digitală strictă prin aplicația mobilă; preț minim pe cotlet (16,90 lei/kg) condiționat de cupon; ceafă la 23,90 lei/kg (depășit de Carrefour 17,90 și Auchan 19,99)."
+            "positioning_note": lidl_pos_note
         },
         {
             "retailer": "Kaufland",
             "aggressiveness": "RIDICATĂ",
-            "primary_mechanic": "Reducere directă de catalog (-20% la -33%) 04–10.11",
+            "primary_mechanic": kaufland_mech,
             "lead_kvi_price": kaufland_kvi_text,
             "private_brand_share": "Peste 75% din carne sub mărcile K-Purland și Vreau din România",
-            "positioning_note": "Lider de preț absolut pe cotlet f.o. (15,90 lei/kg) și pulpă f.o. (15,99 lei/kg) fără condiționare de card. Spata de 14,90 lei/kg a expirat la 03.11."
+            "positioning_note": kaufland_pos_note
         },
         {
             "retailer": "Penny",
             "aggressiveness": "RIDICATĂ",
-            "primary_mechanic": "Preț redus cu scanare PENNY Card (-22% la -27%)",
+            "primary_mechanic": penny_mech,
             "lead_kvi_price": penny_kvi_text,
             "private_brand_share": "Peste 80% din carnea proaspătă sub marca proprie Hanul Boieresc (100% România)",
-            "positioning_note": "Paritate pe pulpă f.o. la 15,99 lei/kg prin card de fidelitate; lider pe piept de pui dezosat la 26,90 lei/kg."
+            "positioning_note": penny_pos_note
         },
         {
             "retailer": "Carrefour",
@@ -261,55 +295,101 @@ def recalculate_competitive_intelligence():
     bucharest_now = datetime.now(ZoneInfo("Europe/Bucharest"))
     current_date_str = bucharest_now.strftime("%d.%m.%Y")
 
-    top_signals = [
-        {
-            "source": f"Carrefour & Auchan / Promoții Active {week}",
-            "date": "05.11.2026",
-            "type": "PRICE_MOVE",
-            "signal": "Carrefour devine noul lider absolut de piață la ceafă de porc dezosată cu 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț pe ceafă la 19,99 lei/kg (redus de la 29,99 lei/kg; economie de 3,91 lei/kg față de Lidl).",
-            "impact": "Reconfigurează ierarhia competitivă pe ceafă de porc, punând presiune pe marjele discounterilor și atrăgând shopperii spre hipermarketuri."
-        },
-        {
-            "source": f"Kaufland & Penny / Rolling Update {week}",
-            "date": "04.11.2026",
-            "type": "PRICE_PARITY",
-            "signal": "Kaufland conduce cotletul fără os cu 15,90 lei/kg (catalog 04–10.11), în timp ce pe pulpa fără os Kaufland (15,99 lei/kg standard) împarte liderul cu Penny (15,99 lei/kg cu card). Spata Kaufland (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din matricea activă conform regulii ACTIVE OFFERS ONLY.",
-            "impact": "Stabilește noul prag minim de referință la 15,90–15,99 lei/kg pentru piesele majore de porc fără os în retailul modern."
-        },
-        {
-            "source": f"EU Pork Market ({eu_week} · {eu_date})",
-            "date": eu_date,
-            "type": "EU_MARKET",
-            "signal": f"Bursa germană VEZG se stabilizează la {vezg_price} €/kg SG (±0), în timp ce bursa franceză MPB coboară la {mpb_price} €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la {polpig_price} PLN/kg sub afluxul de carne germană.",
-            "impact": "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
-        },
-        {
-            "source": "Meat.Milk & Revista Piața",
-            "date": "03.11.2026",
-            "type": "REGULATORY_COMPLIANCE",
-            "signal": "Sprijinul strategic pentru sectorul suin autohton intră în faza verificărilor finale (245 cereri), consolidând aprovizionarea cu origine România.",
-            "impact": "Securizează contractele anuale cu fermierii locali și crește ponderea cărnii românești la raft."
-        }
-    ]
+    if is_wk47:
+        top_signals = [
+            {
+                "source": f"Kaufland / Ediția Muntenia & Rolling Update {week}",
+                "date": "18.11.2026",
+                "type": "PRICE_LEADERSHIP",
+                "signal": "Kaufland devine noul lider absolut de piață la spată de porc f.o. cu 13,99 lei/kg (catalog regional Muntenia, -39% de la 22,99 lei, pag. 1/64), depășind ofertele PENNY (15,99 lei/kg) și Lidl (18,90 lei/kg). De asemenea, Kaufland domină pulpa de porc f.o. la 15,99 lei/kg (-33%) și ceafa de porc f.o. la 20,99 lei/kg (-27%) fără condiționare de card.",
+                "impact": "Stabilește noul preț minim de referință la 13,99 lei/kg pentru spata de porc f.o. și consolidează leadership-ul de preț Kaufland pe carnea proaspătă de porc."
+            },
+            {
+                "source": f"PENNY / Promoții Active {week}",
+                "date": "16.11.2026",
+                "type": "PRICE_MOVE",
+                "signal": "PENNY oferă al doilea cel mai bun preț la spată de porc f.o. cu 15,99 lei/kg (cu PENNY Card, -26% de la 21,90 lei/kg) și preia conducerea pe piept de pui dezosat la 24,60 lei/kg (caserolă 650g la 15,99 lei, -25%).",
+                "impact": "Reconfigurează ierarhia competitivă a discounterilor pe pasăre, punând presiune pe volumele Lidl."
+            },
+            {
+                "source": f"EU Pork Market ({eu_week} · {eu_date})",
+                "date": eu_date,
+                "type": "EU_MARKET",
+                "signal": f"Bursa germană VEZG se stabilizează la {vezg_price} €/kg SG (±0), în timp ce bursa franceză MPB coboară la {mpb_price} €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la {polpig_price} PLN/kg sub afluxul de carne germană.",
+                "impact": "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
+            },
+            {
+                "source": "Meat.Milk & Revista Piața",
+                "date": "16.11.2026",
+                "type": "REGULATORY_COMPLIANCE",
+                "signal": "Sprijinul strategic pentru sectorul suin autohton intră în faza verificărilor finale, consolidând aprovizionarea cu origine România.",
+                "impact": "Securizează contractele anuale cu fermierii locali și crește ponderea cărnii românești la raft."
+            }
+        ]
 
-    # 3. Dynamic Executive Summary
-    executive_summary = (
-        f"Sinteza comercială {week} ({period}) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. "
-        f"Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), "
-        f"urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) "
-        f"cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) "
-        f"și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland "
-        f"la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. "
-        f"Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg)."
-    )
+        executive_summary = (
+            f"Sinteza comercială {week} ({period}) relevă o reconfigurare semnificativă a peisajului promoțional. "
+            f"Kaufland devine noul lider absolut de piață pe spată de porc fără os la 13,99 lei/kg (-39%, redus de la 22,99 lei în catalogul regional Muntenia, pag. 1/64), "
+            f"devansând PENNY (15,99 lei/kg) cu 2,00 lei/kg și Lidl (18,90 lei/kg) cu 4,91 lei/kg. "
+            f"Totodată, Kaufland domină pulpa de porc fără os la 15,99 lei/kg (-33%, redus de la 23,99 lei) și ceafa de porc fără os la 20,99 lei/kg (-27%, redus de la 28,99 lei) "
+            f"fără condiționare de card. "
+            f"PENNY conduce segmentul de carne de pasăre pe piept de pui dezosat la 24,60 lei/kg (caserolă 650g la 15,99 lei, -25% prin PENNY Card). "
+            f"Lidl menține spata de porc f.o. la 18,90 lei/kg în catalog și cotletul la preț permanent de raft 19,90 lei/kg. "
+            f"Carrefour și Auchan nu înregistrează oferte promoționale confirmate pe cele 5 KVI monitorizate în săptămâna 16–22.11."
+        )
 
-    # 4. Dynamic Strategic Insights (Aligned with WK45)
+        price_insight = f"În {week}, Kaufland stabilește cel mai agresiv preț al pieței pe spată de porc fără os la 13,99 lei/kg (-39% în ediția regională Muntenia), urmat de PENNY Card la 15,99 lei/kg și Lidl la 18,90 lei/kg. Kaufland conduce de asemenea pe pulpă (15,99 lei/kg) și ceafă (20,99 lei/kg), în timp ce PENNY oferă cel mai accesibil piept de pui dezosat la 24,60 lei/kg prin card."
+    else:
+        top_signals = [
+            {
+                "source": f"Carrefour & Auchan / Promoții Active {week}",
+                "date": "05.11.2026",
+                "type": "PRICE_MOVE",
+                "signal": "Carrefour devine noul lider absolut de piață la ceafă de porc dezosată cu 17,90 lei/kg (normalizat din 1,79 lei/100 g; economie de 6,00 lei/kg față de Lidl 23,90 lei/kg). Auchan devine al doilea cel mai bun preț pe ceafă la 19,99 lei/kg (redus de la 29,99 lei/kg; economie de 3,91 lei/kg față de Lidl).",
+                "impact": "Reconfigurează ierarhia competitivă pe ceafă de porc, punând presiune pe marjele discounterilor și atrăgând shopperii spre hipermarketuri."
+            },
+            {
+                "source": f"Kaufland & Penny / Rolling Update {week}",
+                "date": "04.11.2026",
+                "type": "PRICE_PARITY",
+                "signal": "Kaufland conduce cotletul fără os cu 15,90 lei/kg (catalog 04–10.11), în timp ce pe pulpa fără os Kaufland (15,99 lei/kg standard) împarte liderul cu Penny (15,99 lei/kg cu card). Spata Kaufland (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din matricea activă conform regulii ACTIVE OFFERS ONLY.",
+                "impact": "Stabilește noul prag minim de referință la 15,90–15,99 lei/kg pentru piesele majore de porc fără os în retailul modern."
+            },
+            {
+                "source": f"EU Pork Market ({eu_week} · {eu_date})",
+                "date": eu_date,
+                "type": "EU_MARKET",
+                "signal": f"Bursa germană VEZG se stabilizează la {vezg_price} €/kg SG (±0), în timp ce bursa franceză MPB coboară la {mpb_price} €/kg carcasă, iar cotațiile poloneze Clasa E se retrag la {polpig_price} PLN/kg sub afluxul de carne germană.",
+                "impact": "Oportunitate de achiziție la cost avantajos pentru volumele de spată și pulpă importate de procesatori."
+            },
+            {
+                "source": "Meat.Milk & Revista Piața",
+                "date": "03.11.2026",
+                "type": "REGULATORY_COMPLIANCE",
+                "signal": "Sprijinul strategic pentru sectorul suin autohton intră în faza verificărilor finale (245 cereri), consolidând aprovizionarea cu origine România.",
+                "impact": "Securizează contractele anuale cu fermierii locali și crește ponderea cărnii românești la raft."
+            }
+        ]
+
+        executive_summary = (
+            f"Sinteza comercială {week} ({period}) relevă o presiune promoțională accentuată pe piesele majore de porc proaspăt. "
+            f"Carrefour preia conducerea absolută de preț pe ceafă de porc dezosată cu 17,90 lei/kg (1,79 lei/100 g, -25%), "
+            f"urmat de Auchan cu 19,99 lei/kg (redus de la 29,99 lei/kg, -33%), ambele devansând oferta Lidl (23,90 lei/kg) "
+            f"cu economii de 6,00 lei/kg, respectiv 3,91 lei/kg. Kaufland conduce pe cotlet f.o. (15,90 lei/kg necondiționat) "
+            f"și împarte liderul pe pulpă f.o. (15,99 lei/kg) cu Penny (15,99 lei/kg cu card), în timp ce oferta Kaufland "
+            f"la spată (14,90 lei/kg) a expirat pe 03.11 și a fost retrasă din comparația activă conform regulii ACTIVE OFFERS ONLY. "
+            f"Lidl deține unica ofertă activă de catalog pe spată (18,90 lei/kg)."
+        )
+
+        price_insight = f"În {week}, discounterii (Kaufland, Lidl, Penny) concentrează bătălia pe cotlet (15,90 lei/kg la Kaufland; 16,90 lei/kg cupon Lidl Plus) și pulpă (15,99 lei/kg la Kaufland și Penny Card). Oferta Kaufland la spată (14,90 lei/kg) a expirat la 03.11, lăsând Lidl drept singura ofertă activă de catalog la 18,90 lei/kg."
+
+    # 4. Dynamic Strategic Insights
     strategic_insights = [
         {
             "id": "price-positioning",
             "title": "PRICE & COMPETITIVE POSITIONING",
             "domain": "Arhitectură de Preț & Promoții",
-            "insight": f"În {week}, discounterii (Kaufland, Lidl, Penny) concentrează bătălia pe cotlet (15,90 lei/kg la Kaufland; 16,90 lei/kg cupon Lidl Plus) și pulpă (15,99 lei/kg la Kaufland și Penny Card). Oferta Kaufland la spată (14,90 lei/kg) a expirat la 03.11, lăsând Lidl drept singura ofertă activă de catalog la 18,90 lei/kg.",
+            "insight": price_insight,
             "business_implication": "Pragul de acces la carne de porc fără os se reconfigurează în jurul valorii de 15,90–15,99 lei/kg. Condiționarea prin card/cupon devine mecanism de diferențiere față de reducerile directe de catalog.",
             "tactical_opportunity": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",
             "recommended_action": "Segmentarea ofertei prin caserole calibrate (600g–800g), promovarea cefei la preț competitiv și utilizarea cupoanelor personalizate pentru fidelizarea cumpărătorilor recurenți.",

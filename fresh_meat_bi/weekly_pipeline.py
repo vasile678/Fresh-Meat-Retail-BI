@@ -23,6 +23,9 @@ import datetime
 import subprocess
 from pathlib import Path
 
+if "/usr/lib/python3/dist-packages" not in sys.path and os.path.exists("/usr/lib/python3/dist-packages"):
+    sys.path.insert(0, "/usr/lib/python3/dist-packages")
+
 try:
     from PIL import Image
 except ImportError:
@@ -242,8 +245,11 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
         if domain == "PROMO":
             renderer = BASE / manifest["promo"]["renderer"]
             output_png = staging_dir / f"output_{week}_{year}.png"
+            sub_env = os.environ.copy()
+            if "/usr/lib/python3/dist-packages" not in sub_env.get("PYTHONPATH", "") and os.path.exists("/usr/lib/python3/dist-packages"):
+                sub_env["PYTHONPATH"] = f"/usr/lib/python3/dist-packages:{sub_env.get('PYTHONPATH', '')}".rstrip(":")
             cp_rend = subprocess.run([sys.executable, str(renderer), str(dataset_path), str(output_png)],
-                                     cwd=str(BASE), capture_output=True, text=True)
+                                     cwd=str(BASE), capture_output=True, text=True, env=sub_env)
             if cp_rend.returncode != 0 or not output_png.exists():
                 errors.append(f"RENDERER_EXECUTION_FAILED: {cp_rend.stderr or cp_rend.stdout}")
                 return {"status": "FAIL_CLOSED", "errors": errors}
@@ -304,8 +310,11 @@ def run_weekly_pipeline(week: str, year: int, domain: str,
             output_png = staging_dir / f"EU_PORK_MARKET_{week}_{year}.png"
             render_receipt = staging_dir / f"EU_PORK_MARKET_{week}_{year}.png.receipt.json"
             
+            sub_env = os.environ.copy()
+            if "/usr/lib/python3/dist-packages" not in sub_env.get("PYTHONPATH", "") and os.path.exists("/usr/lib/python3/dist-packages"):
+                sub_env["PYTHONPATH"] = f"/usr/lib/python3/dist-packages:{sub_env.get('PYTHONPATH', '')}".rstrip(":")
             cp_rend = subprocess.run([sys.executable, str(renderer), str(master_img), str(dataset_path), str(output_png), str(render_receipt)],
-                                     cwd=str(BASE), capture_output=True, text=True)
+                                     cwd=str(BASE), capture_output=True, text=True, env=sub_env)
             if cp_rend.returncode != 0 or not output_png.exists():
                 errors.append(f"RENDERER_EXECUTION_FAILED: {cp_rend.stderr or cp_rend.stdout}")
                 return {"status": "FAIL_CLOSED", "errors": errors}

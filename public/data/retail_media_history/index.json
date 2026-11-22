@@ -1,5 +1,41 @@
 [
   {
+    "filename": "report_20261117_0800.json",
+    "edition_date": "17.11.2026",
+    "edition_time": "08:00",
+    "period_analyzed": "10.11.2026 – 17.11.2026 (Ultimele 7 zile)",
+    "update_state": "VERIFIED_FRESH_UPDATE",
+    "total_new_items": 24,
+    "dataset_sha256": "9c3d52f44ec0d8dc50d56e5de8030a858a2263a188117f05b1eb2367a4e56bee"
+  },
+  {
+    "filename": "report_20261116_0800.json",
+    "edition_date": "16.11.2026",
+    "edition_time": "08:00",
+    "period_analyzed": "09.11.2026 – 16.11.2026 (Ultimele 7 zile)",
+    "update_state": "VERIFIED_FRESH_UPDATE",
+    "total_new_items": 21,
+    "dataset_sha256": "4583f7a1674953c4f6dda3cbe6cbd6358e31e10f73439703dc993d916d4117ee"
+  },
+  {
+    "filename": "report_20261115_0800.json",
+    "edition_date": "15.11.2026",
+    "edition_time": "08:00",
+    "period_analyzed": "08.11.2026 – 15.11.2026 (Ultimele 7 zile)",
+    "update_state": "VERIFIED_FRESH_UPDATE",
+    "total_new_items": 23,
+    "dataset_sha256": "c4362d005b4a556af60abfb1801fb170fb0680692043782654cc1cf5cff784a9"
+  },
+  {
+    "filename": "report_20261114_0800.json",
+    "edition_date": "14.11.2026",
+    "edition_time": "08:00",
+    "period_analyzed": "07.11.2026 – 14.11.2026 (Ultimele 7 zile)",
+    "update_state": "VERIFIED_FRESH_UPDATE",
+    "total_new_items": 23,
+    "dataset_sha256": "cb4b78df11a61aa7be1087773b7ee19054f3a47771de1ca0fb3c05430259f793"
+  },
+  {
     "filename": "report_20261111_0800.json",
     "edition_date": "11.11.2026",
     "edition_time": "08:00",

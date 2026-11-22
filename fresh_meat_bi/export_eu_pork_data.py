@@ -138,6 +138,9 @@ def export_eu_pork_data(dataset_path: Path, output_json_path: Path, release_rece
             "source_date": r.get("source_date", ""),
             "source_name": r.get("source_name", r.get("source", "")),
             "source_type": r.get("source_type", "PRIMARY"),
+            "confirmation_level": r.get("confirmation_level", "CONFIRMAT SECUNDAR" if r.get("source_type") == "SECONDARY" else "CONFIRMAT PRIMAR"),
+            "source_hierarchy": r.get("source_hierarchy", "NIVEL_2_SECUNDAR" if r.get("source_type") == "SECONDARY" else "NIVEL_1_PRIMAR"),
+            "fallback_active": r.get("fallback_active", r.get("source_type") == "SECONDARY"),
             "quotation_date": r.get("quotation_date", r.get("source_publication_date", "")),
             "source_publication_date": r.get("source_publication_date", ""),
             "source_url": r.get("source_url", r.get("official_url", "")),
@@ -190,6 +193,16 @@ def export_eu_pork_data(dataset_path: Path, output_json_path: Path, release_rece
             f"Raportul afișează release-ul autoritativ validat ({current_week}/{current_year}). "
             "Toate cele 8 cotații europene sunt verificate conform standardului oficial."
         ),
+        "classification_counts": dataset.get("classification_counts", {
+            "confirmat_primar": sum(1 for r in enriched_rows if r.get("confirmation_level") == "CONFIRMAT PRIMAR"),
+            "confirmat_secundar": sum(1 for r in enriched_rows if r.get("confirmation_level") == "CONFIRMAT SECUNDAR"),
+            "neconfirmat": sum(1 for r in enriched_rows if r.get("confirmation_level") == "NECONFIRMAT"),
+            "indisponibil": sum(1 for r in enriched_rows if r.get("confirmation_level") == "INDISPONIBIL")
+        }),
+        "is_fallback_engaged": dataset.get("is_fallback_engaged", any(r.get("fallback_active") for r in enriched_rows)),
+        "fallback_events": dataset.get("fallback_events", []),
+        "primary_sources": dataset.get("primary_sources", []),
+        "secondary_sources": dataset.get("secondary_sources", []),
         "market_signal_title": dataset.get("market_signal_title", f"MARKET SIGNAL ({current_week})"),
         "market_signal": dataset.get("market_signal", "DOWNSIDE ACCELERATION"),
         "market_signal_body": dataset.get("market_signal_body", ""),

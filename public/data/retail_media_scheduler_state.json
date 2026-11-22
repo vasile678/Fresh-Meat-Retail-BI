@@ -1,0 +1,8 @@
+{
+  "last_scheduled_run_date": null,
+  "last_scheduled_run_time": null,
+  "last_status": "RETRYING",
+  "last_duration_seconds": null,
+  "retry_count": 0,
+  "next_scheduled_run": "08:00 Europe/Bucharest"
+}

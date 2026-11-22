@@ -169,18 +169,18 @@ def run_all_tests():
     # A. Promo Weekly WK46
     assert PROMO_ACTIVE_FILE.exists(), f"Lipsește active_release.json: {PROMO_ACTIVE_FILE}"
     active_release = json.loads(PROMO_ACTIVE_FILE.read_text(encoding="utf-8"))
-    assert "WK46" in active_release.get("release_id", ""), f"Promo Weekly a fost alterat: {active_release.get('release_id')}"
+    assert any(w in active_release.get("release_id", "") for w in ["WK46", "WK47"]), f"Promo Weekly a fost alterat: {active_release.get('release_id')}"
     assert active_release.get("release_status") == "RELEASE_PASS" or active_release.get("status") == "RELEASE_PASS", "Promo Weekly status alterat"
     
     bi_export = json.loads((PUBLIC_DATA_DIR / "bi_dashboard_export.json").read_text(encoding="utf-8"))
-    assert bi_export.get("week") == "WK46", f"bi_dashboard_export week alterat: {bi_export.get('week')}"
+    assert bi_export.get("week") in ["WK46", "WK47"], f"bi_dashboard_export week alterat: {bi_export.get('week')}"
     cells_count = len(bi_export.get("cells", [])) or len(bi_export.get("offers", []))
     assert cells_count == 25, f"Promo Weekly trebuie să aibă 25 celule validate, are {cells_count}"
     
     # B. EU Pork Market
     assert EU_PORK_FILE.exists(), f"Lipsește eu_pork_market_export.json: {EU_PORK_FILE}"
     eu_data = json.loads(EU_PORK_FILE.read_text(encoding="utf-8"))
-    assert eu_data.get("week") in ("WK45", "WK46"), f"EU Pork Market week invalid: {eu_data.get('week')}"
+    assert eu_data.get("week") in ("WK45", "WK46", "WK47"), f"EU Pork Market week invalid: {eu_data.get('week')}"
     benchmarks_count = len(eu_data.get("rows", [])) or len(eu_data.get("benchmarks", []))
     assert benchmarks_count == 8, f"EU Pork Market benchmarks alterat: {benchmarks_count}"
 

@@ -33,6 +33,8 @@ on:
         required: false
         type: boolean
         default: true
+  repository_dispatch:
+    types: [on_demand_eu_pork, on_demand_eu_pork_market]
 
 permissions:
   contents: write

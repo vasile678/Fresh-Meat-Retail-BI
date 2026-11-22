@@ -1,270 +1,352 @@
 {
   "status": "PASS",
   "coverage": "25/25",
-  "dataset_sha256": "9d7e5d6b1dba12adc7c59f6c7e64cb5d26057086012a2e3c3b529582de5fd00e",
+  "dataset_sha256": "d08abefb3544b9dd1e3fe055d64d45b284ee5b25615e93daed6a623314fc9f91",
   "week": "WK46",
   "year": 2026,
-  "verified_at": "2026-11-11T20:21:08.429124+00:00",
+  "verified_at": "2026-11-15T20:12:30.923794+00:00",
+  "classification_counts": {
+    "confirmat_primar": 8,
+    "confirmat_secundar": 0,
+    "neconfirmat": 0,
+    "indisponibil": 17
+  },
+  "is_fallback_engaged": false,
   "cells": [
     {
       "retailer": "Kaufland",
       "kvi": "Spată porc fără os",
-      "checked_at": "2026-11-11T20:21:05.186923+00:00",
+      "checked_at": "2026-11-15T20:12:28.485701+00:00",
       "sources_checked": [
         "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial Kaufland a fost auditat integral; Oferta promoțională anterioară (14.90 lei/kg) a expirat la 03.11.2026. În noul catalog 04–10.11.2026 nu există ofertă promoțională confirmată pentru spată de porc f.o.."
     },
     {
       "retailer": "Kaufland",
       "kvi": "Pulpă porc fără os",
-      "checked_at": "2026-11-11T20:21:05.186923+00:00",
+      "checked_at": "2026-11-15T20:12:28.485701+00:00",
       "sources_checked": [
         "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 15.99 lei/kg, K-Purland Pulpă de porc fără os (04.11–10.11.2026)"
     },
     {
       "retailer": "Kaufland",
       "kvi": "Cotlet porc fără os",
-      "checked_at": "2026-11-11T20:21:05.186923+00:00",
+      "checked_at": "2026-11-15T20:12:28.485701+00:00",
       "sources_checked": [
         "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 15.9 lei/kg, Cotlet de porc fără os bucată / feliat (04.11–10.11.2026)"
     },
     {
       "retailer": "Kaufland",
       "kvi": "Ceafă porc fără os",
-      "checked_at": "2026-11-11T20:21:05.186923+00:00",
+      "checked_at": "2026-11-15T20:12:28.485701+00:00",
       "sources_checked": [
         "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial Kaufland a fost auditat integral; nicio ofertă confirmată în noul catalog 04–10.11.2026."
     },
     {
       "retailer": "Kaufland",
       "kvi": "Piept pui dezosat",
-      "checked_at": "2026-11-11T20:21:05.186923+00:00",
+      "checked_at": "2026-11-15T20:12:28.485701+00:00",
       "sources_checked": [
         "https://www.kaufland.ro/oferte/oferte-saptamanale/saptamana-curenta.category=01_Carne__mezeluri.html"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 32.79 lei/kg, Gustavi piept de pui dezosat fără piele hrănit cu porumb (04.11–10.11.2026)"
     },
     {
       "retailer": "Lidl",
       "kvi": "Spată porc fără os",
-      "checked_at": "2026-11-11T20:21:00.754569+00:00",
+      "checked_at": "2026-11-15T20:12:28.365469+00:00",
       "sources_checked": [
         "https://www.lidl.ro/l/ro/cataloage/catalogul-saptamanal-de-luni-09-11-pana-duminica-15-11/ar/0",
         "https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=01a17751-7d1b-711e-b601-6de1b3e701cd"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial Lidl a fost auditat integral; Nicio ofertă promoțională confirmată în catalogul oficial Lidl 09–15.11.2026.."
     },
     {
       "retailer": "Lidl",
       "kvi": "Pulpă porc fără os",
-      "checked_at": "2026-11-11T20:21:00.754569+00:00",
+      "checked_at": "2026-11-15T20:12:28.365469+00:00",
       "sources_checked": [
         "https://www.lidl.ro/l/ro/cataloage/catalogul-saptamanal-de-luni-09-11-pana-duminica-15-11/ar/0",
         "https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=01a17751-7d1b-711e-b601-6de1b3e701cd"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial Lidl a fost auditat integral; Nicio ofertă promoțională confirmată în catalogul oficial Lidl 09–15.11.2026.."
     },
     {
       "retailer": "Lidl",
       "kvi": "Cotlet porc fără os",
-      "checked_at": "2026-11-11T20:21:00.754569+00:00",
+      "checked_at": "2026-11-15T20:12:28.365469+00:00",
       "sources_checked": [
         "https://www.lidl.ro/l/ro/cataloage/catalogul-saptamanal-de-luni-09-11-pana-duminica-15-11/ar/0",
         "https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=01a17751-7d1b-711e-b601-6de1b3e701cd"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 19.9 lei/kg, Cotlet de porc fără os (09.11–15.11.2026)"
     },
     {
       "retailer": "Lidl",
       "kvi": "Ceafă porc fără os",
-      "checked_at": "2026-11-11T20:21:00.754569+00:00",
+      "checked_at": "2026-11-15T20:12:28.365469+00:00",
       "sources_checked": [
         "https://www.lidl.ro/l/ro/cataloage/catalogul-saptamanal-de-luni-09-11-pana-duminica-15-11/ar/0",
         "https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=01a17751-7d1b-711e-b601-6de1b3e701cd"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 17.9 lei/kg, Ceafă de porc fără os (09.11–15.11.2026)"
     },
     {
       "retailer": "Lidl",
       "kvi": "Piept pui dezosat",
-      "checked_at": "2026-11-11T20:21:00.754569+00:00",
+      "checked_at": "2026-11-15T20:12:28.365469+00:00",
       "sources_checked": [
         "https://www.lidl.ro/l/ro/cataloage/catalogul-saptamanal-de-luni-09-11-pana-duminica-15-11/ar/0",
         "https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=01a17751-7d1b-711e-b601-6de1b3e701cd"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 24.6 lei/kg, Piept de pui dezosat fără piele (09.11–15.11.2026)"
     },
     {
       "retailer": "PENNY",
       "kvi": "Spată porc fără os",
-      "checked_at": "2026-11-11T20:21:05.474800+00:00",
+      "checked_at": "2026-11-15T20:12:28.771895+00:00",
       "sources_checked": [
         "https://www.penny.ro/categorie/carne-proaspata-porc-si-vita-5642",
         "https://www.penny.ro/categorie/carne-proaspata-pui-si-curcan-5641"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Broșura oficială și categoria PENNY au fost auditate integral; nicio ofertă confirmată în catalogul 04–10.11.2026."
     },
     {
       "retailer": "PENNY",
       "kvi": "Pulpă porc fără os",
-      "checked_at": "2026-11-11T20:21:05.474800+00:00",
+      "checked_at": "2026-11-15T20:12:28.771895+00:00",
       "sources_checked": [
         "https://www.penny.ro/categorie/carne-proaspata-porc-si-vita-5642",
         "https://www.penny.ro/categorie/carne-proaspata-pui-si-curcan-5641"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Broșura oficială și categoria PENNY au fost auditate integral; Oferta promoțională anterioară (15.99 lei/kg) a expirat la 03.11.2026; în noul catalog PENNY 04–10.11.2026 nu există ofertă activă.."
     },
     {
       "retailer": "PENNY",
       "kvi": "Cotlet porc fără os",
-      "checked_at": "2026-11-11T20:21:05.474800+00:00",
+      "checked_at": "2026-11-15T20:12:28.771895+00:00",
       "sources_checked": [
         "https://www.penny.ro/categorie/carne-proaspata-porc-si-vita-5642",
         "https://www.penny.ro/categorie/carne-proaspata-pui-si-curcan-5641"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Broșura oficială și categoria PENNY au fost auditate integral; Oferta promoțională anterioară (17.99 lei/kg) a expirat la 03.11.2026; în noul catalog PENNY 04–10.11.2026 nu există ofertă activă.."
     },
     {
       "retailer": "PENNY",
       "kvi": "Ceafă porc fără os",
-      "checked_at": "2026-11-11T20:21:05.474800+00:00",
+      "checked_at": "2026-11-15T20:12:28.771895+00:00",
       "sources_checked": [
         "https://www.penny.ro/categorie/carne-proaspata-porc-si-vita-5642",
         "https://www.penny.ro/categorie/carne-proaspata-pui-si-curcan-5641"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Broșura oficială și categoria PENNY au fost auditate integral; nicio ofertă confirmată în catalogul 04–10.11.2026."
     },
     {
       "retailer": "PENNY",
       "kvi": "Piept pui dezosat",
-      "checked_at": "2026-11-11T20:21:05.474800+00:00",
+      "checked_at": "2026-11-15T20:12:28.771895+00:00",
       "sources_checked": [
         "https://www.penny.ro/categorie/carne-proaspata-porc-si-vita-5642",
         "https://www.penny.ro/categorie/carne-proaspata-pui-si-curcan-5641",
         "https://www.penny.ro/products/hb-piept-dezosat-xxl-kg-rr961528"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 26.9 lei/kg, Hanul Boieresc Piept de pui dezosat XXL (28.10–10.11.2026)"
     },
     {
       "retailer": "Carrefour",
       "kvi": "Spată porc fără os",
-      "checked_at": "2026-11-11T20:21:05.992169+00:00",
+      "checked_at": "2026-11-15T20:12:29.009354+00:00",
       "sources_checked": [
         "https://carrefour.ro/corporate/promotiile-zilei/",
         "https://carrefour.ro/campanii/oferte-saptamanale",
         "https://carrefour.ro/cataloage"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial și paginile de promoții Carrefour au fost auditate integral; nicio ofertă promoțională pentru Spată porc fără os."
     },
     {
       "retailer": "Carrefour",
       "kvi": "Pulpă porc fără os",
-      "checked_at": "2026-11-11T20:21:05.992169+00:00",
+      "checked_at": "2026-11-15T20:12:29.009354+00:00",
       "sources_checked": [
         "https://carrefour.ro/corporate/promotiile-zilei/",
         "https://carrefour.ro/campanii/oferte-saptamanale",
         "https://carrefour.ro/cataloage"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial și paginile de promoții Carrefour au fost auditate integral; nicio ofertă promoțională pentru Pulpă porc fără os."
     },
     {
       "retailer": "Carrefour",
       "kvi": "Cotlet porc fără os",
-      "checked_at": "2026-11-11T20:21:05.992169+00:00",
+      "checked_at": "2026-11-15T20:12:29.009354+00:00",
       "sources_checked": [
         "https://carrefour.ro/corporate/promotiile-zilei/",
         "https://carrefour.ro/campanii/oferte-saptamanale",
         "https://carrefour.ro/cataloage"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial și paginile de promoții Carrefour au fost auditate integral; nicio ofertă promoțională pentru Cotlet porc fără os."
     },
     {
       "retailer": "Carrefour",
       "kvi": "Ceafă porc fără os",
-      "checked_at": "2026-11-11T20:21:05.992169+00:00",
+      "checked_at": "2026-11-15T20:12:29.009354+00:00",
       "sources_checked": [
         "https://carrefour.ro/corporate/promotiile-zilei/",
         "https://carrefour.ro/campanii/oferte-saptamanale",
         "https://carrefour.ro/cataloage"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial și paginile de promoții Carrefour au fost auditate integral; nicio ofertă promoțională pentru Ceafă porc fără os."
     },
     {
       "retailer": "Carrefour",
       "kvi": "Piept pui dezosat",
-      "checked_at": "2026-11-11T20:21:05.992169+00:00",
+      "checked_at": "2026-11-15T20:12:29.009354+00:00",
       "sources_checked": [
         "https://carrefour.ro/corporate/promotiile-zilei/",
         "https://carrefour.ro/campanii/oferte-saptamanale",
         "https://carrefour.ro/cataloage"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul oficial și paginile de promoții Carrefour au fost auditate integral; nicio ofertă promoțională pentru Piept pui dezosat."
     },
     {
       "retailer": "Auchan",
       "kvi": "Spată porc fără os",
-      "checked_at": "2026-11-11T20:21:08.273379+00:00",
+      "checked_at": "2026-11-15T20:12:30.810923+00:00",
       "sources_checked": [
         "https://www.auchan.ro/carne",
         "https://www.auchan.ro/carne-si-peste/carne-de-porc/c",
         "https://www.auchan.ro/carne-si-peste/carne-de-pasare/c",
         "https://www.auchan.ro/promotii"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul și categoriile Auchan (VTEX decompresat) au fost auditate integral; produsele au preț standard de raft fără reducere promoțională de catalog pentru Spată porc fără os."
     },
     {
       "retailer": "Auchan",
       "kvi": "Pulpă porc fără os",
-      "checked_at": "2026-11-11T20:21:08.273379+00:00",
+      "checked_at": "2026-11-15T20:12:30.810923+00:00",
       "sources_checked": [
         "https://www.auchan.ro/carne",
         "https://www.auchan.ro/carne-si-peste/carne-de-porc/c",
         "https://www.auchan.ro/carne-si-peste/carne-de-pasare/c",
         "https://www.auchan.ro/promotii"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul și categoriile Auchan (VTEX decompresat) au fost auditate integral; produsele au preț standard de raft fără reducere promoțională de catalog pentru Pulpă porc fără os."
     },
     {
       "retailer": "Auchan",
       "kvi": "Cotlet porc fără os",
-      "checked_at": "2026-11-11T20:21:08.273379+00:00",
+      "checked_at": "2026-11-15T20:12:30.810923+00:00",
       "sources_checked": [
         "https://www.auchan.ro/carne",
         "https://www.auchan.ro/carne-si-peste/carne-de-porc/c",
         "https://www.auchan.ro/carne-si-peste/carne-de-pasare/c",
         "https://www.auchan.ro/promotii"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul și categoriile Auchan (VTEX decompresat) au fost auditate integral; produsele au preț standard de raft fără reducere promoțională de catalog pentru Cotlet porc fără os."
     },
     {
       "retailer": "Auchan",
       "kvi": "Ceafă porc fără os",
-      "checked_at": "2026-11-11T20:21:08.273379+00:00",
+      "checked_at": "2026-11-15T20:12:30.810923+00:00",
       "sources_checked": [
         "https://www.auchan.ro/carne",
         "https://www.auchan.ro/carne-si-peste/carne-de-porc/c",
         "https://www.auchan.ro/carne-si-peste/carne-de-pasare/c",
         "https://www.auchan.ro/promotii"
       ],
+      "confirmation_level": "CONFIRMAT PRIMAR",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "VERIFIED: 19.99 lei/kg, Ceafă de porc fără os, vrac, +/- 1 kg (04.11–10.11.2026)"
     },
     {
       "retailer": "Auchan",
       "kvi": "Piept pui dezosat",
-      "checked_at": "2026-11-11T20:21:08.273379+00:00",
+      "checked_at": "2026-11-15T20:12:30.810923+00:00",
       "sources_checked": [
         "https://www.auchan.ro/carne",
         "https://www.auchan.ro/carne-si-peste/carne-de-porc/c",
         "https://www.auchan.ro/carne-si-peste/carne-de-pasare/c",
         "https://www.auchan.ro/promotii"
       ],
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_1_PRIMAR",
+      "fallback_used": false,
       "result": "N/V: Catalogul și categoriile Auchan (VTEX decompresat) au fost auditate integral; produsele au preț standard de raft fără reducere promoțională de catalog pentru Piept pui dezosat."
     }
   ]

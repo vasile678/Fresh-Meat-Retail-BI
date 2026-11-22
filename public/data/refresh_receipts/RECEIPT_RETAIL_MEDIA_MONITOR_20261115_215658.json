@@ -1,0 +1,328 @@
+{
+  "schema_version": "2.0-refresh-audit-receipt",
+  "execution_id": "EXEC_RETAIL_MEDIA_MONITOR_20261115_215658_34d4b2",
+  "module": "retail_media_monitor",
+  "module_title": "Retail Media Monitor",
+  "started_at_bucharest": "15.11.2026 21:56:43",
+  "completed_at_bucharest": "15.11.2026 21:56:58",
+  "started_at_iso": "2026-11-15T21:56:43.293909+02:00",
+  "completed_at_iso": "2026-11-15T21:56:58.750053+02:00",
+  "duration_seconds": 15.46,
+  "sources_checked": [
+    "Revista Progresiv",
+    "Revista Piața",
+    "Trends HRB",
+    "Modern Buyer",
+    "Retail-FMCG",
+    "Meat.Milk",
+    "Retail.ro",
+    "RetailArena.ro",
+    "Pig Progress",
+    "pig333",
+    "EuroMeatNews",
+    "Meat Management",
+    "Eurocarne",
+    "FRS – Food Retail & Service"
+  ],
+  "sources_unavailable": [
+    "Revista Progresiv: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Revista Piața: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Retail.ro: RETAINED_VERIFIED_FAIL_CLOSED",
+    "RetailArena.ro: RETAINED_VERIFIED_FAIL_CLOSED",
+    "pig333: RETAINED_VERIFIED_FAIL_CLOSED",
+    "EuroMeatNews: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Meat Management: RETAINED_VERIFIED_FAIL_CLOSED"
+  ],
+  "primary_sources": [
+    "Lidl România (Portal Oficial)",
+    "Kaufland România (Portal Oficial)",
+    "Carrefour România (Portal Oficial)",
+    "Penny România (Portal Oficial)",
+    "Profi România (Portal Oficial)",
+    "Auchan România (Portal Oficial)",
+    "Mega Image România (Portal Oficial)"
+  ],
+  "secondary_sources": [
+    "Revista Progresiv",
+    "Revista Piața",
+    "Trends HRB",
+    "Modern Buyer",
+    "Retail-FMCG",
+    "Meat.Milk",
+    "Retail.ro",
+    "RetailArena.ro",
+    "Pig Progress",
+    "pig333",
+    "EuroMeatNews",
+    "Meat Management",
+    "Eurocarne",
+    "FRS – Food Retail & Service"
+  ],
+  "classification_counts": {
+    "confirmat_primar": 0,
+    "confirmat_secundar": 77,
+    "neconfirmat": 0,
+    "indisponibil": 22
+  },
+  "fallback_events": [
+    {
+      "retailer": "Lidl",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 9 – 13 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Lidl",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Lidl",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Cometex deschide la Jilava prima fază din București Sud Retail Park, un nou pol de retail de peste 45.000 mp",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Lidl",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Exporturi românești de fructe și legume prin Lidl: 8.800 de tone și 6,8 mil. euro",
+      "secondary_source": "Modern Buyer",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Lidl",
+      "pillar": "Tendințe competitive și impact potențial asupra Fresh Meat",
+      "article_title": "Cum transformă Fragedo de la TRANSAVIA siguranța și constanța în valoare pentru consumatori și retail",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Kaufland",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 9 – 13 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Kaufland",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Kaufland România lansează campania de sărbători „Crăciunul este când îl simți tu”",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Kaufland",
+      "pillar": "Promoții și strategii de preț",
+      "article_title": "Kaufland ”taie inflația”: reduceri timp de o lună în magazine",
+      "secondary_source": "RetailArena.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Kaufland",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Cometex deschide la Jilava prima fază din București Sud Retail Park, un nou pol de retail de peste 45.000 mp",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Kaufland",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Situația deschiderilor de magazine din retailul FMCG din România, în luna octombrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Kaufland",
+      "pillar": "Tendințe competitive și impact potențial asupra Fresh Meat",
+      "article_title": "Black Friday la Kaufland: reduceri de până la 65% la peste 300 de articole",
+      "secondary_source": "Revista Piața",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Carrefour",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Carrefour",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Romanian FMCG Retail – The most important news from October 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Carrefour",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Situația deschiderilor de magazine din retailul FMCG din România, în luna octombrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Carrefour",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Veranda Mall împlinește 10 ani: investiții totale de peste 75 de milioane euro",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Penny",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 9 – 13 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Penny",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Penny",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Cometex deschide la Jilava prima fază din București Sud Retail Park, un nou pol de retail de peste 45.000 mp",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Penny",
+      "pillar": "Expansiune și investiții",
+      "article_title": "PENNY inaugurează primul magazin din Sâncraiu de Mureș și ajunge la 479 de unități la nivel național",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Profi",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 9 – 13 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Profi",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Profi",
+      "pillar": "Promoții și strategii de preț",
+      "article_title": "Black Friday la eMAG: comenzi de peste 1 miliard de lei, cu un avans de 40% al produselor vândute de sellerii Marketplace",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Profi",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Ahold Delhaize (Mega Image și Profi) a deschis 64 de magazine în România în 2026 și pregătește noi extinderi",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Profi",
+      "pillar": "Expansiune și investiții",
+      "article_title": "EXPO RETAIL 2027 – Digital, Green & Tech deschide rezervările pentru expozanți și parteneri. Oferta Early Booking, valabilă până la 15 decembrie",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Profi",
+      "pillar": "Tendințe competitive și impact potențial asupra Fresh Meat",
+      "article_title": "Pork market to remain stable despite geopolitical uncertainties",
+      "secondary_source": "Meat Management",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Auchan",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "BRAT lansează primul sistem independent de măsurare și certificare a performanțelor retail media din România",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Auchan",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Auchan",
+      "pillar": "Promoții și strategii de preț",
+      "article_title": "Auchan dă startul Black Friday 2026: peste 2.500 de produse cu reduceri de până la 60% în magazine și pe auchan.ro",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Auchan",
+      "pillar": "Promoții și strategii de preț",
+      "article_title": "Black Friday 2026: eMAG a pregătit peste 1,8 milioane de produse la cel mai mic preț din an",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Auchan",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Auchan introduce prima intrare imersivă LED din retailul românesc, într-un nou concept de retail media",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Auchan",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Situația deschiderilor de magazine din retailul alimentar din România, în luna septembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Mega Image",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Retail & FMCG – Sinteza săptămânii 2 – 6 noiembrie 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Mega Image",
+      "pillar": "Știri și decizii comerciale",
+      "article_title": "Romanian FMCG Retail – The most important news from April 2026",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Mega Image",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Ahold Delhaize (Mega Image și Profi) a deschis 64 de magazine în România în 2026 și pregătește noi extinderi",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    },
+    {
+      "retailer": "Mega Image",
+      "pillar": "Expansiune și investiții",
+      "article_title": "Ahold Delhaize preia operațiunile Tesco din Cehia și Slovacia și își consolidează poziția în Europa Centrală",
+      "secondary_source": "Retail-FMCG.ro",
+      "reason": "Simulare pană canal oficial: colectat din presa comercială secundară"
+    }
+  ],
+  "is_fallback_engaged": true,
+  "new_or_modified_items_count": 23,
+  "status": "ACTUALIZAT",
+  "status_label": "Actualizat",
+  "last_check_bucharest": "15.11.2026 21:56:58",
+  "last_data_update_bucharest": "15.11.2026 21:56:58",
+  "dataset_sha256": "4abec028115af83cf40d5496b81b985b4502374002294450c885604311a6e7ae",
+  "errors": [],
+  "metadata": {
+    "edition_date": "15.11.2026",
+    "edition_time": "08:00",
+    "total_verified_articles": 42,
+    "is_fallback_engaged": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "release_status": "RELEASE_PASS",
+  "checks": {
+    "coverage": true,
+    "matrix_identity": true,
+    "statuses": true,
+    "source_integrity": true,
+    "research_25_25_evidence": true,
+    "reconciliation": true,
+    "render_receipt": true,
+    "master_hash": true
+  },
+  "errors": []
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { getAssetUrl } from '../utils';
+import { getAssetUrl, getCurrentBucharestISOWeek } from '../utils';
 import Footer from './Footer';
+import SmartRefreshButton from './SmartRefreshButton';
 import { useMarketIntelligence } from '../hooks/useMarketIntelligence';
 import { 
   ArrowLeft, 
@@ -37,6 +38,9 @@ interface EuBenchmarkRow {
   source_date: string;
   source_name?: string;
   source_type?: 'PRIMARY' | 'SECONDARY';
+  confirmation_level?: 'CONFIRMAT PRIMAR' | 'CONFIRMAT SECUNDAR' | 'NECONFIRMAT' | 'INDISPONIBIL';
+  source_hierarchy?: 'NIVEL_1_PRIMAR' | 'NIVEL_2_SECUNDAR';
+  fallback_active?: boolean;
   quotation_date?: string;
   source_publication_date?: string;
   source_url?: string;
@@ -55,6 +59,7 @@ interface EuPorkExportData {
   year: number;
   period: string;
   updated: string;
+  updated_time?: string;
   published_at_utc: string;
   is_baseline_golden_reference: boolean;
   fail_closed_mode: string;
@@ -306,7 +311,8 @@ export default function EuPorkMarketModule({
         const vTag = manifest?.modules?.eu_pork_market?.dataset_sha256?.slice(0, 12) || `${Date.now()}`;
         const url = getAssetUrl(`/data/eu_pork_market_export.json?v=${vTag}`);
         const res = await fetch(url, { cache: 'no-store' });
-        if (res.ok) {
+        const contentType = (res.headers.get('content-type') || '').toLowerCase();
+        if (res.ok && contentType.includes('application/json')) {
           const json = await res.json();
           if (isMounted && json && json.rows && json.rows.length === 8) {
             setData(json);
@@ -331,6 +337,13 @@ export default function EuPorkMarketModule({
   const sep = rawImageUrl.includes('?') ? '&' : '?';
   const imageUrl = getAssetUrl(`${rawImageUrl}${sep}v=${imageVersion}`);
   const filename = data.image_filename || `EU_PORK_MARKET_${data.week || 'WK45'}_${data.year || 2026}.png`;
+
+  const bucharestWeek = getCurrentBucharestISOWeek();
+  const isCurrentWeekInAudit = Boolean(
+    data && data.week && (
+      bucharestWeek.targetWeek !== data.week || (data.year && bucharestWeek.targetYear !== data.year)
+    )
+  );
 
   const downloadJsonExport = () => {
     try {
@@ -382,10 +395,34 @@ export default function EuPorkMarketModule({
             </div>
           </div>
 
-          {/* Perioadă analizată în antet */}
-          <div className="text-right shrink-0">
-            <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
-            <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.period}</span>
+          {/* Antet Dreapta: Perioadă analizată & Smart Refresh */}
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <div className="text-right shrink-0 hidden md:block">
+              <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
+              <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.period}</span>
+            </div>
+            <div className="h-7 w-px bg-slate-800 hidden md:block" />
+            <SmartRefreshButton
+              module="eu-pork"
+              lastVerifiedAt={
+                manifest?.modules?.eu_pork_market?.last_verified_update ||
+                (data.updated ? `${data.updated} · ${data.updated_time || '16:00'}` : '12.11.2026 · 16:00')
+              }
+              status={data.release_status === 'RELEASE_PASS' ? 'SUCCESS' : 'PARTIAL'}
+              statusLabel={data.release_status === 'RELEASE_PASS' ? 'Actualizat' : 'Parțial'}
+              onRefreshCompleted={async () => {
+                try {
+                  const url = getAssetUrl(`/data/eu_pork_market_export.json?v=${Date.now()}`);
+                  const res = await fetch(url, { cache: 'no-store' });
+                  if (res.ok) {
+                    const json = await res.json();
+                    if (json && json.rows && json.rows.length === 8) {
+                      setData(json);
+                    }
+                  }
+                } catch {}
+              }}
+            />
           </div>
         </div>
 
@@ -436,6 +473,32 @@ export default function EuPorkMarketModule({
 
       {/* Main Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+        {/* Banner Săptămâna Curentă în Monitorizare conform Politicii FAIL_CLOSED */}
+        {isCurrentWeekInAudit && (
+          <div className="bg-gradient-to-r from-amber-950/70 via-slate-900 to-amber-950/70 border border-amber-500/40 rounded-xl p-3.5 sm:p-4 shadow-xl text-slate-200">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 sm:mt-0">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-amber-300 tracking-wide uppercase font-mono">
+                      SĂPTĂMÂNA CURENTĂ ÎN MONITORIZARE ({bucharestWeek.targetWeek} · {bucharestWeek.targetPeriod})
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                      BENCHMARK VERIFICAT
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                    Raportul afișat este cel mai recent benchmark european validat (<strong className="text-white font-semibold">{data.week} · {data.period}</strong>). Cotațiile pentru {bucharestWeek.targetWeek} se consolidează și validează joi la 16:00 Europe/Bucharest (închiderea burselor Mercolleida, VEZG și CUN).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Tab 1: Visual Report & Executive View — Începe direct sub meniul de navigare */}
         {selectedTab === 'visual' && (
@@ -576,15 +639,23 @@ export default function EuPorkMarketModule({
                         <td className="py-3 px-4 text-slate-300 font-sans text-[11px]">
                           <div className="font-medium text-slate-200 flex items-center gap-1.5 flex-wrap">
                             <span>{row.source_date || row.source}</span>
-                            {row.source_type && (
+                            {row.confirmation_level ? (
+                              <span className={`text-[8.5px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider ${
+                                row.confirmation_level === 'CONFIRMAT SECUNDAR'
+                                  ? 'bg-sky-950/80 text-sky-300 border border-sky-600/60'
+                                  : 'bg-emerald-950/80 text-emerald-300 border border-emerald-600/60'
+                              }`}>
+                                {row.confirmation_level}
+                              </span>
+                            ) : row.source_type ? (
                               <span className={`text-[9px] px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider ${
                                 row.source_type === 'SECONDARY'
-                                  ? 'bg-purple-950/70 text-purple-300 border border-purple-700/60'
+                                  ? 'bg-sky-950/80 text-sky-300 border border-sky-600/60'
                                   : 'bg-slate-800 text-slate-400 border border-slate-700'
                               }`}>
                                 {row.source_type}
                               </span>
-                            )}
+                            ) : null}
                           </div>
                           {row.source_publication_date && (
                             <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5">

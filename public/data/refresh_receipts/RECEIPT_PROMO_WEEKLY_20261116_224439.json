@@ -1,0 +1,49 @@
+{
+  "schema_version": "2.0-refresh-audit-receipt",
+  "execution_id": "EXEC_PROMO_WEEKLY_20261116_224439_f5d414",
+  "module": "promo_weekly",
+  "module_title": "Promo Weekly",
+  "started_at_bucharest": "16.11.2026 22:44:34",
+  "completed_at_bucharest": "16.11.2026 22:44:39",
+  "started_at_iso": "2026-11-16T22:44:34.424035+02:00",
+  "completed_at_iso": "2026-11-16T22:44:39.118775+02:00",
+  "duration_seconds": 4.69,
+  "sources_checked": [
+    "Lidl Schwarz Digital Leaflets API",
+    "Kaufland Embedded Meat Offers",
+    "PENNY Nuxt SSR & Tile Extractor",
+    "Carrefour Campaign Payload Ingestion",
+    "Auchan VTEX Schema.org Extractor"
+  ],
+  "sources_unavailable": [],
+  "primary_sources": [
+    "Auchan România (Oficial)",
+    "Carrefour România (Oficial)",
+    "Kaufland România (Oficial)",
+    "Lidl România (Oficial)",
+    "PENNY România (Oficial)"
+  ],
+  "secondary_sources": [],
+  "classification_counts": {
+    "confirmat_primar": 8,
+    "confirmat_secundar": 0,
+    "neconfirmat": 0,
+    "indisponibil": 17
+  },
+  "fallback_events": [],
+  "is_fallback_engaged": false,
+  "new_or_modified_items_count": 0,
+  "status": "FARA_NOUTATI",
+  "status_label": "Fără Noutăți",
+  "last_check_bucharest": "16.11.2026 22:44:39",
+  "last_data_update_bucharest": "16.11.2026 22:42:07",
+  "dataset_sha256": "5130546e80f5a162ee9fea06aaf17c8a48056dd7d589368de731f012f610834f",
+  "errors": [],
+  "metadata": {
+    "target_week": "WK47",
+    "target_year": 2026,
+    "verified_count": 8,
+    "coverage": "25/25",
+    "is_fallback_engaged": false
+  }
+}

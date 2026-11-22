@@ -1,0 +1,725 @@
+{
+  "schema_version": "2.0-export",
+  "release_status": "RELEASE_PASS",
+  "week": "WK47",
+  "year": 2026,
+  "calendar_period": "16–22 NOI 2026",
+  "research_window": "16–22 NOI 2026 (WK47 ±3 zile)",
+  "coverage_checked": "25/25",
+  "retailers": [
+    "Kaufland",
+    "Lidl",
+    "PENNY",
+    "Carrefour",
+    "Auchan"
+  ],
+  "kvi": [
+    "Spată porc fără os",
+    "Pulpă porc fără os",
+    "Cotlet porc fără os",
+    "Ceafă porc fără os",
+    "Piept pui dezosat"
+  ],
+  "cells": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Kaufland România – sursă secundară (Kimbino Cataloage Kaufland) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Kaufland",
+      "fallback_details": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Confirmat prin surse secundare (Kimbino Cataloage Kaufland) că nu există promoție activă pentru Spată porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Pulpă porc fără os",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Kaufland România – sursă secundară (Kimbino Cataloage Kaufland) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Kaufland",
+      "fallback_details": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "price_lei_kg": 15.99,
+      "validity": "18.11–24.11.2026",
+      "exact_product": "K-Purland Pulpă de porc fără os",
+      "discount": "-33%",
+      "mechanic": "promoție catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Kaufland România – sursă secundară (Kimbino Cataloage Kaufland) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Kaufland",
+      "fallback_details": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Confirmat prin surse secundare (Kimbino Cataloage Kaufland) că nu există promoție activă pentru Cotlet porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Kaufland România – sursă secundară (Kimbino Cataloage Kaufland) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Kaufland",
+      "fallback_details": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "price_lei_kg": 20.99,
+      "validity": "11.11–17.11.2026",
+      "exact_product": "Ceafă de porc fără os bucată",
+      "discount": "-27%",
+      "mechanic": "reducere catalog",
+      "isBest": true
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Kaufland România – sursă secundară (Kimbino Cataloage Kaufland) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Kaufland",
+      "fallback_details": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "price_lei_kg": 32.79,
+      "validity": "18.11–24.11.2026",
+      "exact_product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb",
+      "discount": "0%",
+      "mechanic": "preț catalog",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Spată porc fără os",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Lidl România – sursă secundară (Kimbino Cataloage Lidl) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Lidl",
+      "fallback_details": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Lidl (https://www.kimbino.ro/lidl/catalog-nou/) conform regulilor de validare.",
+      "price_lei_kg": 18.9,
+      "validity": "16.11–22.11.2026",
+      "exact_product": "Spată de porc fără os",
+      "discount": "promoție catalog",
+      "mechanic": "promoție catalog (1.89 lei/100g)",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Lidl România – sursă secundară (Kimbino Cataloage Lidl) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Lidl",
+      "fallback_details": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Confirmat prin surse secundare (Kimbino Cataloage Lidl) că nu există promoție activă pentru Pulpă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Cotlet porc fără os",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Lidl România – sursă secundară (Kimbino Cataloage Lidl) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Lidl",
+      "fallback_details": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Lidl (https://www.kimbino.ro/lidl/catalog-nou/) conform regulilor de validare.",
+      "price_lei_kg": 19.9,
+      "validity": "16.11–22.11.2026",
+      "exact_product": "Cotlet de porc fără os",
+      "discount": "0%",
+      "mechanic": "preț permanent de raft",
+      "price_standard_lei_kg": 19.9,
+      "isBest": true
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Lidl România – sursă secundară (Kimbino Cataloage Lidl) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Lidl",
+      "fallback_details": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Confirmat prin surse secundare (Kimbino Cataloage Lidl) că nu există promoție activă pentru Ceafă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Lidl România – sursă secundară (Kimbino Cataloage Lidl) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Lidl",
+      "fallback_details": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Confirmat prin surse secundare (Kimbino Cataloage Lidl) că nu există promoție activă pentru Piept pui dezosat.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Spată porc fără os",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "PENNY România – sursă secundară (Kimbino Cataloage PENNY) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage PENNY",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Ofertă confirmată prin sursa secundară Kimbino Cataloage PENNY (https://www.kimbino.ro/penny/catalog-nou/) conform regulilor de validare.",
+      "price_lei_kg": 15.99,
+      "validity": "11.11–17.11.2026",
+      "exact_product": "Hanul Boieresc Spată de porc fără os",
+      "discount": "-26%",
+      "mechanic": "reducere cu PENNY card (preț standard 21.90 lei/kg)",
+      "price_standard_lei_kg": 21.9,
+      "isBest": true
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "PENNY România – sursă secundară (Kimbino Cataloage PENNY) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage PENNY",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Confirmat prin surse secundare (Kimbino Cataloage PENNY) că nu există promoție activă pentru Pulpă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "PENNY România – sursă secundară (Kimbino Cataloage PENNY) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage PENNY",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Confirmat prin surse secundare (Kimbino Cataloage PENNY) că nu există promoție activă pentru Cotlet porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "PENNY România – sursă secundară (Kimbino Cataloage PENNY) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage PENNY",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Confirmat prin surse secundare (Kimbino Cataloage PENNY) că nu există promoție activă pentru Ceafă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Piept pui dezosat",
+      "status": "VERIFIED",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "PENNY România – sursă secundară (Kimbino Cataloage PENNY) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage PENNY",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Ofertă confirmată prin sursa secundară Kimbino Cataloage PENNY (https://www.kimbino.ro/penny/catalog-nou/) conform regulilor de validare.",
+      "price_lei_kg": 24.6,
+      "validity": "18.11–24.11.2026",
+      "exact_product": "Hanul Boieresc Piept de pui dezosat",
+      "discount": "-25%",
+      "mechanic": "reducere cu PENNY card (caserolă 650g la 15.99 lei; standard: 21.49 lei)",
+      "price_standard_lei_kg": 33.06,
+      "price_cupon_lei_kg": 24.6,
+      "isBest": true
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Carrefour România – sursă secundară (Kimbino Cataloage Carrefour) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Carrefour",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Carrefour). Confirmat prin surse secundare (Kimbino Cataloage Carrefour) că nu există promoție activă pentru Spată porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Carrefour România – sursă secundară (Kimbino Cataloage Carrefour) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Carrefour",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Carrefour). Confirmat prin surse secundare (Kimbino Cataloage Carrefour) că nu există promoție activă pentru Pulpă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Carrefour România – sursă secundară (Kimbino Cataloage Carrefour) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Carrefour",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Carrefour). Confirmat prin surse secundare (Kimbino Cataloage Carrefour) că nu există promoție activă pentru Cotlet porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Carrefour România – sursă secundară (Kimbino Cataloage Carrefour) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Carrefour",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Carrefour). Confirmat prin surse secundare (Kimbino Cataloage Carrefour) că nu există promoție activă pentru Ceafă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Carrefour România – sursă secundară (Kimbino Cataloage Carrefour) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Carrefour",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Carrefour). Confirmat prin surse secundare (Kimbino Cataloage Carrefour) că nu există promoție activă pentru Piept pui dezosat.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Spată porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Auchan România – sursă secundară (Kimbino Cataloage Auchan) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Auchan",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Auchan (0)). Confirmat prin surse secundare (Kimbino Cataloage Auchan) că nu există promoție activă pentru Spată porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Pulpă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Auchan România – sursă secundară (Kimbino Cataloage Auchan) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Auchan",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Auchan (0)). Confirmat prin surse secundare (Kimbino Cataloage Auchan) că nu există promoție activă pentru Pulpă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Cotlet porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Auchan România – sursă secundară (Kimbino Cataloage Auchan) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Auchan",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Auchan (0)). Confirmat prin surse secundare (Kimbino Cataloage Auchan) că nu există promoție activă pentru Cotlet porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Ceafă porc fără os",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Auchan România – sursă secundară (Kimbino Cataloage Auchan) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Auchan",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Auchan (0)). Confirmat prin surse secundare (Kimbino Cataloage Auchan) că nu există promoție activă pentru Ceafă porc fără os.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Piept pui dezosat",
+      "status": "N/V",
+      "confirmation_level": "INDISPONIBIL",
+      "source_hierarchy": "NIVEL_2_SECUNDAR",
+      "fallback_used": true,
+      "source": "Auchan România – sursă secundară (Kimbino Cataloage Auchan) WK47",
+      "source_date": "2026-11-17",
+      "fallback_source": "Kimbino Cataloage Auchan",
+      "fallback_details": "Sursă primară indisponibilă (Eroare conectare Auchan (0)). Confirmat prin surse secundare (Kimbino Cataloage Auchan) că nu există promoție activă pentru Piept pui dezosat.",
+      "note": "nicio ofertă confirmată în sursele secundare",
+      "isBest": false
+    }
+  ],
+  "classification_counts": {
+    "confirmat_primar": 0,
+    "confirmat_secundar": 7,
+    "neconfirmat": 0,
+    "indisponibil": 18
+  },
+  "is_fallback_engaged": true,
+  "fallback_events": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Pulpă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Kaufland",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 15.99
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Kaufland",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 20.99
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Piept pui dezosat",
+      "primary_issue": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Kaufland",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 32.79
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Spată porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Lidl (https://www.kimbino.ro/lidl/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Lidl",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 18.9
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Cotlet porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Lidl (https://www.kimbino.ro/lidl/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Lidl",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 19.9
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Spată porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Ofertă confirmată prin sursa secundară Kimbino Cataloage PENNY (https://www.kimbino.ro/penny/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage PENNY",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 15.99
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Piept pui dezosat",
+      "primary_issue": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Ofertă confirmată prin sursa secundară Kimbino Cataloage PENNY (https://www.kimbino.ro/penny/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage PENNY",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 24.6
+    }
+  ],
+  "primary_sources": [],
+  "secondary_sources": [
+    "Auchan – Kimbino Cataloage Auchan",
+    "Carrefour – Kimbino Cataloage Carrefour",
+    "Kaufland – Kimbino Cataloage Kaufland",
+    "Lidl – Kimbino Cataloage Lidl",
+    "PENNY – Kimbino Cataloage PENNY"
+  ],
+  "summary": {
+    "cell_count": 25,
+    "verified_count": 7,
+    "nv_count": 18,
+    "best_prices": {
+      "Spată porc fără os": 15.99,
+      "Pulpă porc fără os": 15.99,
+      "Cotlet porc fără os": 19.9,
+      "Ceafă porc fără os": 20.99,
+      "Piept pui dezosat": 24.6
+    }
+  },
+  "hashes": {
+    "dataset_sha256": "0cef4838175413f867a74fcef19e36d9a4ca71ff105be9b5070ef3d8a7fb6ece",
+    "output_sha256": "7260a8ce1c0b4525e622d354d8a8a135123c344f67641292a42d2bbc4cec2550",
+    "release_receipt_sha256": "379c8ae3c9d62c3bd5e2cb51a80c08e588b8eecaa5d90be1a3f9ef848b5f5ee5",
+    "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
+    "renderer_sha256": "3f99b788bd766add379a2451c46cd73ed91419293d626430ce146c24f3f8378e"
+  },
+  "image_url": "/TOP5_PREȚURI_COMPETITORI_WK47_2026.png",
+  "commercial_conclusions": {
+    "schema_version": "1.0-commercial-conclusions",
+    "week": "WK47",
+    "year": 2026,
+    "calendar_period": "16–22 NOI 2026",
+    "items": [
+      {
+        "kvi": "Spată porc fără os",
+        "has_offers": true,
+        "best_price": 15.99,
+        "best_retailers": [
+          "PENNY"
+        ],
+        "summary_title": "Spată porc fără os (Lider PENNY la 15.99 lei/kg)",
+        "text": "PENNY asigură cel mai mic preț la 15.99 lei/kg [reducere cu PENNY card (preț standard 21.90 lei/kg)], în timp ce Lidl la 18.90 lei/kg (+2.91 lei, +18.2%).",
+        "offers_count": 2,
+        "offers_detail": [
+          {
+            "retailer": "PENNY",
+            "price_lei_kg": 15.99,
+            "exact_product": "Hanul Boieresc Spată de porc fără os",
+            "discount": "-26%",
+            "mechanic": "reducere cu PENNY card (preț standard 21.90 lei/kg)",
+            "validity": "11.11–17.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": true,
+            "price_standard_lei_kg": 21.9
+          },
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 18.9,
+            "exact_product": "Spată de porc fără os",
+            "discount": "promoție catalog",
+            "mechanic": "promoție catalog (1.89 lei/100g)",
+            "validity": "16.11–22.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 2.91,
+            "diff_percent": 18.2,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Kaufland",
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Pulpă porc fără os",
+        "has_offers": true,
+        "best_price": 15.99,
+        "best_retailers": [
+          "Kaufland"
+        ],
+        "summary_title": "Pulpă porc fără os (Ofertă unică Kaufland)",
+        "text": "Kaufland asigură unica ofertă promoțională confirmată din piață la 15.99 lei/kg [promoție catalog]. Ceilalți retaileri (Lidl, PENNY, Carrefour, Auchan) nu au inclus Pulpă porc fără os în cataloagele promoționale din WK47.",
+        "offers_count": 1,
+        "offers_detail": [
+          {
+            "retailer": "Kaufland",
+            "price_lei_kg": 15.99,
+            "exact_product": "K-Purland Pulpă de porc fără os",
+            "discount": "-33%",
+            "mechanic": "promoție catalog",
+            "validity": "18.11–24.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Lidl",
+          "PENNY",
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Cotlet porc fără os",
+        "has_offers": true,
+        "best_price": 19.9,
+        "best_retailers": [
+          "Lidl"
+        ],
+        "summary_title": "Cotlet porc fără os (Ofertă unică Lidl)",
+        "text": "Lidl asigură unica ofertă promoțională confirmată din piață la 19.90 lei/kg [preț permanent de raft]. Ceilalți retaileri (Kaufland, PENNY, Carrefour, Auchan) nu au inclus Cotlet porc fără os în cataloagele promoționale din WK47.",
+        "offers_count": 1,
+        "offers_detail": [
+          {
+            "retailer": "Lidl",
+            "price_lei_kg": 19.9,
+            "exact_product": "Cotlet de porc fără os",
+            "discount": "0%",
+            "mechanic": "preț permanent de raft",
+            "validity": "16.11–22.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false,
+            "price_standard_lei_kg": 19.9
+          }
+        ],
+        "nv_retailers": [
+          "Kaufland",
+          "PENNY",
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Ceafă porc fără os",
+        "has_offers": true,
+        "best_price": 20.99,
+        "best_retailers": [
+          "Kaufland"
+        ],
+        "summary_title": "Ceafă porc fără os (Ofertă unică Kaufland)",
+        "text": "Kaufland asigură unica ofertă promoțională confirmată din piață la 20.99 lei/kg [reducere catalog]. Ceilalți retaileri (Lidl, PENNY, Carrefour, Auchan) nu au inclus Ceafă porc fără os în cataloagele promoționale din WK47.",
+        "offers_count": 1,
+        "offers_detail": [
+          {
+            "retailer": "Kaufland",
+            "price_lei_kg": 20.99,
+            "exact_product": "Ceafă de porc fără os bucată",
+            "discount": "-27%",
+            "mechanic": "reducere catalog",
+            "validity": "11.11–17.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Lidl",
+          "PENNY",
+          "Carrefour",
+          "Auchan"
+        ]
+      },
+      {
+        "kvi": "Piept pui dezosat",
+        "has_offers": true,
+        "best_price": 24.6,
+        "best_retailers": [
+          "PENNY"
+        ],
+        "summary_title": "Piept pui dezosat (Lider PENNY la 24.60 lei/kg)",
+        "text": "PENNY asigură cel mai mic preț la 24.60 lei/kg [reducere cu PENNY card (caserolă 650g la 15.99 lei; standard: 21.49 lei)], în timp ce Kaufland la 32.79 lei/kg (+8.19 lei, +33.3%).",
+        "offers_count": 2,
+        "offers_detail": [
+          {
+            "retailer": "PENNY",
+            "price_lei_kg": 24.6,
+            "exact_product": "Hanul Boieresc Piept de pui dezosat",
+            "discount": "-25%",
+            "mechanic": "reducere cu PENNY card (caserolă 650g la 15.99 lei; standard: 21.49 lei)",
+            "validity": "18.11–24.11.2026",
+            "is_best": true,
+            "diff_lei_kg": 0.0,
+            "diff_percent": 0.0,
+            "is_conditional": true,
+            "price_standard_lei_kg": 33.06,
+            "price_cupon_lei_kg": 24.6
+          },
+          {
+            "retailer": "Kaufland",
+            "price_lei_kg": 32.79,
+            "exact_product": "Gustavi piept de pui dezosat fără piele hrănit cu porumb",
+            "discount": "0%",
+            "mechanic": "preț catalog",
+            "validity": "18.11–24.11.2026",
+            "is_best": false,
+            "diff_lei_kg": 8.19,
+            "diff_percent": 33.3,
+            "is_conditional": false
+          }
+        ],
+        "nv_retailers": [
+          "Lidl",
+          "Carrefour",
+          "Auchan"
+        ]
+      }
+    ],
+    "competitive_summary": {
+      "week": "WK47",
+      "year": 2026,
+      "calendar_period": "16–22 NOI 2026",
+      "best_price_counts": {
+        "PENNY": 2,
+        "Kaufland": 2,
+        "Lidl": 1
+      },
+      "verified_offer_counts": {
+        "PENNY": 2,
+        "Lidl": 2,
+        "Kaufland": 3
+      },
+      "ranked_retailers": [
+        "Kaufland",
+        "PENNY",
+        "Lidl",
+        "Carrefour",
+        "Auchan"
+      ]
+    }
+  },
+  "release_gate": {
+    "release_status": "RELEASE_PASS",
+    "checks": {
+      "coverage": true,
+      "matrix_identity": true,
+      "statuses": true,
+      "source_integrity": true,
+      "research_25_25_evidence": true,
+      "reconciliation": true,
+      "render_receipt": true,
+      "master_hash": true
+    },
+    "errors": []
+  }
+}

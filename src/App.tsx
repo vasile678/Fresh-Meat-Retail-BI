@@ -17,14 +17,17 @@ import {
   Share2, 
   ArrowLeft,
   History,
-  Tag
+  Tag,
+  Clock
 } from 'lucide-react';
 import Homepage from './components/Homepage';
 import EuPorkMarketModule from './components/EuPorkMarketModule';
 import RetailMediaClippingModule from './components/RetailMediaClippingModule';
 import Footer from './components/Footer';
-import { getAssetUrl } from './utils';
+import SmartRefreshButton from './components/SmartRefreshButton';
+import { getAssetUrl, getCurrentBucharestISOWeek } from './utils';
 import { useMarketIntelligence } from './hooks/useMarketIntelligence';
+import { evaluateOnPageOpenResearch } from './services/onPageOpenCheck';
 export { getAssetUrl };
 
 interface CellHistoryItem {
@@ -305,40 +308,94 @@ export default function App() {
     }
   };
 
+  // Strict JSON fetcher that verifies HTTP status and Content-Type before parsing
+  // Eliminates Unexpected token '<' errors by rejecting HTML responses with clear errors
+  // Includes automatic retry on transient network glitch or container restart
+  const fetchStrictJson = async <T,>(url: string, errorContext: string, retries = 2): Promise<T> => {
+    let lastErr: any = null;
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        const contentType = (res.headers.get('content-type') || '').toLowerCase();
+
+        if (!res.ok) {
+          if (contentType.includes('application/json')) {
+            const errJson = await res.json().catch(() => null);
+            throw new Error(errJson?.message || `${errorContext} (HTTP ${res.status})`);
+          }
+          throw new Error(`${errorContext} (HTTP ${res.status} ${res.statusText})`);
+        }
+
+        if (!contentType.includes('application/json')) {
+          const sample = (await res.text()).slice(0, 60).replace(/\s+/g, ' ');
+          throw new Error(
+            `Răspuns invalid pentru ${errorContext}: Serverul a returnat '${contentType || 'necunoscut'}' în loc de 'application/json' (previzualizare: ${sample}...). Regula FAIL_CLOSED rămâne activă.`
+          );
+        }
+
+        try {
+          return await res.json();
+        } catch (err: any) {
+          throw new Error(`Eroare decodare JSON pentru ${errorContext}: ${err?.message || err}. Regula FAIL_CLOSED rămâne activă.`);
+        }
+      } catch (err: any) {
+        lastErr = err;
+        const isNetworkError = err instanceof TypeError && (
+          err.message.includes('fetch') || 
+          err.message.includes('NetworkError') || 
+          err.message.includes('Failed to fetch')
+        );
+        if (isNetworkError && attempt < retries) {
+          await new Promise(r => setTimeout(r, 200 * (attempt + 1)));
+          continue;
+        }
+        throw err;
+      }
+    }
+    throw lastErr;
+  };
+
   const loadDashboardData = async () => {
     setLoading(true);
     setFetchError(null);
     try {
-      // 1. Fetch the active atomic pointer with cache-busting and no-store
-      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()), {
-        cache: 'no-store'
-      });
+      // 1. Fetch the active atomic pointer with cache-busting and strict Content-Type validation
       let pointer: ActiveRelease | null = null;
+      try {
+        const pointerUrl = getAssetUrl('/data/active_release.json?t=' + Date.now());
+        pointer = await fetchStrictJson<ActiveRelease>(pointerUrl, 'pointerul activ (active_release.json)');
+      } catch (e: any) {
+        console.warn('[LOAD_DATA] Avertisment citire pointer activ:', e?.message || e);
+      }
+
       let exportUrl = getAssetUrl('/data/bi_dashboard_export.json?v=' + Date.now());
       let imageUrl = getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK46_2026.png?v=' + Date.now());
 
-      if (pointerRes.ok) {
-        pointer = await pointerRes.json();
-        if (pointer && pointer.release_status === 'RELEASE_PASS') {
-          setActiveRelease(pointer);
-          const v = pointer.dataset_sha256 || Date.now().toString();
-          const imgV = pointer.output_sha256 || Date.now().toString();
-          exportUrl = getAssetUrl(`${pointer.export_path}?v=${v}`);
-          imageUrl = getAssetUrl(`${pointer.image_path}?v=${imgV}`);
-        } else if (pointer && pointer.release_status === 'FAIL_CLOSED') {
-          throw new Error('Pointerul activ indică FAIL_CLOSED (lansare blocată de poartă)');
+      if (pointer && pointer.release_status === 'RELEASE_PASS') {
+        setActiveRelease(pointer);
+        const v = pointer.dataset_sha256 || Date.now().toString();
+        const imgV = pointer.output_sha256 || Date.now().toString();
+        exportUrl = getAssetUrl(`${pointer.export_path}?v=${v}`);
+        imageUrl = getAssetUrl(`${pointer.image_path}?v=${imgV}`);
+      } else if (pointer && pointer.release_status === 'FAIL_CLOSED') {
+        throw new Error('Pointerul activ indică FAIL_CLOSED (lansare blocată de poartă)');
+      }
+
+      // 2. Consume immutable export JSON corresponding strictly to the active release (with fallback to default export)
+      let json: DashboardExport;
+      try {
+        json = await fetchStrictJson<DashboardExport>(exportUrl, 'exportul validat al lansării active');
+      } catch (err) {
+        const fallbackUrl = getAssetUrl('/data/bi_dashboard_export.json?v=' + Date.now());
+        if (exportUrl !== fallbackUrl) {
+          json = await fetchStrictJson<DashboardExport>(fallbackUrl, 'exportul canonic (/data/bi_dashboard_export.json)');
+        } else {
+          throw err;
         }
       }
 
-      // 2. Consume immutable export JSON corresponding strictly to the active release
-      const res = await fetch(exportUrl, { cache: 'no-store' });
-      if (!res.ok) {
-        throw new Error(`Eroare la încărcarea exportului validat (HTTP ${res.status})`);
-      }
-      const json: DashboardExport = await res.json();
-
       // 3. Cryptographic consistency validation between pointer and export
-      if (pointer) {
+      if (pointer && pointer.release_status === 'RELEASE_PASS') {
         if (json.hashes.dataset_sha256 !== pointer.dataset_sha256) {
           throw new Error('Nepotrivire SHA-256 între pointerul activ și datasetul exportat!');
         }
@@ -348,6 +405,11 @@ export default function App() {
         json.image_url = imageUrl;
       } else {
         json.image_url = json.image_url ? getAssetUrl(`${json.image_url}?v=${Date.now()}`) : imageUrl;
+      }
+
+      // 4. Release Gate verification check
+      if (json.release_status !== 'RELEASE_PASS' || json.release_gate?.release_status !== 'RELEASE_PASS') {
+        throw new Error('Chitanța de lansare nu a atins statutul RELEASE_PASS (Poarta Release Gate a blocat lansarea).');
       }
 
       setData(json);
@@ -362,9 +424,8 @@ export default function App() {
   // Background release checker: auto-detects new release and refreshes without interrupting the user
   const checkBackgroundRelease = async () => {
     try {
-      const pointerRes = await fetch(getAssetUrl('/data/active_release.json?t=' + Date.now()), { cache: 'no-store' });
-      if (!pointerRes.ok) return;
-      const pointer: ActiveRelease = await pointerRes.json();
+      const pointerUrl = getAssetUrl('/data/active_release.json?t=' + Date.now());
+      const pointer = await fetchStrictJson<ActiveRelease>(pointerUrl, 'pointerul activ (background)');
       if (!pointer || pointer.release_status !== 'RELEASE_PASS') return;
 
       // Detect if release changed or is newer
@@ -373,13 +434,12 @@ export default function App() {
       }
 
       const exportUrl = getAssetUrl(`${pointer.export_path}?v=${pointer.dataset_sha256 || Date.now()}`);
-      const res = await fetch(exportUrl, { cache: 'no-store' });
-      if (!res.ok) return;
-      const json: DashboardExport = await res.json();
+      const json = await fetchStrictJson<DashboardExport>(exportUrl, 'exportul lansării active (background)');
 
       if (
         json.hashes.dataset_sha256 === pointer.dataset_sha256 &&
-        json.hashes.output_sha256 === pointer.output_sha256
+        json.hashes.output_sha256 === pointer.output_sha256 &&
+        json.release_status === 'RELEASE_PASS'
       ) {
         json.image_url = getAssetUrl(`${pointer.image_path}?v=${pointer.output_sha256 || Date.now()}`);
         setActiveRelease(pointer);
@@ -390,18 +450,18 @@ export default function App() {
     }
   };
 
-  // On-demand serverless trigger: only attempts if backend exists, respecting global cooldown & mutex
-  // On static hosting (GitHub Pages), gracefully falls back with zero errors and no token exposure
-  const attemptOnDemandCollection = async () => {
+  // Automated check on page opening: evaluates cache-bypassed release, ISO week, and validity
+  // Deduplicates concurrent requests, enforces cooldown, and prevents redundant pipelines when up to date
+  const performOnPageOpenCheck = async () => {
     try {
-      const statusRes = await fetch('/api/promo-weekly/status');
-      if (!statusRes.ok) return; // Static host: endpoint 404, gracefully skip
-      const statusData = await statusRes.json();
-      if (statusData && statusData.can_collect_now && !statusData.is_collecting) {
-        await fetch('/api/promo-weekly/trigger-collect', { method: 'POST' });
+      const checkResult = await evaluateOnPageOpenResearch();
+      if (checkResult.research_required && checkResult.action_taken === 'TRIGGERED_BACKEND') {
+        console.log(`[PAGE OPEN CHECK] Cercetare live inițiată: ${checkResult.reason} (Job ID: ${checkResult.job_id || 'activ'})`);
+      } else {
+        console.log(`[PAGE OPEN CHECK] Raport conform: ${checkResult.reason}`);
       }
-    } catch {
-      // Fallback for purely static environments
+    } catch (e) {
+      console.warn('[PAGE OPEN CHECK] Avertisment verificare deschidere pagină:', e);
     }
   };
 
@@ -409,8 +469,8 @@ export default function App() {
     // 1. Load latest validated release immediately on open/refresh
     loadDashboardData();
 
-    // 2. Check if on-demand collection can run in background
-    attemptOnDemandCollection();
+    // 2. Intelligent check on page opening (no redundant pipelines if already up to date)
+    performOnPageOpenCheck();
 
     // 3. Periodic background polling every 60 seconds
     const intervalId = setInterval(() => {
@@ -675,6 +735,12 @@ export default function App() {
   const retailers = data.retailers || ['Kaufland', 'Lidl', 'PENNY', 'Carrefour', 'Auchan'];
   const kvi = data.kvi || ['Spată porc fără os', 'Pulpă porc fără os', 'Cotlet porc fără os', 'Ceafă porc fără os', 'Piept pui dezosat'];
   const pngUrl = data.image_url || getAssetUrl('/TOP5_PREȚURI_COMPETITORI_WK46_2026.png');
+  const bucharestWeek = getCurrentBucharestISOWeek();
+  const isCurrentWeekInAudit = Boolean(
+    data && data.week && (
+      bucharestWeek.targetWeek !== data.week || (data.year && bucharestWeek.targetYear !== data.year)
+    )
+  );
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
@@ -708,10 +774,20 @@ export default function App() {
             </div>
           </div>
 
-          {/* Perioadă analizată în antet */}
-          <div className="text-right shrink-0">
-            <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
-            <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.calendar_period}</span>
+          {/* Antet Dreapta: Perioadă analizată & Smart Refresh */}
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <div className="text-right shrink-0 hidden md:block">
+              <span className="text-[10px] sm:text-[11px] text-slate-400 block leading-tight">Perioadă analizată</span>
+              <span className="text-xs sm:text-sm font-semibold text-slate-200">{data.calendar_period}</span>
+            </div>
+            <div className="h-7 w-px bg-slate-800 hidden md:block" />
+            <SmartRefreshButton
+              module="promo"
+              lastVerifiedAt={manifest?.modules?.promo_weekly?.last_verified_update || '09.11.2026 · 09:00'}
+              status={data.release_status === 'RELEASE_PASS' ? 'SUCCESS' : 'ERROR'}
+              statusLabel={data.release_status === 'RELEASE_PASS' ? 'Actualizat' : 'Eroare'}
+              onRefreshCompleted={() => loadDashboardData()}
+            />
           </div>
         </div>
 
@@ -752,6 +828,46 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6">
+        {/* Banner Săptămâna Curentă în Audit conform Politicii FAIL_CLOSED */}
+        {isCurrentWeekInAudit && (
+          <div className="bg-gradient-to-r from-amber-950/70 via-slate-900 to-amber-950/70 border border-amber-500/40 rounded-xl p-3.5 sm:p-4 shadow-xl text-slate-200">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 sm:mt-0">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold text-amber-300 tracking-wide uppercase font-mono">
+                      SĂPTĂMÂNA CURENTĂ ÎN AUDIT ({bucharestWeek.targetWeek} · {bucharestWeek.targetPeriod})
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                      FAIL_CLOSED ACTIVAT
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                    Raportul afișat este cel mai recent release validat (<strong className="text-white font-semibold">{data.week} · {data.calendar_period}</strong>) conform politicii de guvernanță FAIL_CLOSED. Colectarea și auditul 25/25 pentru săptămâna curentă {bucharestWeek.targetWeek} se desfășoară conform calendarului oficial (Luni 09:00 Europe/Bucharest).
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    loadDashboardData();
+                    checkBackgroundRelease();
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 hover:text-white text-xs font-semibold border border-amber-500/40 transition cursor-pointer"
+                  title="Verifică apariția unui nou release validat în depozit"
+                >
+                  <RefreshCw className="w-3.5 h-3.5" />
+                  <span>Verifică release</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Tab 1: Image & Executive View */}
         {selectedTab === 'image' && (
           <div className="space-y-6">
@@ -948,7 +1064,7 @@ export default function App() {
                 >
                   Închide
                 </button>
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2 mb-1 flex-wrap">
                   <span className={`px-2.5 py-0.5 rounded text-xs font-bold ${
                     selectedCell.status === 'VERIFIED'
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
@@ -956,6 +1072,15 @@ export default function App() {
                   }`}>
                     {selectedCell.status}
                   </span>
+                  {(selectedCell as any).confirmation_level && (
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                      (selectedCell as any).confirmation_level === 'CONFIRMAT SECUNDAR'
+                        ? 'bg-sky-950/80 text-sky-300 border border-sky-600/60'
+                        : 'bg-emerald-950/80 text-emerald-300 border border-emerald-600/60'
+                    }`}>
+                      {(selectedCell as any).confirmation_level}
+                    </span>
+                  )}
                   <h4 className="text-base font-bold text-white">
                     {selectedCell.retailer} — {selectedCell.kvi}
                   </h4>
@@ -1040,13 +1165,21 @@ export default function App() {
                   </div>
                 )}
 
-                <div className="text-xs bg-slate-950 p-3 rounded-lg border border-slate-800 flex items-center justify-between">
-                  <span className="text-slate-400">
-                    Sursă verificare: <strong className="text-slate-200">{selectedCell.source || 'Monitorizare catalog național & verificare ±3 zile'}</strong>
-                  </span>
-                  <span className="text-slate-500">
-                    Dată sursă: {selectedCell.source_date || 'N/A'}
-                  </span>
+                <div className="text-xs bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-400">
+                      Sursă verificare: <strong className="text-slate-200">{selectedCell.source || 'Monitorizare catalog național & verificare ±3 zile'}</strong>
+                    </span>
+                    <span className="text-slate-500">
+                      Dată sursă: {selectedCell.source_date || 'N/A'}
+                    </span>
+                  </div>
+                  {(selectedCell as any).fallback_used && (
+                    <div className="pt-1.5 border-t border-slate-800/80 text-[11px] text-sky-300 flex items-center justify-between">
+                      <span>Canal secundar utilizat: <strong>{(selectedCell as any).fallback_source}</strong></span>
+                      <span className="text-[10px] text-slate-400">{(selectedCell as any).source_hierarchy}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

@@ -94,11 +94,25 @@ class TestCarrefourAuchanCollection(unittest.TestCase):
         ceafa_concl = next((x for x in conclusions if x.get("kvi") == "Ceafă porc fără os"), None)
         self.assertIsNotNone(ceafa_concl)
         
-        self.assertEqual(ceafa_concl["best_price"], 17.90)
-        if export_data.get("week") == "WK46":
-            self.assertIn("Carrefour", ceafa_concl["best_retailers"])
-            self.assertEqual(ceafa_concl["offers_count"], 3)
+        if export_data.get("week") == "WK47":
+            self.assertEqual(ceafa_concl["best_price"], 20.99)
+            self.assertEqual(ceafa_concl["best_retailers"], ["Kaufland"])
+            self.assertEqual(ceafa_concl["offers_count"], 1)
+            self.assertIn("Carrefour", ceafa_concl["nv_retailers"])
+            self.assertIn("Auchan", ceafa_concl["nv_retailers"])
+            self.assertIn("Lidl", ceafa_concl["nv_retailers"])
+        elif export_data.get("week") == "WK46":
+            self.assertEqual(ceafa_concl["best_price"], 17.90)
+            self.assertIn("Lidl", ceafa_concl["best_retailers"])
+            self.assertEqual(ceafa_concl["offers_count"], 2)
+            self.assertIn("Carrefour", ceafa_concl["nv_retailers"])
+            details = ceafa_concl["offers_detail"]
+            self.assertEqual(details[0]["retailer"], "Lidl")
+            self.assertEqual(details[0]["price_lei_kg"], 17.90)
+            self.assertEqual(details[1]["retailer"], "Auchan")
+            self.assertEqual(details[1]["price_lei_kg"], 19.99)
         else:
+            self.assertEqual(ceafa_concl["best_price"], 17.90)
             self.assertEqual(ceafa_concl["best_retailers"], ["Carrefour"])
             self.assertEqual(ceafa_concl["offers_count"], 3)
             
@@ -144,10 +158,17 @@ class TestCarrefourAuchanCollection(unittest.TestCase):
         
         self.assertIsNotNone(carr_entry)
         self.assertIsNotNone(auch_entry)
-        self.assertIn("17,90", carr_entry.get("lead_kvi_price", ""))
-        self.assertIn("19,99", auch_entry.get("lead_kvi_price", ""))
-        self.assertIn("Lider absolut", carr_entry.get("positioning_note", ""))
-        self.assertIn("Al doilea cel mai bun preț", auch_entry.get("positioning_note", ""))
+        if ci.get("promo_week") == "WK47":
+            self.assertIn("N/V", carr_entry.get("lead_kvi_price", ""))
+            self.assertIn("N/V", auch_entry.get("lead_kvi_price", ""))
+        elif "N/V" in carr_entry.get("lead_kvi_price", ""):
+            self.assertIn("19,99", auch_entry.get("lead_kvi_price", ""))
+            self.assertIn("Al doilea cel mai bun preț", auch_entry.get("positioning_note", ""))
+        else:
+            self.assertIn("17,90", carr_entry.get("lead_kvi_price", ""))
+            self.assertIn("19,99", auch_entry.get("lead_kvi_price", ""))
+            self.assertIn("Lider absolut", carr_entry.get("positioning_note", ""))
+            self.assertIn("Al doilea cel mai bun preț", auch_entry.get("positioning_note", ""))
 
 if __name__ == "__main__":
     unittest.main()

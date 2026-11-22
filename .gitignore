@@ -14,3 +14,5 @@ bun.lock
 fresh_meat_bi/*prototype*
 tmp/
 *.zip
+.aistudio/
+*.bundle

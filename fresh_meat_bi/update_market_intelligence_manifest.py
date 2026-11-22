@@ -31,6 +31,15 @@ def generate_manifest():
     now_bucharest = datetime.now(bucharest_tz)
     now_iso = now_bucharest.isoformat()
 
+    # Load smart_refresh_state if available
+    refresh_state = {}
+    rf_path = PUBLIC_DATA_DIR / "smart_refresh_state.json"
+    if rf_path.exists():
+        try:
+            refresh_state = json.loads(rf_path.read_text(encoding="utf-8")).get("modules", {})
+        except Exception:
+            pass
+
     # 1. Promo Weekly Data
     promo_export_path = PUBLIC_DATA_DIR / "bi_dashboard_export.json"
     active_release_path = PUBLIC_DATA_DIR / "active_release.json"
@@ -49,44 +58,39 @@ def generate_manifest():
         except Exception:
             pass
 
-    # Determine last verified update for Promo Weekly dynamically
-    active_week = active_release_data.get("week") or promo_data.get("week", "WK46")
-    active_year = active_release_data.get("year") or promo_data.get("year", 2026)
-    try:
-        w_num = int(active_week.replace("WK", ""))
-        mon_date = datetime.fromisocalendar(int(active_year), w_num, 1).date()
-        promo_updated = f"{mon_date.strftime('%d.%m.%Y')} · 09:00"
-    except Exception:
-        promo_updated = "09.11.2026 · 09:00"
-
-    rolling_receipt_path = BASE_DIR / f"ROLLING_UPDATE_RECEIPT_{active_week}.json"
-    if rolling_receipt_path.exists():
-        try:
-            r_data = json.loads(rolling_receipt_path.read_text(encoding="utf-8"))
-            if active_release_data.get("release_id", "").endswith(r_data.get("new_release", {}).get("release_id", "___").split("_")[-1]):
-                applied_at = r_data.get("applied_at_bucharest", "")
-                if applied_at:
-                    parts = applied_at.split(" ")
-                    promo_updated = f"{parts[0]} · {parts[1][:5]}"
-        except Exception:
-            pass
+    promo_rf = refresh_state.get("promo_weekly", {})
+    last_check_promo = promo_rf.get("last_check_bucharest", now_bucharest.strftime("%d.%m.%Y %H:%M:%S"))
+    last_data_promo = promo_rf.get("last_data_update_bucharest", "09.11.2026 09:00:00")
+    status_promo = promo_rf.get("status", "ACTUALIZAT")
+    label_promo = promo_rf.get("status_label", "Actualizat")
 
     promo_module = {
         "module_id": "promo_weekly",
         "title": "Promo Weekly",
         "schedule": "Luni, 09:00 Europe/Bucharest",
-        "last_verified_update": promo_updated,
-        "updated_date": promo_updated.split(" · ")[0] if " · " in promo_updated else "29.10.2026",
-        "updated_time": promo_updated.split(" · ")[1] if " · " in promo_updated else "09:00",
-        "week": promo_data.get("week", "WK44"),
+        "last_verified_update": last_check_promo,
+        "last_check_bucharest": last_check_promo,
+        "last_data_update_bucharest": last_data_promo,
+        "refresh_status": status_promo,
+        "refresh_status_label": label_promo,
+        "updated_date": last_check_promo.split(" ")[0] if " " in last_check_promo else "14.11.2026",
+        "updated_time": last_check_promo.split(" ")[1] if " " in last_check_promo else "09:00:00",
+        "week": promo_data.get("week", "WK46"),
         "year": promo_data.get("year", 2026),
-        "period": promo_data.get("calendar_period", "26 OCT – 01 NOI 2026"),
+        "period": promo_data.get("calendar_period", "09–15 NOI 2026"),
         "status": promo_data.get("release_status", "RELEASE_PASS"),
         "data_file": "/data/bi_dashboard_export.json",
         "active_release_file": "/data/active_release.json",
-        "dataset_sha256": promo_sha,
+        "dataset_sha256": promo_rf.get("dataset_sha256") or promo_data.get("hashes", {}).get("dataset_sha256") or promo_sha,
         "verified_cells_count": len(promo_data.get("cells", [])),
-        "verified_retailers_count": len(promo_data.get("retailers", []))
+        "verified_retailers_count": len(promo_data.get("retailers", [])),
+        "classification_counts": promo_rf.get("classification_counts", {
+            "confirmat_primar": 8,
+            "confirmat_secundar": 0,
+            "neconfirmat": 0,
+            "indisponibil": 17
+        }),
+        "is_fallback_engaged": promo_rf.get("is_fallback_engaged", False)
     }
 
     # 2. EU Pork Market Data
@@ -99,21 +103,26 @@ def generate_manifest():
         except Exception as e:
             print(f"Warning: Could not parse {eu_export_path}: {e}")
 
-    # Weekly release for EU Pork Market: Thursday 09:00 with finalized afternoon session integration (16:00)
-    updated_date_str = eu_data.get("updated", "05.11.2026")
-    updated_time_str = eu_data.get("updated_time", "16:00")
-    eu_updated = f"{updated_date_str} · {updated_time_str}"
+    eu_rf = refresh_state.get("eu_pork_market", {})
+    last_check_eu = eu_rf.get("last_check_bucharest", now_bucharest.strftime("%d.%m.%Y %H:%M:%S"))
+    last_data_eu = eu_rf.get("last_data_update_bucharest", "12.11.2026 16:00:00")
+    status_eu = eu_rf.get("status", "ACTUALIZAT")
+    label_eu = eu_rf.get("status_label", "Actualizat")
 
     eu_module = {
         "module_id": "eu_pork_market",
         "title": "EU Pork Market",
         "schedule": "Joi, 09:00 & 16:00 Europe/Bucharest (sesiune completă)",
-        "last_verified_update": eu_updated,
-        "updated_date": updated_date_str,
-        "updated_time": updated_time_str,
-        "week": eu_data.get("week", "WK44"),
+        "last_verified_update": last_check_eu,
+        "last_check_bucharest": last_check_eu,
+        "last_data_update_bucharest": last_data_eu,
+        "refresh_status": status_eu,
+        "refresh_status_label": label_eu,
+        "updated_date": last_check_eu.split(" ")[0] if " " in last_check_eu else "14.11.2026",
+        "updated_time": last_check_eu.split(" ")[1] if " " in last_check_eu else "16:00:00",
+        "week": eu_data.get("week", "WK46"),
         "year": eu_data.get("year", 2026),
-        "period": eu_data.get("period", "26.10–01.11.2026"),
+        "period": eu_data.get("period", "09.11–15.11.2026"),
         "status": eu_data.get("release_status", "RELEASE_PASS"),
         "data_file": "/data/eu_pork_market_export.json",
         "dataset_sha256": eu_sha,
@@ -130,9 +139,11 @@ def generate_manifest():
         except Exception as e:
             print(f"Warning: Could not parse {retail_media_export_path}: {e}")
 
-    rm_updated_date = rm_data.get("updated_date", "31.10.2026")
-    rm_updated_time = rm_data.get("updated_time", "09:00")
-    rm_updated = f"{rm_updated_date} · {rm_updated_time}"
+    rm_rf = refresh_state.get("retail_media_monitor", {})
+    last_check_rm = rm_rf.get("last_check_bucharest", now_bucharest.strftime("%d.%m.%Y %H:%M:%S"))
+    last_data_rm = rm_rf.get("last_data_update_bucharest", "14.11.2026 08:00:00")
+    status_rm = rm_rf.get("status", "ACTUALIZAT")
+    label_rm = rm_rf.get("status_label", "Actualizat")
 
     total_articles = sum(len(p.get("articles", [])) for p in rm_data.get("publications", []))
 
@@ -140,10 +151,14 @@ def generate_manifest():
         "module_id": "retail_media_monitor",
         "title": "Retail Media Monitor (Presă Specializată)",
         "schedule": "Zilnic, 09:00 Europe/Bucharest",
-        "last_verified_update": rm_updated,
-        "updated_date": rm_updated_date,
-        "updated_time": rm_updated_time,
-        "period": rm_data.get("period_analyzed", "24.10.2026 – 31.10.2026"),
+        "last_verified_update": last_check_rm,
+        "last_check_bucharest": last_check_rm,
+        "last_data_update_bucharest": last_data_rm,
+        "refresh_status": status_rm,
+        "refresh_status_label": label_rm,
+        "updated_date": last_check_rm.split(" ")[0] if " " in last_check_rm else "14.11.2026",
+        "updated_time": last_check_rm.split(" ")[1] if " " in last_check_rm else "08:00:00",
+        "period": rm_data.get("period_analyzed", "07.11.2026 – 14.11.2026 (Ultimele 7 zile)"),
         "status": rm_data.get("status", "ACTIVE_MONITORED"),
         "data_file": "/data/retail_media_export.json",
         "dataset_sha256": rm_sha,
@@ -152,14 +167,14 @@ def generate_manifest():
     }
 
     # 4. Strategic Category Insights
-    sci_updated = rm_updated
+    sci_updated = last_check_rm
     sci_module = {
         "module_id": "strategic_category_insights",
         "title": "Strategic Category Insights",
         "schedule": "Zilnic, după sincronizarea surselor relevante de piață",
         "last_verified_update": sci_updated,
-        "updated_date": rm_updated_date,
-        "updated_time": rm_updated_time,
+        "updated_date": last_check_rm.split(" ")[0] if " " in last_check_rm else "14.11.2026",
+        "updated_time": last_check_rm.split(" ")[1] if " " in last_check_rm else "08:00:00",
         "status": "SYNCHRONIZED",
         "sources": [
             "PROMO_WEEKLY (Prețuri & Mecanici KVI)",

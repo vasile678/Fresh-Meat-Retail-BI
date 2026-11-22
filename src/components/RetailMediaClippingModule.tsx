@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import { getAssetUrl } from '../utils';
 import Footer from './Footer';
+import SmartRefreshButton from './SmartRefreshButton';
 import { useMarketIntelligence } from '../hooks/useMarketIntelligence';
 
 interface RetailMediaClippingModuleProps {
@@ -1020,7 +1021,8 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
     try {
       const url = getAssetUrl('/data/retail_media_export.json?v=' + (bypassCache ? Date.now() : (data.dataset_sha256 || Date.now())));
       const res = await fetch(url);
-      if (res.ok) {
+      const contentType = (res.headers.get('content-type') || '').toLowerCase();
+      if (res.ok && contentType.includes('application/json')) {
         const json = await res.json();
         if (json && json.retailers && json.publications) {
           setData(prev => {
@@ -1233,22 +1235,7 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
             </div>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0">
-            {refreshToast && (
-              <span className="text-[11px] text-emerald-400 font-semibold bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 animate-fade-in hidden sm:inline">
-                {refreshToast}
-              </span>
-            )}
-            <button
-              type="button"
-              onClick={handleManualRefresh}
-              disabled={isManualRefreshing}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-50 text-slate-200 text-xs font-semibold border border-slate-700 transition cursor-pointer"
-              title="Lansează reîmprospătarea și colectarea pe cei 7 retaileri"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 text-sky-400 ${isManualRefreshing ? 'animate-spin' : ''}`} />
-              <span className="hidden xs:inline">Actualizează</span>
-            </button>
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             <button
               type="button"
               onClick={() => setIsReportModalOpen(true)}
@@ -1256,8 +1243,26 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
               title="Vizualizează sau tipărește raportul consolidat de intelligence"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Raport Executiv Sintetic</span>
+              <span className="hidden sm:inline">Raport Executiv Sintetic</span>
+              <span className="sm:hidden">Raport</span>
             </button>
+            <div className="h-7 w-px bg-slate-800 hidden sm:block" />
+            <SmartRefreshButton
+              module="clipping"
+              lastVerifiedAt={
+                data.last_collection_bucharest ||
+                (data.updated_date ? `${data.updated_date} · ${data.updated_time || '08:00'}` : '14.11.2026 · 08:00')
+              }
+              status={
+                data.update_state === 'UPDATE_FAILED' ? 'ERROR' :
+                data.update_state === 'NO_NEW_DATA' ? 'PARTIAL' : 'SUCCESS'
+              }
+              statusLabel={
+                data.update_state === 'UPDATE_FAILED' ? 'Eroare' :
+                data.update_state === 'NO_NEW_DATA' ? 'Parțial' : 'Actualizat'
+              }
+              onRefreshCompleted={() => loadLatestData(true)}
+            />
           </div>
         </div>
 
@@ -1427,7 +1432,9 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                                           <span>{it.source}</span>
                                           <div className="flex items-center gap-1.5">
                                             <span className="text-sky-400">{it.published_at}</span>
-                                            <span className="text-emerald-400 font-semibold">✓ VERIFIED</span>
+                                            <span className="text-sky-300 bg-sky-950/70 border border-sky-500/40 px-1 py-0.2 rounded text-[8px] font-bold">
+                                              {(it as any).confirmation_level || 'CONFIRMAT SECUNDAR'}
+                                            </span>
                                           </div>
                                         </div>
                                       </div>
@@ -2012,7 +2019,9 @@ export default function RetailMediaClippingModule({ onBack }: RetailMediaClippin
                                             </span>
                                             <div className="flex items-center gap-2 shrink-0">
                                               <span>Pub: <strong className="text-sky-400">{it.published_at}</strong></span>
-                                              <span className="text-emerald-400 font-bold">✓ VERIFIED</span>
+                                              <span className="text-sky-300 bg-sky-950/70 border border-sky-500/40 px-1.5 py-0.5 rounded text-[8.5px] font-bold">
+                                                {(it as any).confirmation_level || 'CONFIRMAT SECUNDAR'}
+                                              </span>
                                             </div>
                                           </div>
                                         </div>

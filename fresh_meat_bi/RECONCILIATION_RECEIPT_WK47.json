@@ -1,9 +1,15 @@
 {
   "status": "PASS",
-  "dataset_sha256": "af2c3944d28bf343aadf51fbdef5e2d951c0b7fb39a11a8ef7f086c988bbf3df",
+  "dataset_sha256": "071bb1eaa2b9a251dad998b354ff58ebcf637ed316bad74a6994cd31c311cf12",
   "week": "WK47",
   "year": 2026,
-  "reconciled_at": "2026-11-20T16:00:12.754919+00:00",
+  "reconciled_at": "2026-11-22T07:37:11.551316+00:00",
   "conflict_count": 0,
+  "classification_counts": {
+    "confirmat_primar": 8,
+    "confirmat_secundar": 0,
+    "neconfirmat": 0,
+    "indisponibil": 17
+  },
   "resolution": "ALL_CELLS_RECONCILED"
 }

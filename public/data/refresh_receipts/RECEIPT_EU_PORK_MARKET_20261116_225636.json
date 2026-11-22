@@ -1,0 +1,129 @@
+{
+  "schema_version": "2.0-refresh-audit-receipt",
+  "execution_id": "EXEC_EU_PORK_MARKET_20261116_225636_82e8df",
+  "module": "eu_pork_market",
+  "module_title": "EU Pork Market",
+  "started_at_bucharest": "16.11.2026 22:56:24",
+  "completed_at_bucharest": "16.11.2026 22:56:36",
+  "started_at_iso": "2026-11-16T22:56:24.507017+02:00",
+  "completed_at_iso": "2026-11-16T22:56:36.099096+02:00",
+  "duration_seconds": 11.59,
+  "sources_checked": [
+    "3tres3.com Public Quotations API (Spain, Italy, France, Germany, Netherlands, Denmark, Poland)",
+    "schweine.net VEZG Portal",
+    "vaex.nl Pig Prices Dataset",
+    "polpig.pl / MRiRW Polish Bulletins",
+    "Internet Pig Auction ISN"
+  ],
+  "sources_unavailable": [],
+  "primary_sources": [
+    "schweine.net VEZG Portal",
+    "vaex.nl Pig Prices Dataset",
+    "polpig.pl / MRiRW Polish Bulletins",
+    "Internet Pig Auction ISN"
+  ],
+  "secondary_sources": [
+    "3tres3 / CUN",
+    "3tres3 / Lonja de Mercolleida",
+    "3tres3 / Marché du Porc Français",
+    "Danish Crown (3tres3 / schweine.net Fallback)",
+    "ISN (3tres3 / schweine.net Fallback)",
+    "MRiRW / POLPIG (3tres3 / schweine.net Fallback)",
+    "VEZG (3tres3 / schweine.net Fallback)",
+    "Vion Farming (3tres3 / schweine.net Fallback)"
+  ],
+  "classification_counts": {
+    "confirmat_primar": 0,
+    "confirmat_secundar": 7,
+    "neconfirmat": 0,
+    "indisponibil": 1
+  },
+  "fallback_events": [
+    {
+      "market": "Germany VEZG",
+      "price": "1.320",
+      "unit": "€/kg SG",
+      "source_name": "VEZG (3tres3 / schweine.net Fallback)",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "[FALLBACK SECUNDAR ACTIVAT — Pană primară simulată] Preluat prin agregare sectorială verificată: Found live VEZG quotation on vezg.de: 1.320 €/kg SG (12.11.2026)."
+    },
+    {
+      "market": "ISN / Internet Pig Auction",
+      "price": "NQ",
+      "unit": "€/kg SG",
+      "source_name": "ISN (3tres3 / schweine.net Fallback)",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/",
+      "confirmation_level": "INDISPONIBIL",
+      "audit_note": "[FALLBACK SECUNDAR ACTIVAT — Pană primară simulată] Preluat prin agregare sectorială verificată: ISN Internet Schweinebörse auction clearing results require member login (Mitgliederbereich) on schweine.net; secondary sources (3tres3, vaex) confirm no open clearing benchmark formulated."
+    },
+    {
+      "market": "Spain Mercolleida",
+      "price": "1.137",
+      "unit": "€/kg live",
+      "source_name": "3tres3 / Lonja de Mercolleida",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/spain_107/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "Portalul primar mercolleida.com a întârziat publicarea; fallback-ul autoritativ 3tres3 (ID 2: Cerdo Cebado viu) a extras cotația oficială a ședinței din 05.11.2026: 1.137 €/kg viu (-0.031 WoW vs 1.168 în 29.10)."
+    },
+    {
+      "market": "Italy CUN 156–200 kg",
+      "price": "1.835",
+      "unit": "€/kg live",
+      "source_name": "3tres3 / CUN",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/italy_102/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "Buletinul primar CREFIS a înregistrat întârziere; fallback-ul 3tres3 a extras cotația 12.11.2026: 1.835 €/kg viu."
+    },
+    {
+      "market": "Netherlands Vion",
+      "price": "1.11",
+      "unit": "€/kg SG",
+      "source_name": "Vion Farming (3tres3 / schweine.net Fallback)",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "[FALLBACK SECUNDAR ACTIVAT — Pană primară simulată] Preluat prin agregare sectorială verificată: Parsed directly from Vion Farming official price table (Week 47: € 1.11/kg SG, published 02.11.2026). Confirmed by secondary sources (3tres3: 1.110 EUR, vaex: 1.110 EUR)."
+    },
+    {
+      "market": "Denmark Danish Crown",
+      "price": "7.50",
+      "unit": "DKK/kg",
+      "source_name": "Danish Crown (3tres3 / schweine.net Fallback)",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "[FALLBACK SECUNDAR ACTIVAT — Pană primară simulată] Preluat prin agregare sectorială verificată: Verified from Danish Crown official notering table (Uge 47 basis: 7.50 DKK/kg, status 'Grise: uændret', published 02.11.2026). Confirmed by secondary source (3tres3 ID 56)."
+    },
+    {
+      "market": "France MPB",
+      "price": "1.432",
+      "unit": "€/kg carcass",
+      "source_name": "3tres3 / Marché du Porc Français",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/?accio=cotitzacions (mercats=14)",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "Fallback autoritativ 3tres3 (ID 14 MPF Carcass 56 TMP): 1.432 €/kg carcass (ședința 09.11.2026)."
+    },
+    {
+      "market": "Poland (ZMI) Class E",
+      "price": "5.66",
+      "unit": "PLN/kg Class E",
+      "source_name": "MRiRW / POLPIG (3tres3 / schweine.net Fallback)",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "[FALLBACK SECUNDAR ACTIVAT — Pană primară simulată] Preluat prin agregare sectorială verificată: Extracted authentic 2026/T45 benchmark from official POLPIG bulletin: 5.66 PLN/kg Clasa E (średnia-POLSKA wybrane zakłady pln/kg kl E, variație -0.04 PLN/kg vs T44 5.70 PLN/kg)."
+    }
+  ],
+  "is_fallback_engaged": true,
+  "new_or_modified_items_count": 8,
+  "status": "ACTUALIZAT",
+  "status_label": "Actualizat",
+  "last_check_bucharest": "16.11.2026 22:56:36",
+  "last_data_update_bucharest": "16.11.2026 22:56:36",
+  "dataset_sha256": "57f5498ddf9245789f8dd7beccd8e2f11a2f154f8a756eb17dd9397068e00287",
+  "errors": [],
+  "metadata": {
+    "week": "WK47",
+    "year": 2026,
+    "benchmarks_count": 8,
+    "is_fallback_engaged": true
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0-refresh-audit-receipt",
+  "execution_id": "EXEC_PROMO_WEEKLY_20261114_205934_159afb",
+  "module": "promo_weekly",
+  "module_title": "Promo Weekly",
+  "started_at_bucharest": "14.11.2026 20:59:30",
+  "completed_at_bucharest": "14.11.2026 20:59:34",
+  "started_at_iso": "2026-11-14T20:59:30.637739+02:00",
+  "completed_at_iso": "2026-11-14T20:59:34.961997+02:00",
+  "duration_seconds": 4.32,
+  "sources_checked": [
+    "Lidl Schwarz Digital Leaflets API",
+    "Kaufland Embedded Meat Offers",
+    "PENNY Nuxt SSR & Tile Extractor",
+    "Carrefour Campaign Payload Ingestion",
+    "Auchan VTEX Schema.org Extractor"
+  ],
+  "sources_unavailable": [],
+  "new_or_modified_items_count": 0,
+  "status": "FARA_NOUTATI",
+  "status_label": "Fără Noutăți",
+  "last_check_bucharest": "14.11.2026 20:59:34",
+  "last_data_update_bucharest": "09.11.2026 09:00:00",
+  "dataset_sha256": "2a4beaee2dad4188f5fe7b097985b053cda009e46c3c0324ff56346771ebc82c",
+  "errors": [],
+  "metadata": {
+    "target_week": "WK46",
+    "target_year": 2026,
+    "verified_count": 8,
+    "coverage": "25/25"
+  }
+}

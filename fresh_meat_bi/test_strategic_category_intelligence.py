@@ -86,6 +86,13 @@ class TestStrategicCategoryIntelligence(unittest.TestCase):
             self.assertIsNotNone(penny_row)
             self.assertIn("15,99 lei/kg (card)", penny_row["lead_kvi_price"])
             self.assertIn("17,99 lei/kg (card)", penny_row["lead_kvi_price"])
+        elif active_pointer.get("week") == "WK47":
+            self.assertIn("18,90 lei/kg", lidl_row["lead_kvi_price"])
+            self.assertIn("19,90 lei/kg", lidl_row["lead_kvi_price"])
+            penny_row = next((r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny"), None)
+            self.assertIsNotNone(penny_row)
+            self.assertIn("15,99 lei/kg (card)", penny_row["lead_kvi_price"])
+            self.assertIn("24,60 lei/kg (card)", penny_row["lead_kvi_price"])
         else:
             self.assertIn("17,90 lei/kg (cupon)", lidl_row["lead_kvi_price"])
             self.assertIn("23,90 lei/kg (std)", lidl_row["lead_kvi_price"])
@@ -108,6 +115,14 @@ class TestStrategicCategoryIntelligence(unittest.TestCase):
             self.assertIn("Pulpă porc f.o. 15,99 lei/kg (card)", penny_row["lead_kvi_price"])
             self.assertIn("Spată porc f.o. 18,90 lei/kg", lidl_row["lead_kvi_price"])
             self.assertIn("Ceafă porc f.o. 23,90 lei/kg", lidl_row["lead_kvi_price"])
+        elif active_pointer.get("week") == "WK47":
+            self.assertIn("Pulpă porc f.o. 15,99 lei/kg", kaufland_row["lead_kvi_price"])
+            self.assertIn("Ceafă porc f.o. 20,99 lei/kg", kaufland_row["lead_kvi_price"])
+            penny_row = next(r for r in comp_intel["retailer_dashboard"] if r["retailer"] == "Penny")
+            self.assertIn("Spată porc f.o. 15,99 lei/kg (card)", penny_row["lead_kvi_price"])
+            self.assertIn("Piept pui dezosat 24,60 lei/kg (card)", penny_row["lead_kvi_price"])
+            self.assertIn("Spată porc f.o. 18,90 lei/kg", lidl_row["lead_kvi_price"])
+            self.assertIn("Cotlet porc f.o. 19,90 lei/kg", lidl_row["lead_kvi_price"])
         else:
             # WK46 leaders
             self.assertIn("Cotlet porc f.o. 15,90 lei/kg", kaufland_row["lead_kvi_price"])

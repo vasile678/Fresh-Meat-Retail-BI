@@ -1,0 +1,82 @@
+{
+  "schema_version": "2.0-refresh-audit-receipt",
+  "execution_id": "EXEC_RETAIL_MEDIA_MONITOR_20261115_213046_afd8cb",
+  "module": "retail_media_monitor",
+  "module_title": "Retail Media Monitor",
+  "started_at_bucharest": "15.11.2026 21:30:30",
+  "completed_at_bucharest": "15.11.2026 21:30:46",
+  "started_at_iso": "2026-11-15T21:30:30.779310+02:00",
+  "completed_at_iso": "2026-11-15T21:30:46.083263+02:00",
+  "duration_seconds": 15.3,
+  "sources_checked": [
+    "Revista Progresiv",
+    "Revista Piața",
+    "Trends HRB",
+    "Modern Buyer",
+    "Retail-FMCG",
+    "Meat.Milk",
+    "Retail.ro",
+    "RetailArena.ro",
+    "Pig Progress",
+    "pig333",
+    "EuroMeatNews",
+    "Meat Management",
+    "Eurocarne",
+    "FRS – Food Retail & Service"
+  ],
+  "sources_unavailable": [
+    "Revista Progresiv: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Revista Piața: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Retail.ro: RETAINED_VERIFIED_FAIL_CLOSED",
+    "RetailArena.ro: RETAINED_VERIFIED_FAIL_CLOSED",
+    "pig333: RETAINED_VERIFIED_FAIL_CLOSED",
+    "EuroMeatNews: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Meat Management: RETAINED_VERIFIED_FAIL_CLOSED"
+  ],
+  "primary_sources": [
+    "Lidl România (Portal Oficial)",
+    "Kaufland România (Portal Oficial)",
+    "Carrefour România (Portal Oficial)",
+    "Penny România (Portal Oficial)",
+    "Profi România (Portal Oficial)",
+    "Auchan România (Portal Oficial)",
+    "Mega Image România (Portal Oficial)"
+  ],
+  "secondary_sources": [
+    "Revista Progresiv",
+    "Revista Piața",
+    "Trends HRB",
+    "Modern Buyer",
+    "Retail-FMCG",
+    "Meat.Milk",
+    "Retail.ro",
+    "RetailArena.ro",
+    "Pig Progress",
+    "pig333",
+    "EuroMeatNews",
+    "Meat Management",
+    "Eurocarne",
+    "FRS – Food Retail & Service"
+  ],
+  "classification_counts": {
+    "confirmat_primar": 7,
+    "confirmat_secundar": 77,
+    "neconfirmat": 0,
+    "indisponibil": 22
+  },
+  "fallback_events": [],
+  "is_fallback_engaged": true,
+  "new_or_modified_items_count": 23,
+  "status": "ACTUALIZAT",
+  "status_label": "Actualizat",
+  "last_check_bucharest": "15.11.2026 21:30:46",
+  "last_data_update_bucharest": "15.11.2026 21:30:46",
+  "dataset_sha256": "94a8e33169d8fcac8809d7e1be59b287add2102c313e6298c8a9bdc607f31580",
+  "errors": [],
+  "metadata": {
+    "edition_date": "15.11.2026",
+    "edition_time": "08:00",
+    "total_verified_articles": 42,
+    "is_fallback_engaged": false
+  }
+}

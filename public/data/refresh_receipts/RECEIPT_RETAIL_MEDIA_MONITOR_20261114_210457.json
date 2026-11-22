@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0-refresh-audit-receipt",
+  "execution_id": "EXEC_RETAIL_MEDIA_MONITOR_20261114_210457_9b7abb",
+  "module": "retail_media_monitor",
+  "module_title": "Retail Media Monitor",
+  "started_at_bucharest": "14.11.2026 21:04:41",
+  "completed_at_bucharest": "14.11.2026 21:04:57",
+  "started_at_iso": "2026-11-14T21:04:41.208634+02:00",
+  "completed_at_iso": "2026-11-14T21:04:57.005903+02:00",
+  "duration_seconds": 15.8,
+  "sources_checked": [
+    "Revista Progresiv",
+    "Revista Piața",
+    "Trends HRB",
+    "Modern Buyer",
+    "Retail-FMCG",
+    "Meat.Milk",
+    "Retail.ro",
+    "RetailArena.ro",
+    "Pig Progress",
+    "pig333",
+    "EuroMeatNews",
+    "Meat Management",
+    "Eurocarne",
+    "FRS – Food Retail & Service"
+  ],
+  "sources_unavailable": [
+    "Revista Progresiv: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Revista Piața: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Retail.ro: RETAINED_VERIFIED_FAIL_CLOSED",
+    "RetailArena.ro: RETAINED_VERIFIED_FAIL_CLOSED",
+    "pig333: RETAINED_VERIFIED_FAIL_CLOSED",
+    "EuroMeatNews: RETAINED_VERIFIED_FAIL_CLOSED",
+    "Meat Management: RETAINED_VERIFIED_FAIL_CLOSED"
+  ],
+  "new_or_modified_items_count": 23,
+  "status": "ACTUALIZAT",
+  "status_label": "Actualizat",
+  "last_check_bucharest": "14.11.2026 21:04:57",
+  "last_data_update_bucharest": "14.11.2026 21:04:57",
+  "dataset_sha256": "cb4b78df11a61aa7be1087773b7ee19054f3a47771de1ca0fb3c05430259f793",
+  "errors": [],
+  "metadata": {
+    "edition_date": "14.11.2026",
+    "edition_time": "08:00",
+    "total_verified_articles": 42
+  }
+}

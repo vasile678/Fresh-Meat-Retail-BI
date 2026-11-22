@@ -1,0 +1,13 @@
+{
+  "release_status": "RELEASE_PASS",
+  "checks": {
+    "market_matrix": true,
+    "statuses": true,
+    "row_integrity": true,
+    "current_source_verification": true,
+    "render_receipt": true,
+    "master_hash": true,
+    "visual_qa": true
+  },
+  "errors": []
+}

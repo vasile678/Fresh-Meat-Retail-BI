@@ -14,7 +14,7 @@ on:
         type: boolean
         default: false
   repository_dispatch:
-    types: [on_demand_collect]
+    types: [on_demand_collect, on_demand_retail_media]
 
 permissions:
   contents: write

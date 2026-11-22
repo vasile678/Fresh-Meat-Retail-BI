@@ -288,6 +288,16 @@ def export_data(lock_path: Path, png_path: Path, release_receipt_path: Path, out
         "retailers": dataset.get("retailers", ["Kaufland", "Lidl", "PENNY", "Carrefour", "Auchan"]),
         "kvi": kvi_list,
         "cells": processed_cells,
+        "classification_counts": dataset.get("classification_counts", {
+            "confirmat_primar": sum(1 for c in processed_cells if c.get("confirmation_level") == "CONFIRMAT PRIMAR"),
+            "confirmat_secundar": sum(1 for c in processed_cells if c.get("confirmation_level") == "CONFIRMAT SECUNDAR"),
+            "neconfirmat": sum(1 for c in processed_cells if c.get("confirmation_level") == "NECONFIRMAT"),
+            "indisponibil": sum(1 for c in processed_cells if c.get("confirmation_level") == "INDISPONIBIL")
+        }),
+        "is_fallback_engaged": dataset.get("is_fallback_engaged", any(c.get("fallback_used") for c in processed_cells)),
+        "fallback_events": dataset.get("fallback_events", []),
+        "primary_sources": dataset.get("primary_sources", []),
+        "secondary_sources": dataset.get("secondary_sources", []),
         "summary": {
             "cell_count": len(processed_cells),
             "verified_count": verified_count,

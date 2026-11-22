@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "renderer": "v2.1",
+  "master_sha256": "5c272afc25f7813c5060d6204128ac75964eaadb1d8d708378db7c59e396966c",
+  "lock_hash": "1ee517696d3e6c6c3b66333d1a823b9f4eb281b3d396e2d29bddc6e9993c5ffd",
+  "dataset_sha256": "b60d0f087db8fa3c046b4c15262ec87145ac66a798000e4ae9631ec798ba13a6",
+  "week": "WK47",
+  "year": "2026",
+  "calendar_period": "16–22 NOI 2026",
+  "coverage_checked": "25/25",
+  "retailers": [
+    "Kaufland",
+    "Lidl",
+    "PENNY",
+    "Carrefour",
+    "Auchan"
+  ],
+  "kvi": [
+    "Spată porc fără os",
+    "Pulpă porc fără os",
+    "Cotlet porc fără os",
+    "Ceafă porc fără os",
+    "Piept pui dezosat"
+  ],
+  "cell_count": 25,
+  "output_sha256": "3d5138efc5bf246c1b7fec92eb59be736c7acc7b36924573a57511a70d9eeec4",
+  "checks": [
+    "master_hash",
+    "schema_5x5",
+    "no_Profi",
+    "coverage_25/25",
+    "verified_and_user_reported_required_fields",
+    "price_only_verified_or_user_reported",
+    "dynamic_week_badge",
+    "4:3"
+  ]
+}

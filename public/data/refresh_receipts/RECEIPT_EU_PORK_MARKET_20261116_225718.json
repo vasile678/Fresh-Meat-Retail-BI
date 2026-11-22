@@ -1,0 +1,80 @@
+{
+  "schema_version": "2.0-refresh-audit-receipt",
+  "execution_id": "EXEC_EU_PORK_MARKET_20261116_225718_274096",
+  "module": "eu_pork_market",
+  "module_title": "EU Pork Market",
+  "started_at_bucharest": "16.11.2026 22:57:08",
+  "completed_at_bucharest": "16.11.2026 22:57:18",
+  "started_at_iso": "2026-11-16T22:57:08.520006+02:00",
+  "completed_at_iso": "2026-11-16T22:57:18.948552+02:00",
+  "duration_seconds": 10.43,
+  "sources_checked": [
+    "3tres3.com Public Quotations API (Spain, Italy, France, Germany, Netherlands, Denmark, Poland)",
+    "schweine.net VEZG Portal",
+    "vaex.nl Pig Prices Dataset",
+    "polpig.pl / MRiRW Polish Bulletins",
+    "Internet Pig Auction ISN"
+  ],
+  "sources_unavailable": [],
+  "primary_sources": [
+    "Danish Crown",
+    "ISN",
+    "MRiRW / POLPIG",
+    "VEZG",
+    "Vion Farming"
+  ],
+  "secondary_sources": [
+    "3tres3 / CUN",
+    "3tres3 / Lonja de Mercolleida",
+    "3tres3 / Marché du Porc Français"
+  ],
+  "classification_counts": {
+    "confirmat_primar": 4,
+    "confirmat_secundar": 3,
+    "neconfirmat": 0,
+    "indisponibil": 1
+  },
+  "fallback_events": [
+    {
+      "market": "Spain Mercolleida",
+      "price": "1.137",
+      "unit": "€/kg live",
+      "source_name": "3tres3 / Lonja de Mercolleida",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/spain_107/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "Portalul primar mercolleida.com a întârziat publicarea; fallback-ul autoritativ 3tres3 (ID 2: Cerdo Cebado viu) a extras cotația oficială a ședinței din 05.11.2026: 1.137 €/kg viu (-0.031 WoW vs 1.168 în 29.10)."
+    },
+    {
+      "market": "Italy CUN 156–200 kg",
+      "price": "1.835",
+      "unit": "€/kg live",
+      "source_name": "3tres3 / CUN",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/italy_102/",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "Buletinul primar CREFIS a înregistrat întârziere; fallback-ul 3tres3 a extras cotația 12.11.2026: 1.835 €/kg viu."
+    },
+    {
+      "market": "France MPB",
+      "price": "1.432",
+      "unit": "€/kg carcass",
+      "source_name": "3tres3 / Marché du Porc Français",
+      "source_url": "https://www.3tres3.com/en/markets_and_prices/?accio=cotitzacions (mercats=14)",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "audit_note": "Fallback autoritativ 3tres3 (ID 14 MPF Carcass 56 TMP): 1.432 €/kg carcass (ședința 09.11.2026)."
+    }
+  ],
+  "is_fallback_engaged": true,
+  "new_or_modified_items_count": 8,
+  "status": "ACTUALIZAT",
+  "status_label": "Actualizat",
+  "last_check_bucharest": "16.11.2026 22:57:18",
+  "last_data_update_bucharest": "16.11.2026 22:57:18",
+  "dataset_sha256": "4ce3cf00189e2591e52b2abded19da3fe98d48c073bda34f107da1590e879c05",
+  "errors": [],
+  "metadata": {
+    "week": "WK47",
+    "year": 2026,
+    "benchmarks_count": 8,
+    "is_fallback_engaged": false
+  }
+}

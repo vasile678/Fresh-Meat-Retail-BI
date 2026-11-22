@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "dataset_sha256": "ca385d83fb4137d6b3f99983889130db11b486bba076547d4ee6e49fd3b5fd82",
+  "week": "WK53",
+  "year": 2026,
+  "reconciled_at": "2026-11-22T08:30:21.242619+00:00",
+  "conflict_count": 0,
+  "classification_counts": {
+    "confirmat_primar": 12,
+    "confirmat_secundar": 0,
+    "neconfirmat": 0,
+    "indisponibil": 13
+  },
+  "resolution": "ALL_CELLS_RECONCILED"
+}

@@ -119,12 +119,12 @@ def test_commercial_conclusions():
 
     # TEST 7: Regula ACTIVE OFFERS ONLY & Separare Preț Cupon Lidl Plus
     print("[TEST 7/7] Verificare regulă ACTIVE OFFERS ONLY & Separare Cupon Lidl Plus:")
-    # 1. Spată Kaufland must be excluded from active verified offers (status N/V)
-    kauf_spata_cell = next((c for c in data["cells"] if c["retailer"] == "Kaufland" and c["kvi"] == "Spată porc fără os"), None)
-    assert kauf_spata_cell is not None, "Kaufland Spată cell must exist in matrix"
-    assert kauf_spata_cell["status"] == "N/V", f"Kaufland Spată must be N/V (ACTIVE OFFERS ONLY), got {kauf_spata_cell['status']}"
-    assert "price_lei_kg" not in kauf_spata_cell or kauf_spata_cell["price_lei_kg"] is None, "Expired price must not be in active price_lei_kg"
     if data["week"] == "WK45":
+        # 1. Spată Kaufland must be excluded from active verified offers (status N/V) in WK45
+        kauf_spata_cell = next((c for c in data["cells"] if c["retailer"] == "Kaufland" and c["kvi"] == "Spată porc fără os"), None)
+        assert kauf_spata_cell is not None, "Kaufland Spată cell must exist in matrix"
+        assert kauf_spata_cell["status"] == "N/V", f"Kaufland Spată must be N/V (ACTIVE OFFERS ONLY), got {kauf_spata_cell['status']}"
+        assert "price_lei_kg" not in kauf_spata_cell or kauf_spata_cell["price_lei_kg"] is None, "Expired price must not be in active price_lei_kg"
         assert len(kauf_spata_cell.get("offer_history", [])) > 0, "Expired offer must be preserved in offer_history"
         assert kauf_spata_cell["offer_history"][0]["price_lei_kg"] == 14.90, "Expired offer price must be preserved in history"
         assert "03.11.2026" in str(kauf_spata_cell["offer_history"][0].get("period", "")), "Expired period must be in history"
@@ -139,6 +139,11 @@ def test_commercial_conclusions():
         assert lidl_detail.get("price_standard_lei_kg") == 19.90, "Lidl standard price must be 19.90"
         assert lidl_detail.get("price_cupon_lei_kg") == 16.90, "Lidl coupon price must be 16.90"
         assert lidl_detail.get("mechanic_type") == "cupon", "Lidl mechanic type must be cupon"
+    elif data["week"] == "WK47":
+        kauf_spata_cell = next((c for c in data["cells"] if c["retailer"] == "Kaufland" and c["kvi"] == "Spată porc fără os"), None)
+        assert kauf_spata_cell is not None, "Kaufland Spată cell must exist in matrix"
+        assert kauf_spata_cell["status"] == "VERIFIED", f"Kaufland Spată in WK47 must be VERIFIED, got {kauf_spata_cell['status']}"
+        assert kauf_spata_cell["price_lei_kg"] == 13.99, f"Kaufland Spată price must be 13.99, got {kauf_spata_cell.get('price_lei_kg')}"
     print("  ✓ Regula ACTIVE OFFERS ONLY și separare prețuri validate 100%: PASS")
 
     print("=================================================================")

@@ -1,0 +1,112 @@
+{
+  "schema_version": "2.0-refresh-audit-receipt",
+  "execution_id": "EXEC_PROMO_WEEKLY_20261116_223154_d59f5c",
+  "module": "promo_weekly",
+  "module_title": "Promo Weekly",
+  "started_at_bucharest": "16.11.2026 22:31:54",
+  "completed_at_bucharest": "16.11.2026 22:31:54",
+  "started_at_iso": "2026-11-16T22:31:54.464119+02:00",
+  "completed_at_iso": "2026-11-16T22:31:54.602927+02:00",
+  "duration_seconds": 0.14,
+  "sources_checked": [
+    "Lidl Schwarz Digital Leaflets API",
+    "Kaufland Embedded Meat Offers",
+    "PENNY Nuxt SSR & Tile Extractor",
+    "Carrefour Campaign Payload Ingestion",
+    "Auchan VTEX Schema.org Extractor"
+  ],
+  "sources_unavailable": [],
+  "primary_sources": [
+    "Lidl Schwarz Digital Leaflets API",
+    "Kaufland Embedded Meat Offers",
+    "PENNY Nuxt SSR & Tile Extractor",
+    "Carrefour Campaign Payload Ingestion",
+    "Auchan VTEX Schema.org Extractor"
+  ],
+  "secondary_sources": [
+    "Auchan – Kimbino Cataloage Auchan",
+    "Carrefour – Kimbino Cataloage Carrefour",
+    "Kaufland – Kimbino Cataloage Kaufland",
+    "Lidl – Kimbino Cataloage Lidl",
+    "PENNY – Kimbino Cataloage PENNY"
+  ],
+  "classification_counts": {
+    "confirmat_primar": 0,
+    "confirmat_secundar": 7,
+    "neconfirmat": 0,
+    "indisponibil": 18
+  },
+  "fallback_events": [
+    {
+      "retailer": "Kaufland",
+      "kvi": "Spată porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Kaufland",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 14.9
+    },
+    {
+      "retailer": "Kaufland",
+      "kvi": "Ceafă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare HTTP Kaufland (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Kaufland (https://www.kimbino.ro/kaufland/catalog-saptamanal/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Kaufland",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 24.99
+    },
+    {
+      "retailer": "Lidl",
+      "kvi": "Cotlet porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare API Schwarz (0 - SIMULATED_PRIMARY_OUTAGE)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Lidl (https://www.kimbino.ro/lidl/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Lidl",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 19.9
+    },
+    {
+      "retailer": "PENNY",
+      "kvi": "Pulpă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare conectare PENNY (0)). Ofertă confirmată prin sursa secundară Kimbino Cataloage PENNY (https://www.kimbino.ro/penny/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage PENNY",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 16.99
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Pulpă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare conectare Carrefour). Ofertă confirmată prin sursa secundară Kimbino Cataloage Carrefour (https://www.kimbino.ro/carrefour/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Carrefour",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 20.99
+    },
+    {
+      "retailer": "Carrefour",
+      "kvi": "Ceafă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare conectare Carrefour). Ofertă confirmată prin sursa secundară Kimbino Cataloage Carrefour (https://www.kimbino.ro/carrefour/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Carrefour",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 17.9
+    },
+    {
+      "retailer": "Auchan",
+      "kvi": "Ceafă porc fără os",
+      "primary_issue": "Sursă primară indisponibilă (Eroare conectare Auchan (0)). Ofertă confirmată prin sursa secundară Kimbino Cataloage Auchan (https://www.kimbino.ro/auchan/catalog-nou/) conform regulilor de validare.",
+      "secondary_source": "Kimbino Cataloage Auchan",
+      "confirmation_level": "CONFIRMAT SECUNDAR",
+      "price_lei_kg": 19.99
+    }
+  ],
+  "is_fallback_engaged": true,
+  "new_or_modified_items_count": 0,
+  "status": "EROARE",
+  "status_label": "Eroare",
+  "last_check_bucharest": "16.11.2026 22:31:54",
+  "last_data_update_bucharest": "15.11.2026 22:12:32",
+  "dataset_sha256": "549139b15f0f7e0c279cbc6fd95339a5e65d801f72d37e582214853858f3ee90",
+  "errors": [],
+  "metadata": {
+    "target_week": "WK47",
+    "target_year": 2026,
+    "verified_count": 7,
+    "coverage": "25/25",
+    "is_fallback_engaged": true
+  }
+}
