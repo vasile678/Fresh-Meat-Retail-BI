@@ -1,12 +1,12 @@
 {
-  "execution_date": "21.11.2026",
-  "start_time_bucharest": "2026-11-21 15:12:00",
-  "end_time_bucharest": "2026-11-21 15:12:26",
-  "start_time_iso": "2026-11-21T15:12:00.875885+02:00",
-  "end_time_iso": "2026-11-21T15:12:26.536443+02:00",
-  "duration_seconds": 25.66,
+  "execution_date": "23.11.2026",
+  "start_time_bucharest": "2026-11-23 17:37:57",
+  "end_time_bucharest": "2026-11-23 17:38:18",
+  "start_time_iso": "2026-11-23T17:37:57.431564+02:00",
+  "end_time_iso": "2026-11-23T17:38:18.005265+02:00",
+  "duration_seconds": 20.57,
   "total_publications": 14,
-  "total_new_articles_accepted": 11,
+  "total_new_articles_accepted": 17,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -44,34 +44,39 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Vânzările Spartan au crescut cu 7% în primele zece luni, până la de 166 de milioane de lei",
-          "published_at": "19.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/vanzarile-spartan-au-crescut-cu-7-in-primele-zece-luni-pana-la-de-166-de-milioane-de-lei/"
+          "title": "Un nou volum la Editura GastroArt: „Plăcinte povestite”, de Dana Burlacu Visternicu, se lansează în decembrie",
+          "published_at": "23.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/un-nou-volum-la-editura-gastroart-placinte-povestite-de-dana-burlacu-visternicu-se-lanseaza-in-decembrie/"
         },
         {
-          "title": "Claudia Stan preia și funcția de Deputy General Manager al Domeniului Issa",
-          "published_at": "19.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/claudia-stan-preia-si-functia-de-deputy-general-manager-al-domeniului-issa/"
+          "title": "Berarii României solicită menținerea nivelului actual al accizei la bere și în următorii doi ani",
+          "published_at": "23.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/berarii-romaniei-solicita-mentinerea-nivelului-actual-al-accizei-la-bere-si-in-urmatorii-doi-ani/"
         },
         {
-          "title": "A IV-a ediție a Conferinței Naționale a Punctelor Gastronomice Locale are loc în perioada 20-21 noiembrie",
-          "published_at": "19.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/a-iv-a-editie-a-conferintei-nationale-a-punctelor-gastronomice-locale-are-loc-in-perioada-20-21-noiembrie/"
+          "title": "Castelul Kálnoky din Valea Crișului se redeschide după un amplu proces de restaurare",
+          "published_at": "23.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/castelul-kalnoky-din-valea-crisului-se-redeschide-dupa-un-amplu-proces-de-restaurare/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "20.11.2026"
+      "latest_published_at": "23.11.2026"
     },
     {
       "pub_id": "modernbuyer",
       "name": "Modern Buyer",
       "website": "https://modernbuyer.ro/",
       "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 6,
+      "candidates_scanned": 5,
       "new_articles_count": 3,
       "new_accepted": [
+        {
+          "title": "Cerasus Grup: Strategia din spatele celei mai lungi prezențe la raft a cireșelor românești",
+          "published_at": "23.11.2026",
+          "url": "https://modernbuyer.ro/cerasus-grup-strategia-din-spatele-celei-mai-lungi-prezente-la-raft-a-cireselor-romanesti/"
+        },
         {
           "title": "Brânzeturi românești premiate la prestigioasa competiție World Cheese Awards",
           "published_at": "17.11.2026",
@@ -81,17 +86,12 @@
           "title": "Vești mai bune pentru piața FMCG: vânzările cresc, iar volumele revin pe plus",
           "published_at": "12.11.2026",
           "url": "https://modernbuyer.ro/vesti-mai-bune-pentru-piata-fmcg-vanzarile-cresc-iar-volumele-revin-pe-plus/"
-        },
-        {
-          "title": "Caroli Foods Group lansează o gamă de produse cu un aport ridicat de proteine",
-          "published_at": "12.11.2026",
-          "url": "https://modernbuyer.ro/caroli-foods-group-lanseaza-o-gama-de-produse-cu-un-aport-ridicat-de-proteine/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "19.11.2026"
+      "latest_published_at": "23.11.2026"
     },
     {
       "pub_id": "retailfmcg",
@@ -102,25 +102,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Retail & FMCG – Sinteza săptămânii 16 – 20 noiembrie 2026",
-          "published_at": "21.11.2026",
-          "url": "https://www.retail-fmcg.ro/analize/retail-sinteza-20-noiembrie-2026.html"
+          "title": "Analiza prezenței în Social Media a retailerilor alimentari din România – noiembrie 2026",
+          "published_at": "23.11.2026",
+          "url": "https://www.retail-fmcg.ro/continut-premium/analiza-prezenta-social-media-retaileri-alimentari-romania-noiembrie-2026.html"
         },
         {
-          "title": "Votat Produsul Anului®: Cum transformă brandurile inovația în încredere și vizibilitate la raft",
+          "title": "Lidl reinterpretează tradiționalii mici într-un format inedit și lansează Covrimicul, în exclusivitate în retailul din România",
+          "published_at": "23.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/lidl-lanseaza-covrimicul-exclusivitate-retailul-romania.html"
+        },
+        {
+          "title": "K-Beauty, categoria produselor cosmetice sud-coreene de îngrijire a pielii, a ajuns la o cotă de aproximativ 15% din piața românească de skincare",
           "published_at": "19.11.2026",
-          "url": "https://www.retail-fmcg.ro/evenimente/votat-produsul-anului-cum-transforma-brandurile-inovatia-in-incredere-si-vizibilitate-la-raft.html"
-        },
-        {
-          "title": "Lidl România inaugurează pe 19 noiembrie primul său magazin din Vicovu de Sus",
-          "published_at": "18.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/lidl-romania-magazin-vicovu-de-sus.html"
+          "url": "https://www.retail-fmcg.ro/retail/k-beauty-piata-romaneasca-skincare-one-master-distribution.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "21.11.2026"
+      "latest_published_at": "23.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -128,12 +128,23 @@
       "website": "https://www.meat-milk.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "new_articles_count": 2,
+      "new_accepted": [
+        {
+          "title": "Porcinele continuă să se ieftinească în UE. România trece peste media europeană la clasa E",
+          "published_at": "23.11.2026",
+          "url": "https://www.meat-milk.ro/article/porcinele-continua-sa-se-ieftineasca-in-ue-romania-trece-peste-media-europeana-la-clasa-e-TBQ3YVZQ"
+        },
+        {
+          "title": "Lactatele europene cresc pe termen scurt. Diferențele față de 2025 rămân însă adânci",
+          "published_at": "23.11.2026",
+          "url": "https://www.meat-milk.ro/article/lactatele-europene-cresc-pe-termen-scurt-diferentele-fata-de-2025-raman-insa-adanci-crP7FyGg"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "20.11.2026"
+      "latest_published_at": "23.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -219,12 +230,22 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 1,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Cataluña confirma 19 nuevos positivos de PPA en restos de jabalíes muertos desde hace al menos 5 meses",
-          "published_at": "21.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72802/kw/Catalu%C3%B1a+confirma+19+nuevos+positivos+de+PPA%26nbsp%3Ben+restos+de+jabal%C3%ADes%26nbsp%3Bmuertos+desde+hace+al+menos+5+meses"
+          "title": "Acuerdo entre Interporc e Ifema para impulsar el porcino español de capa blanca en Anuga Select Ibérica Interporc e Ifema Madrid han firmado un acuerdo de colaboración para desarrollar acciones de promoción, sostenibilidad,... Más información",
+          "published_at": "23.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72830/kw/Acuerdo+entre+Interporc+e+Ifema+para+impulsar+el+porcino+espa%C3%B1ol+de+capa+blanca%26nbsp%3Ben+Anuga+Select+Ib%C3%A9rica"
+        },
+        {
+          "title": "Fallece Joan Pujolàs Coma, fundador y gerente de Pujolàs",
+          "published_at": "23.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72825/kw/Fallece+Joan+Pujol%C3%A0s+Coma%2C+fundador+y+gerente+de+Pujol%C3%A0s"
+        },
+        {
+          "title": "El matadero bogotano Frigorífico Guadalupe prevé ampliar su capacidad hasta un 40 % en 2027",
+          "published_at": "23.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72824/kw/El+matadero+bogotano+Frigor%C3%ADfico+Guadalupe+prev%C3%A9+ampliar+su+capacidad+hasta+un+40+%25+en+2027"
         }
       ],
       "rejected_count": 0,
@@ -238,18 +259,28 @@
       "website": "https://www.foodretail.es/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 1,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "El Gobierno francés reforzará la ciberseguridad después de los ataques a supermercados: \"Las cosas no van a mejorar\"",
-          "published_at": "20.11.2026",
-          "url": "https://www.foodretail.es/retailers/el-gobierno-frances-reforzara-la-ciberseguridad-despues-de-los-ataques-a-supermercados-las-cosas-no-van-a-mejorar.html"
+          "title": "Sonae, dueña de Druni y Continente , factura 8.700 millones en los nueve primeros meses de 2026, un 6,7% más",
+          "published_at": "23.11.2026",
+          "url": "https://www.foodretail.es/retailers/sonae-duena-de-druni-y-continente-factura-8700-millones-en-los-nueve-primeros-meses-de-2026-un-67-mas.html"
+        },
+        {
+          "title": "El gran consumo sorprende en octubre: crece un 2,7% en volumen y apenas sufre incrementos de precio",
+          "published_at": "23.11.2026",
+          "url": "https://www.foodretail.es/retailers/el-gran-consumo-sorprende-en-octubre-crece-un-27-en-volumen-y-apenas-sufre-incrementos-de-precio.html"
+        },
+        {
+          "title": "Mercadona y Consum adelantarán a las 18:00 su horario de cierre en Nochebuena y Nochevieja",
+          "published_at": "23.11.2026",
+          "url": "https://www.foodretail.es/retailers/mercadona-y-consum-adelantaran-a-las-1800-su-horario-de-cierre-en-nochebuena-y-nochevieja.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "20.11.2026"
+      "latest_published_at": "23.11.2026"
     }
   ]
 }
