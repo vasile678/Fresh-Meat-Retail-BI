@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0-market-intelligence-manifest",
   "platform_policy": "ALWAYS_SHOW_LATEST_VERIFIED_MARKET_INTELLIGENCE",
-  "generated_at_utc": "2026-11-23T17:38:27.527402+02:00",
+  "generated_at_utc": "2026-11-24T17:29:45.473321+02:00",
   "execution_timezone": "Europe/Bucharest",
   "modules": {
     "promo_weekly": {
@@ -55,17 +55,17 @@
       "module_id": "retail_media_monitor",
       "title": "Retail Media Monitor (Presă Specializată)",
       "schedule": "Zilnic, 09:00 Europe/Bucharest",
-      "last_verified_update": "23.11.2026 17:38:27",
-      "last_check_bucharest": "23.11.2026 17:38:27",
-      "last_data_update_bucharest": "23.11.2026 17:38:27",
+      "last_verified_update": "24.11.2026 17:29:45",
+      "last_check_bucharest": "24.11.2026 17:29:45",
+      "last_data_update_bucharest": "24.11.2026 17:29:45",
       "refresh_status": "ACTUALIZAT",
       "refresh_status_label": "Noutăți Confirmate",
       "updated_date": "22.11.2026",
       "updated_time": "10:26:57",
-      "period": "16.11.2026 – 23.11.2026 (Ultimele 7 zile)",
+      "period": "17.11.2026 – 24.11.2026 (Ultimele 7 zile)",
       "status": "ACTIVE_MONITORED",
       "data_file": "/data/retail_media_export.json",
-      "dataset_sha256": "1163a236f683fd7f17fb9e999d0c21586eac6e77533fe5bd3e1936345f924cc3",
+      "dataset_sha256": "faa6b996b0b6fbb0f30929be4892e3610b3e1f039036940f42b536e274f51aee",
       "verified_publications_count": 14,
       "verified_articles_count": 42,
       "classification_counts": {

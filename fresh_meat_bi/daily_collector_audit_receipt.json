@@ -1,10 +1,10 @@
 {
-  "execution_date": "23.11.2026",
-  "start_time_bucharest": "2026-11-23 17:37:57",
-  "end_time_bucharest": "2026-11-23 17:38:18",
-  "start_time_iso": "2026-11-23T17:37:57.431564+02:00",
-  "end_time_iso": "2026-11-23T17:38:18.005265+02:00",
-  "duration_seconds": 20.57,
+  "execution_date": "24.11.2026",
+  "start_time_bucharest": "2026-11-24 17:29:07",
+  "end_time_bucharest": "2026-11-24 17:29:32",
+  "start_time_iso": "2026-11-24T17:29:07.852384+02:00",
+  "end_time_iso": "2026-11-24T17:29:32.812076+02:00",
+  "duration_seconds": 24.96,
   "total_publications": 14,
   "total_new_articles_accepted": 17,
   "total_verified_articles": 42,
@@ -44,25 +44,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Un nou volum la Editura GastroArt: „Plăcinte povestite”, de Dana Burlacu Visternicu, se lansează în decembrie",
-          "published_at": "23.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/un-nou-volum-la-editura-gastroart-placinte-povestite-de-dana-burlacu-visternicu-se-lanseaza-in-decembrie/"
+          "title": "ANAT susține extinderea voucherelor de vacanță și către salariații din mediul privat",
+          "published_at": "24.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/anat-sustine-extinderea-voucherelor-de-vacanta-si-catre-salariatii-din-mediul-privat/"
         },
         {
-          "title": "Berarii României solicită menținerea nivelului actual al accizei la bere și în următorii doi ani",
-          "published_at": "23.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/berarii-romaniei-solicita-mentinerea-nivelului-actual-al-accizei-la-bere-si-in-urmatorii-doi-ani/"
+          "title": "Lacul Verde Resort își consolidează echipa prin numirea lui Gabriel Predescu în funcția de General Manager",
+          "published_at": "24.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/lacul-verde-resort-isi-consolideaza-echipa-prin-numirea-lui-gabriel-predescu-in-functia-de-general-manager/"
         },
         {
-          "title": "Castelul Kálnoky din Valea Crișului se redeschide după un amplu proces de restaurare",
-          "published_at": "23.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/castelul-kalnoky-din-valea-crisului-se-redeschide-dupa-un-amplu-proces-de-restaurare/"
+          "title": "„Sărbătorește în siguranță!”, conferință organizată de ANPC, HORA și FIHR pentru operatorii din ospitalitate",
+          "published_at": "24.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/sarbatoreste-in-siguranta-conferinta-organizata-de-anpc-hora-si-fihr-pentru-operatorii-din-ospitalitate/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "23.11.2026"
+      "latest_published_at": "24.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -73,19 +73,19 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Cerasus Grup: Strategia din spatele celei mai lungi prezențe la raft a cireșelor românești",
+          "title": "Mai sunt 3 zile până la “RO Fruits & Vegetables Show” 2026 și decernarea premiilor în sectorul de profil",
           "published_at": "23.11.2026",
-          "url": "https://modernbuyer.ro/cerasus-grup-strategia-din-spatele-celei-mai-lungi-prezente-la-raft-a-cireselor-romanesti/"
+          "url": "https://modernbuyer.ro/mai-sunt-3-zile-pana-la-ro-fruits-vegetables-show-2026-si-decernarea-premiilor-in-sectorul-de-profil/"
+        },
+        {
+          "title": "Guest Editorial: Cum transformăm exportul de mărfuri în export de branduri",
+          "published_at": "17.11.2026",
+          "url": "https://modernbuyer.ro/guest-editorial-cum-transformam-exportul-de-marfuri-in-export-de-branduri/"
         },
         {
           "title": "Brânzeturi românești premiate la prestigioasa competiție World Cheese Awards",
           "published_at": "17.11.2026",
           "url": "https://modernbuyer.ro/36196-2/"
-        },
-        {
-          "title": "Vești mai bune pentru piața FMCG: vânzările cresc, iar volumele revin pe plus",
-          "published_at": "12.11.2026",
-          "url": "https://modernbuyer.ro/vesti-mai-bune-pentru-piata-fmcg-vanzarile-cresc-iar-volumele-revin-pe-plus/"
         }
       ],
       "rejected_count": 0,
@@ -99,28 +99,33 @@
       "website": "https://www.retail-fmcg.ro/",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 6,
-      "new_articles_count": 3,
+      "new_articles_count": 4,
       "new_accepted": [
         {
-          "title": "Analiza prezenței în Social Media a retailerilor alimentari din România – noiembrie 2026",
-          "published_at": "23.11.2026",
-          "url": "https://www.retail-fmcg.ro/continut-premium/analiza-prezenta-social-media-retaileri-alimentari-romania-noiembrie-2026.html"
+          "title": "Shopfully Black Friday 2026: românii au cumpărat mai mult, dar au devenit mai atenți la oferte",
+          "published_at": "24.11.2026",
+          "url": "https://www.retail-fmcg.ro/e-commerce-2/shopfully-black-friday-2026.html"
         },
         {
-          "title": "Lidl reinterpretează tradiționalii mici într-un format inedit și lansează Covrimicul, în exclusivitate în retailul din România",
-          "published_at": "23.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/lidl-lanseaza-covrimicul-exclusivitate-retailul-romania.html"
+          "title": "Novonesis oferă producătorilor de alimente și băuturi probioticul ProSilience™ HU58™",
+          "published_at": "24.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/novonesis-producatori-alimente-bauturi-probioticul-prosilience-hu58.html"
         },
         {
-          "title": "K-Beauty, categoria produselor cosmetice sud-coreene de îngrijire a pielii, a ajuns la o cotă de aproximativ 15% din piața românească de skincare",
-          "published_at": "19.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/k-beauty-piata-romaneasca-skincare-one-master-distribution.html"
+          "title": "retail-FMCG.ro, 16 ani alături de industria de retail & FMCG din România",
+          "published_at": "24.11.2026",
+          "url": "https://www.retail-fmcg.ro/evenimente/retail-fmcg-ro-16-ani-alaturi-de-industria-de-retail-fmcg-din-romania.html"
+        },
+        {
+          "title": "Froo Prepares for Its Next Stage of Expansion in Romania: Strengthening Its Network and Exploring Opportunities in New Cities and Regions",
+          "published_at": "24.11.2026",
+          "url": "https://www.retail-fmcg.ro/english/froo-prepares-for-its-next-stage-of-expansion-in-romania.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "23.11.2026"
+      "latest_published_at": "24.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -131,20 +136,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Porcinele continuă să se ieftinească în UE. România trece peste media europeană la clasa E",
-          "published_at": "23.11.2026",
-          "url": "https://www.meat-milk.ro/article/porcinele-continua-sa-se-ieftineasca-in-ue-romania-trece-peste-media-europeana-la-clasa-e-TBQ3YVZQ"
+          "title": "Indonezia: o nouă miză pentru carnea și lactatele europene, după semnarea acordului cu UE",
+          "published_at": "24.11.2026",
+          "url": "https://www.meat-milk.ro/article/indonezia-o-noua-miza-pentru-carnea-si-lactatele-europene-dupa-semnarea-acordului-cu-ue-erMyguOY"
         },
         {
-          "title": "Lactatele europene cresc pe termen scurt. Diferențele față de 2025 rămân însă adânci",
-          "published_at": "23.11.2026",
-          "url": "https://www.meat-milk.ro/article/lactatele-europene-cresc-pe-termen-scurt-diferentele-fata-de-2025-raman-insa-adanci-crP7FyGg"
+          "title": "Fabrica poate produce. Dar poate livra dacă sistemele digitale se opresc?",
+          "published_at": "24.11.2026",
+          "url": "https://www.meat-milk.ro/article/fabrica-poate-produce-dar-poate-livra-daca-sistemele-digitale-se-opresc-Jen2WrnC"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "23.11.2026"
+      "latest_published_at": "24.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -230,22 +235,17 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Acuerdo entre Interporc e Ifema para impulsar el porcino español de capa blanca en Anuga Select Ibérica Interporc e Ifema Madrid han firmado un acuerdo de colaboración para desarrollar acciones de promoción, sostenibilidad,... Más información",
-          "published_at": "23.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72830/kw/Acuerdo+entre+Interporc+e+Ifema+para+impulsar+el+porcino+espa%C3%B1ol+de+capa+blanca%26nbsp%3Ben+Anuga+Select+Ib%C3%A9rica"
+          "title": "Taesa equipa la nueva línea de producción del matadero de Yunlin, en Taiwán",
+          "published_at": "24.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72842/kw/Taesa+equipa+la+nueva+l%C3%ADnea+de+producci%C3%B3n+del+matadero+de+Yunlin%2C+en+Taiw%C3%A1n"
         },
         {
-          "title": "Fallece Joan Pujolàs Coma, fundador y gerente de Pujolàs",
-          "published_at": "23.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72825/kw/Fallece+Joan+Pujol%C3%A0s+Coma%2C+fundador+y+gerente+de+Pujol%C3%A0s"
-        },
-        {
-          "title": "El matadero bogotano Frigorífico Guadalupe prevé ampliar su capacidad hasta un 40 % en 2027",
-          "published_at": "23.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72824/kw/El+matadero+bogotano+Frigor%C3%ADfico+Guadalupe+prev%C3%A9+ampliar+su+capacidad+hasta+un+40+%25+en+2027"
+          "title": "Frial lanza un jamón cocido Duroc con trufa natural para la campaña de Navidad",
+          "published_at": "24.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72841/kw/Frial+lanza+un+jam%C3%B3n+cocido+Duroc+con+trufa+natural+para+la+campa%C3%B1a+de+Navidad"
         }
       ],
       "rejected_count": 0,
@@ -262,25 +262,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Sonae, dueña de Druni y Continente , factura 8.700 millones en los nueve primeros meses de 2026, un 6,7% más",
-          "published_at": "23.11.2026",
-          "url": "https://www.foodretail.es/retailers/sonae-duena-de-druni-y-continente-factura-8700-millones-en-los-nueve-primeros-meses-de-2026-un-67-mas.html"
+          "title": "La hostelería de menú del día cae un 5,2% a causa de los pedidos a domicilio y la competencia de los supermercados",
+          "published_at": "24.11.2026",
+          "url": "https://www.foodretail.es/retailers/la-hosteleria-de-menu-del-dia-cae-un-52-a-causa-de-los-pedidos-a-domicilio-y-la-competencia-de-los-supermercados.html"
         },
         {
-          "title": "El gran consumo sorprende en octubre: crece un 2,7% en volumen y apenas sufre incrementos de precio",
-          "published_at": "23.11.2026",
-          "url": "https://www.foodretail.es/retailers/el-gran-consumo-sorprende-en-octubre-crece-un-27-en-volumen-y-apenas-sufre-incrementos-de-precio.html"
+          "title": "Aldi abrirá tiendas en Moncada (Valencia) y Torrevieja (Alicante) y sumará 82 súper en la Comunidad Valenciana",
+          "published_at": "24.11.2026",
+          "url": "https://www.foodretail.es/retailers/aldi-abrira-tiendas-en-moncada-valencia-y-torrevieja-alicante-y-sumara-82-super-en-la-comunidad-valenciana.html"
         },
         {
-          "title": "Mercadona y Consum adelantarán a las 18:00 su horario de cierre en Nochebuena y Nochevieja",
-          "published_at": "23.11.2026",
-          "url": "https://www.foodretail.es/retailers/mercadona-y-consum-adelantaran-a-las-1800-su-horario-de-cierre-en-nochebuena-y-nochevieja.html"
+          "title": "2 Aldi recorta su catálogo de productos para mantener el pulso a Lidl",
+          "published_at": "24.11.2026",
+          "url": "https://www.foodretail.es/retailers/aldi-recorta-su-catalogo-de-productos-para-mantener-el-pulso-a-lidl.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "23.11.2026"
+      "latest_published_at": "24.11.2026"
     }
   ]
 }
