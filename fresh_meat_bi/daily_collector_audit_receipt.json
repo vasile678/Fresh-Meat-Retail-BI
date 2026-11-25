@@ -1,12 +1,12 @@
 {
-  "execution_date": "24.11.2026",
-  "start_time_bucharest": "2026-11-24 17:29:07",
-  "end_time_bucharest": "2026-11-24 17:29:32",
-  "start_time_iso": "2026-11-24T17:29:07.852384+02:00",
-  "end_time_iso": "2026-11-24T17:29:32.812076+02:00",
-  "duration_seconds": 24.96,
+  "execution_date": "25.11.2026",
+  "start_time_bucharest": "2026-11-25 17:14:48",
+  "end_time_bucharest": "2026-11-25 17:15:12",
+  "start_time_iso": "2026-11-25T17:14:48.476671+02:00",
+  "end_time_iso": "2026-11-25T17:15:12.225827+02:00",
+  "duration_seconds": 23.75,
   "total_publications": 14,
-  "total_new_articles_accepted": 17,
+  "total_new_articles_accepted": 18,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -44,25 +44,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "ANAT susține extinderea voucherelor de vacanță și către salariații din mediul privat",
-          "published_at": "24.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/anat-sustine-extinderea-voucherelor-de-vacanta-si-catre-salariatii-din-mediul-privat/"
+          "title": "Mirela Dogărescu, Alma Health & Spa Retreat: Noua etapă vizează extinderea ofertei dedicate sănătății, prevenției și longevității",
+          "published_at": "25.11.2026",
+          "url": "https://www.trendshrb.ro/business/mirela-dogarescu-alma-health-spa-retreat-noua-etapa-vizeaza-extinderea-ofertei-dedicate-sanatatii-preventiei-si-longevitatii/"
         },
         {
-          "title": "Lacul Verde Resort își consolidează echipa prin numirea lui Gabriel Predescu în funcția de General Manager",
-          "published_at": "24.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/lacul-verde-resort-isi-consolideaza-echipa-prin-numirea-lui-gabriel-predescu-in-functia-de-general-manager/"
+          "title": "Cushman & Wakefield Echinox: Bucureștiul, locul cinci în topul celor mai atractive orașe din CEE pentru operatorii hotelieri",
+          "published_at": "25.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/cushman-wakefield-echinox-bucurestiul-locul-cinci-in-topul-celor-mai-atractive-orase-din-cee-pentru-operatorii-hotelieri/"
         },
         {
-          "title": "„Sărbătorește în siguranță!”, conferință organizată de ANPC, HORA și FIHR pentru operatorii din ospitalitate",
-          "published_at": "24.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/sarbatoreste-in-siguranta-conferinta-organizata-de-anpc-hora-si-fihr-pentru-operatorii-din-ospitalitate/"
+          "title": "Un nou volum la Editura GastroArt: „Plăcinte povestite”, de Dana Burlacu Visternicu, se lansează în decembrie",
+          "published_at": "23.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/un-nou-volum-la-editura-gastroart-placinte-povestite-de-dana-burlacu-visternicu-se-lanseaza-in-decembrie/"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "24.11.2026"
+      "latest_published_at": "25.11.2026"
     },
     {
       "pub_id": "modernbuyer",
@@ -73,9 +73,9 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Mai sunt 3 zile până la “RO Fruits & Vegetables Show” 2026 și decernarea premiilor în sectorul de profil",
-          "published_at": "23.11.2026",
-          "url": "https://modernbuyer.ro/mai-sunt-3-zile-pana-la-ro-fruits-vegetables-show-2026-si-decernarea-premiilor-in-sectorul-de-profil/"
+          "title": "“Hype-ul” lansării PAM PAM: 60.000 de sucuri vândute de gamerul Sky în primul weekend în Kaufland",
+          "published_at": "18.11.2026",
+          "url": "https://modernbuyer.ro/hype-ul-lansarii-pam-pam-60-000-de-sucuri-vandute-de-gamerul-sky-in-primul-weekend-in-kaufland/"
         },
         {
           "title": "Guest Editorial: Cum transformăm exportul de mărfuri în export de branduri",
@@ -102,30 +102,30 @@
       "new_articles_count": 4,
       "new_accepted": [
         {
-          "title": "Shopfully Black Friday 2026: românii au cumpărat mai mult, dar au devenit mai atenți la oferte",
-          "published_at": "24.11.2026",
-          "url": "https://www.retail-fmcg.ro/e-commerce-2/shopfully-black-friday-2026.html"
+          "title": "PENNY deschide 6 magazine noi, iar rețeaua sa națională ajunge la 485 de unități",
+          "published_at": "25.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/penny-magazine-485.html"
         },
         {
-          "title": "Novonesis oferă producătorilor de alimente și băuturi probioticul ProSilience™ HU58™",
-          "published_at": "24.11.2026",
-          "url": "https://www.retail-fmcg.ro/fmcg/novonesis-producatori-alimente-bauturi-probioticul-prosilience-hu58.html"
+          "title": "Nhood: Piața de entertainment activ din mallurile din România a ajuns la peste 40 milioane de euro în 2025, în creștere cu 20%",
+          "published_at": "25.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/nhood-piata-entertainment-malluri-romania.html"
         },
         {
-          "title": "retail-FMCG.ro, 16 ani alături de industria de retail & FMCG din România",
-          "published_at": "24.11.2026",
-          "url": "https://www.retail-fmcg.ro/evenimente/retail-fmcg-ro-16-ani-alaturi-de-industria-de-retail-fmcg-din-romania.html"
+          "title": "Carrefour integrează donațiile în programul de loialitate Act for Good: peste 176.000 de utilizatori au susținut cinci cauze în 2025",
+          "published_at": "25.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/carrefour-integreaza-donatiile-in-programul-de-loialitate-act-for-good.html"
         },
         {
-          "title": "Froo Prepares for Its Next Stage of Expansion in Romania: Strengthening Its Network and Exploring Opportunities in New Cities and Regions",
-          "published_at": "24.11.2026",
-          "url": "https://www.retail-fmcg.ro/english/froo-prepares-for-its-next-stage-of-expansion-in-romania.html"
+          "title": "Analiză retail-FMCG.ro: Cele 10 tendințe care vor modela retailul alimentar și industria FMCG în 2027",
+          "published_at": "25.11.2026",
+          "url": "https://www.retail-fmcg.ro/continut-premium/analiza-retail-fmcg-ro-cele-10-tendinte-care-vor-modela-retailul-alimentar-si-industria-fmcg-in-2027.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "24.11.2026"
+      "latest_published_at": "25.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -136,20 +136,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Indonezia: o nouă miză pentru carnea și lactatele europene, după semnarea acordului cu UE",
-          "published_at": "24.11.2026",
-          "url": "https://www.meat-milk.ro/article/indonezia-o-noua-miza-pentru-carnea-si-lactatele-europene-dupa-semnarea-acordului-cu-ue-erMyguOY"
+          "title": "Danish Crown Beef: venituri record, rentabilitate sub presiunea aprovizionării",
+          "published_at": "25.11.2026",
+          "url": "https://www.meat-milk.ro/article/danish-crown-beef-venituri-record-rentabilitate-sub-presiunea-aprovizionarii-eHN9Cdzs"
         },
         {
-          "title": "Fabrica poate produce. Dar poate livra dacă sistemele digitale se opresc?",
-          "published_at": "24.11.2026",
-          "url": "https://www.meat-milk.ro/article/fabrica-poate-produce-dar-poate-livra-daca-sistemele-digitale-se-opresc-Jen2WrnC"
+          "title": "ALDI SÜD și FrieslandCampina investesc în fermele de lapte: un parteneriat dincolo de achiziția materiei prime",
+          "published_at": "25.11.2026",
+          "url": "https://www.meat-milk.ro/article/aldi-sud-si-frieslandcampina-investesc-in-fermele-de-lapte-un-parteneriat-dincolo-de-achizitia-materiei-prime-aIKPBP4k"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "24.11.2026"
+      "latest_published_at": "25.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -235,17 +235,22 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 2,
+      "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Taesa equipa la nueva línea de producción del matadero de Yunlin, en Taiwán",
-          "published_at": "24.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72842/kw/Taesa+equipa+la+nueva+l%C3%ADnea+de+producci%C3%B3n+del+matadero+de+Yunlin%2C+en+Taiw%C3%A1n"
+          "title": "Anuga FoodTec 2027: La tecnología del mañana se muestra en Colonia ¿Qué puede aportar la tecnología a mis procesos y a mi empresa? Verla funcionar en una línea de producción real es la mejor forma... Más información",
+          "published_at": "25.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72860/kw/Anuga+FoodTec+2027%3A+La+tecnolog%C3%ADa+del+ma%C3%B1ana+se+muestra+en+Colonia"
         },
         {
-          "title": "Frial lanza un jamón cocido Duroc con trufa natural para la campaña de Navidad",
-          "published_at": "24.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72841/kw/Frial+lanza+un+jam%C3%B3n+cocido+Duroc+con+trufa+natural+para+la+campa%C3%B1a+de+Navidad"
+          "title": "Segovia prevé vender su matadero municipal para financiar el nuevo recinto ferial",
+          "published_at": "25.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72854/kw/Segovia+prev%C3%A9+vender+su+matadero+municipal+para+financiar+el+nuevo+recinto+ferial"
+        },
+        {
+          "title": "México pide a China agilizar los protocolos para exportar carne de vacuno y de porcino",
+          "published_at": "25.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72853/kw/M%C3%A9xico+pide+a+China+agilizar+los+protocolos+para+exportar+carne+de+vacuno+y+de+porcino"
         }
       ],
       "rejected_count": 0,
@@ -262,25 +267,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "La hostelería de menú del día cae un 5,2% a causa de los pedidos a domicilio y la competencia de los supermercados",
-          "published_at": "24.11.2026",
-          "url": "https://www.foodretail.es/retailers/la-hosteleria-de-menu-del-dia-cae-un-52-a-causa-de-los-pedidos-a-domicilio-y-la-competencia-de-los-supermercados.html"
+          "title": "Los supermercados invierten 45 millones de euros en Canarias y crean 450 empleos en 2025",
+          "published_at": "25.11.2026",
+          "url": "https://www.foodretail.es/retailers/los-supermercados-invierten-45-millones-de-euros-en-canarias-y-crean-450-empleos-en-2025.html"
         },
         {
-          "title": "Aldi abrirá tiendas en Moncada (Valencia) y Torrevieja (Alicante) y sumará 82 súper en la Comunidad Valenciana",
-          "published_at": "24.11.2026",
-          "url": "https://www.foodretail.es/retailers/aldi-abrira-tiendas-en-moncada-valencia-y-torrevieja-alicante-y-sumara-82-super-en-la-comunidad-valenciana.html"
+          "title": "Mercadona, entre las diez cadenas más grandes de Europa después de adelantar a la británica Sainsbury's",
+          "published_at": "25.11.2026",
+          "url": "https://www.foodretail.es/retailers/mercadona-entre-las-diez-cadenas-mas-grandes-de-europa-despues-de-adelantar-a-la-britanica-sainsburys.html"
         },
         {
-          "title": "2 Aldi recorta su catálogo de productos para mantener el pulso a Lidl",
-          "published_at": "24.11.2026",
-          "url": "https://www.foodretail.es/retailers/aldi-recorta-su-catalogo-de-productos-para-mantener-el-pulso-a-lidl.html"
+          "title": "Trabajadores de Consum participan en una investigación sobre ansiedad y estrés",
+          "published_at": "25.11.2026",
+          "url": "https://www.foodretail.es/retailers/trabajadores-de-consum-participan-en-una-investigacion-sobre-ansiedad-y-estres.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "24.11.2026"
+      "latest_published_at": "25.11.2026"
     }
   ]
 }
