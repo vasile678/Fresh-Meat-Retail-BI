@@ -1,12 +1,12 @@
 {
-  "execution_date": "25.11.2026",
-  "start_time_bucharest": "2026-11-25 17:14:48",
-  "end_time_bucharest": "2026-11-25 17:15:12",
-  "start_time_iso": "2026-11-25T17:14:48.476671+02:00",
-  "end_time_iso": "2026-11-25T17:15:12.225827+02:00",
-  "duration_seconds": 23.75,
+  "execution_date": "26.11.2026",
+  "start_time_bucharest": "2026-11-26 16:39:58",
+  "end_time_bucharest": "2026-11-26 16:40:26",
+  "start_time_iso": "2026-11-26T16:39:58.625710+02:00",
+  "end_time_iso": "2026-11-26T16:40:26.377108+02:00",
+  "duration_seconds": 27.75,
   "total_publications": 14,
-  "total_new_articles_accepted": 18,
+  "total_new_articles_accepted": 7,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -39,26 +39,10 @@
       "pub_id": "trendshrb",
       "name": "Trends HRB",
       "website": "https://www.trendshrb.ro/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 6,
-      "new_articles_count": 3,
-      "new_accepted": [
-        {
-          "title": "Mirela Dogărescu, Alma Health & Spa Retreat: Noua etapă vizează extinderea ofertei dedicate sănătății, prevenției și longevității",
-          "published_at": "25.11.2026",
-          "url": "https://www.trendshrb.ro/business/mirela-dogarescu-alma-health-spa-retreat-noua-etapa-vizeaza-extinderea-ofertei-dedicate-sanatatii-preventiei-si-longevitatii/"
-        },
-        {
-          "title": "Cushman & Wakefield Echinox: Bucureștiul, locul cinci în topul celor mai atractive orașe din CEE pentru operatorii hotelieri",
-          "published_at": "25.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/cushman-wakefield-echinox-bucurestiul-locul-cinci-in-topul-celor-mai-atractive-orase-din-cee-pentru-operatorii-hotelieri/"
-        },
-        {
-          "title": "Un nou volum la Editura GastroArt: „Plăcinte povestite”, de Dana Burlacu Visternicu, se lansează în decembrie",
-          "published_at": "23.11.2026",
-          "url": "https://www.trendshrb.ro/stiri/un-nou-volum-la-editura-gastroart-placinte-povestite-de-dana-burlacu-visternicu-se-lanseaza-in-decembrie/"
-        }
-      ],
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -68,26 +52,10 @@
       "pub_id": "modernbuyer",
       "name": "Modern Buyer",
       "website": "https://modernbuyer.ro/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 5,
-      "new_articles_count": 3,
-      "new_accepted": [
-        {
-          "title": "“Hype-ul” lansării PAM PAM: 60.000 de sucuri vândute de gamerul Sky în primul weekend în Kaufland",
-          "published_at": "18.11.2026",
-          "url": "https://modernbuyer.ro/hype-ul-lansarii-pam-pam-60-000-de-sucuri-vandute-de-gamerul-sky-in-primul-weekend-in-kaufland/"
-        },
-        {
-          "title": "Guest Editorial: Cum transformăm exportul de mărfuri în export de branduri",
-          "published_at": "17.11.2026",
-          "url": "https://modernbuyer.ro/guest-editorial-cum-transformam-exportul-de-marfuri-in-export-de-branduri/"
-        },
-        {
-          "title": "Brânzeturi românești premiate la prestigioasa competiție World Cheese Awards",
-          "published_at": "17.11.2026",
-          "url": "https://modernbuyer.ro/36196-2/"
-        }
-      ],
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -97,31 +65,10 @@
       "pub_id": "retailfmcg",
       "name": "Retail-FMCG",
       "website": "https://www.retail-fmcg.ro/",
-      "status": "LIVE_FETCH_OK",
-      "candidates_scanned": 6,
-      "new_articles_count": 4,
-      "new_accepted": [
-        {
-          "title": "PENNY deschide 6 magazine noi, iar rețeaua sa națională ajunge la 485 de unități",
-          "published_at": "25.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/penny-magazine-485.html"
-        },
-        {
-          "title": "Nhood: Piața de entertainment activ din mallurile din România a ajuns la peste 40 milioane de euro în 2025, în creștere cu 20%",
-          "published_at": "25.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/nhood-piata-entertainment-malluri-romania.html"
-        },
-        {
-          "title": "Carrefour integrează donațiile în programul de loialitate Act for Good: peste 176.000 de utilizatori au susținut cinci cauze în 2025",
-          "published_at": "25.11.2026",
-          "url": "https://www.retail-fmcg.ro/retail/carrefour-integreaza-donatiile-in-programul-de-loialitate-act-for-good.html"
-        },
-        {
-          "title": "Analiză retail-FMCG.ro: Cele 10 tendințe care vor modela retailul alimentar și industria FMCG în 2027",
-          "published_at": "25.11.2026",
-          "url": "https://www.retail-fmcg.ro/continut-premium/analiza-retail-fmcg-ro-cele-10-tendinte-care-vor-modela-retailul-alimentar-si-industria-fmcg-in-2027.html"
-        }
-      ],
+      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
+      "candidates_scanned": 0,
+      "new_articles_count": 0,
+      "new_accepted": [],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
@@ -136,20 +83,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Danish Crown Beef: venituri record, rentabilitate sub presiunea aprovizionării",
-          "published_at": "25.11.2026",
-          "url": "https://www.meat-milk.ro/article/danish-crown-beef-venituri-record-rentabilitate-sub-presiunea-aprovizionarii-eHN9Cdzs"
+          "title": "Adăpostul poate limita producția: ce trebuie verificat înainte de a schimba rația",
+          "published_at": "26.11.2026",
+          "url": "https://www.meat-milk.ro/article/adapostul-poate-limita-productia-ce-trebuie-verificat-inainte-de-a-schimba-ratia-aEdyNpZd"
         },
         {
-          "title": "ALDI SÜD și FrieslandCampina investesc în fermele de lapte: un parteneriat dincolo de achiziția materiei prime",
-          "published_at": "25.11.2026",
-          "url": "https://www.meat-milk.ro/article/aldi-sud-si-frieslandcampina-investesc-in-fermele-de-lapte-un-parteneriat-dincolo-de-achizitia-materiei-prime-aIKPBP4k"
+          "title": "România accelerează producția de carne de pasăre, într-o piață europeană cu prețuri în scădere",
+          "published_at": "26.11.2026",
+          "url": "https://www.meat-milk.ro/article/romania-accelereaza-productia-de-carne-de-pasare-intr-o-piata-europeana-cu-preturi-in-scadere-KzBosyCj"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "25.11.2026"
+      "latest_published_at": "26.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -235,22 +182,17 @@
       "website": "https://eurocarne.com",
       "status": "LIVE_FETCH_OK",
       "candidates_scanned": 3,
-      "new_articles_count": 3,
+      "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Anuga FoodTec 2027: La tecnología del mañana se muestra en Colonia ¿Qué puede aportar la tecnología a mis procesos y a mi empresa? Verla funcionar en una línea de producción real es la mejor forma... Más información",
-          "published_at": "25.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72860/kw/Anuga+FoodTec+2027%3A+La+tecnolog%C3%ADa+del+ma%C3%B1ana+se+muestra+en+Colonia"
+          "title": "Anna Bosch Calidad humana heredada y legada",
+          "published_at": "26.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72880/kw/+Anna+Bosch+Calidad+humana+heredada+y+legada+"
         },
         {
-          "title": "Segovia prevé vender su matadero municipal para financiar el nuevo recinto ferial",
-          "published_at": "25.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72854/kw/Segovia+prev%C3%A9+vender+su+matadero+municipal+para+financiar+el+nuevo+recinto+ferial"
-        },
-        {
-          "title": "México pide a China agilizar los protocolos para exportar carne de vacuno y de porcino",
-          "published_at": "25.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72853/kw/M%C3%A9xico+pide+a+China+agilizar+los+protocolos+para+exportar+carne+de+vacuno+y+de+porcino"
+          "title": "La campaña 'Hola Don Pepito' de Provacuno cierra su segunda edición tras llegar a cerca de 600 escolares madrileños",
+          "published_at": "26.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72879/kw/La+campa%C3%B1a+%26%2339%3BHola+Don+Pepito%26%2339%3B+de+Provacuno+cierra+su+segunda+edici%C3%B3n+tras+llegar+a+cerca+de+600+escolares+madrile%C3%B1os"
         }
       ],
       "rejected_count": 0,
@@ -267,25 +209,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Los supermercados invierten 45 millones de euros en Canarias y crean 450 empleos en 2025",
-          "published_at": "25.11.2026",
-          "url": "https://www.foodretail.es/retailers/los-supermercados-invierten-45-millones-de-euros-en-canarias-y-crean-450-empleos-en-2025.html"
+          "title": "Mercadona lanza una nueva edición de su Revista de Navidad con ideas y consejos prácticos",
+          "published_at": "26.11.2026",
+          "url": "https://www.foodretail.es/retailers/mercadona-lanza-una-nueva-edicion-de-su-revista-de-navidad-con-ideas-y-consejos-practicos.html"
         },
         {
-          "title": "Mercadona, entre las diez cadenas más grandes de Europa después de adelantar a la británica Sainsbury's",
-          "published_at": "25.11.2026",
-          "url": "https://www.foodretail.es/retailers/mercadona-entre-las-diez-cadenas-mas-grandes-de-europa-despues-de-adelantar-a-la-britanica-sainsburys.html"
+          "title": "Ahorramas alcanza los 300 supermercados con una nueva apertura en Talavera de la Reina (Toledo)",
+          "published_at": "26.11.2026",
+          "url": "https://www.foodretail.es/retailers/ahorramas-alcanza-los-300-supermercados-con-una-nueva-apertura-en-talavera-de-la-reina-toledo.html"
         },
         {
-          "title": "Trabajadores de Consum participan en una investigación sobre ansiedad y estrés",
-          "published_at": "25.11.2026",
-          "url": "https://www.foodretail.es/retailers/trabajadores-de-consum-participan-en-una-investigacion-sobre-ansiedad-y-estres.html"
+          "title": "BonÀrea reabre su tienda de Tamarite de Litera (Huesca) tras el traslado a un local más amplio",
+          "published_at": "26.11.2026",
+          "url": "https://www.foodretail.es/retailers/bonarea-reabre-su-tienda-de-tamarite-de-litera-huesca-tras-el-traslado-a-un-local-mas-amplio.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "25.11.2026"
+      "latest_published_at": "26.11.2026"
     }
   ]
 }
