@@ -1,12 +1,12 @@
 {
-  "execution_date": "26.11.2026",
-  "start_time_bucharest": "2026-11-26 16:39:58",
-  "end_time_bucharest": "2026-11-26 16:40:26",
-  "start_time_iso": "2026-11-26T16:39:58.625710+02:00",
-  "end_time_iso": "2026-11-26T16:40:26.377108+02:00",
-  "duration_seconds": 27.75,
+  "execution_date": "27.11.2026",
+  "start_time_bucharest": "2026-11-27 16:37:38",
+  "end_time_bucharest": "2026-11-27 16:37:58",
+  "start_time_iso": "2026-11-27T16:37:38.559724+02:00",
+  "end_time_iso": "2026-11-27T16:37:58.599832+02:00",
+  "duration_seconds": 20.04,
   "total_publications": 14,
-  "total_new_articles_accepted": 7,
+  "total_new_articles_accepted": 22,
   "total_verified_articles": 42,
   "publications_audit": [
     {
@@ -39,40 +39,118 @@
       "pub_id": "trendshrb",
       "name": "Trends HRB",
       "website": "https://www.trendshrb.ro/",
-      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
-      "candidates_scanned": 0,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 6,
+      "new_articles_count": 6,
+      "new_accepted": [
+        {
+          "title": "Bitsoft dezvoltă Breeze AI Analytics, o platformă AI destinată restaurantelor",
+          "published_at": "27.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/bitsoft-dezvolta-breeze-ai-analytics-o-platforma-ai-destinata-restaurantelor/"
+        },
+        {
+          "title": "Sphera Franchise Group, vânzări de 1,16 miliarde lei în primele trei trimestre din 2026",
+          "published_at": "27.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/sphera-franchise-group-vanzari-de-116-miliarde-lei-in-primele-trei-trimestre-din-2026/"
+        },
+        {
+          "title": "Marinela Ardelean: Vinul românesc, între producția în creștere și miza enoturismului",
+          "published_at": "27.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/marinela-ardelean-vinul-romanesc-intre-productia-in-crestere-si-miza-enoturismului/"
+        },
+        {
+          "title": "Produsele VIVA din peste 90 de stații OMV, listate în exclusivitate pe Wolt",
+          "published_at": "27.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/produsele-viva-din-peste-90-de-statii-omv-listate-in-exclusivitate-pe-wolt/"
+        },
+        {
+          "title": "Parteneriat Dristor Kebap și Kaufland România, pentru introducerea unui meniu la Kaufland Grill",
+          "published_at": "27.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/parteneriat-dristor-kebap-si-kaufland-romania-pentru-introducerea-unui-meniu-la-kaufland-grill/"
+        },
+        {
+          "title": "Spirits România: Peste 40% din piața băuturilor spirtoase din România provine din surse nefiscalizate",
+          "published_at": "26.11.2026",
+          "url": "https://www.trendshrb.ro/stiri/spirits-romania-peste-40-din-piata-bauturilor-spirtoase-din-romania-provine-din-surse-nefiscalizate/"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "25.11.2026"
+      "latest_published_at": "27.11.2026"
     },
     {
       "pub_id": "modernbuyer",
       "name": "Modern Buyer",
       "website": "https://modernbuyer.ro/",
-      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
-      "candidates_scanned": 0,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 5,
+      "new_articles_count": 3,
+      "new_accepted": [
+        {
+          "title": "Sfârșitul cumpărăturilor din obișnuință: fiecare produs trebuie să-și câștige locul în coș",
+          "published_at": "27.11.2026",
+          "url": "https://modernbuyer.ro/sfarsitul-cumparaturilor-din-obisnuinta-fiecare-produs-trebuie-sa-si-castige-locul-in-cos/"
+        },
+        {
+          "title": "“Hype-ul” lansării PAM PAM: 60.000 de sucuri vândute de gamerul Sky în primul weekend în Kaufland",
+          "published_at": "18.11.2026",
+          "url": "https://modernbuyer.ro/hype-ul-lansarii-pam-pam-60-000-de-sucuri-vandute-de-gamerul-sky-in-primul-weekend-in-kaufland/"
+        },
+        {
+          "title": "Guest Editorial: Cum transformăm exportul de mărfuri în export de branduri",
+          "published_at": "17.11.2026",
+          "url": "https://modernbuyer.ro/guest-editorial-cum-transformam-exportul-de-marfuri-in-export-de-branduri/"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "23.11.2026"
+      "latest_published_at": "27.11.2026"
     },
     {
       "pub_id": "retailfmcg",
       "name": "Retail-FMCG",
       "website": "https://www.retail-fmcg.ro/",
-      "status": "RETAINED_VERIFIED_FAIL_CLOSED",
-      "candidates_scanned": 0,
-      "new_articles_count": 0,
-      "new_accepted": [],
+      "status": "LIVE_FETCH_OK",
+      "candidates_scanned": 6,
+      "new_articles_count": 6,
+      "new_accepted": [
+        {
+          "title": "Diana Supermarket își extinde prezența în județul Dâmbovița, prin deschiderea unui nou magazin în Boteni",
+          "published_at": "26.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/diana-supermarket-dambovita-magazin-boteni.html"
+        },
+        {
+          "title": "Produsele VIVA din stațiile OMV, disponibile în exclusivitate pe Wolt, în 28 de orașe din România",
+          "published_at": "26.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/produse-viva-statiile-omv-disponibile-wolt.html"
+        },
+        {
+          "title": "dm România înregistrează o creștere de peste 17% în anul financiar 2025–2026",
+          "published_at": "26.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/dm-romania-crestere-anul-financiar-2025-2026.html"
+        },
+        {
+          "title": "Redis Pet mizează pe diversitatea brandurilor și extinderea distribuției pe piața de pet food din România",
+          "published_at": "26.11.2026",
+          "url": "https://www.retail-fmcg.ro/fmcg/redis-pet-diversitatea-brandurilor-si-extinderea-distributiei.html"
+        },
+        {
+          "title": "Carrefour dezvoltă băncile de donații din hipermarketuri: de la colectarea alimentelor la inițiative permanente pentru comunități",
+          "published_at": "26.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/carrefour-dezvolta-bancile-de-donatii-din-hipermarketuri.html"
+        },
+        {
+          "title": "Auchan deschide două magazine în aceeași zi: hipermarketul Auchan din Sun Plaza, București și un supermarket ATAC în Timiș",
+          "published_at": "26.11.2026",
+          "url": "https://www.retail-fmcg.ro/retail/auchan-magazine-sun-plaza-bucuresti-atac-in-timis.html"
+        }
+      ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "25.11.2026"
+      "latest_published_at": "26.11.2026"
     },
     {
       "pub_id": "meatmilk",
@@ -83,20 +161,20 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Adăpostul poate limita producția: ce trebuie verificat înainte de a schimba rația",
-          "published_at": "26.11.2026",
-          "url": "https://www.meat-milk.ro/article/adapostul-poate-limita-productia-ce-trebuie-verificat-inainte-de-a-schimba-ratia-aEdyNpZd"
+          "title": "Meat Pro Africa: o nouă platformă pentru industria cărnii din Africa de Sud, de la genetică la procesare",
+          "published_at": "27.11.2026",
+          "url": "https://www.meat-milk.ro/article/meat-pro-africa-o-noua-platforma-pentru-industria-carnii-din-africa-de-sud-de-la-genetica-la-procesare-RNUfLHlO"
         },
         {
-          "title": "România accelerează producția de carne de pasăre, într-o piață europeană cu prețuri în scădere",
-          "published_at": "26.11.2026",
-          "url": "https://www.meat-milk.ro/article/romania-accelereaza-productia-de-carne-de-pasare-intr-o-piata-europeana-cu-preturi-in-scadere-KzBosyCj"
+          "title": "Bovinele din România, între prețul vițeilor și valoarea carcaselor: unde apar diferențele față de UE",
+          "published_at": "27.11.2026",
+          "url": "https://www.meat-milk.ro/article/bovinele-din-romania-intre-pretul-viteilor-si-valoarea-carcaselor-unde-apar-diferentele-fata-de-ue-uLy8angn"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "26.11.2026"
+      "latest_published_at": "27.11.2026"
     },
     {
       "pub_id": "retailro",
@@ -185,14 +263,14 @@
       "new_articles_count": 2,
       "new_accepted": [
         {
-          "title": "Anna Bosch Calidad humana heredada y legada",
-          "published_at": "26.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72880/kw/+Anna+Bosch+Calidad+humana+heredada+y+legada+"
+          "title": "Estella celebra el III Día de Cordero de Navarra – Reyno Gourmet con una degustación de más de 900 raciones",
+          "published_at": "27.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72899/kw/Estella+celebra+el+III+D%C3%ADa+de+Cordero+de+Navarra+%E2%80%93+Reyno+Gourmet+con+una+degustaci%C3%B3n+de+m%C3%A1s+de+900+raciones"
         },
         {
-          "title": "La campaña 'Hola Don Pepito' de Provacuno cierra su segunda edición tras llegar a cerca de 600 escolares madrileños",
-          "published_at": "26.11.2026",
-          "url": "https://eurocarne.com/noticias/codigo/72879/kw/La+campa%C3%B1a+%26%2339%3BHola+Don+Pepito%26%2339%3B+de+Provacuno+cierra+su+segunda+edici%C3%B3n+tras+llegar+a+cerca+de+600+escolares+madrile%C3%B1os"
+          "title": "Anafric asiste en Bruselas a la presentación del acuerdo sanitario UE-Reino Unido que eliminará los controles fronterizos",
+          "published_at": "27.11.2026",
+          "url": "https://eurocarne.com/noticias/codigo/72896/kw/Anafric+asiste+en+Bruselas+a+la+presentaci%C3%B3n+del+acuerdo+sanitario+UE-Reino+Unido+que+eliminar%C3%A1+los+controles+fronterizos"
         }
       ],
       "rejected_count": 0,
@@ -209,25 +287,25 @@
       "new_articles_count": 3,
       "new_accepted": [
         {
-          "title": "Mercadona lanza una nueva edición de su Revista de Navidad con ideas y consejos prácticos",
-          "published_at": "26.11.2026",
-          "url": "https://www.foodretail.es/retailers/mercadona-lanza-una-nueva-edicion-de-su-revista-de-navidad-con-ideas-y-consejos-practicos.html"
+          "title": "Pedro Sánchez asume las críticas de Podemos a los supermercados",
+          "published_at": "27.11.2026",
+          "url": "https://www.foodretail.es/retailers/pedro-sanchez-asume-las-criticas-de-podemos-a-los-supermercados.html"
         },
         {
-          "title": "Ahorramas alcanza los 300 supermercados con una nueva apertura en Talavera de la Reina (Toledo)",
-          "published_at": "26.11.2026",
-          "url": "https://www.foodretail.es/retailers/ahorramas-alcanza-los-300-supermercados-con-una-nueva-apertura-en-talavera-de-la-reina-toledo.html"
+          "title": "Alcampo presenta su campaña de Navidad con protagonismo de los productos andaluces",
+          "published_at": "27.11.2026",
+          "url": "https://www.foodretail.es/retailers/alcampo-presenta-su-campana-de-navidad-con-protagonismo-de-los-productos-andaluces.html"
         },
         {
-          "title": "BonÀrea reabre su tienda de Tamarite de Litera (Huesca) tras el traslado a un local más amplio",
-          "published_at": "26.11.2026",
-          "url": "https://www.foodretail.es/retailers/bonarea-reabre-su-tienda-de-tamarite-de-litera-huesca-tras-el-traslado-a-un-local-mas-amplio.html"
+          "title": "Auchan, en negociaciones exclusivas con Les Mousquetaires para vender Chronodrive",
+          "published_at": "27.11.2026",
+          "url": "https://www.foodretail.es/retailers/auchan-en-negociaciones-exclusivas-con-les-mousquetaires-para-vender-chronodrive.html"
         }
       ],
       "rejected_count": 0,
       "rejected_details": [],
       "final_top3_count": 3,
-      "latest_published_at": "26.11.2026"
+      "latest_published_at": "27.11.2026"
     }
   ]
 }
